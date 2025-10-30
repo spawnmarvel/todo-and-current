@@ -10,6 +10,10 @@ https://github.com/spawnmarvel/linux-and-azure
 
 https://github.com/spawnmarvel/linux-and-azure?tab=readme-ov-file#grep-it
 
+### Linux mind maps :steam_locomotive:
+
+https://github.com/spawnmarvel/linux-and-azure/tree/main/z-mind-maps
+
 ### Bash tutorial, repeat, repeat and repeat :rocket: :rocket: :rocket:
 
 https://www.w3schools.com/bash/bash_commands.php
