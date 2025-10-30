@@ -18,6 +18,11 @@ https://github.com/spawnmarvel/linux-and-azure/tree/main/z-mind-maps
 
 ```bash
 
+#!/bin/bash
+echo "Hello, Bash!"
+#
+hello.sh
+
 ls    #  - List directory contents
 cd    #  - Change the current directory
 pwd   #  - Print the current working directory
