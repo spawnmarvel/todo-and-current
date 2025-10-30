@@ -1,21 +1,6 @@
 # todo-and-current
 Readme with todo-and-current
 
-## quickguides
-
-* amqp
-* Azure Administrator AZ-104
-* bash
-* cogent
-* event hub
-* etc
-
-https://github.com/spawnmarvel/quickguides
-
-* Prosys OPC UA sim, Cogent OPC UA client, InfluxDB, OPC UA expert, db21
-
-https://github.com/spawnmarvel/quickguides/blob/main/cogent-opcua-influxdb/README.md
-
 ## Linux
 
 https://github.com/spawnmarvel/linux-and-azure
@@ -47,6 +32,29 @@ https://github.com/spawnmarvel/azure-automation-bicep-and-labs
 ### AZ-104 certified professional must know
 
 https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-certified-professional
+
+## quickguides
+
+* amqp
+* Requests and renew certificate
+
+https://github.com/spawnmarvel/quickguides/blob/main/amqp/RequestRenewExample/README.md
+
+* Azure Administrator AZ-104
+* bash
+* cogent
+* event hub
+* etc
+
+https://github.com/spawnmarvel/quickguides
+
+* Prosys OPC UA sim, Cogent OPC UA client, InfluxDB, OPC UA expert, db21
+
+https://github.com/spawnmarvel/quickguides/blob/main/cogent-opcua-influxdb/README.md
+
+* Computer Science
+
+https://github.com/spawnmarvel/quickguides/blob/main/computer-science/README.md
 
 ## Releases
 
