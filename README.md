@@ -13,6 +13,11 @@ https://github.com/spawnmarvel/linux-and-azure?tab=readme-ov-file#grep-it
 
 https://www.w3schools.com/bash/bash_commands.php
 
+
+### Zabbix stack
+
+https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/README_stack.md
+
 ### Elatic stack
 
 https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/kibana-elasticsearch-file-beat/README.md
@@ -24,6 +29,10 @@ https://github.com/spawnmarvel/learning-docker
 ## Docker, Azure and DevOps
 
 https://github.com/spawnmarvel/learning-docker/blob/main/README-devops.md
+
+* Ms Learn 47 results for "devops" and "Azure"
+
+https://learn.microsoft.com/en-us/training/browse/?source=learn&terms=devops&products=azure
 
 ## Azure-automation-bicep-and-labs
 
@@ -39,6 +48,10 @@ https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-
 * * Requests and renew certificate
 
 https://github.com/spawnmarvel/quickguides/blob/main/amqp/RequestRenewExample/README.md
+
+* * CSR and Certificate Decoder
+
+https://certlogik.com/decoder
 
 * * Erlang 26
 
