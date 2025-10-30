@@ -1,4 +1,5 @@
 # todo-and-current
+
 Readme with todo-and-current
 
 ## Linux
@@ -57,7 +58,7 @@ https://certlogik.com/decoder
 
 https://github.com/spawnmarvel/quickguides/blob/main/amqp/Readme.md#erlang-26
 
-* Azure Administrator AZ-104
+* Azure Administrator AZ-104 quick guide for repeat
 * bash
 * cogent
 * event hub
@@ -79,5 +80,8 @@ https://github.com/spawnmarvel/quickguides/blob/main/computer-science/README.md
 * https://www.zabbix.com/release_notes
 * https://dev.mysql.com/doc/relnotes/mysql/8.0/en/
 * https://docs.docker.com/tags/release-notes/
+* Az-104 updates
+* * https://learn.microsoft.com/en-us/training/browse/?source=learn&terms=az-104&products=azure
+* 
 
 
