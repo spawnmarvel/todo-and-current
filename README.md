@@ -16,6 +16,21 @@ https://github.com/spawnmarvel/linux-and-azure/tree/main/z-mind-maps
 
 ### Bash tutorial, repeat, repeat and repeat :rocket: :rocket: :rocket:
 
+```bash
+
+ls    #  - List directory contents
+cd    #  - Change the current directory
+pwd   #  - Print the current working directory
+echo  #  - Display a line of text
+cat   #  - Concatenate and display files
+cp    #  - Copy files and directories
+mv    #  - Move or rename files
+rm    #  - Delete files or folders
+touch #  - Create an empty file or update its time
+mkdir #  - Create a new folder
+
+```
+
 https://www.w3schools.com/bash/bash_commands.php
 
 
