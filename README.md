@@ -51,6 +51,11 @@ https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-
 
 * Apache Tomcat and Solr
 
+```code
+Optimization after
+Fix stdout
+```
+
 https://github.com/spawnmarvel/quickguides/blob/main/apache_tomcat_and_solr/README.md
 
 * amqp
