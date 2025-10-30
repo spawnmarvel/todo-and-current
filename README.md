@@ -2,11 +2,11 @@
 
 Readme with todo-and-current
 
-## Linux
+## Linux :hotel:
 
 https://github.com/spawnmarvel/linux-and-azure
 
-### Linux quick guide grep it
+### Linux quick guide grep it :sunrise:
 
 https://github.com/spawnmarvel/linux-and-azure?tab=readme-ov-file#grep-it
 
@@ -15,19 +15,19 @@ https://github.com/spawnmarvel/linux-and-azure?tab=readme-ov-file#grep-it
 https://www.w3schools.com/bash/bash_commands.php
 
 
-### Zabbix stack
+### Zabbix stack :traffic_light:
 
 https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/README_stack.md
 
-### Elatic stack
+### Elatic stack :traffic_light:
 
 https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/kibana-elasticsearch-file-beat/README.md
 
-## Docker
+## Docker :helicopter:
 
 https://github.com/spawnmarvel/learning-docker
 
-## Docker, Azure and DevOps
+## Docker, Azure and DevOps :airplane:
 
 https://github.com/spawnmarvel/learning-docker/blob/main/README-devops.md
 
@@ -35,15 +35,15 @@ https://github.com/spawnmarvel/learning-docker/blob/main/README-devops.md
 
 https://learn.microsoft.com/en-us/training/browse/?source=learn&terms=devops&products=azure
 
-## Azure-automation-bicep-and-labs
+## Azure-automation-bicep-and-labs :muscle:
 
 https://github.com/spawnmarvel/azure-automation-bicep-and-labs
 
-### AZ-104 certified professional must know
+## AZ-104 certified professional must know :sunglasses:
 
 https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-certified-professional
 
-## quickguides
+## quickguides :fire_engine:
 
 * amqp
 * * Requests and renew certificate
@@ -74,7 +74,7 @@ https://github.com/spawnmarvel/quickguides/blob/main/cogent-opcua-influxdb/READM
 
 https://github.com/spawnmarvel/quickguides/blob/main/computer-science/README.md
 
-## Releases
+## Releases :newspaper:
 
 * https://www.rabbitmq.com/release-information
 * https://www.zabbix.com/release_notes
