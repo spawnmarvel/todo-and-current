@@ -1,4 +1,4 @@
-# todo-and-current
+# todo-and-current :seedling:
 
 Readme with todo-and-current
 
@@ -27,7 +27,7 @@ https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/ki
 
 https://github.com/spawnmarvel/learning-docker
 
-## Docker, Azure and DevOps :airplane:
+### Docker, Azure and DevOps :airplane:
 
 https://github.com/spawnmarvel/learning-docker/blob/main/README-devops.md
 
