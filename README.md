@@ -39,7 +39,7 @@ https://learn.microsoft.com/en-us/training/browse/?source=learn&terms=devops&pro
 
 https://github.com/spawnmarvel/azure-automation-bicep-and-labs
 
-## AZ-104 certified professional must know :sunglasses:
+## AZ-104 certified professional must know :sunglasses: :+1: :+1:
 
 https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-certified-professional
 
@@ -74,7 +74,7 @@ https://github.com/spawnmarvel/quickguides/blob/main/cogent-opcua-influxdb/READM
 
 https://github.com/spawnmarvel/quickguides/blob/main/computer-science/README.md
 
-## Releases :newspaper:
+## Releases :newspaper: :exclamation:
 
 * https://www.rabbitmq.com/release-information
 * https://www.zabbix.com/release_notes
