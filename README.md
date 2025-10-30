@@ -10,7 +10,7 @@ https://github.com/spawnmarvel/linux-and-azure
 
 https://github.com/spawnmarvel/linux-and-azure?tab=readme-ov-file#grep-it
 
-### Bash tutorial, repeat, repeat and repeat
+### Bash tutorial, repeat, repeat and repeat :rocket:
 
 https://www.w3schools.com/bash/bash_commands.php
 
