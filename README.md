@@ -1,4 +1,4 @@
-# todo-and-current :seedling:
+# Todo-and-current :seedling:
 
 Readme with todo-and-current
 
