@@ -49,6 +49,10 @@ https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-
 
 ## quickguides :fire_engine:
 
+* Apache Tomcat and Solr
+
+https://github.com/spawnmarvel/quickguides/blob/main/apache_tomcat_and_solr/README.md
+
 * amqp
 * * Requests and renew certificate
 
