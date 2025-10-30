@@ -6,7 +6,7 @@ Readme with todo-and-current
 
 https://github.com/spawnmarvel/linux-and-azure
 
-### Linux quick guide grep it :sunrise:
+### Linux quick guide grep it :steam_locomotive:
 
 https://github.com/spawnmarvel/linux-and-azure?tab=readme-ov-file#grep-it
 
