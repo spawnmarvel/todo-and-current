@@ -38,7 +38,7 @@ Misc
 * * https://github.com/spawnmarvel/t-sql/tree/master/course2_ai
 
 
-## Always
+## Always :repeat:
 
 * dmzwindows07 server run windows updates on it
 * All linux servers, run updates
@@ -129,7 +129,7 @@ https://github.com/spawnmarvel/linux-and-azure?tab=readme-ov-file#grep-it
 
 https://github.com/spawnmarvel/linux-and-azure/tree/main/z-mind-maps
 
-### Bash tutorial, repeat, repeat and repeat :rocket: :rocket: :rocket:
+### Bash tutorial, repeat, repeat and repeat :rocket: :repeat: :rocket:
 
 <details><summary>Commands bash course quick guide</summary>
 <p>
