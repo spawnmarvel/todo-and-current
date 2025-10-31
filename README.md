@@ -61,7 +61,7 @@ Misc
 
 https://github.com/spawnmarvel/linux-and-azure
 
-### Linux quick guide grep it :steam_locomotive:
+### Linux quick guide grep it
 
 <details><summary>Commands bash quick guide self</summary>
 <p>
@@ -139,7 +139,7 @@ no pass
 
 https://github.com/spawnmarvel/linux-and-azure?tab=readme-ov-file#grep-it
 
-### Linux mind maps :steam_locomotive:
+### Linux mind maps
 
 https://github.com/spawnmarvel/linux-and-azure/tree/main/z-mind-maps
 
@@ -176,6 +176,7 @@ https://www.w3schools.com/bash/bash_commands.php
 
 ### Zabbix stack :traffic_light:
 
+Ubuntu.
 
 <details><summary>Academy, stack, templates active passive, tuning, minor, major, etc </summary>
 <p>
@@ -236,27 +237,65 @@ https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/za
 
 ### Elastic stack :traffic_light:
 
+Ubuntu.
 
 https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/kibana-elasticsearch-file-beat/README.md
 
-### RabbitMQ :traffic_light:
+### Grafana Zabbix
+
+Ubuntu.
+
+Play with dasboards and more.
+
+https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm/grafana-zabbix
+
+### RabbitMQ
+
+Ubuntu.
 
 * RabbitMQ ubuntu shovel test new versions mtls = GOTO TBD, TLS amqp05_server.cloud TODO
 
 https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm/rabbitmq-server
 
+### Telegraf
+
+Ubuntu/Windows
+
+* input: file, amqp, disk, cpu
+* output: file, amqp, zabbix
+
+https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm/telegraf
+
+* Docs
+
+https://docs.influxdata.com/telegraf/v1/
+
 ## Docker :helicopter:
+
+Ubuntu.
+
+* 1 Learning-docker
 
 https://github.com/spawnmarvel/learning-docker
 
 ### Docker, Azure and DevOps :airplane:
 
-https://github.com/spawnmarvel/learning-docker/blob/main/README-devops.md
-
-
 * Course AZ-2008-A: DevOps Foundations: The Core Principles and Practices
 
 https://learn.microsoft.com/en-us/training/courses/az-2008
+
+* 2 Azure Devops
+
+https://github.com/spawnmarvel/learning-docker/blob/main/README-devops.md
+
+
+* Run Docker containers on-demand in a managed, serverless Azure environment.
+
+https://learn.microsoft.com/en-us/azure/container-instances/
+
+* Build, store, and manage container images and artifacts in a private registry for all types of container deployments
+
+https://learn.microsoft.com/en-us/azure/container-registry/
 
 
 * Ms Learn 47 results for "devops" and "Azure"
@@ -266,6 +305,11 @@ https://learn.microsoft.com/en-us/training/browse/?source=learn&terms=devops&pro
 ### Docker Solr
 
 https://github.com/spawnmarvel/learning-docker/tree/main/prod-ish/solr
+
+### Docker Elastic stack
+
+* Elasticsearch and Kibana in docker
+* Filebeat on remote vm's
 
 ### Docker RabbitMQ
 
@@ -282,6 +326,8 @@ https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-
 ## quickguides :fire_engine:
 
 * Apache Tomcat and Solr
+
+Ubuntu.
 
 ```code
 Optimization after
@@ -321,16 +367,24 @@ https://github.com/spawnmarvel/quickguides/blob/main/computer-science/README.md
 
 ## Releases :newspaper: :exclamation:
 
-* https://gemini.google/release-notes/
-* https://learn.microsoft.com/en-us/training/browse/?terms=az-104&source=learn&roles=administrator&products=azure&resource_type=learning%20path
-* https://www.rabbitmq.com/release-information
-* https://www.zabbix.com/release_notes
-* https://dev.mysql.com/doc/relnotes/mysql/8.0/en/
-* https://docs.influxdata.com/telegraf/v1/release-notes/
-* https://docs.docker.com/tags/release-notes/
-* https://github.com/spawnmarvel/quickguides/tree/main/cogent-opcua
-* Az-104 updates
-* * https://learn.microsoft.com/en-us/training/browse/?source=learn&terms=az-104&products=azure
+* Releases/Notes/Updates Gemini
+* * https://gemini.google/release-notes/
+* Releases/Notes/Updates Az-104
+* * https://learn.microsoft.com/en-us/training/browse/?terms=az-104&source=learn&roles=administrator&products=azure&resource_type=learning%20path
+* Release/Notes/Updates Zabbix
+* * https://www.zabbix.com/release_notes 
+* Release/Notes/Updates MySql
+* * https://dev.mysql.com/doc/relnotes/mysql/8.0/en/
+* Release/Notes/Updates RabbitMQ
+* * https://www.rabbitmq.com/release-information
+* Release/Notes/Updates Telegraf
+* * https://docs.influxdata.com/telegraf/v1/release-notes/
+* Release/Notes/Updates Docker
+* * https://docs.docker.com/tags/release-notes/
+* Releases/Notes/Updates Aspentech
+* * https://esupport.aspentech.com/apex/S_Homepage
+
+
 
 
 
