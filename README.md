@@ -129,6 +129,12 @@ https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/za
 
 https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/kibana-elasticsearch-file-beat/README.md
 
+### RabbitMQ
+
+* RabbitMQ ubuntu shovel test new versions mtls = GOTO TBD, TLS amqp05_server.cloud TODO
+
+https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm/rabbitmq-server
+
 ## Docker :helicopter:
 
 https://github.com/spawnmarvel/learning-docker
@@ -136,6 +142,12 @@ https://github.com/spawnmarvel/learning-docker
 ### Docker, Azure and DevOps :airplane:
 
 https://github.com/spawnmarvel/learning-docker/blob/main/README-devops.md
+
+
+* Course AZ-2008-A: DevOps Foundations: The Core Principles and Practices
+
+https://learn.microsoft.com/en-us/training/courses/az-2008
+
 
 * Ms Learn 47 results for "devops" and "Azure"
 
