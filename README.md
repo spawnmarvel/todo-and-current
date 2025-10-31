@@ -57,6 +57,8 @@ Misc
 
 ## Linux :hotel:
 
+* UFW, SSH, PS1, Bash quick ref, file system hierarchy, grep, tail, script, env, cron, py
+
 https://github.com/spawnmarvel/linux-and-azure
 
 ### Linux quick guide grep it :steam_locomotive:
