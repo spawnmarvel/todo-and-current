@@ -3,8 +3,9 @@
 - Readme with todo-and-current.
 - Ai as helper, Gemini.
 - "There is no finish line. You simply change courses and keep running."
+- One thing at a time.
 
-## Plan
+## Plan :bell:
 
 * Log monitor Q2 2026 Elastic Stack
 * Docker Basic to DevOps 2025/2026
@@ -250,12 +251,16 @@ https://github.com/spawnmarvel/quickguides/blob/main/computer-science/README.md
 
 ## Releases :newspaper: :exclamation:
 
+* https://gemini.google/release-notes/
+* https://learn.microsoft.com/en-us/training/browse/?terms=az-104&source=learn&roles=administrator&products=azure&resource_type=learning%20path
 * https://www.rabbitmq.com/release-information
 * https://www.zabbix.com/release_notes
 * https://dev.mysql.com/doc/relnotes/mysql/8.0/en/
+* https://docs.influxdata.com/telegraf/v1/release-notes/
 * https://docs.docker.com/tags/release-notes/
+* https://github.com/spawnmarvel/quickguides/tree/main/cogent-opcua
 * Az-104 updates
 * * https://learn.microsoft.com/en-us/training/browse/?source=learn&terms=az-104&products=azure
-* 
+
 
 
