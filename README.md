@@ -4,6 +4,19 @@
 - Ai as helper, Gemini.
 - "There is no finish line. You simply change courses and keep running."
 
+## Plan
+
+* Log monitor Q2 2026 Elastic Stack
+* Docker Basic to DevOps 2025/2026
+* learning-docker dmzdocker0
+* * Work with ElasticStack
+* * Work with Solr
+* Then the AZ-2008, jump to the docker section and do azure container registry and instance.
+Then Github actions-> Github self-hosted runners
+
+Misc
+* Bash Tutorial REPEAT and REPEAT and simple docker
+
 ## Linux :hotel:
 
 https://github.com/spawnmarvel/linux-and-azure
