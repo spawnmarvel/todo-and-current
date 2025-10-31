@@ -7,6 +7,12 @@
 
 ## Plan :bell:
 
+
+<details><summary>Overview of plan</summary>
+<p>
+
+#### We can hide anything, even code!
+
 * Log monitor Q2 2026 Elastic stack
 * Docker Basic to DevOps 2025/2026
 * learning-docker dmzdocker0
@@ -41,6 +47,8 @@ Misc
 * Azure SQL tutorial (Azure Free sql) BikeStores & AdventureWorks
 * * https://github.com/spawnmarvel/t-sql/tree/master/course2_ai
 
+</p>
+</details>
 
 ## Always :repeat:
 
