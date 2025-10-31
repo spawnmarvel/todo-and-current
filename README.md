@@ -17,7 +17,7 @@ https://github.com/spawnmarvel/linux-and-azure/tree/main/z-mind-maps
 
 ### Bash tutorial, repeat, repeat and repeat :rocket: :rocket: :rocket:
 
-<details><summary>Commands bash course</summary>
+<details><summary>Commands bash course quick guide</summary>
 <p>
 
 #### We can hide anything, even code!
