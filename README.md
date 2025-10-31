@@ -177,7 +177,7 @@ https://www.w3schools.com/bash/bash_commands.php
 ### Zabbix stack :traffic_light:
 
 
-<details><summary>Overview of plan</summary>
+<details><summary>Academy, stack, templates active passive, tuning, minor, major, etc </summary>
 <p>
 
 #### We can hide anything, even code!
