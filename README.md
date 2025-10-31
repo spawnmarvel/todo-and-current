@@ -19,9 +19,13 @@ Misc
 
 Misc
 
+* Install Apache Tomcat on dmzwindows07
+* * Host it in IIS
+* Host Python Flask check and tune logs
 * Tomcat Apache logging (fix this 1 out of 3), Solr misc
 * * Apache Tomcat and Solr windows fix logging 1 out of 3, optimization after scan
 * * https://github.com/spawnmarvel/quickguides/tree/main/apache_tomcat_and_solr
+* Upgrade Apache Tomcat 
 * Set up OPC UA, and work more with OPC DA CIMIO / datatech Connect test push
 * * Prosys OPC UA sim, Cogent OPC UA client, InfluxDB, OPC UA expert, db21
 * * https://github.com/spawnmarvel/quickguides/blob/main/cogent-opcua-influxdb/README.md
