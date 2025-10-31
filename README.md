@@ -36,6 +36,12 @@ Misc
 * Azure SQL tutorial (Azure Free sql) BikeStores & AdventureWorks
 * * https://github.com/spawnmarvel/t-sql/tree/master/course2_ai
 
+
+## Always
+
+* dmzwindows07 server run windows updates on it
+* All linux servers, run updates
+
 ## Linux :hotel:
 
 https://github.com/spawnmarvel/linux-and-azure
@@ -154,6 +160,15 @@ https://www.w3schools.com/bash/bash_commands.php
 
 
 ### Zabbix stack :traffic_light:
+
+
+Ubuntu, MySql, PHP:
+* etc/apt/sources.list.d$ cat ubuntu.sources
+* * archive.ubuntu.com (80, 443)
+* * patches for vulnerabilities security.ubuntu.com (80, 443)
+Zabbix:
+* repo.zabbix.com** → whitelist that domain (port 443)
+* * etc/apt/sources.list.d$
 
 https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/README_stack.md
 
