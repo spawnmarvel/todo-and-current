@@ -7,7 +7,7 @@
 
 ## Plan :bell:
 
-* Log monitor Q2 2026 #elastic-stack
+* Log monitor Q2 2026 [Elastic stack]#elastic-stack
 * Docker Basic to DevOps 2025/2026
 * learning-docker dmzdocker0
 * * Work with ElasticStack
