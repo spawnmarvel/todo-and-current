@@ -4,6 +4,7 @@
 - Ai as helper, Gemini.
 - "There is no finish line. You simply change courses and keep running."
 - One thing at a time.
+- “Almost everything will work again if you unplug it for a few minutes, including you.” ― Anne Lamott
 
 ## Plan :bell:
 
