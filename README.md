@@ -201,6 +201,14 @@ https://learn.microsoft.com/en-us/training/courses/az-2008
 
 https://learn.microsoft.com/en-us/training/browse/?source=learn&terms=devops&products=azure
 
+### Docker Solr
+
+https://github.com/spawnmarvel/learning-docker/tree/main/prod-ish/solr
+
+### Docker RabbitMQ
+
+https://github.com/spawnmarvel/learning-docker/blob/main/prod-ish/rmq/rmq-ssl/README.md
+
 ## Azure-automation-bicep-and-labs :muscle:
 
 https://github.com/spawnmarvel/azure-automation-bicep-and-labs
