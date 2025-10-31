@@ -16,8 +16,8 @@
 * Log monitor Q2 2026 Elastic stack
 * Docker Basic to DevOps 2025/2026
 * learning-docker dmzdocker0
-* * Work with ElasticStack
-* * Work with Solr
+* * Work with ElasticStack on Ubuntu and Docker
+* * Work with Solr in Docker
 * Then the AZ-2008, jump to the docker section and do azure container registry and instance.
 Then Github actions-> Github self-hosted runners
 Misc
@@ -38,7 +38,7 @@ Misc
 * More IP21, repos, cache, sort tags in folders, cmh files for guides
 * * Quick start and Administration tools
 * Zabbix
-* * Do more below and check v 7
+* * Do more Zabix on Ubuntu below and check v 7
 * SNMP
 * * Telegraph SNMP
 * * https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/telegraf/README_telegraf_snmp.md
@@ -175,6 +175,50 @@ https://www.w3schools.com/bash/bash_commands.php
 ### Zabbix stack :traffic_light:
 
 
+<details><summary>Overview of plan</summary>
+<p>
+
+#### We can hide anything, even code!
+
+Zabbix Academy
+
+* https://academy.zabbix.com/courses
+
+
+* Zabbix blog
+
+https://blog.zabbix.com/
+
+* Zabbix Stack
+
+https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/README_stack.md
+
+* Zabbix Tuning
+
+https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/README_tuning.md
+
+* Zabbix Templates, active passiv
+
+https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/templates/README_templates.md
+
+* Zabbix User parameter advanced
+
+https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/README_stack.md#user-parameter-advanced
+
+* Zabbix minor upgrade
+
+https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/README_upgrade_zabbix_host_one.md
+
+* Zabbix major upgrade
+
+https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/README_upgrade_zabbix_major.md
+
+* Zabbix SSL
+
+https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/README_https_zabbix.md
+
+APT sources out
+
 Ubuntu, MySql, PHP:
 * etc/apt/sources.list.d$ cat ubuntu.sources
 * * archive.ubuntu.com (80, 443)
@@ -182,6 +226,9 @@ Ubuntu, MySql, PHP:
 Zabbix:
 * repo.zabbix.com** → whitelist that domain (port 443)
 * * etc/apt/sources.list.d$
+
+</p>
+</details>
 
 https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/README_stack.md
 
