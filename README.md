@@ -6,6 +6,10 @@
 - One thing at a time.
 - “Almost everything will work again if you unplug it for a few minutes, including you.” ― Anne Lamott
 
+## Parked e-lo
+
+https://follow-e-lo.com/
+
 ## Plan :bell:
 
 
@@ -55,6 +59,10 @@ Misc
 
 * dmzwindows07 server run windows updates on it
 * All linux servers, run updates
+
+## Network advanced tutorial and checklist
+
+https://follow-e-lo.com/network-and-netsh/
 
 ## Linux :hotel:
 
