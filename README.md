@@ -1,6 +1,7 @@
 # Todo-and-current :seedling:
 
-Readme with todo-and-current
+Readme with todo-and-current.
+Ai as helper, Gemini.
 
 ## Linux :hotel:
 
