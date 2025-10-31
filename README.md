@@ -177,7 +177,8 @@ Zabbix:
 
 https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/README_stack.md
 
-### Elatic stack :traffic_light:
+### Elastic stack :traffic_light:
+
 
 https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/kibana-elasticsearch-file-beat/README.md
 
