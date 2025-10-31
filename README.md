@@ -13,9 +13,28 @@
 * * Work with Solr
 * Then the AZ-2008, jump to the docker section and do azure container registry and instance.
 Then Github actions-> Github self-hosted runners
-
 Misc
 * Bash Tutorial REPEAT and REPEAT and simple docker
+
+Misc
+
+* Tomcat Apache logging (fix this 1 out of 3), Solr misc
+* * Apache Tomcat and Solr windows fix logging 1 out of 3, optimization after scan
+* * https://github.com/spawnmarvel/quickguides/tree/main/apache_tomcat_and_solr
+* Set up OPC UA, and work more with OPC DA CIMIO / datatech Connect test push
+* * Prosys OPC UA sim, Cogent OPC UA client, InfluxDB, OPC UA expert, db21
+* * https://github.com/spawnmarvel/quickguides/blob/main/cogent-opcua-influxdb/README.md
+* More IP21, repos, cache, sort tags in folders, cmh files for guides
+* * Quick start and Administration tools
+* Zabbix
+* * Do more below and check v 7
+* SNMP
+* * Telegraph SNMP
+* * https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/telegraf/README_telegraf_snmp.md
+* Do more Oracle Database Express Edition (XE) 21c CRUD and password
+* * https://github.com/spawnmarvel/quickguides/blob/main/oracle/README.md
+* Azure SQL tutorial (Azure Free sql) BikeStores & AdventureWorks
+* * https://github.com/spawnmarvel/t-sql/tree/master/course2_ai
 
 ## Linux :hotel:
 
