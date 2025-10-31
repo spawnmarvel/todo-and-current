@@ -2,12 +2,87 @@
 
 - Readme with todo-and-current.
 - Ai as helper, Gemini.
+- "There is no finish line. You simply change courses and keep running."
 
 ## Linux :hotel:
 
 https://github.com/spawnmarvel/linux-and-azure
 
 ### Linux quick guide grep it :steam_locomotive:
+
+<details><summary>Commands bash quick guide self</summary>
+<p>
+
+#### We can hide anything, even code!
+```bash
+
+sudo apt update -y
+sudo apt list –upgradable
+sudo apt upgrade -y
+sudo apt list --installed | grep -i 'influx*'
+sudo apt search 'influxdb'
+
+sudo apt update -y
+sudo apt install snmp
+which snmp
+sudo apt remove install snmp
+history
+
+dpkg # is the underlying package manager for these ubuntu.
+tail -f zabbix_server.logs
+
+sudo grep '*failed*' /var/log/zabbix/zabbix_server.log
+sudo tail -f /var/log/zabbix/zabbix_server.log >> tmp_logs
+sudo find /var/log -name "*log"
+
+ss -ltn
+ss -ant 'sport = :10050'
+htop
+top
+df -lh
+ls -lhS
+
+nano demo.sh # https://kodekloud.com/blog/make-bash-script-file-executable-linux/
+
+#!/bin/bash
+echo "Hello World!"
+
+# r = read, w = write, x = execute, - = is not granted
+ls -l demo.sh
+
+# u = user (owner), + = add, x = execute
+chmod u+x demo.sh
+# or octal, 744. user (u) has read (4), write (2), and execute (1) permissions (adding up to 7)
+# and the group (g) and others (o) have only read permissions (4).
+chmod 744 demo.sh
+
+# run
+./demo.sh 
+
+# List all users
+cat /etc/passwd
+
+ssh-keygen -t rsa -b 4096
+#Private: Your identification has been saved in C:\Users\username/.ssh/id_rsa
+#Copy this:Your public key has been saved in C:\Users\username/.ssh/id_rsa.pub
+
+ssh-rsa#################################################
+
+# ssh to ubuntu
+mkdir -p ~/.ssh
+chmod 700 ~/.ssh
+
+touch ~/.ssh/authorized_keys
+sudo nano ~/.ssh/authorized_keys
+# paste the full ssh-rsa
+
+exit
+ssh imsdal@192.168.3.7
+no pass
+
+```
+</p>
+</details>
 
 https://github.com/spawnmarvel/linux-and-azure?tab=readme-ov-file#grep-it
 
