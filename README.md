@@ -7,7 +7,7 @@
 
 ## Plan :bell:
 
-* Log monitor Q2 2026 Elastic Stack
+* Log monitor Q2 2026 #elastic-stack
 * Docker Basic to DevOps 2025/2026
 * learning-docker dmzdocker0
 * * Work with ElasticStack
@@ -181,7 +181,7 @@ https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/za
 
 https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/kibana-elasticsearch-file-beat/README.md
 
-### RabbitMQ
+### RabbitMQ :traffic_light:
 
 * RabbitMQ ubuntu shovel test new versions mtls = GOTO TBD, TLS amqp05_server.cloud TODO
 
