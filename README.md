@@ -30,12 +30,7 @@ Misc
 
 Misc
 
-* Install Apache Tomcat on dmzwindows07
-* * Host it in IIS
-* Host Python Flask check and tune logs
-* Tomcat Apache logging (fix this 1 out of 3), Solr misc
-* * Apache Tomcat and Solr windows fix logging 1 out of 3, optimization after scan
-* * https://github.com/spawnmarvel/quickguides/tree/main/apache_tomcat_and_solr
+* Apache Tomcat (solr) windows
 * Upgrade Apache Tomcat 
 * Set up OPC UA, and work more with OPC DA CIMIO / datatech Connect test push
 * * Prosys OPC UA sim, Cogent OPC UA client, InfluxDB, OPC UA expert, db21
@@ -182,6 +177,32 @@ mkdir #  - Create a new folder
 
 https://www.w3schools.com/bash/bash_commands.php
 
+
+## Apache Tomcat (Solr) 
+
+Windows.
+
+Install java, apache tomcat, flask app, learn logs, install solr, upgrade apache.
+
+<details><summary>Overview of plan</summary>
+<p>
+
+#### We can hide anything, even code!
+
+* Install Apache Tomcat on dmzwindows07
+* Host Python Flask check and tune logs
+* Tomcat Apache logging, python log to stdout in apache
+* Fix log levels and log size of apache
+
+* (fix this 1 out of 3)
+* Install solr, and try to applie same fix, use python to send to updatehandler for solr.
+* * Apache Tomcat and Solr windows fix logging 1 out of 3, optimization after scan
+* Upgrade Apache Tomcat 
+
+</p>
+</details>
+
+https://github.com/spawnmarvel/quickguides/tree/main/apache_tomcat_and_solr
 
 ### Zabbix stack :traffic_light:
 
