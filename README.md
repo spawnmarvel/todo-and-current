@@ -30,7 +30,7 @@ Misc
 
 Misc
 
-* Apache Tomcat (solr) windows
+* Apache Tomcat, python (solr) windows
 * Upgrade Apache Tomcat 
 * Set up OPC UA, and work more with OPC DA CIMIO / datatech Connect test push
 * * Prosys OPC UA sim, Cogent OPC UA client, InfluxDB, OPC UA expert, db21
