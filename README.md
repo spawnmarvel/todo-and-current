@@ -10,6 +10,11 @@
 
 https://follow-e-lo.com/
 
+## Scripting
+
+* SQL*, Python, Bash*, Powershell
+
+
 ## Plan :bell:
 
 
