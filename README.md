@@ -7,9 +7,9 @@
 - “Almost everything will work again if you unplug it for a few minutes, including you.” ― Anne Lamott
 
 |---|---|---|
-| Shu | 守 (Protect/Obey) | Imitate the Master |
-| Ha | 破 (Detach/Break) | Adapt and Experiment |
-| Ri | 離 (Leave/Transcend) | Intuitive Creation |
+| Shu |(Protect/Obey) | Imitate the Master |
+| Ha | (Detach/Break) | Adapt and Experiment |
+| Ri | (Leave/Transcend) | Intuitive Creation |
 
 ## Parked e-lo
 
