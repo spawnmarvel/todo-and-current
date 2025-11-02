@@ -154,6 +154,25 @@ https://github.com/spawnmarvel/linux-and-azure/tree/main/z-mind-maps
 
 ### Bash tutorial, repeat, repeat and repeat :rocket: :repeat: :rocket:
 
+
+<details><summary>Update and upgrade</summary>
+<p>
+
+#### We can hide anything, even code!
+```bash
+
+sudo apt update -y         # - Update apt/sources
+sudo apt list --upgradable # - List possible upgrades
+sudo apt upgrade -y        # - Do upgrade
+
+cd /etc/apt/               # - View apt sources list*
+ls -lh
+
+
+```
+</p>
+</details>
+
 <details><summary>Basic Commands</summary>
 <p>
 
