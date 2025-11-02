@@ -253,7 +253,7 @@ cat data.txt
 1;espen;45
 2;silje;44
 
-wk -F";" '{print $1}' data.txt                     # Field Separator
+wk -F";" '{print $1}' data.txt                      # Field Separator
 1
 2
 
