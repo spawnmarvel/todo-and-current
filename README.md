@@ -186,6 +186,10 @@ mkdir #  - Create a new folder
 #### We can hide anything, even code!
 ```bash
 
+grep   # 'pattern' filename
+grep -i 'search_term' file.txt                # Search ignoring case differences (uppercase or lowercase)
+grep -r 'search_term' /home/user/my_directory # Search through all files in a directory and its subdirectories
+grep -v 'search_term' file.txt                # Find lines that do not match the pattern
 
 ```
 </p>
