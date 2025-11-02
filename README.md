@@ -1,10 +1,6 @@
 # Todo-and-current :seedling:
 
-- Readme with todo-and-current.
-- Ai as helper, Gemini.
-- "There is no finish line. You simply change courses and keep running."
-- One thing at a time.
-- “Almost everything will work again if you unplug it for a few minutes, including you.” ― Anne Lamott
+- Readme with todo-and-current, Ai as helper, Gemini.
 
 Shuhari model: for bash in this case
 
@@ -16,7 +12,7 @@ Shuhari model: for bash in this case
 
 Applying Shu-Ha-Ri for Accelerated Learning :dragon:
 
-* Strictly follow one proven method (e.g., one tutorial, one recipe, one set of rules) without deviation or questioning. Focus on imitation and repetition to build unconscious competence (muscle memory/system familiarity).
+* Strictly follow ***one*** proven method (e.g., one tutorial, one recipe, one set of rules) without deviation or questioning. Focus on imitation and repetition to build unconscious competence (muscle memory/system familiarity).
 * Actively experiment by testing the boundaries of the rules and integrating knowledge from other sources. Ask "Why?" to understand the underlying principles and trade-offs.
 * Create your own unique methods and solutions, acting on instinct and deep, internalized knowledge. Teach the skill to others to solidify your mastery.
 
