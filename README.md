@@ -154,7 +154,7 @@ https://github.com/spawnmarvel/linux-and-azure/tree/main/z-mind-maps
 
 ### Bash tutorial, repeat, repeat and repeat :rocket: :repeat: :rocket:
 
-<details><summary>Update and upgrade</summary>
+<details><summary>Update and upgrade / apt install </summary>
 <p>
 
 #### We can hide anything, even code!
@@ -166,7 +166,22 @@ sudo apt upgrade -y        # - Do upgrade
 
 cd /etc/apt/               # - View apt sources list*
 ls -lh
+ubuntu.sources 
 
+# lets install zabix agent2
+# https://www.zabbix.com/download?zabbix=7.0&os_distribution=ubuntu&os_version=24.04&components=agent_2&db=&ws=
+
+wget https://repo.zabbix.com/zabbix/7.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_latest_7.0+ubuntu24.04_all.deb # Get pack
+
+sudo dpkg -i zabbix-release_latest_7.0+ubuntu24.04_all.deb # -i install
+
+sudo apt update -y
+
+cd /etc/apt/sources.list.d
+ls -lh
+ubuntu.sources  zabbix-tools.list  zabbix.list
+
+sudo apt install zabbix-agent2      # Install agent
 
 ```
 </p>
@@ -204,6 +219,9 @@ mkdir #  - Create a new folder
 #### We can hide anything, even code!
 ```bash
 
+# The grep command is used to search for text patterns within files.
+# It's a powerful way to find specific text in large files or across many files.
+
 grep   # 'pattern' filename
 grep -i 'search_term' file.txt                # Search ignoring case differences (uppercase or lowercase)
 grep -r 'search_term' /home/user/my_directory # Search through all files in a directory and its subdirectories
@@ -215,9 +233,36 @@ grep -v 'search_term' file.txt                # Find lines that do not match the
 
 grep -i 'error' syslog                         # Match contains error
 grep -i 'heartbeat.*error' syslog              # Match contains heartbeat followed by any char, then error
-                  
 
+cd /etc/zabbix/                     # Find the log file
+cat cat zabbix_agent2.conf
 
+cd /var/log/zabbix
+
+grep 'fail' zabbix_agent2.log       # Find all with fail
+grep 'version' zabbix_agent2.log    # Find the version  
+
+# The awk command is used for pattern scanning and processing language.
+# It's useful for handling text files and used for data extraction and reporting.
+
+# -F - Set what separates the data fields
+# -v - Set a variable to be used in the script
+# -f - Use a file as the source of the awk program
+
+cat data.txt
+1;espen;45
+2;silje;44
+
+wk -F";" '{print $1}' data.txt                     # Field Separator
+1
+2
+
+awk -F";" -v var="Name:" '{print var, $2}' data.txt # Assign Variable
+Name: espen
+Name: silje
+
+awk -F";" '{sum += $3} END {print sum}' data.txt    # Data Manipulation
+89
 
 ```
 </p>
