@@ -154,7 +154,7 @@ https://github.com/spawnmarvel/linux-and-azure/tree/main/z-mind-maps
 
 ### Bash tutorial, repeat, repeat and repeat :rocket: :repeat: :rocket:
 
-<details><summary>Commands bash course quick guide</summary>
+<details><summary>Basic Commands</summary>
 <p>
 
 #### We can hide anything, even code!
@@ -175,6 +175,83 @@ mv    #  - Move or rename files
 rm    #  - Delete files or folders
 touch #  - Create an empty file or update its time
 mkdir #  - Create a new folder
+
+```
+</p>
+</details>
+
+<details><summary>Text Processing</summary>
+<p>
+
+#### We can hide anything, even code!
+```bash
+
+
+```
+</p>
+</details>
+
+<details><summary>System Monitoring</summary>
+<p>
+
+#### We can hide anything, even code!
+```bash
+
+
+```
+</p>
+</details>
+
+<details><summary>Networking</summary>
+<p>
+
+#### We can hide anything, even code!
+```bash
+
+
+```
+</p>
+</details>
+
+<details><summary>File Compression</summary>
+<p>
+
+#### We can hide anything, even code!
+```bash
+
+
+```
+</p>
+</details>
+
+<details><summary>File Permissions</summary>
+<p>
+
+#### We can hide anything, even code!
+```bash
+
+
+```
+</p>
+</details>
+
+<details><summary>Scripting</summary>
+<p>
+
+#### We can hide anything, even code!
+```bash
+
+
+```
+</p>
+</details>
+
+<details><summary>Exercises and Quiz</summary>
+<p>
+
+#### We can hide anything, even code!
+```bash
+
 
 ```
 </p>
