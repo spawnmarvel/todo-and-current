@@ -11,6 +11,12 @@
 | Ha | (Detach/Break) | Adapt and Experiment |
 | Ri | (Leave/Transcend) | Intuitive Creation |
 
+| Stage  | Kanji/meaning  | Phrase |
+| ------------- | ------------- |---------------- |
+| Shu  | Protect/obey    | Imitate the master     | 
+| Ha   | Detach/break    | Adapt and experiment   |
+| Ri   | Leave/transcend | Inuitive creation      |
+
 ## Parked e-lo
 
 https://follow-e-lo.com/
