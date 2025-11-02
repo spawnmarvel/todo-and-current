@@ -154,7 +154,6 @@ https://github.com/spawnmarvel/linux-and-azure/tree/main/z-mind-maps
 
 ### Bash tutorial, repeat, repeat and repeat :rocket: :repeat: :rocket:
 
-
 <details><summary>Update and upgrade</summary>
 <p>
 
@@ -233,6 +232,10 @@ grep -v 'search_term' file.txt                # Find lines that do not match the
 
 
 ```
+* UFW, or Uncomplicated Firewal
+
+https://github.com/spawnmarvel/linux-and-azure/tree/main/ufw-firewall
+
 </p>
 </details>
 
