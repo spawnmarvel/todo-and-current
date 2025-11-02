@@ -6,6 +6,11 @@
 - One thing at a time.
 - “Almost everything will work again if you unplug it for a few minutes, including you.” ― Anne Lamott
 
+|---|---|---|
+| Shu | 守 (Protect/Obey) | Imitate the Master |
+| Ha | 破 (Detach/Break) | Adapt and Experiment |
+| Ri | 離 (Leave/Transcend) | Intuitive Creation |
+
 ## Parked e-lo
 
 https://follow-e-lo.com/
