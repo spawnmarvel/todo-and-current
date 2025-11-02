@@ -12,9 +12,9 @@ Shuhari model: for bash in this case
 
 Applying Shu-Ha-Ri for Accelerated Learning :dragon:
 
-* Strictly follow <h2>one</h2> proven method (e.g., one tutorial, one recipe, one set of rules) without deviation or questioning. Focus on imitation and repetition to build unconscious competence (muscle memory/system familiarity).
-* Actively experiment by testing the boundaries of the rules and integrating knowledge from other sources. Ask "Why?" to understand the underlying principles and trade-offs.
-* Create your own unique methods and solutions, acting on instinct and deep, internalized knowledge. Teach the skill to others to solidify your mastery.
+* Strictly follow ***one proven method (e.g., one tutorial, one recipe, one set of rules)*** without deviation or questioning. Focus on imitation and repetition to build unconscious competence (muscle memory/system familiarity).
+* Actively experiment by testing the boundaries of the rules and integrating knowledge from other sources. ***Ask "Why?" to understand the underlying principles and trade-offs.***
+* Create your own unique methods and solutions, acting on instinct and deep, ***internalized knowledge.*** Teach the skill to others to solidify your mastery.
 
 ## Parked e-lo
 
