@@ -224,7 +224,7 @@ grep -v 'search_term' file.txt                # Find lines that do not match the
 </p>
 </details>
 
-<details><summary>Networking</summary>
+<details><summary>Networking / UFW</summary>
 <p>
 
 #### We can hide anything, even code!
