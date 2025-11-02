@@ -209,6 +209,16 @@ grep -i 'search_term' file.txt                # Search ignoring case differences
 grep -r 'search_term' /home/user/my_directory # Search through all files in a directory and its subdirectories
 grep -v 'search_term' file.txt                # Find lines that do not match the pattern
 
+# Dot (.): Matches any single character (except a newline).
+# Asterisk (*): Matches zero or more occurrences of the preceding character or regular expression.
+# To match any sequence of characters (similar to the shell's * wildcard), you combine . and *
+
+grep -i 'error' syslog                         # Match contains error
+grep -i 'heartbeat.*error' syslog              # Match contains heartbeat followed by any char, then error
+                  
+
+
+
 ```
 </p>
 </details>
