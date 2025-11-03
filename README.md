@@ -16,6 +16,11 @@ Applying Shu-Ha-Ri for Accelerated Learning :dragon:
 * Actively experiment by testing the boundaries of the rules and integrating knowledge from other sources. ***Ask "Why?" to understand the underlying principles and trade-offs.***
 * Create your own unique methods and solutions, acting on instinct and deep, ***internalized knowledge.*** Teach the skill to others to solidify your mastery.
 
+The 2,3,5,7 revision method
+
+Day 2 and day 3 are revision days of the learning achieved on Day 1. Day 4 is a rest day, while Day 5 you re-visit the work. Day 6 is another rest day, and finally Day 7 is your last re-visit opportunity before you write your exam.
+
+
 ## Parked e-lo
 
 https://follow-e-lo.com/
