@@ -6,7 +6,7 @@ Shuhari model: for bash in this case
 
 | Stage | Kanji/meaning  | Phrase                                      |
 | ------| -------------- |-------------------------------------------- |
-| Shu   | Obey           | Follow examples exactly.                    | 
+| Shu   | Obey           | Follow examples exactly and repeat x 3      | 
 | Ha    | Break          | Adapt scripts and explore alternatives.     |
 | Ri    | Separate       | Create your own unique, efficient solutions |
 
