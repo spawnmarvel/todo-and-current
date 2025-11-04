@@ -51,18 +51,26 @@ https://follow-e-lo.com/
 
 #### We can hide anything, even code!
 
+* Bash Tutorial REPEAT and REPEAT and simple docker
+* Update the quick guide with chapters
+
+--- 
+
 * Log monitor Q2 2026 Elastic stack
+
+--
 
 * Docker Basic to DevOps 2025/2026
 * learning-docker dmzdocker0
 * * Work with ElasticStack on Ubuntu and Docker
 * * Work with Solr in Docker
 
+---
+
 * Then the AZ-2008, jump to the docker section and do azure container registry and instance.
 Then Github actions-> Github self-hosted runners
 
-Misc
-* Bash Tutorial REPEAT and REPEAT and simple docker
+---
 
 Misc
 
@@ -72,22 +80,34 @@ Misc
 
 * Upgrade Apache Tomcat 
 
+---
+
 * Set up OPC UA, and work more with OPC DA CIMIO / datatech Connect test push
 * * Prosys OPC UA sim, Cogent OPC UA client, InfluxDB, OPC UA expert, db21
 * * https://github.com/spawnmarvel/quickguides/blob/main/cogent-opcua-influxdb/README.md
 
+---
+
 * More IP21, repos, cache, sort tags in folders, cmh files for guides
 * * Quick start and Administration tools
 
+---
+
 * Zabbix
 * * Do more Zabix on Ubuntu below and check v 7
+
+---
 
 * SNMP
 * * Telegraph SNMP
 * * https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/telegraf/README_telegraf_snmp.md
 
+---
+
 * Do more Oracle Database Express Edition (XE) 21c CRUD and password
 * * https://github.com/spawnmarvel/quickguides/blob/main/oracle/README.md
+
+----
 
 * Azure SQL tutorial (Azure Free sql) BikeStores & AdventureWorks
 * * https://github.com/spawnmarvel/t-sql/tree/master/course2_ai
