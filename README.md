@@ -49,7 +49,7 @@ https://follow-e-lo.com/
 <details><summary>Overview of plan</summary>
 <p>
 
-#### We can hide anything, even code!
+#### Plan!
 
 * Bash Tutorial REPEAT and REPEAT and simple docker
 * Update the quick guide with chapters
