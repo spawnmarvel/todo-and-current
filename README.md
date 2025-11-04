@@ -58,7 +58,7 @@ https://follow-e-lo.com/
 
 * Log monitor Q2 2026 Elastic stack
 
---
+---
 
 * Docker Basic to DevOps 2025/2026
 * learning-docker dmzdocker0
