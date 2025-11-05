@@ -60,6 +60,13 @@ https://follow-e-lo.com/
 
 ---
 
+
+* Zabbix
+* * Do more Zabix on Ubuntu below and check v 7
+* Zabbix offline, first simple software offline, NSG only vnet outbund.
+
+---
+
 * Docker Basic to DevOps 2025/2026
 * learning-docker dmzdocker0
 * * Work with ElasticStack on Ubuntu and Docker
@@ -90,11 +97,6 @@ Misc
 
 * More IP21, repos, cache, sort tags in folders, cmh files for guides
 * * Quick start and Administration tools
-
----
-
-* Zabbix
-* * Do more Zabix on Ubuntu below and check v 7
 
 ---
 
