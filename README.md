@@ -60,10 +60,10 @@ https://follow-e-lo.com/
 
 ---
 
-
 * Zabbix
 * * Do more Zabix on Ubuntu below and check v 7
 * Zabbix offline, first simple software offline, NSG only vnet outbund.
+* Go to linux repos\zabbix\readme offline
 
 ---
 
