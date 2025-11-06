@@ -72,7 +72,7 @@ https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-
 <p>
 
 
-#Plan Misc!
+Plan Misc!
 
 * Bash Tutorial REPEAT and REPEAT and simple docker
 * Update the quick guide with chapters
