@@ -527,7 +527,7 @@ https://www.w3schools.com/bash/bash_commands.php
 
 Windows.
 
-Install java, apache tomcat, flask app, learn logs, install solr, upgrade apache.
+Install java, apache tomcat, learn logs, install solr, upgrade apache.
 
 <details><summary>Overview of plan</summary>
 <p>
@@ -535,12 +535,10 @@ Install java, apache tomcat, flask app, learn logs, install solr, upgrade apache
 #### We can hide anything, even code!
 
 * Install Apache Tomcat on dmzwindows07
-* Host Python Flask check and tune logs
-* Tomcat Apache logging, python log to stdout in apache
 * Fix log levels and log size of apache
 
 * (fix this 1 out of 3)
-* Install solr, and try to applie same fix, use python to send to updatehandler for solr.
+* Install solr
 * * Apache Tomcat and Solr windows fix logging 1 out of 3, optimization after scan
 * Upgrade Apache Tomcat 
 
