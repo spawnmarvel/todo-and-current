@@ -50,13 +50,13 @@ https://follow-e-lo.com/
 
 #### We can hide anything, even code!
 
-* Bash tutorial
-* Docker repeat, not install more on linux use docker, you can but not make gitpages of it
+* Bash tutorial :arrow_down:
+* Docker repeat, not install more on linux use docker, you can but not make gitpages of it :arrow_down:
 * Course AZ-2008-A: DevOps Foundations: The Core Principles and Practices
 
 https://learn.microsoft.com/en-us/training/courses/az-2008
 
-* AZ-104 certified professional must know, fill the gaps here
+* AZ-104 certified professional must know, fill the gaps here (network, monitor, web apps)
 * Think automation and custom script extensions for Azure pipelines, docker etc
 
 https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-certified-professional
