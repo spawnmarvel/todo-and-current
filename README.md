@@ -305,8 +305,8 @@ mkdir #  - Create a new folder
 #### We can hide anything, even code!
 ```bash
 
-# The grep command is used to search for text patterns within files.
-# It's a powerful way to find specific text in large files or across many files.
+man grep
+#  grep, egrep, fgrep, rgrep - print lines that match patterns
 
 grep   # 'pattern' filename
 grep -i 'search_term' file.txt                # Search ignoring case differences (uppercase or lowercase)
@@ -328,8 +328,8 @@ cd /var/log/zabbix
 grep 'fail' zabbix_agent2.log       # Find all with fail
 grep 'version' zabbix_agent2.log    # Find the version  
 
-# The awk command is used for pattern scanning and processing language.
-# It's useful for handling text files and used for data extraction and reporting.
+man awk
+# gawk - pattern scanning and processing language
 
 # -F - Set what separates the data fields
 # -v - Set a variable to be used in the script
@@ -339,7 +339,7 @@ cat data.txt
 1;espen;45
 2;silje;44
 
-wk -F";" '{print $1}' data.txt                      # Field Separator
+awk -F";" '{print $1}' data.txt                      # Field Separator
 1
 2
 
@@ -350,6 +350,99 @@ Name: silje
 awk -F";" '{sum += $3} END {print sum}' data.txt    # Data Manipulation
 89
 
+
+# sed 's/old/new/' filename
+man sed
+# sed - stream editor for filtering and transforming text
+
+# -i - Edit files directly without needing to save separately
+# -e - Add the script to the commands to be executed
+# -n - Don't automatically print lines
+# -r - Use extended regular expressions
+# -f - Add script from a file
+# -l - Specify line length for l command
+# -g - The optional g flag stands for global (substitute all occurrences on a line, not just the first one).
+
+cat data.txt
+1;espen;45
+2;silje;44
+
+sed 's/espen/jim/' data.txt
+1;jim;45
+2;silje;44
+
+sed -i 's/espen/jim/' data.txt
+
+cat data.txt
+1;jim;45
+2;silje;44
+
+cat example.json
+{
+  "firstName": "espen",
+  "lastName": "withman",
+  "location": "earth",
+  "online": true,
+  "followers": 987
+}
+
+sed -i 's/espen/roger/g' example.json
+
+cat example.json
+{
+  "firstName": "roger",
+  "lastName": "withman",
+  "location": "earth",
+  "online": true,
+  "followers": 987
+}
+
+# Redirect Output to a File
+sed 's/roger/tim/' example.json > new_example.json
+
+#  cut - remove sections from each line of files
+man cut
+
+# -d - Choose what separates the fields
+# -f - Select specific fields to display
+# --complement - Show all fields except the selected ones
+
+cat data.txt
+1;jim;45
+2;silje;44
+
+cut -f1 -d';' data.txt
+1
+2
+
+# The -f option allows you to select specific fields to display.
+cut -f1-2 -d';' data.txt
+1;jim
+2;silje
+
+#  sort - sort lines of text files
+man sort
+
+#  tail - output the last part of files
+man tail
+
+# -n [number]: Display the last [number] lines of the file.
+# -f: Follow the file as it grows, useful for monitoring log files.
+
+tail -f /var/log/syslog
+
+tail -n 2 /var/log/syslog
+
+# head - output the first part of files
+man head
+
+# -n [number]: Display the last [number] lines of the file.
+
+# Display First 10 Lines
+head /var/log/syslog
+
+head -n 2 /var/log/syslog
+
 ```
 </p>
 </details>
@@ -359,6 +452,9 @@ awk -F";" '{sum += $3} END {print sum}' data.txt    # Data Manipulation
 
 #### We can hide anything, even code!
 ```bash
+
+#  ps - report a snapshot of the current processes.
+man ps
 
 
 ```
