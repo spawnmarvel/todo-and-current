@@ -41,6 +41,28 @@ https://follow-e-lo.com/
 ## Scripting
 
 * SQL*, Python, Bash*, Powershell
+* Think automation, idempotent .ps1, .sh
+* Course AZ-2008-A: DevOps Foundations: The Core Principles and Practices
+
+https://learn.microsoft.com/en-us/training/courses/az-2008
+
+* AZ-104 certified professional must know, fill the gaps here
+* Think automation and custom script extensions for Azure pipelines, docker etc
+
+https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-certified-professional
+
+## Plan!
+
+<details><summary>Main plan</summary>
+<p>
+
+#### We can hide anything, even code!
+
+* Bash tutorial
+* Docker repeat, not install more on limux use docker
+
+</p>
+</details>
 
 
 ## Plan :bell:
@@ -49,7 +71,8 @@ https://follow-e-lo.com/
 <details><summary>Overview of plan</summary>
 <p>
 
-#### Plan!
+
+#### Plan Misc!
 
 * Bash Tutorial REPEAT and REPEAT and simple docker
 * Update the quick guide with chapters
