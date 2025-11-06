@@ -42,6 +42,16 @@ https://follow-e-lo.com/
 
 * SQL*, Python, Bash*, Powershell
 * Think automation, idempotent .ps1, .sh
+
+## Plan! :bell: :bell:
+
+<details><summary>Main plan overview</summary>
+<p>
+
+#### We can hide anything, even code!
+
+* Bash tutorial
+* Docker repeat, not install more on linux use docker, you can but not make gitpages of it
 * Course AZ-2008-A: DevOps Foundations: The Core Principles and Practices
 
 https://learn.microsoft.com/en-us/training/courses/az-2008
@@ -51,28 +61,18 @@ https://learn.microsoft.com/en-us/training/courses/az-2008
 
 https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-certified-professional
 
-## Plan!
-
-<details><summary>Main plan</summary>
-<p>
-
-#### We can hide anything, even code!
-
-* Bash tutorial
-* Docker repeat, not install more on limux use docker
-
 </p>
 </details>
 
 
-## Plan :bell:
+## Plan misc :bell:
 
 
-<details><summary>Overview of plan</summary>
+<details><summary>Plan misc overview</summary>
 <p>
 
 
-#### Plan Misc!
+#Plan Misc!
 
 * Bash Tutorial REPEAT and REPEAT and simple docker
 * Update the quick guide with chapters
