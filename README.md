@@ -50,7 +50,7 @@ https://follow-e-lo.com/
 
 #### We can hide anything, even code!
 
-* Bash tutorial :arrow_down:
+* Bash tutorial, REPEAT and REPEAT:arrow_down:
 * apt offline/ mysql
 * Docker repeat, not install more on linux use docker, you can but not make gitpages of it :arrow_down:
 * Course AZ-2008-A: DevOps Foundations: The Core Principles and Practices
@@ -61,6 +61,8 @@ https://learn.microsoft.com/en-us/training/courses/az-2008
 * Think automation and custom script extensions for Azure pipelines, docker etc
 
 https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-certified-professional
+
+* IP21, CIMIO, REPEAT and REPEAT
 
 </p>
 </details>
