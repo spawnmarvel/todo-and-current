@@ -80,10 +80,10 @@ https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-
 </details>
 
 
-### Plan misc
+### Plan misc :arrow_up:
 
 
-<details><summary>Plan misc overview</summary>
+<details><summary>Plan misc overview do you really have time?</summary>
 <p>
 
 
