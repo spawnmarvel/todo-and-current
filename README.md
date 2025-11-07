@@ -53,12 +53,12 @@ https://follow-e-lo.com/
 
 --- 
 
-* Then the AZ-2008, jump to the docker section and do azure container registry and instance.
+* Then the AZ-2008, jump to the docker section and do azure container registry and instance
 * This is quick.
 
 https://learn.microsoft.com/en-us/training/courses/az-2008
 
-Then Github actions-> Github self-hosted runners
+Then Github actions-> Github self-hosted runners (Azure container registry and instance)
 
 https://github.com/spawnmarvel/learning-docker/blob/main/README-devops.md
 
