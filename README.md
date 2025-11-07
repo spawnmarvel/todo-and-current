@@ -48,12 +48,13 @@ https://follow-e-lo.com/
 <details><summary>Main plan overview</summary>
 <p>
 
-* Bash tutorial, REPEAT and REPEAT :arrow_down:
-* Docker repeat, not install more on linux use docker, you can but not make gitpages of it :arrow_down:
+* Bash tutorial, REPEAT and REPEAT :arrow_down: fill in the shell drop down below, 20 min all it takes.
+* After bash: Docker repeat, not install more on linux use docker, you can but not make gitpages of it :arrow_down:
 
 --- 
 
 * Then the AZ-2008, jump to the docker section and do azure container registry and instance.
+* This is quick.
 
 https://learn.microsoft.com/en-us/training/courses/az-2008
 
@@ -71,17 +72,15 @@ https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-
 
 --- 
 
-
-* IP21, CIMIO, REPEAT and REPEAT, do all in chm
+* IP21, CIMIO, REPEAT and REPEAT, do all in chm. REPEAT and REPEAT.
 * Remember sqlplus on localhost
-
 
 
 </p>
 </details>
 
 
-## Plan misc
+### Plan misc
 
 
 <details><summary>Plan misc overview</summary>
