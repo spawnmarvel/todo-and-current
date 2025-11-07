@@ -50,7 +50,7 @@ https://follow-e-lo.com/
 
 #### We can hide anything, even code!
 
-* Bash tutorial, REPEAT and REPEAT, 20 min all it takes:arrow_down:
+* Bash tutorial, REPEAT and REPEAT, 20 min all it takes :arrow_down:
 * apt offline/ mysql
 * Docker repeat, not install more on linux use docker, you can but not make gitpages of it :arrow_down:
 * Course AZ-2008-A: DevOps Foundations: The Core Principles and Practices
