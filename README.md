@@ -48,7 +48,14 @@ https://follow-e-lo.com/
 <details><summary>Main plan overview</summary>
 <p>
 
+<<<<<<< HEAD
 * Bash tutorial, REPEAT and REPEAT :arrow_down:
+=======
+#### We can hide anything, even code!
+
+* Bash tutorial, REPEAT and REPEAT, 20 min all it takes :arrow_down:
+* apt offline/ mysql
+>>>>>>> 703c74082f9aba6370bbb226c63ed44676b16de2
 * Docker repeat, not install more on linux use docker, you can but not make gitpages of it :arrow_down:
 
 --- 
@@ -61,10 +68,12 @@ https://learn.microsoft.com/en-us/training/courses/az-2008
 
 
 * AZ-104 certified professional must know, fill the gaps here (network, monitor, web apps)
+* 20 min all it takes, a tutorial ms doc/learn
 * Think automation and custom script extensions for Azure pipelines, docker etc
 
 https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-certified-professional
 
+<<<<<<< HEAD
 --- 
 
 
@@ -72,6 +81,9 @@ https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-
 * Remember sqlplus on localhost
 
 
+=======
+* IP21, CIMIO, REPEAT and REPEAT, 20 min all it takes.
+>>>>>>> 703c74082f9aba6370bbb226c63ed44676b16de2
 
 </p>
 </details>
