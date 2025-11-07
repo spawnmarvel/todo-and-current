@@ -50,7 +50,7 @@ https://follow-e-lo.com/
 
 #### We can hide anything, even code!
 
-* Bash tutorial, REPEAT and REPEAT :arrow_down:
+* Bash tutorial, REPEAT and REPEAT, 20 min all it takes:arrow_down:
 * apt offline/ mysql
 * Docker repeat, not install more on linux use docker, you can but not make gitpages of it :arrow_down:
 * Course AZ-2008-A: DevOps Foundations: The Core Principles and Practices
@@ -58,11 +58,12 @@ https://follow-e-lo.com/
 https://learn.microsoft.com/en-us/training/courses/az-2008
 
 * AZ-104 certified professional must know, fill the gaps here (network, monitor, web apps)
+* 20 min all it takes, a tutorial ms doc/learn
 * Think automation and custom script extensions for Azure pipelines, docker etc
 
 https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-certified-professional
 
-* IP21, CIMIO, REPEAT and REPEAT
+* IP21, CIMIO, REPEAT and REPEAT, 20 min all it takes.
 
 </p>
 </details>
