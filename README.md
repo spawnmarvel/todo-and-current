@@ -68,7 +68,7 @@ https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-
 </details>
 
 
-## Plan misc :bell:
+## Plan misc
 
 
 <details><summary>Plan misc overview</summary>
