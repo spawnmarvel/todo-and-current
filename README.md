@@ -471,7 +471,32 @@ head -n 2 /var/log/syslog
 #  ps - report a snapshot of the current processes.
 man ps
 
+# -e - Show all processes
+#-f - Show detailed information
+# -u - Show processes for a specific user
+# -a - Show all processes with a terminal
+# -x - Show processes without a terminal
 
+ps -e
+
+# display all with details like conf and bin
+ps -e -f
+
+   zabbix       801       1  0 14:53 ?        00:00:00 /usr/sbin/zabbix_agent2 -c /etc/zabbix/zabbix_agent2.conf
+
+# Show Processes for a Specific User
+ps -u zabbix
+
+   PID TTY          TIME CMD
+   801 ?        00:00:00 zabbix_agent2
+
+ps -u imsdal
+   PID TTY          TIME CMD
+   1181 ?        00:00:00 systemd
+   1182 ?        00:00:00 (sd-pam)
+   1310 ?        00:00:00 sshd
+   1313 pts/0    00:00:00 bash
+   1366 pts/0    00:00:00 ps
 ```
 </p>
 </details>
