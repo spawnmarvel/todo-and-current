@@ -472,7 +472,7 @@ head -n 2 /var/log/syslog
 man ps
 
 # -e - Show all processes
-#-f - Show detailed information
+# -f - Show detailed information
 # -u - Show processes for a specific user
 # -a - Show all processes with a terminal
 # -x - Show processes without a terminal
@@ -480,7 +480,7 @@ man ps
 ps -e
 
 # display all with details like conf and bin
-ps -e -f
+ps -ef
 
    zabbix       801       1  0 14:53 ?        00:00:00 /usr/sbin/zabbix_agent2 -c /etc/zabbix/zabbix_agent2.conf
 
@@ -497,6 +497,30 @@ ps -u imsdal
    1310 ?        00:00:00 sshd
    1313 pts/0    00:00:00 bash
    1366 pts/0    00:00:00 ps
+
+# top - display Linux processes
+man top
+
+# -d - Set the time between updates
+# -p - Monitor specific PIDs
+# -u - Show tasks for a specific user
+# -n - Set the number of iterations
+# -b - Batch mode operation
+
+# Set Update Interval, each 5 sec
+top -d 5
+
+# monitor specific PIDs.
+top -p 1010
+
+# Show Tasks for a Specific User
+top -u zabbix
+
+# df - report file system space usage
+man df
+
+
+
 ```
 </p>
 </details>
