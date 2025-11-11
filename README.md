@@ -253,6 +253,10 @@ https://github.com/spawnmarvel/linux-and-azure?tab=readme-ov-file#grep-it
 
 https://github.com/spawnmarvel/linux-and-azure/tree/main/z-mind-maps
 
+### Linux ubuntu mirror server
+
+https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm-mirror
+
 ### Bash tutorial, repeat, repeat and repeat :rocket: :repeat: :rocket:
 
 <details><summary>Update and upgrade / apt install </summary>
