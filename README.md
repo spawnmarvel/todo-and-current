@@ -1,6 +1,6 @@
 # Todo-and-current :seedling:
 
-Readme with todo-and-current, Ai as helper, Gemini.
+Readme with todo-and-current, Ai as helper, Gemini, Slipknot is the cure.
 
 ### Today's brain teaser
 
