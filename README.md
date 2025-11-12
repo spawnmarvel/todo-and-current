@@ -1,7 +1,9 @@
 # Todo-and-current :seedling:
 
-- Readme with todo-and-current, Ai as helper, Gemini.
+Readme with todo-and-current, Ai as helper, Gemini.
 
+
+### Shuhari model AND 2,3,5,7 revision method
 
 <details><summary>Shuhari model: for bash in this case</summary>
 <p>
