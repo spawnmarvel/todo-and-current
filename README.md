@@ -2,6 +2,9 @@
 
 Readme with todo-and-current, Ai as helper, Gemini.
 
+### Today's brain teaser
+
+https://www.bt.no/kultur/i/Kyrdq5/hjernetrim
 
 ### Shuhari model and 2,3,5,7 revision method
 
