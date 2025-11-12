@@ -3,7 +3,7 @@
 Readme with todo-and-current, Ai as helper, Gemini.
 
 
-### Shuhari model AND 2,3,5,7 revision method
+### Shuhari model and 2,3,5,7 revision method
 
 <details><summary>Shuhari model: for bash in this case</summary>
 <p>
@@ -47,6 +47,12 @@ Day 2 and day 3 are revision days of the learning achieved on Day 1. Day 4 is a 
 * Declutter your workspace:
 * Listen to focus-enhancing music
 
+
+### Adjust your mindset and habits
+
+* Embrace "done is better than perfect":
+* Take regular breaks
+* Automate repetitive tasks
 
 ## Parked e-lo
 
