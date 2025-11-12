@@ -1,6 +1,6 @@
 # Todo-and-current :seedling:
 
-Readme with todo-and-current, Ai as helper, Gemini, Slipknot is the cure.
+Readme with todo-and-current, Ai as helper, Gemini.
 
 ### Today's brain teaser
 
@@ -40,7 +40,7 @@ Day 2 and day 3 are revision days of the learning achieved on Day 1. Day 4 is a 
 </p>
 </details>
 
-### Manage workflow
+### Manage workflow (Slipknot is the cure)
 
 * Prioritize tasks: Create a to-do list and tackle the most important or difficult tasks first to avoid procrastination and clear your mind.
 * Focus on one task at a time: Multitasking can decrease efficiency. Concentrate on a single task until it's complete before moving to the next.
