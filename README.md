@@ -6,6 +6,8 @@ Readme with todo-and-current, Ai as helper, Gemini.
 
 https://www.helpfulgames.com/subjects/brain-training/memory.html
 
+https://sudoku.com/challenges/daily-sudoku
+
 ### Shuhari model and 2,3,5,7 revision method
 
 <details><summary>Shuhari model: for bash in this case</summary>
