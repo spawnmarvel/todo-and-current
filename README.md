@@ -849,6 +849,9 @@ https://github.com/spawnmarvel/quickguides/blob/main/computer-science/README.md
 * * https://docs.docker.com/tags/release-notes/
 * Releases/Notes/Updates Aspentech
 * * https://esupport.aspentech.com/apex/S_Homepage
+* Sqlite
+* * https://sqlite.org/index.html
+
 
 
 
