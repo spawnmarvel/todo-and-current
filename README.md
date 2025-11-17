@@ -65,7 +65,7 @@ https://follow-e-lo.com/
 
 ## Scripting
 
-* SQL*, Python, Bash*, Powershell
+* SQL*, Python, Bash*, Powershell, Docker, Azure
 * Think automation, idempotent .ps1, .sh
 
 ## Plan! :bell: :bell:
@@ -548,6 +548,60 @@ top -u zabbix
 # df - report file system space usage
 man df
 
+# To display disk space usage, use df:
+df
+
+# -h - Show sizes in human-readable format (e.g., KB, MB)
+# -a - Show all file systems, even empty ones
+# -T - Show the type of file system
+# -i - Show inode usage
+# -P - Use POSIX output format
+
+# how sizes in human-readable format (e.g., KB, MB)
+df -h
+
+# how sizes in human-readable format (e.g., KB, MB) with file path
+dh -hT
+
+# du du - estimate file space usage
+man du
+
+# The -h option allows you to show sizes in human-readable format
+du -h
+
+# free - Display amount of free and used memory in the system
+man free
+
+# -h - Show memory in human-readable format (e.g., KB, MB, GB)
+#  -b - Show memory in bytes
+# -k - Show memory in kilobytes (KB)
+# -m - Show memory in megabytes (MB)
+# -g - Show memory in gigabytes (GB)
+# -s [interval] - Continuously display memory usage at specified intervals
+# -t - Display total memory
+
+# -h - Show memory in human-readable format (e.g., KB, MB, GB)
+free -h
+
+# [interval] - Continuously display memory usage at specified intervals
+free -h -s 5
+
+# kill - send a signal to a process
+man kill
+
+# -9: Forcefully terminate a process.
+# -l: List all signal names.
+# -s [signal]: Specify a signal to send.
+# -p: Print the process ID.
+
+# Forcefully Kill a Process
+kill -9 1234
+
+# List All Signal Names
+kill -l
+
+#  uptime - Tell how long the system has been running.
+man uptime
 
 
 ```
@@ -559,6 +613,8 @@ man df
 
 #### We can hide anything, even code!
 ```bash
+
+ping
 
 
 ```
@@ -648,6 +704,11 @@ Ubuntu.
 <p>
 
 #### We can hide anything, even code!
+
+
+Zabbix 7 Browser items
+
+* https://www.zabbix.com/documentation/7.0/en/manual/config/items/itemtypes/browser
 
 Zabbix Academy
 
