@@ -74,8 +74,8 @@ https://follow-e-lo.com/
 <p>
 
 * Bash tutorial, REPEAT and REPEAT :arrow_down: fill in the shell drop down below, 20 min all it takes.
-* After bash: Docker repeat, not install more on linux use docker, you can but not make gitpages of it :arrow_down:
-
+* After bash: Docker repeat, ***not install more on linux use docker***, you can but not make gitpages of it :arrow_down:
+* Log monitor Q2 2026 Elastic stack
 --- 
 
 * Then the AZ-2008, jump to the docker section and do azure container registry and instance
@@ -100,86 +100,12 @@ https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-
 * IP21, CIMIO, REPEAT and REPEAT, do all in chm. REPEAT and REPEAT.
 * Remember sqlplus on localhost
 
-
-</p>
-</details>
-
-
-### Plan misc (go up to plan) :arrow_up:
-
-
-<details><summary>Plan misc overview do you really have time?</summary>
-<p>
-
-
-Plan Misc!
-
-* Bash Tutorial REPEAT and REPEAT and simple docker
-* Update the quick guide with chapters
-* apt offline/ mysql
-
---- 
-
-* Log monitor Q2 2026 Elastic stack
-
----
-
-* Zabbix
-* * Do more Zabix on Ubuntu below and check v 7
-* Zabbix offline, first simple software offline, NSG only vnet outbund.
-* Go to linux repos\zabbix\readme offline
-
----
-
-* Docker Basic to DevOps 2025/2026
-* learning-docker dmzdocker0
-* * Work with ElasticStack on Ubuntu and Docker
-* * Work with Solr in Docker
-
----
-
-* Then the AZ-2008, jump to the docker section and do azure container registry and instance.
-Then Github actions-> Github self-hosted runners
-
----
-
-Misc
-
-* Apache Tomcat, python (solr) windows
-* Play with tomcat10w.exe GUI, logging tab, java tab etc
-* * https://github.com/spawnmarvel/quickguides/tree/main/apache_tomcat_and_solr#tomcat10wexe-gui-stderrlog--stdoutlog--captures-system-errors-and-console-outputs
-
-* Upgrade Apache Tomcat 
-
----
-
-* Set up OPC UA, and work more with OPC DA CIMIO / datatech Connect test push
-* * Prosys OPC UA sim, Cogent OPC UA client, InfluxDB, OPC UA expert, db21
-* * https://github.com/spawnmarvel/quickguides/blob/main/cogent-opcua-influxdb/README.md
-
----
-
-* More IP21, repos, cache, sort tags in folders, cmh files for guides
-* * Quick start and Administration tools
-
----
-
-* SNMP
-* * Telegraph SNMP
-* * https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/telegraf/README_telegraf_snmp.md
-
----
-
-* Do more Oracle Database Express Edition (XE) 21c CRUD and password
-* * https://github.com/spawnmarvel/quickguides/blob/main/oracle/README.md
-
-----
-
 * Azure SQL tutorial (Azure Free sql) BikeStores & AdventureWorks
 * * https://github.com/spawnmarvel/t-sql/tree/master/course2_ai
 
 </p>
 </details>
+
 
 ## Always :repeat:
 
