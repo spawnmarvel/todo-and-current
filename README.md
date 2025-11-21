@@ -63,10 +63,11 @@ Day 2 and day 3 are revision days of the learning achieved on Day 1. Day 4 is a 
 
 https://follow-e-lo.com/
 
-## Scripting
+## Scripting (and what's fun*)
 
-* SQL*, Python, Bash*, Powershell, Docker, Azure
-* Think automation, idempotent .ps1, .sh
+* SQL*, Powershell*,  Bash*,
+* Python, Docker
+* Think automation, idempotent, .sql .ps1, .sh
 
 ## Plan! :bell: :bell:
 
