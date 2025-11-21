@@ -698,9 +698,13 @@ https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/ki
 
 Ubuntu.
 
-Play with dasboards and more.
+* Play with dasboards and more.
 
 https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm/grafana-zabbix
+
+* Grafana Agent is an OpenTelemetry Collector
+
+https://grafana.com/docs/agent/latest/
 
 ### RabbitMQ
 
