@@ -208,6 +208,10 @@ https://github.com/spawnmarvel/linux-and-azure/tree/main/z-mind-maps
 
 https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm-mirror
 
+### Ubuntu server documentation
+
+https://documentation.ubuntu.com/server/
+
 ### Bash tutorial, repeat, repeat and repeat :rocket: :repeat: :rocket:
 
 <details><summary>Update and upgrade / apt install </summary>
