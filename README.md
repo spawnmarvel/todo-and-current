@@ -110,7 +110,6 @@ https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-
 
 ## Always :repeat:
 
-* dmzwindows07 server run windows updates on it
 * All linux servers, run updates
 
 ## Network advanced tutorial and checklist
@@ -603,7 +602,7 @@ https://github.com/spawnmarvel/linux-and-azure/tree/main/ufw-firewall
 https://www.w3schools.com/bash/bash_commands.php
 
 
-## Apache Tomcat (Solr) 
+## Apache Tomcat (Solr) (Deleted server, is archive)
 
 Windows.
 
@@ -693,13 +692,13 @@ Zabbix:
 
 https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/README_stack.md
 
-### Elastic stack :traffic_light:
+### Elastic stack :traffic_light: (Deleted server, is archive)
 
 Ubuntu.
 
 https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/kibana-elasticsearch-file-beat/README.md
 
-### Grafana Zabbix
+### Grafana Zabbix (Deleted server, is archive)
 
 Ubuntu.
 
@@ -711,7 +710,7 @@ https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm/gr
 
 https://grafana.com/docs/agent/latest/
 
-### RabbitMQ
+### RabbitMQ (Deleted server, is archive)
 
 Ubuntu.
 
