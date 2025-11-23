@@ -76,7 +76,17 @@ https://follow-e-lo.com/
 
 * Bash tutorial, REPEAT and REPEAT :arrow_down: fill in the shell drop down below, 20 min all it takes.
 * After bash: Docker repeat, ***not install more on linux use docker***, you can but not make gitpages of it :arrow_down:
-* Log monitor Q2 2026 Elastic stack
+* Docker: Log monitor Q2 2026 Elastic stack
+
+* dmzdocker03 Mirror server
+* * Run mirror update, then update client docker03getmirrortest
+* * Block docker03getmirrortest ubuntu repos
+* * Add a datadisk big enough to repos
+* * get ubuntu mirror for version
+* * on docker03getmirrortest set up apt list
+* * * apt update, do we get it?
+* * install zabbix
+* * install mysql
 --- 
 
 * Then the AZ-2008, jump to the docker section and do azure container registry and instance
