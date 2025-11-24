@@ -74,9 +74,11 @@ https://follow-e-lo.com/
 <details><summary>Main plan overview</summary>
 <p>
 
-* Bash tutorial, REPEAT and REPEAT :arrow_down: fill in the shell drop down below, 20 min all it takes.
-* After bash: Docker repeat, ***not install more on linux use docker***, you can but not make gitpages of it :arrow_down:
-* Docker: Log monitor Q2 2026 Elastic stack
+1. Bash tutorial, REPEAT and REPEAT over again :arrow_down: fill in the shell drop down below, 20 min all it takes.
+1. Docker repeat, ***not install more on linux use docker***, you can, but not make gitpages of it :arrow_down:
+1.1 Docker: Log monitor Q2 2026 Elastic stack
+* * Kibana and Elastic Search on Docker
+* * * Filebeat on vm's
 
 * dmzdocker03 Mirror server
 * * Run mirror update, then update client docker03getmirrortest
