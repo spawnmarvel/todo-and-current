@@ -77,6 +77,10 @@ https://follow-e-lo.com/
 1. Bash tutorial, REPEAT and REPEAT over again :arrow_down: fill in the shell drop down below, 20 min all it takes.
 --- 
 2. Docker repeat ***not install more on linux use docker***, you can, but not make gitpages of it :arrow_down:
+* Added datadisk, dmzdocker03_datadisk01, 4gb.
+* Install Docker
+* Move docker volume to /datadrive (dmzdocker03_datadisk01)
+* Portainer HTTPS
 * Docker: Log monitor Q2 2026 Elastic stack
 * * Kibana and Elastic Search on Docker
 * * * Filebeat on vm's
