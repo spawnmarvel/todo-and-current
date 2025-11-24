@@ -80,7 +80,7 @@ https://follow-e-lo.com/
 * * Kibana and Elastic Search on Docker
 * * * Filebeat on vm's
 
-* dmzdocker03 Mirror server
+3. dmzdocker03 Mirror server
 * * Run mirror update, then update client docker03getmirrortest
 * * Block docker03getmirrortest ubuntu repos
 * * Add a datadisk big enough to repos
@@ -91,7 +91,7 @@ https://follow-e-lo.com/
 * * install mysql
 --- 
 
-* Then the AZ-2008, jump to the docker section and do azure container registry and instance
+4. Then the AZ-2008, jump to the docker section and do azure container registry and instance
 * This is quick.
 
 https://learn.microsoft.com/en-us/training/courses/az-2008
