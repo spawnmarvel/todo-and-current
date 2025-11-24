@@ -113,9 +113,11 @@ https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-
 * * https://github.com/spawnmarvel/t-sql/tree/master/course2_ai
 
 --- 
-
+6. Work stuff
 * IP21, CIMIO, REPEAT and REPEAT, do all in chm. REPEAT and REPEAT.
 * Remember sqlplus on localhost
+* And Computer Science
+https://github.com/spawnmarvel/quickguides/tree/main/computer-science
 
 </p>
 </details>
