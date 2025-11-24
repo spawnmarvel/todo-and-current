@@ -102,19 +102,20 @@ https://github.com/spawnmarvel/learning-docker/blob/main/README-devops.md
 
 --- 
 
+5. Do more AZ
 * AZ-104 certified professional must know, fill the gaps here (network, monitor, web apps)
 * 20 min all it takes, a tutorial ms doc/learn
 * Think automation and custom script extensions for Azure pipelines, docker etc
 
 https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-certified-professional
 
+* Azure SQL tutorial (Azure Free sql) BikeStores & AdventureWorks
+* * https://github.com/spawnmarvel/t-sql/tree/master/course2_ai
+
 --- 
 
 * IP21, CIMIO, REPEAT and REPEAT, do all in chm. REPEAT and REPEAT.
 * Remember sqlplus on localhost
-
-* Azure SQL tutorial (Azure Free sql) BikeStores & AdventureWorks
-* * https://github.com/spawnmarvel/t-sql/tree/master/course2_ai
 
 </p>
 </details>
