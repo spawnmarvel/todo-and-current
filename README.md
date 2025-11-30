@@ -116,6 +116,9 @@ https://github.com/spawnmarvel/learning-docker/blob/main/README-devops.md
 
 https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-certified-professional
 
+* Do more Azure Functions (do all ms learn)
+* * https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-functions
+
 * Azure SQL tutorial (Azure Free sql) BikeStores & AdventureWorks
 * * https://github.com/spawnmarvel/t-sql/tree/master/course2_ai
 
