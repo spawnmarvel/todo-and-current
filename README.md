@@ -82,6 +82,8 @@ https://follow-e-lo.com/
 * Move docker volume to /datadrive (dmzdocker03_datadisk01) = ok
 * Enabled UFW also, so had to update allow 10051, 10050 for docker03getmirrortest = ok
 * Portainer HTTPS = ok
+* Do the getting started guide from docker
+* Then Grafana and MySql, make a python script to send data
 * Docker: Log monitor Q2 2026 Elastic stack
 * * Kibana and Elastic Search on Docker
 * * * Filebeat on vm's
