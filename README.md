@@ -79,8 +79,9 @@ https://follow-e-lo.com/
 2. Docker repeat ***not install more on linux use docker***, you can, but not make gitpages of it :arrow_down:
 * Added datadisk, dmzdocker03_datadisk01, 4gb. = ok
 * Install Docker = ok
-* Move docker volume to /datadrive (dmzdocker03_datadisk01)
-* Portainer HTTPS
+* Move docker volume to /datadrive (dmzdocker03_datadisk01) = ok
+* Enabled UFW also, so had to update allow 10051, 10050 for docker03getmirrortest = ok
+* Portainer HTTPS = ok
 * Docker: Log monitor Q2 2026 Elastic stack
 * * Kibana and Elastic Search on Docker
 * * * Filebeat on vm's
