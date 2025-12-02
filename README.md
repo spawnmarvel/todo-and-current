@@ -743,6 +743,16 @@ Ubuntu.
 
 https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm/rabbitmq-server
 
+
+* X.509 Shovel, then amqp_client is not needed.
+
+https://github.com/spawnmarvel/quickguides/blob/main/amqp/x509/vm1_advanced_11.config
+
+
+* Requests and renew
+
+https://github.com/spawnmarvel/quickguides/blob/main/amqp/RequestRenewExample/README.md
+
 ### Telegraf
 
 Ubuntu/Windows
