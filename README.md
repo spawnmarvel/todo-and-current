@@ -67,12 +67,19 @@ https://follow-e-lo.com/
 
 ## TODO: Bash tutorial, repeat, repeat and repeat :rocket: :repeat: :rocket:
 
+* Go over all chapters
+
 https://github.com/spawnmarvel/todo-and-current/blob/main/README_bash.md
 
 
 --- 
 
 ## TODO Docker :helicopter:
+
+* Grafana and MySQL, https
+* Zabbix plugin
+* Grafana and MySQL, https, Loki and Alloy on remote servers
+* Zabbix nemisis
 
 https://github.com/spawnmarvel/learning-docker
 
@@ -92,6 +99,8 @@ https://github.com/spawnmarvel/learning-docker/tree/main/az-400-implement-ci-wit
 ---
 
 ## TODO AZ-104 certified professional must know, fill the gaps here (network, monitor, web apps)
+
+* Repeat, repeat and repeat stuff
 
 https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-certified-professional
 
