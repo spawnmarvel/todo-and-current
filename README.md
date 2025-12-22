@@ -385,13 +385,9 @@ https://github.com/spawnmarvel/learning-docker
 
 ### Docker, Azure and DevOps :airplane:
 
-* Course AZ-2008-A: DevOps Foundations: The Core Principles and Practices
+* AZ-400: Implement CI with Azure Pipelines and GitHub Actions (Docker is last chapter)
 
-https://learn.microsoft.com/en-us/training/courses/az-2008
-
-* 2 Azure Devops
-
-https://github.com/spawnmarvel/learning-docker/blob/main/README-devops.md
+https://github.com/spawnmarvel/learning-docker/tree/main/az-400-implement-ci-with-azure-pipelines-and-github-actions
 
 
 * Run Docker containers on-demand in a managed, serverless Azure environment.
@@ -403,9 +399,6 @@ https://learn.microsoft.com/en-us/azure/container-instances/
 https://learn.microsoft.com/en-us/azure/container-registry/
 
 
-* Ms Learn 47 results for "devops" and "Azure"
-
-https://learn.microsoft.com/en-us/training/browse/?source=learn&terms=devops&products=azure
 
 ### Docker Solr
 
