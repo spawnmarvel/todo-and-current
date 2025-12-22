@@ -63,14 +63,12 @@ https://follow-e-lo.com/
 * Python, Docker
 * Think automation, idempotent, .sql .ps1, .sh
 
+---
 
 ## TODO: Bash tutorial, repeat, repeat and repeat :rocket: :repeat: :rocket:
 
 https://github.com/spawnmarvel/todo-and-current/blob/main/README_bash.md
 
-4. Then AZ-400: Implement CI with Azure Pipelines and GitHub Actions (Docker is last chapter)
-
-https://github.com/spawnmarvel/learning-docker/tree/main/az-400-implement-ci-with-azure-pipelines-and-github-actions
 
 --- 
 
@@ -97,6 +95,7 @@ https://github.com/spawnmarvel/learning-docker/tree/main/az-400-implement-ci-wit
 
 https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-certified-professional
 
+---
 
 ## Network advanced tutorial and checklist
 
