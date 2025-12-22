@@ -76,10 +76,12 @@ https://github.com/spawnmarvel/todo-and-current/blob/main/README_bash.md
 
 ## TODO Docker :helicopter:
 
-* Grafana and MySQL, https
+* Grafana and MySQL with http and https
 * Zabbix plugin
 * Grafana and MySQL, https, Loki and Alloy on remote servers
 * Zabbix nemisis
+* RabbitMQ
+* RabbitMQ shovel http and https
 
 https://github.com/spawnmarvel/learning-docker
 
