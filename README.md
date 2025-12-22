@@ -234,6 +234,7 @@ https://documentation.ubuntu.com/server/
 
 ### Bash tutorial, repeat, repeat and repeat :rocket: :repeat: :rocket:
 
+https://github.com/spawnmarvel/todo-and-current/blob/main/README_bash.md
 
 ## Apache Tomcat (Solr) (Deleted server, is archive)
 
