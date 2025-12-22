@@ -63,68 +63,40 @@ https://follow-e-lo.com/
 * Python, Docker
 * Think automation, idempotent, .sql .ps1, .sh
 
-## Plan! :bell: :bell:
 
-<details><summary>Main plan overview</summary>
-<p>
+## TODO: Bash tutorial, repeat, repeat and repeat :rocket: :repeat: :rocket:
 
-1. Bash tutorial, REPEAT and REPEAT over again :arrow_down: fill in the shell drop down below, 20 min all it takes.
---- 
-2. Docker repeat ***not install more on linux use docker***, you can, but not make gitpages of it :arrow_down:
-* Added datadisk, dmzdocker03_datadisk01, 4gb. = ok
-* Install Docker = ok
-* Move docker volume to /datadrive (dmzdocker03_datadisk01) = ok
-* Enabled UFW also, so had to update allow 10051, 10050 for docker03getmirrortest = ok
-* Portainer HTTPS = ok
-* Do the getting started guide from docker
-* Then Grafana and MySql, make a python script to send data
-* Docker: Log monitor Q2 2026 Elastic stack
-* * Kibana and Elastic Search on Docker
-* * * Filebeat on vm's
---- 
-3. dmzdocker03 Mirror server
-* * Run mirror update, then update client docker03getmirrortest
-* * Block docker03getmirrortest ubuntu repos
-* * Add a datadisk big enough to repos
-* * get ubuntu mirror for version
-* * on docker03getmirrortest set up apt list
-* * * apt update, do we get it?
-* * install zabbix
-* * install mysql
---- 
+https://github.com/spawnmarvel/todo-and-current/blob/main/README_bash.md
+
 4. Then AZ-400: Implement CI with Azure Pipelines and GitHub Actions (Docker is last chapter)
 
 https://github.com/spawnmarvel/learning-docker/tree/main/az-400-implement-ci-with-azure-pipelines-and-github-actions
 
 --- 
 
-5. Do more AZ
-* AZ-104 certified professional must know, fill the gaps here (network, monitor, web apps)
-* 20 min all it takes, a tutorial ms doc/learn
-* Think automation and custom script extensions for Azure pipelines, docker etc
+## TODO Docker :helicopter:
+
+https://github.com/spawnmarvel/learning-docker
+
+## TODO Docker and AZ-400 :airplane:
+
+* AZ-400: Implement CI with Azure Pipelines and GitHub Actions (Docker is last chapter)
+
+https://github.com/spawnmarvel/learning-docker/tree/main/az-400-implement-ci-with-azure-pipelines-and-github-actions
+
+
+* Run Docker containers on-demand in a managed, serverless Azure environment.
+* https://learn.microsoft.com/en-us/azure/container-instances/
+
+* Build, store, and manage container images and artifacts in a private registry for all types of container deployments
+* https://learn.microsoft.com/en-us/azure/container-registry/
+
+---
+
+## TODO AZ-104 certified professional must know, fill the gaps here (network, monitor, web apps)
 
 https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-certified-professional
 
-* Do more Azure Functions (do all ms learn)
-* * https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-functions
-
-* Azure SQL tutorial (Azure Free sql) BikeStores & AdventureWorks
-* * https://github.com/spawnmarvel/t-sql/tree/master/course2_ai
-
---- 
-6. Work stuff
-* IP21, CIMIO, REPEAT and REPEAT, do all in chm. REPEAT and REPEAT.
-* Remember sqlplus on localhost
-* And Computer Science
-https://github.com/spawnmarvel/quickguides/tree/main/computer-science
-
-</p>
-</details>
-
-
-## Always :repeat:
-
-* All linux servers, run updates
 
 ## Network advanced tutorial and checklist
 
@@ -225,10 +197,6 @@ https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm-mi
 ### Ubuntu server documentation
 
 https://documentation.ubuntu.com/server/
-
-### Bash tutorial, repeat, repeat and repeat :rocket: :repeat: :rocket:
-
-https://github.com/spawnmarvel/todo-and-current/blob/main/README_bash.md
 
 ## Apache Tomcat (Solr) (Deleted server, is archive)
 
@@ -369,39 +337,6 @@ https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm/te
 
 https://docs.influxdata.com/telegraf/v1/
 
-## Docker :helicopter:
-
-Ubuntu.
-
-* 1 Learning-docker
-
-https://github.com/spawnmarvel/learning-docker
-
-### Docker, Azure and DevOps :airplane:
-
-* AZ-400: Implement CI with Azure Pipelines and GitHub Actions (Docker is last chapter)
-
-https://github.com/spawnmarvel/learning-docker/tree/main/az-400-implement-ci-with-azure-pipelines-and-github-actions
-
-
-* Run Docker containers on-demand in a managed, serverless Azure environment.
-
-https://learn.microsoft.com/en-us/azure/container-instances/
-
-* Build, store, and manage container images and artifacts in a private registry for all types of container deployments
-
-https://learn.microsoft.com/en-us/azure/container-registry/
-
-
-
-### Docker Solr
-
-https://github.com/spawnmarvel/learning-docker/tree/main/prod-ish/solr
-
-### Docker Elastic stack
-
-* Elasticsearch and Kibana in docker
-* Filebeat on remote vm's
 
 ### Docker RabbitMQ
 
