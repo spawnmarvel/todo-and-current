@@ -106,6 +106,10 @@ https://github.com/spawnmarvel/learning-docker/tree/main/az-400-implement-ci-wit
 
 https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-certified-professional
 
+* Introduction to Azure Functions
+
+https://learn.microsoft.com/en-us/training/paths/create-serverless-applications/
+
 ---
 
 ## Network advanced tutorial and checklist
