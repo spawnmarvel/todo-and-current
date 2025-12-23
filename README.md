@@ -85,11 +85,15 @@ https://github.com/spawnmarvel/todo-and-current/blob/main/README_bash.md
 
 https://github.com/spawnmarvel/learning-docker
 
-## TODO Docker and AZ-400 :airplane:
+## TODO Docker, Azure and Github :airplane:
 
-* AZ-400: Implement CI with Azure Pipelines and GitHub Actions (Docker is last chapter)
+* Azure and GitHub integration
 
-https://github.com/spawnmarvel/learning-docker/tree/main/az-400-implement-ci-with-azure-pipelines-and-github-actions
+https://github.com/spawnmarvel/learning-docker/tree/main/az-github-actions-for-azure
+
+* Self-hosted runners github
+
+https://github.com/spawnmarvel/learning-docker/tree/main/az-github-self-hosted-runners
 
 
 * Run Docker containers on-demand in a managed, serverless Azure environment.
