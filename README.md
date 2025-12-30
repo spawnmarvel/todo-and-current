@@ -14,7 +14,7 @@ Day 2 and day 3 are revision days of the learning achieved on Day 1. Day 4 is a 
 </p>
 </details>
 
-### Manage workflow (Slipknot is the cure)
+### Manage workflow (Slipknot/Trance/Music in general is the cure)
 
 ### Optimize your environment
 
