@@ -110,9 +110,13 @@ https://github.com/spawnmarvel/learning-docker/tree/main/az-github-self-hosted-r
 
 https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-certified-professional
 
-* Introduction to Azure Functions
+## TODO Azure Functions scenarios
 
-https://learn.microsoft.com/en-us/training/paths/create-serverless-applications/
+* Run code when a file is uploaded or changed in blob storage.
+* Execute data clean-up code on predefined timed intervals.
+* Run custom logic when a document is created or updated in a database.
+
+https://learn.microsoft.com/en-us/azure/azure-functions/functions-overview
 
 ---
 
