@@ -327,8 +327,50 @@ man uptime
 
 #### We can hide anything, even code!
 ```bash
+# ping - send ICMP ECHO_REQUEST to network hosts
+man ping
 
-ping
+# curl - transfer a URL
+man curl
+
+# view web page
+curl www.ba.no
+
+# -O - Save the file with the same name as the remote file
+# -L - Follow redirects
+# -I - Fetch the HTTP headers only
+# -d - Send data with POST request
+# -u - Specify user and password for server authentication
+
+curl -O https://radio.nrk.no/podkast/trygdekontoret
+ls
+# trygdekontoret
+
+#  Wget - The non-interactive network downloader.
+man wget
+
+# ssh — OpenSSH remote login client
+man ssh
+
+# scp — OpenSSH secure file copy
+man scp
+
+# scp file user@hostname:/path
+scp trygdekontoret imsdal@172.64.0.5:/home/imsdal
+# imsdal@172.64.0.5's password:
+# trygdekontoret                                                       100%  309KB  21.3MB/s   00:00
+
+# rsync - a fast, versatile, remote (and local) file-copying tool, checking the timestamp and size of files
+man rsync
+
+# To synchronize a directory to a remote host, use rsync -avz source user@hostname:/path:
+rsync -avz trygdekontoret imsdal@172.64.0.5:/home/imsdal
+# imsdal@172.64.0.5's password:
+# sending incremental file list
+# trygdekontoret
+
+# sent 112 bytes  received 2,753 bytes  520.91 bytes/sec
+# total size is 316,837  speedup is 110.59
 
 
 ```
@@ -345,6 +387,7 @@ https://github.com/spawnmarvel/linux-and-azure/tree/main/ufw-firewall
 #### We can hide anything, even code!
 ```bash
 
+man zip
 
 ```
 </p>
