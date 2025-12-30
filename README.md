@@ -83,7 +83,7 @@ https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-
 * Execute data clean-up code on predefined timed intervals.
 * Run custom logic when a document is created or updated in a database.
 
-https://learn.microsoft.com/en-us/azure/azure-functions/functions-overview
+https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-functions/README.md
 
 ---
 
