@@ -69,7 +69,7 @@ https://follow-e-lo.com/
 
 * Go over all chapters
 
-https://github.com/spawnmarvel/todo-and-current/blob/main/README_bash.md
+https://github.com/spawnmarvel/todo-and-current/blob/main/bash/README_bash.md
 
 
 --- 
