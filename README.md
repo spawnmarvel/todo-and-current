@@ -2,27 +2,7 @@
 
 Readme with todo-and-current, Ai as helper, Gemini.
 
-### Shuhari model and 2,3,5,7 revision method
-
-<details><summary>Shuhari model: for bash in this case</summary>
-<p>
-
-#### We can hide anything, even code!
-
-| Stage | Kanji/meaning  | Phrase                                      |
-| ------| -------------- |-------------------------------------------- |
-| Shu   | Obey           | Follow examples exactly and repeat x 3      | 
-| Ha    | Break          | Adapt scripts and explore alternatives.     |
-| Ri    | Separate       | Create your own unique, efficient solutions |
-
-Applying Shu-Ha-Ri for Accelerated Learning :dragon:
-
-* Strictly follow ***one proven method (e.g., one tutorial, one recipe, one set of rules)*** without deviation or questioning. Focus on imitation and repetition to build unconscious competence (muscle memory/system familiarity).
-* Actively experiment by testing the boundaries of the rules and integrating knowledge from other sources. ***Ask "Why?" to understand the underlying principles and trade-offs.***
-* Create your own unique methods and solutions, acting on instinct and deep, ***internalized knowledge.*** Teach the skill to others to solidify your mastery.
-
-</p>
-</details>
+### 2,3,5,7 revision method
 
 <details><summary>The 2,3,5,7 revision method</summary>
 <p>
@@ -36,22 +16,9 @@ Day 2 and day 3 are revision days of the learning achieved on Day 1. Day 4 is a 
 
 ### Manage workflow (Slipknot is the cure)
 
-* Prioritize tasks: Create a to-do list and tackle the most important or difficult tasks first to avoid procrastination and clear your mind.
-* Focus on one task at a time: Multitasking can decrease efficiency. Concentrate on a single task until it's complete before moving to the next.
-* Use time-blocking and Break large tasks into smaller chunk
-
 ### Optimize your environment
 
-* Minimize distractions
-* Declutter your workspace:
-* Listen to focus-enhancing music
-
-
 ### Adjust your mindset and habits
-
-* Embrace "done is better than perfect":
-* Take regular breaks
-* Automate repetitive tasks
 
 ## Parked e-lo
 
