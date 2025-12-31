@@ -1,6 +1,6 @@
 
 
-<details><summary>Commands bash quick guide self, troubleshoot log, ports, cpu and ram</summary>
+<details><summary>Commands bash quick guide self, troubleshoot log, ports, cpu and ram, apt and remove</summary>
 <p>
 
 #### We can hide anything, even code!
