@@ -1,3 +1,27 @@
+
+<details><summary>Troubleshoot log, ports, cpu and ram</summary>
+<p>
+
+#### We can hide anything, even code!
+```bash
+
+tail -f zabbix_server.logs
+
+sudo grep '*failed*' /var/log/zabbix/zabbix_server.log
+sudo tail -f /var/log/zabbix/zabbix_server.log >> tmp_logs
+sudo find /var/log -name "*log"
+
+ss -ltn
+ss -ant 'sport = :10050'
+htop
+top
+df -lh
+ls -lhS
+
+```
+</p>
+</details>
+
 <details><summary>Update and upgrade / apt install </summary>
 <p>
 
