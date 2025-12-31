@@ -74,6 +74,39 @@ no pass
 </p>
 </details>
 
+<details><summary>Update and upgrade / apt install </summary>
+<p>
+
+#### We can hide anything, even code!
+```bash
+
+sudo apt update -y         # - Update apt/sources
+sudo apt list --upgradable # - List possible upgrades
+sudo apt upgrade -y        # - Do upgrade
+
+cd /etc/apt/               # - View apt sources list*
+ls -lh
+ubuntu.sources 
+
+# lets install zabix agent2
+# https://www.zabbix.com/download?zabbix=7.0&os_distribution=ubuntu&os_version=24.04&components=agent_2&db=&ws=
+
+wget https://repo.zabbix.com/zabbix/7.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_latest_7.0+ubuntu24.04_all.deb # Get pack
+
+sudo dpkg -i zabbix-release_latest_7.0+ubuntu24.04_all.deb # -i install
+
+sudo apt update -y
+
+cd /etc/apt/sources.list.d
+ls -lh
+ubuntu.sources  zabbix-tools.list  zabbix.list
+
+sudo apt install zabbix-agent2      # Install agent
+
+```
+</p>
+</details>
+
 <details><summary>Basic Commands</summary>
 <p>
 
