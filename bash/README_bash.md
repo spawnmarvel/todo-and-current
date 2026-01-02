@@ -437,7 +437,13 @@ scp trygdekontoret imsdal@172.64.0.5:/home/imsdal
 # trygdekontoret                                                       100%  309KB  21.3MB/s   00:00
 
 # rsync - a fast, versatile, remote (and local) file-copying tool, checking the timestamp and size of files
+# One solution: Don't copy what's already there.
+# The rsync algorithm splits files into chunks, computes rolling checksums, and transfers only the differences. 
+# A 1GB file with 1KB of changes? Transfer 1KB.
 man rsync
+
+# One command:
+rsync -avz source/ destination/
 
 # To synchronize a directory to a remote host, use rsync -avz source user@hostname:/path:
 rsync -avz trygdekontoret imsdal@172.64.0.5:/home/imsdal
