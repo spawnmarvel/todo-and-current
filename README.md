@@ -85,6 +85,10 @@ https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-
 
 https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-functions/README.md
 
+## TODO Azure SQL Database
+
+https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-sql/README.md
+
 ---
 
 ## Network advanced tutorial and checklist
