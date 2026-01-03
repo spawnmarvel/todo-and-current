@@ -32,7 +32,7 @@ https://follow-e-lo.com/
 
 ---
 
-## TODO: Bash tutorial, repeat, repeat and repeat :rocket: :repeat: :rocket:
+## TODO 1: Bash tutorial, repeat, repeat and repeat :rocket: :repeat: :rocket:
 
 * Go over all chapters
 
@@ -40,6 +40,17 @@ https://github.com/spawnmarvel/todo-and-current/blob/main/bash/README_bash.md
 
 
 --- 
+
+## TODO Docker, Azure :airplane:
+
+* Python as container (the getting started docker)
+
+https://github.com/spawnmarvel/learning-docker/blob/main/1.3-containerize-python-application-2/README.md
+
+* Then Implement containerized solutions
+
+https://github.com/spawnmarvel/learning-docker/blob/main/1.4-azure-container-instance-2/README.md
+---
 
 ## TODO Docker :helicopter:
 
@@ -51,17 +62,6 @@ https://github.com/spawnmarvel/todo-and-current/blob/main/bash/README_bash.md
 * RabbitMQ shovel http and https
 
 https://github.com/spawnmarvel/learning-docker
-
-## TODO Docker, Azure and (Github) :airplane:
-
-* Python as container (the getting started docker)
-
-https://github.com/spawnmarvel/learning-docker/blob/main/1.3-containerize-python-application-2/README.md
-
-* Then Implement containerized solutions
-
-https://github.com/spawnmarvel/learning-docker/blob/main/1.4-azure-container-instance-2/README.md
----
 
 ## TODO AZ-104 certified professional must know, fill the gaps here (network, monitor, web apps)
 
