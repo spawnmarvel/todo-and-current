@@ -50,6 +50,7 @@ https://github.com/spawnmarvel/learning-docker/blob/main/1.3-containerize-python
 * Then Implement containerized solutions
 
 https://github.com/spawnmarvel/learning-docker/blob/main/1.4-azure-container-instance-2/README.md
+
 ---
 
 ## TODO 3 Docker :helicopter:
@@ -63,14 +64,14 @@ https://github.com/spawnmarvel/learning-docker/blob/main/1.4-azure-container-ins
 
 https://github.com/spawnmarvel/learning-docker
 
-## TODO AZ-104 certified professional must know, fill the gaps here (network, monitor, web apps)
+## TODO (Always) AZ-104 certified professional must know, fill the gaps here (network, monitor, web apps)
 
 * Repeat, repeat and repeat stuff
 
 https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-certified-professional
 
 
-## TODO Azure SQL Database
+## TODO (for fun) Azure SQL Database
 
 https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-sql/README.md
 
