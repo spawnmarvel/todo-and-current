@@ -52,23 +52,15 @@ https://github.com/spawnmarvel/todo-and-current/blob/main/bash/README_bash.md
 
 https://github.com/spawnmarvel/learning-docker
 
-## TODO Docker, Azure and Github :airplane:
+## TODO Docker, Azure and (Github) :airplane:
 
-* Azure and GitHub integration
+* Python as container (the getting started docker)
 
-https://github.com/spawnmarvel/learning-docker/tree/main/az-github-actions-for-azure
+https://github.com/spawnmarvel/learning-docker/blob/main/1.3-containerize-python-application-2/README.md
 
-* Self-hosted runners github
+* Then Implement containerized solutions
 
-https://github.com/spawnmarvel/learning-docker/tree/main/az-github-self-hosted-runners
-
-
-* Run Docker containers on-demand in a managed, serverless Azure environment.
-* https://learn.microsoft.com/en-us/azure/container-instances/
-
-* Build, store, and manage container images and artifacts in a private registry for all types of container deployments
-* https://learn.microsoft.com/en-us/azure/container-registry/
-
+https://github.com/spawnmarvel/learning-docker/blob/main/1.4-azure-container-instance-2/README.md
 ---
 
 ## TODO AZ-104 certified professional must know, fill the gaps here (network, monitor, web apps)
@@ -77,13 +69,6 @@ https://github.com/spawnmarvel/learning-docker/tree/main/az-github-self-hosted-r
 
 https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-certified-professional
 
-## TODO Azure Functions scenarios
-
-* Run code when a file is uploaded or changed in blob storage.
-* Execute data clean-up code on predefined timed intervals.
-* Run custom logic when a document is created or updated in a database.
-
-https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-functions/README.md
 
 ## TODO Azure SQL Database
 
