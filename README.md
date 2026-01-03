@@ -41,7 +41,7 @@ https://github.com/spawnmarvel/todo-and-current/blob/main/bash/README_bash.md
 
 --- 
 
-## TODO Docker, Azure :airplane:
+## TODO 2 Docker, Azure :airplane:
 
 * Python as container (the getting started docker)
 
@@ -52,7 +52,7 @@ https://github.com/spawnmarvel/learning-docker/blob/main/1.3-containerize-python
 https://github.com/spawnmarvel/learning-docker/blob/main/1.4-azure-container-instance-2/README.md
 ---
 
-## TODO Docker :helicopter:
+## TODO 3 Docker :helicopter:
 
 * Grafana and MySQL with http and https
 * Zabbix plugin
