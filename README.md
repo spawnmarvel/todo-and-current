@@ -85,7 +85,7 @@ https://github.com/spawnmarvel/linux-and-azure
 
 https://github.com/spawnmarvel/todo-and-current/blob/main/bash/README_bash.md
 
-and 
+and the zabbix troubleshoot
 
 https://github.com/spawnmarvel/linux-and-azure?tab=readme-ov-file#grep-it
 
