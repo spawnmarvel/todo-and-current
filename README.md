@@ -34,7 +34,8 @@ https://follow-e-lo.com/
 
 ## TODO 1 Bash tutorial, repeat, repeat and repeat :rocket: :repeat: :rocket:
 
-* Go over all chapters
+* Go over all chapters = 
+* Mirros server and apt updates = 50%
 
 https://github.com/spawnmarvel/todo-and-current/blob/main/bash/README_bash.md
 
@@ -43,11 +44,15 @@ https://github.com/spawnmarvel/todo-and-current/blob/main/bash/README_bash.md
 
 ## TODO 2 Docker, Azure :airplane:
 
-* Python as container (the getting started docker)
+* Python as container (the getting started docker) = 
 
 https://github.com/spawnmarvel/learning-docker/blob/main/1.3-containerize-python-application-2/README.md
 
 * Then Implement containerized solutions
+* Do tutorials = 
+* Do RabbitMQ
+* Do Python application
+* Do
 
 https://github.com/spawnmarvel/learning-docker/blob/main/1.4-azure-container-instance-2/README.md
 
@@ -55,12 +60,13 @@ https://github.com/spawnmarvel/learning-docker/blob/main/1.4-azure-container-ins
 
 ## TODO 3 Docker :helicopter:
 
-* Grafana and MySQL with http and https
-* Zabbix plugin
-* Grafana and MySQL, https, Loki and Alloy on remote servers
-* Zabbix nemisis
-* RabbitMQ
-* RabbitMQ shovel http and https
+* Portainer = ok
+* Grafana and MySQL with http and https = ok
+* Zabbix plugin = ok
+* Grafana and MySQL, https, Loki and Alloy on remote servers = 
+* Zabbix nemisis = 
+* RabbitMQ = 
+* RabbitMQ shovel http and https = 
 
 https://github.com/spawnmarvel/learning-docker
 
