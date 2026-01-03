@@ -8,7 +8,7 @@ Readme with todo-and-current, Ai as helper, Gemini.
 
 ### Adjust your mindset and habits
 
-## Parked e-lo
+### E-lo (parked)
 
 https://follow-e-lo.com/
 
