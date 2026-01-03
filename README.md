@@ -32,7 +32,7 @@ https://follow-e-lo.com/
 
 ---
 
-## TODO 1: Bash tutorial, repeat, repeat and repeat :rocket: :repeat: :rocket:
+## TODO 1 Bash tutorial, repeat, repeat and repeat :rocket: :repeat: :rocket:
 
 * Go over all chapters
 
