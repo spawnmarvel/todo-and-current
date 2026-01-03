@@ -2,18 +2,6 @@
 
 Readme with todo-and-current, Ai as helper, Gemini.
 
-### 2,3,5,7 revision method
-
-<details><summary>The 2,3,5,7 revision method</summary>
-<p>
-
-#### We can hide anything, even code!
-
-Day 2 and day 3 are revision days of the learning achieved on Day 1. Day 4 is a rest day, while Day 5 you re-visit the work. Day 6 is another rest day, and finally Day 7 is your last re-visit opportunity before you write your exam.
-
-</p>
-</details>
-
 ### Manage workflow (Slipknot/Trance/Music in general is the cure)
 
 ### Optimize your environment
