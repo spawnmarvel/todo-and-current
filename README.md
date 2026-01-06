@@ -32,7 +32,7 @@ https://github.com/spawnmarvel/todo-and-current/blob/main/bash/README_bash.md
 
 ## TODO 2 Docker, Azure :airplane:
 
-* Python as container (the getting started docker) = 
+* Python as container in docker (the getting started docker) = 
 
 https://github.com/spawnmarvel/learning-docker/blob/main/1.3-containerize-python-application-2/README.md
 
