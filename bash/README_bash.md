@@ -447,7 +447,7 @@ mysqlcheck -h servername --port=3306 -u zabbix --password=the-password --databas
 
 
 
-<details><summary>Commands bash quick guide self, troubleshoot log, ports, cpu and ram, apt and remove</summary>
+<details><summary>Quick guide self, troubleshoot log, ports, cpu and ram, apt and remove</summary>
 <p>
 
 #### We can hide anything, even code!
