@@ -80,7 +80,7 @@ python .\run_pika.py
 Success
 ```
 
-Deactivate env
+Deactivate env/ stop
 
 ```bash
 deactivate

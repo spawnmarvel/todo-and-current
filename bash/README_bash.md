@@ -509,3 +509,44 @@ man zip
 </details>
 
 https://www.w3schools.com/bash/bash_commands.php
+
+<details><summary>Zabbix version, mysql connect and more</summary>
+<p>
+
+#### We can hide anything, even code!
+```bash
+zabbix_server --version
+
+zabbix_agentd --version
+
+# log it 
+sudo tail -f /var/log/zabbix/zabbix_server.log
+
+
+mysql --version
+
+cd/etc/zabbix
+sudo grep ’DBPort*’ zabbix_server.conf 
+sudo grep ’DBPassword*’ zabbix_server.conf 
+
+sudo grep ’DBUser*’ zabbix_server.conf 
+sudo grep ’DBHost*’ zabbix_server.conf 
+
+mysql -h servername --port=3306 -u zabbix --password=the-password
+
+exit;
+
+Cd /etc/zabbix
+sudo grep 'AllowUns*' zabbix_server.conf
+
+Cd /etc/zabbix/web
+sudo grep 'AllowUns*' zabbix.conf.php
+
+# Run a quick check on the Zabbix schema to ensure no tables are crashed
+
+mysqlcheck -h servername --port=3306 -u zabbix --password=the-password --databases zabbix --ssl-mode=REQUIRED
+# all should be ok
+
+```
+</p>
+</details>
