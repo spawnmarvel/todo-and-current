@@ -24,3 +24,6 @@ function Write-Log {
     $logEntry = "$timestamp - $Message"
     $logEntry | Out-File -FilePath $logFile -Append
 }
+
+# df -h equivanelt
+Get-Volume
