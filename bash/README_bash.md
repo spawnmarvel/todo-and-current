@@ -1,112 +1,4 @@
 
-
-<details><summary>Commands bash quick guide self, troubleshoot log, ports, cpu and ram, apt and remove</summary>
-<p>
-
-#### We can hide anything, even code!
-```bash
-
-sudo apt update -y
-sudo apt list –upgradable
-sudo apt upgrade -y
-sudo apt list --installed | grep -i 'influx*'
-sudo apt search 'influxdb'
-
-sudo apt update -y
-sudo apt install snmp
-which snmp
-sudo apt remove install snmp
-history
-
-dpkg # is the underlying package manager for these ubuntu.
-tail -f zabbix_server.logs
-
-sudo grep '*failed*' /var/log/zabbix/zabbix_server.log
-sudo tail -f /var/log/zabbix/zabbix_server.log >> tmp_logs
-sudo find /var/log -name "*log"
-
-ss -ltn
-ss -ant 'sport = :10050'
-htop
-top
-df -lh
-ls -lhS
-
-nano demo.sh # https://kodekloud.com/blog/make-bash-script-file-executable-linux/
-
-#!/bin/bash
-echo "Hello World!"
-
-# r = read, w = write, x = execute, - = is not granted
-ls -l demo.sh
-
-# u = user (owner), + = add, x = execute
-chmod u+x demo.sh
-# or octal, 744. user (u) has read (4), write (2), and execute (1) permissions (adding up to 7)
-# and the group (g) and others (o) have only read permissions (4).
-chmod 744 demo.sh
-
-# run
-./demo.sh 
-
-# List all users
-cat /etc/passwd
-
-ssh-keygen -t rsa -b 4096
-#Private: Your identification has been saved in C:\Users\username/.ssh/id_rsa
-#Copy this:Your public key has been saved in C:\Users\username/.ssh/id_rsa.pub
-
-ssh-rsa#################################################
-
-# ssh to ubuntu
-mkdir -p ~/.ssh
-chmod 700 ~/.ssh
-
-touch ~/.ssh/authorized_keys
-sudo nano ~/.ssh/authorized_keys
-# paste the full ssh-rsa
-
-exit
-ssh imsdal@192.168.3.7
-no pass
-
-```
-</p>
-</details>
-
-<details><summary>Update and upgrade / apt install </summary>
-<p>
-
-#### We can hide anything, even code!
-```bash
-
-sudo apt update -y         # - Update apt/sources
-sudo apt list --upgradable # - List possible upgrades
-sudo apt upgrade -y        # - Do upgrade
-
-cd /etc/apt/               # - View apt sources list*
-ls -lh
-ubuntu.sources 
-
-# lets install zabix agent2
-# https://www.zabbix.com/download?zabbix=7.0&os_distribution=ubuntu&os_version=24.04&components=agent_2&db=&ws=
-
-wget https://repo.zabbix.com/zabbix/7.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_latest_7.0+ubuntu24.04_all.deb # Get pack
-
-sudo dpkg -i zabbix-release_latest_7.0+ubuntu24.04_all.deb # -i install
-
-sudo apt update -y
-
-cd /etc/apt/sources.list.d
-ls -lh
-ubuntu.sources  zabbix-tools.list  zabbix.list
-
-sudo apt install zabbix-agent2      # Install agent
-
-```
-</p>
-</details>
-
 W3schools
 
 <details><summary>Basic Commands</summary>
@@ -548,6 +440,115 @@ sudo grep 'AllowUns*' zabbix.conf.php
 
 mysqlcheck -h servername --port=3306 -u zabbix --password=the-password --databases zabbix --ssl-mode=REQUIRED
 # all should be ok
+
+```
+</p>
+</details>
+
+
+
+<details><summary>Commands bash quick guide self, troubleshoot log, ports, cpu and ram, apt and remove</summary>
+<p>
+
+#### We can hide anything, even code!
+```bash
+
+sudo apt update -y
+sudo apt list –upgradable
+sudo apt upgrade -y
+sudo apt list --installed | grep -i 'influx*'
+sudo apt search 'influxdb'
+
+sudo apt update -y
+sudo apt install snmp
+which snmp
+sudo apt remove install snmp
+history
+
+dpkg # is the underlying package manager for these ubuntu.
+tail -f zabbix_server.logs
+
+sudo grep '*failed*' /var/log/zabbix/zabbix_server.log
+sudo tail -f /var/log/zabbix/zabbix_server.log >> tmp_logs
+sudo find /var/log -name "*log"
+
+ss -ltn
+ss -ant 'sport = :10050'
+htop
+top
+df -lh
+ls -lhS
+
+nano demo.sh # https://kodekloud.com/blog/make-bash-script-file-executable-linux/
+
+#!/bin/bash
+echo "Hello World!"
+
+# r = read, w = write, x = execute, - = is not granted
+ls -l demo.sh
+
+# u = user (owner), + = add, x = execute
+chmod u+x demo.sh
+# or octal, 744. user (u) has read (4), write (2), and execute (1) permissions (adding up to 7)
+# and the group (g) and others (o) have only read permissions (4).
+chmod 744 demo.sh
+
+# run
+./demo.sh 
+
+# List all users
+cat /etc/passwd
+
+ssh-keygen -t rsa -b 4096
+#Private: Your identification has been saved in C:\Users\username/.ssh/id_rsa
+#Copy this:Your public key has been saved in C:\Users\username/.ssh/id_rsa.pub
+
+ssh-rsa#################################################
+
+# ssh to ubuntu
+mkdir -p ~/.ssh
+chmod 700 ~/.ssh
+
+touch ~/.ssh/authorized_keys
+sudo nano ~/.ssh/authorized_keys
+# paste the full ssh-rsa
+
+exit
+ssh imsdal@192.168.3.7
+no pass
+
+```
+</p>
+</details>
+
+<details><summary>Update and upgrade / apt install </summary>
+<p>
+
+#### We can hide anything, even code!
+```bash
+
+sudo apt update -y         # - Update apt/sources
+sudo apt list --upgradable # - List possible upgrades
+sudo apt upgrade -y        # - Do upgrade
+
+cd /etc/apt/               # - View apt sources list*
+ls -lh
+ubuntu.sources 
+
+# lets install zabix agent2
+# https://www.zabbix.com/download?zabbix=7.0&os_distribution=ubuntu&os_version=24.04&components=agent_2&db=&ws=
+
+wget https://repo.zabbix.com/zabbix/7.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_latest_7.0+ubuntu24.04_all.deb # Get pack
+
+sudo dpkg -i zabbix-release_latest_7.0+ubuntu24.04_all.deb # -i install
+
+sudo apt update -y
+
+cd /etc/apt/sources.list.d
+ls -lh
+ubuntu.sources  zabbix-tools.list  zabbix.list
+
+sudo apt install zabbix-agent2      # Install agent
 
 ```
 </p>
