@@ -107,6 +107,8 @@ sudo apt install zabbix-agent2      # Install agent
 </p>
 </details>
 
+W3schools
+
 <details><summary>Basic Commands</summary>
 <p>
 
