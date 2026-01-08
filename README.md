@@ -22,10 +22,12 @@ https://follow-e-lo.com/
 
 ## TODO Maintain knowledge
 
-1. Linux maintenance, use chromebook and program with remote ssh:
+1. Linux maintenance:
+    - Do use chromebook Debian GNU/Linux 12 (bookworm) and ssh remote stuff.
     - Do the bash tutorial and make a good quick guide
     - Do the mirror update, install offline zabbix agent
 2. Python maintenance as docker image:
+    - Code a few lines every now and then.
     - Do a build then push and pull to Docker hub.
     - Make small changes in python frequently, set container always run.
 3. Docker maintenance:
