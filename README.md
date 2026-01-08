@@ -14,17 +14,24 @@ https://follow-e-lo.com/
 
 ## Scripting (and what's fun*)
 
-* SQL*, Powershell*,  Bash*,
+* Bash, powershell, sql
 * Python, Docker
 * Think automation, idempotent, .sql .ps1, .sh
 
 ---
 
-## TODO Maintain
+## TODO Maintain knowledge
 
-1. Linux maintenance, use chromebook and program with ssh.
-2. Python maintenance, make a build, push and pull to Docker hub, do small changes frequently and the container must always run.
-3. Docker maintenance, learn the nemesis, Zabbix.
+1. Linux maintenance, use chromebook and program with remote ssh:
+    - Do the bash tutorial and make a good quick guide
+    - Do the mirror update, install offline zabbix agent
+2. Python maintenance as docker image:
+    - Do a build then push and pull to Docker hub.
+    - Make small changes in python frequently, set container always run.
+3. Docker maintenance:
+    - Do follow up on prod-2 stuff.
+      - Portainer, MySQL, Grafana (and plugins) and also Loki.
+      - Do the nemesis:Zabbix
 4. Azure aci and acr can wait a bit.
 
 ---
