@@ -26,6 +26,8 @@ https://follow-e-lo.com/
     # on chromebook
     sudo apt update -y
     sudo apt upgrade -y
+    # every now and then
+    df -h
     sudo apt autoremove && sudo apt autoclean
     ```
     - Do the bash tutorial and make a good quick guide
