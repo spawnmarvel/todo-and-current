@@ -23,9 +23,9 @@ https://follow-e-lo.com/
 ## TODO Maintain
 
 1. Linux maintenance, use chromebook and program with ssh.
-2. Python maintenance, make a build, push and pull to Docker hub, do small changes frequently and container must always run.
-3. Docker maintenance, learn the nemesis.
-4. Azure Aci and acr can wait a bit.
+2. Python maintenance, make a build, push and pull to Docker hub, do small changes frequently and the container must always run.
+3. Docker maintenance, learn the nemesis, Zabbix.
+4. Azure aci and acr can wait a bit.
 
 ---
 
