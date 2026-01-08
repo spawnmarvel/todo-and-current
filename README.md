@@ -21,7 +21,13 @@ https://follow-e-lo.com/
 ## TODO Maintain knowledge
 
 1. Linux maintenance:
-    - Do use chromebook Debian GNU/Linux 12 (bookworm) and ssh remote stuff.
+    - Do use chromebook Debian GNU/Linux 12 (bookworm).
+    ```bash
+    # on chromebook
+    sudo apt update -y
+    sudo apt upgrade -y
+    sudo apt autoremove && sudo apt autoclean
+    ```
     - Do the bash tutorial and make a good quick guide
     - Do the mirror update, install offline zabbix agent, upgrade things on ubuntu Azure.
 2. Python maintenance as docker image:
