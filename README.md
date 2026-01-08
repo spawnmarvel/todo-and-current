@@ -23,7 +23,7 @@ https://follow-e-lo.com/
 1. Linux maintenance:
     - Do use chromebook Debian GNU/Linux 12 (bookworm) and ssh remote stuff.
     - Do the bash tutorial and make a good quick guide
-    - Do the mirror update, install offline zabbix agent
+    - Do the mirror update, install offline zabbix agent, upgrade things on ubuntu Azure.
 2. Python maintenance as docker image:
     - Code a few lines every now and then.
     - Do a build then push and pull to Docker hub.
