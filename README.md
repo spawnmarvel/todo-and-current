@@ -2,13 +2,11 @@
 
 Readme with todo-and-current, Ai as helper, Gemini.
 
-### Manage workflow (Slipknot/Trance/Music in general is the cure)
+* Manage workflow (Slipknot/Trance/Music in general is the cure)
+* Optimize your environment
+* Adjust your mindset and habits
 
-### Optimize your environment
-
-### Adjust your mindset and habits
-
-### E-lo (parked)
+#### E-lo (parked)
 
 https://follow-e-lo.com/
 
