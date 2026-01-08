@@ -428,7 +428,7 @@ sudo grep ’DBHost*’ zabbix_server.conf
 
 mysql -h servername --port=3306 -u zabbix --password=the-password
 
-# if using cert, reg azure mysql flexible server
+# if using cert, ref azure mysql flexible server tls enabled and forced, we need the ca cert
 # You need the correct root certificate authority (CA) file to establish trust. For recent servers, the required certificate is typically DigiCertGlobalRootG2.crt.pem. 
 wget --no-check-certificate https://cacerts.digicert.com/DigiCertGlobalRootG2.crt.pem
 
