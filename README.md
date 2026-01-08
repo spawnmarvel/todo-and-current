@@ -73,6 +73,10 @@ https://github.com/spawnmarvel/learning-docker
 
 https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-certified-professional
 
+* Azure speed test
+
+https://www.azurespeed.com/Azure/Latency
+
 
 ## TODO (for fun) Azure SQL Database
 
