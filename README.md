@@ -31,15 +31,16 @@ https://follow-e-lo.com/
     sudo apt autoremove && sudo apt autoclean
     ```
     - Do the bash tutorial and make a good quick guide
-    - Do the mirror update, install offline zabbix agent, upgrade things on ubuntu Azure.
-2. Python maintenance as docker image:
+    - Do Azure Ubuntu's update and upgrade
+    - Do the mirror-server, add a chapter with install offline zabbix agent from *.deb
+2. Docker maintenance:
+    - Do follow up on prod-2 stuff.
+      - Portainer, MySQL, Grafana (and plugins) and also Loki.
+      - Do the nemesis: Zabbix
+3. Python maintenance as docker image:
     - Code a few lines every now and then.
     - Do a build then push and pull to Docker hub.
     - Make small changes in python frequently, set container always run.
-3. Docker maintenance:
-    - Do follow up on prod-2 stuff.
-      - Portainer, MySQL, Grafana (and plugins) and also Loki.
-      - Do the nemesis:Zabbix
 4. Azure aci and acr can wait a bit.
 
 ---
