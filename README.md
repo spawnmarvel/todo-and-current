@@ -32,7 +32,8 @@ https://follow-e-lo.com/
     ```
     - Do the bash tutorial and make a good quick guide
     - Do Azure Ubuntu's update and upgrade
-    - Do the mirror-server, add a chapter with install offline zabbix agent from *.deb
+    - Do the mirror-server  
+    - Install offline zabbix agent from *.deb = success
 2. Docker maintenance:
     - Do follow up on prod-2 stuff.
       - Portainer, MySQL, Grafana (and plugins) and also Loki.
