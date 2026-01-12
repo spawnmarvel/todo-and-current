@@ -348,6 +348,8 @@ rsync -avz trygdekontoret imsdal@172.64.0.5:/home/imsdal
 # sent 112 bytes  received 2,753 bytes  520.91 bytes/sec
 # total size is 316,837  speedup is 110.59
 
+rsync -azv zabbix_offline_24_04/ imsdal@192.168.3.4:/home/imsdal/zabbix_offline_24_04
+
 
 ```
 * UFW, or Uncomplicated Firewal
@@ -430,14 +432,32 @@ mysql -h servername --port=3306 -u zabbix --password=the-password
 
 # if using cert, ref azure mysql flexible server tls enabled and forced, we need the ca cert
 # You need the correct root certificate authority (CA) file to establish trust. For recent servers, the required certificate is typically DigiCertGlobalRootG2.crt.pem. 
+
 wget --no-check-certificate https://cacerts.digicert.com/DigiCertGlobalRootG2.crt.pem
+# https://learn.microsoft.com/en-us/azure/mysql/flexible-server/security-tls-how-to-connect
 
 mysql -h <server_name>.mysql.database.azure.com -u <admin_user> -p --ssl-mode=REQUIRED --ssl-ca=DigiCertGlobalRootG2.crt.pem
 
-
-
 exit;
+```
 
+MySQL side note
+
+```sql
+-- if you ever forget the Admin password, this resets it to zabbix
+SELECT username, passwd FROM users WHERE username='Admin';
+USE zabbix;
+
+UPDATE users 
+SET passwd=MD5('zabbix') 
+WHERE username='Admin';
+
+FLUSH PRIVILEGES;
+```
+If you are upgrading the mysql database
+```bash
+
+# check this
 Cd /etc/zabbix
 sudo grep 'AllowUns*' zabbix_server.conf
 
