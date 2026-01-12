@@ -13,7 +13,7 @@ https://follow-e-lo.com/
 ### Scripting (and what's fun*)
 
 * Bash, powershell, sql, python
-* Python, Docker
+* Docker
 * Think automation, idempotent, .sql .ps1, .sh
 
 ---
@@ -22,6 +22,7 @@ https://follow-e-lo.com/
 
 1. Linux maintenance:
     - Do use chromebook Debian GNU/Linux 12 (bookworm).
+    - Do not install any GUI, chromebook is for command line only
     ```bash
     # on chromebook
     sudo apt update -y
@@ -36,15 +37,20 @@ https://follow-e-lo.com/
     - Do a test for upgrade MySql, then remove all resources.
     - Install offline zabbix agent from *.deb = success
     - Do Azure Ubuntu's update and upgrade always
+
 2. Docker maintenance:
     - Do follow up on prod-2 stuff.
       - Portainer, MySQL, Grafana (and plugins) and also Loki.
       - Do the nemesis: Zabbix
+
 3. Python maintenance as docker image:
     - Code a few lines every now and then.
     - Do a build then push and pull to Docker hub.
     - Make small changes in python frequently, set container always run.
-4. MySql make a quick guide CRUD/DML/DCL and tips together with cmd ans mysql workbench.
+
+4. MySql maintenace:
+    - Make a quick guide CRUD/DML/DCL and tips together with cmd`s.
+    - Focus on the basic and also Zabbix tips and tricks.
 
 ---
 
