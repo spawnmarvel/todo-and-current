@@ -44,7 +44,7 @@ https://follow-e-lo.com/
     - Code a few lines every now and then.
     - Do a build then push and pull to Docker hub.
     - Make small changes in python frequently, set container always run.
-4. MySql make a quick and tips together with cmd ans mysql workbench.
+4. MySql make a quick guide CRUD/DML/DCL and tips together with cmd ans mysql workbench.
 
 ---
 
