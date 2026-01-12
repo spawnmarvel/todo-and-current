@@ -1,4 +1,4 @@
-
+# Bash quick guide
 
 Man is the cheat guide
 ```bash
@@ -413,6 +413,8 @@ man zip
 </details>
 
 https://www.w3schools.com/bash/bash_commands.php
+
+## Misc, must clean below mysql will be moved also
 
 <details><summary>Zabbix version, mysql connect and more</summary>
 <p>
