@@ -12,7 +12,7 @@ https://follow-e-lo.com/
 
 ### Scripting (and what's fun*)
 
-* Bash, powershell, sql
+* Bash, powershell, sql, python
 * Python, Docker
 * Think automation, idempotent, .sql .ps1, .sh
 
