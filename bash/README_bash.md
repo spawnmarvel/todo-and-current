@@ -1,4 +1,12 @@
 
+
+Man is the cheat guide
+```bash
+man -k
+apropos what?
+
+man -k security
+```
 W3schools
 
 <details><summary>Basic Commands</summary>
