@@ -33,6 +33,7 @@ https://follow-e-lo.com/
     - Do the bash tutorial and make a good quick guide
     - Do Azure Ubuntu's update and upgrade
     - Do the mirror-server  
+    - Install Zabbix on a server and Azure Database for MySQL B1MS, vCore
     - Install offline zabbix agent from *.deb = success
 2. Docker maintenance:
     - Do follow up on prod-2 stuff.
