@@ -2,30 +2,47 @@
 
 Readme with todo-and-current, Ai as helper, Gemini.
 
-### Manage workflow (Slipknot/Trance/Music in general is the cure)
+* Manage workflow (Slipknot/Trance/Music in general is the cure)
+* Optimize your environment
+* Adjust your mindset and habits
 
-### Optimize your environment
-
-### Adjust your mindset and habits
-
-### E-lo (parked)
+#### E-lo (parked)
 
 https://follow-e-lo.com/
 
-## Scripting (and what's fun*)
+### Scripting (and what's fun*)
 
-* SQL*, Powershell*,  Bash*,
+* Bash, powershell, sql
 * Python, Docker
 * Think automation, idempotent, .sql .ps1, .sh
 
 ---
 
-## TODO Maintain
+## TODO Maintain knowledge
 
-1. Linux maintenance, use chromebook and program with ssh.
-2. Python maintenance, make a build, push and pull to Docker hub, do small changes frequently and container must always run.
-3. Docker maintenance, learn the nemesis.
-4. Azure Aci and acr can wait a bit.
+1. Linux maintenance:
+    - Do use chromebook Debian GNU/Linux 12 (bookworm).
+    ```bash
+    # on chromebook
+    sudo apt update -y
+    sudo apt upgrade -y
+    # every now and then
+    df -h
+    sudo apt autoremove && sudo apt autoclean
+    ```
+    - Do the bash tutorial and make a good quick guide
+    - Do Azure Ubuntu's update and upgrade
+    - Do the mirror-server  
+    - Install offline zabbix agent from *.deb = success
+2. Docker maintenance:
+    - Do follow up on prod-2 stuff.
+      - Portainer, MySQL, Grafana (and plugins) and also Loki.
+      - Do the nemesis: Zabbix
+3. Python maintenance as docker image:
+    - Code a few lines every now and then.
+    - Do a build then push and pull to Docker hub.
+    - Make small changes in python frequently, set container always run.
+4. Azure aci and acr can wait a bit.
 
 ---
 
