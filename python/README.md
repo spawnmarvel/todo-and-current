@@ -1,4 +1,11 @@
-# Python quikc guide
+# Python quick guide
+
+## The Python Standard Library
+
+* Try to use this most of the time
+* Dependencies are risky sometimes
+
+https://docs.python.org/3/library/index.html
 
 ## Version, pip and pip install
 
