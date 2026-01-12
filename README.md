@@ -30,11 +30,11 @@ https://follow-e-lo.com/
     df -h
     sudo apt autoremove && sudo apt autoclean
     ```
-    - Do the bash tutorial and make a good quick guide
-    - Do Azure Ubuntu's update and upgrade
+    - Do the bash tutorial and make a good quick guide = 
     - Do the mirror-server  
     - Install Zabbix on a server and Azure Database for MySQL B1MS, vCore
     - Install offline zabbix agent from *.deb = success
+    - Do Azure Ubuntu's update and upgrade always
 2. Docker maintenance:
     - Do follow up on prod-2 stuff.
       - Portainer, MySQL, Grafana (and plugins) and also Loki.
