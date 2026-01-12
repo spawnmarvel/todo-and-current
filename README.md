@@ -44,8 +44,7 @@ https://follow-e-lo.com/
     - Code a few lines every now and then.
     - Do a build then push and pull to Docker hub.
     - Make small changes in python frequently, set container always run.
-4. Azure aci and acr can wait a bit.
-5. MySql make a quick and tips together with cmd ans mysql workbench.
+4. MySql make a quick and tips together with cmd ans mysql workbench.
 
 ---
 
