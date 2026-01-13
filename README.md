@@ -29,7 +29,7 @@ Bash.sh, powershell.ps1, sql.sql, python.py, Docker, think automation, idempoten
     df -h
     sudo apt autoremove && sudo apt autoclean
     ```
-    - Do the bash tutorial and make a good quick guide = 
+    - Do the bash tutorial w3s and make a good quick guide = 
     - Do the mirror-server  
     - Install Zabbix on a server and Azure Database for MySQL B1MS, vCore Dev/Test
     - Do a test for upgrade MySql, then remove all resources.
@@ -47,6 +47,7 @@ Bash.sh, powershell.ps1, sql.sql, python.py, Docker, think automation, idempoten
     - Make small changes in python frequently, set container always run.
 
 4. MySql maintenace:
+    - Do the w3s tutorial in mysql cli
     - Make a quick guide CRUD/DML/DCL and tips together with cmd`s.
     - Focus on the basic and also Zabbix tips and tricks.
 
