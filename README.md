@@ -16,6 +16,22 @@ Bash.sh, powershell.ps1, sql.sql, python.py, Docker, think automation, idempoten
 
 ---
 
+### Github
+
+How to Fix the "Rejected" Push, hint: Updates were rejected because the tip of your current branch is behind.
+
+This usually happens if you edited a file (like a README or .gitignore) directly on the GitHub website or if you pushed changes from a different machine.
+
+```bash
+# Option 2: The Clean Way (Rebase) - Recommended
+# This is often preferred because it takes your local changes, "lifts" them up, pulls the remote changes, 
+# and then puts your changes back on top. It keeps the history linear and clean.
+
+git pull --rebase origin main
+git push origin main
+
+```
+
 ## TODO Maintain knowledge
 
 1. Linux maintenance:
