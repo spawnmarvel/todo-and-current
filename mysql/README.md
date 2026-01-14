@@ -4,39 +4,124 @@ https://www.w3schools.com/MySQL/default.asp
 
 ## Linux install mysql client
 
+Ubuntu 24.04.3 LTS 192.168.3.5 server connect mysql
+
 ```bash
 
 sudo apt update -y
 
-sudo apt install mysql-client
+# On ubuntu where we have installed mysql server default since we are running zabbix and mysql on the same host
+cat /etc/os-release 
+# PRETTY_NAME="Ubuntu 24.04.3 LTS"
 
-# Alternatively, install mariadb client
-# Maybe since I am on 
-uname -a
-# Linux penguin 6.6.99-08879-gd6e365e8de4e #1 SMP PREEMPT_DYNAMIC Thu, 23 Oct 2025 06:15:52 -0700 x86_64 GNU/Linux
+sudo apt install mysql-client -y
 
+# since we already have installed mysql server we get all other tools also, like the client
+
+mysql --version
+# mysql  Ver 8.0.44-0ubuntu0.24.04.2 for Linux on x86_64 ((Ubuntu))
+
+sudo mysql
+
+``` 
+Chromebook install mysql-client
+
+```bash
+# On chromebook the is is a debian derived distro
+cat /etc/os-release
+# PRETTY_NAME="Debian GNU/Linux 12 (bookworm)"
+# So here we could only install mariadb client
 sudo apt install default-mysql-client
 
 mysql --version
 # mysql  Ver 15.1 Distrib 10.11.14-MariaDB, for debian-linux-gnu (x86_64) using  EditLine wrapper
 ```
 
-Azure MySql flexible server
+
+Chromebook Azure MySql flexible server connect
 
 ```bash
 
-mysql -h name.mysql.database.azure.com -
-u user -p
+mysql -h name.mysql.database.azure.com -u imsdal --password=xxxxxxxxx
 
-# if using cert, ref azure mysql flexible server tls enabled and forced, we need the ca cert
-# You need the correct root certificate authority (CA) file to establish trust. For recent servers, the required certificate is typically DigiCertGlobalRootG2.crt.pem. 
+``` 
+Azure MySql flexible server connect get mysql version
+
+```sql
+select version();
+-- 8.0.42-azure
+```
+
+Ubuntu 24.04.3 LTS 192.168.3.5 server connect mysql none tls (already done) and tls
+
+```bash
+
+# lets try to connect from the ubuntu server 192.168.3.5 without ssl
+mysql -h name.mysql.database.azure.com -u imsdal --password=xxxxxxxxx
+
+# that did not work, lets add the server 192.168.3.5 to network on the azure mysql flexible server
+# we could set up vnet peering, but this is just for test, so lets allow the public ip.
+# go to Azure Database for MySQL flexible server-> networking and add the ip and save, try again.
+
+mysql -h name.mysql.database.azure.com -u imsdal --password=xxxxxxxxx
+
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 20
+Server version: 8.0.42-azure Source distribution
+
+# lets check tls
+# go to Azure Database for MySQL flexible server->server paramters, check tls version, the were already set to
+# tls 1.2 and tls 1.3
+# Azure Database for MySQL Flexible Server has the require_secure_transport parameter set to ON by default
+# which enforces all client connections to use TLS/SSL. 
+# but how could we connect with
+mysql -h name.mysql.database.azure.com -u imsdal --password=xxxxxxxxx
+
+# reason:
+# It is a common point of confusion, but there is a simple reason for this: modern MySQL clients automatically attempt an SSL/TLS connection by default
+# Why it works without the flag
+# The mysql command-line tool (version 5.7 and 8.0+) uses a default setting called --ssl-mode=PREFERRED
+
+# If you were to explicitly tell the client not to use SSL by adding --ssl-mode=DISABLED, the connection would fail immediately with an error like:
+mysql -h name.mysql.database.azure.com -u imsdal --ssl-mode=DISABLED --password=xxxxxxxxx
+
+ERROR 3159 (HY000): Connections using insecure transport are prohibited while --require_secure_transport=ON.
+
+# Should you use the CA Certificate anyway?
+# While you can connect without pointing to a certificate file, you are currently using "Encryption without Verification." 
+# This protects your data from being read, but it doesn't protect you 
+# from a Man-in-the-Middle (MitM) attack (where someone pretends to be your database).
+# You need the correct root certificate authority (CA) file to establish trust. 
+# For recent servers, the required certificate is typically DigiCertGlobalRootG2.crt.pem. 
 
 wget --no-check-certificate https://cacerts.digicert.com/DigiCertGlobalRootG2.crt.pem
 # https://learn.microsoft.com/en-us/azure/mysql/flexible-server/security-tls-how-to-connect
 
-mysql -h name.mysql.database.azure.com -u user -p --ssl-mode=REQUIRED --ssl-ca=DigiCertGlobalRootG2.crt.pem
+mysql -h name.mysql.database.azure.com -u user -p --ssl-mode=REQUIRED --ssl-ca=DigiCertGlobalRootG2.crt.pem --password=xxxxxxxxx
 
+WARNING: no verification of server certificate will be done. Use --ssl-mode=VERIFY_CA or VERIFY_IDENTITY.
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 22
+Server version: 8.0.42-azure Source distribution
+
+# the warning, Think of REQUIRED as saying: "I want a secure tunnel, and I don't care who is on the other end."
+# how to fix this
+# VERIFY_CA = High (Ensures the server is an official Azure server)
+# VERIFY_IDENTITY = Highest (Ensures the server is exactly name.mysql.database.azure.com)
+
+mysql -h name.mysql.database.azure.com -u user -p --ssl-mode=VERIFY_CA --ssl-ca=DigiCertGlobalRootG2.crt.pem --password=xxxxxxxxx
+
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 23
+Server version: 8.0.42-azure Source distribution
+
+mysql -h name.mysql.database.azure.com -u user -p --ssl-mode=VERIFY_IDENTITY --ssl-ca=DigiCertGlobalRootG2.crt.pem --password=xxxxxxxxx
+
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 24
+Server version: 8.0.42-azure Source distribution
 ``` 
+
 
 ## DDL (data definition language)
 
