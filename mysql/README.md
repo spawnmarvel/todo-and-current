@@ -31,7 +31,7 @@ Server version: 8.0.44-0ubuntu0.24.04.2 (Ubuntu)
 Chromebook install mysql-client
 
 ```bash
-# On chromebook the is is a debian derived distro
+# On chromebook ths is a debian derived distro
 cat /etc/os-release
 # PRETTY_NAME="Debian GNU/Linux 12 (bookworm)"
 # So here we could only install mariadb client
@@ -53,7 +53,7 @@ Your MySQL connection id is 19
 Server version: 8.0.42-azure Source distribution
 
 ``` 
-Azure MySql flexible server connect get mysql version
+Chromebook Azure MySql flexible server connect get mysql version
 
 ```sql
 select version();
@@ -67,7 +67,8 @@ Ubuntu 24.04.3 LTS 192.168.3.5 server connect mysql none tls (already done) and 
 # lets try to connect from the ubuntu server 192.168.3.5 without ssl
 mysql -h name.mysql.database.azure.com -u imsdal --password=xxxxxxxxx
 
-# that did not work, lets add the server 192.168.3.5 to network on the azure mysql flexible server
+# that did not work, lets add the server public ip , this is the private ip 192.168.3.5
+# to network on the azure mysql flexible server
 # we could set up vnet peering, but this is just for test, so lets allow the public ip.
 # go to Azure Database for MySQL flexible server-> networking and add the ip and save, try again.
 
@@ -86,11 +87,13 @@ Server version: 8.0.42-azure Source distribution
 mysql -h name.mysql.database.azure.com -u imsdal --password=xxxxxxxxx
 
 # reason:
-# It is a common point of confusion, but there is a simple reason for this: modern MySQL clients automatically attempt an SSL/TLS connection by default
+# It is a common point of confusion, but there is a simple reason for this: modern MySQL clients automatically attempt
+# an SSL/TLS connection by default
 # Why it works without the flag
 # The mysql command-line tool (version 5.7 and 8.0+) uses a default setting called --ssl-mode=PREFERRED
 
-# If you were to explicitly tell the client not to use SSL by adding --ssl-mode=DISABLED, the connection would fail immediately with an error like:
+# If you were to explicitly tell the client not to use SSL by adding --ssl-mode=DISABLED, 
+# the connection would fail immediately with an error like:
 mysql -h name.mysql.database.azure.com -u imsdal --ssl-mode=DISABLED --password=xxxxxxxxx
 
 ERROR 3159 (HY000): Connections using insecure transport are prohibited while --require_secure_transport=ON.
