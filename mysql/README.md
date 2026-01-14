@@ -23,6 +23,10 @@ mysql --version
 
 sudo mysql
 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 771
+Server version: 8.0.44-0ubuntu0.24.04.2 (Ubuntu)
+
 ``` 
 Chromebook install mysql-client
 
@@ -43,6 +47,10 @@ Chromebook Azure MySql flexible server connect
 ```bash
 
 mysql -h name.mysql.database.azure.com -u imsdal --password=xxxxxxxxx
+
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MySQL connection id is 19
+Server version: 8.0.42-azure Source distribution
 
 ``` 
 Azure MySql flexible server connect get mysql version
