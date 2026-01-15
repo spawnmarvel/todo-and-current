@@ -600,68 +600,6 @@ mysqlcheck -h servername --port=3306 -u zabbix --password=the-password --databas
 </p>
 </details>
 
-## Misc, must clean below mysql will be moved also
-
-
-
-
-
-<details><summary>Quick guide self, troubleshoot log, ports, cpu and ram, apt installremove</summary>
-<p>
-
-#### We can hide anything, even code!
-```bash
-
-sudo apt update -y
-sudo apt list –upgradable
-sudo apt upgrade -y
-sudo apt list --installed | grep -i 'influx*'
-sudo apt search 'influxdb'
-
-sudo apt update -y
-sudo apt install snmp
-which snmp
-sudo apt remove install snmp
-history
-
-dpkg # is the underlying package manager for these ubuntu.
-tail -f zabbix_server.logs
-
-sudo grep '*failed*' /var/log/zabbix/zabbix_server.log
-sudo tail -f /var/log/zabbix/zabbix_server.log >> tmp_logs
-sudo find /var/log -name "*log"
-
-ss -ltn
-ss -ant 'sport = :10050'
-htop
-top
-df -lh
-ls -lhS
-
-nano demo.sh # https://kodekloud.com/blog/make-bash-script-file-executable-linux/
-
-#!/bin/bash
-echo "Hello World!"
-
-# r = read, w = write, x = execute, - = is not granted
-ls -l demo.sh
-
-# u = user (owner), + = add, x = execute
-chmod u+x demo.sh
-# or octal, 744. user (u) has read (4), write (2), and execute (1) permissions (adding up to 7)
-# and the group (g) and others (o) have only read permissions (4).
-chmod 744 demo.sh
-
-# run
-./demo.sh 
-
-# List all users
-cat /etc/passwd
-```
-
-</p>
-</details>
-
 <details><summary>Update and upgrade / apt install </summary>
 <p>
 
@@ -691,7 +629,84 @@ ubuntu.sources  zabbix-tools.list  zabbix.list
 
 sudo apt install zabbix-agent2      # Install agent
 
+# lets run some more examples
+sudo apt update -y
+sudo apt list –upgradable
+sudo apt upgrade -y
+sudo apt list --installed | grep -i 'influx*'
+sudo apt search 'influxdb'
+
+sudo apt update -y
+sudo apt install snmp
+which snmp
+sudo apt remove install snmp
+history
+
+dpkg # is the underlying package manager for these ubuntu.
+
 ```
 </p>
 </details>
+
+
+<details><summary>Hello world bash script with chmod</summary>
+<p>
+
+#### We can hide anything, even code!
+```bash
+
+nano demo.sh # https://kodekloud.com/blog/make-bash-script-file-executable-linux/
+
+#!/bin/bash
+echo "Hello World!"
+
+# r = read, w = write, x = execute, - = is not granted
+ls -l demo.sh
+
+# u = user (owner), + = add, x = execute
+chmod u+x demo.sh
+# or octal, 744. user (u) has read (4), write (2), and execute (1) permissions (adding up to 7)
+# and the group (g) and others (o) have only read permissions (4).
+chmod 744 demo.sh
+
+# run
+./demo.sh 
+
+# List all users
+cat /etc/passwd
+```
+
+</p>
+</details>
+
+<details><summary>Simple troubleshoot Zabbix with tail, grep, htop and port check</summary>
+<p>
+
+#### We can hide anything, even code!
+```bash
+
+tail -f zabbix_server.logs
+
+sudo grep '*failed*' /var/log/zabbix/zabbix_server.log
+sudo tail -f /var/log/zabbix/zabbix_server.log >> tmp_logs
+sudo find /var/log -name "*log"
+
+ss -ltn
+ss -ant 'sport = :10050'
+htop
+top
+df -lh
+ls -lhS
+
+```
+
+</p>
+</details>
+
+## Misc
+
+
+
+
+
 
