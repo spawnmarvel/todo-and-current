@@ -706,7 +706,62 @@ ls -lhS
 ## Misc
 
 
+<details><summary>Moving the MySQL data directory on Ubuntu</summary>
+<p>
 
+#### We can hide anything, even code!
+```bash
+
+# Moving the MySQL data directory on Ubuntu
+
+# check current path
+mysql -u root -p -e "SELECT @@datadir"
+
+# or
+mysql -u root -p
+
+# enter the sql and exit
+
+sudo systemctl stop mysql
+
+# Create the new directory and use rsync to copy the files, preserving permissions and ownership:
+sudo mkdir -p /new/path/mysql
+sudo rsync -avzh /var/lib/mysql /new/path/mysql
+
+# Then, change the ownership of the new directory to the mysql user and group:
+sudo chown -R mysql:mysql /new/path/mysql
+
+# (Optional) Back up the old directory:
+sudo mv /var/lib/mysql /var/lib/mysql_old
+
+# Update the MySQL configuration file:
+sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+
+# Locate the datadir line under the [mysqld] section and update it:
+datadir=/new/path/mysql
+
+# AppArmor is a security module that restricts program capabilities. 
+# You must tell it about the new location; otherwise, MySQL might fail to start.
+# Edit the AppArmor alias file:
+sudo nano /etc/apparmor.d/tunables/alias
+
+# Add or modify the alias rule at the end of the file:
+# alias /var/lib/mysql/ -> /new/path/mysql/,
+
+# Apply AppArmor changes and restart MySQL
+sudo systemctl restart apparmor
+sudo systemctl start mysql
+
+# Verify the change
+
+sudo systemctl status mysql
+mysql -u root -p -e "SELECT @@datadir"
+
+
+```
+
+</p>
+</details>
 
 
 
