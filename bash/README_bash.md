@@ -591,3 +591,99 @@ sudo apt install zabbix-agent2      # Install agent
 ```
 </p>
 </details>
+
+<details><summary>fdisk mount data drive example ubuntu 24.04</summary>
+<p>
+
+#### We can hide anything, even code!
+
+```bash
+# 0. Find the disk
+
+lsblk -o NAME,HCTL,SIZE,MOUNTPOINT | grep -i "sd"
+sda                       2:0:0:0      60G
+sdb                       2:0:1:0      65G
+├─sdb1                                  1G /boot/efi
+├─sdb2                                  2G /boot
+└─sdb3                               61.9G
+
+# Empty Mount Point: There is nothing listed under the "MOUNTPOINT" column for sda
+# Raw State: It has no child partitions (no sda1, sda2, etc.). It is just a raw 60GB block of storage waiting to be used.
+
+# 1. Create the Partition
+
+sudo fdisk /dev/sda
+
+# type g, n, first sector press enter, last sector press enter and on command press w
+# Created a new partition 1 of type 'Linux filesystem' and of size 60 GiB.
+
+# check it
+lsblk -o NAME,SIZE,MOUNTPOINT | grep "sd"
+sda                         60G
+└─sda1                      60G
+sdb                         65G
+├─sdb1                       1G /boot/efi
+├─sdb2                       2G /boot
+└─sdb3                    61.9G
+
+# 2. Format the new Partition (sda1)
+
+sudo mkfs.ext4 /dev/sda1
+
+# 3. Create the Directory and Moun
+
+# Create the folder
+sudo mkdir -p /datadrive
+# Mount the partition to that folder
+sudo mount /dev/sda1 /datadrive
+
+# 4. Make it Permanent (fstab) on restart
+# Get the unique ID: 
+sudo blkid /dev/sda1
+/dev/sda1: UUID="0b620824-cbfc-45fe-ae87-a21f7fdbf7cf" BLOCK_SIZE="4096" TYPE="ext4" PARTUUID="85488b3c-be39-4992-b045-81b060a8884d"
+
+# (Copy the UUID).
+
+# Open the config: 
+sudo nano /etc/fstab
+
+# Add this line at the very bottom:
+UUID=0b620824-cbfc-45fe-ae87-a21f7fdbf7cf  /datadrive  ext4  defaults,nofail  0  2
+
+# Verification
+lsblk -o NAME,SIZE,MOUNTPOINT | grep "sd"
+sda                         60G
+└─sda1                      60G /datadrive
+sdb                         65G
+├─sdb1                       1G /boot/efi
+├─sdb2                       2G /boot
+└─sdb3                    61.9G
+
+# sda1 → mounted at /datadrive
+# sdb → still mounted at /, /boot, etc
+
+# By default, the root of a newly formatted disk is owned by the root user. 
+# To ensure you can create files and folders there without typing sudo every time, run this command:
+
+sudo chown $USER:$USER /datadrive
+
+# make a txt file and add some text
+sudo nano /datadrive/test.txt
+
+cat /datadrive/test.txt
+
+
+# reboot server and run
+sudo shutdown -r now
+
+# Verification
+lsblk -o NAME,SIZE,MOUNTPOINT | grep "sd"
+
+
+# Verification
+cat /datadrive/test.txt
+
+
+```
+</p>
+</details>
