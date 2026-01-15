@@ -414,128 +414,12 @@ man zip
 
 https://www.w3schools.com/bash/bash_commands.php
 
-## Misc, must clean below mysql will be moved also
-
-<details><summary>Zabbix version, mysql connect and more</summary>
+<details><summary>ssh-keygen</summary>
 <p>
 
 #### We can hide anything, even code!
+
 ```bash
-zabbix_server --version
-
-zabbix_agentd --version
-
-# log it 
-sudo tail -f /var/log/zabbix/zabbix_server.log
-
-
-mysql --version
-
-cd/etc/zabbix
-sudo grep ’DBPort*’ zabbix_server.conf 
-sudo grep ’DBPassword*’ zabbix_server.conf 
-
-sudo grep ’DBUser*’ zabbix_server.conf 
-sudo grep ’DBHost*’ zabbix_server.conf 
-
-mysql -h servername --port=3306 -u zabbix --password=the-password
-
-# if using cert, ref azure mysql flexible server tls enabled and forced, we need the ca cert
-# You need the correct root certificate authority (CA) file to establish trust. For recent servers, the required certificate is typically DigiCertGlobalRootG2.crt.pem. 
-
-wget --no-check-certificate https://cacerts.digicert.com/DigiCertGlobalRootG2.crt.pem
-# https://learn.microsoft.com/en-us/azure/mysql/flexible-server/security-tls-how-to-connect
-
-mysql -h <server_name>.mysql.database.azure.com -u <admin_user> -p --ssl-mode=REQUIRED --ssl-ca=DigiCertGlobalRootG2.crt.pem
-
-exit;
-```
-
-MySQL side note
-
-```sql
--- if you ever forget the Admin password, this resets it to zabbix
-SELECT username, passwd FROM users WHERE username='Admin';
-USE zabbix;
-
-UPDATE users 
-SET passwd=MD5('zabbix') 
-WHERE username='Admin';
-
-FLUSH PRIVILEGES;
-```
-If you are upgrading the mysql database
-```bash
-
-# check this
-Cd /etc/zabbix
-sudo grep 'AllowUns*' zabbix_server.conf
-
-Cd /etc/zabbix/web
-sudo grep 'AllowUns*' zabbix.conf.php
-
-# Run a quick check on the Zabbix schema to ensure no tables are crashed
-
-mysqlcheck -h servername --port=3306 -u zabbix --password=the-password --databases zabbix --ssl-mode=REQUIRED
-# all should be ok
-
-```
-</p>
-</details>
-
-
-
-<details><summary>Quick guide self, troubleshoot log, ports, cpu and ram, apt and remove</summary>
-<p>
-
-#### We can hide anything, even code!
-```bash
-
-sudo apt update -y
-sudo apt list –upgradable
-sudo apt upgrade -y
-sudo apt list --installed | grep -i 'influx*'
-sudo apt search 'influxdb'
-
-sudo apt update -y
-sudo apt install snmp
-which snmp
-sudo apt remove install snmp
-history
-
-dpkg # is the underlying package manager for these ubuntu.
-tail -f zabbix_server.logs
-
-sudo grep '*failed*' /var/log/zabbix/zabbix_server.log
-sudo tail -f /var/log/zabbix/zabbix_server.log >> tmp_logs
-sudo find /var/log -name "*log"
-
-ss -ltn
-ss -ant 'sport = :10050'
-htop
-top
-df -lh
-ls -lhS
-
-nano demo.sh # https://kodekloud.com/blog/make-bash-script-file-executable-linux/
-
-#!/bin/bash
-echo "Hello World!"
-
-# r = read, w = write, x = execute, - = is not granted
-ls -l demo.sh
-
-# u = user (owner), + = add, x = execute
-chmod u+x demo.sh
-# or octal, 744. user (u) has read (4), write (2), and execute (1) permissions (adding up to 7)
-# and the group (g) and others (o) have only read permissions (4).
-chmod 744 demo.sh
-
-# run
-./demo.sh 
-
-# List all users
-cat /etc/passwd
 
 ssh-keygen -t rsa -b 4096
 #Private: Your identification has been saved in C:\Users\username/.ssh/id_rsa
@@ -558,40 +442,6 @@ no pass
 ```
 </p>
 </details>
-
-<details><summary>Update and upgrade / apt install </summary>
-<p>
-
-#### We can hide anything, even code!
-```bash
-
-sudo apt update -y         # - Update apt/sources
-sudo apt list --upgradable # - List possible upgrades
-sudo apt upgrade -y        # - Do upgrade
-
-cd /etc/apt/               # - View apt sources list*
-ls -lh
-ubuntu.sources 
-
-# lets install zabix agent2
-# https://www.zabbix.com/download?zabbix=7.0&os_distribution=ubuntu&os_version=24.04&components=agent_2&db=&ws=
-
-wget https://repo.zabbix.com/zabbix/7.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_latest_7.0+ubuntu24.04_all.deb # Get pack
-
-sudo dpkg -i zabbix-release_latest_7.0+ubuntu24.04_all.deb # -i install
-
-sudo apt update -y
-
-cd /etc/apt/sources.list.d
-ls -lh
-ubuntu.sources  zabbix-tools.list  zabbix.list
-
-sudo apt install zabbix-agent2      # Install agent
-
-```
-</p>
-</details>
-
 <details><summary>fdisk mount data drive example ubuntu 24.04</summary>
 <p>
 
@@ -691,3 +541,157 @@ cat /datadrive/test.txt
 ```
 </p>
 </details>
+<details><summary>Zabbix version, mysql -h, reset Admin(zabbix) password, and health check tables</summary>
+<p>
+
+#### We can hide anything, even code!
+```bash
+zabbix_server --version
+
+zabbix_agentd --version
+
+# log it 
+sudo tail -f /var/log/zabbix/zabbix_server.log
+
+mysql --version
+
+cd/etc/zabbix
+sudo grep ’DBPort*’ zabbix_server.conf 
+sudo grep ’DBPassword*’ zabbix_server.conf 
+
+sudo grep ’DBUser*’ zabbix_server.conf 
+sudo grep ’DBHost*’ zabbix_server.conf 
+
+# mysql -h servername --port=3306 -u zabbix --password=the-password
+
+```
+More mysql in the mysql folder.
+
+
+MySQL side note
+
+```sql
+-- if you ever forget the Admin password, this resets it to zabbix
+SELECT username, passwd FROM users WHERE username='Admin';
+USE zabbix;
+
+UPDATE users 
+SET passwd=MD5('zabbix') 
+WHERE username='Admin';
+
+FLUSH PRIVILEGES;
+```
+If you are upgrading the mysql database
+```bash
+
+# check this
+Cd /etc/zabbix
+sudo grep 'AllowUns*' zabbix_server.conf
+
+Cd /etc/zabbix/web
+sudo grep 'AllowUns*' zabbix.conf.php
+
+# Run a quick check on the Zabbix schema to ensure no tables are crashed
+
+mysqlcheck -h servername --port=3306 -u zabbix --password=the-password --databases zabbix
+# all should be ok
+
+```
+</p>
+</details>
+
+## Misc, must clean below mysql will be moved also
+
+
+
+
+
+<details><summary>Quick guide self, troubleshoot log, ports, cpu and ram, apt installremove</summary>
+<p>
+
+#### We can hide anything, even code!
+```bash
+
+sudo apt update -y
+sudo apt list –upgradable
+sudo apt upgrade -y
+sudo apt list --installed | grep -i 'influx*'
+sudo apt search 'influxdb'
+
+sudo apt update -y
+sudo apt install snmp
+which snmp
+sudo apt remove install snmp
+history
+
+dpkg # is the underlying package manager for these ubuntu.
+tail -f zabbix_server.logs
+
+sudo grep '*failed*' /var/log/zabbix/zabbix_server.log
+sudo tail -f /var/log/zabbix/zabbix_server.log >> tmp_logs
+sudo find /var/log -name "*log"
+
+ss -ltn
+ss -ant 'sport = :10050'
+htop
+top
+df -lh
+ls -lhS
+
+nano demo.sh # https://kodekloud.com/blog/make-bash-script-file-executable-linux/
+
+#!/bin/bash
+echo "Hello World!"
+
+# r = read, w = write, x = execute, - = is not granted
+ls -l demo.sh
+
+# u = user (owner), + = add, x = execute
+chmod u+x demo.sh
+# or octal, 744. user (u) has read (4), write (2), and execute (1) permissions (adding up to 7)
+# and the group (g) and others (o) have only read permissions (4).
+chmod 744 demo.sh
+
+# run
+./demo.sh 
+
+# List all users
+cat /etc/passwd
+```
+
+</p>
+</details>
+
+<details><summary>Update and upgrade / apt install </summary>
+<p>
+
+#### We can hide anything, even code!
+```bash
+
+sudo apt update -y         # - Update apt/sources
+sudo apt list --upgradable # - List possible upgrades
+sudo apt upgrade -y        # - Do upgrade
+
+cd /etc/apt/               # - View apt sources list*
+ls -lh
+ubuntu.sources 
+
+# lets install zabix agent2
+# https://www.zabbix.com/download?zabbix=7.0&os_distribution=ubuntu&os_version=24.04&components=agent_2&db=&ws=
+
+wget https://repo.zabbix.com/zabbix/7.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_latest_7.0+ubuntu24.04_all.deb # Get pack
+
+sudo dpkg -i zabbix-release_latest_7.0+ubuntu24.04_all.deb # -i install
+
+sudo apt update -y
+
+cd /etc/apt/sources.list.d
+ls -lh
+ubuntu.sources  zabbix-tools.list  zabbix.list
+
+sudo apt install zabbix-agent2      # Install agent
+
+```
+</p>
+</details>
+
