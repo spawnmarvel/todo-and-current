@@ -598,6 +598,10 @@ sudo apt install zabbix-agent2      # Install agent
 #### We can hide anything, even code!
 
 ```bash
+
+man fdisk
+#  fdisk - manipulate disk partition table
+
 # 0. Find the disk
 
 lsblk -o NAME,HCTL,SIZE,MOUNTPOINT | grep -i "sd"
