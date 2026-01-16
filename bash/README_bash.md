@@ -300,13 +300,23 @@ man uptime
 </p>
 </details>
 
-<details><summary>Networking / UFW</summary>
+<details><summary>Networking, UFW and /etc/hosts </summary>
 <p>
 
 #### We can hide anything, even code!
 ```bash
 # ping - send ICMP ECHO_REQUEST to network hosts
 man ping
+
+ping e1-x-mysql01
+# does not work
+ping 10.70.1.43
+# works
+# if there is now fw betwen servers and no ufw enabled edit host file, example
+sudo nano /etc/hosts
+# IP Address       Hostname
+10.70.1.43          e1-x-mysql01
+# then ping e1-x-mysql01 should work
 
 # curl - transfer a URL
 man curl
