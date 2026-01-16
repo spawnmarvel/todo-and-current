@@ -452,7 +452,7 @@ no pass
 ```
 </p>
 </details>
-<details><summary>fdisk mount data drive example ubuntu 24.04 for mysql</summary>
+<details><summary>Mount a data drive with fdisk ubuntu 24.04 for mysql</summary>
 <p>
 
 #### We can hide anything, even code!
@@ -552,7 +552,7 @@ cat /datadrive/test.txt
 </p>
 </details>
 
-<details><summary>Moving the MySQL data directory on Ubuntu</summary>
+<details><summary>Moving the MySQL data directory on Ubuntu 24.04</summary>
 <p>
 
 #### We can hide anything, even code!
