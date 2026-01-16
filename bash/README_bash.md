@@ -713,6 +713,18 @@ ls -lhS
 ```bash
 
 # Moving the MySQL data directory on Ubuntu
+lsblk
+NAME                      MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS
+sda                         8:0    0   60G  0 disk
+└─sda1                      8:1    0   60G  0 part /datadrive
+sdb                         8:16   0   65G  0 disk
+├─sdb1                      8:17   0    1G  0 part /boot/efi
+├─sdb2                      8:18   0    2G  0 part /boot
+└─sdb3                      8:19   0 61.9G  0 part
+  └─ubuntu--vg-ubuntu--lv 252:0    0 61.9G  0 lvm  /
+sr0                        11:0    1 1024M  0 rom
+
+# we want to move it to sda datadrive
 
 # check current path
 mysql -u root -p -e "SELECT @@datadir"
@@ -725,31 +737,40 @@ mysql -u root -p
 sudo systemctl stop mysql
 
 # Create the new directory and use rsync to copy the files, preserving permissions and ownership:
-sudo mkdir -p /new/path/mysql
-sudo rsync -avzh /var/lib/mysql /new/path/mysql
-
-# Then, change the ownership of the new directory to the mysql user and group:
-sudo chown -R mysql:mysql /new/path/mysql
+# Since you own /datadrive, we will create a specific sub-folder for MySQL and hand ownership of only that folder over to the database system:
+sudo mkdir -p /datadrive/mysql
+sudo chown mysql:mysql /datadrive/mysql
+sudo chmod 750 /datadrive/mysql
 
 # (Optional) Back up the old directory:
 sudo mv /var/lib/mysql /var/lib/mysql_old
 
-# Update the MySQL configuration file:
+# Copy the Data (Preserving Permissions)
+sudo rsync -av /var/lib/mysql/ /datadrive/mysql/
+
+# Update the Configuration
 sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+# Change the datadir line to: 
+datadir = /datadrive/mysql
 
-# Locate the datadir line under the [mysqld] section and update it:
-datadir=/new/path/mysql
-
-# AppArmor is a security module that restricts program capabilities. 
-# You must tell it about the new location; otherwise, MySQL might fail to start.
-# Edit the AppArmor alias file:
+# Fix AppArmor (Required for Ubuntu 24.04)
+# Ubuntu's security will block MySQL from looking at /datadrive unless we add an alias.
 sudo nano /etc/apparmor.d/tunables/alias
 
-# Add or modify the alias rule at the end of the file:
-# alias /var/lib/mysql/ -> /new/path/mysql/,
+# Add this line to the very bottom: alias /var/lib/mysql/ -> /datadrive/mysql/,
+alias /var/lib/mysql/ -> /datadrive/mysql/,
 
-# Apply AppArmor changes and restart MySQL
+# Reload AppArmor:
 sudo systemctl restart apparmor
+
+# Because you previously ran chown $USER:$USER /datadrive, we need to make sure the MySQL service has "search" (execute) permissions 
+# to walk through the /datadrive folder to get to its /datadrive/mysql folder.
+
+# This grants everyone 'execute' permissions on the parent folder only, 
+# allowing MySQL to 'pass through' to its data.
+sudo chmod +x /datadrive
+
+# Start the service
 sudo systemctl start mysql
 
 # Verify the change
