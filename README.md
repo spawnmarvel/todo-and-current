@@ -40,6 +40,8 @@ https://labs.iximiuz.com/tutorials?category=linux
 
 https://kodekloud.com/studio/labs/linux
 
+sos
+
 
 
 ## TODO Maintain knowledge
