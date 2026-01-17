@@ -9,7 +9,7 @@ man -k security
 ```
 W3schools
 
-<details><summary>Basic Commands</summary>
+<details><summary>Basic Commands, ls, cd, pwd, echo, cat, cp, mv, rm, touch, mkdir</summary>
 <p>
 
 #### We can hide anything, even code!
@@ -35,7 +35,7 @@ mkdir #  - Create a new folder
 </p>
 </details>
 
-<details><summary>Text Processing</summary>
+<details><summary>Text Processing, grep, awk, sed, cut, sort, tail, head</summary>
 <p>
 
 #### We can hide anything, even code!
@@ -183,7 +183,7 @@ head -n 2 /var/log/syslog
 </p>
 </details>
 
-<details><summary>System Monitoring</summary>
+<details><summary>System Monitoring, ps, top, df, du, free, uptime</summary>
 <p>
 
 #### We can hide anything, even code!
@@ -300,7 +300,7 @@ man uptime
 </p>
 </details>
 
-<details><summary>Networking, UFW and /etc/hosts </summary>
+<details><summary>Networking, ping, /etc/hosts, curl, wget, ssh, scp, rsync and UFW </summary>
 <p>
 
 #### We can hide anything, even code!
@@ -377,7 +377,7 @@ https://github.com/spawnmarvel/linux-and-azure/tree/main/ufw-firewall
 </p>
 </details>
 
-<details><summary>File Compression</summary>
+<details><summary>File Compression, zip</summary>
 <p>
 
 #### We can hide anything, even code!
