@@ -32,6 +32,16 @@ git push origin main
 
 ```
 
+#### sadservers
+
+https://kodekloud.com/studio/labs/linux
+
+https://labs.iximiuz.com/tutorials?category=linux
+
+https://kodekloud.com/studio/labs/linux
+
+
+
 ## TODO Maintain knowledge
 
 1. Linux maintenance:
