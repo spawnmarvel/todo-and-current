@@ -1,4 +1,4 @@
-5# Todo-and-current :seedling:
+# Todo-and-current :seedling:
 
 Readme with todo-and-current, Ai as helper, Gemini.
 
@@ -39,14 +39,6 @@ https://kodekloud.com/studio/labs/linux
 https://labs.iximiuz.com/tutorials?category=linux
 
 https://kodekloud.com/studio/labs/linux
-
-sos
-
-sos --version
-
-sudo apt update
-sudo apt install sosreport
-
 
 
 ## TODO Maintain knowledge
