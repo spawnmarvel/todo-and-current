@@ -42,6 +42,8 @@ https://kodekloud.com/studio/labs/linux
 
 sos
 
+sos --version
+
 
 
 ## TODO Maintain knowledge
