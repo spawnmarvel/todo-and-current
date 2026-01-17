@@ -34,9 +34,16 @@ git push origin main
 
 #### sadservers
 
+* Linux Administration Labs
+* Essential Linux skills for DevOps. Learn shell scripting, package management, networking, security, and system administration.
+
 https://kodekloud.com/studio/labs/linux
 
+* tbd
+
 https://labs.iximiuz.com/tutorials?category=linux
+
+* tbd
 
 https://kodekloud.com/studio/labs/linux
 
