@@ -9,7 +9,7 @@ man -k security
 ```
 W3schools
 
-<details><summary>Basic Commands, ls, cd, pwd, echo, cat, cp, mv, rm, touch, mkdir</summary>
+<details><summary>Basic Commands, ls, ls -a,  cd, pwd, echo, cat, cp, mv, rm, touch, mkdir</summary>
 <p>
 
 #### We can hide anything, even code!
@@ -21,6 +21,7 @@ echo "Hello, Bash!"
 hello.sh
 
 ls    #  - List directory contents
+ls -a #  - List hidden directory contents
 cd    #  - Change the current directory
 pwd   #  - Print the current working directory
 echo  #  - Display a line of text
