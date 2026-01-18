@@ -117,7 +117,7 @@ https://github.com/spawnmarvel/learning-docker/blob/main/1.4-azure-container-ins
 * Grafana and MySQL with http and https = ok
 * Zabbix plugin = ok
 * Grafana and MySQL, https, Loki and Alloy on remote servers = 
-* Zabbix nemisis = 
+* Zabbix nemisis = https://github.com/spawnmarvel/learning-docker/tree/main/prod-ish-2/zabbix
 * RabbitMQ = 
 * RabbitMQ shovel http and https = 
 
