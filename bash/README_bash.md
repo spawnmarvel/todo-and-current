@@ -255,10 +255,6 @@ df -h
 
 df -h /datadrive
 
-# how sizes in human-readable format (e.g., KB, MB) with file path
-dh -hT
-
-
 # du du - estimate file space usage
 man du
 
