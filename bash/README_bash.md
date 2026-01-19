@@ -377,13 +377,34 @@ https://github.com/spawnmarvel/linux-and-azure/tree/main/ufw-firewall
 </p>
 </details>
 
-<details><summary>File Compression, zip</summary>
+<details><summary>File Compression, zip, unzip, tar</summary>
 <p>
 
 #### We can hide anything, even code!
 ```bash
 
 man zip
+# not default ubuntu 24.4
+
+man -k zip
+# there are some options
+
+sudo apt install zip
+
+# zip
+zip test.zip file1.txt file2.txt
+  adding: test1.txt (stored 0%)
+  adding: test2.txt (stored 0%)
+
+# unzip
+unzip test.zip
+Archive:  test.zip
+ extracting: test1.txt               
+ extracting: test2.txt  
+
+# tar - an archiving utility
+man tar
+
 
 ```
 </p>
