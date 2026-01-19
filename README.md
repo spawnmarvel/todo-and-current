@@ -64,7 +64,8 @@ https://kodekloud.com/studio/labs/linux
     - Do the bash tutorial w3s and make a good quick guide = 
     - Do the mirror-server = 50%
     - Install Zabbix on a server and Azure Database for MySQL B1MS, vCore Dev/Test = 
-    - Do a test for upgrade MySql, then remove all resources = 50% in internal project, but was zabbix 7.0.22, must do 6
+    - Do a test for upgrade MySql = 50% in internal project, but was zabbix 7.0.22, must do 6
+    - Do make private link to mysql
     - Install offline zabbix agent from *.deb = 100% success
     - Do Azure Ubuntu's update and upgrade always
 
