@@ -389,6 +389,12 @@ man zip
 man -k zip
 # there are some options
 
+# -r - Recursively zip directories
+# -u - Update files in the archive if they are newer
+# -d - Delete files from the archive
+# -e - Encrypt the contents of the ZIP archive
+# -x - Exclude specific files from being zipped
+
 sudo apt install zip
 
 # zip
@@ -405,6 +411,32 @@ Archive:  test.zip
 # tar - an archiving utility
 man tar
 
+# The tar command is used to create, maintain, modify, and extract files from an archive file.
+
+# -c - Create a new archive
+# -x - Extract files from an archive
+# -t - List the contents of an archive
+# -z - Filter the archive through gzip
+# -v - Verbosely list files processed
+# -f - Specify the filename of the archive
+
+# Create a new archive
+tar -cvf archive.tar test1.txt test2.txt
+test1.txt
+test2.txt
+
+# Option: -t (List)
+tar -tvf archive.tar
+-rw-rw-r-- imsdal/imsdal     0 2026-01-19 19:06 test1.txt
+-rw-rw-r-- imsdal/imsdal     0 2026-01-19 19:06 test2.txt
+
+# Option: -x (Extract)
+tar xvf archive.tar
+test1.txt
+test2.txt
+
+# check the files
+ls
 
 ```
 </p>
