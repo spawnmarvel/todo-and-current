@@ -906,8 +906,12 @@ ls -lhS
 </details>
 
 ## Misc
-
+---
 
 ## File system
 
 ![file system](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/images__and_pdf/filesys.png)
+
+## File permission
+
+![file permission](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/images__and_pdf/file_permissions.png)
