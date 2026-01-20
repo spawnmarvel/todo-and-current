@@ -929,16 +929,7 @@ ls -lhS
 ## Misc
 
 
-## File system
+## File system, permission and access control
 
-![file system](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/images__and_pdf/filesys.png)
+![file all](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/images__and_pdf/file_all.png)
 
-## File permission
-
-File permission
-
-![file permission](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/images__and_pdf/file_permissions.png)
-
-Access control list
-
-![octal](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/images__and_pdf/octal.png)
