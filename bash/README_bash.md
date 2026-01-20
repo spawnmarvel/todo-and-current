@@ -507,6 +507,27 @@ ls -l test1.txt
 ls -ld zabbix_offline_24_04/
 drwxrwxr-x 2 imsdal imsdal 4096 Jan 11 20:13 zabbix_offline_24_04/
 
+# -rw-rw-r--
+# directory = d, regular file = -, symbolic link = I
+# -rv- = user
+#  rw- = group
+#  r-- = others
+# readable = r, writable = w, excecutable = x, denied = -
+
+
+# one file example
+ls -l test1.txt
+-rw-rw-r-- 1 imsdal imsdal 0 Jan 19 19:06 test1.txt
+
+# list numeric
+stat -c '%a' test1.txt
+664
+# user, 6: Read and write permissions
+# group, 6: Read and write permissions
+# other, 4: Read permission
+
+# set chmod
+
 ```
 
 </p>
@@ -914,4 +935,10 @@ ls -lhS
 
 ## File permission
 
+File permission
+
 ![file permission](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/images__and_pdf/file_permissions.png)
+
+Access control list
+
+![octal](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/images__and_pdf/octal.png)
