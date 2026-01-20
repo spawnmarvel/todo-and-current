@@ -7,7 +7,8 @@ man man
 # man - an interface to the system reference manuals
 
 man -k
-#  Search  the  short descriptions and manual page names for the keyword printf as regular expression.  Printout any matches.  Equivalent to apropos printf
+#  Search  the  short descriptions and manual page names for the keyword printf as regular expression.
+# Printout any matches.  Equivalent to apropos printf
 apropos what?
 
 man -k security
