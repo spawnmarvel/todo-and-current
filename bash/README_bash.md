@@ -2,10 +2,15 @@
 
 Man is the cheat guide
 ```bash
+
+man man
+# man - an interface to the system reference manuals
+
 man -k
 apropos what?
 
 man -k security
+man -k file
 ```
 W3schools
 
