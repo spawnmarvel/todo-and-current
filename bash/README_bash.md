@@ -13,6 +13,8 @@ apropos what?
 
 man -k security
 man -k file
+man -k text
+man -k network
 ```
 W3schools
 
@@ -307,7 +309,7 @@ man uptime
 </p>
 </details>
 
-<details><summary>Networking, ping, /etc/hosts, curl, wget, ssh, scp, rsync and UFW </summary>
+<details><summary>Networking, ping, /etc/hosts, curl, wget, ssh, scp, rsync, ip addr, hostname -I and UFW </summary>
 <p>
 
 #### We can hide anything, even code!
@@ -374,6 +376,19 @@ rsync -avz trygdekontoret imsdal@172.64.0.5:/home/imsdal
 # total size is 316,837  speedup is 110.59
 
 rsync -azv zabbix_offline_24_04/ imsdal@192.168.3.4:/home/imsdal/zabbix_offline_24_04
+
+man ip addr
+# ip - show / manipulate routing, network devices, interfaces and tunnels
+
+ip addr
+#  inet 192.168.3.5/24 metric 100 brd 192.168.3.255 scope global eth0
+
+ip a
+# inet 192.168.3.5/24 metric 100 brd 192.168.3.255 scope global eth0
+
+hostname -I
+# 192.168.3.5
+
 
 
 ```
