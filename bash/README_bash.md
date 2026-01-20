@@ -464,7 +464,7 @@ ls
 </p>
 </details>
 
-<details><summary>File Permissions</summary>
+<details><summary>File Permissions, chmod (change file permission), chown (change file ownership), chgrp (change group ownership)</summary>
 
 <p>
 
