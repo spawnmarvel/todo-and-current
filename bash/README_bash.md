@@ -464,7 +464,7 @@ ls
 </p>
 </details>
 
-<details><summary>File Permissions, chmod (change file permission), chown (change file ownership), chgrp (change group ownership)</summary>
+<details><summary>File Permissions, ls -l (list) chmod (change file permission), chown (change file ownership), chgrp (change group ownership)</summary>
 
 <p>
 
@@ -486,7 +486,29 @@ ls
 # For example, the numeric permission 755 means the owner can read, write, and execute (7), 
 # and the group and others can read and execute (5).
 
+man chmod
+# chmod - change file mode bits
+
+# -R: Change files and directories recursively.
+# -v: Output a diagnostic for every file processed.
+
+# The -R option allows you to change permissions for files and directories recursively.
+# This is useful when you want to apply the same permissions to all files and subdirectories within a directory.
+
+# all
+ls -l
+
+# one file
+ls -l test1.txt
+-rw-rw-r-- 1 imsdal imsdal 0 Jan 19 19:06 test1.txt
+
+
+# dir
+ls -ld zabbix_offline_24_04/
+drwxrwxr-x 2 imsdal imsdal 4096 Jan 11 20:13 zabbix_offline_24_04/
+
 ```
+
 </p>
 </details>
 
