@@ -817,7 +817,6 @@ ls -lhS
 ## Misc
 
 
+## File system
 
-
-
-
+![file system](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/images__and_pdf/filesys.png)
