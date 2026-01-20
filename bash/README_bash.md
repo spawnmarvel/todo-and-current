@@ -527,6 +527,23 @@ stat -c '%a' test1.txt
 # other, 4: Read permission
 
 # set chmod
+# The -v option provides verbose output, showing a diagnostic message for each file processed by the command.
+chmod -v 760 test1.txt
+mode of 'test1.txt' changed from 0660 (rw-rw----) to 0760 (rwxrw----)
+# owner r, w and x
+# group r and w
+# others no permission
+
+#  
+# check it
+stat -c '%a' test1.txt
+760
+
+man chown
+# chown - change file owner and group
+
+
+
 
 ```
 
