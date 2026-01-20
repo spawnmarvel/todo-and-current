@@ -63,15 +63,19 @@ https://kodekloud.com/studio/labs/linux
     ```
     - Do the bash tutorial w3s and make a good quick guide = 
     - Do the mirror-server = 50%
-    - Install Zabbix on a server and Azure Database for MySQL B1MS, vCore Dev/Test
-    - Do a test for upgrade MySql, then remove all resources = 50% in internal project, but was zabbix 7.0.22, must do 6
-    - Install offline zabbix agent from *.deb = success
+    - Install Zabbix on a server and Azure Database for MySQL B1MS, vCore Dev/Test = 
+    - Do a test for upgrade MySql = 50% in internal project, but was zabbix 7.0.22, must do 6
+    - Do make private link to mysql
+    - Install offline zabbix agent from *.deb = 100% success
     - Do Azure Ubuntu's update and upgrade always
 
 2. Docker maintenance:
     - Do follow up on prod-2 stuff.
       - Portainer, MySQL, Grafana (and plugins) and also Loki.
-      - Do the nemesis: Zabbix = finally you are conquered, now cosmetics begins
+      - Do the nemesis: Zabbix = 100% success
+      - Do send push and pull from vm = 
+      - Do https = 
+      - Do alter zabbix_server.conf = 
 
 3. Python maintenance as docker image:
     - Code a few lines every now and then.
