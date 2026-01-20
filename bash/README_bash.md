@@ -465,24 +465,26 @@ ls
 </details>
 
 <details><summary>File Permissions</summary>
-Numeric Representation of Permissions
-File permissions can also be represented numerically, which is often used in scripts and command-line operations:
 
-* 0: No permission
-* 1: Execute permission
-* 2: Write permission
-* 3: Write and execute permissions
-* 4: Read permission
-* 5: Read and execute permissions
-* 6: Read and write permissions
-* 7: Read, write, and execute permissions
-
-For example, the numeric permission 755 means the owner can read, write, and execute (7), and the group and others can read and execute (5).
 <p>
 
 #### We can hide anything, even code!
 ```bash
 
+# Numeric Representation of Permissions
+# File permissions can also be represented numerically, which is often used in scripts and command-line operations:
+
+# 0: No permission
+# 1: Execute permission
+# 2: Write permission
+# 3: Write and execute permissions
+# 4: Read permission
+# 5: Read and execute permissions
+# 6: Read and write permissions
+# 7: Read, write, and execute permissions
+
+# For example, the numeric permission 755 means the owner can read, write, and execute (7), 
+# and the group and others can read and execute (5).
 
 ```
 </p>
