@@ -129,6 +129,10 @@ https://github.com/spawnmarvel/learning-docker
 
 ## TODO (Always) AZ-104 certified professional must know, fill the gaps here (network, monitor, web apps)
 
+* Azure vm tutorials (after that network tutorials, end loop over all areas indepth for az-104 and beyond)
+
+https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-vm
+
 * Repeat, repeat and repeat stuff
 
 https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-certified-professional
