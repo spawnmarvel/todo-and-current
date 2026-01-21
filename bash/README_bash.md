@@ -884,7 +884,7 @@ sudo systemctl restart apache2
 </p>
 </details>
 
-<details><summary>Update and upgrade / apt install </summary>
+<details><summary>Update and upgrade / apt install and apt remove </summary>
 <p>
 
 #### We can hide anything, even code!
