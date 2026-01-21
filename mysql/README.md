@@ -208,3 +208,57 @@ select user, host from mysql.user
 ```
 
 
+## MySql 8.0 upgrade to 8.4 and Zabbix 7.0 LTS
+
+```bash
+sudo apt update
+sudo apt upgrade -y
+
+sudo apt install mysql-server -y
+
+sudo systemctl status mysql
+
+mysql --version
+mysql  Ver 8.0.44-0ubuntu0.24.04.2 for Linux on x86_64 ((Ubuntu))
+# this should work since it is minor
+# Zabbix Server 7.0 LTS is fully compatible and widely used with MySQL 8.0, including version 8.0.44
+
+sudo mysql_secure_installation
+# n, y,y,y,y,y
+
+sudo systemctl enable mysql
+
+# we must upgrade mysql to 8.4 since 8.0 is soon out.
+https://dev.mysql.com/downloads/repo/apt/
+# (mysql-apt-config_0.8.36-1_all.deb)
+
+# firewall shpould be open for a short time for any
+# try download
+wget https://dev.mysql.com/get/mysql-apt-config_0.8.36-1_all.deb
+# works perfect
+
+# Run the configuration tool:
+sudo dpkg -i mysql-apt-config_0.8.36-1_all.deb
+
+# Which MySQL product do you wish to configure? Select MySQL Server & Cluster.
+# Which server version do you wish to receive? Select mysql-8.4-lts.
+# view highligted version
+# Finalize: Scroll to Ok and press Enter.
+
+# perform the upgrade
+sudo apt update
+
+# Now, tell Ubuntu to install the new version. It will detect that 8.0 is already there and perform an "in-place" upgrade.
+sudo apt install mysql-server
+
+
+# verify
+mysql --version
+# mysql  Ver 8.4.7 for Linux on x86_64 (MySQL Community Server - GPL)
+
+sudo mysql
+
+# root has no password, we must fix this.
+sudo mysql -u root
+
+```
