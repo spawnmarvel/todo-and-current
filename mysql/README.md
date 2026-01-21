@@ -281,5 +281,7 @@ You could be missing the Metadata and Internal Schemas.
 Here is how to fix it:
 
 *  Edit->preferences->sql editor->show metadata and internal schemas, tick it
-* 
+
+![meta success](https://github.com/spawnmarvel/todo-and-current/blob/main/mysql/images/meta_success.png)
+
 https://www.mysql.com/products/workbench/
