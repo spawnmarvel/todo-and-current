@@ -261,4 +261,11 @@ sudo mysql
 # root has no password, we must fix this.
 sudo mysql -u root
 
+# ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'password';
+# FLUSH PRIVILEGES;
+
+sudo mysql -u root -p
+# password
+
+
 ```
