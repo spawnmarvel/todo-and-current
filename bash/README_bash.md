@@ -840,6 +840,50 @@ mysqlcheck -h servername --port=3306 -u zabbix --password=the-password --databas
 </p>
 </details>
 
+<details><summary>Ubuntu 24.04, Apache comes with a built-in script to handle the basic SSL setup</summary>
+<p>
+
+#### We can hide anything, even code!
+```bash
+# create a certificate that is valid for 3650 days.
+sudo openssl req -x509 -nodes -days 3650 -newkey rsa:2048 \
+-keyout /etc/ssl/private/zabbix-selfsigned.key \
+-out /etc/ssl/certs/zabbix-selfsigned.crt
+
+# Common Name (e.g. server FQDN): Enter v12-x-zabbix01 or your server's IP.
+# You can leave the other fields (Country, State, etc.) blank or put . in them.
+
+# First, enable the SSL module and the default SSL site configuration:
+sudo a2enmod ssl
+sudo a2ensite default-ssl
+
+# Now, edit the SSL configuration to point to your new certificate:
+sudo nano /etc/apache2/sites-enabled/default-ssl.conf
+
+# Find these two lines and update them to match your new files:
+SSLCertificateFile    /etc/ssl/certs/zabbix-selfsigned.crt
+SSLCertificateKeyFile /etc/ssl/private/zabbix-selfsigned.key
+
+# To ensure no one uses the insecure port 80, tell Apache to move everyone to port 443
+sudo nano /etc/apache2/sites-available/000-default.conf
+
+# Add these lines inside the <VirtualHost *:80> block
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Note: You may need to enable the rewrite module first:
+sudo a2enmod rewrite
+
+# Restart Apache to load the new modules and certificate:
+sudo systemctl restart apache2
+
+# https://v12-x-zabbix01/zabbix
+```
+
+</p>
+</details>
+
 <details><summary>Update and upgrade / apt install </summary>
 <p>
 
