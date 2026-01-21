@@ -992,5 +992,10 @@ ls -lhS
 
 ## File system, permission and access control
 
+```bash
+# example
+chmod 744 demo.sh
+# user has full group and others has read
+```
 ![file all](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/images__and_pdf/file_all.png)
 
