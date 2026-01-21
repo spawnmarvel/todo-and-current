@@ -291,3 +291,10 @@ Here we are connected to Azure Database for MySQL flexible server
 Download workbench
 
 https://www.mysql.com/products/workbench/
+
+## Azure Database for MySQL flexible server endpoints
+
+The connection now through Allow public access to this resource through the internet using a public IP address
+* mysqlzabbix0101 | Networking where we add client ip.
+
+Lets change that to, Create private endpoints to allow hosts in the selected virtual network to access this server.
