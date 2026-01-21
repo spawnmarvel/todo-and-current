@@ -207,19 +207,6 @@ select user, host from mysql.user
 
 ```
 
-## MySql workbench
-
-
-After you login with super user, like this:
-
-You could be missing the Metadata and Internal Schemas.
-
-Here is how to fix it:
-
-*  Edit->preferences->sql editor->show metadata and internal schemas, tick it
-* 
-https://www.mysql.com/products/workbench/
-
 ## MySql 8.0 upgrade to 8.4 on clean database (for use with Zabbix 7.0 LTS)
 
 ```bash
@@ -281,3 +268,18 @@ sudo mysql -u root -p
 
 
 ```
+
+## MySql workbench
+
+
+After you login with super user, like this:
+
+You could be missing the Metadata and Internal Schemas.
+
+![metadata internal](https://github.com/spawnmarvel/todo-and-current/blob/main/mysql/images/meta_internal.png)
+
+Here is how to fix it:
+
+*  Edit->preferences->sql editor->show metadata and internal schemas, tick it
+* 
+https://www.mysql.com/products/workbench/
