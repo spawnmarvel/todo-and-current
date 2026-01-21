@@ -284,4 +284,10 @@ Here is how to fix it:
 
 ![meta success](https://github.com/spawnmarvel/todo-and-current/blob/main/mysql/images/meta_success.png)
 
+Here we are connected to Azure Database for MySQL flexible server
+
+![mysql azure](https://github.com/spawnmarvel/todo-and-current/blob/main/mysql/images/mysql_azure.png)
+
+Download workbench
+
 https://www.mysql.com/products/workbench/
