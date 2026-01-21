@@ -208,7 +208,7 @@ select user, host from mysql.user
 ```
 
 
-## MySql 8.0 upgrade to 8.4 and Zabbix 7.0 LTS
+## MySql 8.0 upgrade to 8.4 on clean database (for use with Zabbix 7.0 LTS)
 
 ```bash
 sudo apt update
