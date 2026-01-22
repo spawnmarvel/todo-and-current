@@ -288,6 +288,10 @@ Here we are connected to Azure Database for MySQL flexible server
 
 ![mysql azure](https://github.com/spawnmarvel/todo-and-current/blob/main/mysql/images/mysql_azure.png)
 
+You can also save or use default snippets.
+
+![mysql snippets](https://github.com/spawnmarvel/todo-and-current/blob/main/mysql/images/snippets.png)
+
 Download workbench
 
 https://www.mysql.com/products/workbench/
