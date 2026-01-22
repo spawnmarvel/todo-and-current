@@ -205,6 +205,12 @@ select user, host from mysql.user
 -- imsdal %
 -- azure_superuser 120.0.0.1
 
+select user, host, plugin from mysql.user;
+-- imsdal	%	mysql_native_password
+-- azure_superuser	127.0.0.1	mysql_native_password
+-- mysql.infoschema	localhost	caching_sha2_password
+
+
 ```
 
 ## MySql 8.0 upgrade to 8.4 on clean database (for use with Zabbix 7.0 LTS)
