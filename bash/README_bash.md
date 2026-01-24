@@ -1016,7 +1016,7 @@ ls -lhS
 
 ## Misc
 
-<details><summary>Troubleshooting guide disk and big files</summary>
+<details><summary>Troubleshooting guide disk, big files and journalctl tail</summary>
 <p>
 
 #### We can hide anything, even code!
@@ -1037,10 +1037,28 @@ sudo du -ah / 2>/dev/null | sort -rh | head -n 20
 # identify large files
 find / -type f -size +1G
 
-# troubleshoot and fix
+# This command lists the files in your system log directory, 
+# which is where Linux keeps a history of everything that 
+# happens on your machine (errors, logins, system updates, etc.).
 ls -lh /var/log
 
-journalctl -disk-usage
+# In the Linux world, the Journal (specifically the systemd-journald service) is a centralized, "smart" storage system for all log messages.
+
+# view 
+journalctl --disk-usage
+# Archived and active journals take up 471.4M in the file system.
+
+# tail journal
+journalctl -f
+
+# grep journal
+journalctl -g zabbix
+
+# grep item in zabbxx 
+sudo grep 'item*' /var/log/zabbix/zabbix_server.log
+
+# tail zabbix, last 10 lines
+sudo tail -f /var/log/zabbix/zabbix_server.log
 
 # If the file is BIGGER than 100MB: The command chops off everything after the 100MB mark. The data is permanently deleted and cannot be recovered.
 truncate -s 100M filename
