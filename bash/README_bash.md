@@ -583,6 +583,27 @@ https://www.w3schools.com/bash/bash_commands.php
 
 ## Hands on with
 
+<details><summary>/dev/null</summary>
+<p>
+
+#### We can hide anything, even code!
+
+```bash
+
+# In the Linux world, /dev/null is essentially a "black hole." 
+# Anything you send there disappears instantly, and the system doesn't have to spend any effort saving or displaying it.
+
+# The simplest way to think of /dev/null is as a mute button for commands that talk too much.
+# When you install software, the terminal usually spits out dozens of lines of text. 
+# If you just want it to do its job quietly, you can throw that output away:
+sudo apt install vlc > /dev/null
+```
+</p>
+</details>
+<details><summary>Mount a data drive with fdisk ubuntu 24.04 for mysql</summary>
+<p>
+
+
 <details><summary>ssh-keygen</summary>
 <p>
 
@@ -1006,9 +1027,15 @@ ls -lhS
 
 # check disk
 df -h /
+# Filesystem      Size  Used Avail Use% Mounted on
+# /dev/root        29G  4.8G   25G  17% /
 
 # find large directories
 sudo du -ah / 2>/dev/null | sort -rh | head -n 20
+# 6.1G    /
+# 2.5G    /var
+# 2.1G    /usr
+# [...]
 
 # identify large files
 find / -type f -size +1G
