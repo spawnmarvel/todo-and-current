@@ -1025,8 +1025,18 @@ truncate -s 100M filename
 * openldap
 
 
+## Linux
 
-## File system, permission and access control
+### Loadable Kernel Module
+
+Loadable Kernel Modules (LKMs). These are pieces of code that can be loaded into or unloaded from the kernel on demand without needing to reboot the entire system. They act like "plug-ins" for your operating system.
+
+* usb-storage: Allows the system to talk to USB flash drives and external hard disks
+* ext4: The standard file system for most Linux distributions.
+* ​iptable_filter / nftables: The backbone of the Linux firewall (Netfilter). They decide which data packets are allowed in or out.
+* ​bridge: Allows the kernel to make the computer act like a network switch, which is vital for running Virtual Machines (VMs) or Docker containers.
+
+### File system, permission and access control
 
 ```bash
 # example
