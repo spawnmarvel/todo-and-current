@@ -22,7 +22,8 @@ man -k network
 ```
 </p>
 </details>
-W3schools
+
+### W3schools
 
 <details><summary>Basic Commands, ls, ls -a,  cd, pwd, echo, cat, cp, mv, rm, touch, mkdir</summary>
 <p>
