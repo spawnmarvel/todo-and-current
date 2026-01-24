@@ -574,6 +574,8 @@ man chown
 
 https://www.w3schools.com/bash/bash_commands.php
 
+## Hands on with
+
 <details><summary>ssh-keygen</summary>
 <p>
 
