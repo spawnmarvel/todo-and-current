@@ -1052,3 +1052,11 @@ chmod 744 demo.sh
 ```
 ![file all](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/images__and_pdf/file_all.png)
 
+### Top explained
+
+```bash
+top -d 60
+```
+
+![top](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/images__and_pdf/top.png)
+
