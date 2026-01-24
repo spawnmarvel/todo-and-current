@@ -989,6 +989,40 @@ ls -lhS
 
 ## Misc
 
+<details><summary>Troubleshooting guide disk and big files</summary>
+<p>
+
+#### We can hide anything, even code!
+```bash
+
+# check disk
+df -h /
+
+# find large directories
+sudo du -ah / 2>/dev/null | sort -rh | head -n 20
+
+# identify large files
+find / -type f -size +1G
+
+# troubleshoot and fix
+ls -lh /var/log
+
+journalctl -disk-usage
+
+# If the file is BIGGER than 100MB: The command chops off everything after the 100MB mark. The data is permanently deleted and cannot be recovered.
+truncate -s 100M filename
+
+
+```
+</p>
+</details>
+
+
+## Todo
+
+* openldap
+
+
 
 ## File system, permission and access control
 
