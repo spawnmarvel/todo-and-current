@@ -1,8 +1,11 @@
 # Bash quick guide
 
-Man is the cheat guide
-```bash
 
+<details><summary>Man is the cheat guide</summary>
+<p>
+
+#### We can hide anything, even code!
+```bash
 man man
 # man - an interface to the system reference manuals
 
@@ -15,7 +18,10 @@ man -k security
 man -k file
 man -k text
 man -k network
+
 ```
+</p>
+</details>
 W3schools
 
 <details><summary>Basic Commands, ls, ls -a,  cd, pwd, echo, cat, cp, mv, rm, touch, mkdir</summary>
