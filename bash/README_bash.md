@@ -1056,7 +1056,20 @@ chmod 744 demo.sh
 
 ```bash
 top -d 60
+
+# No, htop is usually not installed by default on a fresh Ubuntu installation, but it is available in the official Ubuntu repositories.
+sudo apt update
+sudo apt install htop
+htop
 ```
 
+top
+
 ![top](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/images__and_pdf/top.png)
+
+htop
+
+![htop](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/images__and_pdf/htop.png)
+
+
 
