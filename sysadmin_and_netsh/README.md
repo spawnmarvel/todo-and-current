@@ -80,6 +80,10 @@ etl2pcapng.exe trace.etl trace.pcapng
 
 Now open it in wireshark.
 
+![open file](https://github.com/spawnmarvel/todo-and-current/blob/main/sysadmin_and_netsh/images/netsh.png)
+
+
+
 
 
 
