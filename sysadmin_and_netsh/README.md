@@ -102,31 +102,43 @@ netstat -ano | findstr ":1801 "
 * -o includes the process ID associated with each connection.
 
 A healthy output for this command would typically look something like this:
+```log
 
   TCP    0.0.0.0:1801         0.0.0.0:0              LISTENING       1234
+
+```
 Unhealthy Outputs
 
 Meaning: This indicates that there are no active connections or listening applications on port 1801.
 
+```log
 (no output)
+
+```
 Connection refused
 
 Meaning: If you see a connection in the TIME_WAIT state, it means that a connection was recently closed on that port, but no application is currently listening for new connections. This may indicate that the service crashed or was stopped.
 
+```log
 TCP    192.168.1.2:1801     192.168.1.3:54321      TIME_WAIT       0
+```
+
 LISTENING but Unresponsive
 
 Meaning: While the output indicates that there is an application listening on port 1801, if you try to connect to the port and experience timeouts or connection failures, it may suggest that the application is unresponsive or malfunctioning. You can further investigate this by checking the application associated with PID 5678.
 
+```log
 TCP    0.0.0.0:1801         0.0.0.0:0              LISTENING       5678
+```
 Multiple Entries with Different States
 
 Meaning: If you see multiple states such as CLOSE_WAIT, this may indicate that the application is not properly closing connections. An application in CLOSE_WAIT may have issues managing its connections, which can lead to resource exhaustion.
 
+```log
 TCP    0.0.0.0:1801         0.0.0.0:0              LISTENING       5678
 TCP    192.168.1.2:1801     192.168.1.3:54321      ESTABLISHED     5678
 TCP    192.168.1.2:1801     192.168.1.4:12345      CLOSE_WAIT      5678
-
+```
 ## Capture packets and analyze general
 
 Network shell (netsh)
