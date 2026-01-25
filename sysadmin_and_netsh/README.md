@@ -139,6 +139,29 @@ TCP    0.0.0.0:1801         0.0.0.0:0              LISTENING       5678
 TCP    192.168.1.2:1801     192.168.1.3:54321      ESTABLISHED     5678
 TCP    192.168.1.2:1801     192.168.1.4:12345      CLOSE_WAIT      5678
 ```
+
+Common SYN States
+
+SYN_SENT: This state indicates that a connection request has been sent to the server, and the client is waiting for a response (SYN-ACK). It means that an application on your machine is trying to connect to a service on port 1801 but has not yet completed the connection.
+
+
+SYN_RECEIVED: This state means that your machine has received a SYN request from a client and has sent back a SYN-ACK in response. The connection is still being established, and the final ACK from the client is awaited.
+
+SYN_SENT
+
+```log
+TCP    192.168.1.2:54321     192.168.1.3:1801      SYN_SENT       0
+```
+Meaning: In this example, the local machine at 192.168.1.2 is trying to establish a connection from port 54321 to 192.168.1.3 on port 1801, but it has not yet completed the connection or got a response back.
+
+SYN_RECEIVED
+
+```log
+TCP    192.168.1.3:1801      192.168.1.2:54321     SYN_RECEIVED   5678
+```
+Meaning: This indicates that the server at 192.168.1.3 has received a SYN request from the client at 192.168.1.2 and is waiting for the final ACK from the client to complete the connection.
+
+
 ## Capture packets and analyze general
 
 Network shell (netsh)
