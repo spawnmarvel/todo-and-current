@@ -43,6 +43,90 @@ bginfo
 * https://learn.microsoft.com/en-us/sysinternals/downloads/bginfo
 
 
+## Summary of TCP Transaction Steps
+
+1. Connection Establishment (Three-Way Handshake):
+* Client → Server: Send SYN (request to connect).
+* Server → Client: Send SYN-ACK (acknowledge SYN and request).
+* Client → Server: Send ACK (acknowledge SYN-ACK).
+
+2. Data Transfer:
+* Client ↔ Server: Send and acknowledge data segments.
+* Server → Client: Send ACK for received segments.
+* Client ↔ Server: Retransmit lost segments as needed.
+
+3. Connection Termination (Four-Way Handshake):
+* Client → Server: Send FIN (request to terminate).
+* Server → Client: Send ACK (acknowledge FIN).
+* Server → Client: Send FIN (request to terminate).
+* Client → Server: Send ACK (acknowledge FIN).
+
+This flow ensures reliable communication in TCP transactions.
+
+
+## Network advanced tutorial and checklist
+
+Test-NetConnection and tnc
+
+```ps1
+# ps1 tnc without all extra output
+$ip1 = Test-NetConnection -ComputerName vm01 -Port 50050
+write-host $ip1.TcpTestSucceeded
+# From host
+$cn = $env:COMPUTERNAME
+write-host $cn
+
+# tnc alias
+tnc remote-server -port 3389
+```
+
+Yes, your statement is correct.
+
+When using Test-NetConnection in PowerShell to check a remote connection to a specific port, the command will return True (indicating success) only if both of the following conditions are met:
+
+1. The port is open (not blocked by a firewall, router, or security rule).
+2. An application/service is actively listening on that port on the target machine.
+
+If the port is open but no application is listening, the connection will fail (return False), as the remote system does not respond to the connection attempt.
+
+
+netstat is a command-line utility used to display network connections, routing tables, and listening ports on a computer. It shows details like the protocol, local and foreign addresses, and status of each connection. This helps diagnose network problems by identifying active connections, open ports, and listening services. netstat is available on various operating systems (e.g., Linux, macOS, and Windows) and its functionality and syntax may vary slightly across platforms.
+
+```ps1
+netstat -ano | findstr ":1801 "
+
+```
+
+* -a shows all connections and listening ports.
+* -n displays addresses and port numbers in numerical form (avoiding DNS resolution).
+* -o includes the process ID associated with each connection.
+
+A healthy output for this command would typically look something like this:
+
+  TCP    0.0.0.0:1801         0.0.0.0:0              LISTENING       1234
+Unhealthy Outputs
+
+Meaning: This indicates that there are no active connections or listening applications on port 1801.
+
+(no output)
+Connection refused
+
+Meaning: If you see a connection in the TIME_WAIT state, it means that a connection was recently closed on that port, but no application is currently listening for new connections. This may indicate that the service crashed or was stopped.
+
+TCP    192.168.1.2:1801     192.168.1.3:54321      TIME_WAIT       0
+LISTENING but Unresponsive
+
+Meaning: While the output indicates that there is an application listening on port 1801, if you try to connect to the port and experience timeouts or connection failures, it may suggest that the application is unresponsive or malfunctioning. You can further investigate this by checking the application associated with PID 5678.
+
+TCP    0.0.0.0:1801         0.0.0.0:0              LISTENING       5678
+Multiple Entries with Different States
+
+Meaning: If you see multiple states such as CLOSE_WAIT, this may indicate that the application is not properly closing connections. An application in CLOSE_WAIT may have issues managing its connections, which can lead to resource exhaustion.
+
+TCP    0.0.0.0:1801         0.0.0.0:0              LISTENING       5678
+TCP    192.168.1.2:1801     192.168.1.3:54321      ESTABLISHED     5678
+TCP    192.168.1.2:1801     192.168.1.4:12345      CLOSE_WAIT      5678
+
 ## Capture packets and analyze general
 
 Network shell (netsh)
@@ -110,14 +194,6 @@ tcp.port == 443
 DisplayFilters
 
 * https://wiki.wireshark.org/DisplayFilters
-
-
-
-
-
-
-
-
 
 
 
