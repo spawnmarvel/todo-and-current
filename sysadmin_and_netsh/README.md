@@ -9,23 +9,33 @@ Sysinternals Networking Utilites
 
 TCPView is a Windows program that will show you detailed listings of all TCP and UDP endpoints on your system, including the local and remote addresses and state of TCP connections.
 
-* tcpview, https://learn.microsoft.com/en-us/sysinternals/downloads/tcpview
+tcpview
+
+* https://learn.microsoft.com/en-us/sysinternals/downloads/tcpview
 
 Active Directory Explorer (AD Explorer) is an advanced Active Directory (AD) viewer and editor.
 
-* ad explorer, https://learn.microsoft.com/en-us/sysinternals/downloads/adexplorer
+ad explorer
+
+* https://learn.microsoft.com/en-us/sysinternals/downloads/adexplorer
 
 ProcDump is a command-line utility whose primary purpose is monitoring an application for CPU spikes and generating crash dumps during a spike that an administrator or developer can use to determine the cause of the spike
 
-* procdump, https://learn.microsoft.com/en-us/sysinternals/downloads/procdump
+procdump
+
+* https://learn.microsoft.com/en-us/sysinternals/downloads/procdump
 
 Ever wondered which program has a particular file or directory open? Now you can find out. Process Explorer shows you information about which handles and DLLs processes have opened or loaded.
 
-* process explorer, https://learn.microsoft.com/en-us/sysinternals/downloads/process-explorer
+process explorer
+
+* https://learn.microsoft.com/en-us/sysinternals/downloads/process-explorer
 
 How many times have you walked up to a system in your office and needed to click through several diagnostic windows to remind yourself of important aspects of its configuration, such as its name, IP address, or operating system version?
 
-* bginfo, https://learn.microsoft.com/en-us/sysinternals/downloads/bginfo
+bginfo
+
+* https://learn.microsoft.com/en-us/sysinternals/downloads/bginfo
 
 
 ## Capture packets and analyze general
@@ -80,9 +90,21 @@ etl2pcapng.exe trace.etl trace.pcapng
 
 Now open it in wireshark.
 
+Download wireshark 
+
+https://www.wireshark.org/download.html
+
 ![open file](https://github.com/spawnmarvel/todo-and-current/blob/main/sysadmin_and_netsh/images/netsh.png)
 
+Example look at port 443
 
+tcp.port == 443
+
+![tcp 443](https://github.com/spawnmarvel/todo-and-current/blob/main/sysadmin_and_netsh/images/443.png)
+
+DisplayFilters
+
+* https://wiki.wireshark.org/DisplayFilters
 
 
 
