@@ -2,8 +2,13 @@
 
 ## Tools
 
-* open ssl, https://slproweb.com/products/Win32OpenSSL.html
-* baretail, https://baremetalsoft.com/baretail/
+open ssl
+
+* https://slproweb.com/products/Win32OpenSSL.html
+
+baretail
+
+* https://baremetalsoft.com/baretail/
 
 Sysinternals Networking Utilites
 
