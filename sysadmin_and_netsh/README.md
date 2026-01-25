@@ -68,18 +68,6 @@ This flow ensures reliable communication in TCP transactions.
 
 Test-NetConnection and tnc
 
-```ps1
-# ps1 tnc without all extra output
-$ip1 = Test-NetConnection -ComputerName vm01 -Port 50050
-write-host $ip1.TcpTestSucceeded
-# From host
-$cn = $env:COMPUTERNAME
-write-host $cn
-
-# tnc alias
-tnc remote-server -port 3389
-```
-
 Yes, your statement is correct.
 
 When using Test-NetConnection in PowerShell to check a remote connection to a specific port, the command will return True (indicating success) only if both of the following conditions are met:
@@ -92,14 +80,73 @@ If the port is open but no application is listening, the connection will fail (r
 
 netstat is a command-line utility used to display network connections, routing tables, and listening ports on a computer. It shows details like the protocol, local and foreign addresses, and status of each connection. This helps diagnose network problems by identifying active connections, open ports, and listening services. netstat is available on various operating systems (e.g., Linux, macOS, and Windows) and its functionality and syntax may vary slightly across platforms.
 
+Example of Using Test-NetConnection (ps1)
+
+```ps1
+
+Test-NetConnection -ComputerName "remote-server" -Port 80
+
+# Do you need more details
+Test-NetConnection -ComputerName "remote-server" -Port 80 -InformationLevel Detailed
+
+# alias
+tnc remote-server -port 3389
+
+```
+
+Example ps1 script
+```ps1
+# ps1 tnc without all extra output
+$ip1 = Test-NetConnection -ComputerName vm01 -Port 50050
+write-host $ip1.TcpTestSucceeded
+# From host
+$cn = $env:COMPUTERNAME
+write-host $cn
+
+# tnc alias
+tnc remote-server -port 3389
+```
+
+The Windows PowerShell cmdlet Test-NetConnection is a versatile tool for network diagnostics. It’s not directly mirrored in Linux, but its functionalities can be achieved using a combination of other commands.
+
+```bash
+# Windows: Test-NetConnection google.com
+
+Linux: ping -c 4 google.com
+
+# ping is the fundamental network utility to test reachability.
+# c 4 sends 4 ICMP (ping) packets and then stops. Omit this for continuous pinging.
+
+# Windows: Test-NetConnection google.com -Port 443
+
+Linux: nc -zv google.com 443
+Linux: telnet google.com 443
+
+# nc (netcat) is a versatile tool for making network connections. 
+# -z means "zero-I/O mode" (don't send any data)
+# -v means "verbose". 
+# It tries to connect to the specified host and port, and exits.
+
+# telnet is another option, though often deprecated in favor of nc due to security concerns (it transmits passwords in plain text).
+```
+
+netstat (cmd, ps1, bash)
+
+netstat is a command-line utility used to display network connections, routing tables, and listening ports on a computer. It shows details like the protocol, local and foreign addresses, and status of each connection. This helps diagnose network problems by identifying active connections, open ports, and listening services. netstat is available on various operating systems (e.g., Linux, macOS, and Windows) and its functionality and syntax may vary slightly across platforms.
+
+Example of of using netstat check port (ps1 or cmd)
+
+* -a shows all connections and listening ports.
+* -n displays addresses and port numbers in numerical form (avoiding DNS resolution).
+* -o includes the process ID associated with each connection.
+
+netstat -ano: This command lists all active connections and listening ports, along with their associated process IDs (PIDs).
+
 ```ps1
 netstat -ano | findstr ":1801 "
 
 ```
 
-* -a shows all connections and listening ports.
-* -n displays addresses and port numbers in numerical form (avoiding DNS resolution).
-* -o includes the process ID associated with each connection.
 
 A healthy output for this command would typically look something like this:
 ```log
