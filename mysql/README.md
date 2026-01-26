@@ -267,6 +267,8 @@ There is a subtle difference in how Azure handles "Admin Access":
 https://learn.microsoft.com/en-us/azure/mysql/flexible-server/security-how-to-create-users
 
 
+## The MySQL Door (The inner door) and FW
+
 1. The MySQL Door (The inner door)
 The % wildcard in your mysql.user table means that from MySQL’s perspective, the user imsdal is allowed to attempt a login from any IP address in the world.
 
