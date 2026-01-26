@@ -205,6 +205,8 @@ diff test1.txt test2.txt
 # ---
 # > id=3
 
+sudo diff zabbix_server.conf zabbix_server.conf.bck
+
 
 ```
 </p>
