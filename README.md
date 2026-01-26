@@ -141,6 +141,15 @@ https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-
 
 https://www.azurespeed.com/Azure/Latency
 
+## TODO MS Learn misc
+
+* Secure Windows Server user accounts
+
+https://learn.microsoft.com/en-us/training/modules/secure-windows-server-user-accounts/?source=recommendations
+
+* Secure group managed service accounts
+
+https://learn.microsoft.com/en-us/entra/architecture/service-accounts-group-managed?source=recommendations
 
 ## TODO (for fun) Azure SQL Database
 
