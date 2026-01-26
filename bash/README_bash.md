@@ -23,7 +23,7 @@ man -k network
 </p>
 </details>
 
-### W3schools
+### W3schools repeat and and add
 
 <details><summary>Basic Commands, ls, ls -a,  cd, pwd, echo, cat, cp, mv, rm, touch, mkdir</summary>
 <p>
@@ -52,7 +52,7 @@ mkdir #  - Create a new folder
 </p>
 </details>
 
-<details><summary>Text Processing, grep, awk, sed, cut, sort, tail, head</summary>
+<details><summary>Text Processing, grep, awk, sed, cut, sort, tail, head, diff</summary>
 <p>
 
 #### We can hide anything, even code!
@@ -195,6 +195,9 @@ man head
 head /var/log/syslog
 
 head -n 2 /var/log/syslog
+
+man diff
+
 
 ```
 </p>
