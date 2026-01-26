@@ -34,7 +34,9 @@ git push origin main
 
 ## Chaos Engineer bash
 
+"Chaos Engineer" and the "SysAdmin"
 
+https://github.com/spawnmarvel/todo-and-current/tree/main/bash_chaos_engineer
 
 ## TODO Maintain knowledge
 
