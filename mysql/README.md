@@ -235,8 +235,21 @@ SELECT user, host, plugin FROM mysql.user WHERE user = 'imsdal';
 -- create new user and db example
 
 CREATE DATABASE maka12_db;
+
 CREATE USER 'maka12'@'%' IDENTIFIED WITH 'mysql_native_password' BY 'YourSafePassword123!';
 
+GRANT ALL PRIVILEGES ON maka12_db.* TO 'maka12'@'%';
+FLUSH PRIVILEGES;
+
+-- verify
+SHOW DATABASES LIKE 'maka12_db';
+SHOW GRANTS FOR 'maka12'@'%';
+
+-- set new pass run as admin user
+ALTER USER 'maka12'@'%' 
+IDENTIFIED WITH 'mysql_native_password' BY 'New_Strong_Password_123!';
+
+FLUSH PRIVILEGES;
 ```
 
 After you create an Azure Database for the MySQL server, you can use the first server admin account to create more users and grant admin access to them. You can also use the server admin account to create less privileged users with access to individual database schemas.
@@ -252,6 +265,14 @@ There is a subtle difference in how Azure handles "Admin Access":
 
 
 https://learn.microsoft.com/en-us/azure/mysql/flexible-server/security-how-to-create-users
+
+
+Check plugin azure myswl flexible server
+
+```sql
+SELECT * FROM information_schema.PLUGINS 
+WHERE PLUGIN_NAME LIKE 'validate_password%';
+```
 
 
 ## MySql 8.0 upgrade to 8.4 on clean database (for use with Zabbix 7.0 LTS)
