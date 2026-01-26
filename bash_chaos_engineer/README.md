@@ -2,7 +2,7 @@
 
 This is a fantastic way to learn. Instead of just following a tutorial, you are the "Chaos Engineer" and the "SysAdmin" at the same time. Setting up the break yourself actually teaches you more about the underlying system than just fixing it.
 
-# Course Overview: Happy Server (DevOps Edition)
+## Course Overview: Happy Server (DevOps Edition)
 
 How we will proceed:
 Since you are the one controlling the VM, we will do this "Sad Servers" style.
