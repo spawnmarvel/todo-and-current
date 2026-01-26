@@ -219,8 +219,6 @@ SHOW GRANTS FOR CURRENT_USER;
 -- verify
 SELECT user, host, plugin FROM mysql.user WHERE user = 'imsdal';
 
--- If you ever want to see exactly what powers this user has compared to your other imsdal entry, run:
-SHOW GRANTS FOR 'imsdal'@'192.168.3.5';
 ```
 
 After you create an Azure Database for the MySQL server, you can use the first server admin account to create more users and grant admin access to them. You can also use the server admin account to create less privileged users with access to individual database schemas.
