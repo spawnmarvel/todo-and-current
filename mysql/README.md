@@ -210,8 +210,33 @@ select user, host, plugin from mysql.user;
 -- azure_superuser	127.0.0.1	mysql_native_password
 -- mysql.infoschema	localhost	caching_sha2_password
 
+-- show grants
+SHOW GRANTS FOR 'imsdal'@'%';
 
+-- How to check your current user's power
+SHOW GRANTS FOR CURRENT_USER;
+
+-- verify
+SELECT user, host, plugin FROM mysql.user WHERE user = 'imsdal';
+
+-- If you ever want to see exactly what powers this user has compared to your other imsdal entry, run:
+SHOW GRANTS FOR 'imsdal'@'192.168.3.5';
 ```
+
+After you create an Azure Database for the MySQL server, you can use the first server admin account to create more users and grant admin access to them. You can also use the server admin account to create less privileged users with access to individual database schemas.
+
+Why the docs say "Yes" but the Error says "No"
+There is a subtle difference in how Azure handles "Admin Access":
+
+1. The Provisioning Admin: This is your current imsdal@%. It is born with the azure_superuser role.
+
+2. Created Admins: When you create a second user, Azure allows them to have ALL PRIVILEGES on *.*, which makes them a Schema/Data Admin.
+
+3. The "System" Lock: Azure often blocks the transfer of the actual azure_superuser Role because that role has the power to modify the underlying Azure management hooks (like internal backup users).
+
+
+https://learn.microsoft.com/en-us/azure/mysql/flexible-server/security-how-to-create-users
+
 
 ## MySql 8.0 upgrade to 8.4 on clean database (for use with Zabbix 7.0 LTS)
 
