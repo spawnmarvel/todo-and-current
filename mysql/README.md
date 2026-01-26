@@ -274,6 +274,9 @@ SELECT * FROM information_schema.PLUGINS
 WHERE PLUGIN_NAME LIKE 'validate_password%';
 ```
 
+Add plugin
+
+![add param](https://github.com/spawnmarvel/todo-and-current/blob/main/mysql/images/add_param.png)
 
 ## MySql 8.0 upgrade to 8.4 on clean database (for use with Zabbix 7.0 LTS)
 
