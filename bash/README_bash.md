@@ -23,7 +23,7 @@ man -k network
 </p>
 </details>
 
-### W3schools repeat and and add
+### W3schools repeat and and add :cyclone:
 
 <details><summary>Basic Commands, ls, ls -a,  cd, pwd, echo, cat, cp, mv, rm, touch, mkdir</summary>
 <p>
@@ -196,7 +196,14 @@ head /var/log/syslog
 
 head -n 2 /var/log/syslog
 
+
 man diff
+# diff - compare files line by line
+diff test1.txt test2.txt
+# 1c1
+# < id=12
+# ---
+# > id=3
 
 
 ```
