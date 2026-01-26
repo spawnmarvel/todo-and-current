@@ -212,7 +212,7 @@ select user, host from mysql.user
 --- 2. The Azure Firewall (The outer door)
 --Even if MySQL says "come on in," Azure has its own network-level firewall that sits in front of the database.
 
--- If your IP is not in the "Firewall Rules" (Found in the Azure Portal under Networking), 
+-- 3. If your IP is not in the "Firewall Rules" (Found in the Azure Portal under Networking), 
 -- your connection will be dropped before it ever reaches the MySQL engine.
 
 -- This is why imsdal@% is safe to have on Azure—it only works for people coming from "Approved" IP addresses.
@@ -267,6 +267,14 @@ There is a subtle difference in how Azure handles "Admin Access":
 https://learn.microsoft.com/en-us/azure/mysql/flexible-server/security-how-to-create-users
 
 
+1. The MySQL Door (The inner door)
+The % wildcard in your mysql.user table means that from MySQL’s perspective, the user imsdal is allowed to attempt a login from any IP address in the world.
+
+2. The Azure Firewall (The outer door) Even if MySQL says "come on in," Azure has its own network-level firewall that sits in front of the database.
+
+3. If your IP is not in the "Firewall Rules" (Found in the Azure Portal under Networking), your connection will be dropped before it ever reaches the MySQL engine.
+
+This is why imsdal@% is safe to have on Azure—it only works for people coming from "Approved" IP addresses.
 
 ## Add plugin parameters to azure mysql server
 
