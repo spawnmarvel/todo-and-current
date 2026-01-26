@@ -268,7 +268,7 @@ https://learn.microsoft.com/en-us/azure/mysql/flexible-server/security-how-to-cr
 
 
 
-Add plugin parameters to azure mysql server
+## Add plugin parameters to azure mysql server
 
 ![add param](https://github.com/spawnmarvel/todo-and-current/blob/main/mysql/images/add_param.png)
 
