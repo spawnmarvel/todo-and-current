@@ -232,13 +232,10 @@ SHOW GRANTS FOR CURRENT_USER;
 -- verify
 SELECT user, host, plugin FROM mysql.user WHERE user = 'imsdal';
 
--- create new user
+-- create new user and db example
 
-CREATE USER 'imsdal'@'192.168.3.5' IDENTIFIED WITH 'mysql_native_password' BY 'YourPassword123!';
-
---- drop a user
-DROP USER IF EXISTS 'imsdal'@'192.168.3.5';
-FLUSH PRIVILEGES;
+CREATE DATABASE maka12_db;
+CREATE USER 'maka12'@'%' IDENTIFIED WITH 'mysql_native_password' BY 'YourSafePassword123!';
 
 ```
 
