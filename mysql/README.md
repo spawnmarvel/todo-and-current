@@ -267,16 +267,20 @@ There is a subtle difference in how Azure handles "Admin Access":
 https://learn.microsoft.com/en-us/azure/mysql/flexible-server/security-how-to-create-users
 
 
-Check plugin azure myswl flexible server
 
-```sql
-SELECT * FROM information_schema.PLUGINS 
-WHERE PLUGIN_NAME LIKE 'validate_password%';
-```
-
-Add plugin
+Add plugin parameters to azure mysql server
 
 ![add param](https://github.com/spawnmarvel/todo-and-current/blob/main/mysql/images/add_param.png)
+
+Check plugin azure mysql flexible server
+
+```sql
+SELECT * FROM mysql.password_history;
+
+-- %	maka12	2026-01-26 10:48:58.592145	*663DEED53899140D858E294BE8C424FA76820B7D
+-- %	maka12	2026-01-26 10:48:50.581617	*57E98802102EF534E245DC72EB2B0095BA03E1C7
+			
+```
 
 ## MySql 8.0 upgrade to 8.4 on clean database (for use with Zabbix 7.0 LTS)
 
