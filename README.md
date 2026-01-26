@@ -45,9 +45,6 @@ https://labs.iximiuz.com/tutorials?category=linux
 
 * tbd
 
-https://kodekloud.com/studio/labs/linux
-
-
 ## TODO Maintain knowledge
 
 1. Linux maintenance:
