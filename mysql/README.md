@@ -205,6 +205,19 @@ select user, host from mysql.user
 -- imsdal %
 -- azure_superuser 120.0.0.1
 
+-- 1. The MySQL Door (The inner door)
+-- The % wildcard in your mysql.user table means that from MySQL’s perspective, 
+-- the user imsdal is allowed to attempt a login from any IP address in the world.
+
+--- 2. The Azure Firewall (The outer door)
+--Even if MySQL says "come on in," Azure has its own network-level firewall that sits in front of the database.
+
+-- If your IP is not in the "Firewall Rules" (Found in the Azure Portal under Networking), 
+-- your connection will be dropped before it ever reaches the MySQL engine.
+
+-- This is why imsdal@% is safe to have on Azure—it only works for people coming from "Approved" IP addresses.
+
+
 select user, host, plugin from mysql.user;
 -- imsdal	%	mysql_native_password
 -- azure_superuser	127.0.0.1	mysql_native_password
@@ -218,6 +231,14 @@ SHOW GRANTS FOR CURRENT_USER;
 
 -- verify
 SELECT user, host, plugin FROM mysql.user WHERE user = 'imsdal';
+
+-- create new user
+
+CREATE USER 'imsdal'@'192.168.3.5' IDENTIFIED WITH 'mysql_native_password' BY 'YourPassword123!';
+
+--- drop a user
+DROP USER IF EXISTS 'imsdal'@'192.168.3.5';
+FLUSH PRIVILEGES;
 
 ```
 
