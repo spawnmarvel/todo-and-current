@@ -46,6 +46,8 @@ Chromebook Azure MySql flexible server connect
 
 ```bash
 
+# never '#' in password, if you do you must quote it 'pass#word789-20' when connecting
+
 mysql -h name.mysql.database.azure.com -u imsdal --password=xxxxxxxxx
 
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
@@ -63,6 +65,8 @@ select version();
 Ubuntu 24.04.3 LTS 192.168.3.5 server connect mysql none tls (already done) and tls
 
 ```bash
+
+# never '#' in password, if you do you must quote it 'pass#word789-20' when connecting
 
 # lets try to connect from the ubuntu server 192.168.3.5 without ssl
 mysql -h name.mysql.database.azure.com -u imsdal --password=xxxxxxxxx
@@ -236,7 +240,7 @@ SELECT user, host, plugin FROM mysql.user WHERE user = 'imsdal';
 
 CREATE DATABASE maka12_db;
 
--- never '#' in password, if you do you must quote it 'pass#word789-20' when connection
+-- never '#' in password, if you do you must quote it 'pass#word789-20' when connecting
 
 CREATE USER 'maka12'@'%' IDENTIFIED WITH 'mysql_native_password' BY 'YourSafePassword123!';
 
