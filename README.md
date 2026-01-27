@@ -56,7 +56,7 @@ https://github.com/spawnmarvel/todo-and-current/tree/main/bash_chaos_engineer
     - Do the bash tutorial w3s and make a good quick guide = 50%
     - Do the mirror-server = 50%
     - Do SNMP with zabbix
-    - Do Azure Ubuntu's update and upgrade always
+    - :white_square_button: Do Azure Ubuntu's update and upgrade always
 
 2. Docker maintenance:
     - Do follow up on prod-2 stuff.
