@@ -387,6 +387,21 @@ Download workbench
 
 https://www.mysql.com/products/workbench/
 
+## MySql workbench inspect schema
+
+MySQL Workbench: Connect to your instance, right-click the schema, and select Schema Inspector. Size details are in the Info or Tables tab.
+
+* Info
+* Tables
+* Columns
+* Indexes
+* triggers etc
+
+
+![mysql schema](https://github.com/spawnmarvel/todo-and-current/blob/main/mysql/images/schema.png)
+
+
+
 ## Azure Database for MySQL flexible server endpoints
 
 The connection now through Allow public access to this resource through the internet using a public IP address
