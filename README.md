@@ -51,8 +51,8 @@ https://github.com/spawnmarvel/todo-and-current/tree/main/bash_chaos_engineer
     df -h
     sudo apt autoremove && sudo apt autoclean
     ```
-    - Do a test for upgrade Azure Database for MySQL flexible server 8-8.4, zabbix 6.0.43 = 100% success saved in linux-and-azure/zabbix_monitoring_vms
-    - Do install offline zabbix agent from *.deb = 100% success
+    - :white_check_mark: Do a test for upgrade Azure Database for MySQL flexible server 8-8.4, zabbix 6.0.43 = 100% success saved in linux-and-azure/zabbix_monitoring_vms
+    - :white_check_mark: Do install offline zabbix agent from *.deb = 100% success
     - Do the bash tutorial w3s and make a good quick guide = 50%
     - Do the mirror-server = 50%
     - Do SNMP with zabbix
@@ -61,7 +61,7 @@ https://github.com/spawnmarvel/todo-and-current/tree/main/bash_chaos_engineer
 2. Docker maintenance:
     - Do follow up on prod-2 stuff.
       - Portainer, MySQL, Grafana (and plugins) and also Loki.
-      - Do the nemesis: Zabbix = 100% success
+      - :white_check_mark: Do the nemesis: Zabbix = 100% success
       - Do send push and pull from vm = 
       - Do https = 
       - Do alter zabbix_server.conf = 
