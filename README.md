@@ -51,12 +51,11 @@ https://github.com/spawnmarvel/todo-and-current/tree/main/bash_chaos_engineer
     df -h
     sudo apt autoremove && sudo apt autoclean
     ```
-    - Do the bash tutorial w3s and make a good quick guide = 
+    - Do a test for upgrade Azure Database for MySQL flexible server 8-8.4, zabbix 6.0.43 = 100% success saved in linux-and-azure/zabbix_monitoring_vms
+    - Do install offline zabbix agent from *.deb = 100% success
+    - Do the bash tutorial w3s and make a good quick guide = 50%
     - Do the mirror-server = 50%
-    - Install Zabbix on a server and Azure Database for MySQL B1MS, vCore Dev/Test = 
-    - Do a test for upgrade MySql = 50% in internal project, but was zabbix 7.0.22, must do 6
-    - Do make private link to mysql
-    - Install offline zabbix agent from *.deb = 100% success
+    - Do SNMP with zabbix
     - Do Azure Ubuntu's update and upgrade always
 
 2. Docker maintenance:
