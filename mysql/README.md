@@ -236,6 +236,8 @@ SELECT user, host, plugin FROM mysql.user WHERE user = 'imsdal';
 
 CREATE DATABASE maka12_db;
 
+-- never '#' in password, if you do you must quote it 'pass#word789-20' when connection
+
 CREATE USER 'maka12'@'%' IDENTIFIED WITH 'mysql_native_password' BY 'YourSafePassword123!';
 
 GRANT ALL PRIVILEGES ON maka12_db.* TO 'maka12'@'%';
