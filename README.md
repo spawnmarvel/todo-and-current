@@ -58,8 +58,9 @@ https://github.com/spawnmarvel/todo-and-current/tree/main/bash_chaos_engineer
     - :white_square_button: Do Azure Ubuntu's update and upgrade always
 
 2. Docker maintenance:
-    - Do follow up on prod-2 stuff.
-      - Portainer, MySQL, Grafana (and plugins) and also Loki.
+      - Do follow up on prod-2 stuff.
+      - :white_check_mark: Do Portainer = 100% success
+      - Do MySQL, Grafana (and plugins) = 70 % success, we wait
       - :white_check_mark: Do the nemesis: Zabbix = 100% success
       - Do send push and pull from vm = 
       - Do https = 
@@ -68,7 +69,8 @@ https://github.com/spawnmarvel/todo-and-current/tree/main/bash_chaos_engineer
 3. Python maintenance as docker image:
     - Code a few lines every now and then.
     - Do a build then push and pull to Docker hub.
-    - Make small changes in python frequently, set container always run.
+    - Do Make small changes in python frequently, set container always run.
+    - Do py-central-monitor
 
 4. MySql maintenace:
     - Do the w3s tutorial in mysql cli
