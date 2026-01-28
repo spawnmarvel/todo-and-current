@@ -40,10 +40,8 @@ https://github.com/spawnmarvel/todo-and-current/tree/main/bash_chaos_engineer
 
 ## TODO Maintain knowledge
 
-1. Linux maintenance:
-    Do use chromebook Debian GNU/Linux 12 (bookworm).
-    Do not install any GUI, chromebook is for command line only
-    
+1. Linux maintenance: Do use chromebook Debian GNU/Linux 12 (bookworm), do not install any GUI, chromebook is for command line only
+
     ```bash
     # on chromebook
     sudo apt update -y
