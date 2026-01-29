@@ -1,6 +1,8 @@
 # Bash quick guide
 
-In Linux, the "everything is a file" philosophy means that nearly all system resources—hardware devices, processes, directories, and network sockets—are represented as data streams within the file system. This allows applications to read, write, and manipulate resources using standard tools like open, read, write, and close
+In Linux, the "everything is a file" philosophy means that nearly all system resources—hardware devices, processes, directories, and network sockets—are represented as data streams within the file system. 
+
+This allows applications to read, write, and manipulate resources using standard tools like open, read, write, and close
 
 * Unified Interface: Because hardware (e.g., hard drives, mice) is represented as files (typically in /dev), programs can interact with devices using the same methods as regular files.
 * File Descriptor Abstraction: Rather than using different API calls for different resources, the Linux kernel abstracts these into file descriptors.
