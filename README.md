@@ -76,6 +76,7 @@ https://github.com/spawnmarvel/todo-and-current/tree/main/bash_chaos_engineer
     - Do the w3s tutorial in mysql cli
     - Make a quick guide CRUD/DML/DCL and tips together with cmd`s.
     - Focus on the basic and also Zabbix tips and tricks.
+    - Do MySQL replication to Azure Flexible server
 
 ---
 
