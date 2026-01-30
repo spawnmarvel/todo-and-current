@@ -162,8 +162,12 @@ netstat -ano | find "1801"
 
 A healthy output for this command would typically look something like this:
 ```log
+One is "picky" about which network card it listens to
+TCP    10.0.0.12:1801         0.0.0.0:0              LISTENING       1234
+while the other is "listening to everyone
 
-  TCP    0.0.0.0:1801         0.0.0.0:0              LISTENING       1234
+TCP    0.0.0.0:1801         0.0.0.0:0              LISTENING       1234
+
 
 ```
 Unhealthy Outputs
