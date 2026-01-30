@@ -1,24 +1,29 @@
 $test = @('remotehostname:80','remotehostname:9548','remotehostname:4561', 'remotehostname:4562')
 
-Write-Output "check server and port, lazy admin at:"
-$env:computername
+Write-Output "Checking connectivity from: $($env:COMPUTERNAME)"
+Write-Output "--------------------------------------------"
 
-Foreach ($t in $test)
-{
-  $source = $t.Split(':')[0]
-  $port = $t.Split(':')[1]
-  
-  Write-Host "Connecting to $source on port $port"
+foreach ($t in $test) {
+    # Splitting the string into Host and Port
+    $parts = $t.Split(':')
+    $source = $parts[0]
+    $port   = [int]$parts[1]
 
-  try
-  {
-    $socket = New-Object System.Net.Sockets.TcpClient($source, $port)
-  }
-  catch [Exception]
-  {
-    Write-Host $_.Exception.GetType().FullName
-    Write-Host $_.Exception.Message
-  }
+    Write-Host "Connecting to $source on port $port..." -NoNewline
 
-  Write-Host "Connected`n"
+    try {
+        # Using Test-NetConnection is the modern, "non-lazy" way 
+        # It handles the socket creation and timeout logic for you
+        $connection = Test-NetConnection -ComputerName $source -Port $port -WarningAction SilentlyContinue
+        
+        if ($connection.TcpTestSucceeded) {
+            Write-Host " [SUCCESS]" -ForegroundColor Green
+        } else {
+            Write-Host " [FAILED]" -ForegroundColor Red
+        }
+    }
+    catch {
+        Write-Host " [ERROR]" -ForegroundColor Yellow
+        Write-Warning $_.Exception.Message
+    }
 }
