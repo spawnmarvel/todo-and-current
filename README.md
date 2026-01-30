@@ -72,7 +72,7 @@ https://github.com/spawnmarvel/todo-and-current/tree/main/bash_chaos_engineer
     - Code a few lines every now and then.
     - Do a build then push and pull to Docker hub.
     - Do Make small changes in python frequently, set container always run.
-    - Do py-central-monitor
+    - Do py-central-monitor, fix the database logic, send always and store in file also, then update database 
 
 4. MySql maintenace:
     - Do the w3s tutorial in mysql cli
