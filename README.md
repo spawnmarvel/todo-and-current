@@ -56,6 +56,7 @@ https://github.com/spawnmarvel/todo-and-current/tree/main/bash_chaos_engineer
     - Do the bash tutorial w3s and make a good quick guide = 50%
     - Do make a proxy for the on premises 7.0.22, vmzabbix02proxy push/active vmzabbix02 =  
     - Do proxy readme proxy and architecture saved in linux-and-azure/zabbix_monitoring_vms = 
+    - Do send trapper data to proxy =
     - Do proxy with grafana plugin = 
     - Do SNMP with zabbix
     - :white_square_button:Do Azure Ubuntu's update and upgrade always
