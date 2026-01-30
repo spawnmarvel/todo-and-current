@@ -65,7 +65,7 @@ https://github.com/spawnmarvel/todo-and-current/tree/main/bash_chaos_engineer
     - Do the w3s tutorial in mysql cli
     - Make a quick guide CRUD/DML/DCL and tips together with cmd`s.
     - :white_square_button: Focus on the basic and also Zabbix tips and tricks.
-    - Do MySQL replication to Azure Flexible server
+    - Do MySQL replication to Azure Flexible server from local, local is source az is replica
 
 3. Python maintenance:
     - :white_square_button: Code a few lines every now and then.
