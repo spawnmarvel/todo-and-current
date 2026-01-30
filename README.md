@@ -52,6 +52,7 @@ https://github.com/spawnmarvel/todo-and-current/tree/main/bash_chaos_engineer
     ```
     - :white_check_mark: Do a test for upgrade Azure Database for MySQL flexible server 8-8.4, zabbix 6.0.43 = 100% success saved in linux-and-azure/zabbix_monitoring_vms
     - :white_check_mark: Do install offline zabbix agent from *.deb = 100% success
+    - Do remove az zabbix and make a proxy for the on premises 7.0.22. Keep az mysql = readme proxy and architecture 
     - Do the bash tutorial w3s and make a good quick guide = 50%
     - Do the mirror-server = 50%
     - Do SNMP with zabbix
