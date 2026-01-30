@@ -54,7 +54,7 @@ https://github.com/spawnmarvel/todo-and-current/tree/main/bash_chaos_engineer
     - :white_check_mark: Do install offline zabbix agent from *.deb = 100% success
     - Do the mirror-server = 50%
     - Do the bash tutorial w3s and make a good quick guide = 50%
-    - Do make a proxy for the on premises 7.0.22 =  
+    - Do make a proxy for the on premises 7.0.22, vmzabbix02 vmzabbix02proxy push/active =  
     - Do proxy readme proxy and architecture saved in linux-and-azure/zabbix_monitoring_vms = 
     - Do proxy with grafana plugin = 
     - Do SNMP with zabbix
