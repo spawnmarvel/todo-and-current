@@ -61,14 +61,11 @@ https://github.com/spawnmarvel/todo-and-current/tree/main/bash_chaos_engineer
     - :white_square_button: Do Azure Ubuntu's update and upgrade always
     - :white_square_button:Do https = always openssl
 
-2. Docker maintenance (not make new stuff, just maintain what is: parked):
-      - Do follow up on prod-2 stuff.
-      - :white_check_mark: Do Portainer = 100% success
-      - Do MySQL, Grafana (and plugins) = 70 % success, we wait
-      - :white_check_mark: Do the nemesis: Zabbix = 100% success
-      - Do send push and pull from vm = 
-      - Do https = 
-      - Do alter zabbix_server.conf = 
+2. MySql maintenace:
+    - Do the w3s tutorial in mysql cli
+    - Make a quick guide CRUD/DML/DCL and tips together with cmd`s.
+    - Focus on the basic and also Zabbix tips and tricks.
+    - Do MySQL replication to Azure Flexible server
 
 3. Python maintenance:
     - Code a few lines every now and then.
@@ -78,12 +75,14 @@ https://github.com/spawnmarvel/todo-and-current/tree/main/bash_chaos_engineer
     - Do Make small changes in python frequently, set container always run.
  
 
-4. MySql maintenace:
-    - Do the w3s tutorial in mysql cli
-    - Make a quick guide CRUD/DML/DCL and tips together with cmd`s.
-    - Focus on the basic and also Zabbix tips and tricks.
-    - Do MySQL replication to Azure Flexible server
-
+4. Docker maintenance (not make new stuff, just maintain what is: parked):
+      - Do follow up on prod-2 stuff.
+      - :white_check_mark: Do Portainer = 100% success
+      - Do MySQL, Grafana (and plugins) = 70 % success, we wait
+      - :white_check_mark: Do the nemesis: Zabbix = 100% success
+      - Do send push and pull from vm = 
+      - Do https = 
+      - Do alter zabbix_server.conf = 
 ---
 
 ## TODO 1 Bash tutorial, repeat, repeat and repeat :rocket: :repeat: :rocket:
