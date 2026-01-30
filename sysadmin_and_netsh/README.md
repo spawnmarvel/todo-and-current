@@ -155,7 +155,7 @@ netstat -ano | findstr ":1801 "
 cmd
 
 ```bash
-netstat -ano | find "1801 "
+netstat -ano | find "1801"
 
 ```
 
