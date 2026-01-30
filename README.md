@@ -68,14 +68,14 @@ https://github.com/spawnmarvel/todo-and-current/tree/main/bash_chaos_engineer
     - Do MySQL replication to Azure Flexible server
 
 3. Python maintenance:
-    - Code a few lines every now and then.
+    - :white_square_buttonCode a few lines every now and then.
     - Do py-central-monitor, fix the database logic, send always and store in file also, then update database 
     - Below is parked for now:
-    - Do a build then push and pull to Docker hub.
-    - Do Make small changes in python frequently, set container always run.
+    - Do a build then push and pull to Docker hub, parked :anchor:
+    - Do Make small changes in python frequently, set container always run, parked :anchor:
  
 
-4. Docker maintenance (not make new stuff, just maintain what is: parked):
+4. Docker maintenance, parked :anchor::
       - Do follow up on prod-2 stuff.
       - :white_check_mark: Do Portainer = 100% success
       - Do MySQL, Grafana (and plugins) = 70 % success, we wait
