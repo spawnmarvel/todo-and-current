@@ -146,8 +146,16 @@ Example of of using netstat check port (ps1 or cmd)
 
 netstat -ano: This command lists all active connections and listening ports, along with their associated process IDs (PIDs).
 
-```ps1
+bash
+
+```bash
 netstat -ano | findstr ":1801 "
+
+```
+cmd
+
+```bash
+netstat -ano | find "1801 "
 
 ```
 
