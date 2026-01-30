@@ -64,7 +64,7 @@ https://github.com/spawnmarvel/todo-and-current/tree/main/bash_chaos_engineer
 2. MySql maintenace:
     - Do the w3s tutorial in mysql cli
     - Make a quick guide CRUD/DML/DCL and tips together with cmd`s.
-    - Focus on the basic and also Zabbix tips and tricks.
+    - :white_square_button: Focus on the basic and also Zabbix tips and tricks.
     - Do MySQL replication to Azure Flexible server
 
 3. Python maintenance:
