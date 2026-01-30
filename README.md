@@ -54,12 +54,14 @@ https://github.com/spawnmarvel/todo-and-current/tree/main/bash_chaos_engineer
     - :white_check_mark: Do install offline zabbix agent from *.deb = 100% success
     - Do remove az zabbix and make a proxy for the on premises 7.0.22. Keep az mysql = readme proxy and architecture 
     - Do proxy saved in linux-and-azure/zabbix_monitoring_vms
+    - Do proxy with grafana plugin = 
     - Do the bash tutorial w3s and make a good quick guide = 50%
     - Do the mirror-server = 50%
     - Do SNMP with zabbix
     - :white_square_button: Do Azure Ubuntu's update and upgrade always
+    - :white_square_button:Do https = always openssl
 
-2. Docker maintenance:
+2. Docker maintenance (not make new stuff, just maintain what is: parked):
       - Do follow up on prod-2 stuff.
       - :white_check_mark: Do Portainer = 100% success
       - Do MySQL, Grafana (and plugins) = 70 % success, we wait
@@ -68,11 +70,13 @@ https://github.com/spawnmarvel/todo-and-current/tree/main/bash_chaos_engineer
       - Do https = 
       - Do alter zabbix_server.conf = 
 
-3. Python maintenance as docker image:
+3. Python maintenance:
     - Code a few lines every now and then.
+    - Do py-central-monitor, fix the database logic, send always and store in file also, then update database 
+    - Below is parked for now:
     - Do a build then push and pull to Docker hub.
     - Do Make small changes in python frequently, set container always run.
-    - Do py-central-monitor, fix the database logic, send always and store in file also, then update database 
+ 
 
 4. MySql maintenace:
     - Do the w3s tutorial in mysql cli
