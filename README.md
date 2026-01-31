@@ -40,7 +40,9 @@ https://github.com/spawnmarvel/todo-and-current/tree/main/bash_chaos_engineer
 
 ## TODO Maintain knowledge
 
-1. Linux maintenance: Do use chromebook Debian GNU/Linux 12 (bookworm), do not install any GUI, chromebook is for command line only
+1. Linux maintenance: 
+
+Do use chromebook Debian GNU/Linux 12 (bookworm), do not install any GUI, chromebook is for command line only
 
     ```bash
     # on chromebook
@@ -67,6 +69,7 @@ https://github.com/spawnmarvel/todo-and-current/tree/main/bash_chaos_engineer
     - Make a quick guide CRUD/DML/DCL and tips together with cmd`s.
     - :white_square_button: Focus on the basic and also Zabbix tips and tricks.
     - :white_square_button: Azure Database for MySQL flexible server
+    - :white_square_button: MySQL workbench and cli
     - Do install mysql localhost
     - Do MySQL replication to Azure Flexible server from local, local is source az is replica
 
