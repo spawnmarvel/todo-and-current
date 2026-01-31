@@ -59,8 +59,8 @@ https://github.com/spawnmarvel/todo-and-current/tree/main/bash_chaos_engineer
     - Do send trapper data to proxy =
     - Do proxy with grafana plugin = 
     - Do SNMP with zabbix
-    - :white_square_button:Do Azure Ubuntu's update azure-automation-bicep-and-labs
-/az-automation-runbook = 50%
+    - :white_check_mark: Do Azure Ubuntu's update azure-automation-bicep-and-labs
+/az-automation-runbook = 90%, set up alert and log also to a storage account
     - :white_square_button:Do https = always openssl
     - :white_square_button:Do Chaos Engineer bash vmchaos09
 
