@@ -55,13 +55,13 @@ sudo apt autoclean
 ```
 1. Linux maintenance:
     
+    - Do the bash tutorial w3s and make a good quick guide = 50%
     - :white_check_mark: Do all linux azure linux updates are now on autmation runbook = 100%
     - :white_check_mark: Do upgrade Azure Database for MySQL flexible server 8-8.4, zabbix 6.0.43 = 100%
     - - Saved in /zabbix_monitoring_vms
     - :white_check_mark: Do install offline zabbix agent from *.deb = 100%
     - Do the mirror-server = 50%
     - - Saved in azure-extra-linux-vm-mirror
-    - Do the bash tutorial w3s and make a good quick guide = 50%
     - Do proxy readme proxy and architecture =  
     - Do make a proxy for the on premises 7.0.22, vmzabbix02proxy push/active vmzabbix02 =  
     - Do send trapper data to proxy =
