@@ -57,8 +57,6 @@ sudo apt autoclean
     
     - Do the bash tutorial w3s and make a good quick guide = 50%
     - :white_check_mark: Do all linux azure linux updates are now on autmation runbook = 100%
-    - :white_check_mark: Do upgrade Azure Database for MySQL flexible server 8-8.4, zabbix 6.0.43 = 100%
-    - - Saved in /zabbix_monitoring_vms
     - :white_check_mark: Do install offline zabbix agent from *.deb = 100%
     - Do the mirror-server = 50%
     - - Saved in azure-extra-linux-vm-mirror
@@ -75,6 +73,8 @@ sudo apt autoclean
 2. MySql maintenace:
     - Do the w3s tutorial in mysql cli
     - Make a quick guide CRUD/DML/DCL and tips together with cmd`s.
+    - :white_check_mark: Do upgrade Azure Database for MySQL flexible server 8-8.4, zabbix 6.0.43 = 100%
+    - - Saved in /zabbix_monitoring_vms
     - :white_square_button: Focus on the basic and also Zabbix tips and tricks.
     - :white_square_button: Azure Database for MySQL flexible server
     - :white_square_button: MySQL workbench and cli
