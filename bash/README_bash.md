@@ -648,6 +648,43 @@ no pass
 ```
 </p>
 </details>
+
+<details><summary>debmirror</summary>
+<p>
+
+#### We can hide anything, even code!
+
+```bash
+
+ssh
+# Update package lists
+sudo apt update
+
+# Install debmirror for synchronization
+sudo apt install debmirror
+
+# Install Apache to serve the files via HTTP
+sudo apt install apache2
+
+# Install gnupg (gpg) required for GPG key conversion on the client
+sudo apt install gnupg
+
+# Ensure Apache starts automatically on boot
+sudo systemctl enable apache2
+
+# log it
+sudo systemctl status apache2
+● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/apache2.service; enabled; prese>
+     Active: active (running) since Thu 2025-11-13 17:28:16 UTC; 1min 15s ago
+
+```
+</p>
+
+https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm-mirror
+
+</details>
+
 <details><summary>Mount a data drive with fdisk ubuntu 24.04 for mysql</summary>
 <p>
 
