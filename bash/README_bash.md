@@ -32,7 +32,7 @@ man -k network
 
 ### W3schools repeat and and add :cyclone:
 
-<details><summary>Basic Commands, ls, ls -a,  cd, pwd, echo, cat, cp, mv, rm, touch, mkdir</summary>
+<details><summary>Basic Commands, ls, ls -a, ls *name*  cd, pwd, echo, cat, cp, mv, rm, touch, mkdir</summary>
 <p>
 
 #### We can hide anything, even code!
@@ -43,17 +43,18 @@ echo "Hello, Bash!"
 #
 hello.sh
 
-ls    #  - List directory contents
-ls -a #  - List hidden directory contents
-cd    #  - Change the current directory
-pwd   #  - Print the current working directory
-echo  #  - Display a line of text
-cat   #  - Concatenate and display files
-cp    #  - Copy files and directories
-mv    #  - Move or rename files
-rm    #  - Delete files or folders
-touch #  - Create an empty file or update its time
-mkdir #  - Create a new folder
+ls             #  - List directory contents
+ls -a          #  - List hidden directory contents
+ls  *apt-main* # returns apt-maintenance-2026-01-31.log
+cd             #  - Change the current directory
+pwd            #  - Print the current working directory
+echo           #  - Display a line of text
+cat            #  - Concatenate and display files
+cp             #  - Copy files and directories
+mv             #  - Move or rename files
+rm             #  - Delete files or folders
+touch          #  - Create an empty file or update its time
+mkdir          #  - Create a new folder
 
 ```
 </p>
