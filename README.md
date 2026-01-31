@@ -59,10 +59,6 @@ https://github.com/spawnmarvel/todo-and-current/tree/main/bash_chaos_engineer
     - Do send trapper data to proxy =
     - Do proxy with grafana plugin = 
     - Do SNMP with zabbix
-    - :white_check_mark: Do Azure Ubuntu's update azure-automation-bicep-and-labs
-/az-automation-runbook = 100 % success 
-    - :white_check_mark: Do Azure Ubuntu's update, set up alert and log also to a storage account = 90%
-    - :white_check_mark: Do Azure Ubuntu's update, set Automatic Module Update = 
     - :white_square_button:Do https = always openssl
     - :white_square_button:Do Chaos Engineer bash vmchaos09
 
@@ -74,7 +70,15 @@ https://github.com/spawnmarvel/todo-and-current/tree/main/bash_chaos_engineer
     - Do install mysql localhost
     - Do MySQL replication to Azure Flexible server from local, local is source az is replica
 
-3. Python maintenance:
+3. Az-104 administrator mainteance:
+    - :white_check_mark: Do Azure Ubuntu's update azure-automation-bicep-and-labs
+/az-automation-runbook = 100 % success 
+    - :white_check_mark: Do Azure Ubuntu's update, set up alert and log also to a storage account = 90%
+    - :white_check_mark: Do Azure Ubuntu's update, set Automatic Module Update = 
+    - Do Vm tutorials from docs = 
+
+
+4. Python maintenance:
     - :white_square_button: Code a few lines every now and then.
     - Do py-central-monitor, fix the database logic, send always and store in file also, then update database 
     - Below is parked for now:
@@ -82,7 +86,7 @@ https://github.com/spawnmarvel/todo-and-current/tree/main/bash_chaos_engineer
     - Do Make small changes in python frequently, set container always run, parked :anchor:
  
 
-4. Docker maintenance, parked :anchor::
+5. Docker maintenance, parked :anchor::
       - Do follow up on prod-2 stuff.
       - :white_check_mark: Do Portainer = 100% success
       - Do MySQL, Grafana (and plugins) = 70 % success, we wait
