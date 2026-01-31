@@ -45,7 +45,7 @@ hello.sh
 
 ls             #  - List directory contents
 ls -a          #  - List hidden directory contents
-ls  *apt-main* # returns apt-maintenance-2026-01-31.log
+ls *apt-main* # returns apt-maintenance-2026-01-31.log
 cd             #  - Change the current directory
 pwd            #  - Print the current working directory
 echo           #  - Display a line of text
