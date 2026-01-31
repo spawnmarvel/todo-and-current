@@ -55,9 +55,9 @@ sudo apt autoremove && sudo apt autoclean
 1. Linux maintenance:
     
     - :white_check_mark: Do all linux azure linux updates are now on autmation runbook = 100%
-    - :white_check_mark: Do a test for upgrade Azure Database for MySQL flexible server 8-8.4, zabbix 6.0.43 = 100% success 
+    - :white_check_mark: Do upgrade Azure Database for MySQL flexible server 8-8.4, zabbix 6.0.43 = 100%
     - - Saved in linux-and-azure/zabbix_monitoring_vms
-    - :white_check_mark: Do install offline zabbix agent from *.deb = 100% success
+    - :white_check_mark: Do install offline zabbix agent from *.deb = 100%
     - Do the mirror-server = 50%
     - Do the bash tutorial w3s and make a good quick guide = 50%
     - Do make a proxy for the on premises 7.0.22, vmzabbix02proxy push/active vmzabbix02 =  
