@@ -75,11 +75,11 @@ sudo apt autoclean
     - Make a quick guide CRUD/DML/DCL and tips together with cmd`s.
     - :white_check_mark: Do upgrade Azure Database for MySQL flexible server 8-8.4, zabbix 6.0.43 = 100%
     - - Saved in /zabbix_monitoring_vms
+    - Do install mysql localhost
+    - Do MySQL replication to Azure Flexible server from local, local is source az is replica
     - :white_square_button: Focus on the basic and also Zabbix tips and tricks.
     - :white_square_button: Azure Database for MySQL flexible server
     - :white_square_button: MySQL workbench and cli
-    - Do install mysql localhost
-    - Do MySQL replication to Azure Flexible server from local, local is source az is replica
 
 3. Az-104 administrator mainteance:
     - :white_check_mark: Do Vm updates with azure automation runbook ps1 = 100%
