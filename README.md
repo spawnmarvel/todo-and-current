@@ -56,12 +56,12 @@ sudo apt autoremove && sudo apt autoclean
     
     - :white_check_mark: Do all linux azure linux updates are now on autmation runbook = 100%
     - :white_check_mark: Do upgrade Azure Database for MySQL flexible server 8-8.4, zabbix 6.0.43 = 100%
-    - - Saved in linux-and-azure/zabbix_monitoring_vms
+    - - Saved in /zabbix_monitoring_vms
     - :white_check_mark: Do install offline zabbix agent from *.deb = 100%
     - Do the mirror-server = 50%
     - Do the bash tutorial w3s and make a good quick guide = 50%
     - Do make a proxy for the on premises 7.0.22, vmzabbix02proxy push/active vmzabbix02 =  
-    - Do proxy readme proxy and architecture saved in linux-and-azure/zabbix_monitoring_vms = 
+    - Do proxy readme proxy and architecture saved in /zabbix_monitoring_vms = 
     - Do send trapper data to proxy =
     - Do proxy with grafana plugin = 
     - Do SNMP with zabbix
@@ -78,9 +78,9 @@ sudo apt autoremove && sudo apt autoclean
     - Do MySQL replication to Azure Flexible server from local, local is source az is replica
 
 3. Az-104 administrator mainteance:
+    - :white_check_mark: Do Vm updates aith azure auotmation runnbook ps1 = 100
+    - - Saved in az-automation-runbook-and-choices
     - :white_check_mark: Do update all Vms with tag Patching: Weekly = 100%
-    - :white_check_mark: Do Azure Ubuntu's update azure-automation-bicep-and-labs
-/az-automation-runbook = 100 % success 
     - :white_check_mark: Do Azure Ubuntu's update, set up alert and log also to a storage account = 90%
     - Do Azure Ubuntu's update, set Automatic Module Update = 
     - Do Vm tutorials from docs = 
