@@ -79,10 +79,10 @@ sudo apt autoremove && sudo apt autoclean
 
 3. Az-104 administrator mainteance:
     - :white_check_mark: Do Vm updates with azure automation runbook ps1 = 100
-    - - Saved in az-automation-runbook-and-choices
     - :white_check_mark: Do update all Vms with tag Patching: Weekly = 100%
     - :white_check_mark: Do azure automation set up alert and log also to a storage account = 90%
     - Do azure automation, set Automatic Module Update = 
+    - - Saved in az-automation-runbook-and-choices
     - Do Vm tutorials from docs = 
 
 --- 
