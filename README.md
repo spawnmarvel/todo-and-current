@@ -75,7 +75,7 @@ https://github.com/spawnmarvel/todo-and-current/tree/main/bash_chaos_engineer
     - :white_check_mark: Do Azure Ubuntu's update azure-automation-bicep-and-labs
 /az-automation-runbook = 100 % success 
     - :white_check_mark: Do Azure Ubuntu's update, set up alert and log also to a storage account = 90%
-    - :white_check_mark: Do Azure Ubuntu's update, set Automatic Module Update = 
+    - Do Azure Ubuntu's update, set Automatic Module Update = 
     - Do Vm tutorials from docs = 
 
 
