@@ -71,6 +71,7 @@ https://github.com/spawnmarvel/todo-and-current/tree/main/bash_chaos_engineer
     - Do MySQL replication to Azure Flexible server from local, local is source az is replica
 
 3. Az-104 administrator mainteance:
+    - :white_check_mark: Do update all Vms with tag Patching: Weekly = 100%
     - :white_check_mark: Do Azure Ubuntu's update azure-automation-bicep-and-labs
 /az-automation-runbook = 100 % success 
     - :white_check_mark: Do Azure Ubuntu's update, set up alert and log also to a storage account = 90%
