@@ -64,9 +64,9 @@ sudo apt autoclean
     - Do the bash tutorial w3s and make a good quick guide = 50%
     - Do proxy readme proxy and architecture =  
     - Do make a proxy for the on premises 7.0.22, vmzabbix02proxy push/active vmzabbix02 =  
+    - Do send trapper data to proxy =
     - Do proxy with grafana plugin = 
     - - Saved in /zabbix_monitoring_vms
-    - Do send trapper data to proxy =
     - Do SNMP with zabbix
     - - Saved in /zabbix_monitoring_vms
     - :white_square_button:Do https = always openssl
