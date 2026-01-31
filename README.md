@@ -10,9 +10,10 @@ Readme with todo-and-current, Ai as helper, Gemini.
 
 https://follow-e-lo.com/
 
-### Scripting (and what's fun*)
+### Scripting (and what's fun*), think automation, idempotent
 
-Bash.sh, powershell.ps1, sql.sql, python.py, Docker, think automation, idempotent.
+* Bash.sh, powershell.ps1, sql.sql, 
+* (python.py, Docker)
 
 ---
 
