@@ -78,7 +78,7 @@ sudo apt autoremove && sudo apt autoclean
     - Do MySQL replication to Azure Flexible server from local, local is source az is replica
 
 3. Az-104 administrator mainteance:
-    - :white_check_mark: Do Vm updates aith azure auotmation runnbook ps1 = 100
+    - :white_check_mark: Do Vm updates with azure auotmation runbook ps1 = 100
     - - Saved in az-automation-runbook-and-choices
     - :white_check_mark: Do update all Vms with tag Patching: Weekly = 100%
     - :white_check_mark: Do Azure Ubuntu's update, set up alert and log also to a storage account = 90%
