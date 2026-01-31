@@ -680,8 +680,7 @@ sudo systemctl status apache2
 
 ```
 </p>
-
-https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm-mirror
+Read more at https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm-mirror
 
 </details>
 
