@@ -40,7 +40,7 @@ https://github.com/spawnmarvel/todo-and-current/tree/main/bash_chaos_engineer
 
 ## TODO Maintain knowledge
 
-1. Linux maintenance: Do use chromebook Debian GNU/Linux 12 (bookworm), do not install any GUI, chromebook is for command line only
+Do use chromebook Debian GNU/Linux 12 (bookworm), do not install any GUI, chromebook is for command line only
 
 ```bash
 # on chromebook
@@ -49,7 +49,9 @@ sudo apt upgrade -y
 # every now and then
 df -h
 sudo apt autoremove && sudo apt autoclean
+
 ```
+1. Linux maintenance:
 
     - :white_check_mark: Do a test for upgrade Azure Database for MySQL flexible server 8-8.4, zabbix 6.0.43 = 100% success saved in linux-and-azure/zabbix_monitoring_vms
     - :white_check_mark: Do install offline zabbix agent from *.deb = 100% success
