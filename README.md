@@ -57,6 +57,7 @@ sudo apt autoclean
     
     - Do the bash tutorial w3s and make a good quick guide = 50%
     - :white_check_mark: Do all linux azure linux updates are now on autmation runbook = 100%
+    - - Saved in az-automation-runbook-and-choices
     - :white_check_mark: Do install offline zabbix agent from *.deb = 100%
     - Do the mirror-server = 50%
     - - Saved in azure-extra-linux-vm-mirror
