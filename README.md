@@ -78,6 +78,9 @@ https://github.com/spawnmarvel/todo-and-current/tree/main/bash_chaos_engineer
     - Do Azure Ubuntu's update, set Automatic Module Update = 
     - Do Vm tutorials from docs = 
 
+--- 
+
+Misc / wait / parked
 
 4. Python maintenance:
     - :white_square_button: Code a few lines every now and then.
