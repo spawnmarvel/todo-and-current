@@ -49,7 +49,8 @@ sudo apt update -y
 sudo apt upgrade -y
 # every now and then
 df -h
-sudo apt autoremove && sudo apt autoclean
+sudo apt autoremove
+sudo apt autoclean
 
 ```
 1. Linux maintenance:
@@ -61,12 +62,13 @@ sudo apt autoremove && sudo apt autoclean
     - Do the mirror-server = 50%
     - - Saved in azure-extra-linux-vm-mirror
     - Do the bash tutorial w3s and make a good quick guide = 50%
-    - Do make a proxy for the on premises 7.0.22, vmzabbix02proxy push/active vmzabbix02 =  
     - Do proxy readme proxy and architecture =  
+    - Do make a proxy for the on premises 7.0.22, vmzabbix02proxy push/active vmzabbix02 =  
+    - Do proxy with grafana plugin = 
     - - Saved in /zabbix_monitoring_vms
     - Do send trapper data to proxy =
-    - Do proxy with grafana plugin = 
     - Do SNMP with zabbix
+    - - Saved in /zabbix_monitoring_vms
     - :white_square_button:Do https = always openssl
     - :white_square_button:Do Chaos Engineer bash vmchaos09
 
