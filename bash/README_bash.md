@@ -43,18 +43,20 @@ echo "Hello, Bash!"
 #
 hello.sh
 
-ls             #  - List directory contents
-ls -a          #  - List hidden directory contents
-ls *apt-main* # returns apt-maintenance-2026-01-31.log
-cd             #  - Change the current directory
-pwd            #  - Print the current working directory
-echo           #  - Display a line of text
-cat            #  - Concatenate and display files
-cp             #  - Copy files and directories
-mv             #  - Move or rename files
-rm             #  - Delete files or folders
-touch          #  - Create an empty file or update its time
-mkdir          #  - Create a new folder
+ls                     #  - List directory contents
+ls -a                  #  - List hidden directory contents
+ls *apt-main*          # returns apt-maintenance-2026-01-31.log
+cd                     #  - Change the current directory
+pwd                    #  - Print the current working directory
+echo                   #  - Display a line of text
+cat                    #  - Concatenate and display files
+cp                     #  - Copy files and directories
+mv                     #  - Move or rename files
+rm                     #  - Delete files or folders
+rm zabbix_agent2.conf  # remove zabbix agent conf
+rm -r zabbix_agent2.d/ # remove folder and recursivley
+touch                  #  - Create an empty file or update its time
+mkdir                  #  - Create a new folder
 
 ```
 </p>
