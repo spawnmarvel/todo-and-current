@@ -582,7 +582,7 @@ man chown
 
 #### We can hide anything, even code!
 ```bash
-
+# When done make a bash text game
 
 ```
 </p>
@@ -593,7 +593,7 @@ man chown
 
 #### We can hide anything, even code!
 ```bash
-
+# when done make bash text game
 
 ```
 </p>
