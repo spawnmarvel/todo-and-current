@@ -13,6 +13,7 @@ https://follow-e-lo.com/
 ### Scripting (and what's fun*), think automation, idempotent
 
 * Bash.sh, powershell.ps1, sql.sql, 
+* Try to make games out if
 * (python.py, Docker)
 
 ---
