@@ -75,6 +75,7 @@ sudo apt autoclean
 2. MySql maintenace:
     - Do the w3s tutorial in mysql cli
     - Make a quick guide CRUD/DML/DCL and tips together with cmd`s.
+    - Do performance tuning 
     - :white_check_mark: Do upgrade Azure Database for MySQL flexible server 8-8.4, zabbix 6.0.43 = 100%
     - - Saved in /zabbix_monitoring_vms
     - Do install mysql localhost
