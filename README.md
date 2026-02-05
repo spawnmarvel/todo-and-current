@@ -57,7 +57,7 @@ sudo apt autoclean
 1. Linux maintenance:
     
     - Do the bash tutorial w3s and make a good quick guide = 50%
-    - :white_check_mark: Do all linux azure linux updates are now on autmation runbook = 100%
+    - :white_check_mark: Do linux Vm updates are now on autmation runbook, tag Patching: Weekly, Mondays 09:00 = 100%
     - - Saved in az-automation-runbook-and-choices
     - :white_check_mark: Do install offline zabbix agent from *.deb = 100%
     - Do the mirror-server = 50%
@@ -78,6 +78,8 @@ sudo apt autoclean
     - Do performance tuning 
     - :white_check_mark: Do upgrade Azure Database for MySQL flexible server 8-8.4, zabbix 6.0.43 = 100%
     - - Saved in /zabbix_monitoring_vms
+    - :white_check_mark: Do stop Azure Database for MySQL flexible server with autmation runbook Sundays 23:00 = 100%
+    - - Saved in az-automation-runbook-and-choices
     - :white_check_mark: Do install mysql localhost = 100%
     - Do MySQL replication to Azure Flexible server from local, local is source az is replica
     - :white_square_button: Focus on the basic and also Zabbix tips and tricks.
@@ -86,7 +88,7 @@ sudo apt autoclean
 
 3. Az-104 administrator mainteance:
     - :white_check_mark: Do Vm updates with azure automation runbook ps1 = 100%
-    - :white_check_mark: Do update all Vms with tag Patching: Weekly = 100%
+    - :white_check_mark: Do update all Vms with tag Patching: Weekly, Mondays 09:00 = 100%
     - :white_check_mark: Do azure automation set up alert and log also to a storage account = 90%
     - Do azure automation, set Automatic Module Update = 
     - - Saved in az-automation-runbook-and-choices
