@@ -90,7 +90,7 @@ sudo apt autoclean
     - :white_check_mark: Do Vm updates with azure automation runbook ps1 = 100%
     - :white_check_mark: Do update all Vms with tag Patching: Weekly, Mondays 09:00 = 100%
     - :white_check_mark: Do azure automation set up alert and log also to a storage account = 90%
-    - Do azure automation, set Automatic Module Update = 
+    - :white_square_button: Do azure automation for save cost/mainteance and check Automatic Module Update
     - - Saved in az-automation-runbook-and-choices
     - Do Vm tutorials from docs = 
 
