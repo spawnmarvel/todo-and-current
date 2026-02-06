@@ -63,6 +63,9 @@ innodb_log_file_size = 512M
 max_connections = 200            # Plenty for 50 NVPS
 ```
 
+1. Edit your config file: sudo nano /etc/mysql/my.cnf
+2. Save and exit.
+3. Restart MySQL: sudo systemctl restart mysql (Note: This will briefly disconnect Zabbix).
 
 ## MySQL General tunning zabbix
 
