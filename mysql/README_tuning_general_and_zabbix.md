@@ -67,6 +67,9 @@ max_connections = 200            # Plenty for 50 NVPS
 2. Save and exit.
 3. Restart MySQL: sudo systemctl restart mysql (Note: This will briefly disconnect Zabbix).
 
+Since your database is 20GB, you can't fit the whole thing in memory, but at 50 NVPS, a 4GB buffer pool is more than enough to cache the "hot" data (recent history and configuration) so that your Zabbix dashboard stays fast.
+
+
 ## MySQL General tunning zabbix
 
 Mysql zabbix tuning. Optimizing MySQL for Zabbix is a high-impact task because Zabbix is notoriously write-heavy. It constantly streams "history" data (metrics) and "trends" (summaries) into the database, which can lead to disk I/O bottlenecks.
