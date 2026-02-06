@@ -21,11 +21,11 @@ For a general-purpose server, the goal is to balance memory usage and disk effic
 The "Health Report" Recap
 Ingestion Rate: 50 NVPS is roughly 4.3 million values per day. For a modern CPU and SSD, this is a very light load.
 
-Database Volume: 20GB is large enough that you should be mindful of your Buffer Pool, but small enough that backups and migrations are still fast.
+* Database Volume: 20GB is large enough that you should be mindful of your Buffer Pool, but small enough that backups and migrations are still fast.
 
-Housekeeper Performance: Your 2-minute cleanup time confirms that your disk I/O is currently faster than your data growth. You are "winning" the race against storage.
+* Housekeeper Performance: Your 2-minute cleanup time confirms that your disk I/O is currently faster than your data growth. You are "winning" the race against storage.
 
-
+![zabbix health scale](https://github.com/spawnmarvel/todo-and-current/blob/main/mysql/images/zabbix_life.png)
 
 
 
