@@ -27,6 +27,41 @@ Ingestion Rate: 50 NVPS is roughly 4.3 million values per day. For a modern CPU 
 
 ![zabbix health scale](https://github.com/spawnmarvel/todo-and-current/blob/main/mysql/images/zabbix_life.png)
 
+Default + Minor Tuning
+
+1. Memory: The "Right-Sized" Buffer Pool
+At 20GB, your database doesn't need 80% of your RAM, but it does need enough to keep the indexes in memory.
+* Set innodb_buffer_pool_size to 4G or 8G (depending on your total System RAM).
+
+2. Efficiency: The "Magic" Flush Setting
+This is the single most impactful change for any Zabbix user.
+* Set innodb_flush_log_at_trx_commit = 2
+
+3. Disk Access: Bypassing the OS Cache
+Without this, your Linux OS and MySQL both try to cache the same data (Double Buffering)
+* Set innodb_flush_method = O_DIRECT
+
+4. Throughput: Sizing the Redo Logs
+Larger log files allow MySQL to "smooth out" the writing process.
+* innodb_log_file_size = 512M or 1G.
+
+Summary Checklist (my.cnf)
+Add or edit these lines under the [mysqld] section of your configuration file (usually /etc/mysql/my.cnf or /etc/my.cnf):
+
+```ini
+[mysqld]
+# Memory Allocation
+innodb_buffer_pool_size = 4G     # Adjust based on available RAM
+innodb_buffer_pool_instances = 4 # Helps with memory concurrency
+
+# Write Optimization
+innodb_flush_log_at_trx_commit = 2
+innodb_flush_method = O_DIRECT
+innodb_log_file_size = 512M
+
+# Connection Handling
+max_connections = 200            # Plenty for 50 NVPS
+```
 
 
 ## MySQL General tunning zabbix
