@@ -88,7 +88,7 @@ sudo apt autoclean
     - :white_check_mark: Do Vm updates with azure automation runbook ps1 = 100%
     - :white_check_mark: Do update all Vms with tag Patching: Weekly, Mondays 09:00 = 100%
     - :white_check_mark: Do stop Azure Database for MySQL flexible server with autmation runbook Sundays 23:00 = 100%
-    - :white_check_mark: Do azure automation set up alert and log also to a storage account = 90%
+    - :white_check_mark: Do azure automation set up alert = 
     - Do runbook keyvault
     - Do runbook store account file uplpad
     - - Saved in az-automation-runbook-and-choices
