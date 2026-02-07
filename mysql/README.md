@@ -197,6 +197,49 @@ select * from books;
 
 ```
 
+Load from file, Here MySQL workbench was used:
+
+The "Local" Flag: Using LOCAL tells the client to read the file from your computer and send it to the server. If you get an error saying The used command is not allowed with this MySQL version, you likely need to enable the local_infile global variable:
+
+Step 1: Enable on the Server
+Run this command in a query tab to allow the server to accept local file transfers:
+```sql
+SET GLOBAL local_infile = 1
+```
+Step 2: Enable in Workbench Connection (Crucial)
+This is the step most people miss. You must tell the Workbench "Client" to allow these transfers:
+
+Close your current connection tab.
+
+On the Workbench Home screen, Right-click your connection card and select Edit Connection.
+
+Go to the Advanced tab.
+
+In the Others: box at the bottom, paste this exact string: OPT_LOCAL_INFILE=1
+
+Click Test Connection and then Close.
+
+```sql
+-- db name
+use logon_info;
+
+LOAD DATA LOCAL INFILE 'C:/Users/username/Desktop/info.csv'
+INTO TABLE info
+-- format (CSV)
+FIELDS TERMINATED BY '\t' 
+-- This tells MySQL how to identify the end of a row. This specific sequence is the Windows Standard for line breaks.
+-- 
+LINES TERMINATED BY '\r\n'
+IGNORE 1 LINES; -- Use this if your text file has a header/title row
+```
+
+Step 3: Permanent Fix (Optional)
+The SET GLOBAL command will reset to OFF if the MySQL service restarts. To make this permanent, you need to edit your my.ini (Windows) or my.cnf (Linux) configuration file:
+
+Find the [mysql] and [mysqld] sections.
+
+Add local-infile=1 under both.
+
 ## DCL (data control language)
 
 ```sql
