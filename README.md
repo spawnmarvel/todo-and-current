@@ -57,8 +57,6 @@ sudo apt autoclean
 1. Linux maintenance:
     
     - Do the bash tutorial w3s and make a good quick guide = 50%
-    - :white_check_mark: Do linux Vm updates are now on autmation runbook, tag Patching: Weekly, Mondays 09:00 = 100%
-    - - Saved in az-automation-runbook-and-choices
     - :white_check_mark: Do install offline zabbix agent from *.deb = 100%
     - Do the mirror-server = 50%
     - - Saved in azure-extra-linux-vm-mirror
@@ -69,6 +67,8 @@ sudo apt autoclean
     - - Saved in /zabbix_monitoring_vms
     - Do SNMP with zabbix
     - - Saved in /zabbix_monitoring_vms
+    - :white_check_mark: Do linux Vm updates are now on autmation runbook, tag Patching: Weekly, Mondays 09:00 = 100%
+    - - Saved in az-automation-runbook-and-choices
     - :white_square_button:Do https = always openssl
     - :white_square_button:Do Chaos Engineer bash vmchaos09
 
