@@ -197,7 +197,9 @@ select * from books;
 
 ```
 
-Load from file, Here MySQL workbench was used:
+Load from file
+
+Here MySQL workbench was used:
 
 The "Local" Flag: Using LOCAL tells the client to read the file from your computer and send it to the server. If you get an error saying The used command is not allowed with this MySQL version, you likely need to enable the local_infile global variable:
 
