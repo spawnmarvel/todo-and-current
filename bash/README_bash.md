@@ -571,6 +571,70 @@ stat -c '%a' test1.txt
 man chown
 # chown - change file owner and group
 
+# lets create a user
+sudo adduser olden
+# [...]
+# info: Creating home directory `/home/olden' ...
+[...]
+
+# lets create a new file with imsdal
+touch carrot_list.txt
+
+# check permissions
+stat -c '%a' carrot_list.txt
+# 644
+
+# check owner
+ls -l carrot_list.txt
+# -rw-rw-r-- 1 imsdal imsdal 0 Feb  9 21:05 carrot_list.txt
+# group is imsdal and owner is imsdal
+
+# change owner to olden
+sudo chown -v olden carrot_list.txt
+# changed ownership of 'carrot_list.txt' from imsdal to olden
+
+
+ls -l carrot_list.txt 
+# -rw-rw-r-- 1 olden imsdal 0 Feb  9 21:05 carrot_list.txt
+# owner is olden and group is imsdal
+
+man chgrp
+# chgrp - change group ownership
+
+# first lets show groups
+cat /etc/group
+root:x:0:
+daemon:x:1:
+bin:x:2:
+sys:x:3:
+adm:x:4:syslog,imsdal # in admin
+# [...] there are many more
+mysql:x:115:
+olden:x:1001:
+
+# Each line follows a specific format:
+# group_name : password_placeholder : GID : member_list
+
+# lets add olden to the admin group
+# Warning: Always include the -a flag. If you run usermod -G groupname username without it, Linux will remove the user from all other groups they belong to except the one you just listed!
+
+sudo usermod -aG adm olden
+
+# and list them again
+cat /etc/group
+root:x:0:
+daemon:x:1:
+bin:x:2:
+sys:x:3:
+adm:x:4:syslog,imsdal,olden
+
+# lets change the group for the file
+sudo chgrp -v admin carrot_list.txt
+changed group of 'carrot_list.txt' from imsdal to admin
+
+# list the owner and group
+s -l carrot_list.txt 
+-rw-rw-r-- 1 olden admin 0 Feb  9 21:05 carrot_list.txt
 
 
 
