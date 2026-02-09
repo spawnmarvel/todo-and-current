@@ -647,10 +647,41 @@ s -l carrot_list.txt
 <p>
 
 #### We can hide anything, even code!
+
+syntax
 ```bash
-# When done make a bash text game
+# comment
+echo "first command, top down"
+echo "second command"
+
+echo "use ; for multiple lines"; echo "like this"
+
+
 
 ```
+script
+```bash
+#!/bin/bash
+name="world
+echo "hello $name"
+
+
+```
+
+variables
+```bash
+
+
+```
+
+next
+```bash
+
+
+```
+
+When done make a bash text game
+
 </p>
 </details>
 
