@@ -599,9 +599,9 @@ ls -l carrot_list.txt
 # owner is olden and group is imsdal
 
 man chgrp
-# chgrp - change group ownership .
+# chgrp - change group ownership
 
-# first lets show groups
+# first lets show groups and view
 cat /etc/group
 root:x:0:
 daemon:x:1:
