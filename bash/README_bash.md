@@ -650,12 +650,15 @@ s -l carrot_list.txt
 
 syntax
 ```bash
+<<<<<<< HEAD
 # comment
 echo "first command, top down"
 echo "second command"
 
 echo "use ; for multiple lines"; echo "like this"
 
+=======
+>>>>>>> 5bef053 (bahs game)
 
 
 ```
@@ -697,6 +700,22 @@ When done make a bash text game
 </details>
 
 https://www.w3schools.com/bash/bash_commands.php
+
+<details><summary>The bash game RPG (like UIB)</summary>
+<p>
+
+#### We can hide anything, even code!
+```bash
+# when done make bash text game
+# player
+# monster
+# damage
+# check life etc
+# save game to file
+
+```
+</p>
+</details>
 
 ## Hands on with
 
