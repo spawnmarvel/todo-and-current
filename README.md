@@ -95,7 +95,7 @@ sudo apt autoclean
     - Do Vm tutorials from docs = 
     - :white_square_button: Do azure automation for save cost/mainteance and check Automatic Module Update
 
-3. Az-305 azure aolutions architect axpert
+(3). Az-305 azure aolutions architect axpert
     - Do ms learn and some practice exams
     - - Stored in azure-automation-bicep-and-labs/az-305-solutions-architect-expert
     - Schedule exam?
