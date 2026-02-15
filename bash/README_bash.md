@@ -650,16 +650,11 @@ s -l carrot_list.txt
 
 syntax
 ```bash
-<<<<<<< HEAD
 # comment
 echo "first command, top down"
 echo "second command"
 
 echo "use ; for multiple lines"; echo "like this"
-
-=======
->>>>>>> 5bef053 (bahs game)
-
 
 ```
 script
