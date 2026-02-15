@@ -57,6 +57,7 @@ sudo apt autoclean
 1. Linux maintenance:
     
     - Do the bash tutorial w3s and make a good quick guide = 50%
+    - Do bash rpg game like UIB = 
     - :white_check_mark: Do install offline zabbix agent from *.deb = 100%
     - Do the mirror-server = 50%
     - - Saved in azure-extra-linux-vm-mirror
@@ -98,7 +99,10 @@ sudo apt autoclean
 3. (Az-305 azure aolutions architect expert)
     - Do ms learn and some practice exams, have fun you will learn
     - - Stored in azure-automation-bicep-and-labs/az-305-solutions-architect-expert
-    - Schedule exam?
+    - Do chill max 1 learn a week and check excel
+    - - Saved in C:\giti2026\az-305-study-guide.xlsx
+    - Do Schedule exam? 1 month befoe full repeat
+    - Do Tutorials Dojo
 
 --- 
 
