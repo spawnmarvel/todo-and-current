@@ -30,7 +30,7 @@ man -k network
 </p>
 </details>
 
-### W3schools repeat and and add :cyclone:vmchaos09
+### W3schools repeat and use :cyclone:vmchaos09
 
 <details><summary>Basic Commands, ls, ls -a, ls *name*  cd, pwd, echo, cat, cp, mv, rm, touch, mkdir</summary>
 <p>
