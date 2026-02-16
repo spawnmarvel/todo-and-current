@@ -657,12 +657,17 @@ echo "second command"
 echo "use ; for multiple lines"; echo "like this"
 
 ```
-script
+script (i.e test_script.sh)
+
 ```bash
 #!/bin/bash
+# sudo chmod +x test_script.sh
+# sudo ./test_script.sh
 name="world
 echo "hello $name"
 
+current_dir=$(pwd)
+echo $current_dir
 
 ```
 
