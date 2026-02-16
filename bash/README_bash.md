@@ -666,12 +666,41 @@ script (i.e test_script.sh)
 name="world
 echo "hello $name"
 
-current_dir=$(pwd)
-echo $current_dir
-
 ```
 
 variables
+```bash
+current_dir=$(pwd)
+echo $current_dir
+
+number=42
+echo $number
+
+# Environment Variables
+echo "Your PATH is $PATH"
+
+# Define a local variable in a function
+my_function() {
+  local local_var="I am local"
+  echo $local_var
+}
+my_function
+
+# Common Variable Operations
+# concat
+player="John"
+game="RPG"
+echo $player$game
+
+health=80
+candybar=22
+
+sum=$((health+ candybar))
+echo $sum
+
+```
+
+datatypes
 ```bash
 
 
