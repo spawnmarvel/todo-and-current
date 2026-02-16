@@ -32,7 +32,7 @@ man -k network
 
 ## W3schools repeat and use :cyclone:vmchaos09
 
-<details><summary>Basic Commands, ls, ls -a, ls *name*  cd, pwd, echo, cat, cp, mv, rm, touch, mkdir</summary>
+<details><summary>Basic Commands, ls, ls -a, ls *name*, cd, pwd, echo, cat, cp, mv, rm, touch, mkdir</summary>
 <p>
 
 #### We can hide anything, even code!
