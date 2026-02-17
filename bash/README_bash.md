@@ -703,6 +703,41 @@ echo $sum
 datatypes
 ```bash
 
+# string example
+greeting="Allo, allo"
+name="Steve"
+welcome= "$greeting,  $name"
+echo full_greeting
+
+# num
+num1=5
+num2=2
+sum=$((num1 + num2))
+diff=$((num1 - num2))
+mult=$((num1 * num2))
+div=$((num1 / num2))
+echo "sum $sum, diff $diff, mult $mult, div $div"
+
+# array
+enemy=("ogre" "demon" "troll")
+for e in "${enemy[@]}"; do
+ echo $e
+done
+
+# arry key value
+
+declare -A enemys
+enemys[ogre]="100kg"
+enemys[demon]="150kg"
+enemys[troll]="200kg"
+enemys[god]="50kg"
+unset enemys[god]
+echo ${enemys[demon]}
+```
+
+operators
+```bash
+
 
 ```
 
