@@ -96,13 +96,9 @@ sudo apt autoclean
     - Do Vm tutorials from docs = 
     - :white_square_button: Do azure automation for save cost/mainteance and check Automatic Module Update
 
-3. (Az-305 azure aolutions architect expert)
-    - Do ms learn and some practice exams, have fun you will learn
-    - - Stored in azure-automation-bicep-and-labs/az-305-solutions-architect-expert
-    - Do chill max 1 learn a week and check excel
-    - - Saved in C:\giti2026\az-305-study-guide.xlsx
-    - Do Schedule exam? 1 month befoe full repeat
-    - Do Tutorials Dojo
+4. Az-800 Administering Windows Server Hybrid Core Infrastructure
+   - Do Ms learn
+   - - Saved in az-800-admistering-windows-server-hybrid-core-infrastructure
 
 --- 
 
@@ -124,6 +120,14 @@ Misc / wait / parked
       - Do send push and pull from vm = 
       - Do https = 
       - Do alter zabbix_server.conf = 
+
+3. (Az-305 azure aolutions architect expert)
+    - Do ms learn and some practice exams, have fun you will learn
+    - - Stored in azure-automation-bicep-and-labs/az-305-solutions-architect-expert
+    - Do chill max 1 learn a week and check excel
+    - - Saved in C:\giti2026\az-305-study-guide.xlsx
+    - Do Schedule exam? 1 month befoe full repeat
+    - Do Tutorials Dojo
 ---
 
 ## TODO 1 Bash tutorial, repeat, repeat and repeat :rocket: :repeat: :rocket:
