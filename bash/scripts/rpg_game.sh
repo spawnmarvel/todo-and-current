@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# TODO
+# add health potion just like roll dice
+# make the enemy attack and use random also
+# write more echo with real feel
+
 # --- VARIABLES ---
 # Rule: We use 'var=value' (no $) to ASSIGN or CHANGE a variable.
 # Rule: We use '$var' to READ or ACCESS the value stored inside it.
