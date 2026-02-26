@@ -1373,6 +1373,42 @@ truncate -s 100M filename
 </p>
 </details>
 
+<details><summary>Production server down ???</summary>
+<p>
+
+#### We can hide anything, even code!
+```bash
+
+# 1 load
+uptime
+top
+
+# 2 memory
+free -m
+
+# 3 disk
+dh -h
+dh -i
+
+# 4 heavy resource
+ps aux --sort--%cpu | head
+ps aux --sort--%mem | head
+
+# 5 service and logs
+# tail journal
+journalctl -f
+
+# grep journal
+journalctl -g zabbix
+
+tail -n 100 /var/log/syslog
+
+
+
+```
+</p>
+</details>
+
 
 ## Todo
 
