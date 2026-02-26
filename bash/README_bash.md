@@ -737,6 +737,75 @@ echo ${enemys[demon]}
 
 operators
 ```bash
+# compare
+-eq # equal
+-ne # not equal
+-lt # less then
+-le # less then or equal
+-gt # greather then
+-ge # greather then or equal
+
+# string compare
+=  # equal
+!= # not equal
+<  # less then, in ascci alpha order
+>  # greather then, in ascci alpha order
+
+# aritmetic
++
+-
+*
+/
+%
+
+# logical
+&& # AND
+|| # OR
+!  # NOT
+
+# file test
+-e # check if file exists
+-d # checks if dir exists
+-f # check if file is regualr
+-s # check if file is not empty
+
+```
+
+if..else
+
+```bash
+num=15
+if [ $num -gt 10 ]; then
+ echo "Number is greater then 10 $num"
+fi
+
+num2=2
+if [ $num2 -gt 10 ]; then
+ echo "Number is greater then 10 $num2"
+else
+ echo "Number is not greater then 10 $num2"
+fi
+
+num3=20
+if [ $num3 -gt 20 ]; then
+ echo "Number is greater then 20 $num3"
+elif [ $num3 -eq 20 ]; then
+ echo "Number is equal to 20 $num3"
+else
+ echo "Number is less then 20 $num3"
+fi
+
+# nested
+num4=32
+if [ $num4 -gt 20 ]; then
+ if [ $num4 -lt 35 ]; then
+  echo "Number is gt then 20 and less then 35 $num4"
+ fi
+fi
+
+```
+loops
+```bash
 
 
 ```
