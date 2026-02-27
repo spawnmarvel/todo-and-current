@@ -97,7 +97,8 @@ sudo apt autoclean
     - :white_square_button: Do azure automation for save cost/mainteance and check Automatic Module Update
 
 4. Az-800 Administering Windows Server Hybrid Core Infrastructure
-   - Do Ms learn
+   - Do Ms learn bit by bit
+   - Do The "Cloud-Only" Hybrid Lab (to get some hand on)
    - - Saved in az-800-admistering-windows-server-hybrid-core-infrastructure
 
 --- 
