@@ -99,6 +99,7 @@ sudo apt autoclean
 4. Az-800 Administering Windows Server Hybrid Core Infrastructure
    - Do Ms learn bit by bit
    - Do The "Cloud-Only" Hybrid Lab (to get some hand on)
+   - - vmhybrid01
    - - Saved in az-800-admistering-windows-server-hybrid-core-infrastructure
 
 --- 
