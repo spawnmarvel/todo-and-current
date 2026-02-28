@@ -8,8 +8,7 @@
 # --- VARIABLES ---
 # Rule: We use 'var=value' (no $) to ASSIGN or CHANGE a variable.
 # Rule: We use '$var' to READ or ACCESS the value stored inside it.
-player_health=100
-player_attack=40
+player_health=110
 
 declare -A enemys
 enemys[ogre]=100
@@ -22,6 +21,14 @@ roll_dice() {
  # Inside $(( )), Bash is smart enough to know you mean variables,
  # so you can omit the $ (though $min still works).
  echo $(( (RANDOM % 49) + min))
+}
+
+use_potion() {
+ local min=2
+ local max=20
+ # Inside $(( )), Bash is smart enough to know you mean variables,
+ # so you can omit the $ (though $min still works).
+ echo $(( (RANDOM % 19) + min))
 }
 
 run_game() {
@@ -46,7 +53,7 @@ run_game() {
                  echo "You will fight $enemy_name with health $enemy_hp"
                 fi
 
-                read -p "(game) what will you do (run / r, attack / a): " game_input
+                read -p "(game) what will you do (run / r, attack / a / potion / p): " game_input
 
                 # We use [[ ]] here because we are doing complex "OR" (||) logic.
                 # Single brackets [ ] struggle with || inside them.
@@ -61,6 +68,15 @@ run_game() {
                         if [ $enemy_hp -gt 1 ]; then
                          echo "$enemy_name lost $damage and has now $enemy_hp left"
                         fi
+                        enemy_damage=$(roll_dice)
+                        player_health=$((player_health - enemy_damage ))
+                        echo "$enemy_name attacked you, your health is now $player_health"
+
+                elif [[ "$game_input" == "potion" || "$game_input" == "p" ]]; then
+                        potion=$(use_potion)
+                        new_health =$((player_health + potion ))
+                        echo "Potion used, you health is now $player_health"
+
                 elif [[ "$game_input" == "run" || "$game_input" == "r" ]]; then
                         playing=false
                 else
