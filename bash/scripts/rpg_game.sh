@@ -8,6 +8,7 @@
 # --- VARIABLES ---
 # Rule: We use 'var=value' (no $) to ASSIGN or CHANGE a variable.
 # Rule: We use '$var' to READ or ACCESS the value stored inside it.
+# global vars
 player_health=110
 
 declare -A enemys
@@ -59,7 +60,7 @@ run_game() {
                 # Single brackets [ ] struggle with || inside them.
                 if [[ "$game_input" == "attack" || "$game_input" == "a" ]]; then
                         echo "Attack $enemy_name"
-                        damage=$(roll_dice)
+                        local damage=$(roll_dice)
 
                         # We use enemy_hp (no $) to tell Bash WHICH variable to update.
                         # We use enemy_hp and damage (no $) inside (( )) because it's a math context.
@@ -68,13 +69,14 @@ run_game() {
                         if [ $enemy_hp -gt 1 ]; then
                          echo "$enemy_name lost $damage and has now $enemy_hp left"
                         fi
-                        enemy_damage=$(roll_dice)
+
+                        local enemy_damage=$(roll_dice)
                         player_health=$((player_health - enemy_damage ))
                         echo "$enemy_name attacked you, your health is now $player_health"
 
                 elif [[ "$game_input" == "potion" || "$game_input" == "p" ]]; then
-                        potion=$(use_potion)
-                        new_health =$((player_health + potion ))
+                        local potion=$(use_potion)
+                        player_health=$((player_health + potion ))
                         echo "Potion used, you health is now $player_health"
 
                 elif [[ "$game_input" == "run" || "$game_input" == "r" ]]; then
