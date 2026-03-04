@@ -2,6 +2,10 @@
 
 ## Tools
 
+Remote Desktop Connection Manager
+
+* https://learn.microsoft.com/en-us/sysinternals/downloads/rdcman
+
 open ssl
 
 * https://slproweb.com/products/Win32OpenSSL.html
