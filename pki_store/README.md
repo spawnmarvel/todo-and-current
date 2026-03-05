@@ -44,6 +44,8 @@ echo 1000 > c:\testCertificateAuth\serial
 
 Make the openssl.cnf and paste the content in it
 
+## Root certificate
+
 Run openssl (cmd) and create root certificate
 
 ```cmd
@@ -109,8 +111,9 @@ To make it valid, import it in cert trusted root certificates.
 ![root](https://github.com/spawnmarvel/todo-and-current/blob/main/pki_store/images/root.png)
 
 
+## Server certificate
 
-
+## Client certificate (same)
 
 
 
