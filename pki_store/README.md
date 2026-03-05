@@ -113,7 +113,96 @@ To make it valid, import it in cert trusted root certificates.
 
 ## Server certificate
 
+Run this command in your cmd window. This generates a new 2048-bit key and a request file that contains the server's identity information.
+
+```cmd
+openssl req -new -config C:\testCertificateAuth\openssl.cnf -newkey rsa:2048 -nodes -keyout C:\testCertificateAuth\server\server_amqp.key -out C:\testCertificateAuth\server\server_amqp.csr -subj "/CN=MY_RABBIT_SERVER"
+```
+
+Note: You will be prompted for DN information (Common Name, etc.), if you leave the -subject out. Ensure the Common Name matches the server's hostname or IP address that clients will use to connect.
+
+In the context of RabbitMQ mTLS, the Common Name (CN) in the certificate is primarily used by RabbitMQ for user authentication/mapping (if configured via rabbitmq.conf with ssl_cert_login_from = common_name), rather than strictly for hostname verification like in a standard HTTPS/Web Server setup.
+
+Because you are using this for RabbitMQ, you can name the CN whatever you like, as long as it matches the username defined in your RabbitMQ internal database (or the identity the server expects to see).
+
+Lets continue with server cert.
+
+That command successfully generated your Private Key and your Certificate Signing Request (CSR).
+
+Since you did not provide a -subj flag, OpenSSL likely paused and asked you a series of questions. Because of your openssl.cnf defaults, you should have just been able to press Enter through most of them, making sure the Common Name (CN) was set correctly for your RabbitMQ node.
+
+What you should have now:
+
+1. C:\testCertificateAuth\server\server_amqp.key: This is your server's secret identity. Keep this file protected; if it is compromised, someone could impersonate your RabbitMQ server.
+
+2. C:\testCertificateAuth\server\server_amqp.csr: This is the "request" that you now need to hand over to your Root CA to be signed.
+
+The Final Step: Signing the Request
+
+```cmd
+openssl ca -config C:\testCertificateAuth\openssl.cnf -days 730 -in C:\testCertificateAuth\server\server_amqp.csr -out C:\testCertificateAuth\server\server_amqp.crt
+
+```
+
+What to watch for:
+1. OpenSSL will display the details of your request.
+
+2. It will ask: Sign the certificate? [y/n]. Type y.
+
+3. It will ask: 1 out of 1 certificate requests certified, commit? [y/n]. Type y.
+
+Log
+```log
+Using configuration from C:\testCertificateAuth\openssl.cnf
+Check that the request matches the signature
+Signature ok
+The Subject's Distinguished Name is as follows
+commonName            :ASN.1 12:'MY_RABBIT_SERVER'
+Certificate is to be certified until Mar  4 21:13:37 2028 GMT (730 days)
+Sign the certificate? [y/n]:y
+
+
+1 out of 1 certificate requests certified, commit? [y/n]y
+Write out database with 1 new entries
+Database updated
+```
+
+One last verification
+
+After that command finishes, you can check that the certificate was signed by your Root CA by running:
+
+```cmd
+openssl verify -CAfile C:\testCertificateAuth\ca_certificate.pem C:\testCertificateAuth\server\server_amqp.crt
+```
+
+If it returns C:\testCertificateAuth\server\server_amqp.crt: OK, your server certificate is successfully chained to your root!
+
+```cmd
+openssl x509 -in C:\testCertificateAuth\server\server_amqp.crt -noout -dates
+openssl x509 -in C:\testCertificateAuth\server\server_amqp.crt -noout -ext extendedKeyUsage
+```
+
+Log
+
+```log
+-ext extendedKeyUsage
+X509v3 Extended Key Usage:
+    TLS Web Server Authentication, TLS Web Client Authentication
+```
+
+![server](https://github.com/spawnmarvel/todo-and-current/blob/main/pki_store/images/server.png)
+
+
 ## Client certificate (same)
+
+The process for a Client Certificate is structurally identical to the server one, with one key logical difference: the Common Name (CN).
+
+
+## Renew server certificate
+
+```cmd
+
+```
 
 
 
