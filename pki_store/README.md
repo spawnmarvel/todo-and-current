@@ -106,6 +106,8 @@ openssl x509 -in C:\testCertificateAuth\ca_certificate.pem -outform DER -out C:\
 
 To make it valid, import it in cert trusted root certificates.
 
+![root](https://github.com/spawnmarvel/todo-and-current/blob/main/pki_store/images/root.png)
+
 
 
 
