@@ -20,3 +20,8 @@ Decreasing Certificate Lifetimes to 45 Days
 
 * Set up a store
 * One root certificates
+
+Copy from
+
+https://github.com/spawnmarvel/quickguides/tree/main/securityPKI-CA
+
