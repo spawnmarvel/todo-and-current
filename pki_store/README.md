@@ -300,6 +300,8 @@ Run this command on your new server certificate:
 openssl x509 -in C:\testCertificateAuth\server\server_amqp_new.crt -noout -text
 ```
 
+![new_server](https://github.com/spawnmarvel/todo-and-current/blob/main/pki_store/images/new_server.png)
+
 ## Format files, pem and cer
 
 ```cmd
