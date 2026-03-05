@@ -200,9 +200,121 @@ The process for a Client Certificate is structurally identical to the server one
 
 ## Renew server certificate
 
+In a production environment, the goal is always zero-downtime rotation. To do this, you follow a "Overlap" strategy. You don't revoke the old certificate until the new one is deployed and tested.
+
+Even if you keep the same Common Name (MY_RABBIT_SERVER), it is best practice to generate a fresh private key for every renewal cycle.
+
 ```cmd
+openssl req -new -config C:\testCertificateAuth\openssl.cnf -newkey rsa:2048 -nodes -keyout C:\testCertificateAuth\server\server_amqp_new.key -out C:\testCertificateAuth\server\server_amqp_new.csr -subj "/CN=MY_RABBIT_SERVER"
 
 ```
 
+Sign the "New" CSR
+
+Sign it with your CA to get the new .crt. Because you are signing a new CSR, the serial number will automatically increment (e.g., from 1000 to 1001) in your serial file and be marked as V (Valid) in your index.txt.
+
+```cmd
+openssl ca -config C:\testCertificateAuth\openssl.cnf -days 800 -in C:\testCertificateAuth\server\server_amqp_new.csr -out C:\testCertificateAuth\server\server_amqp_new.crt
+
+```
+
+Log
+
+```log
+Using configuration from C:\testCertificateAuth\openssl.cnf
+Check that the request matches the signature
+Signature ok
+The Subject's Distinguished Name is as follows
+commonName            :ASN.1 12:'MY_RABBIT_SERVER'
+ERROR:There is already a certificate for /CN=MY_RABBIT_SERVER
+The matching entry has the following details
+Type          :Valid
+Expires on    :280304211337Z
+Serial Number :1001
+File name     :unknown
+Subject Name  :/CN=MY_RABBIT_SERVER
+```
+
+Since OpenSSL identified the conflicting certificate as Serial Number 1001, we will revoke it using that identifier.
+
+The error you encountered is exactly how OpenSSL prevents you from accidentally issuing multiple valid certificates for the same entity. Since you used the same /CN=MY_RABBIT_SERVER for both requests, the CA database (index.txt) sees the first one as "Valid" and refuses to issue a second one.
 
 
+Index.txt before
+
+```txt
+V	360304210653Z		1000	unknown	/CN=SERVER123/C=US
+V	280304211337Z		1001	unknown	/CN=MY_RABBIT_SERVER
+
+```
+
+Execute the Revocation
+
+
+```cmd
+openssl ca -config C:\testCertificateAuth\openssl.cnf -revoke C:\testCertificateAuth\server\server_amqp.crt
+```
+
+log
+
+```log
+Using configuration from C:\testCertificateAuth\openssl.cnf
+Revoking Certificate 1001.
+Database updated
+```
+Index.txt after
+
+```txt
+V	360304210653Z		1000	unknown	/CN=SERVER123/C=US
+R	280304211337Z	260305213407Z	1001	unknown	/CN=MY_RABBIT_SERVER
+
+```
+
+The Final Step
+Now, run your signing command to officially issue the new 800-day certificate:
+
+```cmd
+openssl ca -config C:\testCertificateAuth\openssl.cnf -days 800 -in C:\testCertificateAuth\server\server_amqp_new.csr -out C:\testCertificateAuth\server\server_amqp_new.crt
+```
+
+log
+
+```log
+Using configuration from C:\testCertificateAuth\openssl.cnf
+Check that the request matches the signature
+Signature ok
+The Subject's Distinguished Name is as follows
+commonName            :ASN.1 12:'MY_RABBIT_SERVER'
+Certificate is to be certified until May 13 21:35:53 2028 GMT (800 days)
+Sign the certificate? [y/n]:y
+
+
+1 out of 1 certificate requests certified, commit? [y/n]y
+Write out database with 1 new entries
+Database updated
+```
+
+Run this command on your new server certificate:
+
+```cmd
+openssl x509 -in C:\testCertificateAuth\server\server_amqp_new.crt -noout -text
+```
+
+## Format files, pem and cer
+
+```cmd
+copy C:\testCertificateAuth\server\server_amqp_new.crt C:\testCertificateAuth\server\server_amqp_new.cer
+
+copy C:\testCertificateAuth\server\server_amqp_new.crt C:\testCertificateAuth\server\server_amqp_new.pem
+
+copy C:\testCertificateAuth\server\server_amqp_new.key C:\testCertificateAuth\server\server_amqp_new.key.pem
+
+````
+
+If you ever want to double-check that the file is readable by OpenSSL (to ensure it isn't corrupted), you can use this command:
+
+```cmd
+openssl rsa -in C:\testCertificateAuth\server\server_amqp_new.key.pem -check
+```
+
+If it outputs RSA key ok, your file is perfectly formatted and ready to be used.
