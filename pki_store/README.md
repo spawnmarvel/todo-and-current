@@ -83,34 +83,18 @@ openssl req -x509 -config C:\CertificateAuth\openssl.cnf -newkey rsa:4048 -nodes
 ```
 Press enter to keep the common name from the openssl.cnf
 
-Check that we have all extension
+After running this, it is good practice to confirm the expiry date and the "CA:TRUE" status:
 
 ```cmd
-openssl x509 -in C:\CertificateAuth\ca_certificate.pem -noout -text
+openssl x509 -in C:\CertificateAuth\ca_certificate.pem -noout -dates -ext basicConstraints
 
 ```
 
 ```log
- Certificate:
-    Data:
-        Version: 3 (0x2)
-        Serial Number:
-            56:3b:46:f1:88:92:77:d5:49:4d:35:e9:eb:7b:99:a4:f8:5d:b7:13
-        Signature Algorithm: sha256WithRSAEncryption
-        Issuer: CN = Socrates Root CA, O = SOCRATES INC, C = NO
-        Validity
-            Not Before: Mar  7 14:41:23 2026 GMT
-            Not After : Mar  7 14:41:23 2041 GMT
-        Subject: CN = Socrates Root CA, O = SOCRATES INC, C = NO
-        Subject Public Key Info:
-            Public Key Algorithm: rsaEncryption
-                RSA Public-Key: (4048 bit)
-
-        X509v3 extensions:
-            X509v3 Basic Constraints: critical
-                CA:TRUE
-            X509v3 Key Usage: critical
-                Certificate Sign, CRL Sign
+notBefore=Mar  7 14:41:23 2026 GMT
+notAfter=Mar  7 14:41:23 2041 GMT
+X509v3 Basic Constraints: critical
+    CA:TRUE
 
 ```
 
@@ -134,13 +118,94 @@ To make it valid, import it in cert trusted root certificates.
 
 ![root](https://github.com/spawnmarvel/todo-and-current/blob/main/pki_store/images/root.png)
 
+## Intermediate certificate
+
+Next Step: Since your Root is now ready, the next logical step is to generate the Intermediate CA Private Key and CSR.
+
+Remember, the Intermediate CA is your "signing agent"—it is what you will use daily to issue certificates for your RabbitMQ servers and clients, keeping the Root key safely offline.
+
+1. Generate the Intermediate Private Key
+
+```cmd
+
+openssl genrsa -out C:\CertificateAuth\intermediate\private\intermediate.key.pem 4096
+```
+
+2. Generate the Intermediate CSR
+
+This creates the "Certificate Signing Request." You are essentially asking your Root CA to "vouch" for this Intermediate CA.
+
+This creates the request using the key you just generated, ensuring your identity is baked into the request.
+
+
+```cmd
+openssl req -new -key C:\CertificateAuth\intermediate\private\intermediate.key.pem -out C:\CertificateAuth\intermediate\intermediate.csr -config C:\CertificateAuth\openssl.cnf -subj "/CN=Socrates Intermediate CA/O=SOCRATES INC/C=US"
+  
+```
+
+3. Sign the Intermediate CSR with the Root CA
+
+This is the moment the Root CA signs the Intermediate's request, granting it the power to sign other certificates.
+
+
+```cmd
+openssl ca -config C:\CertificateAuth\openssl.cnf -name socratesca -extensions intermediate_extensions -days 2920 -in C:\CertificateAuth\intermediate\intermediate.csr -out C:\CertificateAuth\intermediate\intermediate.cert.pem -batch
+
+```
+
+Log
+
+```log
+Using configuration from C:\CertificateAuth\openssl.cnf
+Check that the request matches the signature
+Signature ok
+The Subject's Distinguished Name is as follows
+commonName            :ASN.1 12:'Socrates Intermediate CA'
+organizationName      :ASN.1 12:'SOCRATES INC'
+countryName           :PRINTABLE:'US'
+Certificate is to be certified until Mar  5 14:58:27 2034 GMT (2920 days)
+
+Write out database with 1 new entries
+Data Base Updated
+```
+
+Make a .cer file also
+
+```cmd
+openssl x509 -in C:\CertificateAuth\intermediate\intermediate.cert.pem -outform DER -out C:\CertificateAuth\intermediate\intermediate.cert.cer
+```
+
+To make it valid, import it in cert trusted root certificates.
+
+![intermediate](https://github.com/spawnmarvel/todo-and-current/blob/main/pki_store/images/intermediate.png)
+
+
+After running this, it is good practice to confirm the expiry date and the "CA:TRUE" status:
+
+```cmd
+openssl x509 -in C:\CertificateAuth\intermediate\intermediate.cert.pem -noout -dates -ext basicConstraints
+
+```
+
+Log
+
+
+```log
+notBefore=Mar  7 14:58:27 2026 GMT
+notAfter=Mar  5 14:58:27 2034 GMT
+X509v3 Basic Constraints: critical
+    CA:TRUE, pathlen:0
+
+```
 
 ## Server certificate
 
 Run this command in your cmd window. This generates a new 2048-bit key and a request file that contains the server's identity information.
 
+1. Generate Server Private Key and CSR
+
 ```cmd
-openssl req -new -config C:\testCertificateAuth\openssl.cnf -newkey rsa:2048 -nodes -keyout C:\testCertificateAuth\server\server_amqp.key -out C:\testCertificateAuth\server\server_amqp.csr -subj "/CN=MY_RABBIT_SERVER"
+openssl req -new -newkey rsa:2048 -nodes -keyout C:\CertificateAuth\intermediate\certs\server.key.pem -out C:\CertificateAuth\intermediate\certs\server.csr -config C:\CertificateAuth\openssl.cnf -subj "/CN=AMQP-IT1/O=SOCRATES INC/C=US"
 ```
 
 Note: You will be prompted for DN information (Common Name, etc.), if you leave the -subject out. Ensure the Common Name matches the server's hostname or IP address that clients will use to connect.
@@ -155,64 +220,60 @@ That command successfully generated your Private Key and your Certificate Signin
 
 Since you did not provide a -subj flag, OpenSSL likely paused and asked you a series of questions. Because of your openssl.cnf defaults, you should have just been able to press Enter through most of them, making sure the Common Name (CN) was set correctly for your RabbitMQ node.
 
-What you should have now:
+2. Sign the Server CSR with the Intermediate CA
 
-1. C:\testCertificateAuth\server\server_amqp.key: This is your server's secret identity. Keep this file protected; if it is compromised, someone could impersonate your RabbitMQ server.
-
-2. C:\testCertificateAuth\server\server_amqp.csr: This is the "request" that you now need to hand over to your Root CA to be signed.
-
-The Final Step: Signing the Request
+Now, use the Intermediate CA to sign the request. This uses the intermediate_ca configuration section to validate the request and store the result in your intermediate\certs folder.
 
 ```cmd
-openssl ca -config C:\testCertificateAuth\openssl.cnf -days 730 -in C:\testCertificateAuth\server\server_amqp.csr -out C:\testCertificateAuth\server\server_amqp.crt
-
+openssl ca -config C:\CertificateAuth\openssl.cnf -name intermediate_ca -extensions mtls_extensions -days 365 -in C:\CertificateAuth\intermediate\certs\server.csr -out C:\CertificateAuth\intermediate\certs\server.crt -batch
 ```
+log
 
-What to watch for:
-1. OpenSSL will display the details of your request.
-
-2. It will ask: Sign the certificate? [y/n]. Type y.
-
-3. It will ask: 1 out of 1 certificate requests certified, commit? [y/n]. Type y.
-
-Log
 ```log
-Using configuration from C:\testCertificateAuth\openssl.cnf
+Using configuration from C:\CertificateAuth\openssl.cnf
 Check that the request matches the signature
 Signature ok
 The Subject's Distinguished Name is as follows
-commonName            :ASN.1 12:'MY_RABBIT_SERVER'
-Certificate is to be certified until Mar  4 21:13:37 2028 GMT (730 days)
-Sign the certificate? [y/n]:y
+commonName            :ASN.1 12:'AMQP-IT1'
+organizationName      :ASN.1 12:'SOCRATES INC'
+countryName           :PRINTABLE:'US'
+Certificate is to be certified until Mar  7 15:10:09 2027 GMT (365 days)
 
-
-1 out of 1 certificate requests certified, commit? [y/n]y
 Write out database with 1 new entries
-Database updated
+Data Base Updated
+
 ```
 
-One last verification
-
-After that command finishes, you can check that the certificate was signed by your Root CA by running:
+Make the chain
 
 ```cmd
-openssl verify -CAfile C:\testCertificateAuth\ca_certificate.pem C:\testCertificateAuth\server\server_amqp.crt
+copy /b C:\CertificateAuth\intermediate\intermediate.cert.pem + C:\CertificateAuth\ca_certificate.pem C:\CertificateAuth\ca-chain.cert.pem
+
 ```
 
-If it returns C:\testCertificateAuth\server\server_amqp.crt: OK, your server certificate is successfully chained to your root!
+You can verify the identity and the trust chain of your new server certificate with this command:
 
 ```cmd
-openssl x509 -in C:\testCertificateAuth\server\server_amqp.crt -noout -dates
-openssl x509 -in C:\testCertificateAuth\server\server_amqp.crt -noout -ext extendedKeyUsage
+You can verify the identity and the trust chain of your new server certificate with this command:
 ```
 
 Log
 
 ```log
--ext extendedKeyUsage
-X509v3 Extended Key Usage:
-    TLS Web Server Authentication, TLS Web Client Authentication
+C:\CertificateAuth\intermediate\certs\server.crt: OK
 ```
+
+convert to pem also
+
+```cmd
+copy C:\CertificateAuth\intermediate\certs\server.crt C:\CertificateAuth\intermediate\certs\server.pem
+```
+After running these, your server files are located here:
+
+* Private Key: C:\CertificateAuth\intermediate\certs\server.key.pem
+* Signed Certificate: C:\CertificateAuth\intermediate\certs\server.crt and server.pem
+* Chain/CA File: C:\CertificateAuth\ca-chain.cert.pem (Created by combining the Intermediate and Root certificates)
+
 
 ![server](https://github.com/spawnmarvel/todo-and-current/blob/main/pki_store/images/server.png)
 
