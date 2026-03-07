@@ -28,7 +28,7 @@ Copy from
 https://github.com/spawnmarvel/quickguides/tree/main/securityPKI-CA
 
 
-## Certificate Auth
+## Certificate Auth folders
 
 ```cmd
 
