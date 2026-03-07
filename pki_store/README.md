@@ -427,7 +427,26 @@ Data Base Updated
 
 ![server 2 renew](https://github.com/spawnmarvel/todo-and-current/blob/main/pki_store/images/renew.png)
 
+Chain
+
+![server 2 renew cert](https://github.com/spawnmarvel/todo-and-current/blob/main/pki_store/images/renewed_cert.png)
+
+
+
+Next Administrative Step: Update the CRL
+Since you have revoked a certificate, it is best practice to regenerate your Certificate Revocation List (CRL). This is a file that informs any clients checking for revocations that the old amqp-it2 certificate is no longer trustworthy.
+
+But, If no clients or applications are configured to check for certificate revocation, the CRL is essentially dead weight.
+
+But this is how you genrate it:
+
 ```cmd
 openssl ca -config C:\CertificateAuth\openssl.cnf -name intermediate_ca -gencrl -out C:\CertificateAuth\intermediate\crl.pem
 
 ```
+
+The reality of your setup:
+
+Since you are the administrator and operator of this private CA, you have absolute control over the entire lifecycle. If you suspect a certificate is compromised, you can simply remove it from your trust store or update the server configuration to point to a new key/cert pair.
+
+
