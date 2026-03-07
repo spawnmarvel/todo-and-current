@@ -341,7 +341,7 @@ After running these, your server files are located here:
 * Chain/CA File: C:\CertificateAuth\ca-chain.cert.pem (Created by combining the Intermediate and Root certificates)
 
 
-![server 2](https://github.com/spawnmarvel/todo-and-current/blob/main/pki_store/images/server.png)
+![server 2](https://github.com/spawnmarvel/todo-and-current/blob/main/pki_store/images/server2.png)
 
 ## Renew server certificate
 
