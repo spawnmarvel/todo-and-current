@@ -4,9 +4,6 @@ SSL certificates change 2026
 
 Let's Encrypt certificates will no longer be usable for client authentication starting 13 May 2026
 
-You really should never do Mutual TLS with a public signed client certificate to begin with.
-
-With your VPN scenario, if you were trusting the Let's Encrypt CA for VPN client authentication. It would mean any client cert signed from Let’s Encrypt could authenticate to your VPN/Device. (Like you mentioned, you lose control of your domain, someone could impersonate your device.  However, any cert would be authenticated if signed by the same Certificate Authority.
 
 * If you were statically trusting the individual Let’s Encrypt certificates in you possession (e.g. only allow a specific CN), you could do the same with self-signed certificates without the risk of other CA signed certificates. 
 
@@ -34,6 +31,8 @@ https://github.com/spawnmarvel/quickguides/tree/main/securityPKI-CA
 
 :: Create Root folders
 mkdir C:\CertificateAuth\private
+mkdir C:\CertificateAuth\certs
+mkdir C:\CertificateAuth\certs_new
 type nul > C:\CertificateAuth\index.txt
 echo 1000 > C:\CertificateAuth\serial
 
