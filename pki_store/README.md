@@ -19,11 +19,9 @@ Decreasing Certificate Lifetimes to 45 Days
 
 ## Windows Internal PKI
 
-* Set up a store
-* One root certificates with signing properties, 15 years life
-* Two certificates with server and client auth properties, 1 year life
-* Renewal with database text file
-* Test 
+* Root CA is the "Supreme Court" of your internal network.
+* The Operational Layer: The Intermediate CA
+* The Identity Layer: The Leaf Certificates
 
 Copy from
 
@@ -36,8 +34,6 @@ https://github.com/spawnmarvel/quickguides/tree/main/securityPKI-CA
 
 :: Create Root folders
 mkdir C:\CertificateAuth\private
-mkdir C:\CertificateAuth\certs
-mkdir C:\CertificateAuth\certs_new
 type nul > C:\CertificateAuth\index.txt
 echo 1000 > C:\CertificateAuth\serial
 

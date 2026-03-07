@@ -3,8 +3,6 @@ default_ca = socratesca
 
 [ socratesca ]
 dir             = C:/CertificateAuth
-certs           = $dir/certs
-new_certs_dir   = $dir/certs_new
 database        = $dir/index.txt
 serial          = $dir/serial
 private_key     = $dir/private/ca_private_key.pem
