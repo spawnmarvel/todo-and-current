@@ -254,9 +254,8 @@ copy /b C:\CertificateAuth\intermediate\intermediate.cert.pem + C:\CertificateAu
 You can verify the identity and the trust chain of your new server certificate with this command:
 
 ```cmd
-You can verify the identity and the trust chain of your new server certificate with this command:
+openssl verify -CAfile C:\CertificateAuth\ca-chain.cert.pem C:\CertificateAuth\intermediate\certs\server.crt
 ```
-
 Log
 
 ```log
@@ -282,6 +281,67 @@ After running these, your server files are located here:
 
 The process for a Client Certificate is structurally identical to the server one, with one key logical difference: the Common Name (CN).
 
+1. Generate Server Private Key and CSR
+
+```cmd
+openssl req -new -newkey rsa:2048 -nodes -keyout C:\CertificateAuth\intermediate\certs\amqp-it2.key.pem -out C:\CertificateAuth\intermediate\certs\amqp-it2.csr -config C:\CertificateAuth\openssl.cnf -subj "/CN=AMQP-IT2/O=SOCRATES INC/C=US"
+```
+
+2. Sign the Server CSR with the Intermediate CA
+
+Now, use the Intermediate CA to sign the request. This uses the intermediate_ca configuration section to validate the request and store the result in your intermediate\certs folder.
+
+```cmd
+openssl ca -config C:\CertificateAuth\openssl.cnf -name intermediate_ca -extensions mtls_extensions -days 365 -in C:\CertificateAuth\intermediate\certs\amqp-it2.csr -out C:\CertificateAuth\intermediate\certs\amqp-it2.crt -batch
+```
+
+log
+
+```log
+Using configuration from C:\CertificateAuth\openssl.cnf
+Check that the request matches the signature
+Signature ok
+The Subject's Distinguished Name is as follows
+commonName            :ASN.1 12:'AMQP-IT2'
+organizationName      :ASN.1 12:'SOCRATES INC'
+countryName           :PRINTABLE:'US'
+Certificate is to be certified until Mar  7 15:21:26 2027 GMT (365 days)
+
+Write out database with 1 new entries
+Data Base Updated
+```
+
+Make the chain
+
+```cmd
+copy /b C:\CertificateAuth\intermediate\intermediate.cert.pem + C:\CertificateAuth\ca_certificate.pem C:\CertificateAuth\ca-chain.cert.pem
+
+```
+
+You can verify the identity and the trust chain of your new server certificate with this command:
+
+```cmd
+openssl verify -CAfile C:\CertificateAuth\ca-chain.cert.pem C:\CertificateAuth\intermediate\certs\amqp-it2.crt
+```
+Log
+
+```log
+C:\CertificateAuth\intermediate\certs\amqp-it2.crt: OK
+```
+
+convert to pem also
+
+```cmd
+copy C:\CertificateAuth\intermediate\certs\amqp-it2.crt C:\CertificateAuth\intermediate\certs\amqp-it2.pem
+```
+After running these, your server files are located here:
+
+* Private Key: C:\CertificateAuth\intermediate\certs\amqp-it2.key.pem
+* Signed Certificate: C:\CertificateAuth\intermediate\certs\amqp-it2.crt and amqp-it2.pem
+* Chain/CA File: C:\CertificateAuth\ca-chain.cert.pem (Created by combining the Intermediate and Root certificates)
+
+
+![server 2](https://github.com/spawnmarvel/todo-and-current/blob/main/pki_store/images/server.png)
 
 ## Renew server certificate
 
