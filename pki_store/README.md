@@ -33,16 +33,41 @@ https://github.com/spawnmarvel/quickguides/tree/main/securityPKI-CA
 
 ```cmd
 
-mkdir c:\testCertificateAuth
-mkdir c:\testCertificateAuth\server
-mkdir c:\testCertificateAuth\certs
-mkdir c:\testCertificateAuth\private
+:: Create Root folders
+mkdir C:\CertificateAuth\private
+mkdir C:\CertificateAuth\certs
+mkdir C:\CertificateAuth\certs_new
+type nul > C:\CertificateAuth\index.txt
+echo 1000 > C:\CertificateAuth\serial
 
-type NUL > c:\testCertificateAuth\index.txt
-echo 1000 > c:\testCertificateAuth\serial
+:: Create Intermediate folders
+mkdir C:\CertificateAuth\intermediate
+mkdir C:\CertificateAuth\intermediate\private
+mkdir C:\CertificateAuth\intermediate\certs
+type nul > C:\CertificateAuth\intermediate\index.txt
+echo 1000 > C:\CertificateAuth\intermediate\serial
+
 ```
 
-Make the openssl.cnf and paste the content in it
+Folder Definitions
+
+* C:\CertificateAuth\: The root directory containing your master Root CA configuration, database, and serial tracking.
+* C:\CertificateAuth\private\: The highly sensitive directory storing the Root CA's private key; access should be strictly limited.
+* C:\CertificateAuth\certs\: A manual storage folder for organizing signed certificates or public CA certificates.
+* C:\CertificateAuth\certs_new\: The automated archive where OpenSSL saves a copy of every certificate issued by the Root CA, named by serial number.
+* C:\CertificateAuth\intermediate\: The workspace containing the Intermediate CA’s unique private key, database, and issued certificates.
+* C:\CertificateAuth\intermediate\private\: The directory storing the Intermediate CA's private key, used for signing servers and clients.
+* C:\CertificateAuth\intermediate\certs\: The operational directory where the Intermediate CA archives certificates it has signed.
+
+File Definitions
+
+* openssl.cnf: The master configuration file defining how the Root and Intermediate CAs behave, including policies and certificate extensions.
+* index.txt: The "database" file that tracks the status (valid/revoked) of every certificate issued by that specific CA.
+* serial: A text file containing the next unique hexadecimal number to be assigned to the next certificate issued by that CA.
+* ca_private_key.pem: The Root CA's private key used to sign the Intermediate CA.
+* ca_certificate.pem: The public Root CA certificate, which acts as the trust anchor for all devices.
+* intermediate.key.pem: The Intermediate CA’s private key used for day-to-day signing operations.
+* intermediate.cert.pem: The public certificate of the Intermediate CA, which bridges the gap between the server and the Root.
 
 ## Root certificate
 
@@ -53,7 +78,7 @@ Run openssl (cmd) and create root certificate
 c:\Program Files\OpenSSL-Win64-3\OpenSSL-Win64\bin>openssl version
 OpenSSL 3.1.2 1 Aug 2023 (Library: OpenSSL 3.1.2 1 Aug 2023)
 
-openssl req -x509 -config C:\testCertificateAuth\openssl.cnf -newkey rsa:4048 -nodes -keyout C:\testCertificateAuth\private\ca_private_key.pem -out C:\testCertificateAuth\ca_certificate.pem -extensions root_ca_extensions -days 3652
+openssl req -x509 -config C:\CertificateAuth\openssl.cnf -newkey rsa:4048 -nodes -keyout C:\CertificateAuth\private\ca_private_key.pem -out C:\CertificateAuth\ca_certificate.pem -extensions root_ca_extensions -days 5479 -subj "/CN=Socrates Root CA/O=SOCRATES INC/C=NO"
 
 ```
 Press enter to keep the common name from the openssl.cnf
@@ -61,28 +86,27 @@ Press enter to keep the common name from the openssl.cnf
 Check that we have all extension
 
 ```cmd
-openssl x509 -in C:\testCertificateAuth\ca_certificate.pem -noout -text
+openssl x509 -in C:\CertificateAuth\ca_certificate.pem -noout -text
+
 ```
 
 ```log
-
-
-Certificate:
+ Certificate:
     Data:
         Version: 3 (0x2)
         Serial Number:
-            58:4b:d2:ed:77:1c:9d:79:19:b7:ba:4b:bc:5e:4d:4d:67:4a:15:b2
+            56:3b:46:f1:88:92:77:d5:49:4d:35:e9:eb:7b:99:a4:f8:5d:b7:13
         Signature Algorithm: sha256WithRSAEncryption
-        Issuer: CN = SOCRATES.INC, ST = HO, C = NO
+        Issuer: CN = Socrates Root CA, O = SOCRATES INC, C = NO
         Validity
-            Not Before: Mar  5 20:47:04 2026 GMT
-            Not After : Mar  4 20:47:04 2036 GMT
-        Subject: CN = SOCRATES.INC, ST = HO, C = NO
+            Not Before: Mar  7 14:41:23 2026 GMT
+            Not After : Mar  7 14:41:23 2041 GMT
+        Subject: CN = Socrates Root CA, O = SOCRATES INC, C = NO
         Subject Public Key Info:
             Public Key Algorithm: rsaEncryption
-                Public-Key: (4048 bit)
+                RSA Public-Key: (4048 bit)
 
- X509v3 extensions:
+        X509v3 extensions:
             X509v3 Basic Constraints: critical
                 CA:TRUE
             X509v3 Key Usage: critical
@@ -94,16 +118,16 @@ Your Root CA is officially active and correctly configured. The output you provi
 
 This is the perfect foundation for a Private PKI. Because the Basic Constraints are marked as critical, any compliant software (like a web server or browser) will know that this certificate is only allowed to act as a Certificate Authority and nothing else.
 
-You now have a "Master Key" (your C:\testCertificateAuth\private\ca_private_key.pem) that can authorize any other certificate you generate for your servers or clients.
+You now have a "Master Key" (your C:\CertificateAuth\private\ca_private_key.pem) that can authorize any other certificate you generate for your servers or clients.
 
 One vital note: Never share your ca_private_key.pem. The .cer file you just created is safe to distribute to any machine that needs to trust your new CA, but the private key must stay locked in your private folder.
 
-And the C:\testCertificateAuth\ca_certificate.pem for root certificate
+And the C:\tCertificateAuth\ca_certificate.pem for root certificate
 
 Make a .cer file also
 
 ```cmd
-openssl x509 -in C:\testCertificateAuth\ca_certificate.pem -outform DER -out C:\testCertificateAuth\ca_certificate.cer
+openssl x509 -in C:\CertificateAuth\ca_certificate.pem -outform DER -out C:\CertificateAuth\ca_certificate.cer
 ```
 
 To make it valid, import it in cert trusted root certificates.

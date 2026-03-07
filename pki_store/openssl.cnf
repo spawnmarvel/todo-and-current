@@ -2,20 +2,32 @@
 default_ca = socratesca
 
 [ socratesca ]
-# Using forward slashes is safer for OpenSSL on Windows
-dir             = C:/testCertificateAuth
+dir             = C:/CertificateAuth
 certs           = $dir/certs
-new_certs_dir   = $dir/certs
+new_certs_dir   = $dir/certs_new
 database        = $dir/index.txt
 serial          = $dir/serial
 private_key     = $dir/private/ca_private_key.pem
 certificate     = $dir/ca_certificate.pem
-
 default_md      = sha256
-default_days    = 3652
+default_days    = 365
 policy          = testca_policy
-# Extensions used when the CA signs a certificate
 x509_extensions = mtls_extensions 
+
+# --- NEW SECTION FOR INTERMEDIATE CA ---
+[ intermediate_ca ]
+dir             = C:/CertificateAuth/intermediate
+certs           = $dir/certs
+new_certs_dir   = $dir/certs
+database        = $dir/index.txt
+serial          = $dir/serial
+private_key     = $dir/private/intermediate.key.pem
+certificate     = $dir/intermediate.cert.pem
+default_md      = sha256
+default_days    = 1095
+policy          = testca_policy
+x509_extensions = mtls_extensions
+# ---------------------------------------
 
 [ testca_policy ]
 commonName              = supplied
@@ -30,7 +42,6 @@ default_bits        = 2048
 default_md          = sha256
 prompt              = yes
 distinguished_name  = root_ca_distinguished_name
-# Extensions used when creating a CSR
 req_extensions      = v3_req 
 
 [ root_ca_distinguished_name ]
@@ -41,23 +52,28 @@ countryName                 = Country Name (2 letter code)
 countryName_default         = US
 
 [ v3_req ]
-# This is what goes into the Certificate Signing Request (CSR)
 basicConstraints = CA:FALSE
 keyUsage = critical, digitalSignature, keyEncipherment
 extendedKeyUsage = serverAuth, clientAuth
 
 [ mtls_extensions ]
-# This is what the CA adds to the final .pem/.crt file
 basicConstraints       = CA:FALSE
 subjectKeyIdentifier   = hash
 authorityKeyIdentifier = keyid,issuer
-keyUsage               = critical, digitalSignature, keyEncipherment
-extendedKeyUsage       = serverAuth, clientAuth
-nsComment              = "Windows mTLS Certificate"
+keyUsage                = critical, digitalSignature, keyEncipherment
+extendedKeyUsage        = serverAuth, clientAuth
+nsComment               = "Windows mTLS Certificate"
 
 [ root_ca_extensions ]
-# Only used for generating the Root CA itself
 basicConstraints       = critical, CA:true
-keyUsage               = critical, keyCertSign, cRLSign
+keyUsage                = critical, keyCertSign, cRLSign
 subjectKeyIdentifier   = hash
 authorityKeyIdentifier = keyid,issuer
+
+# --- NEW EXTENSION FOR SIGNING THE INTERMEDIATE ---
+[ intermediate_extensions ]
+basicConstraints       = critical, CA:true, pathlen:0
+keyUsage                = critical, keyCertSign, cRLSign
+subjectKeyIdentifier   = hash
+authorityKeyIdentifier = keyid,issuer
+# --------------------------------------------------
