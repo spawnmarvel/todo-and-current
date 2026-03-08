@@ -384,6 +384,16 @@ Option 1: Revoke the old certificate (The "Correct" way)
 
 Revoking a certificate in your index.txt database does not physically stop the software currently using that certificate.
 
+You encountered the error where OpenSSL refused to sign a new cert for the same Common Name. While -revoke is the "clean" way, you can also modify your openssl.cnf to allow duplicate subjects if your workflow requires frequent rotations:
+
+openssl.cnf
+
+```ini
+[ socratesca ]
+# ... other settings ...
+unique_subject = no  # Set this to 'no' to allow multiple certs with the same CN
+```
+
 ```cmd
 openssl ca -config C:\CertificateAuth\openssl.cnf -name intermediate_ca -revoke C:\CertificateAuth\intermediate\certs\amqp-it2.crt
 ```
