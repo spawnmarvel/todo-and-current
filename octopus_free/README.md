@@ -34,7 +34,11 @@ To get started:
 Click the link below to download the 64-bit MSI installer for Windows.
 Download Octopus
 
-C:\giti2026\Octopus-download\Octopus.2026.1.11242-x64.msi
+* C:\giti2026\Octopus-download\Octopus.2026.1.11242-x64.msi
+
+* Start SQL Server (SQLEXPRESS) windows service, it is manual now.
+* Login to HOSTNAME\SQLEXPRESS
+* Default windows update
 
 2. Run the setup wizard
 Copy and paste your license key when prompted.
