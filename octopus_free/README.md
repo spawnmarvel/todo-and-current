@@ -114,9 +114,17 @@ Go to server->properties and select both auth methods, SQL Server and Windows Au
 ![auth_both](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/autoh_both.png)
 
 
-* On the Database page, click the drop-down arrow in the Server Name field to detect the SQL Server Database. Octopus will create the database for you which is the recommended process; however, you can also create your own database.
+* Open services.msc.
+
+* Find SQL Server (SQLEXPRESS).
+
+* Right-click and select Restart.
+
+On the Database page, click the drop-down arrow in the Server Name field to detect the SQL Server Database. Octopus will create the database for you which is the recommended process; however, you can also create your own database.
 
 * Enter a name for the database, and click Next and OK to create the database.
+
+![db_create](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/db_create.png)
 
 ## Tutorial
 
