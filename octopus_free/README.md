@@ -23,6 +23,8 @@ Go to my account and control center
 Click the link below to download the 64-bit MSI installer for Windows.
 Download Octopus
 
+C:\giti2026\Octopus-download\Octopus.2026.1.11242-x64.msi
+
 2. Run the setup wizard
 Copy and paste your license key when prompted.
 Read the guide
