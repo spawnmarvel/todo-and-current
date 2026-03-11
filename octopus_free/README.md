@@ -19,6 +19,16 @@ Go to my account and control center
 
 ![org](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/org.png)
 
+Hi Aspen,
+
+Thanks for signing up for your free Octopus Server account.
+
+To get started:
+•	Copy your license key from your Octopus account.
+•	Download and install Octopus Server.
+•	Run the setup wizard, and copy and paste your license key when prompted. 
+
+
 1. Download Octopus Server
 Click the link below to download the 64-bit MSI installer for Windows.
 Download Octopus
