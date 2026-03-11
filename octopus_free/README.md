@@ -138,6 +138,36 @@ Install
 
 ![install](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/install.png)
 
+Web server
+
+![running](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/running.png)
+
+Change to HTTPS
+
+From http://localhost:80/ to 443
+
+* Open Octopus Manager: Search your Start menu for "Octopus Manager" and run it as Administrator.
+
+* Locate the Web Portal settings: In the sidebar, select your Octopus Server instance.
+
+* Configure HTTPS: Look for the "Web Portal" or "Listen Prefixes" section.
+
+Add/Edit Prefix:
+
+* Change the address from http://localhost:80/ to https://localhost:443/ (or your preferred port).
+
+* It will then ask you to Select a Certificate.
+
+* Choose generate self signed for this session
+
+Visit
+
+https://localhost/
+
+
+![cert](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/cert.png)
+
+
 
 
 ## Tutorial
