@@ -11,9 +11,13 @@ https://octopus.com/pricing/overview
 
 
 
+![free](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/free.png)
+
 ## Install Octopus Server
 
 Go to my account and control center
+
+![org](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/org.png)
 
 1.
 Download Octopus Server
