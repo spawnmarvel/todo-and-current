@@ -111,7 +111,7 @@ GO
 
 Go to server->properties and select both auth methods, SQL Server and Windows Authentication mode.
 
-![auth_both](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/autoh_both.png)
+![auth_both](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/auth_both.png)
 
 
 * Open services.msc.
