@@ -188,6 +188,20 @@ Follow the tutorial
 
 https://localhost/
 
+Files
+
+```ps1
+PS C:\Octopus> ls -Name
+Artifacts
+Logs
+OctopusServer
+Packages
+SharedPackageCache
+TaskLogs
+Telemetry
+OctopusServer.config
+```
+
 Tutorial
 
 https://octopus.com/docs/getting-started
