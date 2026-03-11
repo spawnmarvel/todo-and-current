@@ -180,7 +180,15 @@ Your first deployment
 Start using your new Octopus instance by doing your first deployment.
 Follow the tutorial
 
+* Open services.msc.
+
+* Find SQL Server (SQLEXPRESS).
+
+* Right-click and select start (is manual)
+
 https://localhost/
+
+Tutorial
 
 https://octopus.com/docs/getting-started
 
