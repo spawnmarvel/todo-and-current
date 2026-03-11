@@ -169,6 +169,8 @@ https://localhost/
 
 New settings on Octopus Manager
 
+![new_settings](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/new_settings.png)
+
 
 
 
