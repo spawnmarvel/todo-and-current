@@ -24,9 +24,10 @@ Hi Aspen,
 Thanks for signing up for your free Octopus Server account.
 
 To get started:
-•	Copy your license key from your Octopus account.
-•	Download and install Octopus Server.
-•	Run the setup wizard, and copy and paste your license key when prompted. 
+
+* Copy your license key from your Octopus account.
+* Download and install Octopus Server.
+* Run the setup wizard, and copy and paste your license key when prompted. 
 
 
 1. Download Octopus Server
