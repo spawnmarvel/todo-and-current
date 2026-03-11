@@ -81,7 +81,7 @@ All inbound traffic to Octopus Deploy is via:
 * Accept the default Home Directory or enter a location of your choice and click Next, C:\Octopus
 * Decide whether to use a Local System Account or a Custom Domain Account.
 
-![sys acc](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/sys-acc.png)
+![sys acc](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/sys_acc.png)
 
 Create a user in the database, sql server express
 
