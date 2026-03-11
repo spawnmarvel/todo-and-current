@@ -167,6 +167,8 @@ https://localhost/
 
 ![cert](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/cert.png)
 
+New settings on Octopus Manager
+
 
 
 
@@ -175,6 +177,11 @@ https://localhost/
 Your first deployment
 Start using your new Octopus instance by doing your first deployment.
 Follow the tutorial
+
+https://localhost/
+
+https://octopus.com/docs/getting-started
+
 
 
 
