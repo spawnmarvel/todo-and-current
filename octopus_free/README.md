@@ -126,6 +126,20 @@ On the Database page, click the drop-down arrow in the Server Name field to dete
 
 ![db_create](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/db_create.png)
 
+Next
+
+![v_dir](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/v_dir.png)
+
+Next
+
+![user](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/user.png)
+
+Install
+
+![install](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/install.png)
+
+
+
 ## Tutorial
 
 Your first deployment
