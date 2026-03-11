@@ -27,6 +27,6 @@ Download Octopus
 Copy and paste your license key when prompted.
 Read the guide
 
-3.Your first deployment
+3. Your first deployment
 Start using your new Octopus instance by doing your first deployment.
 Follow the tutorial
