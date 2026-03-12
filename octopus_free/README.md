@@ -300,6 +300,7 @@ Environments
 
 5. Keep the default environments and click Create Environments.
 
+![env](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/env.png)
 
 Create deployment process
 
