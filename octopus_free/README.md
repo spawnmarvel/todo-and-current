@@ -285,9 +285,9 @@ If a project uses tenants, a release can be deployed to all tenants, a single te
 
 If you’re a large organization with lots of teams working in Octopus, you can use the Spaces feature to provide each of your teams with a space for the projects, environments, and infrastructure they work with, while keeping other teams’ assets separate in their own spaces.
 
-### First Deployment
+## First Deployment
 
-Project
+### Project
 
 1. Log in to your Octopus instance and click New Project.
 2. Give your project a descriptive name, for example, Hello world deployment.
@@ -296,7 +296,7 @@ Project
 
 ![project](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/project.png)
 
-Environments
+### Environments
 
 5. Keep the default environments and click Create Environments.
 
@@ -315,7 +315,8 @@ For this deployment, we will configure one step to print Hello World.
 
 You can leave name as the default Run a Script.
 
-Script SourceBookmark
+Script Source
+
 You can source script files via 3 methods:
 
 * Inline script (default)
@@ -331,7 +332,7 @@ Write-Host "Hello, World!"
 ```
 ![steps_inline](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/steps_inline.png)
 
-Execution Location
+#### Execution Location
 
 6. If you’re using Octopus Cloud, select Run once on a worker.
 7. If you’re using a self-hosted Octopus instance, select Run once on the Octopus Server.
@@ -344,6 +345,15 @@ Save your step and you can move on to create and deploy a release.
 
 ![script_saved](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/script_saved.png)
 
+### Release and deploy
+
+A release is a snapshot of the deployment process and the associated assets (packages, scripts, variables) as they exist when the release is created.
+
+1. Click the Create Release button.
+2. Click Save.
+
+
+![release](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/release.png)
 
 
 
