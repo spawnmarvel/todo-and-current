@@ -429,6 +429,51 @@ Now go to Releases and we have a list of two.
 ![list](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/list.png)
 
 
+Great job! Next, let’s build on your deployment process and add an approval process using manual interventions.
+
+### Approvals with Manual Interventions
+
+The Manual Intervention Required step lets you add approvals or manual checks to your deployment process. When manual intervention occurs, the deployment will pause and wait for approval or rejection from a member of a nominated responsible team.
+
+1. From the Hello world deployment project you created earlier, click Process in the left menu.
+2. Click Add Step.
+3. Select the Other category to filter the types of steps.
+4. Locate the Manual Intervention Required card and click Add Step.
+
+Step name
+
+You can leave this as the default Manual Intervention Required.
+
+Instructions
+
+5. Copy the message below and paste it into the Instructions field.
+
+```txt
+Please verify the Production environment is ready before proceeding.
+```
+Responsible Teams
+
+6. Select Octopus Administrators and Octopus Managers from the Responsible Teams dropdown list.
+
+Environments
+
+7. Select Run only for specific environments.
+8. Select Production from the Environments dropdown list.
+
+
+![manual_interv](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/manul_interv.png)
+
+Reorder deployment stepsBookmark
+
+Currently, your deployment process will run manual intervention after the script step. In a real deployment scenario, it makes more sense to run manual intervention before any other step.
+
+1. Click the overflow menu ⋮ next to the Filter by name search box and click Reorder Steps.
+2. Reorder the steps so manual intervention is at the top of the list.
+3. Click Done.
+4. Save your deployment process.
+
+![reorder](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/reorder.png)
+
 
 
 
