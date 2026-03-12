@@ -174,7 +174,7 @@ New settings on Octopus Manager
 
 
 
-## Tutorial
+## Tutorial (Push mode only)
 
 Your first deployment
 Start using your new Octopus instance by doing your first deployment.
