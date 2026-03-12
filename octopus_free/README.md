@@ -237,5 +237,17 @@ Tutorial
 https://octopus.com/docs/getting-started
 
 
+### Projects, environments, and releases
+
+Projects are the applications we deploy.
+
+Environments are where we deploy the applications. In this case, Dev, Test and Production.
+
+A Release is a bundle of all the things needed to deploy a specific version of an application. This might include:
+
+* The container images or packages (artifacts produced from a CI build)
+* The associated configuration and variables needed to configure the release for each environment
+* A snapshot of the process that will be used to deploy the release, as the process may change in future releases
+* Details on Jira tickets and Git commits that went into the release
 
 
