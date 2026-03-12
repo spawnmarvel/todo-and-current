@@ -331,8 +331,12 @@ Write-Host "Hello, World!"
 ```
 ![steps_inline](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/steps_inline.png)
 
+Execution Location
 
+6. If you’re using Octopus Cloud, select Run once on a worker.
+7. If you’re using a self-hosted Octopus instance, select Run once on the Octopus Server.
 
+![run_on_octo](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/run_on_octo.png)
 
 
 
