@@ -306,6 +306,10 @@ Create deployment process
 
 The next step is creating your deployment process. This is where you define the steps that Octopus uses to deploy your software.
 
+1. In the “Welcome to your Project” dialog, click Thanks, got it.
+2. In the Featured category, locate the Run a Script card and click Add Step.
+
+![run_script](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/run_script.png)
 
 
 
