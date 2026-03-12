@@ -478,11 +478,12 @@ Release and deployBookmark
 
 1. Create a new release and deploy it through to the Production environment.
 
-You will notice manual intervention doesn’t run in the Development or Staging environments. When the deployment reaches Production, it will pause and request approval.
 
 ![new_release](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/new_release1.png)
 
+You will notice manual intervention doesn’t run in the Development or Staging environments. When the deployment reaches Production, it will pause and request approval.
 
+![deploy_envs](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/deploy_envs.png)
 
 
 
