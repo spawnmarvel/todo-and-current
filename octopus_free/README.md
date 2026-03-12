@@ -530,7 +530,7 @@ Regardless of where you’re deploying your software, these machines and service
 
 Search for infrastructure, it is a big menu, and click on deployments targets.
 
-![target](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/target.png)
+![target](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/targets.png)
 
 
 We choose windows listening tentacle now.
