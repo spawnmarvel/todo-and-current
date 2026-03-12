@@ -374,7 +374,24 @@ The Task Log will show you in real-time the tasks Octopus is taking to run your 
 
 ![deployed](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/deployed.png)
 
+You successfully completed your first deployment!
 
+### Define and use variables
+
+Add a variable
+
+1. From the Hello world project you created earlier, click Project Variables in the left menu.
+2. Click Create Variables.
+3. Add Helloworld.Greeting in the Name column,
+4. Add Hello, Development in the Value column,
+5. Click the Scope column and select the Development environment.
+6. Click Add another value.
+7. Add Hello, Staging and scope it to the Staging environment.
+8. Click Add another value.
+9. Add Hello, Production and scope it to the Production environment.
+10. Click Save.
+
+![variables](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/variables.png)
 
 
 
