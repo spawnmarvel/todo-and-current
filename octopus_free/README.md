@@ -350,10 +350,15 @@ Save your step and you can move on to create and deploy a release.
 A release is a snapshot of the deployment process and the associated assets (packages, scripts, variables) as they exist when the release is created.
 
 1. Click the Create Release button.
-2. Click Save.
-
 
 ![release](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/release.png)
+
+2. Click Save.
+
+![release_save](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/release_save.png)
+
+
+
 
 
 
