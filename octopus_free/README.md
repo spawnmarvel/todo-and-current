@@ -485,5 +485,10 @@ You will notice manual intervention doesn’t run in the Development or Staging 
 
 ![deploy_envs](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/deploy_envs.png)
 
+Deploy development
+
+![deploy_dev](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/deploy_dev.png)
+
+
 
 
