@@ -408,8 +408,14 @@ Inline Source CodeBookmark
 ![edit script](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/edit_script.png)
 
 
+```ps1
+Write-Host $OctopusParameters["Helloworld.Greeting"]
+```
 
+5. Click Save
+6. Click Create Release.
 
+**A release snapshots everything about your project, including variables and the deployment process. You have to create a new release to see any changes.**
 
 
 
