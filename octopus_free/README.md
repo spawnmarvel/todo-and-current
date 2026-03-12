@@ -480,6 +480,7 @@ Release and deployBookmark
 
 You will notice manual intervention doesn’t run in the Development or Staging environments. When the deployment reaches Production, it will pause and request approval.
 
+![new_release](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/new_release.png)
 
 
 
