@@ -489,6 +489,23 @@ Deploy development
 
 ![deploy_dev](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/deploy_dev.png)
 
+Deployed
+
+![deploy_dev1](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/deploy_dev1.png)
+
+
+Deploy to staging 
+
+![staging](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/staging.png)
+
+Deploy to prodution next and the manual step will come in production only.
+
+![manual](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/manual.png)
+
+Message is here.
+
+
+
 
 
 
