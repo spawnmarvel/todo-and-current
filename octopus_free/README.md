@@ -417,11 +417,16 @@ Write-Host $OctopusParameters["Helloworld.Greeting"]
 ![step updated](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/step_updated.png)
 
 
-6. Click Create Release.
+6. Click Create Release and save.
 
 ![create](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/create.png)
 
 **A release snapshots everything about your project, including variables and the deployment process. You have to create a new release to see any changes.**
+
+
+Now go to Releases and we have a list of two.
+
+![list](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/list.png)
 
 
 
