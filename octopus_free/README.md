@@ -368,7 +368,13 @@ Deployments typically occur in a defined environment order (for example, Develop
 
 2. Review the preview summary and when you’re ready, click Deploy.
 
+![deploy yes](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/deploy_yes.png)
+
 The Task Log will show you in real-time the tasks Octopus is taking to run your Hello World script.
+
+![deployed](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/deployed.png)
+
+
 
 
 
