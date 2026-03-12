@@ -306,10 +306,35 @@ Create deployment process
 
 The next step is creating your deployment process. This is where you define the steps that Octopus uses to deploy your software.
 
+For this deployment, we will configure one step to print Hello World.
+
 1. In the “Welcome to your Project” dialog, click Thanks, got it.
 2. In the Featured category, locate the Run a Script card and click Add Step.
 
 ![run_script](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/run_script.png)
+
+You can leave name as the default Run a Script.
+
+Script SourceBookmark
+You can source script files via 3 methods:
+
+* Inline script (default)
+* Git repository
+* Package
+
+3. Select Inline script as your script source.
+4. Select an appropriate script language.
+5. Copy the script below and paste it into the source code editor.
+
+```ps1
+Write-Host "Hello, World!"
+```
+![steps_inline](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/steps_inline.png)
+
+
+
+
+
 
 
 
