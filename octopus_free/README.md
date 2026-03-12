@@ -393,6 +393,19 @@ Add a variable
 
 ![variables](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/variables.png)
 
+### Update deployment processBookmark
+
+Steps in the deployment process can reference variables.
+
+1. Click Process in the left menu.
+2. Select the previously created Run a Script step.
+
+Inline Source CodeBookmark
+
+3. Based on your selected language, copy the appropriate script from below.
+4. Replace the script in the code editor with the new script.
+
+![edit script](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/edit_script.png)
 
 
 
