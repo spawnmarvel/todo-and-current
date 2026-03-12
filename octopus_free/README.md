@@ -338,6 +338,12 @@ Execution Location
 
 ![run_on_octo](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/run_on_octo.png)
 
+You can skip the other sections of this page for this tutorial.
+
+Save your step and you can move on to create and deploy a release.
+
+![script_saved](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/script_saved.png)
+
 
 
 
