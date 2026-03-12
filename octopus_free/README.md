@@ -251,3 +251,68 @@ A Release is a bundle of all the things needed to deploy a specific version of a
 * Details on Jira tickets and Git commits that went into the release
 
 
+### Deployment process
+
+Inside each project, you’ll configure a Deployment Process. The deployment process is like the recipe for deploying the project - the steps that will be run.
+
+Each step contains a specific action (or set of actions) that is executed as part of the deployment process each time your software is deployed. After the initial setup, your deployment process shouldn’t change between deployments even though the software being deployed will change as part of the development process.
+
+### Variables
+
+For instance, your test environment shouldn’t have access to your production database. Using variables, you can specify a different database for each environment, ensuring your production data won’t be impacted by codes changes that are still in review.
+
+### Infrastructure
+
+Octopus Deploy organizes your deployment targets (the machines and services you deploy software to) into groups called environments. Typical environments are Dev, Test, and Production.
+
+### Lifecycles
+
+When you define a project, you also select a lifecycle. The lifecycle defines the promotion rules around how releases of the project are deployed between environments, which projects are deployed to which environments.
+
+### Runbook automation
+
+A deployment is only one phase in the life of an application. There are many other tasks that are performed to keep an application operating - often called “Day 2”.
+
+Octopus Runbooks live inside a Project, and can be used to automate routine maintenance and emergency operations tasks like infrastructure provisioning, database management, and website failover and restoration.
+
+### Tenants
+
+Tenants in Octopus allow you to easily create customer specific deployment pipelines without duplicating project configuration.
+
+If a project uses tenants, a release can be deployed to all tenants, a single tenant, or a group of tenants using tags.
+
+### Spaces
+
+If you’re a large organization with lots of teams working in Octopus, you can use the Spaces feature to provide each of your teams with a space for the projects, environments, and infrastructure they work with, while keeping other teams’ assets separate in their own spaces.
+
+### First Deployment
+
+Project
+
+1. Log in to your Octopus instance and click New Project.
+2. Give your project a descriptive name, for example, Hello world deployment.
+3. For this example, keep the default Octopus option selected.
+4. Leave the rest as is and click Create Project.
+
+![project](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/project.png)
+
+Environments
+
+5. Keep the default environments and click Create Environments.
+
+
+Create deployment process
+
+The next step is creating your deployment process. This is where you define the steps that Octopus uses to deploy your software.
+
+
+
+
+
+
+
+
+
+
+
+
