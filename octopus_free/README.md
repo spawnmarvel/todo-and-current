@@ -154,7 +154,7 @@ From http://localhost:80/ to 443
 
 Add/Edit Prefix:
 
-* Change the address from http://localhost:80/ to https://localhost:443/ (or your preferred port).
+* Change the address from http://localhost:80/ to https://hostname:443/ (or your preferred port).
 
 * It will then ask you to Select a Certificate.
 
@@ -172,7 +172,35 @@ New settings on Octopus Manager
 ![new_settings](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/new_settings.png)
 
 
+## Octopus deploy free edition
 
+* All core features: You get the full deployment engine, variable management, and step templates without any "lite" version limitations.
+
+* 10 projects: You can create up to 10 distinct deployment pipelines (e.g., one for MySQL, one for Zabbix, one for Apache).
+
+* 10 tenants: Allows you to deploy the same project to multiple "customers" or "silos" with isolated configurations.
+
+* 10 machines: You can register up to 10 deployment targets (like your Linux VMs or Windows servers) across your environments.
+
+* 1 space: You have one isolated working area to manage your team's projects, variables, and infrastructure. Since you only have 1 Space, everyone who has access to that space will see all the projects and environments.
+
+* 10 users: Up to 10 individual teammates can have their own logins to manage or view deployments.
+
+* 5 concurrent tasks: Octopus can run up to 5 things at once (e.g., deploying to 5 servers simultaneously or running 5 different projects).
+
+* 1 instance: You can install and run one single Octopus Server installation.
+
+* 1 node: Your Octopus Server runs on a single machine rather than a "High Availability" cluster of multiple servers.
+
+* Runbook automation: A feature for automating routine tasks like DB backups or service restarts that aren't part of a code release.
+
+* Environment promotion: The "lifecycle" logic that lets you move a proven release from Dev to Test and finally to Production.
+
+* SSO (Single Sign-On): Connects Octopus to your company's login system (like Active Directory or Google) so you don't need separate passwords.
+
+* RBAC (Role-Based Access Control): Allows you to set specific permissions for who can "View," "Edit," or "Deploy" to different environments.
+
+* Community support: Access to the community forums and public documentation for help rather than a dedicated 24/7 support engineer.
 
 ## Tutorial (Push mode only) and concepts
 
@@ -186,7 +214,7 @@ Follow the tutorial
 
 * Right-click and select start (is manual)
 
-https://localhost/
+https://ber-0803
 
 Files
 
