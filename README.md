@@ -72,6 +72,7 @@ sudo apt autoclean
     - - Saved in az-automation-runbook-and-choices
     - :white_square_button:Do https = always openssl
     - :white_square_button:Do Chaos Engineer bash vmchaos09
+    - :white_square_button:Do use Octupus (free) for CD (zabbix, mysql etc)
 
 2. MySql maintenace:
     - Do the w3s tutorial in mysql cli
@@ -102,6 +103,10 @@ sudo apt autoclean
    - - vmhybrid01
    - - Saved in az-800-admistering-windows-server-hybrid-core-infrastructure
 
+5. Octopus deploy (free)
+   - Do tutorial = 
+   - Do zabbbix deploy (all on one vm) = 
+   - - octopus_free
 --- 
 
 Misc / wait / parked
