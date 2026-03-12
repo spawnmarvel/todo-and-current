@@ -512,6 +512,25 @@ All details / log for the deployment
 
 ![log confirm](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/log_confirm.png)
 
+Your project is coming together well! Next, let’s add a deployment target.
+
+### Add deployment targets
+
+With Octopus, you can deploy software to:
+
+* Kubernetes
+* Windows
+* Linux
+* Azure
+* AWS
+* Offline package drop
+* Cloud region
+
+Regardless of where you’re deploying your software, these machines and services are known as your deployment targets.
+
+Search for infrastructure, it is a big menu, and click on deployments targets.
+
+![target](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/target.png)
 
 
 
