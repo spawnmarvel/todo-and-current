@@ -357,6 +357,18 @@ A release is a snapshot of the deployment process and the associated assets (pac
 
 ![release_save](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/release_save.png)
 
+### Execute deployment
+
+
+Deployments typically occur in a defined environment order (for example, Development ➜ Staging ➜ Production), starting with the first one. Later you can configure Lifecycles with complex promotion rules to accurately reflect how you want to release software.
+
+1. Click the Deploy to Development… button to deploy to the development environment.
+
+![deploy](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/deploy.png)
+
+2. Review the preview summary and when you’re ready, click Deploy.
+
+The Task Log will show you in real-time the tasks Octopus is taking to run your Hello World script.
 
 
 
