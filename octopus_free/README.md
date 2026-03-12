@@ -500,9 +500,17 @@ Deploy to staging
 
 Deploy to prodution next and the manual step will come in production only.
 
+Assign to me, yes.
+
 ![manual](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/manual.png)
 
-Message is here.
+Message is here, cofirm it.
+
+![confirm](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/confirm.png)
+
+All details / log for the deployment
+
+![log confirm](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/log_confirm.png)
 
 
 
