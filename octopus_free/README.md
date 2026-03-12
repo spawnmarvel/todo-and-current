@@ -474,6 +474,11 @@ Currently, your deployment process will run manual intervention after the script
 
 ![reorder](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/reorder.png)
 
+Release and deployBookmark
+
+1. Create a new release and deploy it through to the Production environment.
+
+You will notice manual intervention doesn’t run in the Development or Staging environments. When the deployment reaches Production, it will pause and request approval.
 
 
 
