@@ -533,6 +533,11 @@ Search for infrastructure, it is a big menu, and click on deployments targets.
 ![target](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/target.png)
 
 
+We choose windows listening tentacle now.
+
+![listen target](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/listen_target.png)
 
 
+TOBD
 
+https://octopus.com/docs/getting-started/first-deployment/add-deployment-targets
