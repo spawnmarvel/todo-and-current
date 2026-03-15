@@ -216,9 +216,14 @@ Now continue to deployments targets again, enter manual.
 
 Hit save and do a health check.
 
-
-
 ![target_linux](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/target_linux.png)
+
+Health check octipus manager.
+
+![health linux](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/health_linux.png)
+
+Check logs on linux.
+
 
 
 https://octopus.com/docs/infrastructure/deployment-targets/tentacle/linux#installing-tentacle
