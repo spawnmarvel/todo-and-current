@@ -296,6 +296,8 @@ cat 'to linux.txt'
 hello from uploaded octopus
 ```
 
+Args, we do not like whitespace in cat, so upload a new packet with no white space and deply again.
+
 ![files](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/files.png)
 
 
