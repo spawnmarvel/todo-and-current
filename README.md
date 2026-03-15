@@ -104,8 +104,8 @@ sudo apt autoclean
    - - Saved in az-800-admistering-windows-server-hybrid-core-infrastructure
 
 5. Octopus deploy (free)
-   - :white_check_mark: Do tutorial first deployment windows, project, relase, step, process and vars, push deploy to target = 100%
-   - :white_check_mark: Do tutorial first deployment linux, project, relase, step, process and vars, push deploy 2 target = 100%
+   - :white_check_mark: Do first deployment windows, project, relase, step, process and vars, push deploy to target = 100%
+   - :white_check_mark: Do first deployment linux, project, relase, step, process and vars, push deploy 2 target = 100%
    - Do tutorial first Runbok = 
    - Do Mysql deploy =
    - Do Zabbix deploy
