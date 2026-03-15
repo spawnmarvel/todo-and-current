@@ -564,6 +564,10 @@ Install it and add thumb
 
 ![thumb](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/thumb.png)
 
+Tentacle running.
+
+![tentacle running](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/tentacle_running.png)
+
 Enter information in Octopus Manager.
 
 
