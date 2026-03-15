@@ -205,7 +205,18 @@ Tentacle instance 'vmchaos09' is now installed
 
 
 
-Now continue to deployments targets again.
+Now continue to deployments targets again, enter manual.
+
+* Name
+* Environment
+* Tags, create a tag for the vm also
+* Thumbprint from the install, paste into octopus manager
+* Tentacle URL
+* Connect to this tentacle directly
+
+Hit save and do a health check.
+
+
 
 ![target_linux](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/target_linux.png)
 
