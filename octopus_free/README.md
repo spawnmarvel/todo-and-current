@@ -560,6 +560,10 @@ During setup, configure the Tentacle in listening mode, and ensure the Tentacle 
 
 ![listen windows](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/listen_windows.png)
 
+Install it and add thumb
+
+![thumb](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/thumb.png)
+
 Enter information in Octopus Manager.
 
 
