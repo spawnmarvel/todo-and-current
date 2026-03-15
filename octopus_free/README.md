@@ -616,6 +616,24 @@ Add a step to the deployment process to push that package to your deployment tar
 ![deploy a packet](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/card.png)
 
 
+Step name
+
+You can leave this as the default Deploy a Package.
+
+Target tags
+
+Select vmhybrid01 from the Target Tags dropdown list
+
+
+Package
+
+Select hello-world from the Package ID dropdown list.
+
+You can skip the other sections of this page for this tutorial.
+
+Save your deployment process and you can move on to create and deploy a release.
+
+![step done](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/step_done.png)
 
 
 
