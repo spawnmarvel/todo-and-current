@@ -255,8 +255,12 @@ Logs
 2026-03-15 19:51:55.7812   3115     12  INFO  listen://[::]:10933/             12  Client at [::ffff:xx.xxx.xxx.55]:56218 authenticated as C6210Fxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
+Make txt file and compress to tar, to-linux.1.0.2.tar
+
+Go to infrastructure and upload the packet.
 
 
+![linux tar](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/linux_tar.png)
 
 
 
