@@ -662,7 +662,21 @@ When you click Deploy, Octopus allows you to override the default "deploy to eve
 
 ![include](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/include.png)
 
-![deploy to](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/deploy_to.png)
+Now deploy it.
+
+![deploy to vm](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/deploy_to_vm.png)
+
+Octopus manager log.
+
+![manager log](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/manager_log.png)
+
+
+VMhybrid01 verify packet.
+
+![file on vm](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/file_on_vm.png)
+
+
+
 
 
 
