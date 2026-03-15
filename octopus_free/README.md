@@ -649,7 +649,7 @@ Create a new release and deploy it to the Development environment.
 
 The release will deploy the hello world package to the Hello world tutorial target.
 
-![release 1](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/relases_1.png)
+![release 1](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/release_1.png)
 
 When you click Deploy, Octopus allows you to override the default "deploy to everyone" behavior.
 
