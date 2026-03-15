@@ -203,7 +203,11 @@ Tentacle instance 'vmchaos09' is now installed
 
 ```
 
+
+
 Now continue to deployments targets again.
+
+![target_linux](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/target_linux.png)
 
 
 https://octopus.com/docs/infrastructure/deployment-targets/tentacle/linux#installing-tentacle
