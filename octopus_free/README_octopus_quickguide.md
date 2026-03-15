@@ -299,8 +299,6 @@ hello from uploaded octopus
 ![files](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/files.png)
 
 
-
-
 https://octopus.com/docs/infrastructure/deployment-targets/tentacle/linux#installing-tentacle
 
 
