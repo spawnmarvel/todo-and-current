@@ -595,6 +595,19 @@ Download or make a zip file, go to packages and upload it.
 ![upload](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/upload.png)
 
 
+### Add deploy package stepBookmark
+
+Add a step to the deployment process to push that package to your deployment target.
+
+* From the left Deploy menu, click Projects.
+* Select the Hello world deployment project.
+* Click Process in the left menu.
+* Click Add Step.
+
+![add step](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/add_step.png)
+
+* Select the Package category to filter the types of steps.
+* Locate the Deploy a Package card and click Add Step.
 
 
 
