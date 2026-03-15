@@ -568,7 +568,11 @@ Tentacle running.
 
 ![tentacle running](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/tentacle_running.png)
 
-Enter information in Octopus Manager to connect.
+Verify that you can browse https://localhost:10933
+
+![host](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/host.png)
+
+Enter information in Octopus Manager to connect, press enter manually.
 
 ![connect](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/connect.png)
 
