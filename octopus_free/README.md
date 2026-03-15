@@ -568,13 +568,24 @@ Tentacle running.
 
 ![tentacle running](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/tentacle_running.png)
 
-Verify that you can browse https://localhost:10933
+Verify that you can browse https://localhost:10933 and from remote.
 
 ![host](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/host.png)
 
 Enter information in Octopus Manager to connect, press enter manually.
 
-![connect](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/connect.png)
+![connect1](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/connect1.png)
+
+Enter URL and the thumprint then click save.
+
+![connect2](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/connect2.png)
+
+We now have the windows machine ready.
+
+![vm ready](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/vm_ready.png)
+
+
+
 
 
 
