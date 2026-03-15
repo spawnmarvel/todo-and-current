@@ -203,6 +203,25 @@ Tentacle instance 'vmchaos09' is now installed
 
 ```
 
+It is now running as systemd service
+
+```bash
+
+ps aux | grep -i octopus
+
+# To see the exact name the script registered with your system, you can run:
+
+systemctl list-units | grep -i tentacle
+
+sudo systemctl status vmchaos09
+
+```
+
+Logs.
+
+
+![vmchaos09_status](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/vmchaos09_status.png)
+
 
 
 Now continue to deployments targets again, enter manual.
@@ -223,6 +242,21 @@ Health check octipus manager.
 ![health linux](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/health_linux.png)
 
 Check logs on linux.
+
+```bash
+ pwd
+/etc/octopus/vmchaos09/Logs
+```
+
+Logs
+
+```log
+2026-03-15 19:51:55.4131   3115     12  INFO  listen://[::]:10933/             12  Accepted TCP client: [::ffff:xx.xxx.xxx.55]:56218
+2026-03-15 19:51:55.7812   3115     12  INFO  listen://[::]:10933/             12  Client at [::ffff:xx.xxx.xxx.55]:56218 authenticated as C6210Fxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+```
+
+
+
 
 
 
