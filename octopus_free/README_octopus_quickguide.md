@@ -101,6 +101,8 @@ Steps
 * Ran a ps1 step on octopus with var
 * Deployed a packet x 2 to vmhybrid01
 
+![steps_4](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/steps_4.png)
+
 All is here
 
 https://octopus.com/docs/getting-started
