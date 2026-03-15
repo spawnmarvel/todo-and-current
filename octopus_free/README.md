@@ -737,6 +737,18 @@ c:\Octopus\Files
 
 ## Tutrial Your First Runbook Run
 
+Deployments are just one piece of the deployment puzzle. You also have to manage day-1 and day-2 operations. Octopus Runbooks lets you automate these routine and emergency operations tasks, giving you one platform for DevOps automation.
+
+A runbook is a set of instructions that help you consistently carry out a task, whether it’s routine maintenance or responding to an incident. Octopus provides the platform for your runbooks just as it does for your deployments.
+
+Runbooks automate routine maintenance and emergency operations tasks, like:
+
+* Infrastructure provisioning
+* Database management
+* Website failover and restoration
+
+https://octopus.com/docs/runbooks
+
 
 https://octopus.com/docs/getting-started/first-runbook-run
 
