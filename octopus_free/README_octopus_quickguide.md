@@ -322,6 +322,11 @@ imsdal@vmchaos09:~$ uptime
 
 ![restart_linux](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/restart_linux.png)
 
+Check health also
+
+![health_vmchao09](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/health_vmchaos09.png)
+
+
 
 https://octopus.com/docs/infrastructure/deployment-targets/tentacle/linux#installing-tentacle
 
