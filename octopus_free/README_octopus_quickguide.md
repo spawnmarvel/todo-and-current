@@ -262,6 +262,24 @@ Go to infrastructure and upload the packet.
 
 ![linux tar](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/linux_tar.png)
 
+Go to project and a process, deploy a packet, deploy to target tags linux.
+
+![linux step](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/linux_step.png)
+
+Create a relases and deploy to:
+
+![linux relase](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/linux_release.png)
+
+Set envirnment and then go to Preview and customize to set the host.
+
+![target vmchaos09](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/target_vmchaos09.png)
+
+Hit deploy.
+
+
+
+
+
 
 
 https://octopus.com/docs/infrastructure/deployment-targets/tentacle/linux#installing-tentacle
