@@ -320,7 +320,7 @@ imsdal@vmchaos09:~$ uptime
 
 ```
 
-![restart_linux](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/restart linux.png)
+![restart_linux](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/restart_ linux.png)
 
 
 https://octopus.com/docs/infrastructure/deployment-targets/tentacle/linux#installing-tentacle
