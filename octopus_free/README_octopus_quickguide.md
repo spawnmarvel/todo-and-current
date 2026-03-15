@@ -12,9 +12,12 @@ Perform the installation once by hand on a clean VM.
 
 Turn those commands into a Bash or PowerShell script. Replace hardcoded values with variables.
 
-* Bad: mysql --user=root --password=Password123
-* Good: mysql --user=#{MySQL.User} --password=#{MySQL.Password}
-
+```bash
+# Bad: 
+mysql --user=root --password=Password123
+# Good: 
+mysql --user=#{MySQL.User} --password=#{MySQL.Password}
+```
 Why: This allows you to use the same script for Dev and Prod by simply changing the variable values in Octopus.
 
 3. Build the Octopus Project
