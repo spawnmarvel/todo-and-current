@@ -1,5 +1,8 @@
 # Octopus in a nutshell
 
+
+The free edition is good for a small environment with up to 10 servers.
+
 ![free_edition](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/free_edition.png)
 
 ## The Best Practice Workflow
