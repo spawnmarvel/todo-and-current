@@ -1,6 +1,6 @@
 # Octopus in a nutshell
 
-## Tutorial First Deployment
+## Tutorial First Deployment to windows
 
 1. Project you have made
 2. Packages upload if needed
@@ -106,6 +106,110 @@ Steps
 All is here
 
 https://octopus.com/docs/getting-started
+
+## Tutorial First Deployment to linux
+
+Add new deployment target.
+
+![details manual](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/details_m.png)
+
+Linux Tentacle
+
+If you want to deploy software to Linux servers without using SSH, you need to install Tentacle, a lightweight agent service, on your Linux servers so they can communicate with the Octopus Server.
+
+Before you can configure a Linux Tentacle, the Linux server must meet the requirements and the following additional requirements:
+
+Octopus Server 2019.8.3 or newer
+Linux Tentacle is a .NET application distributed as a self-contained deployment. On most Linux distributions it will just work, but be aware that you will need to install some prerequisites.
+
+
+We are using Octopus.2026.1.11242-x64.msi for server installtion.
+
+
+### Installing Tentacle on linux
+
+Login ssh
+
+Check ufw
+```bash
+sudo ufw status
+Status: inactive
+```
+
+Create NSG with inbound 10933
+
+Login and sudo nano install_tentacle.sh
+
+```bash
+#!/bin/bash
+echo "Tea anyone?"
+sudo apt update && sudo apt install --no-install-recommends gnupg curl ca-certificates apt-transport-https && \
+sudo install -m 0755 -d /etc/apt/keyrings && \
+curl -fsSL https://apt.octopus.com/public.key | sudo gpg --dearmor -o /etc/apt/keyrings/octopus.gpg && \
+sudo chmod a+r /etc/apt/keyrings/octopus.gpg && \
+echo \
+  "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/octopus.gpg] https://apt.octopus.com/ \
+  stable main" | \
+  sudo tee /etc/apt/sources.list.d/octopus.list > /dev/null && \
+sudo apt update && sudo apt install tentacle
+
+```
+Run it
+```bash
+Run it bash install_tentacle.sh
+```
+
+Setting up a Tentacle instanceBookmark
+Many instances of Tentacle can be configured on a single machine. To configure an instance run the following setup script:
+
+```bash
+/opt/octopus/tentacle/configure-tentacle.sh
+```
+
+Follow the steps in cmd
+
+```txt
+imsdal@vmchaos09:~$ /opt/octopus/tentacle/configure-tentacle.sh
+Name of Tentacle instance (default Tentacle):vmchaos09
+What kind of Tentacle would you like to configure: 1) Listening or 2) Polling (default 1): 1
+Where would you like Tentacle to store configuration, logs, and working files? (/etc/octopus):
+Where would you like Tentacle to install applications to? (/home/Octopus/Applications):
+Enter the port that this Tentacle will listen on (10933):
+Should the Tentacle use a proxy to communicate with Octopus? (y/N): N
+Enter the thumbprint of the Octopus Server: C6210Fxxxxxxxxxxxxxxxxxxxx
+
+```
+Log
+
+```log
+Press enter to continue...
+Creating empty configuration file: /etc/octopus/vmchaos09/tentacle-vmchaos09.config
+Saving instance: vmchaos09
+Setting home directory to: /etc/octopus/vmchaos09
+A new certificate has been generated and installed. Thumbprint:
+3C4D84A9C78FD406C79CA1D7ADB4938E0B9BAD80
+These changes require a restart of the Tentacle.
+Removing all trusted Octopus Servers...
+Application directory set to: /home/Octopus/Applications
+Services listen port: 10933
+Tentacle will listen on a TCP port
+These changes require a restart of the Tentacle.
+Adding 1 trusted Octopus Servers
+These changes require a restart of the Tentacle.
+Service installed: vmchaos09
+Service started: vmchaos09
+
+Tentacle instance 'vmchaos09' is now installed
+
+```
+
+Now continue to deployments targets again.
+
+
+https://octopus.com/docs/infrastructure/deployment-targets/tentacle/linux#installing-tentacle
+
+
+https://octopus.com/docs/infrastructure/deployment-targets/tentacle/linux
 
 
 ## Tutorial First Runbook
