@@ -716,6 +716,26 @@ When you click Deploy, Octopus allows you to override the default "deploy to eve
 
 ![the target](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/the_target.png)
 
+And we are done.
+
+![done](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/done.png)
+
+On vmhybrid01.
+
+```ps1
+c:\Octopus\Files
+
+03/15/2026  04:00 PM    <DIR>          .
+03/15/2026  04:00 PM    <DIR>          ..
+03/15/2026  04:00 PM           114,216 baretail@S1.0.0@5763cfa.zip
+03/15/2026  04:00 PM           345,984 hello-world@S1.0.0@1f78be6.zip
+               2 File(s)        460,200 bytes
+               2 Dir(s)  114,685,624,320 bytes free
+               
+```
+
+
+
 
 
 
