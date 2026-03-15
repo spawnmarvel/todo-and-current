@@ -312,6 +312,16 @@ hello from uploaded octopus
 
 ![files](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/files.png)
 
+Restart vmchaos09 and check health in octopus.
+
+```bash
+imsdal@vmchaos09:~$ uptime
+ 20:42:44 up 2 min,  1 user,  load average: 0.32, 0.26, 0.10
+
+```
+
+![restart linux](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/restart linux.png)
+
 
 
 https://octopus.com/docs/infrastructure/deployment-targets/tentacle/linux#installing-tentacle
