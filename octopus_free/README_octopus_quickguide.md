@@ -77,6 +77,9 @@ Create a new release and deploy it to a target.
 ![var_done](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/var_done.png)
 
 
+All is here
+
+https://octopus.com/docs/getting-started
 
 
 
