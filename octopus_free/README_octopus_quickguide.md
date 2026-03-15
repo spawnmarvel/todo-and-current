@@ -394,8 +394,13 @@ Check health also
 
 
 
+
+Install tenatcle linux
+
 https://octopus.com/docs/infrastructure/deployment-targets/tentacle/linux#installing-tentacle
 
+
+Linux and octopus in general
 
 https://octopus.com/docs/infrastructure/deployment-targets/tentacle/linux
 
