@@ -274,10 +274,29 @@ Set envirnment and then go to Preview and customize to set the host.
 
 ![target vmchaos09](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/target_vmchaos09.png)
 
-Hit deploy.
+Hit deploy and view logs
+
+![linux deploy ok](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/linux_deploy_ok.png)
 
 
+Check vm.
 
+
+```bash
+pwd
+/etc/octopus/vmchaos09
+cd Files
+ls
+to-linux@S1.0.2@3a253a1.tar
+
+sudo tar -xvf to-linux@S1.0.2@3a253a1.tar
+to linux.txt
+
+cat 'to linux.txt'
+hello from uploaded octopus
+```
+
+![files](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/files.png)
 
 
 
