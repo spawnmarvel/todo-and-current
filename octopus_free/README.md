@@ -585,6 +585,15 @@ We now have the windows machine ready.
 ![vm ready](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/vm_ready.png)
 
 
+## 5. Deploy a sample package
+
+
+Deploying software with Octopus often involves deploying packages, for example, .zip, .nupkg, .jar, .tar, etc. In this section, we’ll walk you through the steps to deploy a sample hello world package to your deployment target.
+
+Download or make a zip file, go to packages and upload it.
+
+![upload](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/upload.png)
+
 
 
 
