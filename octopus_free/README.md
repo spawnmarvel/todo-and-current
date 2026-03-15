@@ -582,6 +582,8 @@ Remember to add the hostname as a tag also.
 
 Enter URL and the thumprint then click save.
 
+For the thumprint octopus manager should have the same as on the target, copy from the target to octopus.
+
 ![connect2](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/connect2.png)
 
 We now have the windows machine ready.
@@ -599,7 +601,7 @@ Download or make a zip file, go to packages and upload it.
 ![upload](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/upload.png)
 
 
-### Add deploy package stepBookmark
+### Add deploy package step
 
 Add a step to the deployment process to push that package to your deployment target.
 
@@ -634,6 +636,26 @@ You can skip the other sections of this page for this tutorial.
 Save your deployment process and you can move on to create and deploy a release.
 
 ![step done](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/step_done.png)
+
+
+### Release and deploy
+
+
+Check the health of your target before you deploy.
+
+![health](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/health.png)
+
+Create a new release and deploy it to the Development environment.
+
+The release will deploy the hello world package to the Hello world tutorial target.
+
+![release 1](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/relases_1.png)
+
+Now press the release and deploy to, or press deploy to development.
+
+![deploy to](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/deploy_to.png)
+
+
 
 
 
