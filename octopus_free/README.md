@@ -679,11 +679,11 @@ VMhybrid01 verify packet.
 
 ## Octopus in a nutshell
 
-1. Project
+1. Project you have made
 2. Packages upload if needed
 3. Process (steps, files, script etc)
 4. Release create
-5. Deploy to environment and or target
+5. Deploy to environment and or target from project dashboard release
 
 Upload zipped beartail example
 
@@ -702,20 +702,21 @@ Now create a release and all steps are saved including the new one.
 
 When you click Deploy, Octopus allows you to override the default "deploy to everyone" behavior.
 
-* Go to your Project and click Deploy.
+* Go to your Project dashboard and click deploy on a release (last one for example).
 
-![deploy_bare](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/deploy_bare.png)
+![deploy_to_target](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/deploy_to_target.png)
 
-* Click environment dev
-
-![env dev](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/env_dev.png)
-
+* Add environment dev for example and go all the way down to preview and customization.
 
 * Look for the Exclude Machines or Specific Machines section (usually under "Advanced" or "Targeting").
 * Select only the specific machine you want to target.
 * Include specific deployment targets (yourvm)
 * Octopus will ignore the rest of the environment and only talk to that one VM.
 * Now press the release and deploy to, or press deploy to development.
+
+![the target](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/the_target.png)
+
+
 
 
 
