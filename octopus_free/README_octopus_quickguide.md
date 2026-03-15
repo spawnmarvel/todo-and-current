@@ -291,14 +291,27 @@ to-linux@S1.0.2@3a253a1.tar
 
 sudo tar -xvf to-linux@S1.0.2@3a253a1.tar
 to linux.txt
+sudo rm 'to linux.txt'
+```
 
-cat 'to linux.txt'
+Args, we do not like whitespace in cat, so upload a new packet with no white space, create a new relase and deploy again.
+
+![linux deploy ok 2](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/linux_deploy_ok_2.png)
+
+```bash
+ pwd
+/etc/octopus/vmchaos09/Files
+ to-linux@S1.0.2@3a253a1.tar  to-linux@S1.0.3@0ec7d0c.tar
+
+sudo tar -xvf to-linux@S1.0.3@0ec7d0c.tar
+to-linux.txt
+cat to-linux.txt
 hello from uploaded octopus
 ```
 
-Args, we do not like whitespace in cat, so upload a new packet with no white space and deply again.
 
 ![files](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/files.png)
+
 
 
 https://octopus.com/docs/infrastructure/deployment-targets/tentacle/linux#installing-tentacle
