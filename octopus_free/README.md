@@ -530,14 +530,22 @@ Regardless of where you’re deploying your software, these machines and service
 
 Search for infrastructure, it is a big menu, and click on deployments targets.
 
+Add deployment target.
+
 ![target](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/targets.png)
 
 
 We choose windows listening tentacle now.
 
+* vmhybrid01
+* Windows (Windows Server 2025 Datacenter)
+
 ![listen target](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/listen_target.png)
 
+Next and download tentacle
 
-TOBD
+![tentacle](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/tentacle.png)
 
-https://octopus.com/docs/getting-started/first-deployment/add-deployment-targets
+
+
+
