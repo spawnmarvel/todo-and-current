@@ -702,7 +702,7 @@ Now create a release and all steps are saved including the new one.
 
 When you click Deploy, Octopus allows you to override the default "deploy to everyone" behavior.
 
-* Go to your Project dashboard and click deploy on a release (last one for example).
+* Go to your Project dashboard and click deploy to on a release (last one for example).
 
 ![deploy_to_target](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/deploy_to_target.png)
 
@@ -712,7 +712,7 @@ When you click Deploy, Octopus allows you to override the default "deploy to eve
 * Select only the specific machine you want to target.
 * Include specific deployment targets (yourvm)
 * Octopus will ignore the rest of the environment and only talk to that one VM.
-* Now press the release and deploy to, or press deploy to development.
+* Now press the release and deploy.
 
 ![the target](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/the_target.png)
 
