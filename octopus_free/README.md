@@ -677,30 +677,28 @@ VMhybrid01 verify packet.
 
 
 
-So it is
+## Octopus in a nutshell
 
 1. Project
 2. Packages upload if needed
 3. Process (steps, files, script etc)
 4. Release create
-5. Deploy to envirment and or target
+5. Deploy to environment and or target
 
-Upload zipped beartail
+Upload zipped beartail example
 
-Package name must have a version number and no spaces e.g hello-world.1.0.0.zip
+* Package name must have a version number and no spaces e.g hello-world.1.0.0.zip
 Supported formats: NuGet, zip, tar, tar gzip, tar bzip2, jar, war, ear and rar.
 
 Go to project and process
 
 Add step (upload a packet), select beartail, select a tag i.e windows and save.
 
-
-
 Now in project and process we have the new steps and the tags.
 
 ![process_baretail](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/process_baretail.png)
 
-Now create a release and deploy it to vmhybrid01 with that tag.
+Now create a release and deploy it to vmhybrid01 with that tag only.
 
 
 
