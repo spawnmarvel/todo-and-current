@@ -568,7 +568,10 @@ Tentacle running.
 
 ![tentacle running](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/tentacle_running.png)
 
-Enter information in Octopus Manager.
+Enter information in Octopus Manager to connect.
+
+![connect](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/connect.png)
+
 
 
 
