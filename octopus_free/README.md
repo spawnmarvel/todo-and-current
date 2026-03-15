@@ -677,6 +677,13 @@ VMhybrid01 verify packet.
 
 
 
+So it is
+
+1. Project
+2. Packages upload if needed
+3. Process (steps, files, script etc)
+4. Release create
+5. Deploy to envirment and or target
 
 
 
