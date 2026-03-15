@@ -609,6 +609,8 @@ Add a step to the deployment process to push that package to your deployment tar
 * Select the Package category to filter the types of steps.
 * Locate the Deploy a Package card and click Add Step.
 
+![deploy a packet](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/card.png)
+
 
 
 
