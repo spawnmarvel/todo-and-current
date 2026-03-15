@@ -285,7 +285,7 @@ If a project uses tenants, a release can be deployed to all tenants, a single te
 
 If you’re a large organization with lots of teams working in Octopus, you can use the Spaces feature to provide each of your teams with a space for the projects, environments, and infrastructure they work with, while keeping other teams’ assets separate in their own spaces.
 
-## First Deployment
+## 1.  First Deployment
 
 ### Project
 
@@ -376,7 +376,7 @@ The Task Log will show you in real-time the tasks Octopus is taking to run your 
 
 You successfully completed your first deployment!
 
-### Define and use variables
+## 2. Define and use variables
 
 Add a variable
 
@@ -431,7 +431,7 @@ Now go to Releases and we have a list of two.
 
 Great job! Next, let’s build on your deployment process and add an approval process using manual interventions.
 
-### Approvals with Manual Interventions
+## 3. Approvals with Manual Interventions
 
 The Manual Intervention Required step lets you add approvals or manual checks to your deployment process. When manual intervention occurs, the deployment will pause and wait for approval or rejection from a member of a nominated responsible team.
 
@@ -514,7 +514,7 @@ All details / log for the deployment
 
 Your project is coming together well! Next, let’s add a deployment target.
 
-### Add deployment targets
+## 4. Add deployment targets
 
 With Octopus, you can deploy software to:
 
