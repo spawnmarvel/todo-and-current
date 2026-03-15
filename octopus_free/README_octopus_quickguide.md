@@ -37,7 +37,7 @@ It’s important to understand the difference between these two in your workflow
 
 * The Deployment (The Action): This is the actual execution of that snapshot onto a specific environment.
 
-## Tutorial First Deployment to windows
+## Tutorial First Deployment to windows quickguide
 
 1. Project you have made
 2. Packages upload if needed
@@ -144,7 +144,7 @@ All is here
 
 https://octopus.com/docs/getting-started
 
-## Tutorial First Deployment to linux
+## Tutorial First Deployment to linux quickguide
 
 Add new deployment target.
 
@@ -238,6 +238,26 @@ Service started: vmchaos09
 
 Tentacle instance 'vmchaos09' is now installed
 
+```
+
+The config is as Instances
+
+```bash
+pwd
+/etc/octopus/Tentacle/Instances
+ls
+vmchaos09.config
+cat vmchaos09.config
+
+```
+
+Conf is in the tentacle name folder.
+
+```json
+{
+  "Name": "vmchaos09",
+  "ConfigurationFilePath": "/etc/octopus/vmchaos09/tentacle-vmchaos09.config"
+}
 ```
 
 It is now running as systemd service
@@ -371,7 +391,7 @@ https://octopus.com/docs/infrastructure/deployment-targets/tentacle/linux#instal
 https://octopus.com/docs/infrastructure/deployment-targets/tentacle/linux
 
 
-## Tutorial First Runbook
+## Tutorial First Runbook quickguide
 
 Deployments are just one piece of the deployment puzzle. You also have to manage day-1 and day-2 operations. Octopus Runbooks lets you automate these routine and emergency operations tasks, giving you one platform for DevOps automation.
 
