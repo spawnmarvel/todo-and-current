@@ -576,6 +576,10 @@ Enter information in Octopus Manager to connect, press enter manually.
 
 ![connect1](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/connect1.png)
 
+Remember to add the hostname as a tag also.
+
+![tags](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/tags.png)
+
 Enter URL and the thumprint then click save.
 
 ![connect2](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/connect2.png)
