@@ -539,12 +539,30 @@ We choose windows listening tentacle now.
 
 * vmhybrid01
 * Windows (Windows Server 2025 Datacenter)
+* NSG inbound 10933
 
 ![listen target](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/listen_target.png)
 
 Next and download tentacle
 
 ![tentacle](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/tentacle.png)
+
+Octopus.Tentacle.9.1.3711-net8.0-windows-win-x64.msi
+
+Copy the thumprint also.
+
+Moved files to c:\ApplicationsDC
+
+Installation Instructions
+A Tentacle agent will need to be installed on the target server to communicate with the Octopus Server.
+
+During setup, configure the Tentacle in listening mode, and ensure the Tentacle is configured to trust an Octopus Server with the thumbprint.
+
+![listen windows](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/listen_windows.png)
+
+Enter information in Octopus Manager.
+
+
 
 
 
