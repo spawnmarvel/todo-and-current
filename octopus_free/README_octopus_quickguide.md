@@ -9,7 +9,28 @@ For the next step is Professional $2,080 USD / year
 
 ![free_edition](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/free_edition.png)
 
+Ansible is a powerful, industry-standard alternative to Octopus Deploy, and it is completely free (open-source). In fact, many organizations switch to Ansible specifically to move away from commercial licensing costs.
+
+Can you do the same thing? Yes. But they approach the "automation" problem from two different angles.
+
+Octopus
+
+* Release-based: Focuses on what version is deployed where.
+* Built-in web portal with dashboards, release history, and approvals.
+* Push/Pull: Uses Tentacles or SSH to execute steps
+* Low; very visual and intuitive.
+* Built-in environment/lifecycle management.
+
+Ansible
+
+* State-based: Focuses on how a machine should be configured.
+* Command-line driven (CLI). Needs extra tools for a GUI (like AWX/Tower).
+* Push (Agentless): Uses standard SSH (Linux) or WinRM/OpenSSH (Windows).
+* Medium; requires learning YAML and Ansible Playbooks.
+* Requires you to structure your "Inventory" and "Playbooks" to mimic environments.
+
 ## The Best Practice Workflow
+
 1. The "Manual Proof" (The Sandbox)
 
 Perform the installation once by hand on a clean VM.
