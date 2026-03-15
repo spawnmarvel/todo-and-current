@@ -187,7 +187,7 @@ Creating empty configuration file: /etc/octopus/vmchaos09/tentacle-vmchaos09.con
 Saving instance: vmchaos09
 Setting home directory to: /etc/octopus/vmchaos09
 A new certificate has been generated and installed. Thumbprint:
-3C4D84A9C78FD406C79CA1D7ADB4938E0B9BAD80
+3C4D84xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 These changes require a restart of the Tentacle.
 Removing all trusted Octopus Servers...
 Application directory set to: /home/Octopus/Applications
