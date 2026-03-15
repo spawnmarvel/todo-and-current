@@ -74,6 +74,17 @@ sudo apt autoclean
     - :white_square_button:Do Chaos Engineer bash vmchaos09
     - :white_square_button:Do use Octupus (free) for CD (zabbix, mysql etc)
 
+    ```bash
+    Turn those commands into a Bash or PowerShell script. Replace hardcoded values with variables.
+
+```bash
+# Bad: 
+mysql --user=root --password=Password123
+# Good: 
+mysql --user=#{MySQL.User} --password=#{MySQL.Password}
+```
+    ```
+
 2. MySql maintenace:
     - Do the w3s tutorial in mysql cli
     - Make a quick guide CRUD/DML/DCL and tips together with cmd`s.
