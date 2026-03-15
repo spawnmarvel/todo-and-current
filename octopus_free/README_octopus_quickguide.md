@@ -1,5 +1,7 @@
 # Octopus in a nutshell
 
+![free_edition](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/free_edition.png)
+
 ## The Best Practice Workflow
 1. The "Manual Proof" (The Sandbox)
 
