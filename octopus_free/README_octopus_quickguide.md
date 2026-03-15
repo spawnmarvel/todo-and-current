@@ -79,10 +79,31 @@ Create a new release and deploy it to a target.
 ![var_done](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/var_done.png)
 
 
+```ps1
+PS C:\Octopus\Files> hostname
+vmhybrid01
+
+cd C:\Octopus\Files\
+PS C:\Octopus\Files> dir
+
+
+    Directory: C:\Octopus\Files
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         3/15/2026   4:00 PM         114216 baretail@S1.0.0@5763cfa.zip
+-a----         3/15/2026   4:00 PM         345984 hello-world@S1.0.0@1f78be6.zip
+```
+
+Steps
+
+* Ran a ps1 step on octopus with var
+* Deployed a packet x 2 to vmhybrid01
+
 All is here
 
 https://octopus.com/docs/getting-started
-
 ## Tutorial First Runbook
 
 
