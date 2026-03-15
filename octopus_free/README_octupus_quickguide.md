@@ -61,9 +61,21 @@ c:\Octopus\Files
 
 Use them in code.
 
-Go to the step that was created in a relase and edit it:
+Go to the step that was created in a relase and see it:
 
 ![vars](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/vars.png)
+
+To create new go to Project variables, add a var and save it.
+
+![f key](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/f_key.png)
+
+
+Go to the step that was created in a relase and edit the inline script.
+
+Create a new release and deploy it to a target.
+
+![var_done](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/var_done.png)
+
 
 
 
