@@ -651,7 +651,16 @@ The release will deploy the hello world package to the Hello world tutorial targ
 
 ![release 1](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/relases_1.png)
 
-Now press the release and deploy to, or press deploy to development.
+When you click Deploy, Octopus allows you to override the default "deploy to everyone" behavior.
+
+* Go to your Project and click Deploy.
+* Look for the Exclude Machines or Specific Machines section (usually under "Advanced" or "Targeting").
+* Select only the specific machine you want to target.
+* Include specific deployment targets (yourvm)
+* Octopus will ignore the rest of the environment and only talk to that one VM.
+* Now press the release and deploy to, or press deploy to development.
+
+![include](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/include.png)
 
 ![deploy to](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/deploy_to.png)
 
