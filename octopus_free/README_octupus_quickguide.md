@@ -57,7 +57,14 @@ c:\Octopus\Files
 
 ## Variables
 
-![variables](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/variables2.png)
+![variables](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/variables_2.png)
+
+Use them in code.
+
+Go to the step that was created in a relase and edit it:
+
+![vars](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/vars.png)
+
 
 
 
