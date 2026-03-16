@@ -25,5 +25,3 @@ function Write-Log {
     $logEntry | Out-File -FilePath $logFile -Append
 }
 
-# df -h equivanelt
-Get-Volume
