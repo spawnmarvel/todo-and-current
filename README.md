@@ -108,9 +108,9 @@ mysql --user=#{MySQL.User} --password=#{MySQL.Password}
 4. Az-800 Administering Windows Server Hybrid Core Infrastructure
    - Do Ms learn bit by bit
    - Do The "Cloud-Only" Hybrid Lab (to get some hand on)
-   - Do install ip21 15.0.0 no license on vmhybrid01 (ip21 and sql / training / update values with sql) = 
    - - vmhybrid01
    - - Saved in az-800-admistering-windows-server-hybrid-core-infrastructure
+   - :white_check_mark: Do install ip21 15.0.0 no license on vmhybrid01 (ip21 and sql / training / update values with sql) = 100%
 
 5. Octopus deploy (free)
    - :white_check_mark: Do first deployment windows, project, relase, step, process and vars, push deploy to target = 100%
