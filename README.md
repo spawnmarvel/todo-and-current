@@ -126,11 +126,11 @@ mysql --user=#{MySQL.User} --password=#{MySQL.Password}
     - Do Vm tutorials from docs = 
     - :white_square_button: Do azure automation for save cost/mainteance and check Automatic Module Update
 
+---
 
 Misc / wait / parked
 
---- 
-4. Python maintenance:
+6. (Python maintenance:)
     - :white_square_button: Code a few lines every now and then.
     - Do py-central-monitor, fix the database logic, send always and store in file also, then update database 
     - Below is parked for now:
@@ -138,7 +138,7 @@ Misc / wait / parked
     - Do Make small changes in python frequently, set container always run, parked :anchor:
  
 
-5. Docker maintenance, parked :anchor::
+7. (Docker maintenance, parked :anchor:)
       - Do follow up on prod-2 stuff.
       - :white_check_mark: Do Portainer = 100% success
       - Do MySQL, Grafana (and plugins) = 70 % success, we wait
@@ -147,7 +147,7 @@ Misc / wait / parked
       - Do https = 
       - Do alter zabbix_server.conf = 
 
-3. (Az-305 azure aolutions architect expert)
+8. (Az-305 azure aolutions architect expert)
     - Do ms learn and some practice exams, have fun you will learn
     - - Stored in azure-automation-bicep-and-labs/az-305-solutions-architect-expert
     - Do chill max 1 learn a week and check excel
