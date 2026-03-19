@@ -94,7 +94,28 @@ mysql --user=#{MySQL.User} --password=#{MySQL.Password}
     - :white_square_button: Azure Database for MySQL flexible server
     - :white_square_button: MySQL workbench and cli
 
-3. Az-104 administrator mainteance:
+3. Az-800 Administering Windows Server Hybrid Core Infrastructure
+   - Do Ms learn bit by bit
+   - Do The "Cloud-Only" Hybrid Lab (to get some hand on)
+   - - vmhybrid01
+   - - Saved in az-800-admistering-windows-server-hybrid-core-infrastructure
+   - :white_check_mark: Do install ip21 15.0.0 no license on vmhybrid01 (ip21 and sql / training / update values with sql) = 100%
+
+4. Octopus deploy (free)
+   - :white_check_mark: Do first deployment windows, project, relase, step, process and vars, push deploy to target = 100%
+   - :white_check_mark: Do first deployment linux, project, relase, step, process and vars, push deploy 2 target = 100%
+   - Do tutorial first Runbok = 
+   - Do Mysql deploy =
+   - Do Zabbix deploy
+   - Do zabbbix deploy (all on one vm) = 
+   - - octopus_free
+
+
+
+
+--- 
+
+5. Az-104 administrator mainteance:
     - :white_check_mark: Do Vm updates with azure automation runbook ps1 = 100%
     - :white_check_mark: Do update all Vms with tag Patching: Weekly, Mondays 09:00 = 100%
     - :white_check_mark: Do stop Azure Database for MySQL flexible server with autmation runbook Sundays 23:00 = 100%
@@ -105,25 +126,10 @@ mysql --user=#{MySQL.User} --password=#{MySQL.Password}
     - Do Vm tutorials from docs = 
     - :white_square_button: Do azure automation for save cost/mainteance and check Automatic Module Update
 
-4. Az-800 Administering Windows Server Hybrid Core Infrastructure
-   - Do Ms learn bit by bit
-   - Do The "Cloud-Only" Hybrid Lab (to get some hand on)
-   - - vmhybrid01
-   - - Saved in az-800-admistering-windows-server-hybrid-core-infrastructure
-   - :white_check_mark: Do install ip21 15.0.0 no license on vmhybrid01 (ip21 and sql / training / update values with sql) = 100%
-
-5. Octopus deploy (free)
-   - :white_check_mark: Do first deployment windows, project, relase, step, process and vars, push deploy to target = 100%
-   - :white_check_mark: Do first deployment linux, project, relase, step, process and vars, push deploy 2 target = 100%
-   - Do tutorial first Runbok = 
-   - Do Mysql deploy =
-   - Do Zabbix deploy
-   - Do zabbbix deploy (all on one vm) = 
-   - - octopus_free
---- 
 
 Misc / wait / parked
 
+--- 
 4. Python maintenance:
     - :white_square_button: Code a few lines every now and then.
     - Do py-central-monitor, fix the database logic, send always and store in file also, then update database 
