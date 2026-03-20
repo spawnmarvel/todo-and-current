@@ -96,7 +96,8 @@ mysql --user=#{MySQL.User} --password=#{MySQL.Password}
 
 3. Az-800 Administering Windows Server Hybrid Core Infrastructure
    - Do Ms learn bit by bit
-   - Do The "Cloud-Only" Hybrid Lab (to get some hand on)
+   - Do The "Cloud-Only" Hybrid Lab (to get some hand on) = 100%
+   - Do the MS learn Active Directory Domain Services = 
    - - vmhybrid01
    - - Saved in az-800-admistering-windows-server-hybrid-core-infrastructure
    - :white_check_mark: Do install ip21 15.0.0 no license on vmhybrid01 (ip21 and sql / training / update values with sql) = 100%
