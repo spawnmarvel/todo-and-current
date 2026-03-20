@@ -40,6 +40,14 @@ git push origin main
 
 https://github.com/spawnmarvel/todo-and-current/tree/main/bash_chaos_engineer
 
+## TODO Maintain knowledge priority top 3
+
+Well, this never stops, so lest make a prioroty list of all the topics below.
+
+1. Do the bash tutorial w3s and make a good quick guide = 80%, a bit more here
+2. Do the MS learn Active Directory Domain Services
+3. For fun vmhybrid01 ips21
+
 ## TODO Maintain knowledge
 
 Do use chromebook Debian GNU/Linux 12 (bookworm), do not install any GUI, chromebook is for command line only
@@ -56,7 +64,7 @@ sudo apt autoclean
 ```
 1. :bulb: Linux maintenance:
     
-    - Do the bash tutorial w3s and make a good quick guide = 50%
+    - Do the bash tutorial w3s and make a good quick guide = 80%
     - Do bash rpg game like UIB = 
     - :white_check_mark: Do install offline zabbix agent from *.deb = 100%
     - Do the mirror-server = 50%
@@ -100,7 +108,7 @@ mysql --user=#{MySQL.User} --password=#{MySQL.Password}
    - :bulb: Do the MS learn Active Directory Domain Services = 
    - - vmhybrid01
    - - Saved in az-800-admistering-windows-server-hybrid-core-infrastructure
-   - :white_check_mark: Do install ip21 15.0.0 no license on vmhybrid01 (ip21 and sql / training / update values with sql) = 100%
+   - :white_check_mark: Do install ips21 15 no license on vmhybrid01 (ip21 and sql / training / update values with sql) = 100%
 
 4. Octopus deploy (free)
    - :white_check_mark: Do first deployment windows, project, relase, step, process and vars, push deploy to target = 100%
