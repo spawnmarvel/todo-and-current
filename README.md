@@ -40,13 +40,14 @@ git push origin main
 
 https://github.com/spawnmarvel/todo-and-current/tree/main/bash_chaos_engineer
 
-## TODO Maintain knowledge priority top 3
+## TODO Maintain knowledge priority top 4
 
 Well, this never stops, so lest make a prioroty list of all the topics below.
 
 1. Do the bash tutorial w3s and make a good quick guide = 80%, a bit more here
 2. Do the MS learn Active Directory Domain Services
 3. For fun vmhybrid01 ips21
+4. Octopus Deploy for linux
 
 ### TODO Maintain knowledge
 
