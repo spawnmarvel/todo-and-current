@@ -48,7 +48,7 @@ Well, this never stops, so lest make a prioroty list of all the topics below.
 2. Do the MS learn Active Directory Domain Services
 3. For fun vmhybrid01 ips21
 
-## TODO Maintain knowledge
+### TODO Maintain knowledge
 
 Do use chromebook Debian GNU/Linux 12 (bookworm), do not install any GUI, chromebook is for command line only
 
