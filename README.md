@@ -50,6 +50,7 @@ Well, this never stops, so lets make a prioroty list of all the topics below.
 3. For fun vmhybrid01 ips21 / sqlplus / tools
 4. Octopus Deploy for linux (is 2 in one CI/CD and Bash)
    - RunBooks tutorial done ?
+   - Two projects (win/lin) and 100's of runbooks
    - Day 2 operations (ufw, disk, apt, logs)
    - Deploy apps (mysql, zabbix, python code and set up cron jobs)
 
