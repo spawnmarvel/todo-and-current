@@ -747,6 +747,10 @@ Runbooks automate routine maintenance and emergency operations tasks, like:
 * Database management
 * Website failover and restoration
 
+
+No, a Runbook does not count as a project.
+​In Octopus Deploy, Runbooks live inside a Project. You can have hundreds of Runbooks within a single Project, and it will still only count as 1 toward your 10-project limit.
+
 https://octopus.com/docs/runbooks
 
 
