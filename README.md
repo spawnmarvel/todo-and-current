@@ -48,7 +48,7 @@ Well, this never stops, so lest make a prioroty list of all the topics below.
    - This includes the RPG game
 2. Do the MS learn Active Directory Domain Services
 3. For fun vmhybrid01 ips21 / sqlplus / tools
-4. Octopus Deploy for linux
+4. Octopus Deploy for linux (is 2 in one CD and Bash)
 
 ### TODO Maintain knowledge
 
