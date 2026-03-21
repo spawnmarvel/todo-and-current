@@ -40,7 +40,7 @@ git push origin main
 
 https://github.com/spawnmarvel/todo-and-current/tree/main/bash_chaos_engineer
 
-## TODO Maintain knowledge priority top 4
+## TODO Maintain knowledge priority top 4 :seedling:
 
 Well, this never stops, so lest make a prioroty list of all the topics below.
 
