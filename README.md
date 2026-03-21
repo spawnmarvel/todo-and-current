@@ -45,6 +45,7 @@ https://github.com/spawnmarvel/todo-and-current/tree/main/bash_chaos_engineer
 Well, this never stops, so lest make a prioroty list of all the topics below.
 
 1. Do the bash tutorial w3s and make a good quick guide = 80%, a bit more here
+- This includes the RPG game
 2. Do the MS learn Active Directory Domain Services
 3. For fun vmhybrid01 ips21 / sqlplus / tools
 4. Octopus Deploy for linux
