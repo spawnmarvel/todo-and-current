@@ -890,6 +890,13 @@ uname -a
 df -lh
 ```
 
+Add a new step also, run a script file
+
+```bash
+echo "Is UFW enabled?"
+ufw status
+```
+
 ![runbook remote](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/runbook_remote.png)
 
 1. Click SAVE
@@ -901,7 +908,8 @@ df -lh
 
 After run.
 
-![runbook success](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/runbook_success.png)
+![runbook success](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/runbook_success3.png)
+
 
 
 
