@@ -50,7 +50,7 @@ https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-800-
 
 ## TODO Maintain knowledge priority top 4 :seedling:
 
-Well, this never stops, so lets make a prioroty list of all the topics below.
+Well, this never stops, so lets make a priority list of all the topics below.
 
 1. Do the bash tutorial w3s and make a good quick guide = 80%, a bit more here
    - This includes the RPG game
