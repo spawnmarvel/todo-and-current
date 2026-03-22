@@ -7,7 +7,7 @@ For example inside a data center or a lab or even a production environment.
 
 For the next step is Professional $2,080 USD / year
 
-![free_edition](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/free_edition.png)
+![free_edition](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/free_edition2.png)
 
 Ansible is a powerful, industry-standard alternative to Octopus Deploy, and it is completely free (open-source). In fact, many organizations switch to Ansible specifically to move away from commercial licensing costs.
 
