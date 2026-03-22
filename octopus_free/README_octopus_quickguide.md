@@ -449,6 +449,19 @@ All is here
 https://octopus.com/docs/getting-started/first-runbook-run
 
 
+### How to runbook linux quickguide
+
+1. Define a project
+
+![quick_project](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/quick_project.png)
+
+2. In the project go to Runbooks, Add Runbook
+
+![quick_add](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/quick_add.png)
+
+3. (You can also go to Variables and define what you need.)
+
+
 
 
 
