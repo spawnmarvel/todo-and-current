@@ -59,6 +59,11 @@ Either a vm or multiple vm's or a environment.
 
 Sometimes we do not have internet access, lets Make a bundle of what we need for an offline vm.
 
+The Octopus Server can communicate with Linux targets in two ways:
+
+* Using the Linux Tentacle(Recommended)
+* Over SSH using an SSH target.
+
 Summary Checklist for your Offline Setup:
 1. ​Transfer: Move the .tar.gz file.
 2. ​Extract: Use tar -xvf ... -C /opt/octopus.
