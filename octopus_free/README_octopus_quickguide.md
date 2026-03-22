@@ -461,6 +461,39 @@ https://octopus.com/docs/getting-started/first-runbook-run
 
 3. (You can also go to Variables and define what you need.)
 
+4. From the runbook go to process and add a step
+
+![quick_step](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/quick_step.png)
+
+5. For example run a script or upload a packet
+- Step name
+- Inline code
+- Choose bash and add code
+
+```bash
+greeting=$(get_octopusvariable "Helloworld.Greeting")
+echo $greeting
+# get hostname
+hostname
+# get arc
+uname -a
+# get disk and usage 
+df -lh
+```
+- Execution Location, run on each deployment target
+- Target tags, a vm name *vmchaos09* or the full environment *linux*
+
+![quick_target](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/quick_target.png)
+
+
+6. Run it, you need to default select and environment (it does not matter) and verify result
+
+![quick_result](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/quick_result.png)
+
+7. Publish it
+
+
+Publishing a runbook will snapshot the runbook process and the associated assets (packages, scripts, variables) as they existed at that moment in time. After publishing a runbook, any future edits made will be considered a “draft.” For a trigger to pick up those new changes, a new publish event will need to occur.
 
 
 
