@@ -58,9 +58,13 @@ Either a vm or multiple vm's or a environment.
 
 ## Install and Operations Runbooks
 
-### 4. Upload a packet to linux
+### 5. Run diagnostic Runbook 
 
-### 5. Use variables
+Run disk, cpu, ram, port exhaust status and check last 100 lines if journalctl for errors 
+
+### 6. Upload a packet to linux
+
+### 7. Use variables
 
 Turn those commands into a Bash or PowerShell script. Replace hardcoded values with variables for automation.
 
@@ -71,16 +75,16 @@ mysql --user=root --password=Password123
 mysql --user=#{MySQL.User} --password=#{MySQL.Password}
 ```
 
-### 6 Install MySql Runbook
+### 8 Install MySql Runbook
 
 Here we use apt-get and variables
 
 
-### 7 Upgrade MySql with a packet Runbook
+### 8 Upgrade MySql with a packet Runbook
 
 Here we use apt-get, variables and we have a downloaded MySql 8.4 packet
 
-### 8 Make SSL cert Runbook
+### 9 Make SSL cert Runbook
 
 Make a cert
 
@@ -89,4 +93,4 @@ Renew a cert and mv files
 ### Main day 2 operations Runbook
 
 
-### Zabbix stack (MySql is in a different runbook)
+### 10 Zabbix stack (MySql is in a different runbook)
