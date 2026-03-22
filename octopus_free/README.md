@@ -835,9 +835,18 @@ Steps in the runbook process can reference the variables.
 4. Select the script step.
 5. Change the script in the script step based on your language of choice:
 
-
+```bash
+greeting=$(get_octopusvariable "Helloworld.Greeting")
+echo $greeting
+```
 
 ![runbook vars](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/runbook_vars.png)
 
-greeting=$(get_octopusvariable "Helloworld.Greeting")
-echo $greeting
+
+6. Click the SAVE button.
+7. Click the RUN… button, select and environment, and run the Runbook.
+
+![runbook vars run](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/runbook_vars_run.png)
+
+
+
