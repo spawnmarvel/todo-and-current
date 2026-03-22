@@ -848,4 +848,10 @@ Write-Host $OctopusParameters["Helloworld.Greeting"]
 ![runbook vars run](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/runbook_vars_run.png)
 
 
+So when we run it now, it get the right variable for each mapping.
+
+![runbook vars ok](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/runbook_var_ok.png)
+
+
+
 
