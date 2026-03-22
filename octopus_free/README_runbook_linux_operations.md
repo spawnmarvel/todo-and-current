@@ -55,7 +55,7 @@ Either a vm or multiple vm's or a environment.
 
 ![targets_](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/targets_.png)
 
-### Install linux tentacle offline
+### 4. Install linux tentacle offline
 
 Sometimes we do not have internet access, lets Make a bundle of what we need for an offline vm.
 ## Install and Operations Runbooks
