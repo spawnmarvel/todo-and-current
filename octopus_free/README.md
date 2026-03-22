@@ -768,8 +768,7 @@ Typical environments are Dev, Test, and Production, and they represent the stage
 
 Lets call this Linux Day2 Operations.
 
-![linux day 2 operations](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/linux_day2_operations/done.png)
-
+![linux day project and operations](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/linux_day2_project.png)
 
 https://octopus.com/docs/getting-started/first-runbook-run
 
