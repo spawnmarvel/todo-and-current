@@ -852,6 +852,16 @@ So when we run it now, it get the right variable for each mapping.
 
 ![runbook vars ok](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/runbook_var_ok.png)
 
+### Add runbook deployment targets
+
+With Octopus Deploy, you can deploy software to Windows servers, Linux servers, Microsoft Azure, AWS, Kubernetes clusters, cloud regions, or an offline package drop.
+
+We already have a windows and a linux target.
+
+![target_linux2](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/target_linux2.png)
+
+
+### Defining the runbook process for targets
 
 
 
