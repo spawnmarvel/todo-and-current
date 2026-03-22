@@ -2,7 +2,7 @@
 
 ## Tips
 
-### apt or apt-get
+### apt or apt-get for install
 
 ```bash
 sudo apt-get update
