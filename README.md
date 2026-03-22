@@ -40,7 +40,7 @@ git push origin main
 
 https://github.com/spawnmarvel/todo-and-current/tree/main/bash_chaos_engineer
 
-## Nb: Outbund from vm's ? vmhybrid01 is
+## Nb: Outbund from vm's ? vmhybrid01 is DC is responsible for (it must be running)
 
 * Step C: The Azure "Bridge" (In the Portal) use domain controller vm as DNS server
 * By doing this at the VNet level, every other VM you create in the future will automatically use vmhybrid01 as its DNS server via DHCP. This makes "Domain Joining" other VMs effortless.
