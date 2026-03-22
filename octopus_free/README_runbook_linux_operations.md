@@ -59,6 +59,12 @@ Either a vm or multiple vm's or a environment.
 
 Sometimes we do not have internet access, lets Make a bundle of what we need for an offline vm.
 
+Summary Checklist for your Offline Setup:
+1. ​Transfer: Move the .tar.gz file.
+2. ​Extract: Use tar -xvf ... -C /opt/octopus.
+3. ​Configure: Run the configure-tentacle.sh script.
+4. ​Trust: Ensure you have the Octopus Server thumbprint ready to type in.
+
 https://octopus.com/docs/infrastructure/deployment-targets/tentacle/linux
 
 ## Install and Operations Runbooks
