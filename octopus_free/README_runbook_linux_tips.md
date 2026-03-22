@@ -51,3 +51,8 @@ Before you run a runbook always go to
 
 ![process_always_check_target](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/process_always_check_target.png)
 
+Either a vm or multiple vm's or a environment.
+
+![targets_](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/targets_.png)
+
+
