@@ -773,6 +773,23 @@ Lets call this Linux Day2 Operations.
 https://octopus.com/docs/getting-started/first-runbook-run
 
 
+### Create a runbook
 
+A single Octopus Deploy Project can have multiple Runbooks. Each Runbook has a unique runbook process, retention policy, and allowable environments to run in. For example, a project might have a runbook to spin up additional infrastructure, or restart the server, or perform a daily backup.
+
+Ref https://octopus.com/docs/getting-started/first-runbook-run/create-a-runbook
+
+
+From the Linux Day2 Operations project you created on the previous page.
+
+1. Click OPERATIONS on the left menu to expand it (if it is not already expanded).
+2. Click GO TO RUNBOOKS.
+3. Click ADD RUNBOOK.
+
+Give the Runbook a name, for example,  and click SAVE.
+
+![runbbok define](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/runbook_define.png)
+
+### Defining the runbook process for workers
 
 
