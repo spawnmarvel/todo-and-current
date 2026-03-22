@@ -56,7 +56,7 @@ Either a vm or multiple vm's or a environment.
 ![targets_](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/targets_.png)
 
 
-## Install and Operations Runnbooks
+## Install and Operations Runbooks
 
 ### 4. Upload a packet to linux
 
