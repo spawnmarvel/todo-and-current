@@ -794,5 +794,13 @@ Give the Runbook a name, for example,  and click SAVE.
 
 ![runbbok steps](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/runbook_steps.png)
 
+1. Stpe name
+2. Inline script
+3. Inline source code
+4. Execution location, (if you are on self-hosted Octopus, select Run once on the Octopus Server)
+5. Save
+
+![runbbok echo](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/runbook_echo.png)
+
 
 
