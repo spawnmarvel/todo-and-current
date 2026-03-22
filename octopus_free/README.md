@@ -792,4 +792,7 @@ Give the Runbook a name, for example,  and click SAVE.
 
 ### Defining the runbook process for workers
 
+![runbbok steps](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/runbook_steps.png)
+
+
 
