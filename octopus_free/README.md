@@ -753,6 +753,23 @@ No, a Runbook does not count as a project.
 
 https://octopus.com/docs/runbooks
 
+### First runbook
+
+Prerequistes only.
+
+### Configurte environments
+
+We have already with projects.
+
+Typical environments are Dev, Test, and Production, and they represent the stages of your deployment pipeline.
+
+
+### Create a Project
+
+Lets call this Linux Day2 Operations.
+
+![linux day 2 operations](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/linux_day2_operations/done.png)
+
 
 https://octopus.com/docs/getting-started/first-runbook-run
 
