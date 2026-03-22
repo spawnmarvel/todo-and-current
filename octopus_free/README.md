@@ -861,7 +861,34 @@ We already have a windows and a linux target.
 ![target_linux2](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/target_linux2.png)
 
 
-### Defining the runbook process for targets
+### Defining the runbook process for targets (the essence)
+
+
+
+A runbook process can run steps, which include scripts, on the Octopus Server, a worker, or a deployment target. Up until this point in the tutorial the runbook process for Hello Runbook only ran on the Octopus Server. With the deployment target(s) added on the previous page, we can now update the runbook process to run on deployment targets.
+
+1. Click Runbooks on the left menu.
+2. Click Echo test in the list of runbooks.
+3. Click Process in the runbook menu.
+4. Click ADD STEP.
+5. Select the Script tile to filter the types of steps.
+6. Scroll down and click ADD on the Run a Script tile.
+7. Change Name of the script to be “Run a script on deployment targets” for the script
+8. Leave the Enabled check-box ticked.
+9. In the Execution Location section change the option to be Run on each deployment target.
+10. In the Target Tags section change the tag to be vmchaos09
+
+
+```bash
+greeting=$(get_octopusvariable "Helloworld.Greeting")
+echo $greeting
+# get hostname
+hostname
+# get arc
+uname -a
+```
+
+![runbook remote](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/runbook_remote.png)
 
 
 
