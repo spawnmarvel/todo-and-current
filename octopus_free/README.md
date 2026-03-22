@@ -800,7 +800,18 @@ Give the Runbook a name, for example,  and click SAVE.
 4. Execution location, (if you are on self-hosted Octopus, select Run once on the Octopus Server)
 5. Save
 
-![runbbok echo](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/runbook_echo.png)
+![runbook echo](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/runbook_echo.png)
+
+
+### Running a Runbook
+
+
+Unlike a deployment with a pre-defined lifecycle, Runbooks can run on any environment in any order. Runbooks are designed to automate routine maintenance tasks. Maintenance tasks might need to run on Test and Production but not on Development environments.
+
+Press run and...
+
+![runbook one](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/runbook_one.png)
+
 
 
 
