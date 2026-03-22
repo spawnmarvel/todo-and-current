@@ -40,6 +40,14 @@ git push origin main
 
 https://github.com/spawnmarvel/todo-and-current/tree/main/bash_chaos_engineer
 
+## Nb: Outbund from vm's ? vmhybrid01 is
+
+* Step C: The Azure "Bridge" (In the Portal) use domain controller vm as DNS server
+* By doing this at the VNet level, every other VM you create in the future will automatically use vmhybrid01 as its DNS server via DHCP. This makes "Domain Joining" other VMs effortless.
+* The "Forwarder" Requirement: Now that your VNet is pointing to your DC for DNS, your DC is responsible for resolving the internet.
+
+https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-800-admistering-windows-server-hybrid-core-infrastructure/README_cloud-only-hybrid-Lab_2_install-ad.md
+
 ## TODO Maintain knowledge priority top 4 :seedling:
 
 Well, this never stops, so lets make a prioroty list of all the topics below.
