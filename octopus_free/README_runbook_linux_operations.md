@@ -58,6 +58,9 @@ Either a vm or multiple vm's or a environment.
 ### 4. Install linux tentacle offline
 
 Sometimes we do not have internet access, lets Make a bundle of what we need for an offline vm.
+
+https://octopus.com/docs/infrastructure/deployment-targets/tentacle/linux
+
 ## Install and Operations Runbooks
 
 ### 5. Run diagnostic Runbook get
