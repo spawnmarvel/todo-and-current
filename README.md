@@ -49,9 +49,9 @@ Well, this never stops, so lets make a prioroty list of all the topics below.
 2. Do the MS learn Active Directory Domain Services
 3. For fun vmhybrid01 ips21 / sqlplus / tools
 4. Octopus Deploy for linux (is 2 in one CI/CD and Bash)
-   - RunBooks tutorial done ?
+   - RunBooks tutorial done = 100%, Linux Day2 Operations
    - Two projects (win/lin) and 100's of runbooks
-   - Day 2 operations (ufw, disk, apt, logs)
+   - Day 2 operations (ufw, disk, apt, logs, ssl cert)
    - Deploy apps (mysql, zabbix, python code and set up cron jobs)
 
 ### TODO Maintain knowledge
@@ -119,7 +119,8 @@ mysql --user=#{MySQL.User} --password=#{MySQL.Password}
 4. Octopus deploy (free)
    - :white_check_mark: Do first deployment windows, project, relase, step, process and vars, push deploy to target = 100%
    - :white_check_mark: Do first deployment linux, project, relase, step, process and vars, push deploy 2 target = 100%
-   - Do tutorial first Runbok = 
+   - :white_check_mark: Do tutorial first Runbok = 100%
+   - Do project Linux Day2 Operations = 60%
    - Do Mysql deploy =
    - Do Zabbix deploy
    - Do zabbbix deploy (all on one vm) = 
