@@ -149,6 +149,7 @@ mysql --user=#{MySQL.User} --password=#{MySQL.Password}
     - - Saved in az-automation-runbook-and-choices
     - Do Vm tutorials from docs = 
     - :white_square_button: Do azure automation for save cost/mainteance and check Automatic Module Update
+    - :white_square_button: Do add start/stop vmhybrid01 is DC is responsible for inet (it must be running)
 
 ---
 
