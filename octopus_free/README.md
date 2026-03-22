@@ -886,9 +886,15 @@ echo $greeting
 hostname
 # get arc
 uname -a
+# get disk and usage 
+df -lh
 ```
 
 ![runbook remote](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/runbook_remote.png)
 
+1. Click SAVE
+2. Click RUN… and select an environment to run on.
+3. It seems that we have to click publish and only then will the latest change run.
 
+![runbook publish](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/runbook_publish.png)
 
