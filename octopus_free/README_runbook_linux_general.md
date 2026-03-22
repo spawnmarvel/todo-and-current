@@ -41,3 +41,13 @@ The "Rules of the Road" for 2026
 In draft mode you can edit, save and it picks up changes at once.
 
 Publishing a runbook will snapshot the runbook process and the associated assets (packages, scripts, variables) as they existed at that moment in time. After publishing a runbook, any future edits made will be considered a “draft.” For a trigger to pick up those new changes, a new publish event will need to occur.
+
+### Before you run a runbook!!
+
+Before you run a runbook always go to
+
+1. Process
+2. Target tags, always check it
+
+![process_always_check_target](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/process_always_check_target.png)
+
