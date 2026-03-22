@@ -58,7 +58,7 @@ Well, this never stops, so lets make a prioroty list of all the topics below.
 3. For fun vmhybrid01 ips21 / sqlplus / tools
 4. Octopus Deploy for linux (is 2 in one CI/CD and Bash)
    - Two projects (win/lin) and 100's of runbooks, we do linux project for now
-   - Day 2 operations (ufw, disk, apt, logs, ssl cert)
+   - Do all linux apps and day 2 operations in:
    - Do follow the guide in
    - - https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/README_runbook_linux_tips.md
 
@@ -129,7 +129,7 @@ mysql --user=#{MySQL.User} --password=#{MySQL.Password}
    - :white_check_mark: Do first deployment linux, project, relase, step, process and vars, push deploy 2 target = 100%
    - :white_check_mark: Do tutorial first Runbok = 100%
    - Do project Linux Day2 Operations = 60%
-   - Do all linux apps and day 2 operations is:
+   - Do all linux apps and day 2 operations in:
    - - https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/README_runbook_linux_tips.md
 
 

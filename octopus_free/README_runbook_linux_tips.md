@@ -69,11 +69,22 @@ mysql --user=root --password=Password123
 mysql --user=#{MySQL.User} --password=#{MySQL.Password}
 ```
 
-### 6 Install MySql
+### 6 Install MySql Runbook
 
 Here we use apt-get and variables
 
 
-### 7 Upgrade MySql with a packet
+### 7 Upgrade MySql with a packet Runbook
 
 Here we use apt-get, variables and we have a downloaded MySql 8.4 packet
+
+### 8 Make SSL cert Runbook
+
+Make a cert
+
+Renew a cert and mv files
+
+### Main day 2 operations Runbook
+
+
+### Zabbix stack (MySql is in a different runbook)
