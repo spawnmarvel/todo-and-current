@@ -5,10 +5,11 @@
 ### apt or apt-get for install
 
 ```bash
+# The standard "Automation" way
 sudo apt-get update
 sudo apt-get install -y snmp
 
-# vs
+# # The "I'm a Human" way
 sudo apt update
 sudo apt install -y snmp
 
@@ -19,7 +20,21 @@ sudo apt install -y snmp
 # recommended command is apt-get or apt-cache instead, 
 # because they have a stable interface meant for automation.  
 
+# The standard "Automation" way
+sudo apt-get remove -y snmp
+
+# The "I'm a Human" way
+sudo apt remove -y snmp
+
 ```
+
+The "Rules of the Road" for 2026
+
+* apt-get is for Scripts/Octopus. It is the "stable" version. Its output doesn't change much between Linux versions, which prevents scripts from breaking unexpectedly.
+
+* apt is for Humans. It has pretty progress bars, colors, and friendly summaries. It's what you type when you are sitting at the keyboard.
+
+
 
 ### In draft vs publish
 
