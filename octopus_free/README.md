@@ -813,5 +813,31 @@ Press run and...
 ![runbook one](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/runbook_one.png)
 
 
+### Runbook specific variables
+
+1. From the Linux Day2 Operations project you created earlier, click Variables in the left menu.
+2. Enter Helloworld.Greeting into the variable name column on the first row of the table.
+3. Add Hello, Development Runbook into the value column.
+4. Click the Scope column and select the Development environment and Hello runbook process.
+5. Click ADD ANOTHER VALUE button.
+6. Add Hello, Test Runbook and scope it to the Test environment and Hello runbook process.
+7. Click ADD ANOTHER VALUE button.
+8. Add Hello, Production Runbook and scope it to the Production environment and Hello runbook process.
+9. Click the SAVE button.
 
 
+
+Steps in the runbook process can reference the variables.
+
+1. Click Runbooks on the left menu.
+2. Click Hello Runbook in the list of runbooks.
+3. Click Process in the runbook menu.
+4. Select the script step.
+5. Change the script in the script step based on your language of choice:
+
+
+
+![runbook vars](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/runbook_vars.png)
+
+greeting=$(get_octopusvariable "Helloworld.Greeting")
+echo $greeting
