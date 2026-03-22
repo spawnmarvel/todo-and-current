@@ -56,3 +56,24 @@ Either a vm or multiple vm's or a environment.
 ![targets_](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/targets_.png)
 
 
+### 4. Upload a packet to linux
+
+### 5. Use variables
+
+Turn those commands into a Bash or PowerShell script. Replace hardcoded values with variables for automation.
+
+```bash
+# Bad: 
+mysql --user=root --password=Password123
+# Good: 
+mysql --user=#{MySQL.User} --password=#{MySQL.Password}
+```
+
+### 6 Install MySql
+
+Here we use apt-get and variables
+
+
+### 7 Upgrade MySql with a packet
+
+Here we use apt-get, variables and we have a downloaded MySql 8.4 packet
