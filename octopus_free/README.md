@@ -895,6 +895,14 @@ df -lh
 1. Click SAVE
 2. Click RUN… and select an environment to run on.
 3. It seems that we have to click publish and only then will the latest change run.
+4. The run
 
 ![runbook publish](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/runbook_publish.png)
+
+After run.
+
+![runbook success](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/runbook_success.png)
+
+
+
 
