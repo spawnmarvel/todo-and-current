@@ -58,7 +58,7 @@ Either a vm or multiple vm's or a environment.
 
 ## Install and Operations Runbooks
 
-### 5. Run diagnostic Runbook 
+### 5. Run diagnostic Runbook get
 
 Run disk, cpu, ram, port exhaust status and check last 100 lines if journalctl for errors 
 
@@ -89,8 +89,6 @@ Here we use apt-get, variables and we have a downloaded MySql 8.4 packet
 Make a cert
 
 Renew a cert and mv files
-
-### Main day 2 operations Runbook
 
 
 ### 10 Zabbix stack (MySql is in a different runbook)
