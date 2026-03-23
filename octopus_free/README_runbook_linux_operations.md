@@ -57,13 +57,44 @@ Either a vm or multiple vm's or a environment.
 
 ### 4. Install linux tentacle offline
 
+#### Network gateway and port proxy for vm with no public ip
+
+Since your Windows Server (vmhybrid01) has a public IP and sits in the same network as your private Linux box (docker03getmirrortest), you can use it as a ***Network Gateway***.
+
+NSG for offline vm docker03getmirrortest and it has no public IP.
+
+* Just private, 172.64.0.5
+
+![deny_internet](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/deny_internet.png)
+
+1. The "Signpost" Command (Windows)
+On your Windows Server 2025, open PowerShell as Administrator and run this command:
+
+```ps1
+# Add the new one on Port 10934
+# Run this on your Windows Server to create a dedicated lane for the Linux traffic:
+netsh interface portproxy add v4tov4 listenport=10934 listenaddress=0.0.0.0 connectport=10933 connectaddress=172.64.0.5
+```
+* listenport=10934: The port Octopus will call, we up one port since we already have at tentacle for vmhybrid01
+* listenaddress=0.0.0.0: Tells Windows to listen on all its IPs (including the public one).
+* connectaddress: This is the internal/private IP of your Linux machine.
+
+2. Open the Windows Firewall
+
+```ps1
+New-NetFirewallRule -DisplayName "Octopus Linux Forwarding" -Direction Inbound -LocalPort 10934 -Protocol TCP -Action Allow
+```
+
+Add NSG also for vmhybrid01 for inbound 10934
+
+#### Install linux tentacle offline
+
 Sometimes we do not have internet access, lets Make a bundle of what we need for an offline vm.
 
 The Octopus Server can communicate with Linux targets in two ways:
 
 * Using the Linux Tentacle(Recommended)
 * Over SSH using an SSH target.
-
 
 Get architecture for ubuntu vm
 
@@ -77,8 +108,6 @@ amd64
 ```
 * x86_64: This is standard 64-bit Intel/AMD (Download the linux-x64 version).
 * aarch64 or arm64: This is ARM (like a Raspberry Pi or Graviton instance).
-
-
 
 Download tentacle
 
@@ -103,9 +132,8 @@ wget https://download.octopusdeploy.com/linux-tentacle/tentacle_9.1.3608_amd64.d
 ls
 # tentacle_9.1.3608_amd64.deb
 ```
-3. Transfer the packet to the offline vm docker03getmirrortest (NSG below).
+3. Transfer the packet to the offline vm docker03getmirrortest
 
-![deny_internet](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/deny_internet.png)
 
 ```bash
 scp tentacle_9.1.3608_amd64.deb imsdal@172.64.0.5:/tmp/
@@ -113,7 +141,7 @@ scp tentacle_9.1.3608_amd64.deb imsdal@172.64.0.5:/tmp/
 imsdal@172.64.0.5's password:
 # tentacle_9.1.3608_amd64.deb                          100%   40MB  56.3MB/s   00:00
 ```
-4. No login to offline server
+4. Now login to offline server
 
 ```bash
 ssh imsdal@172.64.0.5
@@ -121,15 +149,61 @@ cd /tmp/
 ls
 # [...]
 tentacle_9.1.3608_amd64.deb
+# cp to home
+cp /tmp/tentacle_9.1.3608_amd64.deb tentacle_9.1.3608_amd64.deb
 ```
 
-Summary Checklist for your Offline Setup:
-1. ​Transfer: Move the .deb file.
-2. ​Extract: Use tar -xvf ... -C /opt/octopus.
-3. ​Configure: Run the configure-tentacle.sh script.
-4. ​Trust: Ensure you have the Octopus Server thumbprint ready to type in.
+5. Run this to unpack the Tentacle software. Since you're using dpkg, it won't try to call home to the internet.
+
+```bash
+sudo dpkg -i /tmp/tentacle_9.1.3608_amd64.deb
+
+```
+
+6. This script is the "Wizard" that sets up the instance. It will ask you for your Octopus Server details.
+
+```bash
+# To set up a Tentacle instance, run the following script:
+/opt/octopus/tentacle/configure-tentacle.sh
+```
+
+log
+
+```log
+Press enter to continue...
+Creating empty configuration file: /etc/octopus/docker03getmirrortest/tentacle-docker03getmirrortest.config
+Saving instance: docker03getmirrortest
+Setting home directory to: /etc/octopus/docker03getmirrortest
+A new certificate has been generated and installed. Thumbprint:
+1ABXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+These changes require a restart of the Tentacle.
+Removing all trusted Octopus Servers...
+Application directory set to: /home/Octopus/Applications
+Services listen port: 10933
+Tentacle will listen on a TCP port
+These changes require a restart of the Tentacle.
+Adding 1 trusted Octopus Servers
+These changes require a restart of the Tentacle.
+Service installed: docker03getmirrortest
+Service started: docker03getmirrortest
+```
+
+Check it
+```bash
+sudo service docker03getmirrortest status
+```
+
+In the octopus mananger portal we used, enter manual:
+
+* Name, docker03getmirrortest
+* Environment, development, tag docker03getmirrortest
+* Tentacle URL https://vmhybrid01-public-ip:10934/
+* Thumbrint
 
 https://octopus.com/docs/infrastructure/deployment-targets/tentacle/linux
+
+![hybrid_connection](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/hybrid_connectio.png)
+
 
 ## Install and Operations Runbooks
 
