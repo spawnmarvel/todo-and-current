@@ -103,7 +103,7 @@ wget https://download.octopusdeploy.com/linux-tentacle/tentacle_9.1.3608_amd64.d
 ls
 # tentacle_9.1.3608_amd64.deb
 ```
-3. Transfer the packet to the offline vm
+3. Transfer the packet to the offline vm docker03getmirrortest (NSG below).
 
 ![deny_internet](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/deny_internet.png)
 
