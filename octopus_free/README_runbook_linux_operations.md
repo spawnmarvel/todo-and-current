@@ -202,7 +202,7 @@ In the octopus mananger portal we used, enter manual:
 
 https://octopus.com/docs/infrastructure/deployment-targets/tentacle/linux
 
-![hybrid_connection](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/hybrid_connectio.png)
+![hybrid_connection](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/hybrid_connection.png)
 
 
 ## Install and Operations Runbooks
