@@ -64,8 +64,65 @@ The Octopus Server can communicate with Linux targets in two ways:
 * Using the Linux Tentacle(Recommended)
 * Over SSH using an SSH target.
 
+
+Get architecture for ubuntu vm
+
+```bash
+uname -a
+Linux vmzabbix02 6.17.0-1008-azure #8~24.04.1-Ubuntu SMP Mon Jan 26 18:35:40 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+
+dpkg --print-architecture
+amd64
+
+```
+* x86_64: This is standard 64-bit Intel/AMD (Download the linux-x64 version).
+* aarch64 or arm64: This is ARM (like a Raspberry Pi or Graviton instance).
+
+
+
+Download tentacle
+
+* tentacle_9.1.3608_amd64.deb
+
+Using the .deb file is better than the .tar.gz because it automatically registers the service with systemd and handles the folder permissions for you.
+
+1. Login in to a server that has internet access.
+2. Download the packet
+
+```bash
+hostname
+vmzabbix02
+
+```
+
+Use the Archive page, just change the version and file
+```bash
+
+wget https://download.octopusdeploy.com/linux-tentacle/tentacle_9.1.3608_amd64.deb -O tentacle_9.1.3608_amd64.deb
+
+ls
+# tentacle_9.1.3608_amd64.deb
+```
+3. Transfer the packet
+
+```bash
+scp tentacle_9.1.3608_amd64.deb imsdal@172.64.0.5:/tmp/
+
+imsdal@172.64.0.5's password:
+# tentacle_9.1.3608_amd64.deb                          100%   40MB  56.3MB/s   00:00
+```
+4. No login to offline server
+
+```bash
+ssh imsdal@172.64.0.5
+cd /tmp/
+ls
+# [...]
+tentacle_9.1.3608_amd64.deb
+```
+
 Summary Checklist for your Offline Setup:
-1. ​Transfer: Move the .tar.gz file.
+1. ​Transfer: Move the .deb file.
 2. ​Extract: Use tar -xvf ... -C /opt/octopus.
 3. ​Configure: Run the configure-tentacle.sh script.
 4. ​Trust: Ensure you have the Octopus Server thumbprint ready to type in.
