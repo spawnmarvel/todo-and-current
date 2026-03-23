@@ -207,9 +207,16 @@ https://octopus.com/docs/infrastructure/deployment-targets/tentacle/linux
 
 ## Install and Operations Runbooks
 
-### 5. Run diagnostic Runbook get
+So now we have 2 linux vm's and one windows vm.
 
-Run disk, cpu, ram, port exhaust status and check last 100 lines if journalctl for errors 
+![3_targets](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/3_targets.png)
+
+
+
+### 5. Run diagnostic Runbook get: Linux Get Disk Usage and more
+
+Run disk, cpu, ram, port exhaust status and check last 100 lines if journalctl for errors.
+
 
 ### 6. Upload a packet to linux
 
