@@ -103,7 +103,9 @@ wget https://download.octopusdeploy.com/linux-tentacle/tentacle_9.1.3608_amd64.d
 ls
 # tentacle_9.1.3608_amd64.deb
 ```
-3. Transfer the packet
+3. Transfer the packet to the offline vm
+
+![deny_internet](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/deny_internet.png)
 
 ```bash
 scp tentacle_9.1.3608_amd64.deb imsdal@172.64.0.5:/tmp/
