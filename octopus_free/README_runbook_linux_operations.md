@@ -18,7 +18,7 @@ A project’s variables are shared between the deployment process and any runboo
 
 https://octopus.com/docs/runbooks/runbooks-vs-deployments
 
-## Tips
+## Tips Octopus
 
 ### 1. Docs and samples
 
@@ -51,7 +51,13 @@ Either a vm or multiple vm's or a environment.
 
 ![targets_](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/targets_.png)
 
-### 4. apt or apt-get for install for automation
+### 4. Delete a runbook
+
+Go to the runbook, settings and all the way to the right on the 3 ...
+
+## Tips Linux
+
+### 1. apt or apt-get for install for automation
 
 ```bash
 # The standard "Automation" way
@@ -83,7 +89,7 @@ The "Rules of the Road" for 2026
 
 * apt is for Humans. It has pretty progress bars, colors, and friendly summaries. It's what you type when you are sitting at the keyboard.
 
-### 5. Variables for automation
+### 2. Variables for automation
 
 ```bash
 Turn those commands into a Bash or PowerShell script. Replace hardcoded values with variables for automation.
@@ -96,7 +102,7 @@ mysql --user=#{MySQL.User} --password=#{MySQL.Password}
 ```
 
 
-### 6. (Network gateway and port proxy for vm with no public ip)
+### (Network gateway and port proxy for vm with no public ip)
 
 Since your Windows Server (vmhybrid01) has a public IP and sits in the same network as your private Linux box (docker03getmirrortest), you can use it as a ***Network Gateway***.
 
@@ -131,7 +137,7 @@ New-NetFirewallRule -DisplayName "Octopus Linux Forwarding" -Direction Inbound -
 
 Add NSG also for vmhybrid01 for inbound 10934 since we already have a tenatcle for vmhybrid01, we must use a different port for docker03getmirrortes.
 
-### 6. Install linux tentacle offline
+### Install linux tentacle offline
 
 Sometimes we do not have internet access, lets Make a bundle of what we need for an offline vm.
 
