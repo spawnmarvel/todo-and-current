@@ -51,9 +51,17 @@ Either a vm or multiple vm's or a environment.
 
 ![targets_](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/targets_.png)
 
-### 4. Delete a runbook
+### 4. Delete a runbook or prefix it
 
 Go to the runbook, settings and all the way to the right on the 3 ...
+
+Prefix it
+
+Go to the runbook, settings and rename it then save.
+
+-[OLD]
+-[DEPRECATED]
+
 
 ## Tips Linux
 
