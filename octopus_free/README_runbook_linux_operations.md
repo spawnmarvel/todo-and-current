@@ -71,7 +71,7 @@ Either a vm or multiple vm's or a environment.
 
 Since your Windows Server (vmhybrid01) has a public IP and sits in the same network as your private Linux box (docker03getmirrortest), you can use it as a ***Network Gateway***.
 
-NSG for offline vm docker03getmirrortest and it has no public IP.
+NSG outbound for offline vm docker03getmirrortest is internet deny and it has no public IP, so we cannot reach it.
 
 * Just private, 172.64.0.5
 
@@ -95,7 +95,7 @@ netsh interface portproxy add v4tov4 listenport=10934 listenaddress=0.0.0.0 conn
 New-NetFirewallRule -DisplayName "Octopus Linux Forwarding" -Direction Inbound -LocalPort 10934 -Protocol TCP -Action Allow
 ```
 
-Add NSG also for vmhybrid01 for inbound 10934
+Add NSG also for vmhybrid01 for inbound 10934 since we already have a tenatcle for vmhybrid01, we must use a different port for docker03getmirrortes.
 
 ### 4. Install linux tentacle offline
 
