@@ -279,7 +279,28 @@ Create a project for day 2 operations and easy install of software.
 
 ## 1. Diagnostoics Runbook
 
-Run disk, cpu, ram and last boot time
+Make a step for each
+
+```bash
+echo "--- 1. SYSTEM IDENTITY & UPTIME ---"
+hostnamectl | grep "Operating System\|Architecture"
+uptime -p
+
+echo -e "\n--- 2. STORAGE HEALTH ---"
+# -x tmpfs excludes those annoying tiny system partitions you don't care about
+df -h -x tmpfs -x devtmpfs
+
+echo -e "\n--- 3. TOP 5 MEMORY HOGS ---"
+# Shows the top 5 processes eating your RAM
+ps -eo pid,ppid,cmd,%mem --sort=-%mem | head -6
+
+echo -e "\n--- 4. SYSTEM ERRORS (Last 50) ---"
+# --no-pager is critical so the Octopus task doesn't "hang" waiting for input
+journalctl -p err -n 50 --no-pager
+
+echo -e "\n--- 5. NETWORK INTERFACES ---"
+ip -brief addr
+```
 
 
 ## 2. Upload packet Runbook
