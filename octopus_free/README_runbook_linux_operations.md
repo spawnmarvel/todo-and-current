@@ -317,9 +317,9 @@ echo -e "\n--- CONNECTIVITY TEST ---"
 # Use a timeout so it doesn't hang, and || true to prevent script failure
 timeout 2 getent hosts google.com || echo "Cannot resolve external domains."
 
-# DNS is working
+# DNS is working, The phonebook is open.
 
-# Traffic outbound is blocked or not?
+# Traffic outbound is blocked or not?, but the phone line is cut?
 echo -e "\n--- PING TEST (ba.no) ---"
 # The '|| true' at the end tells Octopus: "Even if ping fails, the script is still a success"
 ping -c 3 www.ba.no || echo "PING FAILED: This is expected on isolated machines."
