@@ -10,8 +10,7 @@
 2. Samples and examples
 * https://octopus.com/docs/getting-started/samples-instance
 
-3. Install
-4. Best pratice, Deployments, Runbooks, Rest etc
+3. Install, Best pratice, Deployments, Runbooks, Rest etc
 
 ### 1. apt or apt-get for install
 
