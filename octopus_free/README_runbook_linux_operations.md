@@ -365,6 +365,13 @@ Do not use the version, the packet has a version from the zip file number: MySQL
 
 Save and run the runbook.
 
+And now we have the packet for both vm in:
+
+```bash
+cd /etc/octopus/tentacle-name/Files
+```
+
+
 ![mysql_pack_path](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/mysql_pack_path.png)
 
 
