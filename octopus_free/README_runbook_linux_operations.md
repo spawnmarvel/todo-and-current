@@ -1,4 +1,18 @@
-# Project Linux Day2 Operations
+# Project Linux Day 2 Operations Runbooks
+
+
+## Runbooks vs Deployments
+
+
+The key differences are:
+
+* No release needs to be created to execute a runbook.
+* Lifecycles do not apply to runbooks.
+* Runbook executions are not displayed on the deployment dashboards.
+* Many runbooks can live in the same project, along with a deployment process.
+* Runbooks have different roles and permissions to deployments.
+
+https://octopus.com/docs/runbooks/runbooks-vs-deployments
 
 ## Tips
 
