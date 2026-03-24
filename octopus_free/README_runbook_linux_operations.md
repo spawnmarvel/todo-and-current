@@ -254,32 +254,33 @@ Create a project for day 2 operations and easy install of software.
 
 * Linux Day2 Operations
 
-### 1. Diagnostoics Runbook
+## 1. Diagnostoics Runbook
 
 Run disk, cpu, ram and last boot time
 
 
-### 2. Upload packet Runbook
+## 2. Upload packet Runbook
 
+Upload a packet
 
-### 4 Make SSL cert Runbook
+## 4 Make SSL cert Runbook
 
 Make a cert
 
-### 5 Renew SSL cert Runbook
+## 5 Renew SSL cert Runbook
 
 Renew a cert and mv files
 
-### 5 Install MySql Runbook
+## 5 Install MySql Runbook
 
 Here we use apt-get and variables
 
 
-### 6 Upgrade MySql Runbook
+## 6 Upgrade MySql Runbook
 
 Here we use apt-get, variables and we have a downloaded MySql 8.4 packet
 
 
-### 7 Zabbix stack (MySql is in a different runbook) Runbook 
+## 7 Zabbix stack (MySql is in a different runbook) Runbook 
 
 Install the zabbix stack on a vm where mysql is already installed.
