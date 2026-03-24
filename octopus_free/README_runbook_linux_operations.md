@@ -4,6 +4,8 @@
 ## Runbooks vs Deployments
 
 
+They are similar in many ways: a runbook process is a series of steps, which can reference packages and variables.
+
 The key differences are:
 
 * No release needs to be created to execute a runbook.
@@ -11,6 +13,8 @@ The key differences are:
 * Runbook executions are not displayed on the deployment dashboards.
 * Many runbooks can live in the same project, along with a deployment process.
 * Runbooks have different roles and permissions to deployments.
+
+A project’s variables are shared between the deployment process and any runbooks in the project (though specific values can be scoped exclusively to specific runbooks or to the deployment process)
 
 https://octopus.com/docs/runbooks/runbooks-vs-deployments
 
