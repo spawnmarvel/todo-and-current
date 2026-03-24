@@ -57,9 +57,9 @@ Go to the runbook, settings and all the way to the right on the 3 ...
 
 Prefix it
 
-Go to the runbook, settings and rename it then save.
+Go to the runbook, settings and append below example it then save.
 
-* [OLD] or [DEPRECATED]
+* [OLD] rest of name or [DEPRECATED] rest of name
 
 
 ## Tips Linux
