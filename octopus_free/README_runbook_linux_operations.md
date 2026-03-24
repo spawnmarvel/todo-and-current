@@ -357,6 +357,17 @@ On your internet-connected machine (your workstation):
 
 ![mysql_pack](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/mysql_pack.png)
 
+In Octopus on the runbook add a step, Deploy a Package up, find the mysql packet.
+
+Do not use the version, the packet has a version from the zip file number: MySQL-8.4-LTS.1.0.0.zip
+
+![mysql_pack_step_](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/mysql_pack_step_.png)
+
+Save and run the runbook.
+
+![mysql_pack_path](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/mysql_pack_path.png)
+
+
 ## 3 Install MySql Runbook
 
 Here we use apt-get and variables
