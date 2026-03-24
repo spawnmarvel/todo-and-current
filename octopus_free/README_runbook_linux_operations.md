@@ -281,6 +281,8 @@ Create a project for day 2 operations and easy install of software.
 
 Make a step for each
 
+Diagnostics steps
+
 ```bash
 echo "--- 1. SYSTEM IDENTITY & UPTIME ---"
 hostnamectl | grep "Operating System\|Architecture"
@@ -300,6 +302,30 @@ journalctl -p err -n 50 --no-pager
 
 echo -e "\n--- 5. NETWORK INTERFACES ---"
 ip -brief addr
+```
+
+DNS step
+
+```bash
+echo "--- DNS CONFIGURATION ---"
+grep "nameserver" /etc/resolv.conf
+
+echo -e "\n--- RESOLUTION STATUS ---"
+resolvectl status | grep "DNS Servers\|Current DNS Server" || echo "Systemd-resolved not active."
+
+echo -e "\n--- CONNECTIVITY TEST ---"
+# Use a timeout so it doesn't hang, and || true to prevent script failure
+timeout 2 getent hosts google.com || echo "Cannot resolve external domains."
+
+# DNS is working
+
+# Traffic outbound is blocked or not?
+echo -e "\n--- PING TEST (ba.no) ---"
+# The '|| true' at the end tells Octopus: "Even if ping fails, the script is still a success"
+ping -c 3 www.ba.no || echo "PING FAILED: This is expected on isolated machines."
+
+# Force a clean exit so Octopus stays Green
+exit 0
 ```
 
 
