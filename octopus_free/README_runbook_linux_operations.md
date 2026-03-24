@@ -323,36 +323,54 @@ timeout 2 getent hosts google.com || echo "Cannot resolve external domains."
 echo -e "\n--- PING TEST (ba.no) ---"
 # The '|| true' at the end tells Octopus: "Even if ping fails, the script is still a success"
 ping -c 3 www.ba.no || echo "PING FAILED: This is expected on isolated machines."
-
 # Force a clean exit so Octopus stays Green
 exit 0
+
+echo -e "\n--- TIME & SYNC STATUS ---"
+timedatectl | grep "Local time\|System clock synchronized\|NTP service"
 ```
 
-1 Diagnostics Eunbook
+1 Diagnostics Runbook
 
 ![diagnostics_runbook](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/diagnostics_runbook.png)
 
 ## 2. Upload packet Runbook
 
-Upload a packet
+The servers are running Ubuntu 24.04
 
-## 4 Make SSL cert Runbook
+Upload a packet example mysql 8.4
 
-Make a cert
+* https://dev.mysql.com/downloads/mysql/8.4.html
+* mysql-server_8.4.8-1ubuntu24.04_amd64.deb-bundle.tar
 
-## 5 Renew SSL cert Runbook
+Since you have the .tar bundle specifically for Ubuntu, you have everything you need for a "Side-Loaded" install. This bundle contains the server, the client, and all the mandatory internal libraries (like mysql-community-client, mysql-client, etc.) so they don't have to be downloaded from the internet.
 
-Renew a cert and mv files
+![mysql_tar](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/mysql_tar.png)
 
-## 5 Install MySql Runbook
+
+On your internet-connected machine (your workstation):
+
+1. Download the MySQL 8.4 LTS DEB Bundle for Ubuntu 24.04.
+2. Extract the .tar file. You should see about 10–12 .deb files (server, client, common, etc.).
+3. Zip these .deb files into a single file named MySQL-8.4-LTS.1.0.0.zip.
+4. Upload this zip file to Library > Packages in your Octopus Server.
+
+## 3 Install MySql Runbook
 
 Here we use apt-get and variables
 
 
-## 6 Upgrade MySql Runbook
+## 4 (Upgrade MySql Runbook) or go direct to 8.4?
 
 Here we use apt-get, variables and we have a downloaded MySql 8.4 packet
 
+## 5 Make SSL cert Runbook
+
+Make a cert
+
+## 6 Renew SSL cert Runbook
+
+Renew a cert and mv files
 
 ## 7 Zabbix stack (MySql is in a different runbook) Runbook 
 
