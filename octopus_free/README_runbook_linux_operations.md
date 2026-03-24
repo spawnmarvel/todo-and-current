@@ -327,6 +327,9 @@ ping -c 3 www.ba.no || echo "PING FAILED: This is expected on isolated machines.
 # Force a clean exit so Octopus stays Green
 exit 0
 ```
+
+1 Diagnostics Eunbook
+
 ![diagnostics_runbook](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/diagnostics_runbook.png)
 
 ## 2. Upload packet Runbook
