@@ -109,6 +109,11 @@ NSG outbound for offline vm docker03getmirrortest is internet deny and it has no
 1. The "Signpost" Command (Windows)
 On your Windows Server 2025, open PowerShell as Administrator and run this command:
 
+v4tov4
+
+* Adds a proxy rule to listen on an IPv4 address and port, forwarding incoming TCP connections to another IPv4 address and port.
+
+
 ```ps1
 # Add the new one on Port 10934
 # Run this on your Windows Server to create a dedicated lane for the Linux traffic:
