@@ -20,7 +20,7 @@ https://octopus.com/docs/runbooks/runbooks-vs-deployments
 
 ## Tips
 
-### 0. Docs and samples
+### 1. Docs and samples
 
 1. Getting started
 * https://octopus.com/docs/getting-started
@@ -30,7 +30,28 @@ https://octopus.com/docs/runbooks/runbooks-vs-deployments
 
 3. Install, Best pratice, Deployments, Runbooks, Rest etc
 
-### 1. apt or apt-get for install
+### 2. In draft vs publish
+
+In draft mode you can edit, save and it picks up changes at once.
+
+Publishing a runbook will snapshot the runbook process and the associated assets (packages, scripts, variables) as they existed at that moment in time. After publishing a runbook, any future edits made will be considered a “draft.” For a trigger to pick up those new changes, a new publish event will need to occur.
+
+
+
+### 3. Before you run a runbook, process-> target tags
+
+Before you run a runbook always go to
+
+1. Process
+2. Target tags, always check it
+
+![process_always_check_target](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/process_always_check_target.png)
+
+Either a vm or multiple vm's or a environment.
+
+![targets_](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/targets_.png)
+
+### 4. apt or apt-get for install for automation
 
 ```bash
 # The standard "Automation" way
@@ -62,30 +83,20 @@ The "Rules of the Road" for 2026
 
 * apt is for Humans. It has pretty progress bars, colors, and friendly summaries. It's what you type when you are sitting at the keyboard.
 
+### 5. Variables for automation
+
+```bash
+Turn those commands into a Bash or PowerShell script. Replace hardcoded values with variables for automation.
+
+```bash
+# Bad: 
+mysql --user=root --password=Password123
+# Good: 
+mysql --user=#{MySQL.User} --password=#{MySQL.Password}
+```
 
 
-### 2. In draft vs publish
-
-In draft mode you can edit, save and it picks up changes at once.
-
-Publishing a runbook will snapshot the runbook process and the associated assets (packages, scripts, variables) as they existed at that moment in time. After publishing a runbook, any future edits made will be considered a “draft.” For a trigger to pick up those new changes, a new publish event will need to occur.
-
-
-
-### 3. Before you run a runbook, process-> target tags
-
-Before you run a runbook always go to
-
-1. Process
-2. Target tags, always check it
-
-![process_always_check_target](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/process_always_check_target.png)
-
-Either a vm or multiple vm's or a environment.
-
-![targets_](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/targets_.png)
-
-### 4. (Network gateway and port proxy for vm with no public ip)
+### 6. (Network gateway and port proxy for vm with no public ip)
 
 Since your Windows Server (vmhybrid01) has a public IP and sits in the same network as your private Linux box (docker03getmirrortest), you can use it as a ***Network Gateway***.
 
@@ -115,7 +126,7 @@ New-NetFirewallRule -DisplayName "Octopus Linux Forwarding" -Direction Inbound -
 
 Add NSG also for vmhybrid01 for inbound 10934 since we already have a tenatcle for vmhybrid01, we must use a different port for docker03getmirrortes.
 
-### 4. Install linux tentacle offline
+### 6. Install linux tentacle offline
 
 Sometimes we do not have internet access, lets Make a bundle of what we need for an offline vm.
 
@@ -233,46 +244,42 @@ https://octopus.com/docs/infrastructure/deployment-targets/tentacle/linux
 ![hybrid_connection](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/hybrid_connection.png)
 
 
-## Install and Operations Runbooks
+# Install and Operations Runbooks
 
 So now we have 2 linux vm's and one windows vm.
 
 ![3_targets](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/3_targets.png)
 
+Create a project for day 2 operations and easy install of software.
+
+* Linux Day2 Operations
+
+### 1. Diagnostoics Runbook
+
+Run disk, cpu, ram and last boot time
 
 
-### 5. Run diagnostic Runbook get: Linux Get Disk Usage and more
-
-Run disk, cpu, ram, port exhaust status and check last 100 lines if journalctl for errors.
+### 2. Upload packet Runbook
 
 
-### 6. Upload a packet to linux
+### 4 Make SSL cert Runbook
 
-### 7. Use variables
+Make a cert
 
-Turn those commands into a Bash or PowerShell script. Replace hardcoded values with variables for automation.
+### 5 Renew SSL cert Runbook
 
-```bash
-# Bad: 
-mysql --user=root --password=Password123
-# Good: 
-mysql --user=#{MySQL.User} --password=#{MySQL.Password}
-```
+Renew a cert and mv files
 
-### 8 Install MySql Runbook
+### 5 Install MySql Runbook
 
 Here we use apt-get and variables
 
 
-### 8 Upgrade MySql with a packet Runbook
+### 6 Upgrade MySql Runbook
 
 Here we use apt-get, variables and we have a downloaded MySql 8.4 packet
 
-### 9 Make SSL cert Runbook
 
-Make a cert
+### 7 Zabbix stack (MySql is in a different runbook) Runbook 
 
-Renew a cert and mv files
-
-
-### 10 Zabbix stack (MySql is in a different runbook) Runbook 
+Install the zabbix stack on a vm where mysql is already installed.
