@@ -2,6 +2,17 @@
 
 ## Tips
 
+### 0. Docs and samples
+
+1. Getting started
+* https://octopus.com/docs/getting-started
+
+2. Samples and examples
+* https://octopus.com/docs/getting-started/samples-instance
+
+3. Install
+4. Best pratice, etc
+
 ### 1. apt or apt-get for install
 
 ```bash
@@ -42,7 +53,9 @@ In draft mode you can edit, save and it picks up changes at once.
 
 Publishing a runbook will snapshot the runbook process and the associated assets (packages, scripts, variables) as they existed at that moment in time. After publishing a runbook, any future edits made will be considered a “draft.” For a trigger to pick up those new changes, a new publish event will need to occur.
 
-### 3. Before you run a runbook, process->target tags
+
+
+### 3. Before you run a runbook, process-> target tags
 
 Before you run a runbook always go to
 
