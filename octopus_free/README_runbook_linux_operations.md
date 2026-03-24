@@ -250,6 +250,11 @@ So now we have 2 linux vm's and one windows vm.
 
 ![3_targets](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/3_targets.png)
 
+* docker03getmirrotest has no internet access, ref (Network gateway and port proxy for vm with no public ip
+* vmchaos09, has internet and public ip
+* vmhybrid01 is AD DS server and DNS, it is also used for port proxy for docker03getmirrotest on 10934 since it has its own tentacle running default 10933
+
+
 Create a project for day 2 operations and easy install of software.
 
 * Linux Day2 Operations
