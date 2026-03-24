@@ -67,9 +67,7 @@ Either a vm or multiple vm's or a environment.
 
 ![targets_](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/targets_.png)
 
-### 4. Install linux tentacle offline
-
-#### Network gateway and port proxy for vm with no public ip
+### 4. (Network gateway and port proxy for vm with no public ip)
 
 Since your Windows Server (vmhybrid01) has a public IP and sits in the same network as your private Linux box (docker03getmirrortest), you can use it as a ***Network Gateway***.
 
@@ -99,7 +97,7 @@ New-NetFirewallRule -DisplayName "Octopus Linux Forwarding" -Direction Inbound -
 
 Add NSG also for vmhybrid01 for inbound 10934
 
-#### Install linux tentacle offline
+### 4. Install linux tentacle offline
 
 Sometimes we do not have internet access, lets Make a bundle of what we need for an offline vm.
 
