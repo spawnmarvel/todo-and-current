@@ -59,8 +59,7 @@ Prefix it
 
 Go to the runbook, settings and rename it then save.
 
--[OLD]
--[DEPRECATED]
+* [OLD] or [DEPRECATED]
 
 
 ## Tips Linux
