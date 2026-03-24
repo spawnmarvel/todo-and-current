@@ -353,7 +353,9 @@ On your internet-connected machine (your workstation):
 1. Download the MySQL 8.4 LTS DEB Bundle for Ubuntu 24.04.
 2. Extract the .tar file. You should see about 10–12 .deb files (server, client, common, etc.).
 3. Zip these .deb files into a single file named MySQL-8.4-LTS.1.0.0.zip.
-4. Upload this zip file to Library > Packages in your Octopus Server.
+4. Upload this zip file to Projects-> Manage > Packages in your Octopus Server.
+
+![mysql_pack](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/mysql_pack.png)
 
 ## 3 Install MySql Runbook
 
