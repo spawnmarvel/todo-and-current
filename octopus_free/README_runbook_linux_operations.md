@@ -386,7 +386,7 @@ We will only install it at one vm, the offline vm first.
 Lets make a short runbook for checking what is installed, so we don't break anything.
 
 ```bash
-#!/bin/bash
+
 echo "=== SYSTEM AUDIT: $(hostname) ==="
 
 # 1. Check OS Version (Confirming Ubuntu 24.04 Noble)
@@ -424,7 +424,7 @@ done
 echo "=== AUDIT COMPLETE ==="
 ```
 
-#### 3 Install MySql Runbook todo
+#### 3.1 Install MySql Runbook (do manual first) todo
 
 ```bash
 #!/bin/bash
