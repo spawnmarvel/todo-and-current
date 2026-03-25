@@ -166,6 +166,12 @@ amd64
 * x86_64: This is standard 64-bit Intel/AMD (Download the linux-x64 version).
 * aarch64 or arm64: This is ARM (like a Raspberry Pi or Graviton instance).
 
+Go to
+
+https://octopus.com/docs/infrastructure/deployment-targets/tentacle/linux
+
+![download_p](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/download_p.png)
+
 Download tentacle
 
 * tentacle_9.1.3608_amd64.deb
