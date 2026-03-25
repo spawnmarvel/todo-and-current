@@ -185,6 +185,15 @@ Archive
 ![download_arc](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/download_arc.png)
 
 
+Note about versions:
+```txt
+With an Octopus Server v2022.3 (build 10863), you have a specific "compatibility window." While Octopus usually supports older Tentacles, for Ubuntu 24.04, you want a version that understands modern Linux internals (like systemd and OpenSSL 3.0).
+
+The ideal Linux Tentacle version for your setup is 6.3.x or higher.
+
+Note: If it returns 7.x or 8.x, don't panic! Newer Tentacles are almost always backward compatible with a 2022.3 Server. The 2022.3 Server just won't be able to use the "newest" features (like specific Kubernetes steps), but for MySQL scripts and package transfers, it will work perfectly.
+
+```
 Extra Octopus Deploy 2019.10 Tentacle for Linux.? Well where is the tentacle version is seems like 5.0.15, it is not 5.0.2
 
 * https://octopus.com/blog/octopus-release-2019.10
