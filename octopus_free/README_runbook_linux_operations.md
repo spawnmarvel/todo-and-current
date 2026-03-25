@@ -172,6 +172,20 @@ https://octopus.com/docs/infrastructure/deployment-targets/tentacle/linux
 
 ![download_p](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/download_p.png)
 
+Just press it and select version after
+
+![download_a](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/download_a.png)
+
+Version, drop down
+
+![download_v](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/download_v.png)
+
+Archive
+
+![download_arc](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/download_arc.png)
+
+
+
 Download tentacle
 
 * tentacle_9.1.3608_amd64.deb
