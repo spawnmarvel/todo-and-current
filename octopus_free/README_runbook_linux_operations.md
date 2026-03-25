@@ -185,7 +185,7 @@ Archive
 ![download_arc](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/download_arc.png)
 
 
-Extra Octopus Deploy 2019.10 Tentacle for Linux.? Well where is the tentacle version
+Extra Octopus Deploy 2019.10 Tentacle for Linux.? Well where is the tentacle version is seems like 5.0.15
 
 * https://octopus.com/blog/octopus-release-2019.10
 
