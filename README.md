@@ -17,6 +17,8 @@ https://follow-e-lo.com/
 
 ---
 
+<details>
+
 <summary>Scripting (and what's fun*), think automation, idempotent</summary>
 
 * Bash.sh, powershell.ps1, sql.sql, 
