@@ -6,9 +6,15 @@ Readme with todo-and-current, Ai as helper, Gemini.
 * Optimize your environment
 * Adjust your mindset and habits
 
-#### E-lo (parked) :anchor:
+
+<details>
+
+<summary>E-lo (parked) :anchor:</summary>
 
 https://follow-e-lo.com/
+
+</details>
+
 
 ### Scripting (and what's fun*), think automation, idempotent
 
