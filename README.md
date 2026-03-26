@@ -1,11 +1,16 @@
 # Todo-and-current :seedling:
 
-Readme with todo-and-current, Ai as helper, Gemini.
+<details>
+
+<summary>Readme with todo-and-current, Ai as helper, Gemini.</summary
 
 * Manage workflow (Slipknot/Trance/Music in general is the cure)
 * Optimize your environment
 * Adjust your mindset and habits
 
+</details>
+
+---
 
 <details>
 
@@ -88,6 +93,7 @@ Well, this never stops, so lets make a priority list of all the topics below.
 1. Do the bash tutorial w3s and make a good quick guide = 80%, a bit more here
    - This includes the RPG game
 2. Do the MS learn Active Directory Domain Services with vmhybrid01
+   - Continue AZ-800
 
 ![top3](https://github.com/spawnmarvel/todo-and-current/blob/main/images/top3.png)
 
