@@ -55,6 +55,9 @@ Well, this never stops, so lets make a priority list of all the topics below.
 1. Do the bash tutorial w3s and make a good quick guide = 80%, a bit more here
    - This includes the RPG game
 2. Do the MS learn Active Directory Domain Services with vmhybrid01
+
+![top3](https://github.com/spawnmarvel/todo-and-current/blob/main/images/top3.png)
+
 3. Octopus Deploy for linux (is 2 in one CI/CD and Bash)
    - Two projects (win/lin) and 100's of runbooks, we do linux project for now
    - Do all linux apps and day 2 operations in:
