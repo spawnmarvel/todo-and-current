@@ -24,10 +24,14 @@ https://follow-e-lo.com/
 * Bash.sh, powershell.ps1, sql.sql, 
 * Try to make games out if
 * (python.py, Docker)
+
 </details>
+
 ---
 
-### Github
+<details>
+
+<summary>Github tips</summary>
 
 How to Fix the "Rejected" Push, hint: Updates were rejected because the tip of your current branch is behind.
 
@@ -42,6 +46,10 @@ git pull --rebase origin main
 git push origin main
 
 ```
+
+</details>
+
+---
 
 ### Chaos Engineer bash vmchaos09
 
