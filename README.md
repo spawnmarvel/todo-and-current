@@ -48,14 +48,14 @@ https://github.com/spawnmarvel/todo-and-current/tree/main/bash_chaos_engineer
 
 https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-800-admistering-windows-server-hybrid-core-infrastructure/README_cloud-only-hybrid-Lab_2_install-ad.md
 
-## TODO Maintain knowledge priority top 4 :seedling:
+## TODO Maintain knowledge priority top 3 :seedling:
 
 Well, this never stops, so lets make a priority list of all the topics below.
 
 1. Do the bash tutorial w3s and make a good quick guide = 80%, a bit more here
    - This includes the RPG game
 2. Do the MS learn Active Directory Domain Services with vmhybrid01
-4. Octopus Deploy for linux (is 2 in one CI/CD and Bash)
+3. Octopus Deploy for linux (is 2 in one CI/CD and Bash)
    - Two projects (win/lin) and 100's of runbooks, we do linux project for now
    - Do all linux apps and day 2 operations in:
    - Do follow the guide in
