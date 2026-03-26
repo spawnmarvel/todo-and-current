@@ -15,13 +15,14 @@ https://follow-e-lo.com/
 
 </details>
 
+---
 
-### Scripting (and what's fun*), think automation, idempotent
+<summary>Scripting (and what's fun*), think automation, idempotent</summary>
 
 * Bash.sh, powershell.ps1, sql.sql, 
 * Try to make games out if
 * (python.py, Docker)
-
+</details>
 ---
 
 ### Github
