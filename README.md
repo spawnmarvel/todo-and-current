@@ -26,9 +26,10 @@ https://follow-e-lo.com/
 
 <summary>Scripting (and what's fun*), think automation, idempotent. Ps1 and bash is not python!</summary>
 
-* Bash.sh, powershell.ps1, sql.sql, 
+* Bash.sh, powershell.ps1, sql.sql, Python.py
 * Try to make games out if
-* (python.py, Docker)
+* Cron or task scheduler
+* Linux default bash and python
 
 </details>
 
