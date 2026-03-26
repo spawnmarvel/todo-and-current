@@ -67,6 +67,8 @@ Well, this never stops, so lets make a priority list of all the topics below.
 
 ![deploy123](https://github.com/spawnmarvel/todo-and-current/blob/main/images/deploy123.png)
 
+--- 
+
 ### TODO Maintain knowledge
 
 Do use chromebook Debian GNU/Linux 12 (bookworm), do not install any GUI, chromebook is for command line only
