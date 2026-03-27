@@ -24,7 +24,7 @@ https://follow-e-lo.com/
 ### Python for complex, bash/ps1 for admin
 <details>
 
-<summary>Scripting (and what's fun*), think automation, idempotent. Ps1 and bash is not python!</summary>
+<summary>Scripting (and what's fun*), think automation, idempotent.</summary>
 
 * Bash.sh, powershell.ps1, sql.sql, Python.py
 * Try to make games out if
