@@ -21,7 +21,7 @@ https://follow-e-lo.com/
 </details>
 
 ---
-### Python is different from ps1
+### Python for complex, bash/ps1 for admin
 <details>
 
 <summary>Scripting (and what's fun*), think automation, idempotent. Ps1 and bash is not python!</summary>
