@@ -40,7 +40,7 @@ Publishing a runbook will snapshot the runbook process and the associated assets
 
 When you make add a step, use the environment tags, i.e linux or windows, do not use a hostname.
 
-![target generic](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/target_generic.png)
+![target generic 2](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/target_generic2.png)
 
 That make is easier when you are later going to change the setting from "All applicable targets" to "Specific targets".
 
