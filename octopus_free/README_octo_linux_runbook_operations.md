@@ -292,7 +292,8 @@ In the octopus mananger portal we used, enter manual:
 * Name, docker03getmirrortest
 * Environment, development, tag docker03getmirrortest
 * Tentacle URL https://vmhybrid01-public-ip:10934/
-* Thumbrint
+* Thumbprint that was generated on the target:
+1ABXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 https://octopus.com/docs/infrastructure/deployment-targets/tentacle/linux
 
@@ -415,8 +416,70 @@ cd /etc/octopus/tentacle-name/Files
 
 Make certificate.
 
-Make a cert on vmzabbix01 since it is running zabbix apache, then we can check the cert in browser if it has changed later.
+Make a cert on vmzabbix02 (this vm has internet access) since it is running zabbix apache, then we can check the cert in browser if it has changed later.
 
+### Install linux tentacle (this vm has internet access), AD DS must be running
+
+```bash
+sudo ufw status
+Status: inactive
+```
+Create NSG with inbound 10933
+
+Login and sudo nano install_tentacle.sh
+
+```bash
+#!/bin/bash
+echo "Tea anyone?"
+sudo apt update && sudo apt install --no-install-recommends gnupg curl ca-certificates apt-transport-https && \
+sudo install -m 0755 -d /etc/apt/keyrings && \
+curl -fsSL https://apt.octopus.com/public.key | sudo gpg --dearmor -o /etc/apt/keyrings/octopus.gpg && \
+sudo chmod a+r /etc/apt/keyrings/octopus.gpg && \
+echo \
+  "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/octopus.gpg] https://apt.octopus.com/ \
+  stable main" | \
+  sudo tee /etc/apt/sources.list.d/octopus.list > /dev/null && \
+sudo apt update && sudo apt install tentacle
+
+```
+Run it
+
+```bash
+sudo bash install_tentacle.sh
+```
+
+Configure it
+
+```bash
+/opt/octopus/tentacle/configure-tentacle.sh
+```
+
+Log
+
+```log
+Name of Tentacle instance (default Tentacle):vmzabbix02
+What kind of Tentacle would you like to configure: 1) Listening or 2) Polling (default 1): 1
+Where would you like Tentacle to store configuration, logs, and working files? (/etc/octopus):
+Where would you like Tentacle to install applications to? (/home/Octopus/Applications):
+Enter the port that this Tentacle will listen on (10933):
+Should the Tentacle use a proxy to communicate with Octopus? (y/N): n
+Enter the thumbprint of the Octopus Server: C6xxxxxxxxxxxxxxxxxxxxxxx
+[...]
+Saving instance: vmzabbix02
+Setting home directory to: /etc/octopus/vmzabbix02
+A new certificate has been generated and installed. Thumbprint:
+C3xxxxxxxxxxxxxxxxxxxxxxxx
+[...}]
+Tentacle instance 'vmzabbix02' is now installed
+```
+In the octopus mananger portal we used, enter manual:
+
+* Name, docker03getmirrortest
+* Environment, development, tag docker03getmirrortest
+* Tentacle URL https://vmhybrid01-public-ip:10934/
+* Thumbprint that was generated on the target: C3xxxxxxxxxxxxxxxxxxxxxxxx
+
+Test connectivity in octopus.
 
 ## 4 Renew SSL cert Runbook
 
