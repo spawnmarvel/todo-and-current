@@ -413,11 +413,17 @@ cd /etc/octopus/tentacle-name/Files
 
 ## 3 Make SSL cert Runbook
 
-Make a cert
+Make certificate.
+
+Make a cert on vmzabbix01 since it is running zabbix apache, then we can check the cert in browser if it has changed later.
+
 
 ## 4 Renew SSL cert Runbook
 
-Renew a cert and mv files
+Renew / make new a cert and mv files.
+
+Swap the cert on vmzabbix01 that is running apache.
+
 
 ## 5 Install MySql Runbook
 
