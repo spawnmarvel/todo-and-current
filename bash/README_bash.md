@@ -858,9 +858,11 @@ https://www.w3schools.com/bash/bash_commands.php
 #### We can hide anything, even code!
 
 ```bash
+
 # Add this line to the end of your /etc/ssh/sshd_config:
-# AllowUsers username
 sudo nano /etc/ssh/sshd_config
+# AllowUsers username
+
 ```
 (Replace username with your actual username. This blocks every other name on the system from even trying to log in via SSH.)
 </p>
