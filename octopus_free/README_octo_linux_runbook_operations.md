@@ -448,6 +448,46 @@ Make certificate.
 
 Make a cert on vmzabbix02 (this vm has internet access) since it is running zabbix apache, then we can check the cert in browser if it has changed later.
 
+First lets make a folder for the automation
+
+```bash
+# Define the path
+TARGET_DIR="/etc/automation_cert"
+
+# 1. Check if the directory exists
+if [ -d "$TARGET_DIR" ]; then
+    echo "Directory $TARGET_DIR already exists."
+else
+    echo "Creating directory $TARGET_DIR..."
+    # sudo may be required depending on your Octopus Worker/Target permissions
+    mkdir -p "$TARGET_DIR"
+fi
+
+# 2. Change directory and list files containing 'automation'
+cd /etc
+echo "Checking for files/folders matching *automation* in /etc:"
+
+# Use a conditional to avoid 'No such file or directory' errors from ls
+if ls *automation* 1> /dev/null 2>&1; then
+    ls -d *automation*
+else
+    echo "No files matching 'automation' were found."
+fi
+
+```
+
+Then lets make a variable in octopus for the hostname.
+
+1. From the Linux Day2 Operations you created earlier, click Project Variables in the left menu.
+2. Click Create Variables.
+3. Add Linux.vmzabbix02 in the Name column,
+Add the vmzabbix02 (hostname), in the Value column,
+4. Click the Scope column and select the Development/staging/production environment.
+
+Click Save.
+
+![linux var](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/linux_var.png)
+
 ### Install linux tentacle (this vm has internet access), AD DS must be running
 
 ```bash
