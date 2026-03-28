@@ -54,7 +54,7 @@ That make is easier when you are later going to change the setting from "All app
 
 
 
-### 4. How to Target a Single Host for a Runbook
+### 4. How to Target a Single Host for a Runbook (or a full envirnment)
 
 Yes, you can target a single host (or a subset of targets) for a runbook, but the interface is a bit different than the standard "Deploy" screen.
 
