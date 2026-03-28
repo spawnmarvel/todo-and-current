@@ -21,7 +21,7 @@ https://follow-e-lo.com/
 </details>
 
 ---
-### Python for complex, bash/ps1 for admin
+### Bash/ps1 for admin, zabbix_sender, telegraf, Python for complex
 <details>
 
 <summary>Scripting automation, idempotent.</summary>
