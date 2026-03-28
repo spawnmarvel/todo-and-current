@@ -38,7 +38,7 @@ Publishing a runbook will snapshot the runbook process and the associated assets
 
 ### 3. Deployment target and add step generic tag
 
-When you add a deployemtn target, tag it with environment, os and hostname as a minimum.
+When you add a deployment target, tag it with environment, os and hostname as a minimum.
 
 ![tag vm](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/tag_vm.png)
 
@@ -73,7 +73,7 @@ When you are ready to execute your runbook, follow these steps to narrow your sc
 3. Change the setting from Innclude all to, ***Include specific deployments targets***
 4. A search box will appear where you can select the individual host(s) you want to run the script against.
 5. The other servers that are also tagged with os name and vmname will be unchecked.
-6. Run the runbook
+6. Run the runbook (then it is alwaay mapped to a generic tag and on the run, we give it a target tag)
 
 ![target ready](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/target_ready.png)
 
