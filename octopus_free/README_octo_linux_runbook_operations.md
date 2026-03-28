@@ -51,6 +51,17 @@ Either a vm or multiple vm's or a environment.
 
 ![targets_](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/targets_.png)
 
+In the Target Tags field, assign a relevant tag (e.g., web-server or database-server) and save the settings.
+
+Modify the Runbook Process: Next, update the runbook's steps to execute on targets with the specified tags.
+* Navigate to Runbooks > [Your Runbook Name] > Process.
+* Select the specific step you want to run on the new targets.
+* In the Execution Location section for that step, change the option to Run on each deployment target. (Alternatively, you can choose "Run once on a worker" or "Run once on the Octopus Server" if needed).
+* In the Target Tags field, enter the target tag(s) you configured in step 1 (e.g., web-server).
+* Save the step configuration. 
+
+***Once these changes are made, running the runbook will execute the configured steps on all deployment targets matching the specified tags within the selected environment.***
+
 ### 4. Delete a runbook or prefix it
 
 Go to the runbook, settings and all the way to the right on the 3 ...
