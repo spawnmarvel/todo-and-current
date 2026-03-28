@@ -852,6 +852,20 @@ https://www.w3schools.com/bash/bash_commands.php
 
 ## Hands on with
 
+<details><summary>shd[14883]: error: maximum authentication attempts exceeded for invalid user</summary>
+<p>
+
+#### We can hide anything, even code!
+
+```bash
+# Add this line to the end of your /etc/ssh/sshd_config:
+# AllowUsers username
+sudo nano /etc/ssh/sshd_config
+```
+(Replace username with your actual username. This blocks every other name on the system from even trying to log in via SSH.)
+</p>
+</details>
+
 <details><summary>/dev/null</summary>
 <p>
 

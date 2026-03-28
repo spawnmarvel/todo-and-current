@@ -73,6 +73,7 @@ When you are ready to execute your runbook, follow these steps to narrow your sc
 3. Change the setting from Innclude all to, ***Include specific deployments targets***
 4. A search box will appear where you can select the individual host(s) you want to run the script against.
 5. The other servers that are also tagged with os name and vmname will be unchecked.
+6. Run the runbook
 
 ![target ready](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/target_ready.png)
 
