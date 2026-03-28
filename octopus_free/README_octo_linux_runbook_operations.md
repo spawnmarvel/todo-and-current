@@ -43,7 +43,10 @@ When you add a deployemtn target, tag it with environment, os and hostname as a 
 ![tag vm](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/tag_vm.png)
 
 
-When you make add a step, use the environment tags, i.e linux or windows, do not use a hostname.
+When you make add a step, use the environment tags
+
+* Dev
+* linux or windows, do not use a hostname.
 
 ![target generic 2](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/target_generic2.png)
 
@@ -51,31 +54,29 @@ That make is easier when you are later going to change the setting from "All app
 
 
 
-### 4. Before you run a runbook, 
+### 4. How to Target a Single Host for a Runbook
 
 Yes, you can target a single host (or a subset of targets) for a runbook, but the interface is a bit different than the standard "Deploy" screen.
 
 You don't have to manually edit every step in the runbook to change the target; instead, you use Target Filters during the runbook execution process.
 
-Before you run a runbook always go to
+When you are ready to execute your runbook, follow these steps to narrow your scope:
 
-1. Process
-2. Target tags, always check it
+1. Navigate to your Runbook and click the Run... button, and select environment.
 
-![process_always_check_target](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/process_always_check_target.png)
+![runbook run](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/runbook_run2.png)
 
-Either a vm or multiple vm's or a environment.
+2. In the execution setup screen, look for the Targeting section (usually under the Environment selection).
 
-![targets_](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/targets_.png)
+![show advanced](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/show_adva.png)
 
-In the Target Tags field, assign a relevant tag (e.g., web-server or database-server) and save the settings.
+3. Change the setting from Innclude all to, ***Include specific deployments targets***
+4. A search box will appear where you can select the individual host(s) you want to run the script against.
+5. The other servers that are also tagged with os name and vmname will be unchecked.
 
-Modify the Runbook Process: Next, update the runbook's steps to execute on targets with the specified tags.
-* Navigate to Runbooks > [Your Runbook Name] > Process.
-* Select the specific step you want to run on the new targets.
-* In the Execution Location section for that step, change the option to Run on each deployment target. (Alternatively, you can choose "Run once on a worker" or "Run once on the Octopus Server" if needed).
-* In the Target Tags field, enter the target tag(s) you configured in step 1 (e.g., web-server).
-* Save the step configuration. 
+![target ready](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/target_ready.png)
+
+
 
 ***Once these changes are made, running the runbook will execute the configured steps on all deployment targets matching the specified tags within the selected environment.***
 
