@@ -36,9 +36,20 @@ In draft mode you can edit, save and it picks up changes at once.
 
 Publishing a runbook will snapshot the runbook process and the associated assets (packages, scripts, variables) as they existed at that moment in time. After publishing a runbook, any future edits made will be considered a “draft.” For a trigger to pick up those new changes, a new publish event will need to occur.
 
+### Deployment target and add step
+
+When you make add a step, use the envirnment tags, i.e linux or windows
+
+![target generic](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/target_generic.png)
+
+That make is easier when you are later going to change the setting from "All applicable targets" to "Specific targets".
 
 
-### 3. Before you run a runbook, process-> target tags
+### 4. Before you run a runbook, 
+
+Yes, you can target a single host (or a subset of targets) for a runbook, but the interface is a bit different than the standard "Deploy" screen.
+
+You don't have to manually edit every step in the runbook to change the target; instead, you use Target Filters during the runbook execution process.
 
 Before you run a runbook always go to
 
@@ -62,7 +73,7 @@ Modify the Runbook Process: Next, update the runbook's steps to execute on targe
 
 ***Once these changes are made, running the runbook will execute the configured steps on all deployment targets matching the specified tags within the selected environment.***
 
-### 4. Delete a runbook or prefix it
+### 5. Delete a runbook or prefix it
 
 Go to the runbook, settings and all the way to the right on the 3 ...
 
