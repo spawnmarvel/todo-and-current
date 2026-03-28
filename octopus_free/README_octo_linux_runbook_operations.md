@@ -38,11 +38,17 @@ Publishing a runbook will snapshot the runbook process and the associated assets
 
 ### 3. Deployment target and add step generic tag
 
+When you add a deployemtn target, tag it with environment, os and hostname as a minimum.
+
+![tag vm](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/tag_vm.png)
+
+
 When you make add a step, use the environment tags, i.e linux or windows, do not use a hostname.
 
 ![target generic 2](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/target_generic2.png)
 
 That make is easier when you are later going to change the setting from "All applicable targets" to "Specific targets".
+
 
 
 ### 4. Before you run a runbook, 
