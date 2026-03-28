@@ -24,12 +24,12 @@ https://follow-e-lo.com/
 ### Python for complex, bash/ps1 for admin
 <details>
 
-<summary>Scripting (and what's fun*), think automation, idempotent.</summary>
+<summary>Scripting automation, idempotent.</summary>
 
-* Bash.sh, powershell.ps1, sql.sql, Python.py
-* Try to make games out if
-* Cron or task scheduler
-* Linux default bash and python
+* Linux bash,cron, python, telegraf
+* Windows powershell, schedule task, zabbix_sender, telegraf
+* Python for complexity 
+* MySql, Sqlplus
 
 </details>
 
