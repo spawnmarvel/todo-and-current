@@ -411,8 +411,15 @@ cd /etc/octopus/tentacle-name/Files
 
 ![mysql_pack_path](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/mysql_pack_path.png)
 
+## 3 Make SSL cert Runbook
 
-## 3 Install MySql Runbook
+Make a cert
+
+## 4 Renew SSL cert Runbook
+
+Renew a cert and mv files
+
+## 5 Install MySql Runbook
 
 We will only install it at one vm, the offline vm first.
 
@@ -515,17 +522,9 @@ bash install_mysql_8_4.sh
 
 Then move it to octopus
 
-## 4 (Upgrade MySql Runbook) or go direct to 8.4?
+## 6 (Upgrade MySql Runbook) or go direct to 8.4?
 
 Here we use apt-get, variables and we have a downloaded MySql 8.4 packet
-
-## 5 Make SSL cert Runbook
-
-Make a cert
-
-## 6 Renew SSL cert Runbook
-
-Renew a cert and mv files
 
 ## 7 Zabbix stack (MySql is in a different runbook) Runbook 
 
