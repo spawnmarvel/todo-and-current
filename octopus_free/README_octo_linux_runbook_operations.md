@@ -36,7 +36,7 @@ In draft mode you can edit, save and it picks up changes at once.
 
 Publishing a runbook will snapshot the runbook process and the associated assets (packages, scripts, variables) as they existed at that moment in time. After publishing a runbook, any future edits made will be considered a “draft.” For a trigger to pick up those new changes, a new publish event will need to occur.
 
-### Deployment target and add step
+### 3. Deployment target and add step generic tag
 
 When you make add a step, use the envirnment tags, i.e linux or windows
 
