@@ -491,32 +491,60 @@ Click Save.
 Now add a new step, with making the cert and key using octopus var.
 
 ```bash
-# Define your variables (or pull these from Octopus Project Variables)
+# 1. Setup Variables
 CERT_DIR="/etc/automation_cert"
-CERT_NAME=$(get_octopusvariable "Linux.vmzabbix02")
+BACKUP_DIR="${CERT_DIR}/backups"
+CERT_NAME="#{Linux.vmzabbix02}"
 CERT_SUBJ="/C=US/ST=NewYork/L=NYC/O=IT/CN=${CERT_NAME}"
-echo "Cert name $CERT_NAME"
+TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 
+# 2. Ensure Directories Exist
+sudo mkdir -p "$BACKUP_DIR"
 
-# Create directory if it doesn't exist
-sudo mkdir -p "$CERT_DIR"
-cd "$CERT_DIR"
+# 3. Backup existing files if they exist
+echo "Checking for existing files in $CERT_DIR..."
+if [ -f "$CERT_DIR/${CERT_NAME}.crt" ] || [ -f "$CERT_DIR/${CERT_NAME}.key" ]; then
+    echo "Existing files found. Moving to $BACKUP_DIR"
+    
+    # We use 'sudo cp' then 'sudo rm' or just 'sudo mv' 
+    # Moving is cleaner as it clears the path for the new files
+    [ -f "$CERT_DIR/${CERT_NAME}.crt" ] && sudo mv "$CERT_DIR/${CERT_NAME}.crt" "$BACKUP_DIR/${CERT_NAME}_${TIMESTAMP}.crt"
+    [ -f "$CERT_DIR/${CERT_NAME}.key" ] && sudo mv "$CERT_DIR/${CERT_NAME}.key" "$BACKUP_DIR/${CERT_NAME}_${TIMESTAMP}.key"
+    
+    echo "Backup created: ${CERT_NAME}_${TIMESTAMP}"
+else
+    echo "No existing files to backup. Proceeding with fresh generation."
+fi
 
-# Generate the certificate silently
-# -subj provides the identity info automatically
+# 4. Generate the NEW certificate
+# We redirect stderr to stdout (2>&1) to avoid the red "Warning" lines in Octopus
+echo "Generating new certificate for: $CERT_NAME"
 sudo openssl req -newkey rsa:4096 \
   -x509 \
   -sha256 \
   -days 365 \
   -nodes \
-  -out "${CERT_NAME}.crt" \
-  -keyout "${CERT_NAME}.key" \
-  -subj "$CERT_SUBJ"
+  -out "$CERT_DIR/${CERT_NAME}.crt" \
+  -keyout "$CERT_DIR/${CERT_NAME}.key" \
+  -subj "$CERT_SUBJ" 2>&1
 
-echo "Certificate and Key have been generated in $CERT_DIR"
-ls -l "$CERT_DIR"
+# 5. Set strict permissions
+sudo chmod 644 "$CERT_DIR/${CERT_NAME}.crt"
+sudo chmod 600 "$CERT_DIR/${CERT_NAME}.key"
+
+# 6. Final Log
+echo "Process complete. Files currently in $CERT_DIR:"
+sudo ls -lh "$CERT_DIR"
 ```
 
+The "red lines" and the warning in Octopus are happening because OpenSSL sends its progress indicators (the dots and plus signs) to stderr (Standard Error) instead of stdout (Standard Output).
+
+The Fix: Redirect stderr to stdout, 2>&1  # red lines
+To get a clean green checkmark without warnings, you can tell OpenSSL to merge its output so Octopus treats it as regular information.
+
+And we have backups and the new cert and key.
+
+![Cert created](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/cert_created.png)
 
 ### Install linux tentacle (this vm has internet access), AD DS must be running
 
