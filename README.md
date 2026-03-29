@@ -2,11 +2,17 @@
 
 <details>
 
-<summary>Readme with todo-and-current, Ai as helper, Gemini.</summary
+<summary>Readme with todo-and-current, Ai as helper, Gemini, Dark mode Win 11</summary
 
 * Manage workflow (Slipknot/Trance/Music in general is the cure)
 * Optimize your environment
 * Adjust your mindset and habits
+
+To enable Dark Mode in Windows 11, go to Settings > Personalization > Colors and select "Dark" under "Choose your mode". This applies a dark gray theme to system backgrounds, apps, the taskbar, and the Start menu, reducing screen brightness for lower-light environments.
+
+
+The best computer screen background colors to reduce eye strain are soft, low-intensity, or muted tones. Light green, pale yellow, and soft beige are often recommended for long-term comfort. For darker environments, dark grey or warm brown backgrounds with light text reduce strain, while bright white should be avoided.
+
 
 </details>
 
