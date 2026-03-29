@@ -915,6 +915,27 @@ no pass
 </p>
 </details>
 
+<details><summary>Generate ssl and check it</summary>
+<p>
+
+#### We can hide anything, even code!
+
+```bash
+
+sudo openssl req -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out server.crt -keyout server.key -subj "/C=NO/ST=Hordaland/L=BER/O=Socrates.inc/OU=IT/CN=vm01.socrates.inc"
+
+ls
+#  server.crt  server.key
+
+openssl x509 -noout -subject -startdate -enddate -in server.crt
+# subject=C = NO, ST = Hordaland, L = BER, O = Socrates.inc, OU = IT, CN = vm01.socrates.inc
+# notBefore=Mar 29 18:03:20 2026 GMT
+# notAfter=Mar 29 18:03:20 2027 GMT
+
+```
+</p>
+</details>
+
 <details><summary>debmirror</summary>
 <p>
 
