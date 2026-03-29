@@ -915,7 +915,7 @@ no pass
 </p>
 </details>
 
-<details><summary>Generate ssl and check it</summary>
+<details><summary>Generate ssl (no promts) and check it</summary>
 <p>
 
 #### We can hide anything, even code!
