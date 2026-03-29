@@ -598,7 +598,11 @@ sudo chmod 600 "$CERT_DIR/${CERT_NAME}.key"
 
 # 6. Final Log
 echo "Process complete. Files currently in $CERT_DIR:"
-sudo ls -lh "$CERT_DIR"
+sudo ls -lh "$CERT_DIR" 
+
+# 7. Check the cert (using the full path)
+echo "Verifying the new certificate details:"
+openssl x509 -noout -subject -startdate -enddate -in "$CERT_DIR/${CERT_NAME}.crt"
 ```
 
 The "red lines" and the warning in Octopus are happening because OpenSSL sends its progress indicators (the dots and plus signs) to stderr (Standard Error) instead of stdout (Standard Output).
