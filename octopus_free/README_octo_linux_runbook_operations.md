@@ -612,9 +612,17 @@ And we have backups and the new cert and key.
 
 
 
-## 4 Renew SSL cert Runbook
+## 4 Apache add SSL cert Runbook
 
-Renew / make new a cert and mv files.
+Assuming runbook 3 is completed:
+
+```bash
+pwd
+# /etc/automation_cert
+ls
+backups  vmzabbix02.crt  vmzabbix02.key
+```
+
 
 Swap the cert on vmzabbix01 that is running apache.
 
