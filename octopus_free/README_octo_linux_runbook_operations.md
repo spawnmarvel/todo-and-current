@@ -488,6 +488,36 @@ Click Save.
 
 ![linux var](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/linux_var.png)
 
+Now add a new step, with making the cert and key using octopus var.
+
+```bash
+# Define your variables (or pull these from Octopus Project Variables)
+CERT_DIR="/etc/automation_cert"
+CERT_NAME=$(get_octopusvariable "Linux.vmzabbix02")
+CERT_SUBJ="/C=US/ST=NewYork/L=NYC/O=IT/CN=${CERT_NAME}"
+echo "Cert name $CERT_NAME"
+
+
+# Create directory if it doesn't exist
+sudo mkdir -p "$CERT_DIR"
+cd "$CERT_DIR"
+
+# Generate the certificate silently
+# -subj provides the identity info automatically
+sudo openssl req -newkey rsa:4096 \
+  -x509 \
+  -sha256 \
+  -days 365 \
+  -nodes \
+  -out "${CERT_NAME}.crt" \
+  -keyout "${CERT_NAME}.key" \
+  -subj "$CERT_SUBJ"
+
+echo "Certificate and Key have been generated in $CERT_DIR"
+ls -l "$CERT_DIR"
+```
+
+
 ### Install linux tentacle (this vm has internet access), AD DS must be running
 
 ```bash
