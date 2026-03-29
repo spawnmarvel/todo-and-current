@@ -8,6 +8,7 @@
 * Optimize your environment
 * Adjust your mindset and habits
 
+--- 
 To enable Dark Mode in Windows 11, go to Settings > Personalization > Colors and select "Dark" under "Choose your mode". This applies a dark gray theme to system backgrounds, apps, the taskbar, and the Start menu, reducing screen brightness for lower-light environments.
 
 
