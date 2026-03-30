@@ -642,9 +642,9 @@ And we have backups and the new cert and key.
 
 
 
-## 4 Apache add new SSL cert Runbook
+## 3.1 Apache add new SSL cert Runbook
 
-Assuming runbook 3 is completed:
+Assuming runbook 3 is completed, then we update with step.
 
 ```bash
 pwd
@@ -701,7 +701,7 @@ exit 0
 ![Cert new](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/cert_new.png)
 
 
-## 5 Install MySql Runbook
+## 4 Install MySql Runbook
 
 We will only install it at one vm, the offline vm first.
 
@@ -750,7 +750,7 @@ done
 echo "=== AUDIT COMPLETE ==="
 ```
 
-#### 3.1 Install MySql Runbook (do manual first) todo
+#### 4.1 Install MySql Runbook (do manual first) todo
 
 ```bash
 #!/bin/bash
@@ -804,10 +804,10 @@ bash install_mysql_8_4.sh
 
 Then move it to octopus
 
-## 6 (Upgrade MySql Runbook) or go direct to 8.4?
+## 5 (Upgrade MySql Runbook) or go direct to 8.4?
 
 Here we use apt-get, variables and we have a downloaded MySql 8.4 packet
 
-## 7 Zabbix stack (MySql is in a different runbook) Runbook 
+## 6 Zabbix stack (MySql is in a different runbook) Runbook 
 
 Install the zabbix stack on a vm where mysql is already installed.
