@@ -126,7 +126,28 @@ The "Rules of the Road" for 2026
 
 * apt is for Humans. It has pretty progress bars, colors, and friendly summaries. It's what you type when you are sitting at the keyboard.
 
-### 2. Variables for automation
+### 2 Octopus green with white warning fix
+
+```bash
+# 5. Test Apache configuration before restarting
+echo "Testing Apache configuration..."
+
+# Redirect stderr (2) to stdout (1) so "Syntax OK" isn't red in Octopus
+if sudo apachectl configtest 2>&1; then
+    echo "Config confirmed OK. Restarting Apache..."
+    # 6. Restart
+    sudo systemctl restart apache2
+    echo "Apache restarted successfully."
+else
+    echo "Apache config test FAILED! Check the logs above."
+    exit 1
+fi
+
+# 7. Force a clean exit
+exit 0
+```
+
+### 3. Variables for automation
 
 ```bash
 Turn those commands into a Bash or PowerShell script. Replace hardcoded values with variables for automation.
@@ -603,6 +624,11 @@ sudo ls -lh "$CERT_DIR"
 # 7. Check the cert (using the full path)
 echo "Verifying the new certificate details:"
 openssl x509 -noout -subject -startdate -enddate -in "$CERT_DIR/${CERT_NAME}.crt"
+
+# 8 set permission
+sudo chmod 755 /etc/ssl/private
+echo "Verifying permissions for /etc/ssl/private..."
+ls -ld /etc/ssl/private
 ```
 
 The "red lines" and the warning in Octopus are happening because OpenSSL sends its progress indicators (the dots and plus signs) to stderr (Standard Error) instead of stdout (Standard Output).
@@ -627,8 +653,50 @@ ls
 backups  vmzabbix02.crt  vmzabbix02.key
 ```
 
+And assuming /etc/apache2/sites-enabled/default-ssl.conf
+
+```ini
+SSLCertificateFile      /etc/ssl/certs/vmzabbix02.crt
+SSLCertificateKeyFile   /etc/ssl/private/vmzabbix02.key
+```
 
 Swap the cert on vmzabbix01 that is running apache.
+
+```bash
+# 1. Setup paths
+TARGET_DIR="/etc/automation_cert"
+CERT_NAME="vmzabbix02"
+
+# 2. Navigate and verify
+cd "$TARGET_DIR" || exit 1
+echo "Moving files from $(pwd)..."
+
+# 3. Move files to official system locations
+sudo mv "${CERT_NAME}.crt" "/etc/ssl/certs/${CERT_NAME}.crt"
+# Fixed: ensured the extension stays .key
+sudo mv "${CERT_NAME}.key" "/etc/ssl/private/${CERT_NAME}.key"
+
+# 4. Set Permissions (Crucial for Apache access)
+sudo chown root:www-data "/etc/ssl/private/${CERT_NAME}.key"
+sudo chmod 640 "/etc/ssl/private/${CERT_NAME}.key"
+
+# 5. Test Apache configuration before restarting
+echo "Testing Apache configuration..."
+
+# Redirect stderr (2) to stdout (1) so "Syntax OK" isn't red in Octopus
+if sudo apachectl configtest 2>&1; then
+    echo "Config confirmed OK. Restarting Apache..."
+    # 6. Restart
+    sudo systemctl restart apache2
+    echo "Apache restarted successfully."
+else
+    echo "Apache config test FAILED! Check the logs above."
+    exit 1
+fi
+
+# 7. Force a clean exit
+exit 0
+```
 
 
 ## 5 Install MySql Runbook
