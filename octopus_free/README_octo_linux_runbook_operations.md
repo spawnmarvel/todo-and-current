@@ -698,6 +698,8 @@ fi
 exit 0
 ```
 
+![Cert new](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/cert_new.png)
+
 
 ## 5 Install MySql Runbook
 
