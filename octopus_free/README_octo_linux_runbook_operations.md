@@ -546,7 +546,7 @@ Then lets make a variable in octopus for the hostname.
 2. Click Create Variables.
 3. Add Linux.vmzabbix02 in the Name column,
 Add the vmzabbix02 (hostname), in the Value column,
-4. Click the Scope column and select the Development/staging/production environment.
+4. Click the Scope column and  and a the same vmtag (no not select the Development/staging/production environment.)
 
 Click Save.
 
