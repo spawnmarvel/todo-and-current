@@ -28,7 +28,7 @@ https://follow-e-lo.com/
 </details>
 
 ---
-### Bash/ps1 for admin, zabbix_sender, telegraf, Python for complex
+### Bash/ps1 for admin, zabbix_sender, telegraf (?), Python for complex
 
 ![python telegraf](https://github.com/spawnmarvel/todo-and-current/blob/main/images/py_tele.png)
 <details>
@@ -36,9 +36,10 @@ https://follow-e-lo.com/
 <summary>Scripting automation, idempotent.</summary>
 
 * Linux bash,cron, python, telegraf
-* Windows powershell, schedule task, zabbix_sender, telegraf
+* Windows powershell, schedule task, zabbix_sender
 * Python for complexity 
 * MySql, Sqlplus
+* Telegraf, https://github.com/influxdata/telegraf
 
 </details>
 
