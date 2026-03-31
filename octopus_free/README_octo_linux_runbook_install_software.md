@@ -158,6 +158,18 @@ else
 fi
 ```
 
+Log
+
+```log
+--- 1. CHECKING FOR UNZIP --- 
+[!] Unzip missing. Extracting using Python... 
+Selecting previously unselected package unzip. 
+(Reading database ... 97411 files and directories currently installed.) 
+Preparing to unpack .../unzip_6.0-28ubuntu4.1_amd64.deb ... 
+Unpacking unzip (6.0-28ubuntu4.1) ... 
+Setting up unzip (6.0-28ubuntu4.1) ... 
+Processing triggers for man-db (2.12.0-4build2) ... 
+```
 unzip is now officially a live command on your server.
 
 ### Step 3 Install zip and MySql 8.4
