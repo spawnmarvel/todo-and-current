@@ -35,8 +35,8 @@ https://follow-e-lo.com/
 
 <summary>Scripting automation, idempotent.</summary>
 
-* Linux bash,cron, python, telegraf
-* Windows powershell, schedule task, zabbix_sender
+* Linux bash, cron, python, zabbix_sender,  telegraf
+* Windows powershell, schedule task, zabbix_sender, telegraf
 * Python for complexity 
 * MySql, Sqlplus
 * Telegraf, https://github.com/influxdata/telegraf
