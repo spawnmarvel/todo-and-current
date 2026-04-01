@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # --- GLOBAL VARIABLES ---
 # We define these outside functions so they persist across different games.
 # No '$' is used during assignment (setting the value).

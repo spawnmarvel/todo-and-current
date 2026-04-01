@@ -1,4 +1,9 @@
 #!/bin/bash
+set -euo pipefail
+# -e: Exit immediately if a command exits with a non-zero status
+# -u: Treat unset variables as an error
+# -o pipefail: Catch errors in piped commands
+
 # 1. This creates your certificate authority. The private key is saved as root.key and the certificate as root.cr
 openssl req -x509 -new -nodes -sha256 -days 3652 \
     -newkey ec -pkeyopt ec_paramgen_curve:prime256v1 \
