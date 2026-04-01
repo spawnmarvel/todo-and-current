@@ -1102,7 +1102,7 @@ https://www.w3schools.com/bash/bash_commands.php
 
 ## Hands on with
 
-<details><summary>sudo (is slow) nano tets.txt</summary>
+<details><summary>sudo (is slow) nano tst.txt</summary>
 <p>
 
 #### We can hide anything, even code!
