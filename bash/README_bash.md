@@ -668,7 +668,10 @@ echo "hello $name"
 
 ```
 
-variables
+
+<details><summary>variables</summary>
+<p>
+
 ```bash
 current_dir=$(pwd)
 echo $current_dir
@@ -699,6 +702,9 @@ sum=$((health+ candybar))
 echo $sum
 
 ```
+
+</p>
+</details>
 
 datatypes
 ```bash
@@ -816,10 +822,7 @@ next
 
 ```
 
-When done make a bash text game
 
-</p>
-</details>
 
 <details><summary>Exercises and Quiz</summary>
 <p>
