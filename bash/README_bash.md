@@ -866,7 +866,7 @@ fi
 
 ```
 </p>
-</details
+</details>
 
 <details><summary>09. Schedule cron</summary>
 <p>
@@ -877,7 +877,7 @@ fi
 
 ```
 </p>
-</details
+</details>
 
 <details><summary>Exercises and Quiz</summary>
 <p>
