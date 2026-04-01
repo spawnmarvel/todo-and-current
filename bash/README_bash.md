@@ -1102,6 +1102,37 @@ https://www.w3schools.com/bash/bash_commands.php
 
 ## Hands on with
 
+<details><summary>sudo (is slow) nano tets.txt</summary>
+<p>
+
+#### We can hide anything, even code!
+
+```bash
+hostname
+vmchaos09
+
+# edit
+127.0.0.1 localhost
+
+# The following lines are desirable for IPv6 capable hosts
+
+# to
+127.0.0.1 localhost vmchaos09
+::1       localhost ip6-localhost ip6-loopback vmchaos09
+
+# The following lines are desirable for IPv6 capable hosts
+```
+Since the delay is gone, your system is now resolving its identity locally in microseconds instead of waiting for a network timeout. To keep things running smoothly, here is a quick summary of what you just accomplished:
+
+The Fix Summary
+*  Root Cause: sudo was performing a canonical hostname lookup. Without your hostname in /etc/hosts, it spent several seconds asking external DNS servers for an address it should have found internally.
+*  The Solution: Mapping your hostname to the loopback address ($127.0.0.1$) allowed the system to verify its identity instantly.
+*  The Result: Zero-latency execution for all sudo authenticated commands.
+
+
+</p>
+</details>
+
 <details><summary>shd[14883]: error: maximum authentication attempts exceeded for invalid user</summary>
 <p>
 
