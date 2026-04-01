@@ -101,14 +101,12 @@ https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-800-
 
 Well, this never stops, so lets make a priority list of all the topics below.
 
-1. Do the bash tutorial w3s and make a good quick guide = 90%, a bit more here
-   - This includes the RPG game
-2. Do the MS learn Active Directory Domain Services with vmhybrid01
+1. Do the MS learn Active Directory Domain Services with vmhybrid01
    - Continue AZ-800
 
 ![top3](https://github.com/spawnmarvel/todo-and-current/blob/main/images/top3_.png)
 
-3. Octopus Deploy for linux (is 2 in one CI/CD and Bash)
+2. Octopus Deploy for linux (is 2 in one CI/CD and Bash)
    - Two projects (win/lin) and 100's of runbooks, we do linux project for now
    - Do all linux apps and day 2 operations in:
    - Diagnostics, packets, install MySQL, etc
@@ -135,15 +133,15 @@ sudo apt autoclean
 ```
 1. :bulb: Linux maintenance:
     
-    - Do the bash tutorial w3s and make a good quick guide = 80%
-    - Do bash rpg game like UIB = 
+    - :white_check_mark:  Do the bash tutorial w3s and make a good quick guide = 100%
+    - Do bash rpg game like UIB = 60%
     - :white_check_mark: Do install offline zabbix agent from *.deb = 100%
     - Do the mirror-server = 50%
     - - Saved in azure-extra-linux-vm-mirror
     - Do proxy readme proxy and architecture = 100%
     - :white_check_mark: Do make a proxy for the on premises 7.0.22, vmchaos09 push/active vmzabbix02 = 100% 
     - :white_check_mark: Do send agent proxy data to main = 100%
-    - Do proxy with grafana plugin = 
+    - :white_check_mark: Do proxy  = 
     - - Saved in /zabbix_monitoring_vms
     - Do SNMP with zabbix
     - - Saved in /zabbix_monitoring_vms
@@ -175,11 +173,12 @@ mysql --user=#{MySQL.User} --password=#{MySQL.Password}
 
 3. :bulb: Az-800 Administering Windows Server Hybrid Core Infrastructure
    - Do Ms learn bit by bit
-   - Do The "Cloud-Only" Hybrid Lab (to get some hand on) = 100%
+   - :white_check_mark: AD DS is installed  = 100%
+   - :white_check_mark: Do The "Cloud-Only" Hybrid Lab (to get some hand on) = 100%
    - :bulb: Do the MS learn Active Directory Domain Services = 
    - - vmhybrid01
    - - Saved in az-800-admistering-windows-server-hybrid-core-infrastructure
-   - :white_check_mark: Do install ips21 15 no license on vmhybrid01 (ip21 and sql / training / update values with sql) = 100%
+  
 
 4. Octopus deploy (free)
    - :white_check_mark: Do first deployment windows, project, relase, step, process and vars, push deploy to target = 100%

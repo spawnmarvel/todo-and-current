@@ -684,7 +684,7 @@ s -l carrot_list.txt
 
 
 <details>
-<summary><b>01. Scripting Basics</b></summary>
+<summary><b>01.Scripting Basics</b></summary>
 <p>
 
 Syntax Fundamentals
@@ -721,16 +721,6 @@ echo $number
 # Environment Variables
 echo "Your PATH is $PATH"
 ```
-
-Functions & Local Scope
-```Bash
-my_function() {
-  local local_var="I am local"
-  echo $local_var
-}
-my_function
-```
-
 Common Operations
 
 ```Bash
@@ -756,12 +746,13 @@ echo "Total Health: $sum"
 Strings
 
 ```Bash
+# strings
 greeting="Allo, allo"
 name="Steve"
 welcome="$greeting, $name"
 echo "$welcome"
-Numbers
-Bash
+
+# Numbers
 num1=5
 num2=2
 echo "sum $((num1 + num2)), diff $((num1 - num2)), mult $((num1 * num2)), div $((num1 / num2))"
@@ -802,10 +793,30 @@ Comparison (Numeric)
 * -gt : greater than
 * -ge : greater than or equal
 
+```bash
+# number
+num3=22
+if [ $num3 -gt 20 ]; then
+ echo "Greater than 20"
+fi
+```
+
 String & Logic
 
 * = / != : string equality
 * && / || / ! : AND, OR, NOT
+
+
+```bash
+# strings
+name="john"
+if [ $name = "Jim" ]; then
+ echo "Name is equal $name"
+else
+  echo "Name is not equal $name"
+fi
+
+```
 
 File Tests
 
@@ -813,6 +824,17 @@ File Tests
 * -d : is directory
 * -f : is regular file
 * -s : is not empty
+
+
+```bash
+# asuming the folder is in the dir where we run the script
+check_dir="folder/"
+if [ -d "$check_dir" ]; then
+  echo "Dir exists $check_dir"
+else
+  echo "Dir not exists $check_dir"
+fi
+```
 
 </p>
 </details>
@@ -841,11 +863,6 @@ fi
 
 ```bash
 #!/bin/bash
-set -euo pipefail
-# -e: Exit immediately if a command exits with a non-zero status
-# -u: Treat unset variables as an error
-# -o pipefail: Catch errors in piped commands
-
 # for loop
 
 for i in {1..5}; do
@@ -897,7 +914,40 @@ done
 
 
 ```bash
-# 
+#!/bin/bash
+
+my_function() {
+  echo "Hello world"
+}
+
+my_function
+
+
+# parameter 1
+input_fun() {
+  local param=$1
+  echo "The parameter is $param"
+}
+
+input_fun "Acer"
+
+# parameter 1 and 2
+input_fun() {
+  local param1=$1
+  local param2=$2
+  echo "The parameter is $param1 and $param2"
+}
+
+input_fun "Acer" "ludo"
+
+return_fun() {
+  local sum=$(($1 + $2))
+  echo $sum
+  echo "Calculated"
+}
+
+result=$(return_fun 10 3)
+echo $result
 
 ```
 </p>
@@ -908,7 +958,18 @@ done
 
 
 ```bash
-# 
+#!/bin/bash
+my_array=("val1" "val2" "val3")
+# get 0
+echo $my_array[0]
+# get all
+
+echo "${my_array[@]}"
+
+# mod
+my_array[1]="val22"
+
+echo "${my_array[@]}"
 
 ```
 </p>
@@ -919,9 +980,94 @@ done
 
 
 ```bash
-# 
+#!/bin/bash
+
+# get the date time
+dt=$(date)
+echo $dt
+
+# append it to a file
+echo $dt >> script_log.txt
 
 ```
+
+Options
+```bash
+crontab [options]
+# -e: Edit the crontab file for the current user.
+# -l: List the crontab entries for the current user.
+# -r: Remove the crontab file for the current user.
+
+```
+Run it every minute.
+
+```bash
+# get path to script
+pwd
+/home/imsdal
+
+# or 
+realpath log_script.sh 
+/home/imsdal/log_script.sh
+
+crontab -e
+# 1. /bin/nano
+
+# every min 
+ * * * * * /home/imsdal/log_script.sh >>/home/imsdal/logs/cron_log.log 2>&1
+# save it
+# >> Appends the standard output.
+# 2>&1 Ensures errors (Standard Error) are also sent to the log file.
+
+# every 5 min
+# */5 * * * * /path/to/your/script.sh
+
+# Bash scripts won't run unless they have the "x" permission bit set.
+chmod +x /home/imsdal/log_script.sh
+
+```
+
+verify that cron is running (optional)
+```bash
+# check that cron are running
+sudo systemctl status cron
+
+```
+
+Log script it with tail or cat
+
+```bash
+sudo tail -f script_log.txt
+
+cat script_log.txt 
+Wed Apr 1 16:45:01 UTC 2026
+Wed Apr 1 16:46:01 UTC 2026
+
+``` 
+
+Log cron it with tail or cat
+
+```bash
+sudo tail -f script_log.txt
+
+cat cron_log.log 
+Wed Apr 1 16:45:01 UTC 2026
+Wed Apr 1 16:46:01 UTC 2026
+``` 
+
+
+Remove a script
+
+```bash
+# check what w ehave
+crontab -l
+# open it
+crontab -e
+# find the line containing your script and remove it
+
+
+```
+
 </p>
 </details>
 
