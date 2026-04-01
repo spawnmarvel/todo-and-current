@@ -53,11 +53,11 @@ Analogy: In Python, you have a "User" object with a .name attribute. In Bash, yo
 
 Bash: By default, if a command fails, Bash continues to the next line. This is the #1 trap for beginners. You must explicitly configure Bash to stop on errors using "Strict Mode."
 
-| Feature | Python | PowerShell | Bash | Short Example (Bash)
-| Data Type | Objects (Strongly Typed) | .NET Objects | Strings (Unstructured) | "val=""123"" (it's just text)"
-| Piping | Function chaining | Objects pass via | Text passes via | "cat file.txt '|' grep ""error"""
-| Variables | "var = ""val""" |"$Var = ""val""" | "VAR=""val""" | echo $VAR
-| Philosophy | """One right way""" | """Everything is an object""" | """Glue together tools""" | ls '|' wc -l (using two tools)
+| Feature | Python | PowerShell | Bash | Short Example (Bash) |
+| Data Type | Objects (Strongly Typed) | .NET Objects | Strings (Unstructured) | "val=""123"" (it's just text)" |
+| Piping | Function chaining | Objects pass via | Text passes via | "cat file.txt '|' grep ""error""" |
+| Variables | "var = ""val""" |"$Var = ""val""" | "VAR=""val""" | echo $VAR |
+| Philosophy | """One right way""" | """Everything is an object""" | """Glue together tools""" | ls '|' wc -l (using two tools) |
 
 ## Pro-Tip: "Bash Strict Mode"
 
