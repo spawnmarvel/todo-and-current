@@ -101,6 +101,24 @@ netsh interface portproxy add v4tov4 listenport=10936 listenaddress=0.0.0.0 conn
 New-NetFirewallRule -DisplayName "Octopus Linux Forwarding" -Direction Inbound -LocalPort 10936 -Protocol TCP -Action Allow
 ```
 
+## netsh netsh interface portproxy show all
+
+```ps1
+# This shows you exactly what iphlpsvc is currently forwarding
+netsh interface portproxy show all
+```
+
+log
+```log
+Listen on ipv4:             Connect to ipv4:
+
+Address         Port        Address         Port
+--------------- ----------  --------------- ----------
+0.0.0.0         10934       172.64.0.5      10933
+0.0.0.0         10935       192.168.3.4     10933
+0.0.0.0         10936       192.168.3.6     10933
+
+```
 ## Octopus Deploy uses HTTPS (TLS) for its communication.
 
 This is a critical distinction because it changes how you should approach the security of your portproxy setup. If Octopus is already using HTTPS, the data itself is already encrypted before it even touches your Windows Server portproxy.
