@@ -73,6 +73,23 @@ netsh interface portproxy add v4tov4 listenport=10935 listenaddress=0.0.0.0 conn
 New-NetFirewallRule -DisplayName "Octopus Linux Forwarding" -Direction Inbound -LocalPort 10935 -Protocol TCP -Action Allow
 ```
 
+vmsnmpsim01
+* 192.168.3.6
+
+1. The "Signpost" Command (Windows)
+
+v4tov4
+
+```ps1
+netsh interface portproxy add v4tov4 listenport=10936 listenaddress=0.0.0.0 connectport=10933 connectaddress=192.168.3.6
+```
+
+2. Open the Windows Firewall
+
+```ps1
+New-NetFirewallRule -DisplayName "Octopus Linux Forwarding" -Direction Inbound -LocalPort 10936 -Protocol TCP -Action Allow
+```
+
 ## Octopus Deploy uses HTTPS (TLS) for its communication.
 
 This is a critical distinction because it changes how you should approach the security of your portproxy setup. If Octopus is already using HTTPS, the data itself is already encrypted before it even touches your Windows Server portproxy.
