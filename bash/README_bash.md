@@ -643,7 +643,7 @@ s -l carrot_list.txt
 </p>
 </details>
 
-<details><summary>Scripting '#!/bin/bash'</summary>
+<details><summary>Scripting</summary>
 <p>
 
 #### We can hide anything, even code!
@@ -668,10 +668,7 @@ echo "hello $name"
 
 ```
 
-
-<details><summary>variables</summary>
-<p>
-
+variables
 ```bash
 current_dir=$(pwd)
 echo $current_dir
@@ -702,9 +699,6 @@ sum=$((health+ candybar))
 echo $sum
 
 ```
-
-</p>
-</details>
 
 datatypes
 ```bash
@@ -822,7 +816,10 @@ next
 
 ```
 
+When done make a bash text game
 
+</p>
+</details>
 
 <details><summary>Exercises and Quiz</summary>
 <p>
