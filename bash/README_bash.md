@@ -997,10 +997,52 @@ crontab [options]
 # -e: Edit the crontab file for the current user.
 # -l: List the crontab entries for the current user.
 # -r: Remove the crontab file for the current user.
+
 ```
 Run it every minute.
 
 ```bash
+# get path to script
+pwd
+/home/imsdal
+
+# or 
+realpath log_script.sh 
+/home/imsdal/log_script.sh
+
+crontab -e
+# 1. /bin/nano
+
+# every min 
+# * * * * * /home/imsdal/log_script.sh
+# save it
+
+# every 5 min
+*/5 * * * * /path/to/your/script.sh
+
+```
+
+Log it with tail
+
+```bash
+sudo tail -f cron_log.txt
+``` 
+
+log
+
+```log
+
+```
+
+Remove a script
+
+```bash
+# check what w ehave
+crontab -l
+# open it
+crontab -e
+# find the line containing your script and remove it
+
 
 ```
 
