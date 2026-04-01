@@ -672,6 +672,9 @@ sudo ./test_script.sh
 <summary><b>02. Variables & Operations</b></summary>
 <p>
 
+<details>
+<summary><b>02. Variables & Operations</b></summary>
+<p>
 Assignments
 ```Bash
 current_dir=$(pwd)
