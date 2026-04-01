@@ -106,7 +106,7 @@ Well, this never stops, so lets make a priority list of all the topics below.
 2. Do the MS learn Active Directory Domain Services with vmhybrid01
    - Continue AZ-800
 
-![top3](https://github.com/spawnmarvel/todo-and-current/blob/main/images/top3.png)
+![top3](https://github.com/spawnmarvel/todo-and-current/blob/main/images/top3_.png)
 
 3. Octopus Deploy for linux (is 2 in one CI/CD and Bash)
    - Two projects (win/lin) and 100's of runbooks, we do linux project for now
