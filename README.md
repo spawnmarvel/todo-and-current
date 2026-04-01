@@ -177,7 +177,7 @@ mysql --user=#{MySQL.User} --password=#{MySQL.Password}
    - :bulb: Do the MS learn Active Directory Domain Services = 
    - - vmhybrid01
    - - Saved in az-800-admistering-windows-server-hybrid-core-infrastructure
-   - :white_check_mark: Do install ips21 15 no license on vmhybrid01 (ip21 and sql / training / update values with sql) = 100%
+   - :white_check_mark: AD DS is installed  = 100%
 
 4. Octopus deploy (free)
    - :white_check_mark: Do first deployment windows, project, relase, step, process and vars, push deploy to target = 100%
