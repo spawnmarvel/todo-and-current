@@ -643,7 +643,7 @@ s -l carrot_list.txt
 </p>
 </details>
 
-<details><summary>Scripting</summary>
+<details><summary>Scripting '#!/bin/bash'</summary>
 <p>
 
 #### We can hide anything, even code!
