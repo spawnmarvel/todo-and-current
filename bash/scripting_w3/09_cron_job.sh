@@ -5,6 +5,6 @@ dt=$(date)
 echo $dt
 
 # append it to a file
-echo $dt >> cron_log.txt
+echo $dt >> script_log.txt
 
 
