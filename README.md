@@ -173,11 +173,12 @@ mysql --user=#{MySQL.User} --password=#{MySQL.Password}
 
 3. :bulb: Az-800 Administering Windows Server Hybrid Core Infrastructure
    - Do Ms learn bit by bit
-   - Do The "Cloud-Only" Hybrid Lab (to get some hand on) = 100%
+   - :white_check_mark: AD DS is installed  = 100%
+   - :white_check_mark: Do The "Cloud-Only" Hybrid Lab (to get some hand on) = 100%
    - :bulb: Do the MS learn Active Directory Domain Services = 
    - - vmhybrid01
    - - Saved in az-800-admistering-windows-server-hybrid-core-infrastructure
-   - :white_check_mark: AD DS is installed  = 100%
+  
 
 4. Octopus deploy (free)
    - :white_check_mark: Do first deployment windows, project, relase, step, process and vars, push deploy to target = 100%
