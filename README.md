@@ -113,7 +113,7 @@ Well, this never stops, so lets make a priority list of all the topics below.
    - Do all linux apps and day 2 operations in:
    - Diagnostics, packets, install MySQL, etc
    - Do follow the guide in
-   - - https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/README_runbook_linux_tips.md
+   - - https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/README_octo_linux_runbook_operations.md
 
 ![deploy123](https://github.com/spawnmarvel/todo-and-current/blob/main/images/deploy123.png)
 
