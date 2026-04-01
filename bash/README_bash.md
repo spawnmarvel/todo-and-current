@@ -53,7 +53,7 @@ Analogy: In Python, you have a "User" object with a .name attribute. In Bash, yo
 
 Bash: By default, if a command fails, Bash continues to the next line. This is the #1 trap for beginners. You must explicitly configure Bash to stop on errors using "Strict Mode."
 
-
+![bash_table](https://github.com/spawnmarvel/todo-and-current/blob/main/images/bash_table.png)
 
 ## Pro-Tip: "Bash Strict Mode"
 
