@@ -53,8 +53,25 @@ Analogy: In Python, you have a "User" object with a .name attribute. In Bash, yo
 
 Bash: By default, if a command fails, Bash continues to the next line. This is the #1 trap for beginners. You must explicitly configure Bash to stop on errors using "Strict Mode."
 
+| Feature | Python | PowerShell | Bash | Short Example (Bash)
+| Data Type | Objects (Strongly Typed) | .NET Objects | Strings (Unstructured) | "val=""123"" (it's just text)"
+| Piping | Function chaining | Objects pass via | Text passes via | "cat file.txt '|' grep ""error"""
+| Variables | "var = ""val""" |"$Var = ""val""" | "VAR=""val""" | echo $VAR
+| Philosophy | """One right way""" | """Everything is an object""" | """Glue together tools""" | ls '|' wc -l (using two tools)
 
-## W3schools repeat and use :cyclone:vmchaos09
+## Pro-Tip: "Bash Strict Mode"
+
+If you are coming from Python or PowerShell, you will find Bash very frustrating because it ignores errors by default. Always put this at the top of your scripts to make them behave more predictably:
+
+```bash
+#!/bin/bash
+set -euo pipefail
+# -e: Exit immediately if a command exits with a non-zero status
+# -u: Treat unset variables as an error
+# -o pipefail: Catch errors in piped commands
+```
+
+## W3schools :cyclone:vmchaos09
 
 <details><summary>Basic Commands, ls, ls -a, ls *name*, cd, pwd, echo, cat, cp, mv, rm, touch, mkdir</summary>
 <p>
