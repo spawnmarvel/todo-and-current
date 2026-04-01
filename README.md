@@ -141,7 +141,7 @@ sudo apt autoclean
     - Do proxy readme proxy and architecture = 100%
     - :white_check_mark: Do make a proxy for the on premises 7.0.22, vmchaos09 push/active vmzabbix02 = 100% 
     - :white_check_mark: Do send agent proxy data to main = 100%
-    - Do proxy with grafana plugin = 
+    - Do proxy  = 
     - - Saved in /zabbix_monitoring_vms
     - Do SNMP with zabbix
     - - Saved in /zabbix_monitoring_vms
