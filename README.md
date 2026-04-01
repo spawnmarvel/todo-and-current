@@ -101,7 +101,7 @@ https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-800-
 
 Well, this never stops, so lets make a priority list of all the topics below.
 
-1. Do the bash tutorial w3s and make a good quick guide = 90%, a bit more here
+1. Do the bash tutorial w3s and make a good quick guide = 100%
    - This includes the RPG game
 2. Do the MS learn Active Directory Domain Services with vmhybrid01
    - Continue AZ-800
@@ -135,8 +135,8 @@ sudo apt autoclean
 ```
 1. :bulb: Linux maintenance:
     
-    - Do the bash tutorial w3s and make a good quick guide = 80%
-    - Do bash rpg game like UIB = 
+    - :white_check_mark:  Do the bash tutorial w3s and make a good quick guide = 100%
+    - Do bash rpg game like UIB = 60%
     - :white_check_mark: Do install offline zabbix agent from *.deb = 100%
     - Do the mirror-server = 50%
     - - Saved in azure-extra-linux-vm-mirror
