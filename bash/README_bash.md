@@ -712,6 +712,45 @@ echo "Total Health: $sum"
 </p>
 </details>
 
+<details>
+<summary><b>03. Datatypes</b></summary>
+<p>
+
+Strings
+
+```Bash
+greeting="Allo, allo"
+name="Steve"
+welcome="$greeting, $name"
+echo "$welcome"
+Numbers
+Bash
+num1=5
+num2=2
+echo "sum $((num1 + num2)), diff $((num1 - num2)), mult $((num1 * num2)), div $((num1 / num2))"
+```
+Arrays (Indexed & Associative)
+
+```Bash
+# Standard Array
+enemy=("ogre" "demon" "troll")
+for e in "${enemy[@]}"; do
+ echo "Enemy: $e"
+done
+
+# Key-Value (Associative) Array
+declare -A enemys
+enemys[ogre]="100kg"
+enemys[demon]="150kg"
+enemys[troll]="200kg"
+enemys[god]="50kg"
+
+unset enemys[god]
+echo "Demon weight: ${enemys[demon]}"
+```
+</p>
+</details>
+
 <details><summary>Exercises and Quiz</summary>
 <p>
 
