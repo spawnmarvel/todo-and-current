@@ -753,6 +753,50 @@ echo "Demon weight: ${enemys[demon]}"
 </p>
 </details>
 
+<details>
+<summary><b>04. Operators</b></summary>
+<p>
+
+Comparison (Numeric)
+* -eq : equal
+* -ne : not equal
+* -lt : less than
+* -le : less than or equal
+* -gt : greater than
+* -ge : greater than or equal
+
+String & Logic
+
+* = / != : string equality
+* && / || / ! : AND, OR, NOT
+
+File Tests
+
+* -e : exists
+* -d : is directory
+* -f : is regular file
+* -s : is not empty
+
+</p>
+</details>
+
+<details>
+<summary><b>05. Control Flow (If/Else)</b></summary>
+<p>
+
+```Bash
+num3=20
+if [ $num3 -gt 20 ]; then
+ echo "Greater than 20"
+elif [ $num3 -eq 20 ]; then
+ echo "Equal to 20"
+else
+ echo "Less than 20"
+fi
+```
+</p>
+</details>
+
 <details><summary>Exercises and Quiz</summary>
 <p>
 
