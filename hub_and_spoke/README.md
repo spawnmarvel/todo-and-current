@@ -20,9 +20,13 @@ Network gateway and port proxy for vm with no public ip
 
 Since your Windows Server (vmhybrid01) has a public IP and is peered with the network as your private Linux box (docker03getmirrortest), you can use it as a ***Network Gateway***.
 
-docker03getmirrortest
 
-* Just private, 172.64.0.5
+vmhybrid01
+* 192.168.3.7
+* Public ip
+
+docker03getmirrortest
+* 172.64.0.5
 
 
 1. The "Signpost" Command (Windows)
@@ -49,3 +53,23 @@ New-NetFirewallRule -DisplayName "Octopus Linux Forwarding" -Direction Inbound -
 ```
 
 Add NSG also for vmhybrid01 for inbound 10934 since we already have a tenatcle for vmhybrid01, we must use a different port for docker03getmirrortes.
+
+## Add a new port proxy
+
+vmchaos09
+* 192.168.3.4
+
+1. The "Signpost" Command (Windows)
+
+v4tov4
+
+```ps1
+netsh interface portproxy add v4tov4 listenport=10935 listenaddress=0.0.0.0 connectport=10933 connectaddress=192.168.3.4
+```
+
+2. Open the Windows Firewall
+
+```ps1
+New-NetFirewallRule -DisplayName "Octopus Linux Forwarding" -Direction Inbound -LocalPort 10935 -Protocol TCP -Action Allow
+```
+
