@@ -713,7 +713,7 @@ echo "Total Health: $sum"
 </details>
 
 <details>
-<summary><b>03. Datatypes</b></summary>
+<summary><b>03. Datatypes & Arrays</b></summary>
 <p>
 
 Strings
@@ -746,6 +746,8 @@ enemys[troll]="200kg"
 enemys[god]="50kg"
 
 unset enemys[god]
+# ater this, echo $nemys[god] will produce no output, and the variable will be "unbound".
+
 echo "Demon weight: ${enemys[demon]}"
 ```
 </p>
