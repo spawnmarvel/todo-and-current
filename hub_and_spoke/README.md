@@ -1,5 +1,16 @@
 # Hub and Spoke networking model
 
+The "Hub" Hierarchy
+To keep the mental model clear:
+
+1. Architecture: Hub and Spoke.
+
+2. Technique: Port Forwarding / Port Proxy.
+
+3. Windows Service: iphlpsvc (IP Helper).
+
+4. Configuration Tool: netsh.
+
 ![hub and spoke](https://github.com/spawnmarvel/todo-and-current/blob/main/hub_and_spoke/images/topology.png)
 
 ## Environment
