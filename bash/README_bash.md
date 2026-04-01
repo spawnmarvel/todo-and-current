@@ -987,7 +987,7 @@ dt=$(date)
 echo $dt
 
 # append it to a file
-echo $dt >> cron_log.txt
+echo $dt >> script_log.txt
 
 ```
 
@@ -1014,25 +1014,47 @@ crontab -e
 # 1. /bin/nano
 
 # every min 
-# * * * * * /home/imsdal/log_script.sh
+ * * * * * /home/imsdal/log_script.sh >>/home/imsdal/logs/cron_log.log 2>&1
 # save it
+# >> Appends the standard output.
+# 2>&1 Ensures errors (Standard Error) are also sent to the log file.
 
 # every 5 min
-*/5 * * * * /path/to/your/script.sh
+# */5 * * * * /path/to/your/script.sh
+
+# Bash scripts won't run unless they have the "x" permission bit set.
+chmod +x /home/imsdal/log_script.sh
 
 ```
 
-Log it with tail
+verify that cron is running (optional)
+```bash
+# check that cron are running
+sudo systemctl status cron
+
+```
+
+Log script it with tail or cat
 
 ```bash
-sudo tail -f cron_log.txt
+sudo tail -f script_log.txt
+
+cat script_log.txt 
+Wed Apr 1 16:45:01 UTC 2026
+Wed Apr 1 16:46:01 UTC 2026
+
 ``` 
 
-log
+Log cron it with tail or cat
 
-```log
+```bash
+sudo tail -f script_log.txt
 
-```
+cat cron_log.log 
+Wed Apr 1 16:45:01 UTC 2026
+Wed Apr 1 16:46:01 UTC 2026
+``` 
+
 
 Remove a script
 
