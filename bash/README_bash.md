@@ -1719,9 +1719,18 @@ journalctl -f
 # grep journal
 journalctl -g zabbix
 
+# get 50 last errors
+journalctl -p err -n 50 --no-pager
+
+# get 100 last syslog
 tail -n 100 /var/log/syslog
 
+# 6 lists ports
+# List Listening TCP Sockets
+ss -ltn
 
+# Filters the results so you only see traffic where the Source Port is 10050.
+ss -ant 'sport = :10050'
 
 ```
 </p>
