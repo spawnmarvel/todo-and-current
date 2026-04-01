@@ -236,7 +236,7 @@ Many instances of Tentacle can be configured on a single machine. To configure a
 Follow the steps in cmd
 
 ```txt
-imsdal@vmchaos09:~$ /opt/octopus/tentacle/configure-tentacle.sh
+username@vmchaos09:~$ /opt/octopus/tentacle/configure-tentacle.sh
 Name of Tentacle instance (default Tentacle):vmchaos09
 What kind of Tentacle would you like to configure: 1) Listening or 2) Polling (default 1): 1
 Where would you like Tentacle to store configuration, logs, and working files? (/etc/octopus):
@@ -402,7 +402,7 @@ hello from uploaded octopus
 Restart vmchaos09 and check health in octopus.
 
 ```bash
-imsdal@vmchaos09:~$ uptime
+username@vmchaos09:~$ uptime
  20:42:44 up 2 min,  1 user,  load average: 0.32, 0.26, 0.10
 
 ```
