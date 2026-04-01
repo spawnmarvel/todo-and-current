@@ -855,7 +855,7 @@ fi
 
 ```
 </p>
-</details
+</details>
 
 <details><summary>08. Arrays</summary>
 <p>
