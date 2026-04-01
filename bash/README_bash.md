@@ -669,14 +669,12 @@ sudo ./test_script.sh
 </p>
 </details>
 
-<summary><b>02. Variables & Operations</b></summary>
-<p>
-
 <details>
 <summary><b>02. Variables & Operations</b></summary>
 <p>
 Assignments
-```Bash
+
+```bash
 current_dir=$(pwd)
 echo $current_dir
 
@@ -697,6 +695,7 @@ my_function
 ```
 
 Common Operations
+
 ```Bash
 # Concatenation
 player="John"
