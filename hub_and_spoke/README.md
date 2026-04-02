@@ -160,7 +160,8 @@ ssh-copy-id YOUR-USERNAME@<your-azure-ip>
 ssh username@ip
 
 # Edit 
-sudo nano /etc/ssh/sshd_config and set:
+sudo nano /etc/ssh/sshd_config
+#  and set:
 
 # PasswordAuthentication no
 # PubkeyAuthentication yes
@@ -203,7 +204,15 @@ Once you set PasswordAuthentication no in your sshd_config, the door for passwor
 The person on the new machine must generate their own cryptographic identity.
 
 ```bash
-# Run this command: 
+# Either use the key you all ready have
+# check it
+
+# linux
+sudo cat ~/.ssh/id_ed25519.pub
+# windows
+Get-Content $HOME\.ssh\id_ed25519.pub
+
+# or run this command if you have no ssh keys: 
 ssh-keygen -t ed25519
 
 # They should then find the file named 
@@ -275,10 +284,12 @@ Run this once to create the key pair that Octopus will use to "talk" to your Zab
 ls
 id_ed25519  id_ed25519.pub  known_hosts  known_hosts.old
 
-# login dmzdocker03
 ssh-keygen -t ed25519 -f ~/.ssh/octopus_key -C "octopus-deploy"
+
+cd ~/.ssh
 ls
-authorized_keys  known_hosts  known_hosts.old  octopus_key  octopus_key.pub
+id_ed25519  id_ed25519.pub  known_hosts  known_hosts.old  octopus_key  octopus_key.pub
+
 
 ```
 This creates octopus_key (Private) and octopus_key.pub (Public).
@@ -290,9 +301,11 @@ You need to tell the VM to accept this specific key and allow YOUR-USERNAME to r
 ```bash
 # Copy the text of your new public key
 cat ~/.ssh/octopus_key.pub
+# Paste that text into the VM's file: 
+sudo nano ~/.ssh/authorized_keys
 ```
 
-Paste that text into the VM's file: nano ~/.ssh/authorized_keys
+
 
 2. Give YOUR-USERNAME "Sudo" Powers (No Password):
 
