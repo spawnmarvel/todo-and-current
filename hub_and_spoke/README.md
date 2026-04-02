@@ -278,6 +278,27 @@ ssh -T git@github.com
 
 If you switch to SSH Keys, you are moving away from the Octopus Tentacle Agent ($10933$).
 
+### Why the Tentacle still works
+
+When you see ##OCTOLINE## and ##OCTOCOPY##, that is the Calamari engine (the Tentacle's brain) talking back to the Octopus Server. Even though you hardened the SSH service on the VM, the Tentacle service is still running in the background on its own port ($10933$).
+
+🔍 Why the Tentacle still works
+Hardening your SSH config (sshd_config) only affects connections trying to enter through Port 22.
+
+🛡️ SSH Service: Now requires keys and blocks passwords.
+
+🐙 Tentacle Service: Still uses its own Certificate Thumbprint to authenticate. It doesn't care about your SSH settings because it doesn't use the SSH protocol.
+
+⚠️ The Risk of "Dual Entry"
+
+If you keep both, you have two "Front Doors" into your VM:
+
+* The SSH Door: (Hardened with Keys).
+
+* The Tentacle Door: (Using the Octopus Agent).
+
+### ssh keys (optional)
+
 In Octopus, a target is either a Tentacle (Agent-based) or SSH (Agentless). You cannot use both on the same target at the same time for the same communication.
 
 This approach follows Path 1, where Octopus logs in as your user (YOUR-USERNAME) and uses a "Master Key" to manage the VM. This is the cleanest way to handle many laptops because once Octopus has the key, you just use your browser to manage the server.
