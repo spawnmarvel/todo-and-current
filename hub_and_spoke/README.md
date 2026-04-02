@@ -181,6 +181,8 @@ Login passwordless
 ssh username@ip
 ```
 
+### Disabling passwords and using SSH keys on Port 22
+
 By disabling passwords and using SSH keys on Port 22, you have eliminated 99.9% of the automated risk. Here is the reality of your current security posture:
 
 🛡️ What you have defeated
