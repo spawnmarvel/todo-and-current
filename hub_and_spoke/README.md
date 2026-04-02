@@ -63,7 +63,7 @@ netsh interface portproxy add v4tov4 listenport=10934 listenaddress=0.0.0.0 conn
 New-NetFirewallRule -DisplayName "Octopus Linux Forwarding" -Direction Inbound -LocalPort 10934 -Protocol TCP -Action Allow
 ```
 
-Add NSG also for vmhybrid01 for inbound 10934 since we already have a tenatcle for vmhybrid01, we must use a different port for docker03getmirrortes.
+Add NSG also for vmhybrid01 for inbound 10934 since we already have a tenatcle for vmhybrid01, we must use a different port for docker03getmirrortest.
 
 ## Add a new port proxy
 
@@ -135,6 +135,7 @@ Vm
 
 Ssh clients
 * penguin
+* ber
 
 Check your logs now to see if people are already trying to get in :
 
@@ -363,3 +364,108 @@ Since the traffic is HTTPS-encrypted:
 
 * Trust is Key: Because the proxy is blind, the TLS handshake happens directly between the Octopus Server and the Linux Tentacle. The Windows Server never sees the cleartext data or the SSL certificates.
 
+## Windows Server (vmhybrid01) as a Network Gateway/Proxy
+
+To harden this Windows "Hub" while keeping the Octopus traffic flowing, follow these steps:
+
+
+1. Scoped Firewall Rules (IP Whitelisting)
+
+By default, your New-NetFirewallRule allows anyone on the internet to hit port 10934. You should restrict this so only Octopus can talk to that port.
+
+```ps1
+# Get the Public IP of your Octopus Server first, then run:
+Set-NetFirewallRule -DisplayName "Octopus Linux Forwarding" -RemoteAddress "YOUR_OCTOPUS_SERVER_IP"
+``` 
+
+Do the same in the Azure NSG:
+
+Change the Source from Any to IP Addresses.
+
+Enter the specific static IP of your Octopus Cloud or Server.
+
+2. Disable Unnecessary "PortProxy" Listeners
+
+Windows keeps the iphlpsvc (IP Helper) running, but you should ensure it isn't listening on ports you aren't using.
+
+Check active proxies: netsh interface portproxy show all
+
+Delete old/unused proxies: netsh interface portproxy delete v4tov4 listenport=OLD_PORT listenaddress=0.0.0.0
+
+3. Lockdown the "IP Helper" Service
+
+The netsh portproxy command relies on the IP Helper service. You can harden the service itself:
+
+Service Account: Ensure the service is running as LocalService (default), not LocalSystem.
+
+Audit Logging: Enable "Filtering Platform Connection" auditing in Windows to see every time the proxy is used.
+
+```ps1
+auditpol /set /subcategory:"Filtering Platform Connection" /success:enable /failure:enable
+```
+
+
+4. Disable Administrative Shares and SMB
+
+Since this VM is acting as a Gateway, it doesn't need to be a File Server. Attackers love SMB (Port 445).
+
+Disable SMB v1/v2/v3 if not needed for internal management.
+
+Disable Administrative Shares (C$, ADMIN$) via Registry to prevent lateral movement if an attacker gets a foothold.
+
+
+5. Rename and Protect the Local Admin
+
+Since Octopus and your laptops are using SSH Keys for the Linux box, you should make sure the Windows box isn't vulnerable to "Brute Force" on its own login.
+
+Rename the 'Administrator' account to something unique.
+
+Enable Account Lockout Policy: Set it to lock the account for 30 minutes after 5 failed attempts.
+
+Azure Bastion: If possible, remove the Public IP for RDP (Port 3389) entirely and use Azure Bastion to manage the Windows VM. This leaves Port 10934 as the only "hole" in the wall.
+
+6. Use a "Non-Standard" Port for the Proxy
+
+You are already doing this by using 10934 instead of 22. This is called Security by Obscurity. It doesn't stop a determined hacker, but it stops 99% of automated botnets that only scan for port 22.
+
+🛠️ Verification Command
+After hardening, run this on the Windows VM to see exactly what is exposed to the world:
+
+PowerShell
+netstat -ano | findstr "LISTENING" | findstr ":10934"
+🔹 This confirms that your "Gateway" is active only on the specific port you designated for the Linux Spoke.
+
+
+🛡️ 7. Harden the IP Helper Service (Registry)
+The netsh portproxy relies on the IP Helper service (iphlpsvc). You can prevent the service from being easily manipulated by non-admin users.
+
+Disable IPv6 transition technologies: Since you are using v4tov4, you don't need Teredo or 6to4, which are often used by attackers for tunneling.
+
+```ps1
+netsh interface ipv6 set teredo disable
+netsh interface ipv6 6to4 set state disabled
+```
+
+💡 8. Final Recommendation: Remote Desktop (RDP)
+
+🛡️ 1. Enable NLA in Windows
+Network Level Authentication (NLA) is your first line of defense—it forces the user to authenticate before the full RDP session even starts.
+
+This ensures that any "ghost" connections that don't have a valid username/password are dropped immediately before they can use system resources.
+
+Open PowerShell as Administrator.
+
+Run this command to force NLA on:
+
+```ps1
+(Get-WmiObject -class "Win32_TSGeneralSetting" -Namespace "Root\Cimv2\TerminalServices" -Filter "TerminalName='RDP-Tcp'").SetUserAuthenticationRequired(1)
+```
+
+To verify via UI: Go to Settings > System > Remote Desktop > Advanced Settings and ensure "Require computers to use Network Level Authentication to connect" is checked.
+
+🛡️ 2. Restrict Source IP in Azure NSG
+
+This is the most powerful hardening step. You are telling the Azure Firewall: "Only allow my physical house/office to talk to Port 3389."
+
+
+Note: If your home IP changes (Dynamic IP), you will lose access and need to log into the Azure Portal to update this rule. This is a small price to pay for massive security.
