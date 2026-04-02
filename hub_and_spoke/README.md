@@ -130,6 +130,41 @@ vm
 # install: 
 sudo apt install fail2ban
 # The default configuration usually protects SSH out of the box.
+
+fail2ban-server -V
+
+# Check if the service is running
+sudo fail2ban-client ping
+# Expected response: "Server replied: pong"
+
+# See all active jails (e.g., sshd)
+sudo fail2ban-client status
+
+# See detailed stats for your SSH jail
+sudo fail2ban-client status sshd
+
+# Fail2Ban settings are stored in /etc/fail2ban/
+
+# Important: Never edit the .conf files directly. 
+# Always check or create .local files, as these override the defaults and won't be deleted during updates.
+cd /etc/fail2ban
+ls
+ction.d  fail2ban.conf  fail2ban.d  filter.d  jail.conf  jail.d  paths-arch.conf  paths-common.conf  paths-debian.conf  paths-opensuse.conf
+
+# View your main jail configuration if you made it
+cat /etc/fail2ban/jail.local
+```
+Since you have PasswordAuthentication no and are using SSH Keys, you are almost immune to being locked out by Fail2Ban.
+
+⚠️ The One Exception (The "Too Many Keys" Error)
+There is only one way you might accidentally trigger a lockout while using keys:
+
+If you have many different SSH keys on one laptop (for GitHub, GitLab, and other servers), your SSH client might try to "offer" all of them to your Linux VM one by one.
+
+
+```bash
+sudo sshd -T | grep -i maxauthtries
+# maxauthtries 6
 ```
 ## Hardened "Standard" SSH (The "No-New-Software" Path)
 
