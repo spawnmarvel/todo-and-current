@@ -213,7 +213,7 @@ cat ~/.ssh/id_ed25519.pub
 
 ```bash
 ssh -T git@github.com
-# ssh -T git@github.com
+# Hi username! You've successfully authenticated, but GitHub does not provide shell access.
 ``` 
 
 ### Add a new client
