@@ -182,12 +182,12 @@ sudo sshd -T | grep -i maxauthtries
 ## Hardened "Standard" SSH (The "No-New-Software" Path)
 
 Vm
-* vmzabbix02
-* dmzdocker03
+* vmzabbix02m public ip ssh
+* dmzdocker03 public ip ssh
 
 Ssh clients
 * penguin
-* ber
+* ber-08
 
 Check your logs now to see if people are already trying to get in :
 
@@ -425,7 +425,7 @@ Azure Bastion: If possible, remove the Public IP for RDP (Port 3389) entirely an
 
 ### 6. Use a "Non-Standard" Port for the Proxy
 
-You are already doing this by using 10934 instead of 22. This is called Security by Obscurity. It doesn't stop a determined hacker, but it stops 99% of automated botnets that only scan for port 22.
+You can do this by using 10934 (not 10933) and 2222 (not 22). This is called Security by Obscurity. It doesn't stop a determined hacker, but it stops 99% of automated botnets that only scan for port 10933 and 22.
 
 🛠️ Verification Command
 After hardening, run this on the Windows VM to see exactly what is exposed to the world:
