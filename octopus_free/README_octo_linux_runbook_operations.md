@@ -281,15 +281,15 @@ ls
 
 
 ```bash
-scp tentacle_9.1.3608_amd64.deb imsdal@172.64.0.5:/tmp/
+scp tentacle_9.1.3608_amd64.deb username@172.64.0.5:/tmp/
 
-imsdal@172.64.0.5's password:
+username@172.64.0.5's password:
 # tentacle_9.1.3608_amd64.deb                          100%   40MB  56.3MB/s   00:00
 ```
 4. Now login to offline server
 
 ```bash
-ssh imsdal@172.64.0.5
+ssh username@172.64.0.5
 cd /tmp/
 ls
 # [...]
