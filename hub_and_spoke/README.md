@@ -76,10 +76,10 @@ Add NSG also for vmhybrid01 for inbound 10934 since we already have a tenatcle f
 
 ## Add a new port proxy
 
+### Network Gateway
+
 vmchaos09
 * 192.168.3.4
-
-#### Network Gateway
 
 1. The "Signpost" Command (Windows)
 
@@ -94,6 +94,8 @@ netsh interface portproxy add v4tov4 listenport=10935 listenaddress=0.0.0.0 conn
 ```ps1
 New-NetFirewallRule -DisplayName "Octopus Linux Forwarding" -Direction Inbound -LocalPort 10935 -Protocol TCP -Action Allow
 ```
+
+### Network Gateway
 
 vmsnmpsim01
 * 192.168.3.6
