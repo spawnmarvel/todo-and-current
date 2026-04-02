@@ -190,32 +190,6 @@ By disabling passwords and using SSH keys on Port 22, you have eliminated 99.9% 
 
 * Dictionary Attacks: Common usernames like admin or test are now useless because of your AllowUsers whitelist.
 
-#### How to sync them up with github
-
-Since you created a new key on your laptop, your previous "identity" is gone as far as GitHub is concerned. Your laptop is now presenting a brand-new "ID card" that GitHub doesn't recognize yet.
-
-To fix this, you need to "introduce" this new key to your GitHub account.
-
-```bash
-cat ~/.ssh/id_ed25519.pub
-# it should start with ssh-ed25519 and end with your laptop's name
-```
-
-🛠️ Step : Add it to GitHub
-
-* Log into GitHub.com and go to Settings (click your profile icon in the top right).
-* On the left-hand menu, click SSH and GPG keys.
-* Click the green New SSH key button.
-* Title: Give it a name like "Laptop April 2026".
-* Key: Paste the string you copied in Step 1.
-* Click Add SSH key.
-
-🛠️ Step 3: Test the Connection
-
-```bash
-ssh -T git@github.com
-# Hi username! You've successfully authenticated, but GitHub does not provide shell access.
-``` 
 
 ### Add a new client
 
@@ -258,6 +232,32 @@ B. Update the "VIP List" (AllowUsers)
 
 If the new person is logging in as a different Linux username, you must tell SSH they are allowed. If they are also logging in as same user, you can skip this step.
 
+#### How to sync them up with github
+
+Since you created a new key on your laptop, your previous "identity" is gone as far as GitHub is concerned. Your laptop is now presenting a brand-new "ID card" that GitHub doesn't recognize yet.
+
+To fix this, you need to "introduce" this new key to your GitHub account.
+
+```bash
+cat ~/.ssh/id_ed25519.pub
+# it should start with ssh-ed25519 and end with your laptop's name
+```
+
+🛠️ Step : Add it to GitHub
+
+* Log into GitHub.com and go to Settings (click your profile icon in the top right).
+* On the left-hand menu, click SSH and GPG keys.
+* Click the green New SSH key button.
+* Title: Give it a name like "Laptop April 2026".
+* Key: Paste the string you copied in Step 1.
+* Click Add SSH key.
+
+🛠️ Step 3: Test the Connection
+
+```bash
+ssh -T git@github.com
+# Hi username! You've successfully authenticated, but GitHub does not provide shell access.
+``` 
 
 ## Octopus Deploy uses HTTPS (TLS) for its communication.
 
