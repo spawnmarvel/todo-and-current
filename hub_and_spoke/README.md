@@ -155,7 +155,7 @@ This stops the "brute force" bots in your logs cold. They can guess passwords al
 ssh-keygen -t ed25519
 
 # Copy it to the VM: 
-ssh-copy-id imsdal@<your-azure-ip>
+ssh-copy-id YOUR-USERNAME@<your-azure-ip>
 
 ssh username@ip
 
@@ -264,7 +264,7 @@ ssh -T git@github.com
 
 ## Octopus Deploy ssh keys
 
-This approach follows Path 1, where Octopus logs in as your user (imsdal) and uses a "Master Key" to manage the VM. This is the cleanest way to handle many laptops because once Octopus has the key, you just use your browser to manage the server.
+This approach follows Path 1, where Octopus logs in as your user (YOUR-USERNAME) and uses a "Master Key" to manage the VM. This is the cleanest way to handle many laptops because once Octopus has the key, you just use your browser to manage the server.
 
 🛠️ Step 1: Generate the "Master Key" (On your Laptop)
 
@@ -284,7 +284,7 @@ authorized_keys  known_hosts  known_hosts.old  octopus_key  octopus_key.pub
 This creates octopus_key (Private) and octopus_key.pub (Public).
 
 🛠️ Step 2: Prepare the Zabbix VM (The "Lock")
-You need to tell the VM to accept this specific key and allow imsdal to run admin commands.
+You need to tell the VM to accept this specific key and allow YOUR-USERNAME to run admin commands.
 
 1. Add the Public Key:
 ```bash
@@ -294,12 +294,12 @@ cat ~/.ssh/octopus_key.pub
 
 Paste that text into the VM's file: nano ~/.ssh/authorized_keys
 
-2. Give imsdal "Sudo" Powers (No Password):
+2. Give YOUR-USERNAME "Sudo" Powers (No Password):
 
 ```bash
 sudo visudo
 # Add this line at the very bottom:
-imsdal ALL=(ALL) NOPASSWD:ALL
+YOUR-USERNAME ALL=(ALL) NOPASSWD:ALL
 ```
 
 3. Final SSH Lockdown:
@@ -307,7 +307,7 @@ imsdal ALL=(ALL) NOPASSWD:ALL
 ```bash
 sudo nano /etc/ssh/sshd_config
 # PasswordAuthentication no
-# AllowUsers imsdal
+# AllowUsers YOUR-USERNAME
 sudo systemctl restart ssh
 ```
 
@@ -317,7 +317,7 @@ Now, go to your Octopus Web Portal from any laptop.
 
 * Add the Account:
 * Go to Infrastructure > Accounts > Add Account > SSH Key.
-* Username: imsdal.
+* Username: YOUR-USERNAME.
 * Private Key: Run cat ~/.ssh/octopus_key on your laptop and paste the entire block here.
 * Click Save.
 
