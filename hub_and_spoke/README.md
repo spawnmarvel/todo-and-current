@@ -135,7 +135,7 @@ Vm
 Ssh clients
 * penguin
 
-Check your logs now to see if people are already trying to get in:
+Check your logs now to see if people are already trying to get in :
 
 ```bash
 # (shows failed login attempts)
@@ -189,7 +189,34 @@ By disabling passwords and using SSH keys on Port 22, you have eliminated 99.9% 
 
 * Dictionary Attacks: Common usernames like admin or test are now useless because of your AllowUsers whitelist.
 
-### Add a new
+#### How to sync them up with github
+
+Since you created a new key on your laptop, your previous "identity" is gone as far as GitHub is concerned. Your laptop is now presenting a brand-new "ID card" that GitHub doesn't recognize yet.
+
+To fix this, you need to "introduce" this new key to your GitHub account.
+
+```bash
+cat ~/.ssh/id_ed25519.pub
+# it should start with ssh-ed25519 and end with your laptop's name
+```
+
+🛠️ Step : Add it to GitHub
+
+* Log into GitHub.com and go to Settings (click your profile icon in the top right).
+* On the left-hand menu, click SSH and GPG keys.
+* Click the green New SSH key button.
+* Title: Give it a name like "Laptop April 2026".
+* Key: Paste the string you copied in Step 1.
+* Click Add SSH key.
+
+🛠️ Step 3: Test the Connection
+
+```bash
+ssh -T git@github.com
+# ssh -T git@github.com
+``` 
+
+### Add a new client
 
 If you have followed the "No-New-Software" path and disabled password authentication, a new VM (let’s call it VM-B) cannot simply SSH into your Zabbix VM (VM-A) using a password. It will get a Permission denied (publickey) error.
 
