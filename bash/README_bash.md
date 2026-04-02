@@ -1106,6 +1106,85 @@ https://www.w3schools.com/bash/bash_commands.php
 
 ## Hands on with
 
+<details><summary>Update and upgrade / apt install and apt remove </summary>
+<p>
+
+#### We can hide anything, even code!
+```bash
+
+sudo apt update -y         # - Update apt/sources
+sudo apt list --upgradable # - List possible upgrades
+sudo apt upgrade -y        # - Do upgrade
+
+cd /etc/apt/               # - View apt sources list*
+ls -lh
+ubuntu.sources 
+
+# lets install zabix agent2
+# https://www.zabbix.com/download?zabbix=7.0&os_distribution=ubuntu&os_version=24.04&components=agent_2&db=&ws=
+
+wget https://repo.zabbix.com/zabbix/7.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_latest_7.0+ubuntu24.04_all.deb # Get pack
+
+sudo dpkg -i zabbix-release_latest_7.0+ubuntu24.04_all.deb # -i install
+
+sudo apt update -y
+
+cd /etc/apt/sources.list.d
+ls -lh
+ubuntu.sources  zabbix-tools.list  zabbix.list
+
+sudo apt install zabbix-agent2      # Install agent
+
+# lets run some more examples
+sudo apt update -y
+sudo apt list –upgradable
+sudo apt upgrade -y
+sudo apt list --installed | grep -i 'influx*'
+sudo apt search 'influxdb'
+
+sudo apt update -y
+sudo apt install snmp
+which snmp
+sudo apt remove snmp
+
+history
+
+dpkg # is the underlying package manager for these ubuntu.
+
+```
+</p>
+</details>
+
+
+<details><summary>Hello world bash script with chmod</summary>
+<p>
+
+#### We can hide anything, even code!
+```bash
+
+nano demo.sh # https://kodekloud.com/blog/make-bash-script-file-executable-linux/
+
+#!/bin/bash
+echo "Hello World!"
+
+# r = read, w = write, x = execute, - = is not granted
+ls -l demo.sh
+
+# u = user (owner), + = add, x = execute
+chmod u+x demo.sh
+# or octal, 744. user (u) has read (4), write (2), and execute (1) permissions (adding up to 7)
+# and the group (g) and others (o) have only read permissions (4).
+chmod 744 demo.sh
+
+# run
+./demo.sh 
+
+# List all users
+cat /etc/passwd
+```
+
+</p>
+</details>
 <details><summary>sudo (is slow) nano tst.txt</summary>
 <p>
 
@@ -1473,87 +1552,6 @@ sudo systemctl status mysql
 mysql -u root -p -e "SELECT @@datadir"
 
 
-```
-
-</p>
-</details>
-
-
-<details><summary>Update and upgrade / apt install and apt remove </summary>
-<p>
-
-#### We can hide anything, even code!
-```bash
-
-sudo apt update -y         # - Update apt/sources
-sudo apt list --upgradable # - List possible upgrades
-sudo apt upgrade -y        # - Do upgrade
-
-cd /etc/apt/               # - View apt sources list*
-ls -lh
-ubuntu.sources 
-
-# lets install zabix agent2
-# https://www.zabbix.com/download?zabbix=7.0&os_distribution=ubuntu&os_version=24.04&components=agent_2&db=&ws=
-
-wget https://repo.zabbix.com/zabbix/7.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_latest_7.0+ubuntu24.04_all.deb # Get pack
-
-sudo dpkg -i zabbix-release_latest_7.0+ubuntu24.04_all.deb # -i install
-
-sudo apt update -y
-
-cd /etc/apt/sources.list.d
-ls -lh
-ubuntu.sources  zabbix-tools.list  zabbix.list
-
-sudo apt install zabbix-agent2      # Install agent
-
-# lets run some more examples
-sudo apt update -y
-sudo apt list –upgradable
-sudo apt upgrade -y
-sudo apt list --installed | grep -i 'influx*'
-sudo apt search 'influxdb'
-
-sudo apt update -y
-sudo apt install snmp
-which snmp
-sudo apt remove snmp
-
-history
-
-dpkg # is the underlying package manager for these ubuntu.
-
-```
-</p>
-</details>
-
-
-<details><summary>Hello world bash script with chmod</summary>
-<p>
-
-#### We can hide anything, even code!
-```bash
-
-nano demo.sh # https://kodekloud.com/blog/make-bash-script-file-executable-linux/
-
-#!/bin/bash
-echo "Hello World!"
-
-# r = read, w = write, x = execute, - = is not granted
-ls -l demo.sh
-
-# u = user (owner), + = add, x = execute
-chmod u+x demo.sh
-# or octal, 744. user (u) has read (4), write (2), and execute (1) permissions (adding up to 7)
-# and the group (g) and others (o) have only read permissions (4).
-chmod 744 demo.sh
-
-# run
-./demo.sh 
-
-# List all users
-cat /etc/passwd
 ```
 
 </p>
