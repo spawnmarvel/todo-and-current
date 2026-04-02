@@ -79,6 +79,8 @@ Add NSG also for vmhybrid01 for inbound 10934 since we already have a tenatcle f
 vmchaos09
 * 192.168.3.4
 
+#### Network Gateway
+
 1. The "Signpost" Command (Windows)
 
 v4tov4
