@@ -120,8 +120,20 @@ Address         Port        Address         Port
 
 ```
 
-## Change ssh ports
+## Install Fail2Ban (The Automated Guard) (option)
 
+```bash
+# install: 
+sudo apt install fail2ban
+# The default configuration usually protects SSH out of the box.
+```
+## Hardened "Standard" SSH (The "No-New-Software" Path)
+
+Vm
+* vmzabbix02
+
+Ssh clients
+* penguin
 
 Check your logs now to see if people are already trying to get in:
 
@@ -131,55 +143,78 @@ sudo lastb
 # or 
 tail -f /var/log/auth.log.
 ```
+If you don't want a VPN at all, you can keep SSH public but make it impossible to break into.
 
+1. Kill Password Logins (Crucial)
 
-1. Update ssh configuration
+This stops the "brute force" bots in your logs cold. They can guess passwords all day, but the server will simply refuse to even ask for one.
 
 ```bash
-# Open the configuration file with a text editor like GNU Nano:
-sudo nano /etc/ssh/sshd_config.
-# Find the line #Port 22.
-# Remove the # and change 22 to your desired port (e.g., Port 2222).
-Save and exit (Ctrl+O, Enter, Ctrl+X)
+# Create an SSH key on your laptop: 
+ssh-keygen -t ed25519
+
+# Copy it to the VM: 
+ssh-copy-id imsdal@<your-azure-ip>
+
+ssh username@ip
+
+# Edit 
+sudo nano /etc/ssh/sshd_config and set:
+
+# PasswordAuthentication no
+# PubkeyAuthentication yes
+# PermitRootLogin no
+# AllowUsers your-user-name
+
+# Restart: 
+sudo systemctl restart ssh
 ```
-2. Update firewall rules
+By setting PermitRootLogin no, you are telling the SSH server: 
+* "If someone tries to log in directly as 'root', disconnect them immediately, even if they have a valid key." 
+* This is a security best practice because every Linux bot in existence targets the name root first.
+
+Login passwordless
 
 ```bash
-sudo ufw status
-sudo ufw allow 2222/tcp
+ssh username@ip
 ```
-Update NSG rules
+### Add a new
 
-3. Handle Systemd Socket Activation (Ubuntu 22.10 and Later) 
+If you have followed the "No-New-Software" path and disabled password authentication, a new VM (let’s call it VM-B) cannot simply SSH into your Zabbix VM (VM-A) using a password. It will get a Permission denied (publickey) error.
 
-1. Create an override for the SSH socket:
+1. The Client Side (The New Machine)
+The person on the new machine must generate their own cryptographic identity.
 
 ```bash
+# Run this command: 
+ssh-keygen -t ed25519
 
-sudo systemctl edit ssh.socket.
+# They should then find the file named 
+
+id_ed25519.pub and send the text inside it to you.
+
+# It will look like: ssh-ed25519 AAAAC3Nza... user@new-laptop
+```
+
+2. The Server Side
+
+You must now "register" that key. Since you added the AllowUsers rule, there are two things you must check:
+
+A. Add the Key to the Authorized List
+
+```bash
+# Log into your Zabbix VM and open the keys file:
+sudo nano ~/.ssh/authorized_keys
+
+# Go to a new line at the bottom.
+# Paste the new public key string.
+# Save and exit (Ctrl+O, Enter, Ctrl+X).
 ``` 
-2. Add the following lines (the empty ListenStream= is necessary to clear the default port 22):
 
-```ini
-[Socket]
-ListenStream=
-ListenStream=2222
+B. Update the "VIP List" (AllowUsers)
 
-```
+If the new person is logging in as a different Linux username, you must tell SSH they are allowed. If they are also logging in as same user, you can skip this step.
 
-4. Apply Changes and Verify 
-Reload systemd and restart services:
-```bash
-sudo systemctl daemon-reload.
-sudo systemctl restart ssh.socket.
-sudo systemctl restart ssh.
-
-# Verify the server is listening on the new port:
-ss -tlpn | grep ssh.
-
-# Test the connection in a new terminal window before closing your current one:
-ssh -p <new-port> username@your_server_ip.
-```
 
 ## Octopus Deploy uses HTTPS (TLS) for its communication.
 
