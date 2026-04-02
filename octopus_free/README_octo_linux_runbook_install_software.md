@@ -92,7 +92,7 @@ Log
 Deploying package:    /etc/octopus/docker03getmirrortest/Files/MySQL-8@S4-LTS.1.0.0@3dce64d.zip
 ```
 
-We also need a extra packet, zip
+We also need a extra packet, the unzip
 
 * Go to packages.ubuntu.com.
 * https://launchpad.net/ubuntu/noble/+source/unzip

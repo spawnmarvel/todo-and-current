@@ -1078,8 +1078,10 @@ crontab -e
 ```bash
 # when done make bash text game
 
-#  Get started
-
+# Get started
+# ls
+# cd
+# pwd
 ```
 </p>
 </details>
@@ -1575,7 +1577,8 @@ sudo apt search 'influxdb'
 sudo apt update -y
 sudo apt install snmp
 which snmp
-sudo apt remove install snmp
+sudo apt remove snmp
+
 history
 
 dpkg # is the underlying package manager for these ubuntu.
