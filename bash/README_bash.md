@@ -857,7 +857,7 @@ fi
 </details>
 
 
-<details><summary>06. Loops</summary>
+<details><summary><b>06. Loops</b></summary>
 <p>
 
 
@@ -909,7 +909,7 @@ done
 </p>
 </details>
 
-<details><summary>07. Functions</summary>
+<details><summary><b>07. Functions</b></summary>
 <p>
 
 
@@ -953,7 +953,7 @@ echo $result
 </p>
 </details>
 
-<details><summary>08. Arrays</summary>
+<details><summary><b>08. Arrays</b></summary>
 <p>
 
 
@@ -975,7 +975,7 @@ echo "${my_array[@]}"
 </p>
 </details>
 
-<details><summary>09. Schedule cron</summary>
+<details><summary><b>09. Schedule cron</b></summary>
 <p>
 
 
@@ -1435,65 +1435,6 @@ mysql -u root -p -e "SELECT @@datadir"
 </details>
 
 
-<details><summary>Zabbix version, mysql -h, reset Admin(zabbix) password, and health check tables</summary>
-<p>
-
-#### We can hide anything, even code!
-```bash
-zabbix_server --version
-
-zabbix_agentd --version
-
-# log it 
-sudo tail -f /var/log/zabbix/zabbix_server.log
-
-mysql --version
-
-cd/etc/zabbix
-sudo grep ’DBPort*’ zabbix_server.conf 
-sudo grep ’DBPassword*’ zabbix_server.conf 
-
-sudo grep ’DBUser*’ zabbix_server.conf 
-sudo grep ’DBHost*’ zabbix_server.conf 
-
-# mysql -h servername --port=3306 -u zabbix --password=the-password
-
-```
-More mysql in the mysql folder.
-
-
-MySQL side note
-
-```sql
--- if you ever forget the Admin password, this resets it to zabbix
-SELECT username, passwd FROM users WHERE username='Admin';
-USE zabbix;
-
-UPDATE users 
-SET passwd=MD5('zabbix') 
-WHERE username='Admin';
-
-FLUSH PRIVILEGES;
-```
-If you are upgrading the mysql database
-```bash
-
-# check this
-Cd /etc/zabbix
-sudo grep 'AllowUns*' zabbix_server.conf
-
-Cd /etc/zabbix/web
-sudo grep 'AllowUns*' zabbix.conf.php
-
-# Run a quick check on the Zabbix schema to ensure no tables are crashed
-
-mysqlcheck -h servername --port=3306 -u zabbix --password=the-password --databases zabbix
-# all should be ok
-
-```
-</p>
-</details>
-
 <details><summary>Ubuntu 24.04, Apache comes with a built-in script to handle the basic SSL setup</summary>
 <p>
 
@@ -1742,6 +1683,64 @@ ls -lhS
 </p>
 </details>
 
+<details><summary>Zabbix version, mysql -h, reset Admin(zabbix) password, and health check tables</summary>
+<p>
+
+#### We can hide anything, even code!
+```bash
+zabbix_server --version
+
+zabbix_agentd --version
+
+# log it 
+sudo tail -f /var/log/zabbix/zabbix_server.log
+
+mysql --version
+
+cd/etc/zabbix
+sudo grep ’DBPort*’ zabbix_server.conf 
+sudo grep ’DBPassword*’ zabbix_server.conf 
+
+sudo grep ’DBUser*’ zabbix_server.conf 
+sudo grep ’DBHost*’ zabbix_server.conf 
+
+# mysql -h servername --port=3306 -u zabbix --password=the-password
+
+```
+More mysql in the mysql folder.
+
+
+MySQL side note
+
+```sql
+-- if you ever forget the Admin password, this resets it to zabbix
+SELECT username, passwd FROM users WHERE username='Admin';
+USE zabbix;
+
+UPDATE users 
+SET passwd=MD5('zabbix') 
+WHERE username='Admin';
+
+FLUSH PRIVILEGES;
+```
+If you are upgrading the mysql database
+```bash
+
+# check this
+Cd /etc/zabbix
+sudo grep 'AllowUns*' zabbix_server.conf
+
+Cd /etc/zabbix/web
+sudo grep 'AllowUns*' zabbix.conf.php
+
+# Run a quick check on the Zabbix schema to ensure no tables are crashed
+
+mysqlcheck -h servername --port=3306 -u zabbix --password=the-password --databases zabbix
+# all should be ok
+
+```
+</p>
+</details>
 
 ## Linux
 
