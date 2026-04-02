@@ -1,4 +1,4 @@
-# Hub and Spoke networking model
+# Hub and Spoke networking model (and ssh keys)
 
 The "Hub" Hierarchy
 To keep the mental model clear:
