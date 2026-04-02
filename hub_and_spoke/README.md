@@ -131,6 +131,7 @@ sudo apt install fail2ban
 
 Vm
 * vmzabbix02
+* dmzdocker03
 
 Ssh clients
 * penguin
@@ -219,6 +220,10 @@ ssh -T git@github.com
 ### Add a new client
 
 If you have followed the "No-New-Software" path and disabled password authentication, a new client (let’s call it laptop-B) cannot simply SSH into your VM (VM-A) using a password. It will get a Permission denied (publickey) error.
+
+🚫 Why it fails for the next client:
+
+Once you set PasswordAuthentication no in your sshd_config, the door for passwords is dead.
 
 1. The Client Side (The New Machine)
 The person on the new machine must generate their own cryptographic identity.
