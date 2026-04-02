@@ -221,6 +221,9 @@ A. Add the Key to the Authorized List
 
 ```bash
 # Log into your Zabbix VM and open the keys file:
+sudo cat ~/.ssh/authorized_keys
+
+# edit it
 sudo nano ~/.ssh/authorized_keys
 
 # Go to a new line at the bottom.
@@ -258,6 +261,75 @@ cat ~/.ssh/id_ed25519.pub
 ssh -T git@github.com
 # Hi username! You've successfully authenticated, but GitHub does not provide shell access.
 ``` 
+
+## Octopus Deploy ssh keys
+
+This approach follows Path 1, where Octopus logs in as your user (imsdal) and uses a "Master Key" to manage the VM. This is the cleanest way to handle many laptops because once Octopus has the key, you just use your browser to manage the server.
+
+🛠️ Step 1: Generate the "Master Key" (On your Laptop)
+
+Run this once to create the key pair that Octopus will use to "talk" to your Zabbix VM.
+
+```bash
+# dmzdocker03
+ssh-keygen -t ed25519 -f ~/.ssh/octopus_key -C "octopus-deploy"
+ls
+authorized_keys  known_hosts  known_hosts.old  octopus_key  octopus_key.pub
+
+```
+This creates octopus_key (Private) and octopus_key.pub (Public).
+
+🛠️ Step 2: Prepare the Zabbix VM (The "Lock")
+You need to tell the VM to accept this specific key and allow imsdal to run admin commands.
+
+1. Add the Public Key:
+```bash
+# Copy the text of your new public key
+cat ~/.ssh/octopus_key.pub
+```
+
+Paste that text into the VM's file: nano ~/.ssh/authorized_keys
+
+2. Give imsdal "Sudo" Powers (No Password):
+
+```bash
+sudo visudo
+# Add this line at the very bottom:
+imsdal ALL=(ALL) NOPASSWD:ALL
+```
+
+3. Final SSH Lockdown:
+
+```bash
+sudo nano /etc/ssh/sshd_config
+# PasswordAuthentication no
+# AllowUsers imsdal
+sudo systemctl restart ssh
+```
+
+🛠️ Step 3: Configure Octopus (The "Keyring")
+
+Now, go to your Octopus Web Portal from any laptop.
+
+* Add the Account:
+* Go to Infrastructure > Accounts > Add Account > SSH Key.
+* Username: imsdal.
+* Private Key: Run cat ~/.ssh/octopus_key on your laptop and paste the entire block here.
+* Click Save.
+
+Add/update the Target (The VM):
+
+* Go to Infrastructure > Deployment Targets > Add Target > Linux.
+* Hostname: Use your Azure Public IP (or the Windows VM IP if using the PortProxy).
+* Port: Use 22 (or 10935 if using your netsh proxy).
+* Authentication: Select the SSH Account you just made.
+* Click Save.
+
+💡 Why this is better for "Many Laptops"
+
+* You don't need to put SSH keys on every laptop.
+* You only manage one key (stored safely in Octopus).
+* To manage Zabbix, you just log into the Octopus website from any machine.
 
 ## Octopus Deploy uses HTTPS (TLS) for its communication.
 
