@@ -122,6 +122,10 @@ Address         Port        Address         Port
 
 ## Install Fail2Ban (The Automated Guard) (option)
 
+vm
+* vmzabbix
+* dmzdocker03
+
 ```bash
 # install: 
 sudo apt install fail2ban
@@ -278,7 +282,7 @@ ssh -T git@github.com
 
 If you switch to SSH Keys, you are moving away from the Octopus Tentacle Agent ($10933$).
 
-### Why the Tentacle still works
+### Why the Octopus tentacle still works
 
 When you see ##OCTOLINE## and ##OCTOCOPY##, that is the Calamari engine (the Tentacle's brain) talking back to the Octopus Server. Even though you hardened the SSH service on the VM, the Tentacle service is still running in the background on its own port ($10933$).
 
@@ -297,84 +301,6 @@ If you keep both, you have two "Front Doors" into your VM:
 
 * The Tentacle Door: (Using the Octopus Agent).
 
-### ssh keys (optional)
-
-In Octopus, a target is either a Tentacle (Agent-based) or SSH (Agentless). You cannot use both on the same target at the same time for the same communication.
-
-This approach follows Path 1, where Octopus logs in as your user (YOUR-USERNAME) and uses a "Master Key" to manage the VM. This is the cleanest way to handle many laptops because once Octopus has the key, you just use your browser to manage the server.
-
-🛠️ Step 1: Generate the "Master Key" (On your Laptop)
-
-Run this once to create the key pair that Octopus will use to "talk" to your Zabbix VM.
-
-```bash
-# login penguin
-ls
-id_ed25519  id_ed25519.pub  known_hosts  known_hosts.old
-
-ssh-keygen -t ed25519 -f ~/.ssh/octopus_key -C "octopus-deploy"
-
-cd ~/.ssh
-ls
-id_ed25519  id_ed25519.pub  known_hosts  known_hosts.old  octopus_key  octopus_key.pub
-
-
-```
-This creates octopus_key (Private) and octopus_key.pub (Public).
-
-🛠️ Step 2: Prepare the Zabbix VM (The "Lock")
-You need to tell the VM to accept this specific key and allow YOUR-USERNAME to run admin commands.
-
-1. Add the Public Key:
-```bash
-# Copy the text of your new public key
-cat ~/.ssh/octopus_key.pub
-# Paste that text into the VM's file: 
-sudo nano ~/.ssh/authorized_keys
-```
-
-
-
-2. Give YOUR-USERNAME "Sudo" Powers (No Password):
-
-```bash
-sudo visudo
-# Add this line at the very bottom:
-YOUR-USERNAME ALL=(ALL) NOPASSWD:ALL
-```
-
-3. Final SSH Lockdown:
-
-```bash
-sudo nano /etc/ssh/sshd_config
-# PasswordAuthentication no
-# AllowUsers YOUR-USERNAME
-sudo systemctl restart ssh
-```
-
-🛠️ Step 3: Configure Octopus (The "Keyring")
-
-Now, go to your Octopus Web Portal from any laptop.
-
-* Add the Account:
-* Go to Infrastructure > Accounts > Add Account > SSH Key.
-* Username: YOUR-USERNAME.
-* Private Key: Run cat ~/.ssh/octopus_key on your laptop and paste the entire block here.
-* Click Save.
-
-Add/update the Target (The VM):
-
-* Go to Infrastructure > Deployment Targets > Add Target > Linux.
-* Hostname: Use your Azure Public IP (or the Windows VM IP if using the PortProxy).
-* Port: Use 22 (or 10935 if using your netsh proxy).
-* Authentication: Select the SSH Account you just made.
-* Click Save.
-
-💡 Why this is better for "Many Laptops"
-
-* You don't need to put SSH keys on every laptop.
-* You only manage one key (stored safely in Octopus).
-* To manage Zabbix, you just log into the Octopus website from any machine.
 
 ## Octopus Deploy uses HTTPS (TLS) for its communication.
 
@@ -495,3 +421,4 @@ This is the most powerful hardening step. You are telling the Azure Firewall: "O
 
 
 Note: If your home IP changes (Dynamic IP), you will lose access and need to log into the Azure Portal to update this rule. This is a small price to pay for massive security.
+
