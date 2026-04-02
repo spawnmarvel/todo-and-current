@@ -16,13 +16,21 @@ To keep the mental model clear:
 ## Environment
 
 vnet-noe-europe
-* 172.64.0.0/26, 64 addresses
+172.64.0.0/26, 64 addresses
+
+Subnets
+* default 172.64.0.0/28 - 9
 
 Peered virtual network address space
 * vnet-noe-2-uks peered to vnet-uks-central
 
 vnet-uks-central
-* 192.168.0.0/20, 4096 addresses
+192.168.0.0/20, 4096 addresses
+
+Subnet
+* Vms03 192.168.3.0/24 - 247
+* Dmzs02 192.168.2.0/28 - 11
+
 
 
 ### Network gateway and port proxy
