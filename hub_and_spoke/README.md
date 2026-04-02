@@ -369,7 +369,7 @@ Since the traffic is HTTPS-encrypted:
 To harden this Windows "Hub" while keeping the Octopus traffic flowing, follow these steps:
 
 
-1. Scoped Firewall Rules (IP Whitelisting)
+### 1. Scoped Firewall Rules (IP Whitelisting)
 
 By default, your New-NetFirewallRule allows anyone on the internet to hit port 10934. You should restrict this so only Octopus can talk to that port.
 
@@ -384,7 +384,7 @@ Change the Source from Any to IP Addresses.
 
 Enter the specific static IP of your Octopus Cloud or Server.
 
-2. Disable Unnecessary "PortProxy" Listeners
+### 2. Disable Unnecessary "PortProxy" Listeners
 
 Windows keeps the iphlpsvc (IP Helper) running, but you should ensure it isn't listening on ports you aren't using.
 
