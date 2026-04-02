@@ -1071,12 +1071,14 @@ crontab -e
 </p>
 </details>
 
-<details><summary>Exercises and Quiz</summary>
+<details><summary>Exercises and Quiz TODO</summary>
 <p>
 
 #### We can hide anything, even code!
 ```bash
 # when done make bash text game
+
+#  Get started
 
 ```
 </p>
