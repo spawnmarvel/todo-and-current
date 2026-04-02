@@ -431,8 +431,9 @@ You are already doing this by using 10934 instead of 22. This is called Security
 🛠️ Verification Command
 After hardening, run this on the Windows VM to see exactly what is exposed to the world:
 
-PowerShell
+```ps1
 netstat -ano | findstr "LISTENING" | findstr ":10934"
+```
 🔹 This confirms that your "Gateway" is active only on the specific port you designated for the Linux Spoke.
 
 
