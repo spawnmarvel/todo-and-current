@@ -178,6 +178,17 @@ Login passwordless
 ```bash
 ssh username@ip
 ```
+
+By disabling passwords and using SSH keys on Port 22, you have eliminated 99.9% of the automated risk. Here is the reality of your current security posture:
+
+🛡️ What you have defeated
+
+* Brute-Force Bots: The bots in your lastb logs can try a trillion passwords; the server will simply refuse to even listen.
+
+* Credential Stuffing: Even if your personal email/password was leaked in a data breach, it can't be used to enter this VM.
+
+* Dictionary Attacks: Common usernames like admin or test are now useless because of your AllowUsers whitelist.
+
 ### Add a new
 
 If you have followed the "No-New-Software" path and disabled password authentication, a new VM (let’s call it VM-B) cannot simply SSH into your Zabbix VM (VM-A) using a password. It will get a Permission denied (publickey) error.
