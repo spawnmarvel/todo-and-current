@@ -218,7 +218,7 @@ ssh -T git@github.com
 
 ### Add a new client
 
-If you have followed the "No-New-Software" path and disabled password authentication, a new VM (let’s call it VM-B) cannot simply SSH into your Zabbix VM (VM-A) using a password. It will get a Permission denied (publickey) error.
+If you have followed the "No-New-Software" path and disabled password authentication, a new client (let’s call it laptop-B) cannot simply SSH into your VM (VM-A) using a password. It will get a Permission denied (publickey) error.
 
 1. The Client Side (The New Machine)
 The person on the new machine must generate their own cryptographic identity.
@@ -267,24 +267,3 @@ Since the traffic is HTTPS-encrypted:
 
 * Trust is Key: Because the proxy is blind, the TLS handshake happens directly between the Octopus Server and the Linux Tentacle. The Windows Server never sees the cleartext data or the SSL certificates.
 
-## Do you still need IPsec?
-
-In most enterprise environments, you do not need IPsec if you are already using HTTPS, unless:
-
-Compliance Requirements: Your security policy mandates "Encryption in Transit" at the network layer in addition to the application layer.
-
-Header Protection: You want to hide metadata (like the source/destination IPs or timing patterns) that TLS might still expose to a network-level observer.
-
-For most users, relying on the native HTTPS security of Octopus Deploy is sufficient, provided your firewall is . locked down to the specific Octopus Server IP.
-
-## Security Checklist for "Blind Pipe" Proxies
-
-Since your Windows portproxy is "blind" (it just passes the encrypted bits), you should focus on these three layers to lock it down completely:
-
-Firewall Lockdown: Ensure the Windows firewall rule explicitly allows only the IP of the Octopus Server.
-
-Command: Set-NetFirewallRule -DisplayName "Octopus Linux Forwarding" -RemoteAddress <Your_Octopus_Server_IP>
-
-Certificate Pinning: Octopus Deploy automatically handles certificate pinning. Never ignore "Certificate Mismatch" errors in your Octopus logs; these are your primary indicator that someone might be attempting a "Man-in-the-Middle" (MitM) attack.
-
-Service Hardening: Since the Windows Hub is the "Gatekeeper," minimize the services running on it. A clean, updated Windows Server with only iphlpsvc exposed is significantly harder to compromise.
