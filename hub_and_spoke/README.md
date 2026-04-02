@@ -276,6 +276,10 @@ ssh -T git@github.com
 
 ## Octopus Deploy ssh keys
 
+If you switch to SSH Keys, you are moving away from the Octopus Tentacle Agent ($10933$).
+
+In Octopus, a target is either a Tentacle (Agent-based) or SSH (Agentless). You cannot use both on the same target at the same time for the same communication.
+
 This approach follows Path 1, where Octopus logs in as your user (YOUR-USERNAME) and uses a "Master Key" to manage the VM. This is the cleanest way to handle many laptops because once Octopus has the key, you just use your browser to manage the server.
 
 🛠️ Step 1: Generate the "Master Key" (On your Laptop)
