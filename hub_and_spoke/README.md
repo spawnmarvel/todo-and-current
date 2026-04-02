@@ -392,7 +392,7 @@ Check active proxies: netsh interface portproxy show all
 
 Delete old/unused proxies: netsh interface portproxy delete v4tov4 listenport=OLD_PORT listenaddress=0.0.0.0
 
-3. Lockdown the "IP Helper" Service
+### 3. Lockdown the "IP Helper" Service
 
 The netsh portproxy command relies on the IP Helper service. You can harden the service itself:
 
@@ -405,7 +405,7 @@ auditpol /set /subcategory:"Filtering Platform Connection" /success:enable /fail
 ```
 
 
-4. Disable Administrative Shares and SMB
+### 4. Disable Administrative Shares and SMB
 
 Since this VM is acting as a Gateway, it doesn't need to be a File Server. Attackers love SMB (Port 445).
 
@@ -414,7 +414,7 @@ Disable SMB v1/v2/v3 if not needed for internal management.
 Disable Administrative Shares (C$, ADMIN$) via Registry to prevent lateral movement if an attacker gets a foothold.
 
 
-5. Rename and Protect the Local Admin
+### 5. Rename and Protect the Local Admin
 
 Since Octopus and your laptops are using SSH Keys for the Linux box, you should make sure the Windows box isn't vulnerable to "Brute Force" on its own login.
 
@@ -424,7 +424,7 @@ Enable Account Lockout Policy: Set it to lock the account for 30 minutes after 5
 
 Azure Bastion: If possible, remove the Public IP for RDP (Port 3389) entirely and use Azure Bastion to manage the Windows VM. This leaves Port 10934 as the only "hole" in the wall.
 
-6. Use a "Non-Standard" Port for the Proxy
+### 6. Use a "Non-Standard" Port for the Proxy
 
 You are already doing this by using 10934 instead of 22. This is called Security by Obscurity. It doesn't stop a determined hacker, but it stops 99% of automated botnets that only scan for port 22.
 
@@ -437,7 +437,7 @@ netstat -ano | findstr "LISTENING" | findstr ":10934"
 🔹 This confirms that your "Gateway" is active only on the specific port you designated for the Linux Spoke.
 
 
-🛡️ 7. Harden the IP Helper Service (Registry)
+### 🛡️ 7. Harden the IP Helper Service (Registry)
 The netsh portproxy relies on the IP Helper service (iphlpsvc). You can prevent the service from being easily manipulated by non-admin users.
 
 Disable IPv6 transition technologies: Since you are using v4tov4, you don't need Teredo or 6to4, which are often used by attackers for tunneling.
@@ -447,7 +447,7 @@ netsh interface ipv6 set teredo disable
 netsh interface ipv6 6to4 set state disabled
 ```
 
-💡 8. Final Recommendation: Remote Desktop (RDP)
+## 💡 8. Final Recommendation: Remote Desktop (RDP)
 
 🛡️ 1. Enable NLA in Windows
 Network Level Authentication (NLA) is your first line of defense—it forces the user to authenticate before the full RDP session even starts.
