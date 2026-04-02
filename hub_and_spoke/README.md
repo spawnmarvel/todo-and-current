@@ -119,6 +119,68 @@ Address         Port        Address         Port
 0.0.0.0         10936       192.168.3.6     10933
 
 ```
+
+## Change ssh ports
+
+
+Check your logs now to see if people are already trying to get in:
+
+```bash
+# (shows failed login attempts)
+sudo lastb  
+# or 
+tail -f /var/log/auth.log.
+```
+
+
+1. Update ssh configuration
+
+```bash
+# Open the configuration file with a text editor like GNU Nano:
+sudo nano /etc/ssh/sshd_config.
+# Find the line #Port 22.
+# Remove the # and change 22 to your desired port (e.g., Port 2222).
+Save and exit (Ctrl+O, Enter, Ctrl+X)
+```
+2. Update firewall rules
+
+```bash
+sudo ufw status
+sudo ufw allow 2222/tcp
+```
+Update NSG rules
+
+3. Handle Systemd Socket Activation (Ubuntu 22.10 and Later) 
+
+1. Create an override for the SSH socket:
+
+```bash
+
+sudo systemctl edit ssh.socket.
+``` 
+2. Add the following lines (the empty ListenStream= is necessary to clear the default port 22):
+
+```ini
+[Socket]
+ListenStream=
+ListenStream=2222
+
+```
+
+4. Apply Changes and Verify 
+Reload systemd and restart services:
+```bash
+sudo systemctl daemon-reload.
+sudo systemctl restart ssh.socket.
+sudo systemctl restart ssh.
+
+# Verify the server is listening on the new port:
+ss -tlpn | grep ssh.
+
+# Test the connection in a new terminal window before closing your current one:
+ssh -p <new-port> username@your_server_ip.
+```
+
 ## Octopus Deploy uses HTTPS (TLS) for its communication.
 
 This is a critical distinction because it changes how you should approach the security of your portproxy setup. If Octopus is already using HTTPS, the data itself is already encrypted before it even touches your Windows Server portproxy.
@@ -140,7 +202,7 @@ Compliance Requirements: Your security policy mandates "Encryption in Transit" a
 
 Header Protection: You want to hide metadata (like the source/destination IPs or timing patterns) that TLS might still expose to a network-level observer.
 
-For most users, relying on the native HTTPS security of Octopus Deploy is sufficient, provided your firewall is locked down to the specific Octopus Server IP.
+For most users, relying on the native HTTPS security of Octopus Deploy is sufficient, provided your firewall is . locked down to the specific Octopus Server IP.
 
 ## Security Checklist for "Blind Pipe" Proxies
 
