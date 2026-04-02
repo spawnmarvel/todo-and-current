@@ -271,7 +271,11 @@ This approach follows Path 1, where Octopus logs in as your user (imsdal) and us
 Run this once to create the key pair that Octopus will use to "talk" to your Zabbix VM.
 
 ```bash
-# dmzdocker03
+# login penguin
+ls
+id_ed25519  id_ed25519.pub  known_hosts  known_hosts.old
+
+# login dmzdocker03
 ssh-keygen -t ed25519 -f ~/.ssh/octopus_key -C "octopus-deploy"
 ls
 authorized_keys  known_hosts  known_hosts.old  octopus_key  octopus_key.pub
