@@ -1779,6 +1779,8 @@ Loadable Kernel Modules (LKMs). These are pieces of code that can be loaded into
 # example
 chmod 744 demo.sh
 # user has full group and others has read
+# run it
+./demo.sh
 ```
 ![file all](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/images__and_pdf/file_all.png)
 
