@@ -204,10 +204,21 @@ If you don't want a VPN at all, you can keep SSH public but make it impossible t
 This stops the "brute force" bots in your logs cold. They can guess passwords all day, but the server will simply refuse to even ask for one.
 
 ```bash
+# Either use the key you all ready have
+# check it
+cd ~/.ssh
+
+# linux
+sudo cat ~/.ssh/id_ed25519.pub
+# windows
+Get-Content $HOME\.ssh\id_ed25519.pub
+
 # Create an SSH key on your laptop: 
-ssh-keygen -t ed25519
+ssh-keygen -t ed25519 -C "myname or laptopid"
 
 # Copy it to the VM: 
+cat ~/.ssh/id_ed25519.pub
+# 
 ssh-copy-id YOUR-USERNAME@<your-azure-ip>
 
 ssh username@ip
@@ -261,6 +272,7 @@ The person on the new machine must generate their own cryptographic identity.
 ```bash
 # Either use the key you all ready have
 # check it
+cd ~/.ssh
 
 # linux
 sudo cat ~/.ssh/id_ed25519.pub
@@ -268,11 +280,13 @@ sudo cat ~/.ssh/id_ed25519.pub
 Get-Content $HOME\.ssh\id_ed25519.pub
 
 # or run this command if you have no ssh keys: 
-ssh-keygen -t ed25519
+ssh-keygen -t ed25519 -C "myname or laptopid"
 
 # They should then find the file named 
 
-id_ed25519.pub and send the text inside it to you.
+cat ~/.ssh/id_ed25519.pub
+
+# and send the text inside it to you.
 
 # It will look like: ssh-ed25519 AAAAC3Nza... user@new-laptop
 ```
