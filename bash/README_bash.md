@@ -1172,8 +1172,8 @@ ls -l demo.sh
 
 # u = user (owner), + = add, x = execute
 chmod u+x demo.sh
-# or octal, 744. user (u) has read (4), write (2), and execute (1) permissions (adding up to 7)
-# and the group (g) and others (o) have only read permissions (4).
+# or octal, 755. user (u) has read (4), write (2), and execute (1) permissions (adding up to 7)
+# and the group (g) and others (o) have read permissions (4) execute (1) permissions (adding up to 5)
 chmod 744 demo.sh
 
 # run
@@ -1777,8 +1777,8 @@ Loadable Kernel Modules (LKMs). These are pieces of code that can be loaded into
 
 ```bash
 # example
-chmod 744 demo.sh
-# user has full group and others has read
+chmod 755 demo.sh
+# user has full group and others has read and execute
 # run it
 ./demo.sh
 ```
