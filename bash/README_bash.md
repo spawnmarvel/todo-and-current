@@ -1257,11 +1257,26 @@ sudo apt install vlc > /dev/null
 
 ```bash
 
-ssh-keygen -t rsa -b 4096
-#Private: Your identification has been saved in C:\Users\username/.ssh/id_rsa
-#Copy this:Your public key has been saved in C:\Users\username/.ssh/id_rsa.pub
+# Generate a key pair if you do not already have it?
+ Either use the key you all ready have
+# check it
+cd ~/.ssh
 
-ssh-rsa#################################################
+# linux
+sudo cat ~/.ssh/id_ed25519.pub
+# windows
+Get-Content $HOME\.ssh\id_ed25519.pub
+
+# Generate a key pair
+ssh-keygen -t ed25519 
+# (recommended for modern security).
+
+# Private: id_ed25519 
+# Publisc Copy this:Your public key: id_ed25519.pub 
+
+cat ~/.ssh/id_ed25519.pub
+
+# ssh-ed25519 AAxxxxxxxx
 
 # ssh to ubuntu
 mkdir -p ~/.ssh
