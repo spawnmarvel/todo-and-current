@@ -1271,6 +1271,13 @@ Get-Content $HOME\.ssh\id_ed25519.pub
 ssh-keygen -t ed25519 
 # (recommended for modern security).
 
+# to force a name for a role for example?
+# ssh-keygen -t ed25519 -C "myname" -f ~/.ssh/octopus_key
+
+# -t ed25519: Selects the modern encryption algorithm.
+# -C "myname": Adds your chosen comment inside the public key.
+# -f ~/.ssh/octopus_key: Forces the output to be named octopus_key (private) and octopus_key.pub (public) inside your .ssh folder.
+
 # Private: id_ed25519 
 # Publisc Copy this:Your public key: id_ed25519.pub 
 
