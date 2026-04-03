@@ -1291,7 +1291,7 @@ chmod 700 ~/.ssh
 
 touch ~/.ssh/authorized_keys
 sudo nano ~/.ssh/authorized_keys
-# paste the full ssh-rsa
+# paste the full ssh-rsa at the end on a new line (it could be many)
 
 exit
 ssh imsdal@192.168.3.7
