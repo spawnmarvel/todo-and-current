@@ -103,8 +103,9 @@ Well, this never stops, so lets make a priority list of all the topics below.
 
 1. Bash learn it all now.
    - Play around, the basics are in now.
-   - Continue the bash RPG game, make matrix stuff also on the screen/ effects.
-   - 
+   - Continue the bash RPG game
+   - Expand it, do more
+   - Make matrix stuff also on the screen/ effects.
 
 2. Bash and Octopus Deploy for linux (is 2 in one CI/CD)
    - Two projects (win/lin) and 100's of runbooks, we do linux project for now
