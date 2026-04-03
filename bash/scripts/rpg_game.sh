@@ -3,6 +3,7 @@
 # We define these outside functions so they persist across different games.
 # No '$' is used during assignment (setting the value).
 player_hp=140
+player_name="Lucas Wild"
 
 # --- ASSOCIATIVE ARRAY ---
 # 'declare -A' creates a key-value map. This is cleaner than 20 'if' statements.
@@ -44,7 +45,7 @@ run_game() {
         # If no arguments, it's a NEW game. We reset player_hp here.
         player_hp=140 
         echo "Swish, ...showsh..bang, bang, bang!"
-        echo "... You have entered the arena of the blue gate."
+        echo "... $player_name have entered the arena of the blue gate."
 
         # Get all keys (names) from our enemy array
         local names=("${!enemys[@]}")
@@ -76,20 +77,21 @@ run_game() {
 
         # Logic to skip the intro text if we are mid-fight
         if [ "$in_game" == "true" ]; then
-            echo "--- The fight continues! (Your HP: $player_hp | $enemy_name HP: $enemy_hp) ---"
+            echo "--- The fight continues! ($player_name HP: $player_hp | $enemy_name HP: $enemy_hp) ---"
         else
             echo "... $enemy_name has entered the arena with health $enemy_hp"
             in_game=true
         fi
 
-        read -p "... [Game] (r)un, (a)ttack, (p)otion, (h)ealth, (s)ave: " game_input
-
+        read -p "... [Game] (r)un, (a)ttack, (p)otion, (h)ealth, (s)ave: " tmp_game_input
+        # to lower
+        game_input="${tmp_game_input,,}"
         # --- OR LOGIC (||) ---
         # We use [[ ]] here because [ ] does not support the '||' operator easily.
         if [[ "$game_input" == "attack" || "$game_input" == "a" ]]; then
             local p_dmg=$(roll_dice)
             enemy_hp=$(( enemy_hp - p_dmg )) # Math logic
-            echo "... You dealt $p_dmg damage!"
+            echo "... $player_name  dealt $p_dmg damage!"
 
             if [ $enemy_hp -gt 0 ]; then
                 local e_dmg=$(roll_dice)
@@ -100,7 +102,7 @@ run_game() {
         elif [[ "$game_input" == "potion" || "$game_input" == "p" ]]; then
             local heal=$(use_potion)
             player_hp=$(( player_hp + heal ))
-            echo "... Gulp! Healed for $heal. Your HP: $player_hp"
+            echo "... Gulp! $player_name Healed for $heal. $player_name  HP: $player_hp"
             
             # Penalize the player for healing mid-combat
             local e_dmg=$(roll_dice)
@@ -108,16 +110,19 @@ run_game() {
             echo "... $enemy_name hits you while you drink! Loss: $e_dmg"
 
         elif [[ "$game_input" == "run" || "$game_input" == "r" ]]; then
-            echo "... You fled like a coward!"
+            echo "... $player_name fled like a coward!"
             playing=false
+
         elif [[ "$game_input" == "health" || "$game_input" == "h" ]]; then
             # We use $ vars here because we want to READ their values to the screen.
             echo "... [Status] Your HP: $player_hp | $enemy_name HP: $enemy_hp"
+
         elif [[ "$game_input" == "save" || "$game_input" == "s" ]]; then
             echo "... Saving game..."
             # Save variables separated by semicolons into a text file.
-            echo "$player_hp;$enemy_name;$enemy_hp" > rpg_game_saved.txt
+            echo "$player_name;$player_hp;$enemy_name;$enemy_hp" > rpg_game_saved.txt
             playing=false
+
         else
             echo "Invalid command."
         fi
@@ -130,10 +135,14 @@ version=1.9
 echo "Version $version"
 
 while true; do
-    read -p "Menu: (q)uit, (n)ew, (l)oad: " user_input
+    read -p "Menu: (q)uit, (n)ew, (l)oad: " tmp_user_input
+    # to lower
+    user_input="${tmp_user_input,,}"
 
     # [ -z ] is "Is Zero" — checks if the user just hit Enter without typing.
-    if [ -z "$user_input" ]; then continue; fi
+    if [ -z "$user_input" ]; then 
+       continue; 
+    fi
 
     if [[ "$user_input" == "quit" || "$user_input" == "q" ]]; then
         echo "Quitting game"
@@ -146,7 +155,8 @@ while true; do
             echo "Loading game..."
             # IFS is the "Separator". It tells 'read' that ';' splits our data.
             # The '<' redirects the file content into the 'read' command.
-            IFS=";" read -r p_hp e_name e_hp < rpg_game_saved.txt
+            IFS=";" read -r p_name p_hp e_name e_hp < rpg_game_saved.txt
+            player_name=$p_name
             player_hp=$p_hp
             run_game "$e_name" "$e_hp"
         else
