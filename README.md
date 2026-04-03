@@ -97,16 +97,11 @@ https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-800-
 
 ---
 
-## TODO Maintain knowledge priority top 3 :seedling:
+## TODO Maintain knowledge priority top 2 :seedling:
 
 Well, this never stops, so lets make a priority list of all the topics below.
 
-1. Do the MS learn Active Directory Domain Services with vmhybrid01
-   - Continue AZ-800
-
-![top3](https://github.com/spawnmarvel/todo-and-current/blob/main/images/top3_.png)
-
-2. Octopus Deploy for linux (is 2 in one CI/CD and Bash)
+1. Octopus Deploy for linux (is 2 in one CI/CD and Bash)
    - Two projects (win/lin) and 100's of runbooks, we do linux project for now
    - Do all linux apps and day 2 operations in:
    - Diagnostics, packets, install MySQL, etc
@@ -114,6 +109,11 @@ Well, this never stops, so lets make a priority list of all the topics below.
    - - https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/README_octo_linux_runbook_operations.md
 
 ![deploy123](https://github.com/spawnmarvel/todo-and-current/blob/main/images/deploy123.png)
+
+2. Do the MS learn Active Directory Domain Services with vmhybrid01
+   - Continue AZ-800
+
+![top3](https://github.com/spawnmarvel/todo-and-current/blob/main/images/top3_.png)
 
 --- 
 
