@@ -4,7 +4,7 @@
 # --- MAIN MENU ---
 echo "Countries"
 echo "Inspired by https://web.mit.edu/mprat/Public/web/Terminus/Web/main.html"
-version=1.0
+version=1.2
 echo "Version $version"
 echo ""
 echo "Fly to countries from home"
@@ -12,16 +12,26 @@ echo "It might not be direct flights to your destination, then select a valid de
 echo "You might be stopped by customs or other's on your travell"
 echo "As you travell, you can store notes in your notebook, you might need them for later" 
 echo ""
+echo "Real linux commands are used so this is game for learning bash and countries."
 echo "Type m for menu"
 
-fly_countries=("Norway" "Sweden" "Denmark")
+fly_countries_scandinavia=("Norway" "Sweden" "Denmark")
+fly_countries_europe=("")
+fly_countries_asia=("")
+fly_countries_africa=("")
+fly_countries_north_america=("")
+fly_countries_south_america=("")
+fly_countries_antartica=("")
+fly_countries_oceania=("Australia")
 
 fun_learning() {
     echo "What did i learn making this or where did i send time debugging?"
     echo "1. bash is pickey about spaces, it needs them."
 }
 fun_menu() {
-   echo "Menu: (ls: look), (cd destination), (nano notebook), (q quit), (m menu):"
+   echo "Menu: (ls : look), (cd destination : travell), (q : quit), (m : menu)."
+   echo "Menu extended: (nano : open notebook),  (awk destination : for scanning terminals)."
+   echo "Menu extended: " 
 }
 fun_store_notebook() {
     echo "$1"
@@ -29,7 +39,7 @@ fun_store_notebook() {
 }
 fun_fly_from_home() {
   echo "Looking for flights from home:"
-  echo "${fly_countries[@]}"
+  echo "${fly_countries_scandinavia[@]}"
 
 }
 fun_destination_move() {
@@ -41,7 +51,7 @@ fun_destination_move() {
     if [[ -n "$1" ]]; then
         move_to_destination=$1
         echo "Travelling to $move_to_destination"
-        for c in "${fly_countries[@]}"; do
+        for c in "${fly_countries_scandinavia[@]}"; do
           if [[ "$1" == "$c" ]]; then
             can_fly=true
             break
@@ -52,6 +62,7 @@ fun_destination_move() {
             echo "Domestic flight? You are in norway"
           fi
           echo "You can fly to $1"
+          # echo now use new country arry
         else
           echo "You can not fly to $1. It is not possible from where you are"
           echo "Mabye dived up the flights, there are more planes from Denmark"
