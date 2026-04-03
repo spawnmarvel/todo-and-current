@@ -102,7 +102,7 @@ https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-800-
 Well, this never stops, so lets make a priority list of all the topics below.
 
 1. Bash learn it all now.
-   - Play around
+   - Play around, the basics are in now.
 
 2. Bash and Octopus Deploy for linux (is 2 in one CI/CD)
    - Two projects (win/lin) and 100's of runbooks, we do linux project for now
