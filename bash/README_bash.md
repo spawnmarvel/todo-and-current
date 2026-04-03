@@ -530,7 +530,7 @@ ls
 </p>
 </details>
 
-<details><summary>File Permissions, ls -l (list), chmod (permission), chown (owner), chgrp (group owner)</summary>
+<details><summary>File Permissions, ls -l (list), chmod (permission) chmod 755 demo.sh, chown (owner), chgrp (group owner)</summary>
 
 <p>
 
