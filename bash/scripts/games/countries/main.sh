@@ -16,7 +16,7 @@ echo "Real linux commands are used so this is game for learning bash and countri
 echo "Type m for menu"
 
 fly_countries_scandinavia=("Norway" "Sweden" "Denmark")
-fly_countries_europe=("")
+fly_countries_europe=("") # read txt file and fill array
 fly_countries_asia=("")
 fly_countries_africa=("")
 fly_countries_north_america=("")
@@ -37,7 +37,7 @@ fun_store_notebook() {
     echo "$1"
     echo "Must implement notebook, save and load"
 }
-fun_fly_from_home() {
+fun_countries_scandinavia() {
   echo "Looking for flights from home:"
   echo "${fly_countries_scandinavia[@]}"
 
@@ -92,7 +92,7 @@ while true; do
         fun_menu
 
     elif [[ "$user_input" == "ls" ]]; then
-        fun_fly_from_home
+        fun_countries_scandinavia
 
     elif [[ "$user_input" == "cd" ]]; then
         # [ -z ] is "Is Zero" — checks if the user just hit Enter without typing.
