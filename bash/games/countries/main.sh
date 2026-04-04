@@ -57,13 +57,25 @@ fun_learning() {
 # menu
 fun_menu() {
     printf "${LGREEN} Menu: (ls : look), (cd destination : travell), (pwd : current location) (q : quit), (m : menu). ${NC}\n"
-    printf "${LGREEN} Menu: (nano : open and edit notebook with nano), (cat : view notebook). ${NC}\n"
+    printf "${LGREEN} Menu: (nano text : save notebook text), (cat : open notebook TODO). ${NC}\n"
     printf "${LGREEN} Menu (TODO): (awk destination : scanning terminal). ${NC}\n"
     printf "${LGREEN} Menu (TODO): (printf : scanning full terminal). ${NC}\n"
 }
 # save nano
-fun_edit_notebook() {
-    nano saved_notebook.txt
+fun_save_notebook() {
+    local note="$1" # Store the argument in a local variable immediately
+    # --- FUNCTION ARGUMENTS ($1) ---
+    # We check if $1 (the first argument) is NOT empty using [[ -n ]].
+    # [[ ]] is modern and safer for string checks than [ ].
+
+    if [[ -n "$note" ]]; then
+        note="$1"
+        echo "$(date) ; "$current_location" ; $note" >>saved_notebook.txt
+        echo "Saved: $note to your notebook."
+
+    else
+        echo "Error: What do you want to write? (Usage: s 'your note here')"
+    fi
 }
 # open cat
 fun_open_notebook() {
@@ -173,11 +185,15 @@ while true; do
         break
 
     elif [[ "$user_input" == "nano" ]]; then
-        echo "Use the nano navigation"
-        fun_edit_notebook
+        # [ -z ] is "Is Zero" — checks if the user just hit Enter without typing.
+        if [ -z "$tmp_user_input_args2" ]; then
+            echo "No input to notebook"
+        else
+            fun_save_notebook "$tmp_user_input_args2"
+        fi
 
     elif [[ "$user_input" == "cat" ]]; then
-        echo "See notes"
+        echo "cat open"
         fun_open_notebook
 
     elif [[ "$user_input" == "m" ]]; then
@@ -187,7 +203,7 @@ while true; do
         fun_countries_scandinavia
 
     elif [[ "$user_input" == "pwd" ]]; then
-        echo "You are in $current_location in $current_location_world"
+        echo "$current_location in $current_location_world"
 
     elif [[ "$user_input" == "cd" ]]; then
         # [ -z ] is "Is Zero" — checks if the user just hit Enter without typing.
