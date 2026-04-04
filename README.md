@@ -69,20 +69,6 @@ git push origin main
 
 <details>
 
-<summary>Chaos Engineer bash</summary>
-
-
-"Chaos Engineer" and the "SysAdmin", but dont use vmchaos09 it is a proxy.
-
-https://github.com/spawnmarvel/todo-and-current/tree/main/bash_chaos_engineer
-
-
-</details>
-
----
-
-<details>
-
 <summary>AD DS mhybrid01 is DC and DNS server</summary>
 
 Nb: Outbund from vm's ? vmhybrid01 is DC is responsible for (it must be running)
