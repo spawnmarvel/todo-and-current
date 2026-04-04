@@ -93,7 +93,7 @@ while true; do
     tmp_user_input_args2=""
 
     # 2. Read from TTY
-    read -p "> " tmp_user_input_args1 tmp_user_input_args2 #  </dev/tty
+    read -p "> " tmp_user_input_args1 tmp_user_input_args2 </dev/tty
 
     # 3. Clean and lowercase (using xargs to trim any weird spaces)    
     user_input=$(echo "${tmp_user_input_args1,,}" | xargs)

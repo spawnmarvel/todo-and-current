@@ -15,7 +15,7 @@ Type m for menu
 
 ## Run it on your computer
 
-bash <(curl -sSL https://raw.githubusercontent.com/spawnmarvel/todo-and-current/main/bash/scripts/games/countries/main.sh)
+curl -sSL https://raw.githubusercontent.com/spawnmarvel/todo-and-current/main/bash/scripts/games/countries/main.sh | bash
 
 ## Version
 
