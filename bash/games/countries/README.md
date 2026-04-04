@@ -18,7 +18,7 @@ Type m for menu
 Copy and paste this into your terminal:
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/spawnmarvel/todo-and-current/main/bash/scripts/games/countries/main.sh | bash
+curl -sSL https://raw.githubusercontent.com/spawnmarvel/todo-and-current/main/bash/games/countries/main.sh | bash
 ```
 This makes the "barrier to entry" almost zero. It’s clean, it’s professional, and it’s how the biggest tools in the world (like Docker or Rust) handle their installers.
 
