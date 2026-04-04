@@ -92,7 +92,10 @@ fun_open_notebook() {
     done <"$notebook"
 }
 
-fun_countries_scandinavia() {
+fun_countries_from_location() {
+    # if location is denmark
+    ## fly_countries_europe
+    ## elif
     echo "Looking for flights from home:"
     echo "${fly_countries_scandinavia[@]}"
 
@@ -200,7 +203,7 @@ while true; do
         fun_menu
 
     elif [[ "$user_input" == "ls" ]]; then
-        fun_countries_scandinavia
+        fun_countries_from_location
 
     elif [[ "$user_input" == "pwd" ]]; then
         echo "$current_location in $current_location_world"
