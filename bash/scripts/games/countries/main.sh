@@ -13,6 +13,7 @@ echo "You might be stopped by customs or other's on your travell"
 echo "As you travell, you can store notes in your notebook, you might need them for later" 
 echo ""
 echo "Real linux commands are used so this is game for learning bash and countries."
+echo "It’s not just a game about geography; it’s a CLI (Command Line Interface) Simulator."
 echo "Type m for menu"
 
 fly_countries_scandinavia=("Norway" "Sweden" "Denmark")
