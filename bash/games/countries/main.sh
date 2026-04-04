@@ -1,20 +1,26 @@
 #!/bin/bash
 
-#### vars
+####
+# colors
+####
 
 RED='\e[31m'
 BLUE='\e[34m'
 LGREEN='\e[1;32m'
 NC='\e[0m' # No Color (Reset) last line or after current line
 
+####
+# start
+####
+
 echo ""
 echo "########"
 # The first argument is the "Format", the others are the "Data"
 printf "${LGREEN}Countries\n"
-
 printf "${LGREEN}Inspired by https://web.mit.edu/mprat/Public/web/Terminus/Web/main.html \n"
 version=1.2
 printf "${LGREEN}Version $version ${NC}\n"
+
 echo "########"
 echo ""
 echo "Fly to countries from home."
@@ -25,6 +31,10 @@ echo ""
 echo "Real linux commands are used so this is game for learning bash and countries."
 echo "It’s not just a game about geography; it’s a CLI (Command Line Interface) Simulator."
 echo "Type m for menu."
+
+#####
+# vars
+#####
 
 fly_countries_scandinavia=("Norway" "Sweden" "Denmark")
 fly_countries_europe=("") # read txt file and fill array
