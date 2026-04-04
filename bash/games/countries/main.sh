@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 # --- MAIN MENU ---
 echo "Countries"
 echo "Inspired by https://web.mit.edu/mprat/Public/web/Terminus/Web/main.html"
@@ -10,7 +9,7 @@ echo ""
 echo "Fly to countries from home"
 echo "It might not be direct flights to your destination, then select a valid destination"
 echo "You might be stopped by customs or other's on your travell"
-echo "As you travell, you can store notes in your notebook, you might need them for later" 
+echo "As you travell, you can store notes in your notebook, you might need them for later"
 echo ""
 echo "Real linux commands are used so this is game for learning bash and countries."
 echo "It’s not just a game about geography; it’s a CLI (Command Line Interface) Simulator."
@@ -35,10 +34,10 @@ fun_learning() {
 }
 # menu
 fun_menu() {
-   echo "Menu: (ls : look), (cd destination : travell), (pwd : current location) (q : quit), (m : menu)."
-   echo "Menu: (nano text : save notebook text), (cat : open notebook TODO)."
-   echo "Menu (TODO): (awk destination : scanning terminal)" 
-   echo "Menu (TODO): (printf : scanning full terminal)"
+    echo "Menu: (ls : look), (cd destination : travell), (pwd : current location) (q : quit), (m : menu)."
+    echo "Menu: (nano text : save notebook text), (cat : open notebook TODO)."
+    echo "Menu (TODO): (awk destination : scanning terminal)"
+    echo "Menu (TODO): (printf : scanning full terminal)"
 }
 # save nano
 fun_save_notebook() {
@@ -49,53 +48,24 @@ fun_save_notebook() {
 
     if [[ -n "$1" ]]; then
         note=$1
-        echo "$(date) ; $note" >> saved_notebook.txt
-        echo "Saved: Note $note" 
-        
+        echo "$(date) ; $note" >>saved_notebook.txt
+        echo "Saved: Note $note"
+
     else
         echo "Missing note"
     fi
 }
-# open cat
+# open cat TODO
 fun_open_notebook() {
     echo "Must implement open notebook"
 }
 fun_countries_scandinavia() {
-  echo "Looking for flights from home:"
-  echo "${fly_countries_scandinavia[@]}"
+    echo "Looking for flights from home:"
+    echo "${fly_countries_scandinavia[@]}"
 
 }
-# move cd
-fun_destination_move() {
-  local move_to_destination
-  local can_fly=false
-  # --- FUNCTION ARGUMENTS ($1) ---
-    # We check if $1 (the first argument) is NOT empty using [[ -n ]].
-    # [[ ]] is modern and safer for string checks than [ ].
-    if [[ -n "$1" ]]; then
-        move_to_destination=$1
-        echo "Travelling to $move_to_destination"
-        for c in "${fly_countries_scandinavia[@]}"; do
-          if [[ "$1" == "$c" ]]; then
-            can_fly=true
-            break
-          fi
-        done
-        if [[ "$can_fly" == true ]]; then
-          if [[ "$1" == "Norway" ]]; then
-            echo "Domestic flight? You are in norway"
-          fi
-          echo "You are flying to $1"
-          current_location="$1"
-        else
-          echo "You can not fly to $1. It is not possible from where you are"
-          echo "Mabye dived up the flights, there are more flights from Denmark for example"
-        fi
-    else
-        echo "Missing destination"
-    fi
-}
 
+# ISF TODO
 fun_full_scan_terminal() {
     # S1 get current_location
     echo "Test"
@@ -103,6 +73,7 @@ fun_full_scan_terminal() {
     # printf cool
 }
 
+# AWK TODO
 fun_scan_terminal() {
     # get current location
     # get current file
@@ -111,6 +82,41 @@ fun_scan_terminal() {
     # Output: Norway 11:25
 }
 
+#####
+## The c move loop
+#####
+fun_destination_move() {
+    local move_to_destination
+    local can_fly=false
+    # --- FUNCTION ARGUMENTS ($1) ---
+    # We check if $1 (the first argument) is NOT empty using [[ -n ]].
+    # [[ ]] is modern and safer for string checks than [ ].
+    if [[ -n "$1" ]]; then
+        move_to_destination=$1
+        echo "Travelling to $move_to_destination"
+        for c in "${fly_countries_scandinavia[@]}"; do
+            if [[ "$1" == "$c" ]]; then
+                can_fly=true
+                break
+            fi
+        done
+        if [[ "$can_fly" == true ]]; then
+            if [[ "$1" == "Norway" ]]; then
+                echo "Domestic flight? You are in norway"
+            fi
+            echo "You are flying to $1"
+            current_location="$1"
+        else
+            echo "You can not fly to $1. It is not possible from where you are"
+            echo "Mabye dived up the flights, there are more flights from Denmark for example"
+        fi
+    else
+        echo "Missing destination"
+    fi
+}
+#####
+## The main entry loop
+#####
 while true; do
     # 1. Clear variables
     tmp_user_input_args1=""
@@ -119,11 +125,11 @@ while true; do
     # 2. Read from TTY
     read -p "> " tmp_user_input_args1 tmp_user_input_args2 </dev/tty
 
-    # 3. Clean and lowercase (using xargs to trim any weird spaces)    
+    # 3. Clean and lowercase (using xargs to trim any weird spaces)
     user_input=$(echo "${tmp_user_input_args1,,}" | xargs)
     # [ -z ] is "Is Zero" — checks if the user just hit Enter without typing.
-    if [ -z "$user_input" ]; then 
-       continue; 
+    if [ -z "$user_input" ]; then
+        continue
     fi
 
     if [[ "$user_input" == "q" ]]; then
@@ -133,10 +139,10 @@ while true; do
 
     elif [[ "$user_input" == "nano" ]]; then
         # [ -z ] is "Is Zero" — checks if the user just hit Enter without typing.
-        if [ -z "$tmp_user_input_args2" ]; then 
-          echo "No input to notebook"
+        if [ -z "$tmp_user_input_args2" ]; then
+            echo "No input to notebook"
         else
-           fun_save_notebook "$tmp_user_input_args2"
+            fun_save_notebook "$tmp_user_input_args2"
         fi
 
     elif [[ "$user_input" == "cat" ]]; then
@@ -153,12 +159,12 @@ while true; do
 
     elif [[ "$user_input" == "cd" ]]; then
         # [ -z ] is "Is Zero" — checks if the user just hit Enter without typing.
-        if [ -z "$tmp_user_input_args2" ]; then 
-          echo "No input for destination"
+        if [ -z "$tmp_user_input_args2" ]; then
+            echo "No input for destination"
         else
-           fun_destination_move "$tmp_user_input_args2"
+            fun_destination_move "$tmp_user_input_args2"
         fi
-       
+
     else
         echo "Unknown command."
     fi
