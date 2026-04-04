@@ -3,6 +3,7 @@
 #### vars
 
 RED='\e[31m'
+BLUE='\e[34m'
 LGREEN='\e[1;32m'
 NC='\e[0m' # No Color (Reset) last line or after current line
 
@@ -111,14 +112,28 @@ fun_destination_move() {
             fi
         done
         if [[ "$can_fly" == true ]]; then
-            if [[ "$1" == "Norway" ]]; then
-                echo "Domestic flight? You are in norway"
+            if [[ "$1" == "$current_location" ]]; then
+                echo "Domestic flight is not supported? You are in $current_location"
+
+            else
+                echo "You are flying to $1"
+                # Loop 20 times to move the dot 20 spaces
+                for i in {1..20}; do
+                    # 1. \r jumps to the start of the line
+                    # 2. %*s prints 'i' number of spaces
+                    # 3. Then we print the dot
+                    printf "\r%*s==++>" $i ""
+
+                    # Wait a tiny bit (0.1 seconds) so we can see it move
+                    sleep 0.1
+                done
+                current_location="$1"
+                # This prints a newline and then your text
+                printf "\n${BLUE}Landed safely in $current_location! ${NC}\n"
             fi
-            echo "You are flying to $1"
-            current_location="$1"
         else
-            echo "You can not fly to $1. It is not possible from where you are"
-            echo "Mabye dived up the flights, there are more flights from Denmark for example"
+            echo "Unknow destination: $1."
+            echo "Type ls to see where you can fly to."
         fi
     else
         echo "Missing destination"
