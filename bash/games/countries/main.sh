@@ -36,6 +36,13 @@ fun_menu() {
    echo "Menu extended: (awk destination : scanning terminal)" 
    echo "Menu extended: (printf : scanning full terminal)"
 }
+fun_scan_terminal() {
+    # get current location
+    # get current file
+    # get destination and time
+    awk '{print $3}' europe.txt
+    # Output: Norway 11:25
+}
 fun_save_notebook() {
     local note
     # --- FUNCTION ARGUMENTS ($1) ---
