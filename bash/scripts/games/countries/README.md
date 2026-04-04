@@ -26,6 +26,19 @@ This makes the "barrier to entry" almost zero. It’s clean, it’s professional
 
 In Linux, /dev/tty is a special file that represents the terminal device currently being used. By pointing your read command there, you are effectively "reaching around" the curl stream to grab the user's keystrokes directly.
 
+🛠️ Turning your GitHub into a "Playground"
+To make it "World Famous," you should add a "Play in Browser" button to your GitHub README.
+
+Go to MyBinder.org
+
+Enter your GitHub URL.
+
+They will give you a "Badge" (a little image button).
+
+Paste that badge into your README.
+
+Now, when a user clicks that button, a browser tab opens, a terminal starts up, and your game begins automatically.
+
 ## Version
 
 
