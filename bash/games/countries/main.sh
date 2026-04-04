@@ -27,17 +27,20 @@ fly_countries_oceania=("Australia")
 current_location="Norway"
 current_location_world="scandinava"
 
+# learned
 fun_learning() {
     echo "What did i learn making this or where did i send time debugging?"
     echo "1. bash is pickey about spaces, it needs them."
     echo "2. echo "text" >> file.txt, is silent."
 }
+# menu
 fun_menu() {
-   echo "Menu: (ls : look), (cd destination : travell) (pwd : current location) (q : quit), (m : menu)."
+   echo "Menu: (ls : look), (cd destination : travell), (pwd : current location) (q : quit), (m : menu)."
    echo "Menu: (nano text : save notebook), (cat : open notebook TODO)."
    echo "Menu (TODO): (awk destination : scanning terminal)" 
    echo "Menu (TODO): (printf : scanning full terminal)"
 }
+# save nano
 fun_save_notebook() {
     local note
     # --- FUNCTION ARGUMENTS ($1) ---
@@ -53,6 +56,7 @@ fun_save_notebook() {
         echo "Missing note"
     fi
 }
+# open cat
 fun_open_notebook() {
     echo "Must implement open notebook"
 }
@@ -61,6 +65,7 @@ fun_countries_scandinavia() {
   echo "${fly_countries_scandinavia[@]}"
 
 }
+# move cd
 fun_destination_move() {
   local move_to_destination
   local can_fly=false
@@ -102,7 +107,7 @@ fun_scan_terminal() {
     # get current location
     # get current file
     # get destination and time
-    # awk '{print $3}' europe.txt
+    awk '{print $3}' europe.txt
     # Output: Norway 11:25
 }
 
