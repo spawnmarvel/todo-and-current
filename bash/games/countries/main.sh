@@ -33,9 +33,9 @@ fun_learning() {
 }
 fun_menu() {
    echo "Menu: (ls : look), (cd destination : travell) (pwd : current location) (q : quit), (m : menu)."
-   echo "Menu extended: (nano text : save notebook), (cat : open notebook)."
-   echo "Menu extended: (awk destination : scanning terminal)" 
-   echo "Menu extended: (printf : scanning full terminal)"
+   echo "Menu: (nano text : save notebook), (cat : open notebook TODO)."
+   echo "Menu (TODO): (awk destination : scanning terminal)" 
+   echo "Menu (TODO): (printf : scanning full terminal)"
 }
 fun_scan_terminal() {
     # get current location
