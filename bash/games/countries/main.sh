@@ -24,7 +24,7 @@ fly_countries_north_america=("")
 fly_countries_south_america=("")
 fly_countries_antartica=("")
 fly_countries_oceania=("Australia")
-current_location = "Norway"
+current_location="Norway"
 
 fun_learning() {
     echo "What did i learn making this or where did i send time debugging?"
@@ -86,11 +86,11 @@ fun_destination_move() {
           if [[ "$1" == "Norway" ]]; then
             echo "Domestic flight? You are in norway"
           fi
-          echo "You can fly to $1"
-          # echo now use new country arry
+          echo "You are flying to $1"
+          current_location="$1"
         else
           echo "You can not fly to $1. It is not possible from where you are"
-          echo "Mabye dived up the flights, there are more planes from Denmark"
+          echo "Mabye dived up the flights, there are more flights from Denmark for example"
         fi
     else
         echo "Missing destination"
