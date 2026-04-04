@@ -88,11 +88,14 @@ fun_destination_move() {
     fi
 }
 while true; do
-    # read inputs
-    # The </dev/tty tells Bash: "Ignore the pipe, listen to the keyboard!"
-    read -p ">" tmp_user_input_args1 tmp_user_input_args2 </dev/tty
-    # to lower
-    user_input="${tmp_user_input_args1,,}"
+    # 1. Clear variables
+    tmp_user_input_args1=""
+    tmp_user_input_args2=""
+
+    # 2. Read from TTY
+    read -p "> " tmp_user_input_args1 tmp_user_input_args2 </dev/tty
+
+    # 3. Clean and lowercase (using xargs to trim any weird spaces)    
 
     # [ -z ] is "Is Zero" — checks if the user just hit Enter without typing.
     if [ -z "$user_input" ]; then 
