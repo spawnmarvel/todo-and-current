@@ -1,19 +1,29 @@
 #!/bin/bash
 
-# --- MAIN MENU ---
-echo "Countries"
-echo "Inspired by https://web.mit.edu/mprat/Public/web/Terminus/Web/main.html"
-version=1.2
-echo "Version $version"
+#### vars
+
+RED='\e[31m'
+LGREEN='\e[1;32m'
+NC='\e[0m' # No Color (Reset) last line or after current line
+
 echo ""
-echo "Fly to countries from home"
-echo "It might not be direct flights to your destination, then select a valid destination"
-echo "You might be stopped by customs or other's on your travell"
-echo "As you travell, you can store notes in your notebook, you might need them for later"
+echo "########"
+# The first argument is the "Format", the others are the "Data"
+printf "${LGREEN}Countries\n"
+
+printf "${LGREEN}Inspired by https://web.mit.edu/mprat/Public/web/Terminus/Web/main.html \n"
+version=1.2
+printf "${LGREEN}Version $version ${NC}\n"
+echo "########"
+echo ""
+echo "Fly to countries from home."
+echo "It might not be direct flights to your destination, then select a valid destination."
+echo "You might be stopped by customs or other's on your travell, take notes if needed."
+echo "As you travell, you can store notes in your notebook, you might need them for later."
 echo ""
 echo "Real linux commands are used so this is game for learning bash and countries."
 echo "It’s not just a game about geography; it’s a CLI (Command Line Interface) Simulator."
-echo "Type m for menu"
+echo "Type m for menu."
 
 fly_countries_scandinavia=("Norway" "Sweden" "Denmark")
 fly_countries_europe=("") # read txt file and fill array
@@ -34,10 +44,10 @@ fun_learning() {
 }
 # menu
 fun_menu() {
-    echo "Menu: (ls : look), (cd destination : travell), (pwd : current location) (q : quit), (m : menu)."
-    echo "Menu: (nano text : save notebook text), (cat : open notebook TODO)."
-    echo "Menu (TODO): (awk destination : scanning terminal)"
-    echo "Menu (TODO): (printf : scanning full terminal)"
+    printf "${LGREEN} Menu: (ls : look), (cd destination : travell), (pwd : current location) (q : quit), (m : menu). ${NC}\n"
+    printf "${LGREEN} Menu: (nano text : save notebook text), (cat : open notebook TODO). ${NC}\n"
+    printf "${LGREEN} Menu (TODO): (awk destination : scanning terminal). ${NC}\n"
+    printf "${LGREEN} Menu (TODO): (printf : scanning full terminal). ${NC}\n"
 }
 # save nano
 fun_save_notebook() {
