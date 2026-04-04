@@ -89,7 +89,8 @@ fun_destination_move() {
 }
 while true; do
     # read inputs
-    read -p ">" tmp_user_input_args1 tmp_user_input_args2
+    # The </dev/tty tells Bash: "Ignore the pipe, listen to the keyboard!"
+    read -p ">" tmp_user_input_args1 tmp_user_input_args2 </dev/tty
     # to lower
     user_input="${tmp_user_input_args1,,}"
 
