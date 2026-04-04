@@ -33,7 +33,8 @@ fun_learning() {
 fun_menu() {
    echo "Menu: (ls : look), (cd destination : travell), (q : quit), (m : menu)."
    echo "Menu extended: (nano text : save notebook), (cat : open notebook)."
-   echo "Menu extended: (awk destination : for scanning terminals)" 
+   echo "Menu extended: (awk destination : scanning terminal)" 
+   echo "Menu extended: (printf : scanning full terminal)"
 }
 fun_save_notebook() {
     local note
