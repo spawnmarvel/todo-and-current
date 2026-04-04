@@ -57,7 +57,7 @@ fun_learning() {
 # menu
 fun_menu() {
     printf "${LGREEN} Menu: (ls : look), (cd destination : travell), (pwd : current location) (q : quit), (m : menu). ${NC}\n"
-    printf "${LGREEN} Menu: (nano : open and edit notebook), (cat : open notebook TODO). ${NC}\n"
+    printf "${LGREEN} Menu: (nano : open and edit notebook with nano), (cat : view notebook). ${NC}\n"
     printf "${LGREEN} Menu (TODO): (awk destination : scanning terminal). ${NC}\n"
     printf "${LGREEN} Menu (TODO): (printf : scanning full terminal). ${NC}\n"
 }
@@ -173,10 +173,11 @@ while true; do
         break
 
     elif [[ "$user_input" == "nano" ]]; then
+        echo "Use the nano navigation"
         fun_edit_notebook
 
     elif [[ "$user_input" == "cat" ]]; then
-        echo "cat open"
+        echo "See notes"
         fun_open_notebook
 
     elif [[ "$user_input" == "m" ]]; then
@@ -186,7 +187,7 @@ while true; do
         fun_countries_scandinavia
 
     elif [[ "$user_input" == "pwd" ]]; then
-        echo "$current_location in $current_location_world"
+        echo "You are in $current_location in $current_location_world"
 
     elif [[ "$user_input" == "cd" ]]; then
         # [ -z ] is "Is Zero" — checks if the user just hit Enter without typing.
