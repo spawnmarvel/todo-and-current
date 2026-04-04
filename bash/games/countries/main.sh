@@ -25,6 +25,7 @@ fly_countries_south_america=("")
 fly_countries_antartica=("")
 fly_countries_oceania=("Australia")
 current_location="Norway"
+current_location_world="scandinava"
 
 fun_learning() {
     echo "What did i learn making this or where did i send time debugging?"
@@ -37,6 +38,13 @@ fun_menu() {
    echo "Menu (TODO): (awk destination : scanning terminal)" 
    echo "Menu (TODO): (printf : scanning full terminal)"
 }
+fun_full_scan_terminal() {
+    # S1 get current_location
+    echo "Test"
+    # IFS open file to that location
+    # print cool
+}
+
 fun_scan_terminal() {
     # get current location
     # get current file
@@ -134,7 +142,7 @@ while true; do
         fun_countries_scandinavia
 
     elif [[ "$user_input" == "pwd" ]]; then
-        echo $current_location
+        echo "$current_location in $current_location_world"
 
     elif [[ "$user_input" == "cd" ]]; then
         # [ -z ] is "Is Zero" — checks if the user just hit Enter without typing.
