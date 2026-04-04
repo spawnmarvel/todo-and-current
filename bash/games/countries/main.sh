@@ -38,20 +38,6 @@ fun_menu() {
    echo "Menu (TODO): (awk destination : scanning terminal)" 
    echo "Menu (TODO): (printf : scanning full terminal)"
 }
-fun_full_scan_terminal() {
-    # S1 get current_location
-    echo "Test"
-    # IFS open file to that location
-    # print cool
-}
-
-fun_scan_terminal() {
-    # get current location
-    # get current file
-    # get destination and time
-    awk '{print $3}' europe.txt
-    # Output: Norway 11:25
-}
 fun_save_notebook() {
     local note
     # --- FUNCTION ARGUMENTS ($1) ---
@@ -68,7 +54,7 @@ fun_save_notebook() {
     fi
 }
 fun_open_notebook() {
-    echo "Must imlement open notebook"
+    echo "Must implement open notebook"
 }
 fun_countries_scandinavia() {
   echo "Looking for flights from home:"
@@ -104,6 +90,22 @@ fun_destination_move() {
         echo "Missing destination"
     fi
 }
+
+fun_full_scan_terminal() {
+    # S1 get current_location
+    echo "Test"
+    # IFS open file to that location
+    # printf cool
+}
+
+fun_scan_terminal() {
+    # get current location
+    # get current file
+    # get destination and time
+    # awk '{print $3}' europe.txt
+    # Output: Norway 11:25
+}
+
 while true; do
     # 1. Clear variables
     tmp_user_input_args1=""
