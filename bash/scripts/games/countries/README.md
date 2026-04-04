@@ -13,9 +13,13 @@ Real linux commands are used so this is game for learning bash and countries.
 It’s not just a game about geography; it’s a CLI (Command Line Interface) Simulator.
 Type m for menu
 
-## Run it on your computer
+## 🚀 Play Countries Now!
 
+Copy and paste this into your terminal:
+
+```bash
 curl -sSL https://raw.githubusercontent.com/spawnmarvel/todo-and-current/main/bash/scripts/games/countries/main.sh | bash
+```
 
 ## Version
 
