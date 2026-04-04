@@ -52,34 +52,34 @@ fun_learning() {
     echo "What did i learn making this or where did i send time debugging?"
     echo "1. bash is pickey about spaces, it needs them."
     echo "2. echo "text" >> file.txt, is silent."
+    echo "3. Quoting is king."
 }
 # menu
 fun_menu() {
     printf "${LGREEN} Menu: (ls : look), (cd destination : travell), (pwd : current location) (q : quit), (m : menu). ${NC}\n"
-    printf "${LGREEN} Menu: (nano text : save notebook text), (cat : open notebook TODO). ${NC}\n"
+    printf "${LGREEN} Menu: (nano : open and edit notebook), (cat : open notebook TODO). ${NC}\n"
     printf "${LGREEN} Menu (TODO): (awk destination : scanning terminal). ${NC}\n"
     printf "${LGREEN} Menu (TODO): (printf : scanning full terminal). ${NC}\n"
 }
 # save nano
-fun_save_notebook() {
-    local note
-    # --- FUNCTION ARGUMENTS ($1) ---
-    # We check if $1 (the first argument) is NOT empty using [[ -n ]].
-    # [[ ]] is modern and safer for string checks than [ ].
-
-    if [[ -n "$1" ]]; then
-        note=$1
-        echo "$(date) ; $note" >>saved_notebook.txt
-        echo "Saved: Note $note"
-
-    else
-        echo "Missing note"
-    fi
+fun_edit_notebook() {
+    nano saved_notebook.txt
 }
-# open cat TODO
+# open cat
 fun_open_notebook() {
-    echo "Must implement open notebook"
+    local notebook="saved_notebook.txt"
+
+    if [[ ! -f "$notebook" ]]; then
+        echo "Your notebook is empty, travel more to fill it up"
+        return
+    fi
+
+    while IFS=";" read -r note_time note_location note_saved; do
+        echo "$note_time $note_location $note_saved"
+        sleep 0.1
+    done <"$notebook"
 }
+
 fun_countries_scandinavia() {
     echo "Looking for flights from home:"
     echo "${fly_countries_scandinavia[@]}"
@@ -142,11 +142,11 @@ fun_destination_move() {
                 printf "\n${BLUE}Landed safely in $current_location! ${NC}\n"
             fi
         else
-            echo "Unknow destination: $1."
+            echo "Error unknow destination: $1."
             echo "Type ls to see where you can fly to."
         fi
     else
-        echo "Missing destination"
+        echo "Error missing destination parameter"
     fi
 }
 #####
@@ -173,14 +173,10 @@ while true; do
         break
 
     elif [[ "$user_input" == "nano" ]]; then
-        # [ -z ] is "Is Zero" — checks if the user just hit Enter without typing.
-        if [ -z "$tmp_user_input_args2" ]; then
-            echo "No input to notebook"
-        else
-            fun_save_notebook "$tmp_user_input_args2"
-        fi
+        fun_edit_notebook
 
     elif [[ "$user_input" == "cat" ]]; then
+        echo "cat open"
         fun_open_notebook
 
     elif [[ "$user_input" == "m" ]]; then
