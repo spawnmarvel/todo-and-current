@@ -24,6 +24,7 @@ fly_countries_north_america=("")
 fly_countries_south_america=("")
 fly_countries_antartica=("")
 fly_countries_oceania=("Australia")
+current_location = "Norway"
 
 fun_learning() {
     echo "What did i learn making this or where did i send time debugging?"
@@ -31,7 +32,7 @@ fun_learning() {
     echo "2. echo "text" >> file.txt, is silent."
 }
 fun_menu() {
-   echo "Menu: (ls : look), (cd destination : travell), (q : quit), (m : menu)."
+   echo "Menu: (ls : look), (cd destination : travell) (pwd : current location) (q : quit), (m : menu)."
    echo "Menu extended: (nano text : save notebook), (cat : open notebook)."
    echo "Menu extended: (awk destination : scanning terminal)" 
    echo "Menu extended: (printf : scanning full terminal)"
@@ -131,6 +132,9 @@ while true; do
 
     elif [[ "$user_input" == "ls" ]]; then
         fun_countries_scandinavia
+
+    elif [[ "$user_input" == "pwd" ]]; then
+        echo $current_location
 
     elif [[ "$user_input" == "cd" ]]; then
         # [ -z ] is "Is Zero" — checks if the user just hit Enter without typing.
