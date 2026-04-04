@@ -26,7 +26,8 @@ This makes the "barrier to entry" almost zero. It’s clean, it’s professional
 
 In Linux, /dev/tty is a special file that represents the terminal device currently being used. By pointing your read command there, you are effectively "reaching around" the curl stream to grab the user's keystrokes directly.
 
-🛠️ Turning your GitHub into a "Playground"
+## 🛠️ Turning your GitHub into a "Playground"
+
 To make it "World Famous," you should add a "Play in Browser" button to your GitHub README.
 
 Go to MyBinder.org
