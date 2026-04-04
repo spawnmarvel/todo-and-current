@@ -49,6 +49,9 @@ fun_save_notebook() {
         echo "Missing note"
     fi
 }
+fun_open_notebook() {
+    echo "Must imlement open notebook"
+}
 fun_countries_scandinavia() {
   echo "Looking for flights from home:"
   echo "${fly_countries_scandinavia[@]}"
@@ -98,6 +101,7 @@ while true; do
         echo "Quitting Capitals"
         fun_learning
         break
+
     elif [[ "$user_input" == "nano" ]]; then
         # [ -z ] is "Is Zero" — checks if the user just hit Enter without typing.
         if [ -z "$tmp_user_input_args2" ]; then 
@@ -105,6 +109,10 @@ while true; do
         else
            fun_save_notebook "$tmp_user_input_args2"
         fi
+
+    elif [[ "$user_input" == "cat" ]]; then
+        fun_open_notebook
+
     elif [[ "$user_input" == "m" ]]; then
         fun_menu
 
@@ -119,7 +127,6 @@ while true; do
            fun_destination_move "$tmp_user_input_args2"
         fi
        
-
     else
         echo "Unknown command."
     fi
