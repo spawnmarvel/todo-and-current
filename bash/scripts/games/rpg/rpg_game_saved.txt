@@ -1,1 +1,1 @@
-Lucas Wild;7200;troll;5000
+Lucas Wild;83;troll;128

@@ -27,15 +27,27 @@ fly_countries_oceania=("Australia")
 fun_learning() {
     echo "What did i learn making this or where did i send time debugging?"
     echo "1. bash is pickey about spaces, it needs them."
+    echo "2. echo "text" >> file.txt, is silent."
 }
 fun_menu() {
    echo "Menu: (ls : look), (cd destination : travell), (q : quit), (m : menu)."
-   echo "Menu extended: (nano : open notebook),  (awk destination : for scanning terminals)."
-   echo "Menu extended: " 
+   echo "Menu extended: (nano text : save notebook), (cat : open notebook)."
+   echo "Menu extended: (awk destination : for scanning terminals)" 
 }
-fun_store_notebook() {
-    echo "$1"
-    echo "Must implement notebook, save and load"
+fun_save_notebook() {
+    local note
+    # --- FUNCTION ARGUMENTS ($1) ---
+    # We check if $1 (the first argument) is NOT empty using [[ -n ]].
+    # [[ ]] is modern and safer for string checks than [ ].
+
+    if [[ -n "$1" ]]; then
+        note=$1
+        echo "$(date) ; $note" >> saved_notebook.txt
+        echo "Saved: Note $note" 
+        
+    else
+        echo "Missing note"
+    fi
 }
 fun_countries_scandinavia() {
   echo "Looking for flights from home:"
@@ -45,7 +57,7 @@ fun_countries_scandinavia() {
 fun_destination_move() {
   local move_to_destination
   local can_fly=false
-  # --- FUNCTION ARGUMENTS ($1, $2) ---
+  # --- FUNCTION ARGUMENTS ($1) ---
     # We check if $1 (the first argument) is NOT empty using [[ -n ]].
     # [[ ]] is modern and safer for string checks than [ ].
     if [[ -n "$1" ]]; then
@@ -72,9 +84,10 @@ fun_destination_move() {
     fi
 }
 while true; do
-    read -p ">" tmp_user_input tmp_destination
+    # read inputs
+    read -p ">" tmp_user_input_args1 tmp_user_input_args2
     # to lower
-    user_input="${tmp_user_input,,}"
+    user_input="${tmp_user_input_args1,,}"
 
     # [ -z ] is "Is Zero" — checks if the user just hit Enter without typing.
     if [ -z "$user_input" ]; then 
@@ -86,8 +99,12 @@ while true; do
         fun_learning
         break
     elif [[ "$user_input" == "nano" ]]; then
-        fun_store_notebook
-
+        # [ -z ] is "Is Zero" — checks if the user just hit Enter without typing.
+        if [ -z "$tmp_user_input_args2" ]; then 
+          echo "No input to notebook"
+        else
+           fun_save_notebook "$tmp_user_input_args2"
+        fi
     elif [[ "$user_input" == "m" ]]; then
         fun_menu
 
@@ -96,10 +113,10 @@ while true; do
 
     elif [[ "$user_input" == "cd" ]]; then
         # [ -z ] is "Is Zero" — checks if the user just hit Enter without typing.
-        if [ -z "$tmp_destination" ]; then 
+        if [ -z "$tmp_user_input_args2" ]; then 
           echo "No input for destination"
         else
-           fun_destination_move "$tmp_destination"
+           fun_destination_move "$tmp_user_input_args2"
         fi
        
 
