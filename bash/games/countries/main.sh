@@ -176,6 +176,7 @@ fun_destination_move() {
     local move_to_destination=""
     local can_fly=false
     local possibilities=""
+    local new_continent=""
     # --- FUNCTION ARGUMENTS ($1) ---
     # We check if $1 (the first argument) is NOT empty using [[ -n ]].
     # [[ ]] is modern and safer for string checks than [ ].
@@ -199,6 +200,7 @@ fun_destination_move() {
                 for c in "${fly_countries_europe[@]}"; do
                     if [[ "$move_to_destination" == "$c" ]]; then
                         can_fly=true
+                        new_continent="$region"
                         break 2
                     fi
                 done
@@ -206,6 +208,7 @@ fun_destination_move() {
                 for c in "${fly_countries_asia[@]}"; do
                     if [[ "$move_to_destination" == "$c" ]]; then
                         can_fly=true
+                        new_continent="$region"
                         break 2
                     fi
                 done
@@ -233,7 +236,9 @@ fun_destination_move() {
                     # Wait a tiny bit (0.1 seconds) so we can see it move
                     sleep 0.1
                 done
-                current_location="$1"
+                current_location="$move_to_destination"
+                current_location_world="$new_continent"
+
                 # This prints a newline and then your text
                 printf "\n${BLUE}Landed safely in $current_location! ${NC}\n"
                 # fun_verify_continents_flights "$current_location"
