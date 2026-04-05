@@ -46,7 +46,11 @@ fly_countries_south_america=("")
 fly_countries_antartica=("")
 fly_countries_oceania=("Australia")
 current_location="Norway"
-current_location_world="scandinavia" # europe
+current_location_world="europe" # europe, asia
+# main airports
+declare -A airport_codes
+airport_codes["IST"]="Turkey"
+airport_codes["HND"]="Tokyo"
 
 # learned
 fun_learning() {
@@ -58,10 +62,13 @@ fun_learning() {
 }
 # menu
 fun_menu() {
+    printf "${BLUE} Main Airports: ${NC}"
+    printf "${BLUE}%s ${NC}" "${airport_codes[@]}"
+    printf "\n"
     printf "${LGREEN} Menu: (ls : look), (cd destination : travel), (pwd : current location) (q : quit), (m : menu). ${NC}\n"
-    printf "${LGREEN} Menu: (nano text : save notebook text), (cat : open notebook TODO). ${NC}\n"
+    printf "${LGREEN} Menu: (nano text : save notebook text), (cat : open notebook). ${NC}\n"
+    printf "${LGREEN} Menu: (printf : scanning full terminal). ${NC}\n"
     printf "${LGREEN} Menu (TODO): (awk destination : scanning terminal). ${NC}\n"
-    printf "${LGREEN} Menu (TODO): (printf : scanning full terminal). ${NC}\n"
 }
 # simulate nano with args 1 contaning all text
 fun_save_notebook() {
@@ -93,33 +100,39 @@ fun_open_notebook() {
     done <"$notebook"
 }
 
-# use printf to pretty print terminal
+# simulate printf for full terminal and random flights
 fun_full_scan_terminal() {
-    # S1 get current_location
-    echo "Test"
-    # IFS open file to that location
-    # printf cool
+    # 1. Shuffle and save into a NEW array called 'daily_deals'
+    # -n 10, pick 10 items
+    # -e treat them as elements
+    mapfile -t current_terminal < <(shuf -n 10 -e "${fly_countries_europe[@]}")
+
+    for country in "${current_terminal[@]}"; do
+        # %-20s = The country name, padded to 20 spaces
+        # \n = MOVE TO NEXT LINE (Very important!)
+        printf " * %-20s [BOOK NOW]\n" "$country"
+    done
+
 }
 
 # simulate awk for scanning terminal
 fun_scan_terminal() {
-    # get current location
-    # get current file
-    # get destination and time
-    awk '{print $3}' europe.txt
-    # Output: Norway 11:25
+    echo "TBD"
 }
 
-# fly to all over the world from a current location
+# simulate ls to list where we can fly
 fun_check_countries_from_location() {
     if [[ "$current_location_world" = "europe" ]]; then
         echo "Flights in europe"
         echo "${fly_countries_europe[@]}"
-    elif [[ "$current_location_world" = "scandinavia" ]]; then
-        echo "Flights in scandinavia"
-        echo "${fly_countries_scandinavia[@]}"
+
+    elif [[ "$current_location_world" = "europe" && "$current_location" = "${airport_codes[IST]}" ]]; then
+        echo "Flights in europe"
+        echo "${fly_countries_europe[@]}"
+        echo "Flights in asia"
+        echo "${fly_countries_asia[@]}"
     elif [[ "$current_location_world" = "asia" ]]; then
-        echo "Flights in scandinavia"
+        echo "Flights in asia"
         echo "${fly_countries_asia[@]}"
     else
         echo "TODO"
@@ -129,25 +142,24 @@ fun_check_countries_from_location() {
 
 # check what country we are in an set location world
 # some place may overlap, like our starting point scandinavia
-fun_verify_current_countries_from_location_and_set_location() {
-    # if current location is in current_location_world and denamrk, we set europe
-    if [[ "$current_location_world" = "europe" ]]; then
-        echo "Flights in europe"
-        echo "${fly_countries_europe[@]}"
-    elif [[ "$current_location_world" = "scandinavia" ]]; then
-        echo "Flights in scandinavia"
-        echo "${fly_countries_scandinavia[@]}"
-    elif [[ "$current_location_world" = "asia" ]]; then
-        echo "Flights in scandinavia"
-        echo "${fly_countries_asia[@]}"
+fun_verify_continents_flights() {
+    local fly_to="$1"
+
+    if [[ "$current_location_world" == "europe" && "$current_location" = "${airport_codes[IST]}" ]]; then
+        echo "From Turkey you can fly to Asia"
+
+    elif [[ "$current_location_world" == "europe" && "$current_location" != "${airport_codes[IST]}" ]]; then
+
+        echo "From $1 you can fly within Europe"
+
     else
-        echo "TODO"
+        echo "TODO rest of the continents"
     fi
 
 }
 
 #####
-## The c move loop
+## simulate cd move loop
 #####
 fun_destination_move() {
 
@@ -157,17 +169,17 @@ fun_destination_move() {
     # We check if $1 (the first argument) is NOT empty using [[ -n ]].
     # [[ ]] is modern and safer for string checks than [ ].
     if [[ -n "$1" ]]; then
-        move_to_destination=$1
+        move_to_destination="$1"
         echo "Checking $move_to_destination"
-        if [[ "$current_location_world" == "scandinavia" ]]; then
-            for c in "${fly_countries_scandinavia[@]}"; do
+        if [[ "$current_location_world" == "europe" ]]; then
+            for c in "${fly_countries_europe[@]}"; do
                 if [[ "$1" == "$c" ]]; then
                     can_fly=true
                     break
                 fi
             done
-        elif [[ "$current_location_world" = "europe" ]]; then
-            for c in "${fly_countries_europe[@]}"; do
+        elif [[ "$current_location_world" = "asia" ]]; then
+            for c in "${fly_countries_asia[@]}"; do
                 if [[ "$1" == "$c" ]]; then
                     can_fly=true
                     break
@@ -198,9 +210,7 @@ fun_destination_move() {
                 current_location="$1"
                 # This prints a newline and then your text
                 printf "\n${BLUE}Landed safely in $current_location! ${NC}\n"
-                if [[ "$current_location" = "Denmark" ]]; then
-                    current_location_world="europe"
-                fi
+                fun_verify_continents_flights "$current_location"
             fi
         else
             echo "Error unknow destination: $1."
@@ -253,7 +263,7 @@ while true; do
         fun_check_countries_from_location
 
     elif [[ "$user_input" == "pwd" ]]; then
-        echo "$current_location in $current_location_world"
+        echo "You are in $current_location in $current_location_world"
 
     elif [[ "$user_input" == "cd" ]]; then
         # [ -z ] is "Is Zero" — checks if the user just hit Enter without typing.
@@ -262,6 +272,8 @@ while true; do
         else
             fun_destination_move "$args"
         fi
+    elif [[ "$user_input" == "printf" ]]; then
+        fun_full_scan_terminal
 
     else
         echo "Unknown command."

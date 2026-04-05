@@ -13,16 +13,16 @@ enemys[demon]=105
 enemys[troll]=170
 
 # --- DICE LOGIC ---
-# Why we use $(( )): This is "Arithmetic Expansion." 
+# Why we use $(( )): This is "Arithmetic Expansion."
 # Inside $(( )), Bash treats words as variables automatically, so 'min' is the same as '$min'.
 roll_dice() {
     local min=2
-    echo $(( (RANDOM % 49) + min )) # Range: 2 to 50
+    echo $(((RANDOM % 49) + min)) # Range: 2 to 50
 }
 
 use_potion() {
     local min=2
-    echo $(( (RANDOM % 19) + min )) # Range: 2 to 20
+    echo $(((RANDOM % 19) + min)) # Range: 2 to 20
 }
 
 run_game() {
@@ -39,17 +39,17 @@ run_game() {
         # If we passed an enemy name to the function, it's a LOADED game.
         enemy_name="$1"
         enemy_hp="$2"
-        in_game=true 
+        in_game=true
         echo "... Resuming fight with $enemy_name"
     else
         # If no arguments, it's a NEW game. We reset player_hp here.
-        player_hp=140 
+        player_hp=140
         echo "Swish, ...showsh..bang, bang, bang!"
         echo "... $player_name have entered the arena of the blue gate."
 
         # Get all keys (names) from our enemy array
         local names=("${!enemys[@]}")
-        local ran=$(( RANDOM % ${#names[@]} ))
+        local ran=$((RANDOM % ${#names[@]}))
         enemy_name="${names[$ran]}"
         enemy_hp="${enemys[$enemy_name]}"
         in_game=false
@@ -58,8 +58,8 @@ run_game() {
     # --- THE COMBAT LOOP ---
     # We use [ ] here for a simple string comparison.
     while [ "$playing" == "true" ]; do
-        
-        # Why -le? It stands for "Less than or Equal to." 
+
+        # Why -le? It stands for "Less than or Equal to."
         # Bash uses these instead of '<=' inside [ ] brackets.
         if [ $enemy_hp -le 0 ]; then
             echo "... $enemy_name is dead..., you win!"
@@ -90,23 +90,23 @@ run_game() {
         # We use [[ ]] here because [ ] does not support the '||' operator easily.
         if [[ "$game_input" == "attack" || "$game_input" == "a" ]]; then
             local p_dmg=$(roll_dice)
-            enemy_hp=$(( enemy_hp - p_dmg )) # Math logic
+            enemy_hp=$((enemy_hp - p_dmg)) # Math logic
             echo "... $player_name  dealt $p_dmg damage!"
 
             if [ $enemy_hp -gt 0 ]; then
                 local e_dmg=$(roll_dice)
-                player_hp=$(( player_hp - e_dmg ))
+                player_hp=$((player_hp - e_dmg))
                 echo "... $enemy_name counters for $e_dmg damage!"
             fi
 
         elif [[ "$game_input" == "potion" || "$game_input" == "p" ]]; then
             local heal=$(use_potion)
-            player_hp=$(( player_hp + heal ))
+            player_hp=$((player_hp + heal))
             echo "... Gulp! $player_name Healed for $heal. $player_name  HP: $player_hp"
-            
+
             # Penalize the player for healing mid-combat
             local e_dmg=$(roll_dice)
-            player_hp=$(( player_hp - e_dmg ))
+            player_hp=$((player_hp - e_dmg))
             echo "... $enemy_name hits you while you drink! Loss: $e_dmg"
 
         elif [[ "$game_input" == "run" || "$game_input" == "r" ]]; then
@@ -120,7 +120,7 @@ run_game() {
         elif [[ "$game_input" == "save" || "$game_input" == "s" ]]; then
             echo "... Saving game..."
             # Save variables separated by semicolons into a text file.
-            echo "$player_name;$player_hp;$enemy_name;$enemy_hp" > rpg_game_saved.txt
+            echo "$player_name;$player_hp;$enemy_name;$enemy_hp" >rpg_game_saved.txt
             playing=false
 
         else
@@ -140,8 +140,8 @@ while true; do
     user_input="${tmp_user_input,,}"
 
     # [ -z ] is "Is Zero" — checks if the user just hit Enter without typing.
-    if [ -z "$user_input" ]; then 
-       continue; 
+    if [ -z "$user_input" ]; then
+        continue
     fi
 
     if [[ "$user_input" == "quit" || "$user_input" == "q" ]]; then
@@ -151,11 +151,11 @@ while true; do
         run_game
     elif [[ "$user_input" == "load" || "$user_input" == "l" ]]; then
         # [ -f ] checks if a FILE exists.
-        if [[ -f rpg_game_saved.txt ]]; then            
+        if [[ -f rpg_game_saved.txt ]]; then
             echo "Loading game..."
             # IFS is the "Separator". It tells 'read' that ';' splits our data.
             # The '<' redirects the file content into the 'read' command.
-            IFS=";" read -r p_name p_hp e_name e_hp < rpg_game_saved.txt
+            IFS=";" read -r p_name p_hp e_name e_hp <rpg_game_saved.txt
             player_name=$p_name
             player_hp=$p_hp
             run_game "$e_name" "$e_hp"
