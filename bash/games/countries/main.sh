@@ -28,7 +28,8 @@ echo "It might not be direct flights to your destination, then select a valid de
 echo "You might be stopped by customs or other's on your travel, take notes if needed."
 echo "As you travel, you can store notes in your notebook, you might need them for later."
 echo ""
-echo "Real linux commands are used so this is game for learning bash and countries."
+echo "Hello $USER"
+echo "Real linux commands are used, this is game for learning bash and countries."
 echo "It’s not just a game about geography; it’s a CLI (Command Line Interface) Simulator."
 echo "Type m for menu."
 
@@ -38,14 +39,14 @@ echo "Type m for menu."
 
 fly_countries_scandinavia=("Norway" "Sweden" "Denmark")
 fly_countries_europe=("Albania" "Andorra" "Austria" "Belarus" "Belgium" "Bosnia and Herzegovina" "Bulgaria" "Croatia" "Cyprus" "Czech Republic" "Denmark" "Estonia" "Finland" "France" "Germany" "Greece" "Hungary" "Iceland" "Ireland" "Italy" "Kazakhstan" "Kosovo" "Latvia" "Liechtenstein" "Lithuania" "Luxembourg" "Malta" "Moldova" "Monaco" "Montenegro" "Netherlands" "North Macedonia" "Norway" "Poland" "Portugal" "Romania" "Russia" "San Marino" "Serbia" "Slovakia" "Slovenia" "Spain" "Sweden" "Switzerland" "Turkey" "Ukraine" "United Kingdom" "Vatican City")
-fly_countries_asia=("")
+fly_countries_asia=("Afghanistan" "Armenia" "Azerbaijan" "Bahrain" "Bangladesh" "Bhutan" "Brunei" "Cambodia" "China" "Cyprus" "Georgia" "India" "Indonesia" "Iran" "Iraq" "Israel" "Japan" "Jordan" "Kazakhstan" "Kuwait" "Kyrgyzstan" "Laos" "Lebanon" "Malaysia" "Maldives" "Mongolia" "Myanmar" "Nepal" "North Korea" "Oman" "Pakistan" "Palestine" "Philippines" "Qatar" "Saudi Arabia" "Singapore" "South Korea" "Sri Lanka" "Syria" "Taiwan" "Tajikistan" "Thailand" "Timor-Leste" "Turkey" "Turkmenistan" "United Arab Emirates" "Uzbekistan" "Vietnam" "Yemen")
 fly_countries_africa=("")
 fly_countries_north_america=("")
 fly_countries_south_america=("")
 fly_countries_antartica=("")
 fly_countries_oceania=("Australia")
 current_location="Norway"
-current_location_world="scandinava"
+current_location_world="scandinavia" # europe
 
 # learned
 fun_learning() {
@@ -53,7 +54,7 @@ fun_learning() {
     echo "1. bash is pickey about spaces, it needs them."
     echo "2. echo "text" >> file.txt, is silent."
     echo "3. Quoting is king."
-    echo "4. function_sum(), $1, $2 bash arguments are silent, we just provide and must code for it."
+    echo "4. function_sum(), '$1, $2' bash arguments are silent, we just provide and must code for it."
 }
 # menu
 fun_menu() {
@@ -92,15 +93,6 @@ fun_open_notebook() {
     done <"$notebook"
 }
 
-fun_countries_from_location() {
-    # if location is denmark
-    ## fly_countries_europe
-    ## elif
-    echo "Looking for flights from home:"
-    echo "${fly_countries_scandinavia[@]}"
-
-}
-
 # use printf to pretty print terminal
 fun_full_scan_terminal() {
     # S1 get current_location
@@ -118,10 +110,45 @@ fun_scan_terminal() {
     # Output: Norway 11:25
 }
 
+# fly to all over the world from a current location
+fun_check_countries_from_location() {
+    if [[ "$current_location_world" = "europe" ]]; then
+        echo "Flights in europe"
+        echo "${fly_countries_europe[@]}"
+    elif [[ "$current_location_world" = "scandinavia" ]]; then
+        echo "Flights in scandinavia"
+        echo "${fly_countries_scandinavia[@]}"
+    elif [[ "$current_location_world" = "asia" ]]; then
+        echo "Flights in scandinavia"
+        echo "${fly_countries_asia[@]}"
+    else
+        echo "TODO"
+    fi
+
+}
+
+# fly to all over the world from a current location
+fun_check_countries_from_location() {
+    if [[ "$current_location_world" = "europe" ]]; then
+        echo "Flights in europe"
+        echo "${fly_countries_europe[@]}"
+    elif [[ "$current_location_world" = "scandinavia" ]]; then
+        echo "Flights in scandinavia"
+        echo "${fly_countries_scandinavia[@]}"
+    elif [[ "$current_location_world" = "asia" ]]; then
+        echo "Flights in scandinavia"
+        echo "${fly_countries_asia[@]}"
+    else
+        echo "TODO"
+    fi
+
+}
+
 #####
 ## The c move loop
 #####
 fun_destination_move() {
+
     local move_to_destination
     local can_fly=false
     # --- FUNCTION ARGUMENTS ($1) ---
@@ -129,13 +156,27 @@ fun_destination_move() {
     # [[ ]] is modern and safer for string checks than [ ].
     if [[ -n "$1" ]]; then
         move_to_destination=$1
-        echo "traveling to $move_to_destination"
-        for c in "${fly_countries_scandinavia[@]}"; do
-            if [[ "$1" == "$c" ]]; then
-                can_fly=true
-                break
-            fi
-        done
+        echo "Checking $move_to_destination"
+        if [[ "$current_location_world" == "scandinavia" ]]; then
+            for c in "${fly_countries_scandinavia[@]}"; do
+                if [[ "$1" == "$c" ]]; then
+                    can_fly=true
+                    break
+                fi
+            done
+        elif [[ "$current_location_world" = "europe" ]]; then
+            for c in "${fly_countries_europe[@]}"; do
+                if [[ "$1" == "$c" ]]; then
+                    can_fly=true
+                    break
+                fi
+            done
+        else
+            echo "Change world location"
+        fi
+        ####
+        # You are in the air
+        ###
         if [[ "$can_fly" == true ]]; then
             if [[ "$1" == "$current_location" ]]; then
                 echo "Domestic flight is not supported? You are in $current_location"
@@ -155,6 +196,9 @@ fun_destination_move() {
                 current_location="$1"
                 # This prints a newline and then your text
                 printf "\n${BLUE}Landed safely in $current_location! ${NC}\n"
+                if [[ "$current_location" = "Denmark" ]]; then
+                    current_location_world="europe"
+                fi
             fi
         else
             echo "Error unknow destination: $1."
@@ -204,7 +248,7 @@ while true; do
         fun_menu
 
     elif [[ "$user_input" == "ls" ]]; then
-        fun_countries_from_location
+        fun_check_countries_from_location
 
     elif [[ "$user_input" == "pwd" ]]; then
         echo "$current_location in $current_location_world"
