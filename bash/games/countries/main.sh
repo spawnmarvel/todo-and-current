@@ -127,8 +127,10 @@ fun_check_countries_from_location() {
 
 }
 
-# fly to all over the world from a current location
-fun_check_countries_from_location() {
+# check what country we are in an set location world
+# some place may overlap, like our starting point scandinavia
+fun_verify_current_countries_from_location_and_set_location() {
+    # if current location is in current_location_world and denamrk, we set europe
     if [[ "$current_location_world" = "europe" ]]; then
         echo "Flights in europe"
         echo "${fly_countries_europe[@]}"
