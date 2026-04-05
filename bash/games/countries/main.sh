@@ -122,15 +122,17 @@ fun_scan_terminal() {
 
 # simulate ls to list where we can fly
 fun_check_countries_from_location() {
-    if [[ "$current_location_world" = "europe" ]]; then
-        echo "Flights in europe"
+
+    if [[ "$current_location_world" == "europe" && "$current_location" != "${airport_codes[IST]}" ]]; then
+        echo "Flights in europe: "
         echo "${fly_countries_europe[@]}"
 
-    elif [[ "$current_location_world" = "europe" && "$current_location" = "${airport_codes[IST]}" ]]; then
-        echo "Flights in europe"
+    elif [[ "$current_location_world" == "europe" && "$current_location" = "${airport_codes[IST]}" ]]; then
+        echo "Flights in europe: "
         echo "${fly_countries_europe[@]}"
-        echo "Flights in asia"
+        echo "Flights in asia, since you are at airport ${airport_codes[IST]}"
         echo "${fly_countries_asia[@]}"
+
     elif [[ "$current_location_world" = "asia" ]]; then
         echo "Flights in asia"
         echo "${fly_countries_asia[@]}"
@@ -143,18 +145,26 @@ fun_check_countries_from_location() {
 # check what country we are in an set location world
 # some place may overlap, like our starting point scandinavia
 fun_verify_continents_flights() {
-    local fly_to="$1"
+    flight_possibilities=""
 
-    if [[ "$current_location_world" == "europe" && "$current_location" = "${airport_codes[IST]}" ]]; then
-        echo "From Turkey you can fly to Asia"
+    # 1. gateway instanbul (bridge asia and europe)
+    if [[ "$current_location" == "${airport_codes[IST]}" ]]; then
+        flight_possibilities="europe;asia"
 
-    elif [[ "$current_location_world" == "europe" && "$current_location" != "${airport_codes[IST]}" ]]; then
+    # 2. gateway tokyo (bridge asia and europe)
+    elif [[ "$current_location" == "${airport_codes[HND]}" ]]; then
+        flight_possibilities="europe;asia"
 
-        echo "From $1 you can fly within Europe"
+    elif [[ "$current_location_world" == "europe" ]]; then
+        flight_possibilities="europe"
+
+    elif [[ "$current_location_world" == "asia" ]]; then
+        flight_possibilities="asia"
 
     else
-        echo "TODO rest of the continents"
+        flight_possibilities="unknown"
     fi
+    echo "$flight_possibilities"
 
 }
 
@@ -163,31 +173,47 @@ fun_verify_continents_flights() {
 #####
 fun_destination_move() {
 
-    local move_to_destination
+    local move_to_destination=""
     local can_fly=false
+    local possibilities=""
     # --- FUNCTION ARGUMENTS ($1) ---
     # We check if $1 (the first argument) is NOT empty using [[ -n ]].
     # [[ ]] is modern and safer for string checks than [ ].
     if [[ -n "$1" ]]; then
         move_to_destination="$1"
-        echo "Checking $move_to_destination"
-        if [[ "$current_location_world" == "europe" ]]; then
-            for c in "${fly_countries_europe[@]}"; do
-                if [[ "$1" == "$c" ]]; then
-                    can_fly=true
-                    break
-                fi
-            done
-        elif [[ "$current_location_world" = "asia" ]]; then
-            for c in "${fly_countries_asia[@]}"; do
-                if [[ "$1" == "$c" ]]; then
-                    can_fly=true
-                    break
-                fi
-            done
-        else
-            echo "Change world location"
-        fi
+        echo "Checking destination $move_to_destination"
+        possibilities=$(fun_verify_continents_flights)
+        echo "All destinations: $possibilities"
+
+        # splitt the string
+        IFS=";" read -ra continents <<<"$possibilities"
+        count=${#continents[@]}
+        echo "Current continent: ${continents[*]}"
+        echo "Total count: $count"
+
+        # Loop through every continent found in your 'continents' array
+        echo "Check if multiple continents or single."
+        for region in "${continents[@]}"; do
+
+            if [[ "$region" == "europe" ]]; then
+                for c in "${fly_countries_europe[@]}"; do
+                    if [[ "$move_to_destination" == "$c" ]]; then
+                        can_fly=true
+                        break 2
+                    fi
+                done
+            elif [[ "$region" == "asia" ]]; then
+                for c in "${fly_countries_asia[@]}"; do
+                    if [[ "$move_to_destination" == "$c" ]]; then
+                        can_fly=true
+                        break 2
+                    fi
+                done
+            else
+                echo "Change world location"
+            fi
+            # done with region
+        done
         ####
         # You are in the air
         ###
@@ -197,8 +223,8 @@ fun_destination_move() {
 
             else
                 echo "You are flying to $1"
-                # Loop 20 times to move the dot 20 spaces
-                for i in {1..20}; do
+                # Loop 10 times to move the dot 10 spaces
+                for i in {1..10}; do
                     # 1. \r jumps to the start of the line
                     # 2. %*s prints 'i' number of spaces
                     # 3. Then we print the dot
@@ -210,12 +236,13 @@ fun_destination_move() {
                 current_location="$1"
                 # This prints a newline and then your text
                 printf "\n${BLUE}Landed safely in $current_location! ${NC}\n"
-                fun_verify_continents_flights "$current_location"
+                # fun_verify_continents_flights "$current_location"
             fi
         else
             echo "Error unknow destination: $1."
             echo "Type ls to see where you can fly to."
         fi
+
     else
         echo "Error missing destination parameter"
     fi
