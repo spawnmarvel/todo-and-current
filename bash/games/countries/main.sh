@@ -25,8 +25,8 @@ echo "########"
 echo ""
 echo "Fly to countries from home."
 echo "It might not be direct flights to your destination, then select a valid destination."
-echo "You might be stopped by customs or other's on your travell, take notes if needed."
-echo "As you travell, you can store notes in your notebook, you might need them for later."
+echo "You might be stopped by customs or other's on your travel, take notes if needed."
+echo "As you travel, you can store notes in your notebook, you might need them for later."
 echo ""
 echo "Real linux commands are used so this is game for learning bash and countries."
 echo "It’s not just a game about geography; it’s a CLI (Command Line Interface) Simulator."
@@ -53,20 +53,20 @@ fun_learning() {
     echo "1. bash is pickey about spaces, it needs them."
     echo "2. echo "text" >> file.txt, is silent."
     echo "3. Quoting is king."
+    echo "4. function_sum(), $1, $2 bash arguments are silent, we just provide and must code for it."
 }
 # menu
 fun_menu() {
-    printf "${LGREEN} Menu: (ls : look), (cd destination : travell), (pwd : current location) (q : quit), (m : menu). ${NC}\n"
+    printf "${LGREEN} Menu: (ls : look), (cd destination : travel), (pwd : current location) (q : quit), (m : menu). ${NC}\n"
     printf "${LGREEN} Menu: (nano text : save notebook text), (cat : open notebook TODO). ${NC}\n"
     printf "${LGREEN} Menu (TODO): (awk destination : scanning terminal). ${NC}\n"
     printf "${LGREEN} Menu (TODO): (printf : scanning full terminal). ${NC}\n"
 }
-# save nano
+# simulate nano with args 1 contaning all text
 fun_save_notebook() {
-    local note="$1" # Store the argument in a local variable immediately
+    local note="$1"
     # --- FUNCTION ARGUMENTS ($1) ---
     # We check if $1 (the first argument) is NOT empty using [[ -n ]].
-    # [[ ]] is modern and safer for string checks than [ ].
 
     if [[ -n "$note" ]]; then
         note="$1"
@@ -77,10 +77,10 @@ fun_save_notebook() {
         echo "Error: What do you want to write? (Usage: s 'your note here')"
     fi
 }
-# open cat
+# simulate cat with no args
 fun_open_notebook() {
     local notebook="saved_notebook.txt"
-
+    # We check if the notebook is NOT empty using [[ -n ]].
     if [[ ! -f "$notebook" ]]; then
         echo "Your notebook is empty, travel more to fill it up"
         return
@@ -101,7 +101,7 @@ fun_countries_from_location() {
 
 }
 
-# ISF TODO
+# use printf to pretty print terminal
 fun_full_scan_terminal() {
     # S1 get current_location
     echo "Test"
@@ -109,7 +109,7 @@ fun_full_scan_terminal() {
     # printf cool
 }
 
-# AWK TODO
+# simulate awk for scanning terminal
 fun_scan_terminal() {
     # get current location
     # get current file
@@ -129,7 +129,7 @@ fun_destination_move() {
     # [[ ]] is modern and safer for string checks than [ ].
     if [[ -n "$1" ]]; then
         move_to_destination=$1
-        echo "Travelling to $move_to_destination"
+        echo "traveling to $move_to_destination"
         for c in "${fly_countries_scandinavia[@]}"; do
             if [[ "$1" == "$c" ]]; then
                 can_fly=true
@@ -169,16 +169,17 @@ fun_destination_move() {
 #####
 while true; do
     # 1. Clear variables
-    tmp_user_input_args1=""
-    tmp_user_input_args2=""
+    cmd=""
+    args=""
 
     # 2. Read from TTY
-    read -p "> " tmp_user_input_args1 tmp_user_input_args2 </dev/tty
+    read -p "> " cmd args </dev/tty
 
     # 3. Clean and lowercase (using xargs to trim any weird spaces)
-    user_input=$(echo "${tmp_user_input_args1,,}" | xargs)
+    user_input=$(echo "${cmd,,}" | xargs)
     # [ -z ] is "Is Zero" — checks if the user just hit Enter without typing.
     if [ -z "$user_input" ]; then
+        echo "Please type m for menu if need to see commands."
         continue
     fi
 
@@ -189,10 +190,10 @@ while true; do
 
     elif [[ "$user_input" == "nano" ]]; then
         # [ -z ] is "Is Zero" — checks if the user just hit Enter without typing.
-        if [ -z "$tmp_user_input_args2" ]; then
+        if [ -z "$args" ]; then
             echo "No input to notebook"
         else
-            fun_save_notebook "$tmp_user_input_args2"
+            fun_save_notebook "$args"
         fi
 
     elif [[ "$user_input" == "cat" ]]; then
@@ -210,10 +211,10 @@ while true; do
 
     elif [[ "$user_input" == "cd" ]]; then
         # [ -z ] is "Is Zero" — checks if the user just hit Enter without typing.
-        if [ -z "$tmp_user_input_args2" ]; then
+        if [ -z "$args" ]; then
             echo "No input for destination"
         else
-            fun_destination_move "$tmp_user_input_args2"
+            fun_destination_move "$args"
         fi
 
     else

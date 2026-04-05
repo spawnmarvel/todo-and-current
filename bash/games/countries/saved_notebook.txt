@@ -1,8 +1,4 @@
-this is a note
-this a new note
-hm..
-lets do this
-in denmark
-yes, this works
 Sat Apr  4 07:44:13 PM CEST 2026 ; Norway ; test
 Sat Apr  4 07:46:55 PM CEST 2026 ; Norway ; test
+Sun Apr  5 12:11:48 PM CEST 2026 ; Norway ; drinking tea
+Sun Apr  5 12:15:36 PM CEST 2026 ; Denmark ; i am in denmark
