@@ -67,6 +67,18 @@ set -euo pipefail
 # -o pipefail: Catch errors in piped commands
 ```
 
+## Bash quick reference
+
+Page1
+
+![Quick 1 ](https://github.com/spawnmarvel/linux-and-azure/blob/main/images/page1.jpg)
+
+Page 2
+![Quick 2 ](https://github.com/spawnmarvel/linux-and-azure/blob/main/images/page2.jpg)
+
+https://github.com/spawnmarvel/quickguides/blob/main/bash/bash.quickref.pdf
+
+
 ## W3schools :cyclone:vmchaos09
 
 <details><summary>Basic Commands, ls, ls -a, ls *name*, cd, pwd, echo, cat, cp, mv, rm, touch, mkdir</summary>
@@ -1105,6 +1117,8 @@ https://www.w3schools.com/bash/bash_commands.php
 </details>
 
 ## Hands on with
+
+UFW https://github.com/spawnmarvel/linux-and-azure/tree/main/ufw-firewall
 
 <details><summary>Update and upgrade / apt install and apt remove </summary>
 <p>
