@@ -69,6 +69,24 @@ git push origin main
 
 <details>
 
+<summary>VSC extension</summary>
+
+Bash IDE
+
+* Jump to declaration
+* Find references
+* Code Outline & Show Symbols
+* Highlight occurrences
+* Code completion
+* Simple diagnostics reporting
+* Documentation for flags on hover
+
+</details>
+
+---
+
+<details>
+
 <summary>AD DS mhybrid01 is DC and DNS server</summary>
 
 Nb: Outbund from vm's ? vmhybrid01 is DC is responsible for (it must be running)
