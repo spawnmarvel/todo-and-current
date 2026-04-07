@@ -273,12 +273,24 @@ while true; do
         continue
     fi
 
-    if [[ "$user_input" == "q" ]]; then
-        echo "Quitting Capitals"
+    case "$user_input" in
+    "cd" )
+    fun_check_countries_from_location
+       
+        ;;
+    "q" | "quit")
+        echo "Quitting Countries"
         fun_learning
         break
+        ;;
+    *)
+        # The wildcard * handles "Anything else" (Errors)
+        echo "Unknow var $args"
+        ;;
+    esac
+    
 
-    elif [[ "$user_input" == "nano" ]]; then
+    if [[ "$user_input" == "nano" ]]; then
         # [ -z ] is "Is Zero" — checks if the user just hit Enter without typing.
         if [ -z "$args" ]; then
             echo "No input to notebook"
