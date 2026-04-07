@@ -852,7 +852,7 @@ fi
 </details>
 
 <details>
-<summary><b>05. Control Flow (If/Else/elif/fi), (case/esac)</b></summary>
+<summary><b>05. Control Flow (if/elif/else/fi), (case/esac)</b></summary>
 <p>
 
 ```Bash
