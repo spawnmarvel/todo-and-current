@@ -255,6 +255,8 @@ fun_destination_move() {
 #####
 ## The main entry loop
 #####
+# Change this full loop to a case statment
+####
 while true; do
     # 1. Clear variables
     cmd=""

@@ -69,9 +69,9 @@ git push origin main
 
 <details>
 
-<summary>VSC extension</summary>
+<summary>VSC extension bash and git bash for windows</summary>
 
-Bash IDE
+🛠️  Bash IDE
 
 * Jump to declaration
 * Find references
@@ -80,6 +80,19 @@ Bash IDE
 * Code completion
 * Simple diagnostics reporting
 * Documentation for flags on hover
+
+🛠️ Option 1: Git Bash (Simplest & Most Common)
+If you have Git installed on Windows, you already have "Git Bash." This is the easiest way to get a Linux-like terminal inside VS Code.
+
+🔹 How to set it up:
+
+* Open VS Code.
+* Press Ctrl + `  (backtick) to open the terminal.
+* On the right side of the terminal window, click the + (plus) icon dropdown.
+* Select Select Default Profile.
+* Choose Git Bash.
+
+Now, when you open a new terminal, you can just type ./your_script.sh to play your game.
 
 </details>
 
