@@ -1315,7 +1315,7 @@ no pass
 </p>
 </details>
 
-<details><summary>Generate ssl (no prompts) and check it</summary>
+<details><summary>Openssl (no prompts) and check it</summary>
 <p>
 
 #### We can hide anything, even code!
@@ -1327,10 +1327,16 @@ sudo openssl req -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out server.crt
 ls
 #  server.crt  server.key
 
-openssl x509 -noout -subject -startdate -enddate -in server.crt
+openssl x509 -noout -subject -dates -in server.crt
 # subject=C = NO, ST = Hordaland, L = BER, O = Socrates.inc, OU = IT, CN = vm01.socrates.inc
 # notBefore=Mar 29 18:03:20 2026 GMT
 # notAfter=Mar 29 18:03:20 2027 GMT
+
+# check extensions
+
+openssl x509 -noout -text -in server.crt
+# look for X509 Extended Keu Usage
+
 
 ```
 </p>
