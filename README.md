@@ -195,14 +195,15 @@ mysql --user=#{MySQL.User} --password=#{MySQL.Password}
     - :white_square_button: Azure Database for MySQL flexible server
     - :white_square_button: MySQL workbench and cli
 
-3. :bulb: The AZ-800 (Administering Windows Server Hybrid Core Infrastructure) and AZ-801 exams are retiring in September 2026. 
-   - They will be replaced by the new AZ-802
-   - Do Ms learn bit by bit
+3. :bulb: AZ-802: Windows Server Hybrid Administrator 
    - :white_check_mark: AD DS is installed  = 100%
    - :white_check_mark: Do The "Cloud-Only" Hybrid Lab (to get some hand on) = 100%
    - :bulb: Do the MS learn Active Directory Domain Services = 
+   - :bulb: Do the MS Azure Arc = 
+   - :bulb: Do the MS Azure File sync = 
    - - vmhybrid01
-   - - Saved in az-800-admistering-windows-server-hybrid-core-infrastructure
+   - - Then jump to AZ-802 Windows Server Hybrid Administrator Study Guide in june 2026 (maybe)
+   - - Saved in https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-ad-ds-windows-server-hybrid-core-infrastructure
   
 
 4. Octopus deploy (free)
