@@ -47,7 +47,9 @@ fly_countries_antartica=("")
 fly_countries_oceania=("Australia")
 current_location="Norway"
 current_location_world="europe" # europe, asia
-# main airports
+# main airports,
+# Hub-and-spoke network.
+# By designating Turkey and Japan (Tokyo) as your "Gateways," you’ve introduced a layer of strategy.
 declare -A airport_codes
 airport_codes["IST"]="Turkey"
 airport_codes["HND"]="Tokyo"
@@ -136,6 +138,7 @@ fun_format_array() {
             c=0
         fi
     done
+    printf "\n"
 }
 # simulate ls to list where we can fly
 fun_check_countries_from_location() {
@@ -219,7 +222,8 @@ fun_destination_move() {
 
             if [[ "$region" == "europe" ]]; then
                 for c in "${fly_countries_europe[@]}"; do
-                    if [[ "$move_to_destination" == "$c" ]]; then
+                    # lowercase trick{c,,}
+                    if [[ "$move_to_destination" == "${c,,}" ]]; then
                         can_fly=true
                         new_continent="$region"
                         break 2
@@ -227,7 +231,7 @@ fun_destination_move() {
                 done
             elif [[ "$region" == "asia" ]]; then
                 for c in "${fly_countries_asia[@]}"; do
-                    if [[ "$move_to_destination" == "$c" ]]; then
+                    if [[ "$move_to_destination" == "${c,,}" ]]; then
                         can_fly=true
                         new_continent="$region"
                         break 2
