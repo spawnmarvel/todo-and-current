@@ -195,7 +195,8 @@ mysql --user=#{MySQL.User} --password=#{MySQL.Password}
     - :white_square_button: Azure Database for MySQL flexible server
     - :white_square_button: MySQL workbench and cli
 
-3. :bulb: Az-800 Administering Windows Server Hybrid Core Infrastructure
+3. :bulb: The AZ-800 (Administering Windows Server Hybrid Core Infrastructure) and AZ-801 exams are retiring in September 2026. 
+   - They will be replaced by the new AZ-802
    - Do Ms learn bit by bit
    - :white_check_mark: AD DS is installed  = 100%
    - :white_check_mark: Do The "Cloud-Only" Hybrid Lab (to get some hand on) = 100%
