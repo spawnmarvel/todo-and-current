@@ -61,6 +61,7 @@ fun_learning() {
     echo "2. echo "text" >> file.txt, is silent."
     echo "3. Quoting is king."
     echo "4. function_sum(), '$1, $2' bash arguments are silent, we just provide and must code for it."
+    echo "5. lowercase trick - ${c} ${c,,} "
 }
 # menu
 fun_menu() {
@@ -144,16 +145,16 @@ fun_format_array() {
 fun_check_countries_from_location() {
     local c=0
 
-    if [[ "$current_location_world" == "europe" && "$current_location" != "${airport_codes[IST]}" ]]; then
+    if [[ "$current_location_world" == "europe" && "$current_location" != "${airport_codes[IST],,}" ]]; then
         # flights in europe
         printf "${LGREEN} * * Flights in europe, avaliable at your location: ${NC}\n"
         fun_format_array fly_countries_europe
 
-    elif [[ "$current_location_world" == "europe" && "$current_location" = "${airport_codes[IST]}" ]]; then
+    elif [[ "$current_location_world" == "europe" && "${current_location,,}" = "${airport_codes[IST],,}" ]]; then
         # flights in europe and asia
         printf "${LGREEN} * * Flights in europe: ${NC}\n"
         fun_format_array fly_countries_europe
-        printf "${LGREEN} * * Flights in asia, since you are at airport ${airport_codes[IST]} ${NC}\n"
+        printf "${LGREEN} * * Flights in asia, since you are at airport ${airport_codes[IST],,} ${NC}\n"
         fun_format_array fly_countries_asia
 
     elif [[ "$current_location_world" = "asia" ]]; then
@@ -222,7 +223,7 @@ fun_destination_move() {
 
             if [[ "$region" == "europe" ]]; then
                 for c in "${fly_countries_europe[@]}"; do
-                    # lowercase trick{c,,}
+                    # lowercase trick "${c,,}""
                     if [[ "$move_to_destination" == "${c,,}" ]]; then
                         can_fly=true
                         new_continent="$region"
