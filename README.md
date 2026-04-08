@@ -195,7 +195,7 @@ mysql --user=#{MySQL.User} --password=#{MySQL.Password}
     - :white_square_button: Azure Database for MySQL flexible server
     - :white_square_button: MySQL workbench and cli
 
-3. :bulb: AZ-802: Windows Server Hybrid Administrator 
+3. :bulb: AZ-802: Windows Server Hybrid Administrator (june 2026)
    - :white_check_mark: AD DS is installed  = 100%
    - :white_check_mark: Do The "Cloud-Only" Hybrid Lab (to get some hand on) = 100%
    - :bulb: Do the MS learn Active Directory Domain Services = 
