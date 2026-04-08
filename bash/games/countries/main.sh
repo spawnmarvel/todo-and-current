@@ -65,7 +65,7 @@ fun_menu() {
     printf "${BLUE} Main Airports: ${NC}"
     printf "${BLUE}%s ${NC}" "${airport_codes[@]}"
     printf "\n"
-    printf "${LGREEN} Menu: (ls : look), (cd destination : travel), (pwd : current location) (q : quit), (m : menu). ${NC}\n"
+    printf "${LGREEN} Menu: (m : menu), (pwd : current location) (ls : travel alternatives), (cd destination : travel to), (q : quit). ${NC}\n"
     printf "${LGREEN} Menu: (nano text : save notebook text), (cat : open notebook). ${NC}\n"
     printf "${LGREEN} Menu: (printf : scanning full terminal). ${NC}\n"
     printf "${LGREEN} Menu (TODO): (awk destination : scanning terminal). ${NC}\n"
@@ -102,7 +102,7 @@ fun_open_notebook() {
 
 # simulate printf for full terminal and random flights
 fun_full_scan_terminal() {
-    # 1. Shuffle and save into a NEW array called 'daily_deals'
+    # 1. Shuffle and save into a NEW array called 'current_terminal'
     # -n 10, pick 10 items
     # -e treat them as elements
     mapfile -t current_terminal < <(shuf -n 10 -e "${fly_countries_europe[@]}")
@@ -121,22 +121,42 @@ fun_scan_terminal() {
     echo "TBD"
 }
 
+# helper ls to format array
+fun_format_array() {
+    local -n fly_countries_arr="$1"
+    local c=0
+
+    for country in "${fly_countries_arr[@]}"; do
+        #  %-22s creates a fixed-width column of 22 characters
+        # The minus sign aligns the text to the LEFT
+        printf " %-22s" "$country"
+        ((c++))
+        if [[ "$c" -eq 4 ]]; then
+            printf "\n"
+            c=0
+        fi
+    done
+}
 # simulate ls to list where we can fly
 fun_check_countries_from_location() {
+    local c=0
 
     if [[ "$current_location_world" == "europe" && "$current_location" != "${airport_codes[IST]}" ]]; then
-        printf "${LGREEN} * * Flights in europe: ${NC}\n"
-        echo "${fly_countries_europe[@]}"
+        # flights in europe
+        printf "${LGREEN} * * Flights in europe, avaliable at your location: ${NC}\n"
+        fun_format_array fly_countries_europe
 
     elif [[ "$current_location_world" == "europe" && "$current_location" = "${airport_codes[IST]}" ]]; then
+        # flights in europe and asia
         printf "${LGREEN} * * Flights in europe: ${NC}\n"
-        echo "${fly_countries_europe[@]}"
+        fun_format_array fly_countries_europe
         printf "${LGREEN} * * Flights in asia, since you are at airport ${airport_codes[IST]} ${NC}\n"
-        echo "${fly_countries_asia[@]}"
+        fun_format_array fly_countries_asia
 
     elif [[ "$current_location_world" = "asia" ]]; then
+        # flights in europe
         printf "${LGREEN} * * Flights in asia: ${NC}\n"
-        echo "${fly_countries_asia[@]}"
+        fun_format_array fly_countries_asia
     else
         echo "TODO"
     fi
@@ -174,7 +194,7 @@ fun_verify_continents_flights() {
 #####
 fun_destination_move() {
 
-    local move_to_destination=""
+    local move_to_destination="$1"
     local can_fly=false
     local possibilities=""
     local new_continent=""
@@ -182,7 +202,7 @@ fun_destination_move() {
     # We check if $1 (the first argument) is NOT empty using [[ -n ]].
     # [[ ]] is modern and safer for string checks than [ ].
     if [[ -n "$1" ]]; then
-        move_to_destination="$1"
+
         echo "Checking destination $move_to_destination"
         possibilities=$(fun_verify_continents_flights)
         echo "All destinations: $possibilities"
@@ -190,11 +210,11 @@ fun_destination_move() {
         # splitt the string
         IFS=";" read -ra continents <<<"$possibilities"
         count=${#continents[@]}
-        echo "Current continent: ${continents[*]}"
-        echo "Total count: $count"
+        # echo "Current continent: ${continents[*]}"
+        # echo "Total count: $count"
 
         # Loop through every continent found in your 'continents' array
-        echo "Check if multiple continents or single."
+        # echo "Check if multiple continents or single."
         for region in "${continents[@]}"; do
 
             if [[ "$region" == "europe" ]]; then
@@ -226,7 +246,7 @@ fun_destination_move() {
                 echo "Domestic flight is not supported? You are in $current_location"
 
             else
-                echo "You are flying to $1"
+                echo "You are flying to $move_to_destination"
                 # Loop 10 times to move the dot 10 spaces
                 for i in {1..10}; do
                     # 1. \r jumps to the start of the line
@@ -245,7 +265,7 @@ fun_destination_move() {
                 # fun_verify_continents_flights "$current_location"
             fi
         else
-            echo "Error unknow destination: $1."
+            echo "Error unknow destination: $move_to_destination."
             echo "Type ls to see where you can fly to."
         fi
 
@@ -268,7 +288,10 @@ while true; do
 
     # 3. Clean and lowercase (using xargs to trim any weird spaces)
     user_input=$(echo "${cmd,,}" | xargs)
-    # [ -z ] is "Is Zero" — checks if the user just hit Enter without typing.
+    # We use "$args" in quotes to handle multi-word countries like "United Kingdom"
+    args=$(echo "$args" | xargs)
+
+    # 4. [ -z ] is "Is Zero" — checks if the user just hit Enter without typing.
     if [ -z "$user_input" ]; then
         echo "Please type m for menu if need to see commands."
         continue
