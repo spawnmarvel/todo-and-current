@@ -118,14 +118,14 @@ https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-800-
 
 Well, this never stops, so lets make a priority list of all the topics below.
 
-1. Bash learn it all now.
+### 1. Bash learn it all now.
    - Play around, the basics are in now.
    - Continue the ***countries game***, expand and expand, use bash commands as normal commands
    - Expand it, do more
    - Make matrix stuff also on the screen/ effects.
    - Launch it online
 
-2. Bash and Octopus Deploy for linux (is 2 in one CI/CD)
+### 2. Bash and Octopus Deploy for linux (is 2 in one CI/CD)
    - Two projects (win/lin) and 100's of runbooks, we do linux project for now
    - Do all linux apps and day 2 operations in:
    - Diagnostics, packets, install MySQL, etc
@@ -134,8 +134,8 @@ Well, this never stops, so lets make a priority list of all the topics below.
 
 ![deploy123](https://github.com/spawnmarvel/todo-and-current/blob/main/images/deploy123.png)
 
-3. Do the MS learn Active Directory Domain Services with vmhybrid01
-   - Continue with Active Directory
+### 3. Do the MS learn Active Directory Domain Services with vmhybrid01
+   - Continue with Active Directory, Arc and file sync
 
 ![top3](https://github.com/spawnmarvel/todo-and-current/blob/main/images/top3_.png)
 
