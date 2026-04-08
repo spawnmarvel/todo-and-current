@@ -135,7 +135,7 @@ Well, this never stops, so lets make a priority list of all the topics below.
 ![deploy123](https://github.com/spawnmarvel/todo-and-current/blob/main/images/deploy123.png)
 
 3. Do the MS learn Active Directory Domain Services with vmhybrid01
-   - Continue AZ-800
+   - Continue with Active Directory
 
 ![top3](https://github.com/spawnmarvel/todo-and-current/blob/main/images/top3_.png)
 
