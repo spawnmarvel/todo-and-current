@@ -112,6 +112,7 @@ fun_full_scan_terminal() {
         # \n = MOVE TO NEXT LINE (Very important!)
         printf " * %-20s [BOOK NOW]\n" "$country"
     done
+    printf " * %-20s [BOOK NOW] Main airport \n" "${fly_countries_europe[44]}"
 
 }
 
@@ -124,17 +125,17 @@ fun_scan_terminal() {
 fun_check_countries_from_location() {
 
     if [[ "$current_location_world" == "europe" && "$current_location" != "${airport_codes[IST]}" ]]; then
-        echo "Flights in europe: "
+        printf "${LGREEN} * * Flights in europe: ${NC}\n"
         echo "${fly_countries_europe[@]}"
 
     elif [[ "$current_location_world" == "europe" && "$current_location" = "${airport_codes[IST]}" ]]; then
-        echo "Flights in europe: "
+        printf "${LGREEN} * * Flights in europe: ${NC}\n"
         echo "${fly_countries_europe[@]}"
-        echo "Flights in asia, since you are at airport ${airport_codes[IST]}"
+        printf "${LGREEN} * * Flights in asia, since you are at airport ${airport_codes[IST]} ${NC}\n"
         echo "${fly_countries_asia[@]}"
 
     elif [[ "$current_location_world" = "asia" ]]; then
-        echo "Flights in asia"
+        printf "${LGREEN} * * Flights in asia: ${NC}\n"
         echo "${fly_countries_asia[@]}"
     else
         echo "TODO"
@@ -274,54 +275,48 @@ while true; do
     fi
 
     case "$user_input" in
-    "cd" )
-    fun_check_countries_from_location
-       
+    "m")
+        fun_menu
         ;;
     "q" | "quit")
         echo "Quitting Countries"
         fun_learning
         break
         ;;
-    *)
-        # The wildcard * handles "Anything else" (Errors)
-        echo "Unknow var $args"
-        ;;
-    esac
-    
-
-    if [[ "$user_input" == "nano" ]]; then
-        # [ -z ] is "Is Zero" — checks if the user just hit Enter without typing.
-        if [ -z "$args" ]; then
-            echo "No input to notebook"
-        else
-            fun_save_notebook "$args"
-        fi
-
-    elif [[ "$user_input" == "cat" ]]; then
-        echo "cat open"
-        fun_open_notebook
-
-    elif [[ "$user_input" == "m" ]]; then
-        fun_menu
-
-    elif [[ "$user_input" == "ls" ]]; then
+    "ls")
         fun_check_countries_from_location
-
-    elif [[ "$user_input" == "pwd" ]]; then
+        ;;
+    "pwd")
         echo "You are in $current_location in $current_location_world"
-
-    elif [[ "$user_input" == "cd" ]]; then
+        ;;
+    "cd")
         # [ -z ] is "Is Zero" — checks if the user just hit Enter without typing.
         if [ -z "$args" ]; then
             echo "No input for destination"
         else
             fun_destination_move "$args"
         fi
-    elif [[ "$user_input" == "printf" ]]; then
-        fun_full_scan_terminal
+        ;;
+    "nano")
+        # [ -z ] is "Is Zero" — checks if the user just hit Enter without typing.
+        if [ -z "$args" ]; then
+            echo "No input to notebook"
+        else
+            fun_save_notebook "$args"
+        fi
+        ;;
+    "cat")
+        fun_open_notebook
+        ;;
 
-    else
-        echo "Unknown command."
-    fi
+    "printf")
+        fun_full_scan_terminal
+        ;;
+
+    *)
+        # The wildcard * handles "Anything else" (Errors)
+        echo "Unknown cmd: $cmd or Unknown args: $args"
+        ;;
+    esac
+
 done
