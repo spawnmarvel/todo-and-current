@@ -69,7 +69,7 @@ git push origin main
 
 <details>
 
-<summary>VSC extension bash and git bash for windows</summary>
+<summary>VSC extension bash, git bash for windows</summary>
 
 🛠️  Bash IDE
 
@@ -153,6 +153,9 @@ sudo apt upgrade -y
 df -h
 sudo apt autoremove
 sudo apt autoclean
+
+# Bash won't show ghost text, but it has Programmable Completion.
+# type ssh, cd, pwd, ls, and then hit the Tab key once or twice.
 
 ```
 1. :bulb: Linux maintenance:
