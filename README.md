@@ -30,7 +30,6 @@ https://follow-e-lo.com/
 ---
 ### Bash/ps1 for admin, zabbix_sender, telegraf (?), Python for complex
 
-![python telegraf](https://github.com/spawnmarvel/todo-and-current/blob/main/images/py_tele3.png)
 <details>
 
 <summary>Scripting automation, idempotent.</summary>
