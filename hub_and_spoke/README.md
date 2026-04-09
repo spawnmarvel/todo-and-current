@@ -1,5 +1,9 @@
 # Hub and Spoke networking model (and ssh keys)
 
+For vpn gateway point to site, check link.
+
+https://github.com/spawnmarvel/quickguides/blob/main/security-VPN%2FREADME.md
+
 The "Hub" Hierarchy
 To keep the mental model clear:
 
