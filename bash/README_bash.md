@@ -1120,6 +1120,37 @@ https://www.w3schools.com/bash/bash_commands.php
 
 UFW https://github.com/spawnmarvel/linux-and-azure/tree/main/ufw-firewall
 
+<details><summary>scp windows to linux *.deb and install</summary>
+<p>
+
+#### We can hide anything, even code!
+```bash
+# https://octopus.com/downloads/tentacle/7.1.31#linux
+# tentacle_7.1.31_amd64.deb
+
+scp C:\Users\You\Downloads\tentacle.deb username@ubuntu-ip:/tmp/
+
+
+sh username@ubuntu-ip
+cd /tmp/
+ls
+# [...]
+tentacle_9.1.3608_amd64.deb
+# cp to home
+cp /tmp/tentacle_9.1.3608_amd64.deb tentacle_9.1.3608_amd64.deb
+
+
+sudo dpkg -i /tmp/tentacle_9.1.3608_amd64.deb
+
+# To set up a Tentacle instance, run the following script:
+/opt/octopus/tentacle/configure-tentacle.sh
+
+
+
+```
+</p>
+</details>
+
 <details><summary>Update and upgrade / apt install and apt remove </summary>
 <p>
 
