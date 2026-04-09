@@ -136,7 +136,7 @@ Well, this never stops, so lets make a priority list of all the topics below.
 ### 3. Do the MS learn Active Directory Domain Services with vmhybrid01
    - Continue with Active Directory, Arc and file sync
 
-![top3](https://github.com/spawnmarvel/todo-and-current/blob/main/images/top3_.png)
+
 
 --- 
 
