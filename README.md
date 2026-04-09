@@ -258,7 +258,7 @@ Misc / wait / parked
 
 ## TODO 1 Bash tutorial, repeat, repeat and repeat :rocket: :repeat: :rocket:
 
-* Go over all chapters = 
+* Go over all chapters = 100%
 * Mirros server and apt updates = 50%
 
 https://github.com/spawnmarvel/todo-and-current/blob/main/bash/README_bash.md
