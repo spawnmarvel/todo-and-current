@@ -1125,6 +1125,8 @@ UFW https://github.com/spawnmarvel/linux-and-azure/tree/main/ufw-firewall
 
 #### We can hide anything, even code!
 ```bash
+# when you install a deb, tro to find the deb that has all other packets
+# otherwise you must install dependecies
 # https://octopus.com/downloads/tentacle/7.1.31#linux
 # tentacle_7.1.31_amd64.deb
 
