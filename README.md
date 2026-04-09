@@ -121,10 +121,9 @@ Well, this never stops, so lets make a priority list of all the topics below.
    - Play around, the basics are in now.
    - Continue the ***countries game***, expand and expand, use bash commands as normal commands
    - Expand it, do more
-   - Make matrix stuff also on the screen/ effects.
-   - Launch it online
+   - Make matrix stuff also on the screen/ effects, launch it online
 
-### 2. Bash and Octopus Deploy for linux (is 2 in one CI/CD)
+### 2. Octopus Deploy for linux (is 2 in one CI/CD)
    - Two projects (win/lin) and 100's of runbooks, we do linux project for now
    - Do all linux apps and day 2 operations in:
    - Diagnostics, packets, install MySQL, etc
@@ -133,14 +132,17 @@ Well, this never stops, so lets make a priority list of all the topics below.
 
 ![deploy123](https://github.com/spawnmarvel/todo-and-current/blob/main/images/deploy123.png)
 
-### 3. Do the MS learn Active Directory Domain Services with vmhybrid01
-   - Continue with Active Directory, Arc and file sync
+### 3. Windows Server Hybrid Administrator vmhybrid01
+   - Continue with MS learn Active Directory
+   - MS learn Arc
+   - MS learn file sync
+   - - GOTO step 3 below for actual timeline and tasks
 
 
 
 --- 
 
-### TODO Maintain knowledge
+### Maintain knowledge checklist
 
 Do use chromebook Debian GNU/Linux 12 (bookworm), do not install any GUI, chromebook is for command line only
 
@@ -235,6 +237,8 @@ mysql --user=#{MySQL.User} --password=#{MySQL.Password}
 
 ---
 
+# Below is parked, go up.
+
 Misc / wait / parked
 
 6. (Python maintenance:)
@@ -256,17 +260,18 @@ Misc / wait / parked
 
 ---
 
-## TODO 1 Bash tutorial, repeat, repeat and repeat :rocket: :repeat: :rocket:
+
+## Done 1 Bash tutorial, repeat, repeat and repeat :rocket: :repeat: :rocket:
 
 * Go over all chapters = 100%
-* Mirros server and apt updates = 50%
+* Mirros server and test with zabbix apt = 100%
 
 https://github.com/spawnmarvel/todo-and-current/blob/main/bash/README_bash.md
 
 
 --- 
 
-## TODO 2 Docker, Azure :airplane:
+## Parked 2 Docker, Azure :airplane:
 
 * Python as container in docker (the getting started docker) = 
 
@@ -275,26 +280,26 @@ https://github.com/spawnmarvel/learning-docker/blob/main/1.3-containerize-python
 * Then Implement containerized solutions
 * Do tutorials = 
 * Do RabbitMQ
-* Do Python application
+* Do Python application 
 * Do
 
 https://github.com/spawnmarvel/learning-docker/blob/main/1.4-azure-container-instance-2/README.md
 
 ---
 
-## TODO 3 Docker :helicopter:
+## TBD 3 Docker :helicopter:
 
 * Portainer = ok
 * Grafana and MySQL with http and https = ok
+* Zabbix nemisis = is done https://github.com/spawnmarvel/learning-docker/tree/main/prod-ish-2/zabbix
 * Zabbix plugin = ok
 * Grafana and MySQL, https, Loki and Alloy on remote servers = 
-* Zabbix nemisis = https://github.com/spawnmarvel/learning-docker/tree/main/prod-ish-2/zabbix
 * RabbitMQ = 
 * RabbitMQ shovel http and https = 
 
 https://github.com/spawnmarvel/learning-docker
 
-## TODO (Always) AZ-104 certified professional must know, fill the gaps here (network, monitor, web apps)
+## (Always) AZ-104 certified professional must know, fill the gaps here (network, monitor, web apps)
 
 * Azure vm tutorials (after that network tutorials, end loop over all areas indepth for az-104 and beyond)
 
@@ -318,7 +323,7 @@ https://learn.microsoft.com/en-us/training/modules/secure-windows-server-user-ac
 
 https://learn.microsoft.com/en-us/entra/architecture/service-accounts-group-managed?source=recommendations
 
-## TODO (for fun) Azure SQL Database
+## TBD (for fun) Azure SQL Database
 
 https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-sql/README.md
 
