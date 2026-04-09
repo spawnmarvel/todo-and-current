@@ -254,13 +254,6 @@ Misc / wait / parked
       - Do https = 
       - Do alter zabbix_server.conf = 
 
-8. (Az-305 azure aolutions architect expert)
-    - Do ms learn and some practice exams, have fun you will learn
-    - - Stored in azure-automation-bicep-and-labs/az-305-solutions-architect-expert
-    - Do chill max 1 learn a week and check excel
-    - - Saved in C:\giti2026\az-305-study-guide.xlsx
-    - Do Schedule exam? 1 month befoe full repeat
-    - Do Tutorials Dojo
 ---
 
 ## TODO 1 Bash tutorial, repeat, repeat and repeat :rocket: :repeat: :rocket:
