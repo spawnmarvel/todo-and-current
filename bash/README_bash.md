@@ -1125,6 +1125,12 @@ UFW https://github.com/spawnmarvel/linux-and-azure/tree/main/ufw-firewall
 
 #### We can hide anything, even code!
 ```bash
+# x64 (also known as x86_64 or amd64)
+# The Family: This is the standard 64-bit version of the classic Intel/AMD processor architecture.
+
+# ARM (also known as aarch64 or arm64)
+# The Family: This is a completely different architecture designed for power efficiency.
+
 # when you install a deb, tro to find the deb that has all other packets
 # otherwise you must install dependecies
 # https://octopus.com/downloads/tentacle/7.1.31#linux
