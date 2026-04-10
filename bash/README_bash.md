@@ -1158,6 +1158,7 @@ sudo dpkg -i tentacle_7.1.31_amd64.deb
 /opt/octopus/tentacle/configure-tentacle.sh
 
 # Above we set the name and thumbprint
+# set name vmname-tentacle
 
 # What if it fails with "Dependency is not satisfiable"?
 # Even though most are pre-installed, if dpkg complains about a missing library (like libicu74), you will have to follow the "Unzip/Python trick" or scp method we used before:
