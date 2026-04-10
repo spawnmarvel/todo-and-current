@@ -137,6 +137,7 @@ Well, this never stops, so lets make a priority list of all the topics below.
    - MS learn Arc
    - MS learn file sync
    - - GOTO step 3 below for actual timeline and tasks
+   - TODO set up Grafana, loki and configure alloy agents on vmhybrid01 (for fun)
 
 
 
