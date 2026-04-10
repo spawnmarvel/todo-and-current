@@ -1138,7 +1138,7 @@ UFW https://github.com/spawnmarvel/linux-and-azure/tree/main/ufw-firewall
 
 # powershell copy to linux
 # SCP (Secure Copy Protocol) uses TCP Port 22 by default.
-scp C:\Users\You\Downloads\tentacle.deb username@ubuntu-ip:/tmp/
+scp '.\Octopus Linux\tentacle_7.1.31_amd64.deb' username@ubuntu-ip:/tmp/
 
 
 # bash
