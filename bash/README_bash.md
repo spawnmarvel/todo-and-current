@@ -1148,14 +1148,31 @@ ls
 # [...]
 tentacle_9.1.3608_amd64.deb
 # cp to home
-cp /tmp/tentacle_9.1.3608_amd64.deb tentacle_9.1.3608_amd64.deb
+cp /tmp/tentacle_7.1.31_amd64.deb tentacle_7.1.31_amd64.deb
 
 
-sudo dpkg -i /tmp/tentacle_9.1.3608_amd64.deb
+sudo dpkg -i tentacle_7.1.31_amd64.deb
 
 # To set up a Tentacle instance, run the following script:
 /opt/octopus/tentacle/configure-tentacle.sh
 
+# Above w eset the name and thumbprint
+
+# How to find the exact name
+dpkg -l | grep tentacle
+
+# Before you remove it, it is a good habit to stop the service so it doesn't try to run while you're deleting it:
+sudo systemctl stop octopus-tentacle
+
+# to remove
+# The Standard way, Removes the binaries but leaves configuration files (handy if you plan to reinstall).
+sudo apt remove octopus-tentacle
+
+# The Clean way, Removes everything, including config files and logs.
+sudo apt purge octopus-tentacle
+
+# The Offline way, Use this if apt is giving you trouble because of the offline status.
+sudo dpkg -r octopus-tentacle
 
 
 ```
