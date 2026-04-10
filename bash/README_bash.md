@@ -8,16 +8,14 @@ This allows applications to read, write, and manipulate resources using standard
 * File Descriptor Abstraction: Rather than using different API calls for different resources, the Linux kernel abstracts these into file descriptors.
 * Virtual Filesystem: Special directories like /proc and /sys represent kernel data structures as files, allowing users to view or change system configurations by reading/writing to them.
 
-<details><summary>Man is the cheat guide</summary>
-<p>
+## man cp or man -k copy
 
-#### We can hide anything, even code!
 ```bash
 man man
 # man - an interface to the system reference manuals
 
 man -k
-# Search  the  short descriptions and manual page names for the keyword printf as regular expression.
+# Search  the short descriptions and manual page names for the keyword printf as regular expression.
 # Printout any matches.  Equivalent to apropos printf
 apropos what?
 
@@ -27,8 +25,6 @@ man -k text
 man -k network
 
 ```
-</p>
-</details>
 
 
 ## Python & Powershell vs Bash tips
