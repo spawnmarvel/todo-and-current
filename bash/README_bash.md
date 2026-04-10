@@ -1120,7 +1120,7 @@ https://www.w3schools.com/bash/bash_commands.php
 
 UFW https://github.com/spawnmarvel/linux-and-azure/tree/main/ufw-firewall
 
-<details><summary>scp windows to linux *.deb and install</summary>
+<details><summary>scp windows to linux *.deb and install tenatcle</summary>
 <p>
 
 #### We can hide anything, even code!
@@ -1135,6 +1135,11 @@ UFW https://github.com/spawnmarvel/linux-and-azure/tree/main/ufw-firewall
 # otherwise you must install dependecies
 # https://octopus.com/downloads/tentacle/7.1.31#linux
 # tentacle_7.1.31_amd64.deb
+
+
+# https://octopus.com/docs/infrastructure/deployment-targets/tentacle/linux
+# Before you can configure a Linux Tentacle, the Linux server must meet the requirements and the following additional requirements:
+# * Octopus Server 2019.8.3 or newer
 
 # powershell copy to linux
 # SCP (Secure Copy Protocol) uses TCP Port 22 by default.
@@ -1156,7 +1161,16 @@ sudo dpkg -i tentacle_7.1.31_amd64.deb
 # To set up a Tentacle instance, run the following script:
 /opt/octopus/tentacle/configure-tentacle.sh
 
-# Above w eset the name and thumbprint
+# Above we set the name and thumbprint
+
+# What if it fails with "Dependency is not satisfiable"?
+# Even though most are pre-installed, if dpkg complains about a missing library (like libicu74), you will have to follow the "Unzip/Python trick" or scp method we used before:
+# * Download the missing .deb from the Ubuntu Packages Search.
+# * scp it to the VM.
+# * Install the library .deb before the Tentacle .deb.
+
+# Verify the installation location
+which Tentacle
 
 # How to find the exact name
 dpkg -l | grep tentacle
