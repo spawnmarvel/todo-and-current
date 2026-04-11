@@ -366,6 +366,16 @@ Save the panel in a dashboard, if you want to change host you can edit the dashb
 
 ![dash_panle](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/dash_panel.png)
 
+Pro-Tip: Make it readable
+Once your logs appear, click that blue button in your screenshot: hint: add logfmt parser.
+Windows logs are packed with data (EventIDs, Users, Sources). The logfmt parser will "unpack" those into a nice, clean table where you can click on specific Event IDs to filter them.
+
+![pro tip](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/pro_tip.png)
+
+Pro Tip: Change to table view and save
+
+![tabl view](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/tabl_view.png)
+
 ### All files
 
 ![all files](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/all_files.png)
