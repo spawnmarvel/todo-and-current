@@ -107,6 +107,12 @@ Now that we have two logs to listen to
 
 🔷 Windows System and Applications and Zabbix agent, lets start to analyse them.
 
+### Lets make grafana avaliable from the outside
+
+* NSG port 3000
+* Windows FW port 3000
+* https://xxx.xx.xxx.xx:3000/
+
 ## Live search in dashboard
 
 Pro-Tip: The "Live" Search
