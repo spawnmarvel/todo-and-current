@@ -204,11 +204,53 @@ Test loki via cmd
 
 ```cmd
 cd C:\Loki
-loki.exe --config.file=loki-config.yaml
+loki-windows-amd64.exe --config.file=loki-config.yml
+```
+The log line level=info ... msg="Loki started" confirms the engine is ready to receive logs.
+
+If you see that, press Ctrl+C to stop it.
+
+1. Verification chekc list
+
+🔷 Check readiness: Open your browser and go to http://localhost:3100/ready. It should return the word ready. waith 60 sec
+
+🔷 Check metrics: Go to http://localhost:3100/metrics. You should see a long list of technical data.
+
+### Loki Running as a Service: 
+
+To make it run in the background on your server, most Windows admins use NSSM (Non-Sucking Service Manager) to wrap the .exe into a Windows Service.
+
+🔷 Download NSSM from nssm.cc and put the nssm.exe in C:\Loki or use default folder you unziped
+
+* https://nssm.cc/download
+
+🔷 Open CMD as Administrator and run:
+
+```cmd
+C:\Loki\nssm-2.24\nssm-2.24\win64\nssm.exe Install Loki
 ```
 
+🔷 In the popup window:
 
-🔷 Running as a Service: To make it run in the background on your server, most Windows admins use NSSM (Non-Sucking Service Manager) to wrap the .exe into a Windows Service.
+Application Tab:
+
+* Path: C:\Loki\loki.exe
+* Startup directory: C:\Loki
+* Arguments: --config.file=C:\Loki\loki-config.yaml
+
+![nssm](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/nssm.png)
+
+Details Tab:
+
+* Display name: Loki
+* Description: Grafana Loki Log Aggregator
+* Startup type: Automatic
+
+🔷 Click Install service.
+
+![install service](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/install_service.png)
+
+🔷 Start it:
 
 ## 3. Alloy Agent on Windows (The "Collector")
 
