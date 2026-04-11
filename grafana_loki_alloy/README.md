@@ -11,7 +11,7 @@ Lets test a simpler stack
 
 ## Test it in Windows
 
-### 1. Grafana on Windows
+## 1. Grafana on Windows
 Grafana provides a standard Windows installer (.msi) or a standalone .zip file.
 
 🔷 Installation: Download the installer from the official Grafana download page.
@@ -151,7 +151,7 @@ Start grafana service
 ![secure grafana](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/secure_grafana.png)
 
 
-### 2. Loki on Windows
+## 2. Loki on Windows
 Loki does not have a formal .msi installer yet, but it runs perfectly as a single executable.
 
 🔷 Setup: Download the loki-windows-amd64.exe.zip from the Loki Releases GitHub.
@@ -160,7 +160,7 @@ Loki does not have a formal .msi installer yet, but it runs perfectly as a singl
 
 🔷 Running as a Service: To make it run in the background on your server, most Windows admins use NSSM (Non-Sucking Service Manager) to wrap the .exe into a Windows Service.
 
-### 3. Alloy Agent on Windows (The "Collector")
+## 3. Alloy Agent on Windows (The "Collector")
 
 This is where the Windows setup shines. Alloy has a dedicated Windows installer that sets everything up for you.
 
