@@ -117,13 +117,13 @@ https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-800-
 
 Well, this never stops, so lets make a priority list of all the topics below.
 
-### 1. Bash learn it all now.
+### Bash, use it and talk it
    - Play around, the basics are in now.
    - Continue the ***countries game***, expand and expand, use bash commands as normal commands
    - Expand it, do more
    - Make matrix stuff also on the screen/ effects, launch it online
 
-### 2. Octopus Deploy for linux (is 2 in one CI/CD)
+### 1. Octopus Deploy for linux (is 2 in one CI/CD)
    - Two projects (win/lin) and 100's of runbooks, we do linux project for now
    - Do all linux apps and day 2 operations in:
    - Diagnostics, packets, install MySQL, etc
@@ -132,12 +132,15 @@ Well, this never stops, so lets make a priority list of all the topics below.
 
 ![deploy123](https://github.com/spawnmarvel/todo-and-current/blob/main/images/deploy123.png)
 
-### 3. Windows Server Hybrid Administrator vmhybrid01
+### 2. Windows Server Hybrid Administrator vmhybrid01
    - Continue with MS learn Active Directory
    - MS learn Arc
    - MS learn file sync
    - - GOTO step 3 below for actual timeline and tasks
-   - TODO set up Grafana, loki and configure alloy agents on vmhybrid01 (for fun)
+
+### 3. Grafana, loki and configure alloy agents
+   - Set it up and start with log monitoring using that stack
+   - Saved in TODO repos
 
 
 
