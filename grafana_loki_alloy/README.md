@@ -356,6 +356,12 @@ Don't just look at them in "Explore" mode!
 
 🔷 Change the "Suggested Visualizations" on the right to Logs.
 
+![format](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/format.png)
+
+🔷 Run the query
+
+![logs_ok](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/logs_ok.png)
+
 ### All files
 
 ![all files](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/all_files.png)
