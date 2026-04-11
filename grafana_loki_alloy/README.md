@@ -161,11 +161,52 @@ Loki does not have a formal .msi installer yet, but it runs perfectly as a singl
 
 🔷 Directory: Create a folder at C:\Loki.
 
-🔷 Extract: Place loki-windows-amd64.exe inside that folder and rename it to loki.exe for simplicity.
+🔷 Extract: Place loki-windows-amd64.exe inside that folder.
 
-![loki](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/loki.png)
+![loki](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/loki2.png)
 
 🔷 Configuration: You will need a loki-config.yaml file (you can download the default one here).
+
+* Loki won't run without a config file telling it where to store the log chunks. Create a file at C:\Loki\loki-config.yaml and paste this on-prem friendly config:
+
+```yml
+auth_enabled: false
+
+server:
+  http_listen_port: 3100
+  grpc_listen_port: 9096
+
+common:
+  instance_addr: 127.0.0.1
+  path_prefix: C:/Loki/data
+  storage:
+    filesystem:
+      chunks_directory: C:/Loki/data/chunks
+      rules_directory: C:/Loki/data/rules
+  replication_factor: 1
+  ring:
+    kvstore:
+      store: inmemory
+
+schema_config:
+  configs:
+    - from: 2024-01-01
+      store: tsdb
+      object_store: filesystem
+      schema: v13
+      index:
+        prefix: index_
+        period: 24h
+```
+
+
+Test loki via cmd
+
+```cmd
+cd C:\Loki
+loki.exe --config.file=loki-config.yaml
+```
+
 
 🔷 Running as a Service: To make it run in the background on your server, most Windows admins use NSSM (Non-Sucking Service Manager) to wrap the .exe into a Windows Service.
 
