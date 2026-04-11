@@ -34,7 +34,9 @@ Files
 
 * C:\Program Files\GrafanaLabs
 * C:\Program Files\GrafanaLabs\grafana\conf\default.ini
+* C:\Program Files\GrafanaLabs\grafana\data
 * C:\Program Files\GrafanaLabs\grafana\data\log
+* C:/Program Files/GrafanaLabs/grafana/data/plugins
 
 🔷 Access: By default, it runs on http://localhost:3000.
 
@@ -90,7 +92,64 @@ openssl pkcs12 -in "C:\Program Files\GrafanaLabs\grafana\conf\server.pfx" -clcer
 
 ![ssl cert](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/ssl_certs.png)
 
+Your server.crt should look exactly like this:
+
+```txt
+-----BEGIN CERTIFICATE-----
+MIIDMzCCAhugAwIBAgIQKDeaPTJyi6pCdXIcGhE3oTANBgkqhkiG9w0BAQsFADAd
+... (the rest of your base64 code) ...
+3JwCnXO2nA==
+-----END CERTIFICATE-----
+```
+
+Your server.key should look exactly like this:
+
+```txt
+-----BEGIN PRIVATE KEY-----
+... (your private key base64 code) ...
+-----END PRIVATE KEY-----
+```
+
+That "Bag Attributes" text is the metadata OpenSSL includes by default when exporting from a PFX. While humans find it helpful, Grafana's RSA parser usually chokes on it
+
+Grafana is designed to look for a file named custom.ini first. If it finds it, it uses those settings; if a setting isn't there, it falls back to the default.
+
+🔷 Location: C:\Program Files\GrafanaLabs\grafana\conf\custom.ini
+
+🔷 Action: If the file doesn't exist, create it.
+
+🔷 Content: Only put the things you want to change. You don't need to copy the whole file.
+
+Open your custom.ini file. Even though you are on Windows, Grafana prefers forward slashes in its configuration file paths.
+
+```ini
+#################################### Server ####################################
+[server]
+# Protocol (http, https, h2, socket)
+protocol = https
+
+# The http port to use
+http_port = 3000
+
+# https certs & key file
+cert_file = C:/Program Files/GrafanaLabs/grafana/conf/server.crt
+cert_key = C:/Program Files/GrafanaLabs/grafana/conf/server.key
+
+```
+
+Optional: stop service , verify custom.ini, start grafana with cmd and check that it loads the custom.ini
+
+```cmd
+c:\Program Files\GrafanaLabs\grafana\bin>grafana-server.exe --config="C:\Program Files\GrafanaLabs\grafana\conf\custom.ini"
+```
+
+Start grafana service 
+
+
 🔷 Access: By default, it runs on https://vmhybrid01.lab.local:3000
+
+![secure grafana](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/secure_grafana.png)
+
 
 ### 2. Loki on Windows
 Loki does not have a formal .msi installer yet, but it runs perfectly as a single executable.
