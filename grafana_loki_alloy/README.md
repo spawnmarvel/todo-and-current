@@ -307,6 +307,14 @@ After you save the file and restart the Alloy service (via services.msc or net s
 
 How to see the actual logs now:
 
+
+🔷 Go back to Grafana.
+
+🔷 Click the Explore icon (the compass).
+
+🔷 Select Loki at the top.
+
+Click Label browser.
 ![firs logs ](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/first_logs.png)
 
 🔷 Click on the blue channel button in that Label Browser.
@@ -316,6 +324,8 @@ How to see the actual logs now:
 🔷 Click the blue Show logs button at the bottom right.
 
 Boom! You should see the live stream of your Windows System logs.
+
+![logs ](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/logs.png)
 
 
 
