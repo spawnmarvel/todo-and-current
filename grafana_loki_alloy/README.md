@@ -273,6 +273,10 @@ Download: Get the Alloy Windows MSI installer from the official releases.
 
 Install: Run the MSI on your Windows VM. It will automatically create a service called Grafana Alloy.
 
+* C:\Program Files\GrafanaLabs\Alloy
+
+![alloy install](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/alloy_install.png)
+
 Configure: * 🔷 Open Notepad as Administrator.
 
 🔷 Open the config file: C:\Program Files\GrafanaLabs\Alloy\config.alloy.
