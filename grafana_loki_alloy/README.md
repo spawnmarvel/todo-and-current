@@ -431,6 +431,11 @@ If you want to see Loki's logs inside your Grafana dashboard:
 
 🔷 Use this query: {source="Application"} |= "loki"
 
+## Grafan Alloy for Syslog
+
+Yes, Grafana Alloy is excellent at handling Syslog. It can act as a syslog server, listening on a network port (TCP or UDP) to receive logs from network devices, Linux servers, or firewalls, and then forward them directly to Loki.
+
+To do this, you use the loki.source.syslog component in your Alloy configuration.
 
 ## Add more logs from same server
 
