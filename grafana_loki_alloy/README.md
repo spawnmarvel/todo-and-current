@@ -40,6 +40,31 @@ Files
 
 🔷 Set up ssl
 
+```ps1
+# 1. Create the certificate in the Windows Store
+$cert = New-SelfSignedCertificate -DnsName "vmhybrid.lab.local" -CertStoreLocation "Cert:\LocalMachine\My" -NotAfter (Get-Date).AddYears(3)
+
+# 2. Set a temporary password for the export process
+$pwd = ConvertTo-SecureString -String "password123" -Force -AsPlainText
+
+# 3. Export the Private Key (.key)
+Export-PfxCertificate -Cert $cert -FilePath "C:\Program Files\GrafanaLabs\grafana\conf\server.pfx" -Password $pwd
+
+# 4. Convert PFX to PEM (Note: Grafana needs .crt and .key)
+# If you don't have OpenSSL installed, you can use the PFX directly in some versions, 
+# but standard Grafana config prefers separate files.
+```
+
+The cert in cert manager and grafana files.
+
+![cert](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/cert.png)
+
+Lets make key and pem with openssl.
+
+```cmd
+
+```
+
 
 🔷 Access: By default, it runs on https://vmhybrid01.lab.local:3000
 
