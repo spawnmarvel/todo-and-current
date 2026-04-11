@@ -393,6 +393,47 @@ View it
 
 ![all files](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/all_files.png)
 
+## All logs
+
+### Alloy
+
+Alloy has a built-in status page where it shows its own health and any internal errors.
+
+🔷 Open your browser on the VM.
+
+🔷 Go to http://localhost:12345.
+
+🔷 Click on Graph or Instances to see if the components are "Healthy.
+
+![alloy logs](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/alloy_logs.png)
+
+
+### Grafana
+
+* C:\Program Files\GrafanaLabs\grafana\data\log
+
+
+### Loki
+
+Loki is actually "self-aware." It tracks its own performance and errors internally. You can view these directly in your browser without any extra setup:
+
+🔷 Metrics: http://localhost:3100/metrics (This is raw data for Prometheus).
+
+🔷 Configuration: http://localhost:3100/config (This shows you exactly what settings Loki is actually using right now).
+
+🔷 Ready Check: http://localhost:3100/ready (If it says "ready," Loki is working perfectly).
+
+Since you are already sending Windows logs to Loki, you can also tell Alloy to scrape the Loki log folder or the Event Viewer and send them back into Loki.
+
+If you want to see Loki's logs inside your Grafana dashboard:
+
+🔷 Go to Explore.
+
+🔷 Select your Loki datasource.
+
+🔷 Use this query: {source="Application"} |= "loki"
+
+
 ## Add more logs from same server
 
 ## Add logs from a different server

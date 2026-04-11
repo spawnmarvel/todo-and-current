@@ -1,45 +1,70 @@
-# Authentication: Set to false for home labs/internal networks. 
-# If true, you would need to provide an X-Scope-OrgID header for every request.
+# Authentication: Disabled
+# Why it's good: Simplifies the lab setup. You don't have to manage complex headers 
+# or multi-tenant IDs. It makes communication between Alloy, Loki, and Grafana "plug-and-play."
 auth_enabled: false
 
-# Server: Defines the network ports Loki uses.
+# Server: Port Management
+# Why it's good: Uses standard ports (3100), making it compatible with all 
+# default Grafana and Alloy documentation.
 server:
-  http_listen_port: 3100      # The main port for Grafana to talk to Loki.
-  grpc_listen_port: 9096      # Internal high-speed communication port for Loki components.
+  http_listen_port: 3100
+  grpc_listen_port: 9096
 
-# Common: Shared settings that simplify the config for a single-node setup.
+# Common: Single-Binary Optimization
+# Why it's good: This block centralizes storage settings. Using "inmemory" for the ring 
+# is perfect for standalone—it uses almost zero RAM and removes the need to 
+# install an extra database like Etcd or Consul.
 common:
-  instance_addr: 127.0.0.1    # Tells Loki it's running locally.
-  path_prefix: C:/Loki/data   # The base folder where Loki stores its internal metadata.
+  instance_addr: 127.0.0.1
+  path_prefix: C:/Loki/data
   storage:
     filesystem:
-      chunks_directory: C:/Loki/data/chunks # Where the actual log data (the "blobs") is stored.
-      rules_directory: C:/Loki/data/rules   # Where alerting or recording rules are kept.
-  replication_factor: 1       # Since this is one VM, we only need 1 copy of the data.
+      chunks_directory: C:/Loki/data/chunks
+      rules_directory: C:/Loki/data/rules
+  replication_factor: 1
   ring:
     kvstore:
-      store: inmemory         # Keeps the "member list" in RAM rather than a database (best for labs).
+      store: inmemory
 
-# Schema Config: Defines HOW the data is organized and indexed on your disk.
+# Ingester: RAM & Disk Safety
+# Why it's good: These settings ensure logs don't sit in your RAM forever.
+# It forces Loki to write data to your C: drive regularly, keeping memory usage low.
+ingester:
+  chunk_idle_period: 30m
+  max_chunk_age: 1h
+  chunk_target_size: 1572864
+  wal:
+    enabled: true
+    dir: C:/Loki/data/wal
+
+# Schema Config: Modern Indexing
+# Why it's good: TSDB and v13 are the fastest, most modern ways to store Loki data.
+# Daily index periods (24h) make it very easy for the Compactor to delete old logs
+# without heavy CPU processing.
 schema_config:
   configs:
-    - from: 2024-01-01        # Starting date for this specific storage format.
-      store: tsdb             # Use TSDB (Time Series Database), the fastest index type for Loki.
-      object_store: filesystem # Save the actual logs to your Windows C: drive.
-      schema: v13             # The version of the data structure (v13 is current and efficient).
+    - from: 2024-01-01
+      store: tsdb
+      object_store: filesystem
+      schema: v13
       index:
-        prefix: index_        # File naming convention for your index files.
-        period: 24h           # Create a new index file every day (makes deletion/searching easier).
+        prefix: index_
+        period: 24h
 
-# Limits Config: Defines the "Rules" for your data.
+# Limits Config: Disk Space Insurance
+# Why it's good: Prevents "Disk Full" errors. 30 days is the "sweet spot" 
+# for labs—enough history to troubleshoot, but small enough for a VM.
 limits_config:
-  retention_period: 720h      # The "Max Age" of logs. Anything older than 30 days is eligible for deletion.
+  retention_period: 720h
 
-# Compactor: The "Janitor" service that enforces the retention policy.
+# Compactor: The Automated Janitor
+# Why it's good: Automates maintenance. By setting "retention_enabled: true",
+# you never have to manually delete files. It keeps your C:/Loki/data folder 
+# at a consistent, predictable size.
 compactor:
-  working_directory: C:\Loki\data\compactor    # Temporary space for the Janitor to work.
-  compaction_interval: 10m                     # How often to check if data needs to be deleted (every 10 mins).
-  retention_enabled: true                      # CRITICAL: Enables the actual deletion of old logs.
-  retention_delete_delay: 2h                   # Wait 2 hours after data expires before purging (safety buffer).
-  retention_delete_worker_count: 150           # Number of simultaneous deletion tasks (more = faster but higher CPU).
-  delete_request_store: filesystem             # Tells the Janitor to look at your local disk for deletion tasks.
+  working_directory: C:/Loki/data/compactor
+  compaction_interval: 10m
+  retention_enabled: true
+  retention_delete_delay: 2h
+  retention_delete_worker_count: 150
+  delete_request_store: filesystem
