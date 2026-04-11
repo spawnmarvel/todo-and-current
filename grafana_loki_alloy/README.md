@@ -57,11 +57,32 @@ Export-PfxCertificate -Cert $cert -FilePath "C:\Program Files\GrafanaLabs\grafan
 
 The cert in cert manager and grafana files.
 
-![cert](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/cert.png)
+![cert](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/certs.png)
 
 Lets make key and pem with openssl.
 
+* https://slproweb.com/products/Win32OpenSSL.html
+* Win64 OpenSSL v3.5.6 Light MSI
+
+Install
+
+* C:\Program Files\OpenSSL-Win64
+* Copy OpenSSL DLLs to
+* * /bin
+
+Excellent choice. Keeping the DLLs in the /bin directory is the "clean" approach. It prevents "DLL Hell"—a situation where other Windows applications might try to use OpenSSL but accidentally load a different version from the System32 folder, causing crashes or security vulnerabilities.
+
+Since you already have a .pfx file (likely from your internal CA or IT department), we just need to use OpenSSL to "split" it into the two separate files Grafana requires.
+
 ```cmd
+c:\Program Files\OpenSSL-Win64\bin>openssl -version
+OpenSSL 3.5.6 7 Apr 2026 (Library: OpenSSL 3.5.6 7 Apr 2026)
+
+REM Run this to pull the key out. The -nodes flag ensures the resulting key isn't encrypted with a password, which allows Grafana to start up automatically.
+
+openssl pkcs12 -in "C:\Program Files\GrafanaLabs\grafana\conf\server.pfx" -nocerts -out "C:\Program Files\GrafanaLabs\grafana\conf\server.key" -nodes
+
+REM Next, extract the public certificate.
 
 ```
 
