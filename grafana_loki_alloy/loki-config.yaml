@@ -36,6 +36,7 @@ ingester:
   wal:
     enabled: true
     dir: C:/Loki/data/wal
+    replay_memory_ceiling: 2GB  # Limits RAM used during a crash recovery
 
 # Schema Config: Modern Indexing
 # Why it's good: TSDB and v13 are the fastest, most modern ways to store Loki data.
@@ -56,6 +57,11 @@ schema_config:
 # for labs—enough history to troubleshoot, but small enough for a VM.
 limits_config:
   retention_period: 720h
+  # Prevents a single app from flooding Loki
+  ingestion_rate_mb: 10
+  ingestion_burst_size_mb: 20
+  # Limits how many logs one search can return (prevents browser crashes)
+  max_entries_limit_per_query: 5000
 
 # Compactor: The Automated Janitor
 # Why it's good: Automates maintenance. By setting "retention_enabled: true",
