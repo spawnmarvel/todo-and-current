@@ -45,7 +45,7 @@ Files
 $cert = New-SelfSignedCertificate -DnsName "vmhybrid.lab.local" -CertStoreLocation "Cert:\LocalMachine\My" -NotAfter (Get-Date).AddYears(3)
 
 # 2. Set a temporary password for the export process
-$pwd = ConvertTo-SecureString -String "password123" -Force -AsPlainText
+$pwd = ConvertTo-SecureString -String "A-PASSWORD" -Force -AsPlainText
 
 # 3. Export the Private Key (.key)
 Export-PfxCertificate -Cert $cert -FilePath "C:\Program Files\GrafanaLabs\grafana\conf\server.pfx" -Password $pwd
@@ -74,6 +74,8 @@ Excellent choice. Keeping the DLLs in the /bin directory is the "clean" approach
 
 Since you already have a .pfx file (likely from your internal CA or IT department), we just need to use OpenSSL to "split" it into the two separate files Grafana requires.
 
+* Use the password used in the powershell script
+
 ```cmd
 c:\Program Files\OpenSSL-Win64\bin>openssl -version
 OpenSSL 3.5.6 7 Apr 2026 (Library: OpenSSL 3.5.6 7 Apr 2026)
@@ -83,7 +85,7 @@ REM Run this to pull the key out. The -nodes flag ensures the resulting key isn'
 openssl pkcs12 -in "C:\Program Files\GrafanaLabs\grafana\conf\server.pfx" -nocerts -out "C:\Program Files\GrafanaLabs\grafana\conf\server.key" -nodes
 
 REM Next, extract the public certificate.
-
+openssl pkcs12 -in "C:\Program Files\GrafanaLabs\grafana\conf\server.pfx" -clcerts -nokeys -out "C:\Program Files\GrafanaLabs\grafana\conf\server.crt"
 ```
 
 
