@@ -1,4 +1,4 @@
-# Grafana, Loki and Allow
+# Grafana, Loki and Alloy
 
 ## Filebeat, Elastic Search and Kibana
 
