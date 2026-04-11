@@ -39,10 +39,6 @@ Once you switch Loki to HTTPS, you have to update every other piece of your stac
 🔷 Firewall: You still use port 3100, but the traffic inside that "pipe" is now encrypted.
 
 
-## Log for multiple applications
-
-Sinxe we have zabbix agent running on the windows vm, lets add it to alloy config
-
 ## Log from remote server
 
 * Install and configure alloy on server
@@ -58,9 +54,18 @@ loki.write "local_loki" {
 }
 ```
 
+## Log for multiple applications
 
-#  Search in logs
+Sinxe we have zabbix agent running on the windows vm, lets add it to alloy config
 
+
+
+
+# Search in logs
+
+Now that we have two logs to listen to
+
+🔷 Windows System and Zabbix agent, lets start to analyse them.
 
 ## Live search in dashboard
 
