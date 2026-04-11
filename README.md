@@ -117,7 +117,7 @@ https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-800-
 
 Well, this never stops, so lets make a priority list of all the topics below.
 
-#### On on Azure vm (NO LOGIN) got to Operations->Run command (ps1 / sh)
+#### On all Azure vm (NO LOGIN) got to Operations->Run command (ps1 / sh)
 
 ### Bash, use it and talk it
    - Play around, the basics are in now.
