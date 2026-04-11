@@ -58,36 +58,48 @@ loki.write "local_loki" {
 
 Sinxe we have zabbix agent running on the windows vm, lets add it to alloy config
 
+
+* Stop Alloy
+* Backup config file
+
 We added this for zabbix, we stil have the system configured in this file.
 
 ```hcl
-// 1. Zabbix Agent 2 File Discovery
-// This finds the log file on your C: drive
+// 🔷 1. Zabbix Agent 2 Log Discovery
+// Scans the specific log file for Zabbix Agent 2
 local.file_match "zabbix_agent" {
   path_targets = [
     { 
       "__address__" = "localhost", 
-      "filename"    = "C:/Program Files/Zabbix Agent 2/zabbix_agent2.log", 
+      "__path__"    = "C:/Program Files/Zabbix Agent 2/zabbix_agent2.log", 
       "job"         = "zabbix-agent",
-      "instance"    = "vmhybrid01" 
+      "instance"    = "vmhybrid01",
     },
   ]
 }
 
-// 2. Zabbix Agent 2 File Scraper
-// This "tails" the file and sends new lines to Loki
+// 🔷 2. Zabbix Agent 2 File Scraper
+// This reads the file discovered above and forwards it
 loki.source.file "zabbix_scrape" {
   targets    = local.file_match.zabbix_agent.targets
   forward_to = [loki.write.local_loki.receiver]
 }
 ```
 
+* Check it and test new config
+
+```ps1
+& "C:\Program Files\GrafanaLabs\Alloy\alloy-windows-amd64.exe" run "C:\Program Files\GrafanaLabs\Alloy\config.alloy"
+
+```
+
+* If it is ok, start service, else fix it.
 
 # Search in logs
 
 Now that we have two logs to listen to
 
-🔷 Windows System and Zabbix agent, lets start to analyse them.
+🔷 Windows System and Applications and Zabbix agent, lets start to analyse them.
 
 ## Live search in dashboard
 
