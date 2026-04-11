@@ -328,6 +328,33 @@ Boom! You should see the live stream of your Windows System logs.
 ![logs ](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/logs.png)
 
 
+Now that the data is flowing, we can make it actually useful. Here are two quick "Pro" tips:
+
+1. Add the "Application" logs too
+Right now you only have "System." Open your config.alloy again and add a second block for the Application logs:
+
+```hcl
+// Add the Application logs
+loki.source.windowsevent "application_logs" {
+  eventlog_name = "Application"
+  forward_to    = [loki.write.local_loki.receiver]
+}
+```
+Restart alloy
+
+### Build your first Dashboard loki logs
+
+Don't just look at them in "Explore" mode!
+
+🔷 Go to Dashboards > New Dashboard > Add Visualization.
+
+🔷 Select Loki as the source.
+
+🔷 Use the query: {channel="System"} add computer also
+
+![query](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/query.png)
+
+🔷 Change the "Suggested Visualizations" on the right to Logs.
 
 ### All files
 
