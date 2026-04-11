@@ -254,7 +254,11 @@ New loki files
 
 ![loki files](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/loki_files.png)
 
-🔷 Start it:
+🔷 Start it service
+
+### Connect loki to grafana
+
+![datasource](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/datasource_loki.png)
 
 ## 3. Alloy Agent on Windows (The "Collector")
 
