@@ -156,6 +156,15 @@ Loki does not have a formal .msi installer yet, but it runs perfectly as a singl
 
 🔷 Setup: Download the loki-windows-amd64.exe.zip from the Loki Releases GitHub.
 
+* https://github.com/grafana/loki/releases
+* loki-windows-amd64.exe.zip
+
+🔷 Directory: Create a folder at C:\Loki.
+
+🔷 Extract: Place loki-windows-amd64.exe inside that folder and rename it to loki.exe for simplicity.
+
+![loki](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/loki.png)
+
 🔷 Configuration: You will need a loki-config.yaml file (you can download the default one here).
 
 🔷 Running as a Service: To make it run in the background on your server, most Windows admins use NSSM (Non-Sucking Service Manager) to wrap the .exe into a Windows Service.
