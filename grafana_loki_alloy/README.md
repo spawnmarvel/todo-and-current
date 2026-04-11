@@ -24,6 +24,8 @@ Grafana OSS
 
 🔷 Service: It installs as a Windows Service automatically, meaning it will start whenever the server reboots.
 
+![install grafana](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/install_grafana.png)
+
 🔷 Access: By default, it runs on http://localhost:3000.
 
 ### 2. Loki on Windows
