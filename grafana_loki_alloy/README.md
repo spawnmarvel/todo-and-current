@@ -440,6 +440,22 @@ If you want to see Loki's logs inside your Grafana dashboard:
 
 #  Search in logs
 
+
+## Live search in dashboard
+
+Pro-Tip: The "Live" Search
+If you are trying to find a specific word in a massive list of logs already on your screen, you can use the standard browser search:
+
+🔷 Press Ctrl + F on your keyboard.
+
+🔷 Type error.
+
+🔷 This will highlight every time that word appears in the log window.
+
+![live search](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/live_search.png)
+
+## More search 
+
 To search for errors specifically, you have two options: the "Easy Way" using the UI buttons, or the "Pro Way" using the query code.
 
 🔷 The Easy Way (UI Builder)
