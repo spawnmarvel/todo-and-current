@@ -88,6 +88,7 @@ REM Next, extract the public certificate.
 openssl pkcs12 -in "C:\Program Files\GrafanaLabs\grafana\conf\server.pfx" -clcerts -nokeys -out "C:\Program Files\GrafanaLabs\grafana\conf\server.crt"
 ```
 
+![ssl cert](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/ssl_certs.png)
 
 🔷 Access: By default, it runs on https://vmhybrid01.lab.local:3000
 
