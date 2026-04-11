@@ -266,6 +266,11 @@ To actually see your Windows Event Logs (System, Application, Security) inside G
 
 Download: Get the Alloy Windows MSI installer from the official releases.
 
+* https://github.com/grafana/alloy/releases
+* alloy-installer-windows-amd64.exe
+
+
+
 Install: Run the MSI on your Windows VM. It will automatically create a service called Grafana Alloy.
 
 Configure: * 🔷 Open Notepad as Administrator.
@@ -301,3 +306,13 @@ Select Loki at the top.
 Click Label browser.
 
 You should now see labels like job or eventlog_name. Select System and click Show logs.
+
+### All files
+
+![all files](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/all_files.png)
+
+## Add more logs from same server
+
+## Add logs from a different server
+
+* install and configure alloy
