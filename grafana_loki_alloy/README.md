@@ -362,6 +362,10 @@ Don't just look at them in "Explore" mode!
 
 ![logs_ok](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/logs_ok.png)
 
+Save the panel in a dashboard, if you want to change host you can edit the dashboard.
+
+![dash_panle](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/dash_panel.png)
+
 ### All files
 
 ![all files](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/all_files.png)
