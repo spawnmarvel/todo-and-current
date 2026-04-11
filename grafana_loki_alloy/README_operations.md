@@ -95,6 +95,12 @@ loki.source.file "zabbix_scrape" {
 
 * If it is ok, start service, else fix it.
 
+
+🔷 Create a Logs Panel that specifically filters for job="zabbix-agent" so you can monitor the agent's connection health.
+
+![logs_zabbix](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/logs_zabbix.png)
+
+
 # Search in logs
 
 Now that we have two logs to listen to
