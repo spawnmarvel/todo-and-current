@@ -19,6 +19,10 @@ https://support.google.com/chromebook/answer/9145439?hl=en
 
 https://support.google.com/chromebook/thread/689472/remove-play-store-completely-from-chromebook?hl=en
 
+* To remove the Google Play Store from a Chromebook
+
+go to Settings > Apps > Google Play Store, click on the arrow, and select Remove. This deletes all Android apps, removes the store, and frees up system resources. It is a reversible action that stops background Android processes. 
+
 * Auto Update policy
 * ChromeOS devices receive 10 years of updates. For devices prior to 2021 that will receive extended updates, some features and services might not be supported. For more details, see
 
