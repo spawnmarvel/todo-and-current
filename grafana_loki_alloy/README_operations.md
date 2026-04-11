@@ -6,6 +6,7 @@
 🔷 Service Recovery (The "Auto-Restart") for Grafana, Loki and Alloy
 
 🔷 Alerting on "Silent Failures"
+
 🔷 🔷 Pro-tip: Create a simple "Heartbeat" alert in Grafana. If the log volume for vmhybrid01 drops to 0 for more than 5 minutes, have Grafana send you an email or Zabbix trigger.
 
 🔷 Backup: Do you have a backup of loki-config.yaml and your .alloy file stored somewhere off this VM?
@@ -38,11 +39,25 @@ Once you switch Loki to HTTPS, you have to update every other piece of your stac
 🔷 Firewall: You still use port 3100, but the traffic inside that "pipe" is now encrypted.
 
 
-## Add more logs from same server
+## Log for multiple applications
 
-## Add logs from a different server
+Sinxe we have zabbix agent running on the windows vm, lets add it to alloy config
 
-* install and configure alloy
+## Log from remote server
+
+* Install and configure alloy on server
+* For this to work, your Loki VM (vmhybrid) must allow incoming traffic on port 3100.`
+* Point to Loki VM in config
+
+```hcl
+// 2. Tell Alloy where to send them (Your Loki service)
+loki.write "local_loki" {
+  endpoint {
+    url = "http://vmhybrid.lab.local:3100/loki/api/v1/push"
+  }
+}
+```
+
 
 #  Search in logs
 
