@@ -284,6 +284,10 @@ Configure: * 🔷 Open Notepad as Administrator.
 🔷 Replace the contents with this simple "Windows Log Starter" config:
 
 ```hcl
+logging {
+	level = "info"
+}
+
 // 1. Tell Alloy to watch Windows Event Logs
 loki.source.windowsevent "local_event_logs" {
   locale          = 1033
@@ -301,15 +305,19 @@ loki.write "local_loki" {
 🔷 How to See the Results
 After you save the file and restart the Alloy service (via services.msc or net stop alloy && net start alloy):
 
-Go back to Grafana.
+How to see the actual logs now:
 
-Click the Explore icon (the compass).
+![firs logs ](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/first_logs.png)
 
-Select Loki at the top.
+🔷 Click on the blue channel button in that Label Browser.
 
-Click Label browser.
+🔷 Click on System (which appeared below it).
 
-You should now see labels like job or eventlog_name. Select System and click Show logs.
+🔷 Click the blue Show logs button at the bottom right.
+
+Boom! You should see the live stream of your Windows System logs.
+
+
 
 ### All files
 
