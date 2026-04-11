@@ -30,7 +30,18 @@ It builds a services using NSSM
 
 ![grafana servic](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/grafana_service.png)
 
+Files
+
+* C:\Program Files\GrafanaLabs
+* C:\Program Files\GrafanaLabs\grafana\conf\default.ini
+* C:\Program Files\GrafanaLabs\grafana\data\log
+
 🔷 Access: By default, it runs on http://localhost:3000.
+
+🔷 Set up ssl
+
+
+🔷 Access: By default, it runs on https://vmhybrid01.lab.local:3000
 
 ### 2. Loki on Windows
 Loki does not have a formal .msi installer yet, but it runs perfectly as a single executable.
