@@ -4,11 +4,14 @@
 
 We tested that, it is ok, but Kibana has some extra clutter and very big gui.
 
+https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm/kibana-elasticsearch-file-beat
+
+
 Lets test a simpler stack
 
 ## Test it in Windows
 
-1. Grafana on Windows
+### 1. Grafana on Windows
 Grafana provides a standard Windows installer (.msi) or a standalone .zip file.
 
 🔷 Installation: Download the installer from the official Grafana download page.
@@ -17,7 +20,7 @@ Grafana provides a standard Windows installer (.msi) or a standalone .zip file.
 
 🔷 Access: By default, it runs on http://localhost:3000.
 
-2. Loki on Windows
+### 2. Loki on Windows
 Loki does not have a formal .msi installer yet, but it runs perfectly as a single executable.
 
 🔷 Setup: Download the loki-windows-amd64.exe.zip from the Loki Releases GitHub.
@@ -26,7 +29,8 @@ Loki does not have a formal .msi installer yet, but it runs perfectly as a singl
 
 🔷 Running as a Service: To make it run in the background on your server, most Windows admins use NSSM (Non-Sucking Service Manager) to wrap the .exe into a Windows Service.
 
-3. Alloy Agent on Windows (The "Collector")
+### 3. Alloy Agent on Windows (The "Collector")
+
 This is where the Windows setup shines. Alloy has a dedicated Windows installer that sets everything up for you.
 
 🔷 Installation: Download the alloy-installer-windows-amd64.exe from the Alloy GitHub.
