@@ -26,6 +26,10 @@ Grafana OSS
 
 ![install grafana](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/install_grafana.png)
 
+It builds a services using NSSM
+
+![grafana servic](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/grafana_service.png)
+
 🔷 Access: By default, it runs on http://localhost:3000.
 
 ### 2. Loki on Windows
