@@ -152,6 +152,7 @@ Start grafana service
 
 
 ## 2. Loki on Windows
+
 Loki does not have a formal .msi installer yet, but it runs perfectly as a single executable.
 
 🔷 Setup: Download the loki-windows-amd64.exe.zip from the Loki Releases GitHub.
@@ -255,6 +256,10 @@ New loki files
 ![loki files](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/loki_files.png)
 
 🔷 Start it service
+
+#### Update loki-config.yaml
+
+Use settings from this repos, see file loki-config.yaml
 
 ### Connect loki to grafana
 

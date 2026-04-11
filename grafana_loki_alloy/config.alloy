@@ -1,0 +1,23 @@
+logging {
+	level = "info"
+}
+
+// 1. Tell Alloy to watch Windows Event Logs
+loki.source.windowsevent "local_event_logs" {
+  locale          = 1033
+  eventlog_name   = "System"
+  forward_to      = [loki.write.local_loki.receiver]
+}
+
+// 2. Tell Alloy where to send them (Your Loki service)
+loki.write "local_loki" {
+  endpoint {
+    url = "http://localhost:3100/loki/api/v1/push"
+  }
+}
+
+// Add the Application logs
+loki.source.windowsevent "application_logs" {
+  eventlog_name = "Application"
+  forward_to    = [loki.write.local_loki.receiver]
+}

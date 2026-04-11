@@ -1,0 +1,45 @@
+# Authentication: Set to false for home labs/internal networks. 
+# If true, you would need to provide an X-Scope-OrgID header for every request.
+auth_enabled: false
+
+# Server: Defines the network ports Loki uses.
+server:
+  http_listen_port: 3100      # The main port for Grafana to talk to Loki.
+  grpc_listen_port: 9096      # Internal high-speed communication port for Loki components.
+
+# Common: Shared settings that simplify the config for a single-node setup.
+common:
+  instance_addr: 127.0.0.1    # Tells Loki it's running locally.
+  path_prefix: C:/Loki/data   # The base folder where Loki stores its internal metadata.
+  storage:
+    filesystem:
+      chunks_directory: C:/Loki/data/chunks # Where the actual log data (the "blobs") is stored.
+      rules_directory: C:/Loki/data/rules   # Where alerting or recording rules are kept.
+  replication_factor: 1       # Since this is one VM, we only need 1 copy of the data.
+  ring:
+    kvstore:
+      store: inmemory         # Keeps the "member list" in RAM rather than a database (best for labs).
+
+# Schema Config: Defines HOW the data is organized and indexed on your disk.
+schema_config:
+  configs:
+    - from: 2024-01-01        # Starting date for this specific storage format.
+      store: tsdb             # Use TSDB (Time Series Database), the fastest index type for Loki.
+      object_store: filesystem # Save the actual logs to your Windows C: drive.
+      schema: v13             # The version of the data structure (v13 is current and efficient).
+      index:
+        prefix: index_        # File naming convention for your index files.
+        period: 24h           # Create a new index file every day (makes deletion/searching easier).
+
+# Limits Config: Defines the "Rules" for your data.
+limits_config:
+  retention_period: 720h      # The "Max Age" of logs. Anything older than 30 days is eligible for deletion.
+
+# Compactor: The "Janitor" service that enforces the retention policy.
+compactor:
+  working_directory: C:\Loki\data\compactor    # Temporary space for the Janitor to work.
+  compaction_interval: 10m                     # How often to check if data needs to be deleted (every 10 mins).
+  retention_enabled: true                      # CRITICAL: Enables the actual deletion of old logs.
+  retention_delete_delay: 2h                   # Wait 2 hours after data expires before purging (safety buffer).
+  retention_delete_worker_count: 150           # Number of simultaneous deletion tasks (more = faster but higher CPU).
+  delete_request_store: filesystem             # Tells the Janitor to look at your local disk for deletion tasks.
