@@ -262,38 +262,42 @@ New loki files
 
 ## 3. Alloy Agent on Windows (The "Collector")
 
-This is where the Windows setup shines. Alloy has a dedicated Windows installer that sets everything up for you.
+To actually see your Windows Event Logs (System, Application, Security) inside Grafana, we need to install the Alloy agent. This is what "scrapes" the Windows Event Viewer and pushes the data into Loki.
 
-🔷 Installation: Download the alloy-installer-windows-amd64.exe from the Alloy GitHub.
+Download: Get the Alloy Windows MSI installer from the official releases.
 
-🔷 Windows Event Logs: Unlike Filebeat, which requires extra modules, Alloy has a built-in component called loki.relabel and loki.source.windowsevent that can pull directly from Application, System, and Security event logs.
+Install: Run the MSI on your Windows VM. It will automatically create a service called Grafana Alloy.
 
-🔷 Config Location: After installation, your configuration lives at:
-C:\Program Files\GrafanaLabs\Alloy\config.alloy
+Configure: * 🔷 Open Notepad as Administrator.
 
-## Example Alloy Config for Windows
+🔷 Open the config file: C:\Program Files\GrafanaLabs\Alloy\config.alloy.
+
+🔷 Replace the contents with this simple "Windows Log Starter" config:
 
 ```hcl
-// 1. Collect Windows Event Logs (System & Application)
-loki.source.windowsevent "event_viewer" {
-  eventlog_name = "System,Application"
-  forward_to    = [loki.write.local_loki.receiver]
+// 1. Tell Alloy to watch Windows Event Logs
+loki.source.windowsevent "local_event_logs" {
+  locale          = 1033
+  eventlog_name   = "System"
+  forward_to      = [loki.write.local_loki.receiver]
 }
 
-// 2. Collect a specific App Log File
-local.file_match "app_logs" {
-  path_targets = [{"__path__" = "C:\\Logs\\*.log"}]
-}
-
-loki.source.file "local_files" {
-  targets    = local.file_match.app_logs.targets
-  forward_to = [loki.write.local_loki.receiver]
-}
-
-// 3. Push everything to your Loki Server
+// 2. Tell Alloy where to send them (Your Loki service)
 loki.write "local_loki" {
   endpoint {
-    url = "http://<YOUR_LOKI_IP>:3100/loki/api/v1/push"
+    url = "http://localhost:3100/loki/api/v1/push"
   }
 }
 ```
+🔷 How to See the Results
+After you save the file and restart the Alloy service (via services.msc or net stop alloy && net start alloy):
+
+Go back to Grafana.
+
+Click the Explore icon (the compass).
+
+Select Loki at the top.
+
+Click Label browser.
+
+You should now see labels like job or eventlog_name. Select System and click Show logs.
