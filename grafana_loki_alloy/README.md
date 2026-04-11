@@ -16,6 +16,12 @@ Grafana provides a standard Windows installer (.msi) or a standalone .zip file.
 
 🔷 Installation: Download the installer from the official Grafana download page.
 
+Grafana OSS
+
+* https://grafana.com/grafana/download/12.4.0?edition=oss&platform=windows
+* grafana_12.4.0_22325204712_windows_amd64.msi and run it.
+
+
 🔷 Service: It installs as a Windows Service automatically, meaning it will start whenever the server reboots.
 
 🔷 Access: By default, it runs on http://localhost:3000.
@@ -24,11 +30,6 @@ Grafana provides a standard Windows installer (.msi) or a standalone .zip file.
 Loki does not have a formal .msi installer yet, but it runs perfectly as a single executable.
 
 🔷 Setup: Download the loki-windows-amd64.exe.zip from the Loki Releases GitHub.
-
-Grafana OSS
-
-* https://grafana.com/grafana/download/12.4.0?edition=oss&platform=windows
-
 
 🔷 Configuration: You will need a loki-config.yaml file (you can download the default one here).
 
