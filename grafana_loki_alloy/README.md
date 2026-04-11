@@ -250,6 +250,10 @@ Details Tab:
 
 ![install service](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/install_service.png)
 
+New loki files
+
+![loki files](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/loki_files.png)
+
 🔷 Start it:
 
 ## 3. Alloy Agent on Windows (The "Collector")
