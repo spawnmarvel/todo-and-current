@@ -559,7 +559,9 @@ Checking "Skip TLS Verify" is a classic move in a lab environment. It happens be
 *  Username and password
 
 
-🔷 How to "Fix" it (The Right Way)
+![zabbix_ok](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/zabbix_ok.png)
+
+🔷 How to "Fix" it (The Right Way) certificate
 
 1. Upload the CA Certificate: In the Grafana Data Source settings, there is a field for CA Cert. You can paste the .crt file from your Zabbix server there. This tells Grafana, "Specifically trust this one certificate for this one connection."
 
