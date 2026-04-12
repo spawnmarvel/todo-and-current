@@ -2,40 +2,48 @@ logging {
   level = "info"
 }
 
-// 🔷 1. Zabbix Agent 2 Log Discovery
+// 🔷 1. Zabbix Agent 2
 local.file_match "zabbix_agent" {
   path_targets = [
     { 
       "__address__" = "localhost", 
       "__path__"    = "C:/Program Files/Zabbix Agent 2/zabbix_agent2.log", 
       "job"         = "zabbix-agent",
-      "instance"    = "vmhybrid01",
+      "computer"    = "vmhybrid01.lab.local", // 🔷 Matches your screenshot filter
+      "service"     = "zabbix-agent",          // 🔷 Added for the Explore App view
     },
   ]
 }
 
-// 🔷 2. Zabbix Agent 2 File Scraper
+// 🔷 2. Zabbix Scraper
 loki.source.file "zabbix_scrape" {
   targets    = local.file_match.zabbix_agent.targets
   forward_to = [loki.write.local_loki.receiver]
 }
 
-// 🔷 3. Windows Event Logs (System)
+// 🔷 3. Windows System
 loki.source.windowsevent "local_event_logs" {
-  locale          = 1033
-  eventlog_name   = "System"
-  labels          = { job = "windows-system", instance = "vmhybrid01" }
-  forward_to      = [loki.write.local_loki.receiver]
-}
-
-// 🔷 4. Windows Event Logs (Application)
-loki.source.windowsevent "application_logs" {
-  eventlog_name = "Application"
-  labels          = { job = "windows-application", instance = "vmhybrid01" }
+  eventlog_name = "System"
+  labels        = { 
+    job      = "windows-system", 
+    computer = "vmhybrid01.lab.local",
+    service  = "windows-system",
+  }
   forward_to    = [loki.write.local_loki.receiver]
 }
 
-// 🔷 5. Loki Destination
+// 🔷 4. Windows Application
+loki.source.windowsevent "application_logs" {
+  eventlog_name = "Application"
+  labels        = { 
+    job      = "windows-application", 
+    computer = "vmhybrid01.lab.local",
+    service  = "windows-application",
+  }
+  forward_to    = [loki.write.local_loki.receiver]
+}
+
+// 🔷 5. Write to Loki
 loki.write "local_loki" {
   endpoint {
     url = "http://localhost:3100/loki/api/v1/push"

@@ -295,12 +295,15 @@ logging {
   level = "info"
 }
 
-// 🔷 3. Windows Event Logs (System)
+// 🔷 3. Windows System
 loki.source.windowsevent "local_event_logs" {
-  locale          = 1033
-  eventlog_name   = "System"
-  labels          = { job = "windows-system", instance = "vmhybrid01" }
-  forward_to      = [loki.write.local_loki.receiver]
+  eventlog_name = "System"
+  labels        = { 
+    job      = "windows-system", 
+    computer = "vmhybrid01.lab.local",
+    service  = "windows-system",
+  }
+  forward_to    = [loki.write.local_loki.receiver]
 }
 
 // 🔷 5. Loki Destination
@@ -342,10 +345,14 @@ Now that the data is flowing, we can make it actually useful. Here are two quick
 Right now you only have "System." Open your config.alloy again and add a second block for the Application logs:
 
 ```hcl
-// 🔷 4. Windows Event Logs (Application) - Added Labels
+// 🔷 4. Windows Application
 loki.source.windowsevent "application_logs" {
   eventlog_name = "Application"
-  labels          = { job = "windows-application", instance = "vmhybrid01" }
+  labels        = { 
+    job      = "windows-application", 
+    computer = "vmhybrid01.lab.local",
+    service  = "windows-application",
+  }
   forward_to    = [loki.write.local_loki.receiver]
 }
 ```
