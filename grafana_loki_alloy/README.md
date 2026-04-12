@@ -4,6 +4,8 @@
 
 We tested that, it is ok, but Kibana has some extra clutter and very big gui.
 
+Kibana and Grafana are both powerful, open-source data visualization tools, but they were built for different primary purposes and excel in different areas. Kibana is the log analysis champion, tightly coupled with Elasticsearch, while Grafana is the metrics and multi-source visualization expert
+
 https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm/kibana-elasticsearch-file-beat
 
 
@@ -33,9 +35,35 @@ Grafana Alloy combines the strengths of the leading collectors into one place. W
 
 Grafana Alloy has native pipelines for leading telemetry signals, such as Prometheus and OpenTelemetry, and databases such as Loki and Pyroscope. This permits logs, metrics, traces, and even mature support for profiling.
 
+
+🔷 1. Windows Metrics and Linux Metrics (CPU, Memory, Services)
+
+On Windows, you use the prometheus.exporter.windows component. This collects everything from CPU usage and RAM to the status of your Windows Services.
+
+On Linux, the component is called prometheus.exporter.unix (this is the equivalent of the well-known node_exporter).
+
+🔷 . How the Pipeline Changes
+
+For this tutorial we will be focusing on logs to Loki. To collect Metrics, you need a metrics database like Prometheus or Grafana Mimir.
+
+Zabbix is very smart architectural move. Since Zabbix is already your source of truth for metrics (CPU, Memory, Disk), there is no need to add the complexity of Prometheus or Mimir right now.
+
+
 ![alloy info](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/alloy_info.png)
 
 https://grafana.com/docs/alloy/latest/
+
+## Grafana Zabbix plugin
+
+https://grafana.com/grafana/plugins/alexanderzobnin-zabbix-app/
+
+🔷 The Hybrid View: How it works
+
+In Grafana, you will have two different Data Sources connected:
+
+🔷 Zabbix Data Source: This pulls in your CPU, RAM, and Service Status metrics.
+
+🔷 Loki Data Source: This pulls in the logs we just configured via Alloy.
 
 
 # Grafana, Loki and Alloy stack on Windows server
