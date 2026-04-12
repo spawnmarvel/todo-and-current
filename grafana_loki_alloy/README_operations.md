@@ -134,6 +134,10 @@ Since we added filters, we can now drill down the logs.
 
 ![drill down](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/drill_down.png)
 
+## Drill down by computer and job name
+
+![job name](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/job_name.png)
+
 ## The Easy Way (UI Builder) or the "Pro Way" using the query code
 
 To search for errors specifically, you have two options: the "Easy Way" using the UI buttons, or the "Pro Way" using the query code.
