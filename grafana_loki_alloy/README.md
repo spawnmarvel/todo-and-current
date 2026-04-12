@@ -7,9 +7,27 @@ We tested that, it is ok, but Kibana has some extra clutter and very big gui.
 https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm/kibana-elasticsearch-file-beat
 
 
+## Grafana
+
+## Loki
+
+Loki is a horizontally scalable, highly available, multi-tenant log aggregation system inspired by Prometheus. It is designed to be very cost effective and easy to operate. It does not index the contents of the logs, but rather a set of labels for each log stream.
+
+https://grafana.com/oss/loki/
+
+
+![loki info](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/Loki_info.png)
+
+## 
+
+## Grafan, Loki and Alloy stack on Windows server
+
 Lets test a simpler stack
 
-## Test it in Windows
+* Install Grafana and Loki
+* Install Grafana Alloy on all hosts for collecting data
+
+#
 
 ## 1. Grafana on Windows
 Grafana provides a standard Windows installer (.msi) or a standalone .zip file.
