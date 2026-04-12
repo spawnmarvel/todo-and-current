@@ -288,19 +288,22 @@ Configure: * 🔷 Open Notepad as Administrator.
 
 🔷 Replace the contents with this simple "Windows Log Starter" config:
 
+🔷 Add a label so it is easy to filter later
+
 ```hcl
 logging {
-	level = "info"
+  level = "info"
 }
 
-// 1. Tell Alloy to watch Windows Event Logs
+// 🔷 3. Windows Event Logs (System) - Added Labels
 loki.source.windowsevent "local_event_logs" {
   locale          = 1033
   eventlog_name   = "System"
+  labels          = { job = "windows-system", instance = "vmhybrid01" }
   forward_to      = [loki.write.local_loki.receiver]
 }
 
-// 2. Tell Alloy where to send them (Your Loki service)
+// 🔷 5. Loki Destination
 loki.write "local_loki" {
   endpoint {
     url = "http://localhost:3100/loki/api/v1/push"
@@ -339,9 +342,10 @@ Now that the data is flowing, we can make it actually useful. Here are two quick
 Right now you only have "System." Open your config.alloy again and add a second block for the Application logs:
 
 ```hcl
-// Add the Application logs
+// 🔷 4. Windows Event Logs (Application) - Added Labels
 loki.source.windowsevent "application_logs" {
   eventlog_name = "Application"
+  labels          = { job = "windows-application", instance = "vmhybrid01" }
   forward_to    = [loki.write.local_loki.receiver]
 }
 ```
@@ -450,4 +454,18 @@ If you are trying to find a specific word in a massive list of logs already on y
 
 ![live search](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/live_search.png)
 
-## 
+## How top purge all loki data
+
+🔷 Method 1: The "Clean Slate" (Recommended)
+This completely wipes the database. Loki will recreate the folders it needs the moment you start it back up.
+
+🔷 Stop the Loki Service: Open PowerShell as Admin and run:
+Stop-Service Loki
+
+🔷 Delete the Data Folder:
+Go to C:\Loki\data and delete everything inside that folder (chunks, index, wal, compactor).
+
+🔷 Start the Loki Service:
+Start-Service Loki
+
+Note: Your Grafana dashboards will show "No Data" for a few seconds until Alloy sends the first new batch of logs.
