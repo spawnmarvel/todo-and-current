@@ -483,6 +483,9 @@ Alloy has a built-in status page where it shows its own health and any internal 
 
 ![alloy logs](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/alloy_logs.png)
 
+🔷 Click on Graph or Instances to see if the components are "Healthy.
+
+![alloy config](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/config.png)
 
 ### Grafana
 
