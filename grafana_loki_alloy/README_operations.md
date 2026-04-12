@@ -66,7 +66,6 @@ We added this for zabbix, we stil have the system configured in this file.
 
 ```hcl
 // 🔷 1. Zabbix Agent 2 Log Discovery
-// Scans the specific log file for Zabbix Agent 2
 local.file_match "zabbix_agent" {
   path_targets = [
     { 
@@ -79,7 +78,6 @@ local.file_match "zabbix_agent" {
 }
 
 // 🔷 2. Zabbix Agent 2 File Scraper
-// This reads the file discovered above and forwards it
 loki.source.file "zabbix_scrape" {
   targets    = local.file_match.zabbix_agent.targets
   forward_to = [loki.write.local_loki.receiver]
