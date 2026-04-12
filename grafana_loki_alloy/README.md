@@ -556,10 +556,16 @@ Checking "Skip TLS Verify" is a classic move in a lab environment. It happens be
 
 🔷 Zabbix Connection (a bit lower down)
 
-*  Username and password
-
+* Username and password
+* Test connection
 
 ![zabbix_ok](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/zabbix_ok.png)
+
+Make a quick dashboard, and then we have it.
+
+![zabbix_vm](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/zabbix_vm.png)
+
+
 
 🔷 How to "Fix" it (The Right Way) certificate
 
@@ -568,4 +574,5 @@ Checking "Skip TLS Verify" is a classic move in a lab environment. It happens be
 2. Install the Cert on the OS: If Grafana is on Windows, import the Zabbix certificate into the Trusted Root Certification Authorities store using certmgr.msc, else linux.
 
 https://grafana.com/grafana/plugins/alexanderzobnin-zabbix-app/
+
 
