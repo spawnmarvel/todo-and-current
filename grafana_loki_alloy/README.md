@@ -13,14 +13,30 @@ https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm/ki
 
 Loki is a horizontally scalable, highly available, multi-tenant log aggregation system inspired by Prometheus. It is designed to be very cost effective and easy to operate. It does not index the contents of the logs, but rather a set of labels for each log stream.
 
+* Send logs in any format, from any source, using a wide array of clients
+* 100% persistence to object storage
+* Build metrics and generate alerts from your log lines
+* No ingestion log formatting requirements ()gives you more flexibility and the option to format at query time)
+* Tail your logs in realtime
+* Natively integrates with Prometheus, Grafana and K8
+
 https://grafana.com/oss/loki/
 
 
 ![loki info](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/Loki_info.png)
 
-## 
+## Grafana Alloy
 
-## Grafan, Loki and Alloy stack on Windows server
+Grafana Alloy combines the strengths of the leading collectors into one place. Whether observing applications, infrastructure, or both, Grafana Alloy can collect, process, and export telemetry signals to scale and future-proof your observability approach.
+
+Grafana Alloy has native pipelines for leading telemetry signals, such as Prometheus and OpenTelemetry, and databases such as Loki and Pyroscope. This permits logs, metrics, traces, and even mature support for profiling.
+
+![alloy info](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/alloy_info.png)
+
+https://grafana.com/docs/alloy/latest/
+
+
+# Grafana, Loki and Alloy stack on Windows server
 
 Lets test a simpler stack
 
