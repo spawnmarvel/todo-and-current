@@ -126,6 +126,14 @@ If you are trying to find a specific word in a massive list of logs already on y
 
 Excellent! Now that the "plumbing" is done and the data is flowing, we move into the most rewarding part: LogQL and Visualization.
 
+## Drill down
+
+Pro-Tip:
+
+Since we added filters, we can now drill down the logs.
+
+![drill down](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/drill_down.png)
+
 ## The Easy Way (UI Builder) or the "Pro Way" using the query code
 
 To search for errors specifically, you have two options: the "Easy Way" using the UI buttons, or the "Pro Way" using the query code.
