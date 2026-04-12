@@ -543,3 +543,27 @@ Go to C:\Loki\data and delete everything inside that folder (chunks, index, wal,
 Start-Service Loki
 
 Note: Your Grafana dashboards will show "No Data" for a few seconds until Alloy sends the first new batch of logs.
+
+## Grafana connect to zabbix
+
+* Create a user in zabbix
+* URL: https://192.168.3.5/zabbix/api_jsonrpc.php
+* You might need to check skip TLS verification
+
+Checking "Skip TLS Verify" is a classic move in a lab environment. It happens because your Zabbix web server is likely using a Self-Signed Certificate or one issued by a local Certificate Authority (CA) that your Grafana server doesn't trust yet.
+
+![zabbix_cert](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/zabbix_cert.png)
+
+🔷 Zabbix Connection (a bit lower down)
+
+*  Username and password
+
+
+🔷 How to "Fix" it (The Right Way)
+
+1. Upload the CA Certificate: In the Grafana Data Source settings, there is a field for CA Cert. You can paste the .crt file from your Zabbix server there. This tells Grafana, "Specifically trust this one certificate for this one connection."
+
+2. Install the Cert on the OS: If Grafana is on Windows, import the Zabbix certificate into the Trusted Root Certification Authorities store using certmgr.msc, else linux.
+
+https://grafana.com/grafana/plugins/alexanderzobnin-zabbix-app/
+
