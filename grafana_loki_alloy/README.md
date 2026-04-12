@@ -568,7 +568,7 @@ Now choose the zabbix plugin
 
 Make a quick dashboard, and then we have it.
 
-![zabbix_vm](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/zabbix_vm.png)
+![zabbix_vm](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/zabbix_vm2.png)
 
 
 
