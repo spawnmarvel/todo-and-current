@@ -63,7 +63,10 @@ In Grafana, you will have two different Data Sources connected:
 
 🔷 Zabbix Data Source: This pulls in your CPU, RAM, and Service Status metrics.
 
-🔷 Loki Data Source: This pulls in the logs we just configured via Alloy.
+🔷 Loki Data Source: This pulls in the logs we will configure via Alloy.
+
+https://grafana.com/docs/plugins/alexanderzobnin-zabbix-app/latest/configure/
+
 
 
 # Grafana, Loki and Alloy stack on Windows server
