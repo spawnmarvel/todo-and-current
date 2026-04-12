@@ -20,7 +20,7 @@ loki.source.file "zabbix_scrape" {
   forward_to = [loki.write.local_loki.receiver]
 }
 
-// 🔷 3. Windows Event Logs (System) - Added Labels
+// 🔷 3. Windows Event Logs (System)
 loki.source.windowsevent "local_event_logs" {
   locale          = 1033
   eventlog_name   = "System"
@@ -28,7 +28,7 @@ loki.source.windowsevent "local_event_logs" {
   forward_to      = [loki.write.local_loki.receiver]
 }
 
-// 🔷 4. Windows Event Logs (Application) - Added Labels
+// 🔷 4. Windows Event Logs (Application)
 loki.source.windowsevent "application_logs" {
   eventlog_name = "Application"
   labels          = { job = "windows-application", instance = "vmhybrid01" }

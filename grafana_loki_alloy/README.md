@@ -288,14 +288,14 @@ Configure: * 🔷 Open Notepad as Administrator.
 
 🔷 Replace the contents with this simple "Windows Log Starter" config:
 
-🔷 Add a label so it is easy to filter later
+🔷 Add a label so it is easy to filter later and instance name
 
 ```hcl
 logging {
   level = "info"
 }
 
-// 🔷 3. Windows Event Logs (System) - Added Labels
+// 🔷 3. Windows Event Logs (System)
 loki.source.windowsevent "local_event_logs" {
   locale          = 1033
   eventlog_name   = "System"
