@@ -561,6 +561,11 @@ Checking "Skip TLS Verify" is a classic move in a lab environment. It happens be
 
 ![zabbix_ok](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/zabbix_ok.png)
 
+
+Now choose the zabbix plugin
+
+![zabbix_plugin](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/zabbix_plug.png)
+
 Make a quick dashboard, and then we have it.
 
 ![zabbix_vm](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/zabbix_vm.png)
