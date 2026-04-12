@@ -45,7 +45,7 @@ Lets test a simpler stack
 * Install Grafana and Loki
 * Install Grafana Alloy on all hosts for collecting data
 
-![stack](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/stack.png)
+![stack](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/stack2.png)
 
 ## 1. Grafana on Windows
 Grafana provides a standard Windows installer (.msi) or a standalone .zip file.
