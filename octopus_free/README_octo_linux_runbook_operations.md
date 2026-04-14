@@ -53,7 +53,6 @@ When you make add a step, use the environment tags
 That make is easier when you are later going to change the setting from "All applicable targets" to "Specific targets".
 
 
-
 ### 4. How to Target a Single Host for a Runbook (or a full envirnment)
 
 Yes, you can target a single host (or a subset of targets) for a runbook, but the interface is a bit different than the standard "Deploy" screen.
@@ -120,11 +119,95 @@ sudo apt remove -y snmp
 
 ```
 
-The "Rules of the Road" for 2026
-
 * apt-get is for Scripts/Octopus. It is the "stable" version. Its output doesn't change much between Linux versions, which prevents scripts from breaking unexpectedly.
 
 * apt is for Humans. It has pretty progress bars, colors, and friendly summaries. It's what you type when you are sitting at the keyboard.
+
+### 2 Run "bulletproof" in a CI/CD environment
+
+To run "bulletproof" in a CI/CD environment like Octopus—especially when jumping between a Windows UI and a Linux shell—you have to assume that everything that can fail, will fail.
+
+The trick is to use Defensive Scripting. Here are the golden rules for making your Runbooks indestructible:
+
+1. The "Explicit Path" Rule
+
+Never trust that Linux knows where journalctl, systemctl, or mysql are.
+
+```bash
+# Weak: journalctl --disk-usage
+
+# Bulletproof: Use the full path or a which check.
+# Explicitly set the path at the top of every script
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+
+```
+2. The "No-Pager" & "Non-Interactive" Rule
+
+This is the #1 reason Octopus tasks "hang." If a command tries to be "helpful" by opening a scrollable list, the script dies.
+
+```bash
+journalctl --no-pager
+
+apt-get install -y (The -y is mandatory)
+
+systemctl --no-ask-password
+```
+
+3. The "Exit Code" Guard (|| true)
+
+Octopus marks a task as Failed if the last command returns anything other than 0.
+
+* The Problem: grep returns 1 if it doesn't find a match. If your script ends with a search that finds nothing, the whole runbook fails.
+
+* Bulletproof: Append || true to commands that are "informative" but not "critical."
+
+
+```bash
+# This won't crash the task if no errors are found
+journalctl -p err -n 50 --no-pager || echo "No errors to report"
+``` 
+
+4. Use "Strict Mode" (The set Command)
+
+At the start of your Bash scripts, use these flags to catch errors early:
+
+* set -e: Exit immediately if a command fails (use this when you want total failure on any error).
+
+* set -u: Exit if you try to use an undefined variable (great for catching typos in Octopus variables).
+
+5. The "Non-Blocking" Redirect
+
+Sometimes a service outputs "standard error" (stderr) that Octopus misinterprets as a script failure.
+
+```bash
+# Redirects errors to the standard log stream
+my_script.sh 2>&1
+```
+#### New "Bulletproof" Script Template
+
+```bash
+#!/bin/bash
+# --- INITIALIZATION ---
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+set -u # Catch undefined variables
+
+echo "🔷 Starting Task: Checking Zabbix Health..."
+
+# --- EXECUTION WITH GUARDS ---
+# 1. Check if binary exists
+if ! command -v journalctl &> /dev/null; then
+    echo "❌ ERROR: journalctl not found. Is this the right OS?"
+    exit 1
+fi
+
+# 2. Run command with no-pager and fallback
+journalctl -u zabbix-server -n 20 --no-pager || echo "⚠️ Could not read Zabbix logs."
+
+# --- CLEAN EXIT ---
+echo "✅ Task Completed Successfully."
+exit 0
+# By ending every script with exit 0, you tell Octopus: "I have handled the errors, the script is finished, and you can mark this as green.
+```
 
 ### 2 Octopus green with white warning fix
 
