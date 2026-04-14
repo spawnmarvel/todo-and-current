@@ -54,8 +54,9 @@ This usually happens if you edited a file (like a README or .gitignore) directly
 
 ```bash
 # Option 2: The Clean Way (Rebase) - Recommended
-# This is often preferred because it takes your local changes, "lifts" them up, pulls the remote changes, 
-# and then puts your changes back on top. It keeps the history linear and clean.
+# This is often preferred because it takes your local changes, "lifts" them up
+# , pulls the remote changes, and then puts your changes back on top.
+#  It keeps the history linear and clean.
 
 git pull --rebase origin main
 git push origin main
