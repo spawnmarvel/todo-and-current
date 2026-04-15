@@ -127,6 +127,7 @@ Well, this never stops, so lets make a priority list of all the topics below.
    - Make matrix stuff also on the screen/ effects, launch it online
 
 ### 1. Octopus Deploy for linux (is 2 in one CI/CD)
+   - Use IAC linux vm for fast deploy and remove
    - Two projects (win/lin) and 100's of runbooks, we do linux project for now
    - Do all linux apps and day 2 operations in:
    - Do Diagnostics, normal linux commands
