@@ -790,10 +790,10 @@ For install software go to:
 * README_octo_linux_runbook_install_software.md
 
 
-# 4. Upload packet versions Runbook expanded
+# 4. Upload packet versions and working with vars (2. Upload packet Runbook extended)
 
 Lets work some more with uploading files and working with vars.
-For step 2 we did:
+We did earlier, 2. Upload packet Runbook
 
 The servers are running Ubuntu 24.04
 
