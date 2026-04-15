@@ -47,10 +47,12 @@ connect-AzAccount -TenantId $t_id
 
 💠 Run script deploy.ps1 it will ask for login to azure, then username and password for vm
 
-
 ```ps1
 .\deploy.ps1
 
+```
+Output
+``txt
 Checking for Resource Group: RG-uks-temp-resources-001...
 Resource Group not found. Creating it now in uksouth...
 Account                 SubscriptionName TenantId                             Environment
