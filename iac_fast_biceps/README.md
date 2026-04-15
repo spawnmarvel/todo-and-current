@@ -12,6 +12,8 @@ By doing this at the VNet level, every other VM you create in the future will au
 
 Since your Linux machines are now going to ask 192.168.3.7 for everything (including google.com or Ubuntu update mirrors), you must ensure the Windows DC knows how to "pass the ball."
 
+💠 There is auto shutdown at every night for this vm
+
 ```bash
 # vmhybrid01 no started
 ping www.ba.no
@@ -24,7 +26,7 @@ PING web.avis.api.no.cdn.cloudflare.net (104.18.23.107) 56(84) bytes of data.
 
 https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-ad-ds-windows-server-hybrid-core-infrastructure/README_cloud-only-hybrid-Lab_2_install-ad.md
 
-## Deploy Linux vm with public ip into existing vnet
+## Deploy Linux vm with public ip into existing vnet (vmhybrid01 you must start)
 
 This is just for fast deploy and remove.
 
@@ -66,7 +68,7 @@ This will be deploy
 ssh user@public-ip
 
 ```
-### Remove vm linux and ***
+### Remove vm linux and ***  (vmhybrid01 you must stop)
 
 
 ```ps1
