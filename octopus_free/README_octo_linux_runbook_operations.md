@@ -790,3 +790,69 @@ For install software go to:
 * README_octo_linux_runbook_install_software.md
 
 
+# 4. Upload packet Runbook expanded
+
+Lets work some more with uploading files and working with vars.
+For step 2 we did
+
+The servers are running Ubuntu 24.04
+
+Upload a packet example mysql 8.4
+
+* https://dev.mysql.com/downloads/mysql/8.4.html
+* mysql-server_8.4.8-1ubuntu24.04_amd64.deb-bundle.tar
+
+Since you have the .tar bundle specifically for Ubuntu, you have everything you need for a "Side-Loaded" install. This bundle contains the server, the client, and all the mandatory internal libraries (like mysql-community-client, mysql-client, etc.) so they don't have to be downloaded from the internet.
+
+![mysql_tar](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/mysql_tar.png)
+
+
+On your internet-connected machine (your workstation):
+
+1. Download the MySQL 8.4 LTS DEB Bundle for Ubuntu 24.04.
+2. Extract the .tar file. You should see about 10–12 .deb files (server, client, common, etc.).
+3. Zip these .deb files into a single file named MySQL-8.4-LTS.1.0.0.zip.
+4. Upload this zip file to Projects-> Manage > Packages in your Octopus Server.
+
+![mysql_pack](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/mysql_pack.png)
+
+In Octopus on the runbook add a step, Deploy a Package up, find the mysql packet.
+
+Do not use the version, the packet has a version from the zip file number: MySQL-8.4-LTS.1.0.0.zip
+
+![mysql_pack_step_](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/mysql_pack_step_.png)
+
+Save and run the runbook.
+
+And now we have the packet for both vm in:
+
+```bash
+cd /etc/octopus/tentacle-name/Files
+```
+
+
+![mysql_pack_path](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/mysql_pack_path.png)
+
+## 4.1 Upload a text file and edit versions
+
+Goal
+
+* Upload a zipped text file to octopus with a version number myfile.txt.1.0.0
+* Deploy with step Upload the packet to server
+
+* Grap the packet with octopus variable and cat the content
+
+Inspect the packet version and content.
+
+* Edit the text file, zip it to new version
+* Deploy with  a step Upload a zipped text file to octopus with a version number myfile.txt.1.0.1
+
+* Grap the packet with octopus variable and cat the new content
+
+* Edit the text file, zip it to new version
+* Deploy with  a step Upload a zipped text file to octopus with a version number myfile.txt.1.0.2
+
+* Grap the packet with octopus variable and cat the new content
+
+
+

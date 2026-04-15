@@ -129,7 +129,9 @@ Well, this never stops, so lets make a priority list of all the topics below.
 ### 1. Octopus Deploy for linux (is 2 in one CI/CD)
    - Two projects (win/lin) and 100's of runbooks, we do linux project for now
    - Do all linux apps and day 2 operations in:
-   - Diagnostics, packets, install MySQL, etc
+   - Do Diagnostics, normal linux commands
+   - Do upload packets and variables ** Use more time here
+   - Do install software MySQL, etc
    - Do follow the guide in
    - - https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/README_octo_linux_runbook_operations.md
 
@@ -221,7 +223,10 @@ mysql --user=#{MySQL.User} --password=#{MySQL.Password}
    - :white_check_mark: Do first deployment windows, project, relase, step, process and vars, push deploy to target = 100%
    - :white_check_mark: Do first deployment linux, project, relase, step, process and vars, push deploy 2 target = 100%
    - :white_check_mark: Do tutorial first Runbok = 100%
-   - Do project Linux Day2 Operations = 60%
+   - Do project Linux Day2 Operations
+   - Do Diagnostics, normal linux commands = 100%
+   - Do upload packets and variables = 
+   - Do install software MySQL, etc = 
    - Do all linux apps and day 2 operations in:
    - - https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/README_runbook_linux_tips.md
 
