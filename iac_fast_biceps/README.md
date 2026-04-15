@@ -72,5 +72,9 @@ ssh user@public-ip
 ```ps1
 .\remove.ps1
 
+```
+Output
+
+```txt
 Warning: This will delete everything inside RG-uks-temp-resources-001!
 ```
