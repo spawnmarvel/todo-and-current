@@ -112,6 +112,11 @@ https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-800-
 
 </details>
 
+<summary>Fast linuc vm? GOTO iac_fast_biceps</summary>
+
+Deploy within 1 min and remove within 1 min, autoshutdown is also enabled if we forget to remove.
+</details>
+
 ---
 
 ## TODO Maintain knowledge priority top 3 :seedling:
