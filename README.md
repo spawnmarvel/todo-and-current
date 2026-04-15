@@ -113,7 +113,7 @@ https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-800-
 </details>
 
 <details>
-<summary>Fast linuc vm? GOTO iac_fast_biceps</summary>
+<summary>Fast Linux Vm ? GOTO iac_fast_biceps</summary>
 
 Deploy within 1 min and remove within 1 min, autoshutdown is also enabled if we forget to remove.
 </details>
