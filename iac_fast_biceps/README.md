@@ -52,7 +52,7 @@ connect-AzAccount -TenantId $t_id
 
 ```
 Output
-``txt
+```txt
 Checking for Resource Group: RG-uks-temp-resources-001...
 Resource Group not found. Creating it now in uksouth...
 Account                 SubscriptionName TenantId                             Environment
