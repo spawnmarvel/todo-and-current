@@ -36,16 +36,24 @@ Template and script for vm in ./linux_deploy_and_remove
 
 💠t_id = Tenant ID
 
-💠 Run script deploy.ps1 it will ask for login to azure, then username and password for vm
-
 ```ps1
-# Get the id
+# Get the id example
 $t_id =[System.Environment]::GetEnvironmentVariable("t_id", "User")
 # connect
 connect-AzAccount -TenantId $t_id
 # [...]
-# Deploy resources
-# [...]
+
+```
+
+💠 Run script deploy.ps1 it will ask for login to azure, then username and password for vm
+
+
+```ps1
+.\deploy.ps1
+
+Checking for Resource Group: RG-uks-temp-resources-001...
+Resource Group not found. Creating it now in uksouth...
+Account                 SubscriptionName TenantId                             Environment
 ```
 This will be deploy
 
@@ -57,3 +65,10 @@ ssh user@public-ip
 
 ```
 ### Remove vm linux and ***
+
+
+```ps1
+.\remove.ps1
+
+Warning: This will delete everything inside RG-uks-temp-resources-001!
+```
