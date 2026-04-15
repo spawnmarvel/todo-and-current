@@ -793,7 +793,7 @@ For install software go to:
 # 4. Upload packet versions Runbook expanded
 
 Lets work some more with uploading files and working with vars.
-For step 2 we did
+For step 2 we did:
 
 The servers are running Ubuntu 24.04
 
