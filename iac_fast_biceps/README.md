@@ -38,13 +38,20 @@ https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-ad-d
 
 This is just for fast deploy and remove.
 
-### Deploy vm linux
+### Deploy vm linux with powershell or bash
 
 Template and script for vm in ./linux_deploy_and_remove
 
-💠 Store Tenant ID in Environment Varibles-> User variables
+💠  Windows
 
-💠t_id = Tenant ID
+* Store Tenant ID in Environment Varibles-> User variables
+
+* t_id = Tenant ID
+
+💠 Linux
+
+* export t_id="your-tenant-id-here"
+
 
 Example used in deploy.ps1
 
@@ -78,8 +85,19 @@ This will be deploy
 ssh user@public-ip
 
 ```
-### Remove vm linux and ***  (vmhybrid01 you must stop)
+💠 Run script deploy.sh it will ask for login to azure, then username and password for vm
 
+```bash
+export t_id="your-tenant-id-here"
+# Now run your script normally
+./deploy.sh
+
+```
+
+### Remove vm linux with powershell or bash and ***  (vmhybrid01 you must stop)
+
+
+💠  remove.ps1
 
 ```ps1
 .\remove.ps1
@@ -90,3 +108,13 @@ Output
 ```txt
 Warning: This will delete everything inside RG-uks-temp-resources-001!
 ```
+
+💠  remove.sh
+
+```bash
+export t_id="your-tenant-id-here"
+# Now run your script normally
+./remove.sh
+
+```
+
