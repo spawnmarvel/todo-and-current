@@ -1491,7 +1491,7 @@ Read more at https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extr
 
 </details>
 
-<details><summary>Install MySql 8.4, sudo dpkg -i mysql....(no internet) </summary>
+<details><summary>Install MySql 8.4, scp, sudo dpkg -i mysql....(no internet) </summary>
 <p>
 
 #### We can hide anything, even code!
