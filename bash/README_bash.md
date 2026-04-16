@@ -1559,6 +1559,11 @@ ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'admin456
 FLUSH PRIVILEGES;
 EXIT;
 
+-- It is a "best practice" (and much safer) to create a regular user for your daily work so you don't have to use the root account for everything.
+CREATE USER 'johnwick'@'%' IDENTIFIED BY 'YourUserPassword123!';
+GRANT ALL PRIVILEGES ON *.* TO 'johnwick'@'%' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+EXIT;
 ``` 
 Continue set up secure
 
@@ -1579,6 +1584,24 @@ sudo mysql -u root -p
 # Welcome to the MySQL monitor.  Commands end with ; or \g.
 
 ```
+Allow remote access
+
+```bash
+sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+# Find the bind-address line:
+# Look for a line that looks like this:
+# bind-address = 127.0.0.1
+
+# change it to
+# bind-address = 0.0.0.0
+
+sudo systemctl restart mysql
+
+# Run this command to see if MySQL is now listening on all interfaces:
+sudo netstat -plnt | grep 3306
+# ou want to see 0.0.0.0:3306 instead of 127.0.0.1:3306
+```
+
 </p>
 Read more at https://github.com/spawnmarvel/todo-and-current/blob/main/mysql/README.md
 
