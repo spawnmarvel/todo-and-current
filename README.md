@@ -154,7 +154,7 @@ vmhybrid01 is the **DC and DNS server** - it must be running for network operati
 - This makes Domain Joining other VMs effortless
 - DC becomes responsible for resolving internet traffic
 
-📖 Reference: [Azure AD DS Install Guide](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-800-admistering-windows-server-hybrid-core-infrastructure/README_cloud-only-hybrid-Lab_2_install-ad.md)
+📖 Reference: [Azure AD DS Install Guide](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-ad-ds-windows-server-hybrid-core-infrastructure/README_cloud-only-hybrid-Lab_2_install-ad.md)
 
 ### Fast Linux VM Deployment
 **GOTO:** `iac_fast_biceps`
