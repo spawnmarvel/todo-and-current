@@ -16,6 +16,8 @@ The ability to assign work to Copilot from an issue is categorized as an "Agenti
 
 🔹 On Pro+ or Enterprise: You get higher priority and more "Premium Requests" to use the most advanced models (like the full Claude 3.5 Opus or GPT-5) to perform the edits.
 
+The Verdict: You can try it for free today to see if it works for you, but if you plan on using Copilot to manage your repository tasks regularly, the $10/month Pro plan is the standard requirement.
+
 ## 1. Create the GitHub Issue
 Go to your repository and create a new issue. To get the best results from Copilot, be specific in your description:
 
@@ -33,13 +35,6 @@ Description: > Please review the README.md file and perform the following:
 Method A: Via Copilot Workspace (Recommended)
 If you have Copilot Workspace enabled, you will see a button on the issue page that says "Open in Workspace."
 
-🔹 Click Open in Workspace.
-
-🔹 Copilot will automatically read your issue description and generate a Plan.
-
-🔹 Review the plan. If it missed the "adding periods" instruction, you can refine it by typing: "Make sure you also add periods to the end of every bullet point."
-
-🔹 Click Implement. Copilot will create a new branch and a Pull Request (PR) with all the text fixes applied.
 
 Method B: Via VS Code (Local)
 
@@ -47,7 +42,7 @@ If you prefer working in your IDE:
 
 🔹 Open your project in VS Code.
 
-🔹 In the Copilot Chat panel, type: @github /fix #issue [issue-number]
+🔹 In the Copilot Chat panel, and paste the url to the issue in the chat
 
 🔹 Copilot will pull the context from that specific issue and apply the changes to your local README.md.
 
