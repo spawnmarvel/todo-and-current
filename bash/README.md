@@ -270,7 +270,7 @@ hostname -I                         # Get IP address
 ### Firewall (UFW)
 
 > See [UFW Firewall Guide](https://github.com/spawnmarvel/linux-and-azure/tree/main/ufw-firewall)
-
+> Or scroll down to practical examples
 ---
 
 ## File Compression
