@@ -18,6 +18,8 @@
 10. [File Compression](#file-compression)
 11. [File Permissions](#file-permissions)
 12. [Bash Scripting](#bash-scripting)
+13. [Practical Examples](#practical-examples)
+14. [Troubleshooting](#troubleshooting)
 
 ---
 
@@ -587,3 +589,436 @@ crontab -e
 - [W3Schools Bash Tutorial](https://www.w3schools.com/bash/)
 - [Bash Reference Manual](https://www.gnu.org/software/bash/manual/)
 - [Linux Command Line Basics](https://github.com/spawnmarvel/quickguides)
+
+---
+
+## Practical Examples
+
+### UFW Firewall
+
+See [UFW Firewall Guide](https://github.com/spawnmarvel/linux-and-azure/tree/main/ufw-firewall)
+
+---
+
+### SCP: Windows to Linux (.deb install)
+
+```bash
+# x64 (also known as x86_64 or amd64)
+# ARM (also known as aarch64 or arm64)
+
+# When you install a deb, try to find the deb that has all other packets
+# otherwise you must install dependencies
+# https://octopus.com/downloads/tentacle/7.1.31#linux
+
+# PowerShell copy to Linux (SCP uses TCP Port 22)
+scp '.\Octopus Linux\tentacle_7.1.31_amd64.deb' username@ubuntu-ip:/tmp/
+
+# SSH to Linux
+ssh username@ubuntu-ip
+cd /tmp/
+ls
+cp /tmp/tentacle_7.1.31_amd64.deb tentacle_7.1.31_amd64.deb
+
+sudo dpkg -i tentacle_7.1.31_amd64.deb
+
+# Configure Tentacle
+/opt/octopus/tentacle/configure-tentacle.sh
+
+# Verify installation
+which Tentacle
+dpkg -l | grep tentacle
+
+# Stop service before removal
+sudo systemctl stop octopus-tentacle
+
+# Remove
+sudo apt remove octopus-tentacle    # Removes binaries, keeps config
+sudo apt purge octopus-tentacle     # Removes everything
+sudo dpkg -r octopus-tentacle       # Offline way
+```
+
+---
+
+### Update & Upgrade / Apt Install & Remove
+
+```bash
+sudo apt update -y                  # Update apt/sources
+sudo apt list --upgradable          # List possible upgrades
+sudo apt upgrade -y                 # Do upgrade
+
+# View apt sources
+cd /etc/apt/
+ls -lh
+cat ubuntu.sources
+
+# Install Zabbix Agent 2
+wget https://repo.zabbix.com/zabbix/7.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_latest_7.0+ubuntu24.04_all.deb
+sudo dpkg -i zabbix-release_latest_7.0+ubuntu24.04_all.deb
+sudo apt update -y
+sudo apt install zabbix-agent2
+
+# Other examples
+sudo apt list --installed | grep -i 'influx*'
+sudo apt search 'influxdb'
+sudo apt install snmp
+which snmp
+sudo apt remove snmp
+history
+dpkg
+```
+
+---
+
+### Hello World Bash Script with Chmod
+
+```bash
+nano demo.sh
+
+#!/bin/bash
+echo "Hello World!"
+
+# Check permissions
+ls -l demo.sh
+
+# Add execute permission
+chmod u+x demo.sh
+# or octal
+chmod 744 demo.sh
+
+# Run
+./demo.sh
+
+# List all users
+cat /etc/passwd
+```
+
+---
+
+### Sudo Delay Fix (Hostname Resolution)
+
+```bash
+hostname
+# vmchaos09
+
+sudo nano /etc/hosts
+# Change from:
+127.0.0.1 localhost
+# To:
+127.0.0.1 localhost vmchaos09
+::1       localhost ip6-localhost ip6-loopback vmchaos09
+```
+
+---
+
+### SSH Key Generation
+
+```bash
+# Check existing keys
+cd ~/.ssh
+
+# Generate new key pair
+ssh-keygen -t ed25519
+# or with custom name and comment
+ssh-keygen -t ed25519 -C "myname" -f ~/.ssh/octopus_key
+
+# View public key
+cat ~/.ssh/id_ed25519.pub
+
+# Copy to remote server
+ssh-copy-id username@server-ip
+
+# Or manually:
+mkdir -p ~/.ssh
+chmod 700 ~/.ssh
+touch ~/.ssh/authorized_keys
+nano ~/.ssh/authorized_keys
+# Paste public key
+```
+
+---
+
+### OpenSSL: Generate Self-Signed Certificate
+
+```bash
+sudo openssl req -newkey rsa:4096 -x509 -sha256 -days 365 -nodes \
+  -out server.crt -keyout server.key \
+  -subj "/C=NO/ST=Hordaland/L=BER/O=Socrates.inc/OU=IT/CN=vm01.socrates.inc"
+
+# Verify certificate
+openssl x509 -noout -subject -dates -in server.crt
+openssl x509 -noout -text -in server.crt
+```
+
+---
+
+### Apache SSL Setup (Ubuntu 24.04)
+
+```bash
+# Create self-signed certificate (3650 days)
+sudo openssl req -x509 -nodes -days 3650 -newkey rsa:2048 \
+  -keyout /etc/ssl/private/zabbix-selfsigned.key \
+  -out /etc/ssl/certs/zabbix-selfsigned.crt
+
+# Enable SSL module and default site
+sudo a2enmod ssl
+sudo a2ensite default-ssl
+
+# Edit SSL config
+sudo nano /etc/apache2/sites-enabled/default-ssl.conf
+# Update:
+SSLCertificateFile    /etc/ssl/certs/zabbix-selfsigned.crt
+SSLCertificateKeyFile /etc/ssl/private/zabbix-selfsigned.key
+
+# Force HTTPS redirect
+sudo nano /etc/apache2/sites-available/000-default.conf
+# Add inside <VirtualHost *:80>:
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+sudo a2enmod rewrite
+sudo systemctl restart apache2
+```
+
+---
+
+### Debmirror (Local Package Repository)
+
+```bash
+sudo apt update
+sudo apt install debmirror
+sudo apt install apache2
+sudo apt install gnupg
+sudo systemctl enable apache2
+sudo systemctl status apache2
+```
+
+---
+
+### Install MySQL 8.4 Offline (SCP + dpkg)
+
+```bash
+# 1. Download on Host (with internet)
+wget https://dev.mysql.com/get/Downloads/MySQL-8.4/mysql-server_8.4.0-1ubuntu24.04_amd64.deb-bundle.tar
+wget http://archive.ubuntu.com/ubuntu/pool/main/m/mecab/libmecab2_0.996-14build9_amd64.deb
+
+# 2. Transfer via SCP
+scp mysql-server_8.4.0-1ubuntu24.04_amd64.deb-bundle.tar username@vm-ip:/tmp/
+scp libmecab2_0.996-14build9_amd64.deb username@vm-ip:/tmp/
+
+# 3. Extract and install
+cd /tmp
+tar -xvf mysql-server_8.4.0-1ubuntu24.04_amd64.deb-bundle.tar
+rm -f mysql-community-test*.deb mysql-testsuite*.deb
+rm -f mysql-community-server-debug*.deb mysql-community-test-debug*.deb
+
+sudo dpkg -i libmecab2_*.deb
+sudo dpkg -i mysql-*.deb
+
+# 4. Set root password
+sudo mysql
+ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'admin4561';
+FLUSH PRIVILEGES;
+
+# Create regular user
+CREATE USER 'johnwick'@'%' IDENTIFIED BY 'YourUserPassword123!';
+GRANT ALL PRIVILEGES ON *.* TO 'johnwick'@'%' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+
+# 5. Secure installation
+sudo mysql_secure_installation
+
+# 6. Allow remote access
+sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+# Change: bind-address = 0.0.0.0
+sudo systemctl restart mysql
+sudo netstat -plnt | grep 3306
+```
+
+---
+
+### Mount Data Drive (fdisk) Ubuntu 24.04
+
+```bash
+# Find the disk
+lsblk -o NAME,HCTL,SIZE,MOUNTPOINT | grep -i "sd"
+
+# Create partition
+sudo fdisk /dev/sda
+# Commands: g (GPT), n (new), enter, enter, w (write)
+
+# Format partition
+sudo mkfs.ext4 /dev/sda1
+
+# Create directory and mount
+sudo mkdir -p /datadrive
+sudo mount /dev/sda1 /datadrive
+
+# Make permanent (fstab)
+sudo blkid /dev/sda1
+# Copy UUID
+sudo nano /etc/fstab
+# Add: UUID=your-uuid-here /datadrive ext4 defaults,nofail 0 2
+
+# Set ownership
+sudo chown $USER:$USER /datadrive
+
+# Verify
+lsblk -o NAME,SIZE,MOUNTPOINT | grep "sd"
+```
+
+---
+
+### Move MySQL Data Directory
+
+```bash
+# Check current path
+mysql -u root -p -e "SELECT @@datadir"
+
+# Stop MySQL
+sudo systemctl stop mysql
+
+# Create new directory
+sudo mkdir -p /datadrive/mysql
+sudo chown mysql:mysql /datadrive/mysql
+sudo chmod 750 /datadrive/mysql
+
+# Backup and copy
+sudo mv /var/lib/mysql /var/lib/mysql_old
+sudo rsync -av /var/lib/mysql/ /datadrive/mysql/
+
+# Update config
+sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+# Change: datadir = /datadrive/mysql
+
+# Fix AppArmor
+sudo nano /etc/apparmor.d/tunables/alias
+# Add: alias /var/lib/mysql/ -> /datadrive/mysql/,
+sudo systemctl restart apparmor
+
+# Allow MySQL to access parent
+sudo chmod +x /datadrive
+
+# Start MySQL
+sudo systemctl start mysql
+
+# Verify
+mysql -u root -p -e "SELECT @@datadir"
+```
+
+---
+
+## Troubleshooting
+
+### Disk, Big Files, and Journalctl
+
+```bash
+# Check disk
+df -h /
+
+# Find large directories
+sudo du -ah / 2>/dev/null | sort -rh | head -n 20
+
+# Find large files
+find / -type f -size +1G
+
+# Check log directory
+ls -lh /var/log
+
+# Journal disk usage
+journalctl --disk-usage
+
+# Tail journal
+journalctl -f
+
+# Grep journal
+journalctl -g zabbix
+
+# Truncate large file
+truncate -s 100M filename
+```
+
+---
+
+### Production Server Down
+
+```bash
+# 1. Load
+uptime
+top
+
+# 2. Memory
+free -m
+
+# 3. Disk
+df -h
+df -i
+
+# 4. Heavy resource
+ps aux --sort=-%cpu | head
+ps aux --sort=-%mem | head
+
+# 5. Service and logs
+journalctl -f
+journalctl -g zabbix
+journalctl -p err -n 50 --no-pager
+tail -n 100 /var/log/syslog
+
+# 6. List ports
+ss -ltn
+ss -ant 'sport = :10050'
+```
+
+---
+
+### Zabbix Troubleshooting
+
+```bash
+# Versions
+zabbix_server --version
+zabbix_agentd --version
+
+# Logs
+sudo tail -f /var/log/zabbix/zabbix_server.log
+sudo grep 'failed' /var/log/zabbix/zabbix_server.log
+
+# MySQL connection
+cd /etc/zabbix
+sudo grep 'DBPort' zabbix_server.conf
+sudo grep 'DBPassword' zabbix_server.conf
+sudo grep 'DBUser' zabbix_server.conf
+sudo grep 'DBHost' zabbix_server.conf
+
+mysql -h servername --port=3306 -u zabbix --password=the-password
+
+# Reset Admin password
+mysql -u root -p
+USE zabbix;
+UPDATE users SET passwd=MD5('zabbix') WHERE username='Admin';
+FLUSH PRIVILEGES;
+
+# Check tables
+mysqlcheck -h servername --port=3306 -u zabbix --password=the-password --databases zabbix
+```
+
+---
+
+### /dev/null
+
+```bash
+# /dev/null is a "black hole" - discards all data written to it
+# Use to suppress output
+
+# Example: quiet install
+sudo apt install vlc > /dev/null
+```
+
+---
+
+### SSH Error: Max Authentication Attempts
+
+```bash
+# Add to /etc/ssh/sshd_config
+sudo nano /etc/ssh/sshd_config
+AllowUsers username
+```
