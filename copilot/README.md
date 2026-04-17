@@ -1,5 +1,9 @@
 # GitHub Copilot
 
+## Licensing
+
+![lic](https://github.com/spawnmarvel/todo-and-current/blob/main/copilot/images/lic.png)
+
 ##  Use case
 
 Yes, you absolutely can. In 2026, the integration between GitHub Issues and Copilot is seamless, especially with the GitHub Copilot Workspace and the Copilot Agent features.
