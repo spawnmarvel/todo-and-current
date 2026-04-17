@@ -145,6 +145,8 @@ fun_format_array() {
 fun_check_countries_from_location() {
     local c=0
 
+    echo "debug current_location $current_location current_location_world $current_location_world"
+
     if [[ "$current_location_world" == "europe" && "$current_location" != "${airport_codes[IST],,}" ]]; then
         # flights in europe
         printf "${LGREEN} * * Flights in europe, avaliable at your location: ${NC}\n"
@@ -173,11 +175,11 @@ fun_verify_continents_flights() {
     flight_possibilities=""
 
     # 1. gateway instanbul (bridge asia and europe)
-    if [[ "$current_location" == "${airport_codes[IST]}" ]]; then
+    if [[ "$current_location" == "${airport_codes[IST],,}" ]]; then
         flight_possibilities="europe;asia"
 
     # 2. gateway tokyo (bridge asia and europe)
-    elif [[ "$current_location" == "${airport_codes[HND]}" ]]; then
+    elif [[ "$current_location" == "${airport_codes[HND],,}" ]]; then
         flight_possibilities="europe;asia"
 
     elif [[ "$current_location_world" == "europe" ]]; then
