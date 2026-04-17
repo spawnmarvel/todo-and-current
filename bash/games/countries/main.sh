@@ -116,6 +116,7 @@ fun_full_scan_terminal() {
         printf " * %-20s [BOOK NOW]\n" "$country"
     done
     printf " * %-20s [BOOK NOW] Main airport \n" "${fly_countries_europe[44]}"
+    echo "todo: must check if we are in asia and europe also to print multiple, if we are in japan or turkey"
 
 }
 
