@@ -1,609 +1,523 @@
-# Todo-and-current :seedling:
+# Todo & Current :seedling:
 
-<details>
+A comprehensive knowledge base combining technical wiki, todo list, and learning progress tracker.
 
-<summary>Readme with todo-and-current, Ai as helper, Gemini, Dark mode Win 11</summary
-
-* Manage workflow (Slipknot/Trance/Music in general is the cure)
-* Optimize your environment
-* Adjust your mindset and habits
-
---- 
-To enable Dark Mode in Windows 11, go to Settings > Personalization > Colors and select "Dark" under "Choose your mode". This applies a dark gray theme to system backgrounds, apps, the taskbar, and the Start menu, reducing screen brightness for lower-light environments.
-
-
-The best computer screen background colors to reduce eye strain are soft, low-intensity, or muted tones. Light green, pale yellow, and soft beige are often recommended for long-term comfort. For darker environments, dark grey or warm brown backgrounds with light text reduce strain, while bright white should be avoided.
-
-
-</details>
+## Philosophy
+- Manage workflow (Slipknot/Trance/Music in general is the cure)
+- Optimize your environment
+- Adjust your mindset and habits
 
 ---
 
-<details>
+## Table of Contents
 
-<summary>E-lo (parked) :anchor:</summary>
-
-https://follow-e-lo.com/
-
-</details>
-
----
-### Bash/ps1 for admin, zabbix_sender, telegraf (?), Python for complex
-
-<details>
-
-<summary>Scripting automation, idempotent.</summary>
-
-* Linux bash, cron, python, zabbix_sender,  telegraf
-* Windows powershell, schedule task, zabbix_sender, telegraf
-* Python for complexity 
-* MySql, Sqlplus
-* Telegraf, https://github.com/influxdata/telegraf
-
-</details>
+1. [Setup & Environment](#setup--environment)
+2. [Tools & Platforms](#tools--platforms)
+3. [Scripting Stack](#scripting-stack)
+4. [🛠️ GitHub Copilot & Development](#-github-copilot--development)
+5. [Infrastructure Essentials](#infrastructure-essentials)
+6. [Current Priorities: TOP 3](#current-priorities-top-3)
+7. [Knowledge Maintenance Checklist](#knowledge-maintenance-checklist)
+8. [Completed Tasks ✅](#completed-tasks-)
+9. [Parked Projects 🚁](#parked-projects-)
+10. [Learning Resources & References](#learning-resources--references)
 
 ---
 
+## Setup & Environment
 
-## 🛠️  Github CoPilot
+### Windows 11 Dark Mode
+Enable dark mode for reduced eye strain:
+- Settings > Personalization > Colors
+- Select "Dark" under "Choose your mode"
+- Applies dark gray theme to system backgrounds, apps, taskbar, and Start menu
 
-* Create an issue, title, description, path and steps and provide the URL for the exact file or folder
-* Navigate to your respos with VSC
-* Press Ctrl+Alt+I (Windows/Linux) or Command+Option+I (macOS) to immediately open the Chat view in the Secondary Side Bar.
-* Paste the issue number URL to the chat
-* See live edits, keep or remove, add, commit, push
+### Screen Background for Eye Strain
+**Recommended colors:**
+- **Light environments:** Light green, pale yellow, soft beige
+- **Dark environments:** Dark grey or warm brown backgrounds with light text
+- **Avoid:** Bright white backgrounds
 
-* Ask it also to review your file; could we make it better and more readable?
-
-* https://github.com/spawnmarvel/todo-and-current/blob/main/copilot/README.md
-
----
-
-<details>
-
-
-<summary>Github tips</summary>
-
-How to Fix the "Rejected" Push, hint: Updates were rejected because the tip of your current branch is behind.
-
-This usually happens if you edited a file (like a README or .gitignore) directly on the GitHub website or if you pushed changes from a different machine.
-
+### Chromebook Linux Maintenance
+Use your Chromebook as command-line only (no GUI):
 ```bash
-# Option 2: The Clean Way (Rebase) - Recommended
-# This is often preferred because it takes your local changes, "lifts" them up
-# , pulls the remote changes, and then puts your changes back on top.
-#  It keeps the history linear and clean.
-
-git pull --rebase origin main
-git push origin main
-
-```
-
-</details>
-
----
-
-<details>
-
-<summary>VSC extension bash, git bash for windows</summary>
-
-🛠️  Bash IDE
-
-* Jump to declaration
-* Find references
-* Code Outline & Show Symbols
-* Highlight occurrences
-* Code completion
-* Simple diagnostics reporting
-* Documentation for flags on hover
-
-🛠️ Option 1: Git Bash (Simplest & Most Common)
-If you have Git installed on Windows, you already have "Git Bash." This is the easiest way to get a Linux-like terminal inside VS Code.
-
-🔹 How to set it up:
-
-* Open VS Code.
-* Press Ctrl + `  (backtick) to open the terminal.
-* On the right side of the terminal window, click the + (plus) icon dropdown.
-* Select Select Default Profile.
-* Choose Git Bash.
-
-Now, when you open a new terminal, you can just type ./your_script.sh to play your game.
-
-</details>
-
----
-
-<details>
-
-<summary>AD DS mhybrid01 is DC and DNS server</summary>
-
-Nb: Outbund from vm's ? vmhybrid01 is DC is responsible for (it must be running)
-
-* Step C: The Azure "Bridge" (In the Portal) use domain controller vm as DNS server
-* By doing this at the VNet level, every other VM you create in the future will automatically use vmhybrid01 as its DNS server via DHCP. This makes "Domain Joining" other VMs effortless.
-* The "Forwarder" Requirement: Now that your VNet is pointing to your DC for DNS, your DC is responsible for resolving the internet.
-
-https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-800-admistering-windows-server-hybrid-core-infrastructure/README_cloud-only-hybrid-Lab_2_install-ad.md
-
-</details>
-
-<details>
-<summary>Fast Linux Vm ? GOTO iac_fast_biceps</summary>
-
-Deploy within 1 min and remove within 1 min, autoshutdown is also enabled if we forget to remove.
-</details>
-
----
-
-## TODO Maintain knowledge priority top 3 :seedling:
-
-Well, this never stops, so lets make a priority list of all the topics below.
-
-#### On all Azure vm (NO LOGIN) got to Operations->Run command (ps1 / sh)
-
-### Bash, use it and talk it
-   - Play around, the basics are in now.
-   - Continue the ***countries game***, expand and expand, use bash commands as normal commands
-   - Expand it, do more
-   - Make matrix stuff also on the screen/ effects, launch it online
-
-### 1. Octopus Deploy for linux (is 2 in one CI/CD)
-   - Use IAC linux vm for fast deploy and remove
-   - Two projects (win/lin) and 100's of runbooks, we do linux project for now
-   - Do all linux apps and day 2 operations in:
-   - Do Diagnostics, normal linux commands
-   - Do upload packets and variables ** Use more time here
-   - Do install software MySQL, etc
-   - Do follow the guide in
-   - - https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/README_octo_linux_runbook_operations.md
-
-![deploy123](https://github.com/spawnmarvel/todo-and-current/blob/main/images/deploy123.png)
-
-### 2. Windows Server Hybrid Administrator vmhybrid01
-   - Continue with MS learn Active Directory
-   - MS learn Arc
-   - MS learn file sync
-   - - GOTO step 3 below for actual timeline and tasks
-
-### 3. Grafana, loki and configure alloy agents
-   - Set it up and start with log monitoring using that stack
-   - Saved in TODO repos
-
-
-
---- 
-
-### Maintain knowledge checklist
-
-Do use chromebook Debian GNU/Linux 12 (bookworm), do not install any GUI, chromebook is for command line only
-
-```bash
-# on chromebook
+# Keeps system updated
 sudo apt update -y
 sudo apt upgrade -y
-# every now and then
+
+# Regular maintenance
 df -h
 sudo apt autoremove
 sudo apt autoclean
 
-# Bash won't show ghost text, but it has Programmable Completion.
-# type ssh, cd, pwd, ls, and then hit the Tab key once or twice.
-
+# Bash Tip: Use Tab for Programmable Completion
+# Type: ssh, cd, pwd, ls then press Tab once or twice
 ```
-1. :bulb: Linux maintenance:
-    
-    - :white_check_mark:  Do the bash tutorial w3s and make a good quick guide = 100%
-    - Do bash rpg game like UIB = 60%
-    - :white_check_mark: Do install offline zabbix agent from *.deb = 100%
-    - Do the mirror-server = 50%
-    - - Saved in azure-extra-linux-vm-mirror
-    - Do proxy readme proxy and architecture = 100%
-    - :white_check_mark: Do make a proxy for the on premises 7.0.22, vmchaos09 push/active vmzabbix02 = 100% 
-    - :white_check_mark: Do send agent proxy data to main = 100%
-    - :white_check_mark: Do proxy  = 
-    - - Saved in /zabbix_monitoring_vms
-    - Do SNMP with zabbix
-    - - Saved in /zabbix_monitoring_vms
-    - :white_check_mark: Do linux Vm updates are now on autmation runbook, tag Patching: Weekly, Mondays 09:00 = 100%
-    - - Saved in az-automation-runbook-and-choices
-    - :white_square_button:Do https = always openssl
-    - :white_square_button:Do Chaos Engineer bash vmchaos09
-    - :white_square_button:Do use Octupus (free) for CD (zabbix, mysql etc)
 
+---
+
+## Old website parked
+
+### E-lo (parked) :anchor:
+https://follow-e-lo.com/
+
+---
+
+## Scripting Stack
+
+Use technologies for their strengths:
+
+| Platform | Technologies |
+|----------|--------------|
+| **Linux** | Bash, cron, Python, Zabbix sender, Telegraf |
+| **Windows** | PowerShell, Schedule tasks, Zabbix sender, Telegraf |
+| **Complex Logic** | Python |
+| **Databases** | MySQL, SQLPlus |
+| **Monitoring** | Telegraf https://github.com/influxdata/telegraf |
+
+**Best Practice:** Turn commands into Bash or PowerShell scripts. Replace hardcoded values with variables:
 ```bash
-# Turn those commands into a Bash or PowerShell script. Replace hardcoded values with variables for automation.
 # Bad: 
 mysql --user=root --password=Password123
+
 # Good: 
 mysql --user=#{MySQL.User} --password=#{MySQL.Password}
 ```
 
-2. MySql maintenace:
-    - Do the w3s tutorial in mysql cli
-    - Make a quick guide CRUD/DML/DCL and tips together with cmd`s.
-    - Do performance tuning 
-    - :white_check_mark: Do upgrade Azure Database for MySQL flexible server 8-8.4, zabbix 6.0.43 = 100%
-    - - Saved in /zabbix_monitoring_vms
-    - :white_check_mark: Do install mysql localhost = 100%
-    - Do MySQL replication to Azure Flexible server from local, local is source az is replica
-    - :white_square_button: Focus on the basic and also Zabbix tips and tricks.
-    - :white_square_button: Azure Database for MySQL flexible server
-    - :white_square_button: MySQL workbench and cli
+---
 
-3. :bulb: AZ-802: Windows Server Hybrid Administrator (june 2026)
-   - :white_check_mark: AD DS is installed  = 100%
-   - :white_check_mark: Do The "Cloud-Only" Hybrid Lab (to get some hand on) = 100%
-   - :bulb: Do the MS learn Active Directory Domain Services = 
-   - :bulb: Do the MS Azure Arc = 
-   - :bulb: Do the MS Azure File sync = 
-   - - vmhybrid01
-   - - Then jump to AZ-802 Windows Server Hybrid Administrator Study Guide in june 2026 (maybe)
-   - - Saved in https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-ad-ds-windows-server-hybrid-core-infrastructure
-  
+## 🛠️ GitHub Copilot & Development
 
-4. Octopus deploy (free)
-   - :white_check_mark: Do first deployment windows, project, relase, step, process and vars, push deploy to target = 100%
-   - :white_check_mark: Do first deployment linux, project, relase, step, process and vars, push deploy 2 target = 100%
-   - :white_check_mark: Do tutorial first Runbok = 100%
-   - Do project Linux Day2 Operations
-   - Do Diagnostics, normal linux commands = 100%
-   - Do upload packets and variables = 
-   - Do install software MySQL, etc = 
-   - Do all linux apps and day 2 operations in:
-   - - https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/README_runbook_linux_tips.md
+### Using GitHub Copilot Workflow
+1. Create an issue with title, description, path, and steps
+2. Navigate to your repo with VS Code
+3. Press `Ctrl+Alt+I` (Windows/Linux) or `Cmd+Option+I` (macOS)
+4. Paste the issue URL to the chat
+5. Review live edits, keep or modify as needed
+6. Commit and push changes
 
+### Asking for Help
+Ask Copilot to review your files: "Could we make this better and more readable?"
 
-
-
---- 
-
-5. Az-104 administrator mainteance:
-    - :white_check_mark: Do Vm updates with azure automation runbook ps1 = 100%
-    - :white_check_mark: Do update all Vms with tag Patching: Weekly, Mondays 09:00 = 100%
-    - :white_check_mark: Do stop Azure Database for MySQL flexible server with autmation runbook Sundays 23:00 = 100%
-    - :white_check_mark: Do azure automation set up alert = 
-    - :white_check_mark: Do runbook keyvault = not needed for managed identity = 100%
-    - Do runbook store account file uplpad
-    - - Saved in az-automation-runbook-and-choices
-    - Do Vm tutorials from docs = 
-    - :white_square_button: Do azure automation for save cost/mainteance and check Automatic Module Update
-    - :white_square_button: Do add start/stop vmhybrid01 is DC is responsible for internet (it must be running)
+📖 Learn more: [Copilot README](https://github.com/spawnmarvel/todo-and-current/blob/main/copilot/README.md)
 
 ---
 
-# Below is parked, go up.
+### Git Common Tasks
 
-Misc / wait / parked
+#### Fix "Rejected" Push
+When: "Updates were rejected because the tip of your current branch is behind"
 
-6. (Python maintenance:)
-    - :white_square_button: Code a few lines every now and then.
-    - Do py-central-monitor, fix the database logic, send always and store in file also, then update database 
-    - Below is parked for now:
-    - Do a build then push and pull to Docker hub, parked :anchor:
-    - Do Make small changes in python frequently, set container always run, parked :anchor:
- 
+This happens when you edited files directly on GitHub or pushed from a different machine.
 
-7. (Docker maintenance, parked :anchor:)
-      - Do follow up on prod-2 stuff.
-      - :white_check_mark: Do Portainer = 100% success
-      - Do MySQL, Grafana (and plugins) = 70 % success, we wait
-      - :white_check_mark: Do the nemesis: Zabbix = 100% success
-      - Do send push and pull from vm = 
-      - Do https = 
-      - Do alter zabbix_server.conf = 
+**Solution (Rebase - Recommended):**
+```bash
+git pull --rebase origin main
+git push origin main
+```
 
 ---
 
+### VS Code Extensions & Setup
 
-## Done 1 Bash tutorial, repeat, repeat and repeat :rocket: :repeat: :rocket:
+#### Bash IDE Features
+- Jump to declaration
+- Find references
+- Code Outline & Show Symbols
+- Highlight occurrences
+- Code completion
+- Simple diagnostics reporting
+- Documentation for flags on hover
 
-* Go over all chapters = 100%
-* Mirros server and test with zabbix apt = 100%
+#### Setting Up Git Bash Terminal in VS Code
 
-https://github.com/spawnmarvel/todo-and-current/blob/main/bash/README_bash.md
+1. Open VS Code
+2. Press `Ctrl + `` (backtick) to open terminal
+3. Click the `+` dropdown on the right side
+4. Select "Select Default Profile"
+5. Choose "Git Bash"
 
-
---- 
-
-## Parked 2 Docker, Azure :airplane:
-
-* Python as container in docker (the getting started docker) = 
-
-https://github.com/spawnmarvel/learning-docker/blob/main/1.3-containerize-python-application-2/README.md
-
-* Then Implement containerized solutions
-* Do tutorials = 
-* Do RabbitMQ
-* Do Python application 
-* Do
-
-https://github.com/spawnmarvel/learning-docker/blob/main/1.4-azure-container-instance-2/README.md
+Now run scripts directly: `./your_script.sh`
 
 ---
 
-## TBD 3 Docker :helicopter:
+## Infrastructure Essentials
 
-* Portainer = ok
-* Grafana and MySQL with http and https = ok
-* Zabbix nemisis = is done https://github.com/spawnmarvel/learning-docker/tree/main/prod-ish-2/zabbix
-* Zabbix plugin = ok
-* Grafana and MySQL, https, Loki and Alloy on remote servers = 
-* RabbitMQ = 
-* RabbitMQ shovel http and https = 
+### Azure VM Operations
+**Important:** On all Azure VMs, go to Operations > Run command (ps1 / sh)
 
-https://github.com/spawnmarvel/learning-docker
+### AD DS Configuration (vmhybrid01)
+vmhybrid01 is the **DC and DNS server** - it must be running for network operations.
 
-## (Always) AZ-104 certified professional must know, fill the gaps here (network, monitor, web apps)
+**Set Azure Bridge in Portal:**
+- Use domain controller VM as DNS server for VNet
+- This makes Domain Joining other VMs effortless
+- DC becomes responsible for resolving internet traffic
 
-* Azure vm tutorials (after that network tutorials, end loop over all areas indepth for az-104 and beyond)
+📖 Reference: [Azure AD DS Install Guide](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-800-admistering-windows-server-hybrid-core-infrastructure/README_cloud-only-hybrid-Lab_2_install-ad.md)
 
-https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-vm
-
-* Repeat, repeat and repeat stuff
-
-https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-certified-professional
-
-* Azure speed test
-
-https://www.azurespeed.com/Azure/Latency
-
-## TODO MS Learn misc
-
-* Secure Windows Server user accounts
-
-https://learn.microsoft.com/en-us/training/modules/secure-windows-server-user-accounts/?source=recommendations
-
-* Secure group managed service accounts
-
-https://learn.microsoft.com/en-us/entra/architecture/service-accounts-group-managed?source=recommendations
-
-## TBD (for fun) Azure SQL Database
-
-https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-sql/README.md
+### Fast Linux VM Deployment
+**GOTO:** `iac_fast_biceps`
+- Deploy within 1 min
+- Remove within 1 min
+- Autoshutdown enabled (safety if forgotten)
 
 ---
 
-## Network advanced tutorial and checklist
+## Current Priorities: TOP 3
 
-https://follow-e-lo.com/network-and-netsh/
+### 1. Octopus Deploy for Linux (CI/CD) ⭐
 
-## Linux :hotel:
+**Setup:**
+- Use IAC Linux VM for fast deploy and remove
+- Two projects: Windows & Linux
+- Focusing on Linux project now
 
-* UFW, SSH, PS1, Bash quick ref, file system hierarchy, grep, tail, script, env, cron, py
+**Current Tasks:**
+- Diagnostics using normal Linux commands ✅ 100%
+- Upload packages and variables (needs more time)
+- Install software (MySQL, etc.)
+- All Linux apps and day 2 operations
 
-https://github.com/spawnmarvel/linux-and-azure
+**Guide:** [Octopus Linux Runbook Operations](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/README_octo_linux_runbook_operations.md)
 
-### Linux quick guide grep it
+**Progress:** ![deploy123](https://github.com/spawnmarvel/todo-and-current/blob/main/images/deploy123.png)
 
-https://github.com/spawnmarvel/todo-and-current/blob/main/bash/README_bash.md
+---
 
-and the zabbix troubleshoot
+### 2. Windows Server Hybrid Administrator (vmhybrid01) ⭐
 
-https://github.com/spawnmarvel/linux-and-azure?tab=readme-ov-file#grep-it
+Exam target: **AZ-802** (June 2026)
 
-### Linux mind maps
+**Completed:**
+- ✅ AD DS is installed (100%)
+- ✅ Cloud-Only Hybrid Lab completed (100%)
 
-https://github.com/spawnmarvel/linux-and-azure/tree/main/z-mind-maps
+**In Progress:**
+- 📚 MS Learn Active Directory Domain Services
+- 📚 MS Learn Azure Arc
+- 📚 MS Learn Azure File Sync
 
-### Linux ubuntu mirror server
+**Study Plan:**
+- Complete all MS Learn modules
+- Study guide: [Azure AD DS & Hybrid Infrastructure](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-ad-ds-windows-server-hybrid-core-infrastructure)
+- Schedule exam for June 2026
 
-https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm-mirror
+---
 
-### Ubuntu server documentation
+### 3. Grafana, Loki, and Alloy Agents ⭐
 
-https://documentation.ubuntu.com/server/
+**Goal:** Set up log monitoring stack
 
-## Apache Tomcat (Solr) (Deleted server, is archive)
+**Tasks:**
+- Install and configure Grafana
+- Configure Loki
+- Deploy Alloy agents across infrastructure
+- Monitor logs from all services
 
-Windows.
+---
 
-Install java, apache tomcat, learn logs, install solr, upgrade apache.
+## Knowledge Maintenance Checklist
 
-<details><summary>Overview of plan</summary>
-<p>
+### 1. :bulb: Linux Maintenance
 
-#### We can hide anything, even code!
+**Completed:**
+- ✅ Bash tutorial W3S + quick guide (100%)
+- ✅ Zabbix agent offline install from .deb (100%)
+- ✅ Proxy setup for on-premises (100%)
+- ✅ Agent proxy data routing (100%)
+- ✅ Linux VM updates automation runbook (100%) - Tag: `Patching: Weekly, Mondays 09:00`
 
-* Install Apache Tomcat on dmzwindows07
-* Fix log levels and log size of apache
+**In Progress:**
+- 🔄 Bash RPG game expansion (60%)
+- 🔄 Mirror server setup (50%)
+- 🔄 HTTPS/OpenSSL integration (pending)
+- 🔄 Chaos Engineer bash scripts for vmchaos09 (pending)
+- 🔄 Octopus (free) for CD deployment (pending)
 
-* (fix this 1 out of 3)
-* Install solr
-* * Apache Tomcat and Solr windows fix logging 1 out of 3, optimization after scan
-* Upgrade Apache Tomcat 
+**SNMP with Zabbix:** [Zabbix Monitoring VMs](https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm/zabbix_monitoring_vms)
 
-</p>
-</details>
+---
 
-https://github.com/spawnmarvel/quickguides/tree/main/apache_tomcat_and_solr
+### 2. MySQL Maintenance
 
-### Zabbix stack :traffic_light:
+**Completed:**
+- ✅ Azure Database for MySQL upgrade 8.0 → 8.4 (100%) - Zabbix 6.0.43
+- ✅ Local MySQL installation (100%)
 
-Ubuntu.
+**In Progress:**
+- W3S MySQL CLI tutorial
+- Quick guide: CRUD/DML/DCL with commands
+- Performance tuning
+- MySQL replication (local → Azure Flexible Server)
 
-<details><summary>Academy, stack, templates active passive, tuning, minor, major, etc </summary>
-<p>
+**Resources:** [MySQL & Zabbix Guide](https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms)
 
-#### We can hide anything, even code!
+---
 
+### 3. AZ-802: Windows Server Hybrid Administrator (june 2026)
 
-Zabbix 7 Browser items
+**Completed:**
+- ✅ AD DS installed (100%)
+- ✅ Cloud-Only Hybrid Lab completed (100%)
 
-* https://www.zabbix.com/documentation/7.0/en/manual/config/items/itemtypes/browser
+**Study Plan:**
+- 📚 MS Learn Active Directory Domain Services
+- 📚 MS Learn Azure Arc
+- 📚 MS Learn Azure File Sync
+- 🎯 Jump to AZ-802 Study Guide when ready
 
-Zabbix Academy
+**Info:** [Azure AD Infrastructure](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-ad-ds-windows-server-hybrid-core-infrastructure)
 
-* https://academy.zabbix.com/courses
+---
 
+### 4. Octopus Deploy (Free)
 
-* Zabbix blog
+**Completed:**
+- ✅ Windows first deployment (100%)
+- ✅ Linux first deployment (100%)
+- ✅ Runbook basics (100%)
+- ✅ Linux diagnostics (100%)
 
-https://blog.zabbix.com/
+**In Progress:**
+- Upload packages and variables
+- Install software (MySQL, etc.)
+- Day 2 operations automation
 
-* Zabbix Stack
+**Runbook Guide:** [Linux Tips & Operations](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/README_runbook_linux_tips.md)
 
-https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/README_stack.md
+---
 
-* Zabbix Tuning
+### 5. AZ-104: Azure Administrator Maintenance
 
-https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/README_tuning.md
+**Completed:**
+- ✅ VM updates automation runbook (PS1) (100%)
+- ✅ Patching automation with tags (100%) - `Patching: Weekly, Mondays 09:00`
+- ✅ MySQL Flexible Server autoshutdown (100%) - Sundays 23:00
+- ✅ Azure Automation alerts (100%)
+- ✅ Runbook Keyvault (not needed for managed identity) (100%)
 
-* Zabbix Templates, active passiv
+**In Progress:**
+- Runbook storage account file upload
+- VM tutorial series
+- Azure automation cost management
+- Start/stop vmhybrid01 (DC must always be running for internet)
 
-https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/templates/README_templates.md
+**Resources:** [Azure Automation Runbooks](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-automation-runbook-and-choices)
 
-* Zabbix User parameter advanced
+---
 
-https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/README_stack.md#user-parameter-advanced
+## Completed Tasks ✅
 
-* Zabbix minor upgrade
+### 1. Bash Tutorial :rocket: :repeat: :rocket:
 
-https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/README_upgrade_zabbix_host_one.md
+- ✅ Go over all chapters (100%)
+- ✅ Mirror server and test with Zabbix apt (100%)
 
-* Zabbix major upgrade
+📖 [Bash README](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/README_bash.md)
 
-https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/README_upgrade_zabbix_major.md
+---
 
-* Zabbix SSL
+## Parked Projects 🚁
 
-https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/README_https_zabbix.md
+### 2. Docker & Azure :airplane:
 
-APT sources out
+**Python as Container in Docker:**
+- Getting started tutorial
+- Containerize Python application (30%)
+- Implement containerized solutions (pending)
 
-Ubuntu, MySql, PHP:
-* etc/apt/sources.list.d$ cat ubuntu.sources
-* * archive.ubuntu.com (80, 443)
-* * patches for vulnerabilities security.ubuntu.com (80, 443)
+📖 [Containerize Python Application](https://github.com/spawnmarvel/learning-docker/blob/main/1.3-containerize-python-application-2/README.md)
+
+**Then:**
+- Azure Container Instance tutorial
+- RabbitMQ
+- Python application deployment
+
+📖 [Azure Container Instance](https://github.com/spawnmarvel/learning-docker/blob/main/1.4-azure-container-instance-2/README.md)
+
+---
+
+### 3. Docker Stack :helicopter:
+
+**Completed:**
+- ✅ Portainer (100%)
+- ✅ Zabbix (100%) - [Docker Zabbix](https://github.com/spawnmarvel/learning-docker/tree/main/prod-ish-2/zabbix)
+
+**In Progress:**
+- Grafana and MySQL with HTTP/HTTPS
+- Grafana and MySQL with HTTPS, Loki, and Alloy on remote servers
+- RabbitMQ setup
+- RabbitMQ Shovel HTTP/HTTPS
+
+📖 [Learning Docker](https://github.com/spawnmarvel/learning-docker)
+
+---
+
+### 6. Python Maintenance (Parked)
+
+- 🔄 Code a few lines regularly
+- 📦 py-central-monitor: Fix database logic, send always, store in file
+- 🚫 Build & push to Docker Hub (parked :anchor:)
+- 🚫 Container with continuous run (parked :anchor:)
+
+---
+
+### 7. Azure SQL Database (For Fun)
+
+📖 [Azure SQL Database](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-sql/README.md)
+
+---
+
+## Learning Resources & References
+
+### Continuing Education
+
+#### AZ-104: Certified Professional Must Know
+Fill the gaps in networking, monitoring, and web apps:
+- **Azure VM Tutorials:** [AZ-104 VM](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-vm)
+- **Core Skills:** [AZ-104 Certified Professional](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-certified-professional)
+- **Azure Speed Test:** https://www.azurespeed.com/Azure/Latency
+- **Network Advanced Tutorial:** https://follow-e-lo.com/network-and-netsh/
+
+---
+
+#### MS Learn Recommendations
+- [Secure Windows Server User Accounts](https://learn.microsoft.com/en-us/training/modules/secure-windows-server-user-accounts/?source=recommendations)
+- [Secure Group Managed Service Accounts](https://learn.microsoft.com/en-us/entra/architecture/service-accounts-group-managed?source=recommendations)
+
+---
+
+### Linux Resources :hotel:
+
+**Topics:** UFW, SSH, PS1, Bash quick ref, file system hierarchy, grep, tail, script, env, cron, Python
+
+📖 [Linux & Azure](https://github.com/spawnmarvel/linux-and-azure)
+
+#### Linux Quick Guides
+- **Bash Quick Reference:** [Bash README](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/README_bash.md)
+- **Zabbix Troubleshoot:** [Linux & Azure Grep It](https://github.com/spawnmarvel/linux-and-azure?tab=readme-ov-file#grep-it)
+- **Mind Maps:** [Linux Mind Maps](https://github.com/spawnmarvel/linux-and-azure/tree/main/z-mind-maps)
+- **Mirror Server:** [Ubuntu Mirror Server](https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm-mirror)
+- **Ubuntu Documentation:** https://documentation.ubuntu.com/server/
+
+---
+
+### Zabbix Stack :traffic_light:
+
+#### Resources
+- **Academy:** https://academy.zabbix.com/courses
+- **Blog:** https://blog.zabbix.com/
+- **Docs:** https://www.zabbix.com/documentation/7.0/en/manual/config/items/itemtypes/browser
+
+#### Setup & Configuration
+- **Stack Setup:** [Zabbix Stack](https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/README_stack.md)
+- **Performance Tuning:** [Zabbix Tuning](https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/README_tuning.md)
+- **Templates (Active/Passive):** [Zabbix Templates](https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/templates/README_templates.md)
+- **User Parameter Advanced:** [User Parameters](https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/README_stack.md#user-parameter-advanced)
+
+#### Upgrades
+- **Minor Upgrade:** [Zabbix Minor Upgrade](https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/README_upgrade_zabbix_host_one.md)
+- **Major Upgrade:** [Zabbix Major Upgrade](https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/README_upgrade_zabbix_major.md)
+- **SSL/HTTPS:** [Zabbix HTTPS](https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/README_https_zabbix.md)
+
+#### APT Sources
+```
+Ubuntu, MySQL, PHP:
+- archive.ubuntu.com (80, 443)
+- security.ubuntu.com (80, 443)
+
 Zabbix:
-* repo.zabbix.com** → whitelist that domain (port 443)
-* * etc/apt/sources.list.d$
+- repo.zabbix.com → whitelist domain (port 443)
+```
 
-</p>
-</details>
+---
 
-https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/README_stack.md
+### Archived Stacks
 
-### Elastic stack :traffic_light: (Deleted server, is archive)
+#### Apache Tomcat & Solr (Windows) - Archived
+- Install Java, Apache Tomcat, Solr
+- Fix log levels and sizes
+- Upgrade Apache Tomcat
 
-Ubuntu.
+📖 [Apache Tomcat & Solr](https://github.com/spawnmarvel/quickguides/tree/main/apache_tomcat_and_solr)
 
-https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/kibana-elasticsearch-file-beat/README.md
+#### Elastic Stack (Ubuntu) - Archived
+📖 [Kibana, Elasticsearch, Filebeat](https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/kibana-elasticsearch-file-beat/README.md)
 
-### Grafana Zabbix (Deleted server, is archive)
+#### Grafana & Zabbix (Ubuntu) - Archived
+- Deploy dashboards and integrations
+- Grafana Agent (OpenTelemetry Collector)
 
-Ubuntu.
+📖 [Grafana Zabbix](https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm/grafana-zabbix)
+📖 [Grafana Agent Docs](https://grafana.com/docs/agent/latest/)
 
-* Play with dasboards and more.
+#### RabbitMQ (Ubuntu) - Archived
+- X.509 Shovel with TLS
+- amqp_client alternatives
+- Certificate requests and renewal
 
-https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm/grafana-zabbix
+📖 [RabbitMQ](https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm/rabbitmq-server)
+📖 [X.509 Shovel Config](https://github.com/spawnmarvel/quickguides/blob/main/amqp/x509/vm1_advanced_11.config)
+📖 [Certificate Requests](https://github.com/spawnmarvel/quickguides/blob/main/amqp/RequestRenewExample/README.md)
 
-* Grafana Agent is an OpenTelemetry Collector
+#### Telegraf
+Input: file, AMQP, disk, CPU
+Output: file, AMQP, Zabbix
 
-https://grafana.com/docs/agent/latest/
+📖 [Telegraf Setup](https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm/telegraf)
+📖 [Telegraf Docs](https://docs.influxdata.com/telegraf/v1/)
 
-### RabbitMQ (Deleted server, is archive)
+#### Docker RabbitMQ
+📖 [RabbitMQ SSL](https://github.com/spawnmarvel/learning-docker/blob/main/prod-ish/rmq/rmq-ssl/README.md)
 
-Ubuntu.
+---
 
-* RabbitMQ ubuntu shovel test new versions mtls = GOTO TBD, TLS amqp05_server.cloud TODO
+### Main Project Repositories
 
-https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm/rabbitmq-server
+#### azure-automation-bicep-and-labs :muscle:
+📖 [Repository](https://github.com/spawnmarvel/azure-automation-bicep-and-labs)
 
+#### AZ-104 Certified Professional Must Know :sunglasses:
+📖 [AZ-104 Repository](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-certified-professional)
 
-* X.509 Shovel, then amqp_client is not needed.
+#### Quickguides :fire_engine:
+- Apache Tomcat & Solr
+- AMQP (Requests, Certificate Decoder, Erlang 26)
+- Azure Administrator AZ-104
+- Bash, Cogent, Event Hub, etc.
 
-https://github.com/spawnmarvel/quickguides/blob/main/amqp/x509/vm1_advanced_11.config
+📖 [Quickguides Repository](https://github.com/spawnmarvel/quickguides)
 
+**Notable:**
+- [Prosys OPC UA Sim + Cogent Client + InfluxDB](https://github.com/spawnmarvel/quickguides/blob/main/cogent-opcua-influxdb/README.md)
+- [Computer Science](https://github.com/spawnmarvel/quickguides/blob/main/computer-science/README.md)
 
-* Requests and renew
+---
 
-https://github.com/spawnmarvel/quickguides/blob/main/amqp/RequestRenewExample/README.md
+### Release Notes & Updates :newspaper:
 
-### Telegraf
+Keep up with the latest updates:
 
-Ubuntu/Windows
+- **Gemini:** https://gemini.google/release-notes/
+- **AZ-104:** https://learn.microsoft.com/en-us/training/browse/?terms=az-104&source=learn&roles=administrator&products=azure&resource_type=learning%20path
+- **Zabbix:** https://www.zabbix.com/release_notes
+- **MySQL:** https://dev.mysql.com/doc/relnotes/mysql/8.0/en/
+- **RabbitMQ:** https://www.rabbitmq.com/release-information
+- **Telegraf:** https://docs.influxdata.com/telegraf/v1/release-notes/
+- **Docker:** https://docs.docker.com/tags/release-notes/
+- **AspenTech:** https://esupport.aspentech.com/apex/S_Homepage
+- **SQLite:** https://sqlite.org/index.html
 
-* input: file, amqp, disk, cpu
-* output: file, amqp, zabbix
+---
 
-https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm/telegraf
+## Additional Resources
 
-* Docs
+- **Certificate Decoder:** https://certlogik.com/decoder
+- **Erlang 26 Guide:** [Erlang 26](https://github.com/spawnmarvel/quickguides/blob/main/amqp/Readme.md#erlang-26)
+- **Azure Speed Test:** https://www.azurespeed.com/Azure/Latency
 
-https://docs.influxdata.com/telegraf/v1/
+---
 
-
-### Docker RabbitMQ
-
-https://github.com/spawnmarvel/learning-docker/blob/main/prod-ish/rmq/rmq-ssl/README.md
-
-## Azure-automation-bicep-and-labs :muscle:
-
-https://github.com/spawnmarvel/azure-automation-bicep-and-labs
-
-## AZ-104 certified professional must know :sunglasses: :+1: :+1:
-
-https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-certified-professional
-
-## quickguides :fire_engine:
-
-* Apache Tomcat and Solr
-
-https://github.com/spawnmarvel/quickguides/blob/main/apache_tomcat_and_solr/README.md
-
-* amqp
-* * Requests and renew certificate
-
-https://github.com/spawnmarvel/quickguides/blob/main/amqp/RequestRenewExample/README.md
-
-* * CSR and Certificate Decoder
-
-https://certlogik.com/decoder
-
-* * Erlang 26
-
-https://github.com/spawnmarvel/quickguides/blob/main/amqp/Readme.md#erlang-26
-
-* Azure Administrator AZ-104 quick guide for repeat
-* bash
-* cogent
-* event hub
-* etc
-
-https://github.com/spawnmarvel/quickguides
-
-* Prosys OPC UA sim, Cogent OPC UA client, InfluxDB, OPC UA expert, db21
-
-https://github.com/spawnmarvel/quickguides/blob/main/cogent-opcua-influxdb/README.md
-
-* Computer Science
-
-https://github.com/spawnmarvel/quickguides/blob/main/computer-science/README.md
-
-## Releases :newspaper: :exclamation:
-
-* Releases/Notes/Updates Gemini
-* * https://gemini.google/release-notes/
-* Releases/Notes/Updates Az-104
-* * https://learn.microsoft.com/en-us/training/browse/?terms=az-104&source=learn&roles=administrator&products=azure&resource_type=learning%20path
-* Release/Notes/Updates Zabbix
-* * https://www.zabbix.com/release_notes 
-* Release/Notes/Updates MySql
-* * https://dev.mysql.com/doc/relnotes/mysql/8.0/en/
-* Release/Notes/Updates RabbitMQ
-* * https://www.rabbitmq.com/release-information
-* Release/Notes/Updates Telegraf
-* * https://docs.influxdata.com/telegraf/v1/release-notes/
-* Release/Notes/Updates Docker
-* * https://docs.docker.com/tags/release-notes/
-* Releases/Notes/Updates Aspentech
-* * https://esupport.aspentech.com/apex/S_Homepage
-* Sqlite
-* * https://sqlite.org/index.html
-
-
-
-
-
-
+*Last updated: April 17, 2026*
+*Philosophy: Manage workflow with good music, optimize your environment, adjust your mindset and habits.*
