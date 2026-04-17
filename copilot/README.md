@@ -47,7 +47,7 @@ Please review and fix the formatting for the file at:
 Instructions:
 🔹 Fix uppercase/lowercase for technical terms.
 🔹 Ensure all sentences end with a period ..
-🔹 Ignore the root README.md file; only apply changes to the one inside the copilot folder.
+🔹 Ignore the root README.md file; only apply changes to the one inside the chromebook folder.
 
 ## 2. Trigger the Fix (Two Methods)
 
