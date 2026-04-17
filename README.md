@@ -314,7 +314,6 @@ Exam target: **AZ-802** (June 2026)
 - ✅ Go over all chapters (100%)
 - ✅ Mirror server and test with Zabbix apt (100%)
 
-📖 [Bash README](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/README_bash.md)
 
 ---
 
@@ -376,9 +375,9 @@ Exam target: **AZ-802** (June 2026)
 #### AZ-104: Certified Professional Must Know
 Fill the gaps in networking, monitoring, and web apps:
 - **Azure VM Tutorials:** [AZ-104 VM](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-vm)
-- **Core Skills:** [AZ-104 Certified Professional](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-certified-professional)
+- **Core Skills:** [AZ-104 Certified Professional](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-administrator-certified-professional)
 - **Azure Speed Test:** https://www.azurespeed.com/Azure/Latency
-- **Network Advanced Tutorial:** https://follow-e-lo.com/network-and-netsh/
+- **Network Advanced Tutorial:** https://github.com/spawnmarvel/todo-and-current/tree/main/sysadmin_and_netsh
 
 ---
 
