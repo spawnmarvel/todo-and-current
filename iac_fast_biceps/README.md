@@ -12,10 +12,18 @@ By doing this at the VNet level, every other VM you create in the future will au
 
 Since your Linux machines are now going to ask 192.168.3.7 for everything (including google.com or Ubuntu update mirrors), you must ensure the Windows DC knows how to "pass the ball."
 
-💠 There is auto shutdown at every night for this vm
+If you haven't done this yet, do it now on vmhybrid01:
+
+* Open DNS Manager.
+
+* Right-click vmhybrid01 > Properties > Forwarders.
+
+* Add 168.63.129.16 (Azure's DNS).
+
+💠 There is auto shutdown at every night for this vm also.
 
 ```bash
-# vmhybrid01 no started
+# vmhybrid01 not started
 ping www.ba.no
 
 # vmhybrid01 started
@@ -30,16 +38,25 @@ https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-ad-d
 
 This is just for fast deploy and remove.
 
-### Deploy vm linux
+### Deploy vm linux with powershell or bash
 
 Template and script for vm in ./linux_deploy_and_remove
 
-💠 Store Tenant ID in Environment Varibles-> User variables
+💠  Windows
 
-💠t_id = Tenant ID
+* Store Tenant ID in Environment Varibles-> User variables
+
+* t_id = Tenant ID
+
+💠 Linux
+
+* export t_id="your-tenant-id-here"
+
+
+Example used in deploy.ps1
 
 ```ps1
-# Get the id example
+# Get the id 
 $t_id =[System.Environment]::GetEnvironmentVariable("t_id", "User")
 # connect
 connect-AzAccount -TenantId $t_id
@@ -68,8 +85,19 @@ This will be deploy
 ssh user@public-ip
 
 ```
-### Remove vm linux and ***  (vmhybrid01 you must stop)
+💠 Run script deploy.sh it will ask for login to azure, then username and password for vm
 
+```bash
+export t_id="your-tenant-id-here"
+# Now run your script normally
+./deploy.sh
+
+```
+
+### Remove vm linux with powershell or bash and ***  (vmhybrid01 you must stop)
+
+
+💠  remove.ps1
 
 ```ps1
 .\remove.ps1
@@ -80,3 +108,13 @@ Output
 ```txt
 Warning: This will delete everything inside RG-uks-temp-resources-001!
 ```
+
+💠  remove.sh
+
+```bash
+export t_id="your-tenant-id-here"
+# Now run your script normally
+./remove.sh
+
+```
+

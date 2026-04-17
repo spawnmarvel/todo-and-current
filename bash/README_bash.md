@@ -1491,6 +1491,122 @@ Read more at https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extr
 
 </details>
 
+<details><summary>Install MySql 8.4, scp, sudo dpkg -i mysql....(no internet) </summary>
+<p>
+
+#### We can hide anything, even code!
+
+```bash
+
+# Since you can't use apt update, you must bring the entire warehouse to the VM using scp.
+
+# 1. Download the package on your Host (with internet):
+# Example (The version might be slightly different)
+wget https://dev.mysql.com/get/Downloads/MySQL-8.4/mysql-server_8.4.0-1ubuntu24.04_amd64.deb-bundle.tar
+
+# you might need this also
+wget http://archive.ubuntu.com/ubuntu/pool/main/m/mecab/libmecab2_0.996-14build9_amd64.deb
+
+# 2. Transfer via scp to the Offline VM:
+
+# Replace 'username' and 'vm-ip' with your actual VM details
+scp mysql-server_8.4.0-1ubuntu24.04_amd64.deb-bundle.tar username@vm-ip:/tmp/
+scp libmecab2_0.996-14build9_amd64.deb imsdal@vm-uks-temp-001:/tmp/
+
+# Run the configuration tool:
+cd /tmp
+tar -xvf mysql-server_8.4.0-1ubuntu24.04_amd64.deb-bundle.tar
+
+# Remove the Unnecessary Packages
+cd /tmp
+# Remove the test suites
+rm -f mysql-community-test*.deb
+rm -f mysql-testsuite*.deb
+
+# Remove the debug versions of the server and tests
+rm -f mysql-community-server-debug*.deb
+rm -f mysql-community-test-debug*.deb
+
+# Install all the packages at once, dpkg will resolve the internal connections between these files
+# Instead of one-by-one, let dpkg resolve the internal links between client, client-core, and server.
+cd /tmp
+sudo dpkg -i libmecab2_*.deb
+sudo dpkg -i mysql-*.deb
+# Enter root pass, blank
+# Use strong encryption
+
+# Ensure the service is actually started
+sudo systemctl status mysql
+
+● mysql.service - MySQL Community Server
+     Loaded: loaded (/usr/lib/systemd/system/mysql.service; enabled; preset: enabled)
+     Active: active (running) since Thu 2026-04-16 21:03:09 UTC; 37s ago
+
+# verify
+mysql --version
+# mysql  Ver 8.4.7 for Linux on x86_64 (MySQL Community Server - GPL)
+
+# login
+sudo mysql
+# Welcome to the MySQL monitor.  Commands end with ; or \g.
+
+```
+Synchronize the Password (The Fix), sql
+
+```sql
+# run sql
+ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'admin4561';
+FLUSH PRIVILEGES;
+EXIT;
+
+-- It is a "best practice" (and much safer) to create a regular user for your daily work so you don't have to use the root account for everything.
+CREATE USER 'johnwick'@'%' IDENTIFIED BY 'YourUserPassword123!';
+GRANT ALL PRIVILEGES ON *.* TO 'johnwick'@'%' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+EXIT;
+``` 
+Continue set up secure
+
+```bash
+
+# Once you have finished the dpkg installations and the MySQL service is running, execute this command:
+sudo mysql_secure_installation
+# Root pass provide
+# enter is no (or type yes) for validate password
+# change root password, enter
+# remove anonymous, y
+# Disallow root login remotely?, y
+# remove test db, y
+# reload priv, y
+
+sudo mysql -u root -p
+# password
+# Welcome to the MySQL monitor.  Commands end with ; or \g.
+
+```
+Allow remote access
+
+```bash
+sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+# Find the bind-address line:
+# Look for a line that looks like this:
+# bind-address = 127.0.0.1
+
+# change it to
+# bind-address = 0.0.0.0
+
+sudo systemctl restart mysql
+
+# Run this command to see if MySQL is now listening on all interfaces:
+sudo netstat -plnt | grep 3306
+# ou want to see 0.0.0.0:3306 instead of 127.0.0.1:3306
+```
+
+</p>
+Read more at https://github.com/spawnmarvel/todo-and-current/blob/main/mysql/README.md
+
+</details>
+
 <details><summary>Mount a data drive with fdisk ubuntu 24.04 for mysql</summary>
 <p>
 

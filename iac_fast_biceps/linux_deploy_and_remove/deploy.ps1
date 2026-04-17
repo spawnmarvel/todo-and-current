@@ -6,6 +6,9 @@ if ([string]::IsNullOrEmpty($t_id)) {
     return
 }
 
+# Toggle this: $true for dry run, $false for real deployment
+$WhatIfMode = $false 
+
 # 2. Connect
 Connect-AzAccount -TenantId $t_id
 
@@ -13,6 +16,7 @@ Connect-AzAccount -TenantId $t_id
 $rgName = "RG-uks-temp-resources-001"
 $location = "uksouth"
 $templatePath = ".\main.bicep"
+$vmName = "vm-uks-temp-001"
 
 # 4. Create Resource Group if it doesn't exist
 Write-Host "Checking for Resource Group: $rgName..." -ForegroundColor Cyan
@@ -28,14 +32,27 @@ if ($null -eq $existingRg) {
     Write-Host "Resource Group already exists." -ForegroundColor Green
 }
 
-# 5. Run the What-If Analysis
-Write-Host "Running What-If analysis..." -ForegroundColor Yellow
+# 5. Execute Deployment or What-If
+if ($WhatIfMode) {
+    Write-Host "Running What-If analysis..." -ForegroundColor Yellow
+    New-AzResourceGroupDeployment `
+        -ResourceGroupName $rgName `
+        -TemplateFile $templatePath `
+        -WhatIf
+} else {
+    Write-Host "Starting actual deployment..." -ForegroundColor Cyan
+    $deployment = New-AzResourceGroupDeployment `
+        -ResourceGroupName $rgName `
+        -TemplateFile $templatePath
 
-New-AzResourceGroupDeployment `
-    -ResourceGroupName $rgName `
-    -TemplateFile $templatePath `
-    # -WhatIf
+    # 6. Print Public IP only if we deployed
+    Write-Host "Deployment complete! Fetching Public IP..." -ForegroundColor Green
+    $pip = Get-AzPublicIpAddress -ResourceGroupName $rgName -Name "${vmName}-pip"
+    $ipAddress = $pip.IpAddress
 
-# 5. Confirmation (Optional)
-# If the What-If output looks good, you can then run the command 
-# again WITHOUT the -WhatIf switch to actually deploy.
+    Write-Host "`n==========================================" -ForegroundColor Yellow
+    Write-Host "VM: $vmName"
+    Write-Host "Public IP: $ipAddress" -ForegroundColor Cyan
+    Write-Host "SSH: ssh username@$ipAddress"
+    Write-Host "==========================================" -ForegroundColor Yellow
+}
