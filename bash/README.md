@@ -581,6 +581,12 @@ crontab -l
 
 # Edit crontab
 crontab -e
+
+# every min 
+ * * * * * /home/imsdal/log_script.sh >>/home/imsdal/logs/cron_log.log 2>&1
+# save it
+# >> Appends the standard output.
+# 2>&1 Ensures errors (Standard Error) are also sent to the log file.
 ```
 
 ---
