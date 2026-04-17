@@ -595,7 +595,6 @@ crontab -e
 
 - [W3Schools Bash Tutorial](https://www.w3schools.com/bash/)
 - [Bash Reference Manual](https://www.gnu.org/software/bash/manual/)
-- [Linux Command Line Basics](https://github.com/spawnmarvel/quickguides)
 
 ---
 
