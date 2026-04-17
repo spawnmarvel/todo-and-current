@@ -44,16 +44,46 @@ If you prefer working in your IDE:
 
 🔹 Open your project in VS Code.
 
+🔹Keyboard Shortcut: Press Ctrl+Alt+I (Windows/Linux) or Command+Option+I (macOS) to immediately open the Chat view in the Secondary Side Bar.
+
 🔹 In the Copilot Chat panel, and paste the url to the issue in the chat
 
 🔹https://github.com/spawnmarvel/py-central-monitor/issues/1
 
-🔹 Copilot will pull the context from that specific issue and apply the changes to your local README.md.
+That is a clever shortcut! By pasting the direct URL into the Copilot Chat panel in VS Code, you successfully provided the "context" Copilot needed to bridge the gap between GitHub and your local files.
 
-🔹 You can then review the diff, commit, and push.
+Looking at your latest screenshot, it worked perfectly:
+
+🔹 What happened in your screenshot
+Context Fetching: Copilot "fetched" the issue content and automatically identified that it needed to review the README.md.
+
+Fixing in Real-Time: You can see the green (added) and red (removed) lines in your editor. It followed your instructions to a tee:
+
+Proper Casing: It capitalized "Linux," "Zabbix," "Azure Functions," and "GitHub."
+
+Punctuation: It added the missing periods to the ends of your sentences.
+
+Grammar: It fixed "the repos url" to "the repository's URL."
 
 ![ai fix](https://github.com/spawnmarvel/todo-and-current/blob/main/copilot/images/ai_fix.png)
 
+🔹 What you should do next
+
+Now that the changes are visible in your editor but not yet "saved" to your repository:
+
+1. Review & Keep: Look at the floating box at the bottom right of the code window. Click Keep (or press Ctrl+Enter) to accept the AI's changes into your file.
+
+2. Commit & Push: In your VS Code terminal (which I see open at the bottom), run:
+
+```bash
+git add README.md
+git commit -m "docs: fix typos and formatting per issue #1"
+git push origin main
+```
+
+![close issue](https://github.com/spawnmarvel/todo-and-current/blob/main/copilot/images/close_issue.png)
+
+3.  Close the Issue: Once you push, go back to the GitHub website and click "Close Issue" on issue #1.
 ## 3. Pro-Tip: Use "Agentic" Instructions
 
 If you want Copilot to always handle README files this way without you having to repeat yourself in every issue, create a file in your repo at .github/copilot-instructions.md and add:
