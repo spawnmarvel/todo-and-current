@@ -223,8 +223,8 @@ fun_destination_move() {
 
             if [[ "$region" == "europe" ]]; then
                 for c in "${fly_countries_europe[@]}"; do
-                    # lowercase trick "${c,,}""
-                    if [[ "$move_to_destination" == "${c,,}" ]]; then
+                    # lowercase trick: compare both sides lowercased for case-insensitive matching
+                    if [[ "${move_to_destination,,}" == "${c,,}" ]]; then
                         can_fly=true
                         new_continent="$region"
                         break 2
@@ -232,7 +232,8 @@ fun_destination_move() {
                 done
             elif [[ "$region" == "asia" ]]; then
                 for c in "${fly_countries_asia[@]}"; do
-                    if [[ "$move_to_destination" == "${c,,}" ]]; then
+                    # case-insensitive comparison
+                    if [[ "${move_to_destination,,}" == "${c,,}" ]]; then
                         can_fly=true
                         new_continent="$region"
                         break 2
