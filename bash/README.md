@@ -827,56 +827,90 @@ sudo systemctl restart apache2
 
 ### Debmirror (Local Package Repository)
 
+Debmirror creates a local mirror of Ubuntu repositories. Useful for offline/air-gapped environments where VMs can't access the internet.
+
 ```bash
+# Update package lists
 sudo apt update
+
+# Install debmirror - tool to sync package repositories
 sudo apt install debmirror
+
+# Install Apache to serve the mirrored packages via HTTP
 sudo apt install apache2
+
+# Install gnupg - required for GPG key verification on the client
 sudo apt install gnupg
+
+# Enable Apache to start automatically on boot
 sudo systemctl enable apache2
+
+# Check Apache status
 sudo systemctl status apache2
 ```
+
+> Learn more: [Azure Extra Linux VM Mirror](https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm-mirror)
 
 ---
 
 ### Install MySQL 8.4 Offline (SCP + dpkg)
 
+Install MySQL on an offline VM by copying packages via SCP. Useful when the VM has no internet access.
+
 ```bash
 # 1. Download on Host (with internet)
+# Download MySQL bundle (contains server, client, etc.)
 wget https://dev.mysql.com/get/Downloads/MySQL-8.4/mysql-server_8.4.0-1ubuntu24.04_amd64.deb-bundle.tar
+
+# Download dependency (libmecab2 is required for MySQL full-text search)
 wget http://archive.ubuntu.com/ubuntu/pool/main/m/mecab/libmecab2_0.996-14build9_amd64.deb
 
-# 2. Transfer via SCP
+# 2. Transfer via SCP to the offline VM
 scp mysql-server_8.4.0-1ubuntu24.04_amd64.deb-bundle.tar username@vm-ip:/tmp/
 scp libmecab2_0.996-14build9_amd64.deb username@vm-ip:/tmp/
 
 # 3. Extract and install
 cd /tmp
+
+# Extract the bundle (contains multiple .deb files)
 tar -xvf mysql-server_8.4.0-1ubuntu24.04_amd64.deb-bundle.tar
+
+# Remove unnecessary packages to save space:
+# - Test suites: not needed in production
 rm -f mysql-community-test*.deb mysql-testsuite*.deb
+
+# - Debug versions: contain debugging symbols, not needed
 rm -f mysql-community-server-debug*.deb mysql-community-test-debug*.deb
 
+# Install dependency first (required by MySQL)
 sudo dpkg -i libmecab2_*.deb
+
+# Install all MySQL packages at once (dpkg resolves internal dependencies)
 sudo dpkg -i mysql-*.deb
 
-# 4. Set root password
+# 4. Set root password (use caching_sha2_password for secure authentication)
 sudo mysql
 ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'admin4561';
 FLUSH PRIVILEGES;
 
-# Create regular user
+# Create a regular user for daily work (don't use root for everything)
 CREATE USER 'johnwick'@'%' IDENTIFIED BY 'YourUserPassword123!';
 GRANT ALL PRIVILEGES ON *.* TO 'johnwick'@'%' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 
-# 5. Secure installation
+# 5. Secure installation (removes test DB, anonymous users, etc.)
 sudo mysql_secure_installation
 
-# 6. Allow remote access
+# 6. Allow remote access (change bind-address from 127.0.0.1 to 0.0.0.0)
 sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
 # Change: bind-address = 0.0.0.0
+
+# Restart MySQL and verify it's listening on all interfaces
 sudo systemctl restart mysql
 sudo netstat -plnt | grep 3306
 ```
+
+> Learn more: [MySQL README](../mysql/README.md)
 
 ---
 
