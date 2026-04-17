@@ -284,7 +284,7 @@ Exam target: **AZ-802** (June 2026)
 - Install software (MySQL, etc.)
 - Day 2 operations automation
 
-**Runbook Guide:** [Linux Tips & Operations](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/README_runbook_linux_tips.md)
+**Runbook Guide:** [Linux Tips & Operations](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/README_octo_linux_runbook_operations.md)
 
 ---
 
