@@ -20,6 +20,7 @@
 12. [Bash Scripting](#bash-scripting)
 13. [Practical Examples](#practical-examples)
 14. [Troubleshooting](#troubleshooting)
+15. [Linux Concepts](#linux-concepts)
 
 ---
 
@@ -1063,4 +1064,84 @@ sudo apt install vlc > /dev/null
 # Add to /etc/ssh/sshd_config
 sudo nano /etc/ssh/sshd_config
 AllowUsers username
+```
+
+---
+
+## Linux Concepts
+
+### Loadable Kernel Module
+
+Loadable Kernel Modules (LKMs) are pieces of code that can be loaded into or unloaded from the kernel on demand without needing to reboot the entire system. They act like "plug-ins" for your operating system.
+
+| Module | Description |
+|--------|-------------|
+| `usb-storage` | Allows the system to talk to USB flash drives and external hard disks |
+| `ext4` | The standard file system for most Linux distributions |
+| `iptable_filter` / `nftables` | The backbone of the Linux firewall (Netfilter) |
+| `bridge` | Allows the kernel to act like a network switch (vital for VMs or Docker) |
+
+### File System, Permission and Access Control
+
+```bash
+# Example: chmod 755 demo.sh
+# user has full (rwx), group and others have read and execute (r-x)
+chmod 755 demo.sh
+./demo.sh
+```
+
+### Top vs Htop
+
+```bash
+# top - built-in process viewer
+top -d 60
+
+# htop - enhanced version (install if needed)
+sudo apt update
+sudo apt install htop
+htop
+```
+
+---
+
+### Exercises and Quiz
+
+```bash
+# Practice commands:
+ls
+cd
+pwd
+
+# Try creating a simple script
+nano myscript.sh
+#!/bin/bash
+echo "Hello from my script!"
+chmod +x myscript.sh
+./myscript.sh
+```
+
+---
+
+### Bash RPG Game (Like UIB)
+
+```bash
+# A text-based RPG game in bash
+# Features:
+# - Player stats (health, attack, defense)
+# - Monster encounters
+# - Combat system
+# - Save game to file
+# - Inventory management
+
+# Example structure:
+player_health=100
+player_attack=10
+monster_health=50
+
+# Combat loop
+while [ $monster_health -gt 0 ]; do
+  echo "You attack the monster!"
+  monster_health=$((monster_health - player_attack))
+  echo "Monster health: $monster_health"
+done
 ```
