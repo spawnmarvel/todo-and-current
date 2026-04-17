@@ -884,12 +884,6 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 sudo a2enmod rewrite
 sudo systemctl restart apache2
 ```
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-sudo a2enmod rewrite
-sudo systemctl restart apache2
-```
 
 ---
 
@@ -1224,46 +1218,3 @@ sudo apt install htop
 htop
 ```
 
----
-
-### Exercises and Quiz
-
-```bash
-# Practice commands:
-ls
-cd
-pwd
-
-# Try creating a simple script
-nano myscript.sh
-#!/bin/bash
-echo "Hello from my script!"
-chmod +x myscript.sh
-./myscript.sh
-```
-
----
-
-### Bash RPG Game (Like UIB)
-
-```bash
-# A text-based RPG game in bash
-# Features:
-# - Player stats (health, attack, defense)
-# - Monster encounters
-# - Combat system
-# - Save game to file
-# - Inventory management
-
-# Example structure:
-player_health=100
-player_attack=10
-monster_health=50
-
-# Combat loop
-while [ $monster_health -gt 0 ]; do
-  echo "You attack the monster!"
-  monster_health=$((monster_health - player_attack))
-  echo "Monster health: $monster_health"
-done
-```
