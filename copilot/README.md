@@ -27,8 +27,11 @@ Title: Fix typos and formatting in README.md
 Description: > Please review the README.md file and perform the following:
 
 🔹 Typing Errors: Scan for and fix any spelling mistakes.
+
 🔹 Casing: Ensure proper capitalization (e.g., proper nouns, start of sentences).
+
 🔹 Punctuation: Ensure all sentences end with a period . or appropriate punctuation.
+
 🔹 Consistency: Standardize technical terms (e.g., ensure "GitHub" is always capitalized correctly).
 
 ![create issue](https://github.com/spawnmarvel/todo-and-current/blob/main/copilot/images/create_issue.png)
