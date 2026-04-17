@@ -30,6 +30,8 @@ Description: > Please review the README.md file and perform the following:
 🔹 Punctuation: Ensure all sentences end with a period . or appropriate punctuation.
 🔹 Consistency: Standardize technical terms (e.g., ensure "GitHub" is always capitalized correctly).
 
+![create issue](https://github.com/spawnmarvel/todo-and-current/blob/main/copilot/images/create_issue.png)
+
 ## 2. Trigger the Fix (Two Methods)
 
 Method A: Via Copilot Workspace (Recommended)
@@ -44,9 +46,13 @@ If you prefer working in your IDE:
 
 🔹 In the Copilot Chat panel, and paste the url to the issue in the chat
 
+🔹https://github.com/spawnmarvel/py-central-monitor/issues/1
+
 🔹 Copilot will pull the context from that specific issue and apply the changes to your local README.md.
 
 🔹 You can then review the diff, commit, and push.
+
+![ai fix](https://github.com/spawnmarvel/todo-and-current/blob/main/copilot/images/ai_fix.png)
 
 ## 3. Pro-Tip: Use "Agentic" Instructions
 
