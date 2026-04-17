@@ -18,7 +18,8 @@ The ability to assign work to Copilot from an issue is categorized as an "Agenti
 
 The Verdict: You can try it for free today to see if it works for you, but if you plan on using Copilot to manage your repository tasks regularly, the $10/month Pro plan is the standard requirement.
 
-## 1. Create the GitHub Issue
+## 1. Create the GitHub Issue for a global readme.md
+
 Go to your repository and create a new issue. To get the best results from Copilot, be specific in your description:
 
 Title: Fix typos and formatting in README.md
@@ -31,6 +32,22 @@ Description: > Please review the README.md file and perform the following:
 🔹 Consistency: Standardize technical terms (e.g., ensure "GitHub" is always capitalized correctly).
 
 ![create issue](https://github.com/spawnmarvel/todo-and-current/blob/main/copilot/images/create_issue.png)
+
+### 1.1 Create the GitHub Issue for a subfolder/readme.md
+
+Go to your repository and create a new issue. To get the best results from Copilot, be specific in your description:
+
+Title: Fix typos in chromebook/README.md
+
+Description: > Please review the README.md file and perform the following:
+
+Please review and fix the formatting for the file at:
+🔹 Path: chromebook/README.md
+
+Instructions:
+🔹 Fix uppercase/lowercase for technical terms.
+🔹 Ensure all sentences end with a period ..
+🔹 Ignore the root README.md file; only apply changes to the one inside the copilot folder.
 
 ## 2. Trigger the Fix (Two Methods)
 
