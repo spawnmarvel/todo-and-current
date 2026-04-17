@@ -44,7 +44,6 @@ https://follow-e-lo.com/
 
 ---
 
-<details>
 
 ## 🛠️  Github CoPilot
 
@@ -56,6 +55,7 @@ https://follow-e-lo.com/
 
 * https://github.com/spawnmarvel/todo-and-current/blob/main/copilot/README.md
 
+<details>
 
 
 <summary>Github tips</summary>
