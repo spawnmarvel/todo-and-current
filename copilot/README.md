@@ -49,6 +49,8 @@ Instructions:
 🔹 Ensure all sentences end with a period ..
 🔹 Ignore the root README.md file; only apply changes to the one inside the chromebook folder.
 
+![fix_file](https://github.com/spawnmarvel/todo-and-current/blob/main/copilot/images/fix_file.png)
+
 ## 2. Trigger the Fix (Two Methods)
 
 Method A: Via Copilot Workspace (Recommended)
