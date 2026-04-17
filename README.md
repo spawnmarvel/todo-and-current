@@ -47,11 +47,11 @@ https://follow-e-lo.com/
 
 ## 🛠️  Github CoPilot
 
-🛠️ Create an issue, title, description, path and steps
-🛠️ Navigate to your respos with VSC
-🛠️ Press Ctrl+Alt+I (Windows/Linux) or Command+Option+I (macOS) to immediately open the Chat view in the Secondary Side Bar.
-🛠️ Paste the issue number URL to the chat
-🛠️ See live edits, keep or remove, add, commit, push
+* Create an issue, title, description, path and steps
+* Navigate to your respos with VSC
+* Press Ctrl+Alt+I (Windows/Linux) or Command+Option+I (macOS) to immediately open the Chat view in the Secondary Side Bar.
+* Paste the issue number URL to the chat
+* See live edits, keep or remove, add, commit, push
 
 * https://github.com/spawnmarvel/todo-and-current/blob/main/copilot/README.md
 
