@@ -53,6 +53,8 @@ https://follow-e-lo.com/
 * Paste the issue number URL to the chat
 * See live edits, keep or remove, add, commit, push
 
+* Ask it also to review your file; could we make it better and more readable?
+
 * https://github.com/spawnmarvel/todo-and-current/blob/main/copilot/README.md
 
 ---
