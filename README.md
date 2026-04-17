@@ -73,7 +73,7 @@ Use technologies for their strengths:
 | **Windows** | PowerShell, Schedule tasks, Zabbix sender, Telegraf |
 | **Complex Logic** | Python |
 | **Databases** | MySQL, SQLPlus |
-| **Monitoring** | Telegraf https://github.com/influxdata/telegraf |
+| **ETL** | Telegraf https://github.com/influxdata/telegraf |
 
 **Best Practice:** Turn commands into Bash or PowerShell scripts. Replace hardcoded values with variables:
 ```bash
