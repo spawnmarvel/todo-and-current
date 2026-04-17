@@ -54,9 +54,9 @@ https://follow-e-lo.com/
 🛠️ Paste the issue number URL to the chat
 🛠️ See live edits, keep or remove, add, commit, push
 
+* https://github.com/spawnmarvel/todo-and-current/blob/main/copilot/README.md
 
 
-https://github.com/spawnmarvel/todo-and-current/blob/main/copilot/README.md
 
 <summary>Github tips</summary>
 
