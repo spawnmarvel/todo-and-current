@@ -596,7 +596,49 @@ crontab -e
 
 ### UFW Firewall
 
-See [UFW Firewall Guide](https://github.com/spawnmarvel/linux-and-azure/tree/main/ufw-firewall)
+```bash
+# Check status
+sudo ufw status
+sudo ufw status verbose
+
+# Enable/Disable
+sudo ufw enable
+sudo ufw disable
+
+# Allow/Block connections
+sudo ufw allow 22          # Allow SSH
+sudo ufw allow 80          # Allow HTTP
+sudo ufw allow 443         # Allow HTTPS
+sudo ufw allow 3306        # Allow MySQL
+sudo ufw allow 10050       # Allow Zabbix agent
+sudo ufw allow 10051       # Allow Zabbix server
+
+# Allow by service name
+sudo ufw allow ssh
+sudo ufw allow http
+sudo ufw allow https
+
+# Block connections
+sudo ufw deny 8080
+
+# Remove rules
+sudo ufw delete allow 22
+sudo ufw delete allow http
+
+# Allow from specific IP
+sudo ufw allow from 192.168.1.100
+
+# Allow specific port from IP
+sudo ufw allow from 192.168.1.100 to any port 22
+
+# Reload rules
+sudo ufw reload
+
+# Reset to defaults
+sudo ufw reset
+```
+
+> See [UFW Firewall Guide](https://github.com/spawnmarvel/linux-and-azure/tree/main/ufw-firewall) for more details
 
 ---
 
