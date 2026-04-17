@@ -645,59 +645,80 @@ sudo ufw reset
 
 ### SCP: Windows to Linux (.deb install)
 
-```bash
-# x64 (also known as x86_64 or amd64)
-# ARM (also known as aarch64 or arm64)
+Copy a .deb package from Windows to Linux and install it. Useful for offline VMs.
 
-# When you install a deb, try to find the deb that has all other packets
-# otherwise you must install dependencies
+```bash
+# Two main CPU architectures:
+# - x64 (x86_64/amd64) : Standard 64-bit Intel/AMD
+# - ARM (aarch64/arm64) : Power-efficient (Raspberry Pi, AWS Graviton)
+
+# When installing a .deb, find one with all dependencies bundled
+# otherwise you must install dependencies manually
 # https://octopus.com/downloads/tentacle/7.1.31#linux
 
-# PowerShell copy to Linux (SCP uses TCP Port 22)
+# 1. Copy .deb file from Windows to Linux via SCP (uses port 22)
 scp '.\Octopus Linux\tentacle_7.1.31_amd64.deb' username@ubuntu-ip:/tmp/
 
-# SSH to Linux
+# 2. SSH into the Linux VM
 ssh username@ubuntu-ip
 cd /tmp/
 ls
+
+# 3. Copy to home directory (optional, keeps it organized)
 cp /tmp/tentacle_7.1.31_amd64.deb tentacle_7.1.31_amd64.deb
 
+# 4. Install the .deb package using dpkg
 sudo dpkg -i tentacle_7.1.31_amd64.deb
 
-# Configure Tentacle
+# 5. Configure the Tentacle (Octopus Deploy agent)
+# This script sets up the Tentacle instance with server thumbprint
 /opt/octopus/tentacle/configure-tentacle.sh
 
-# Verify installation
-which Tentacle
-dpkg -l | grep tentacle
+# 6. Verify installation
+which Tentacle                              # Find executable path
+dpkg -l | grep tentacle                     # List installed tentacle packages
 
-# Stop service before removal
+# --- Removal ---
+# Stop the service first (prevents errors during removal)
 sudo systemctl stop octopus-tentacle
 
-# Remove
-sudo apt remove octopus-tentacle    # Removes binaries, keeps config
-sudo apt purge octopus-tentacle     # Removes everything
-sudo dpkg -r octopus-tentacle       # Offline way
+# Remove methods:
+sudo apt remove octopus-tentacle    # Removes binaries, keeps config files
+sudo apt purge octopus-tentacle     # Removes everything (binaries + config + logs)
+sudo dpkg -r octopus-tentacle       # Offline way (when apt has issues)
 ```
 
 ---
 
 ### Update & Upgrade / Apt Install & Remove
 
-```bash
-sudo apt update -y                  # Update apt/sources
-sudo apt list --upgradable          # List possible upgrades
-sudo apt upgrade -y                 # Do upgrade
+Basic apt commands for package management on Ubuntu.
 
-# View apt sources
+```bash
+# Update package lists from repositories
+sudo apt update -y
+
+# List packages that have updates available
+sudo apt list --upgradable
+
+# Upgrade all installed packages to latest versions
+sudo apt upgrade -y
+
+# View apt sources configuration
 cd /etc/apt/
 ls -lh
 cat ubuntu.sources
 
-# Install Zabbix Agent 2
+# Install Zabbix Agent 2 (example of adding a custom repository)
+# 1. Download and install Zabbix repository package
 wget https://repo.zabbix.com/zabbix/7.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_latest_7.0+ubuntu24.04_all.deb
 sudo dpkg -i zabbix-release_latest_7.0+ubuntu24.04_all.deb
+
+# 2. Update package lists to include Zabbix packages
 sudo apt update -y
+
+# 3. Install Zabbix agent
+sudo apt install zabbix-agent2
 sudo apt install zabbix-agent2
 
 # Other examples
@@ -714,24 +735,30 @@ dpkg
 
 ### Hello World Bash Script with Chmod
 
+Create and run your first bash script with proper permissions.
+
 ```bash
+# Create the script file
 nano demo.sh
 
+# Add shebang and content:
 #!/bin/bash
 echo "Hello World!"
 
-# Check permissions
+# Check current permissions (no execute bit)
 ls -l demo.sh
 
-# Add execute permission
+# Add execute permission for owner
 chmod u+x demo.sh
-# or octal
+
+# Or use octal notation:
+# 7 = rwx (owner), 4 = r-- (group), 4 = r-- (others)
 chmod 744 demo.sh
 
-# Run
+# Run the script
 ./demo.sh
 
-# List all users
+# List all users on the system
 cat /etc/passwd
 ```
 
@@ -739,35 +766,51 @@ cat /etc/passwd
 
 ### Sudo Delay Fix (Hostname Resolution)
 
-```bash
-hostname
-# vmchaos09
+Fix slow sudo command caused by hostname not being in /etc/hosts.
 
+```bash
+# Check your hostname
+hostname
+# Output: vmchaos09
+
+# Edit hosts file to map hostname to localhost
 sudo nano /etc/hosts
+
 # Change from:
 127.0.0.1 localhost
-# To:
+
+# To (add hostname):
 127.0.0.1 localhost vmchaos09
 ::1       localhost ip6-localhost ip6-loopback vmchaos09
+
+# Why this works: sudo tries to look up the hostname via DNS.
+# Without the mapping, it times out waiting for external DNS.
+# Adding it to /etc/hosts makes resolution instant.
 ```
 
 ---
 
 ### SSH Key Generation
 
+Set up passwordless SSH login with key-based authentication.
+
 ```bash
-# Check existing keys
+# Check if you already have SSH keys
 cd ~/.ssh
 
-# Generate new key pair
+# Generate new ED25519 key pair (recommended for modern security)
+# -t ed25519 : Use ED25519 algorithm (fast, secure, small key)
 ssh-keygen -t ed25519
-# or with custom name and comment
+
+# Or with custom name and comment:
+# -C "myname" : Adds comment to help identify the key
+# -f ~/.ssh/octopus_key : Custom filename
 ssh-keygen -t ed25519 -C "myname" -f ~/.ssh/octopus_key
 
-# View public key
+# View your public key (copy this to remote server)
 cat ~/.ssh/id_ed25519.pub
 
-# Copy to remote server
+# Copy key to remote server automatically
 ssh-copy-id username@server-ip
 
 # Or manually:
@@ -782,13 +825,25 @@ nano ~/.ssh/authorized_keys
 
 ### OpenSSL: Generate Self-Signed Certificate
 
+Generate a self-signed SSL/TLS certificate for HTTPS (useful for testing or internal services).
+
 ```bash
+# Generate certificate and key:
+# - newkey rsa:4096  : Create new 4096-bit RSA key
+# - x509            : Create self-signed certificate (not a CSR)
+# - sha256          : Use SHA-256 for signature
+# - days 365        : Certificate valid for 1 year
+# - nodes           : No DES encryption on private key (no password required)
+# - out/in          : Output certificate and key files
+# - subj            : Subject info (Country, State, Local, Org, OrgUnit, CommonName)
 sudo openssl req -newkey rsa:4096 -x509 -sha256 -days 365 -nodes \
   -out server.crt -keyout server.key \
   -subj "/C=NO/ST=Hordaland/L=BER/O=Socrates.inc/OU=IT/CN=vm01.socrates.inc"
 
-# Verify certificate
+# Verify certificate details (subject, validity dates)
 openssl x509 -noout -subject -dates -in server.crt
+
+# View full certificate details (issuer, extensions, etc.)
 openssl x509 -noout -text -in server.crt
 ```
 
@@ -796,26 +851,39 @@ openssl x509 -noout -text -in server.crt
 
 ### Apache SSL Setup (Ubuntu 24.04)
 
+Configure Apache with SSL/HTTPS using a self-signed certificate.
+
 ```bash
-# Create self-signed certificate (3650 days)
+# Create self-signed certificate (valid for 10 years)
+# - days 3650        : 10-year validity
+# - newkey rsa:2048  : 2048-bit RSA key (smaller than 4096 for faster performance)
+# - nodes            : No password on key (Apache can read it on startup)
+# - keyout/in        : Save to Apache's SSL directories
 sudo openssl req -x509 -nodes -days 3650 -newkey rsa:2048 \
   -keyout /etc/ssl/private/zabbix-selfsigned.key \
   -out /etc/ssl/certs/zabbix-selfsigned.crt
 
-# Enable SSL module and default site
+# Enable Apache SSL module and default SSL virtual host
 sudo a2enmod ssl
 sudo a2ensite default-ssl
 
-# Edit SSL config
+# Edit SSL config to point to our certificate
 sudo nano /etc/apache2/sites-enabled/default-ssl.conf
-# Update:
+# Update these lines:
 SSLCertificateFile    /etc/ssl/certs/zabbix-selfsigned.crt
 SSLCertificateKeyFile /etc/ssl/private/zabbix-selfsigned.key
 
-# Force HTTPS redirect
+# Force all HTTP traffic to redirect to HTTPS
 sudo nano /etc/apache2/sites-available/000-default.conf
-# Add inside <VirtualHost *:80>:
+# Add inside <VirtualHost *:80> block:
 RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Enable rewrite module (required for redirect) and restart Apache
+sudo a2enmod rewrite
+sudo systemctl restart apache2
+```
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
@@ -916,31 +984,39 @@ sudo netstat -plnt | grep 3306
 
 ### Mount Data Drive (fdisk) Ubuntu 24.04
 
+Partition, format, and mount a raw disk (e.g., /dev/sda) to store data like MySQL databases.
+
 ```bash
-# Find the disk
+# Find the disk (look for one without a mount point - it's unused)
 lsblk -o NAME,HCTL,SIZE,MOUNTPOINT | grep -i "sd"
 
-# Create partition
+# Create partition with fdisk
 sudo fdisk /dev/sda
-# Commands: g (GPT), n (new), enter, enter, w (write)
+# Commands:
+#   g   - Create new GPT partition table
+#   n   - Create new partition (press Enter for defaults)
+#   w   - Write changes and exit
 
-# Format partition
+# Format the partition with ext4 filesystem
 sudo mkfs.ext4 /dev/sda1
 
-# Create directory and mount
+# Create mount point directory and mount the partition
 sudo mkdir -p /datadrive
 sudo mount /dev/sda1 /datadrive
 
-# Make permanent (fstab)
+# Make mount permanent (survives reboot) using fstab
+# Get the unique UUID of the partition
 sudo blkid /dev/sda1
-# Copy UUID
+
+# Add to /etc/fstab so it mounts automatically on boot
+# Format: UUID=<uuid> <mountpoint> <filesystem> <options> <dump> <fsck>
 sudo nano /etc/fstab
 # Add: UUID=your-uuid-here /datadrive ext4 defaults,nofail 0 2
 
-# Set ownership
+# Set ownership to current user (so you can write without sudo)
 sudo chown $USER:$USER /datadrive
 
-# Verify
+# Verify the mount
 lsblk -o NAME,SIZE,MOUNTPOINT | grep "sd"
 ```
 
@@ -948,38 +1024,50 @@ lsblk -o NAME,SIZE,MOUNTPOINT | grep "sd"
 
 ### Move MySQL Data Directory
 
+Move MySQL's default data directory (/var/lib/mysql) to a mounted data drive.
+
 ```bash
-# Check current path
+# Check current data directory location
 mysql -u root -p -e "SELECT @@datadir"
 
-# Stop MySQL
+# Stop MySQL before making changes
 sudo systemctl stop mysql
 
-# Create new directory
+# Create new directory on the data drive
 sudo mkdir -p /datadrive/mysql
+
+# Set ownership to mysql user and group (required for MySQL to access)
 sudo chown mysql:mysql /datadrive/mysql
+
+# Set permissions (owner read/write/execute, others none)
 sudo chmod 750 /datadrive/mysql
 
-# Backup and copy
+# Backup old directory (optional but recommended)
 sudo mv /var/lib/mysql /var/lib/mysql_old
+
+# Copy data to new location using rsync (preserves permissions/ownership)
 sudo rsync -av /var/lib/mysql/ /datadrive/mysql/
 
-# Update config
+# Update MySQL config to use new data directory
 sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
 # Change: datadir = /datadrive/mysql
 
-# Fix AppArmor
+# Fix AppArmor (Ubuntu's security module blocks MySQL from accessing /datadrive)
+# Add alias so AppArmor allows MySQL to see the new location
 sudo nano /etc/apparmor.d/tunables/alias
 # Add: alias /var/lib/mysql/ -> /datadrive/mysql/,
+
+# Reload AppArmor to apply changes
 sudo systemctl restart apparmor
 
-# Allow MySQL to access parent
+# Allow MySQL to "pass through" the parent /datadrive folder
+# (execute permission on parent directory is needed to access subdirectories)
 sudo chmod +x /datadrive
 
-# Start MySQL
+# Start MySQL service
 sudo systemctl start mysql
 
-# Verify
+# Verify the new data directory is in use
 mysql -u root -p -e "SELECT @@datadir"
 ```
 
