@@ -214,6 +214,7 @@ Exam target: **AZ-802** (June 2026)
 - Configure Loki
 - Deploy Alloy agents across infrastructure
 - Monitor logs from all services
+- Files [Grafana, Loki and Alloy](https://github.com/spawnmarvel/todo-and-current/tree/main/grafana_loki_alloy)
 
 ---
 
