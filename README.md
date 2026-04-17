@@ -394,7 +394,7 @@ Fill the gaps in networking, monitoring, and web apps:
 📖 [Linux & Azure](https://github.com/spawnmarvel/linux-and-azure)
 
 #### Linux Quick Guides
-- **Bash Quick Reference:** [Bash README](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/README_bash.md)
+- **Linux and Azure Reference:** [Linux and Azure](https://github.com/spawnmarvel/linux-and-azure)
 - **Zabbix Troubleshoot:** [Linux & Azure Grep It](https://github.com/spawnmarvel/linux-and-azure?tab=readme-ov-file#grep-it)
 - **Mind Maps:** [Linux Mind Maps](https://github.com/spawnmarvel/linux-and-azure/tree/main/z-mind-maps)
 - **Mirror Server:** [Ubuntu Mirror Server](https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm-mirror)
