@@ -319,9 +319,17 @@ fun_destination_move() {
         echo "Error missing destination parameter"
     fi
 }
+# Debug is on, print learning and debug info, but continue with the game as normal
+
+if [[ "$DEBUG_ON" == true ]]; then
+
+    fun_learning
+    echo "Debug is on type game commands as normal"
+fi
 # Main game loop, we read user input and execute commands based on it,
 # we use a case statement to handle different commands
 while true; do
+
     # 1. Clear variables
     cmd=""
     args=""
