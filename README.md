@@ -14,61 +14,66 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
 <details>
 <summary>Show / hide Table of Contents</summary>
 
-1. [Setup & Environment](#setup--environment)
-   - [Windows 11 Dark Mode](#windows-11-dark-mode)
-   - [Screen Background for Eye Strain](#screen-background-for-eye-strain)
-   - [Chromebook Linux Maintenance](#chromebook-linux-maintenance)
-2. [Old website parked](#old-website-parked)
-   - [E-lo (parked)](#e-lo-parked)
-3. [Scripting Stack](#scripting-stack)
-   - [Best Practice](#best-practice)
-4. [GitHub Copilot and Development](#github-copilot-and-development)
-   - [Using GitHub Copilot Workflow](#using-github-copilot-workflow)
-   - [Asking for Help](#asking-for-help)
-   - [Coding mode](#coding-mode)
-   - [Git Common Tasks](#git-common-tasks)
-   - [VS Code Extensions & Setup](#vs-code-extensions--setup)
-5. [Infrastructure Essentials](#infrastructure-essentials)
-   - [Azure VM Operations](#azure-vm-operations)
-   - [AD DS Configuration (vmhybrid01)](#ad-ds-configuration-vmhybrid01)
-   - [Fast Linux VM Deployment](#fast-linux-vm-deployment)
-6. [Current Priorities: TOP 3](#current-priorities-top-3)
-   - [Octopus Deploy for Linux (CI/CD)](#1-octopus-deploy-for-linux-cicd-)
-   - [Windows Server Hybrid Administrator (vmhybrid01)](#2-windows-server-hybrid-administrator-vmhybrid01-)
-   - [Grafana, Loki, and Alloy Agents](#3-grafana-loki-and-alloy-agents-)
-7. [Knowledge Maintenance Checklist](#knowledge-maintenance-checklist)
-   - [Linux Maintenance](#1-bulb-linux-maintenance)
-   - [MySQL Maintenance](#2-mysql-maintenance)
-   - [AZ-802: Windows Server Hybrid Administrator (june 2026)](#3-az-802-windows-server-hybrid-administrator-june-2026)
-   - [Octopus Deploy (Free)](#4-octopus-deploy-free)
-   - [AZ-104: Azure Administrator Maintenance](#5-az-104-azure-administrator-maintenance)
-8. [Parked Projects or Completed Projects](#parked-projects-or-completed-projects)
-   - [Docker & Azure](#1-docker--azure-airplane)
-   - [Docker Stack](#2-docker-stack-helicopter)
-   - [Python Maintenance (Parked)](#3-python-maintenance-parked)
-   - [Azure SQL Database (For Fun)](#4-azure-sql-database-for-fun)
-   - [AZ-104: Certified Professional Must Know](#5-az-104-certified-professional-must-know)
-9. [Learning Resources and References](#learning-resources-and-references)
-   - 1. [AZ-104: Certified Professional Must Know](#1-az-104-certified-professional-must-know)
-   - 2. [Linux Resources](#2-linux-resources-hotel)
-   - 3 [Linux Quick Guides](#3-linux-quick-guides)
-   - 4. [Zabbix Stack](#4-zabbix-stack-traffic_light)
-   - 4.1 [Resources](#41-resources)
-   - 4.2 [Setup & Configuration](#42-setup--configuration)
-   - 4.3 [Upgrades](#43-upgrades)
-   - 4.4 [APT Sources](#44-apt-sources)
-   - 5. [Apache Tomcat & Solr (Windows) - Archived](#5-apache-tomcat--solr-windows---archived)
-   - [Archived Stacks](#archived-stacks)
-   - 1. [Elastic Stack (Ubuntu) - Archived](#1-elastic-stack-ubuntu---archived)
-   - 2. [Grafana & Zabbix (Ubuntu) - Archived](#2-grafana--zabbix-ubuntu---archived)
-   - 3. [RabbitMQ (Ubuntu) - Archived](#3-rabbitmq-ubuntu---archived)
-   - 4. [Telegraf](#4-telegraf)
-   - 5. [Docker RabbitMQ](#5-docker-rabbitmq)
-   - [Main Project Repositories](#main-project-repositories)
-   - 1 [azure-automation-bicep-and-labs :muscle:](#1-azure-automation-bicep-and-labs-muscle)
-   - 2 [AZ-104 Certified Professional Must Know :sunglasses:](#2-az-104-certified-professional-must-know-sunglasses)
-   - 3 [Quickguides :fire_engine:](#3-quickguides-fire_engine)
-10. [Release Notes & Updates](#release-notes--updates)
+- [Todo \& Current :seedling:](#todo--current-seedling)
+  - [Philosophy](#philosophy)
+  - [Table of Contents](#table-of-contents)
+  - [Setup \& Environment](#setup--environment)
+    - [Windows 11 Dark Mode](#windows-11-dark-mode)
+    - [Screen Background for Eye Strain](#screen-background-for-eye-strain)
+    - [Chromebook Linux Maintenance](#chromebook-linux-maintenance)
+  - [Old website parked](#old-website-parked)
+    - [E-lo (parked) :anchor:](#e-lo-parked-anchor)
+  - [Scripting Stack](#scripting-stack)
+  - [GitHub Copilot and Development](#github-copilot-and-development)
+    - [Using GitHub Copilot Workflow](#using-github-copilot-workflow)
+    - [Asking for Help](#asking-for-help)
+    - [Coding mode](#coding-mode)
+    - [Git Common Tasks](#git-common-tasks)
+      - [Fix "Rejected" Push](#fix-rejected-push)
+    - [VS Code Extensions \& Setup](#vs-code-extensions--setup)
+      - [Extensions (chromebook)](#extensions-chromebook)
+      - [Setting Up Git Bash Terminal in VS Code](#setting-up-git-bash-terminal-in-vs-code)
+  - [Infrastructure Essentials](#infrastructure-essentials)
+    - [Azure VM Operations](#azure-vm-operations)
+    - [AD DS Configuration (vmhybrid01)](#ad-ds-configuration-vmhybrid01)
+    - [Fast Linux VM Deployment](#fast-linux-vm-deployment)
+  - [Current Priorities: TOP 3](#current-priorities-top-3)
+    - [1. Octopus Deploy for Linux (CI/CD) ⭐](#1-octopus-deploy-for-linux-cicd-)
+    - [2. Windows Server Hybrid Administrator (vmhybrid01) ⭐](#2-windows-server-hybrid-administrator-vmhybrid01-)
+    - [3. Grafana, Loki, and Alloy Agents ⭐](#3-grafana-loki-and-alloy-agents-)
+  - [Knowledge Maintenance Checklist](#knowledge-maintenance-checklist)
+    - [1. :bulb: Linux Maintenance](#1-bulb-linux-maintenance)
+    - [2. MySQL Maintenance](#2-mysql-maintenance)
+    - [3. AZ-802: Windows Server Hybrid Administrator (june 2026)](#3-az-802-windows-server-hybrid-administrator-june-2026)
+    - [4. Octopus Deploy (Free)](#4-octopus-deploy-free)
+    - [5. AZ-104: Azure Administrator Maintenance](#5-az-104-azure-administrator-maintenance)
+  - [Parked Projects or Completed Projects](#parked-projects-or-completed-projects)
+    - [1. Docker \& Azure :airplane:](#1-docker--azure-airplane)
+    - [2. Docker Stack :helicopter:](#2-docker-stack-helicopter)
+    - [3. Python Maintenance (Parked)](#3-python-maintenance-parked)
+    - [4. Azure SQL Database (For Fun)](#4-azure-sql-database-for-fun)
+  - [Learning Resources and References](#learning-resources-and-references)
+    - [1. AZ-104: Certified Professional Must Know](#1-az-104-certified-professional-must-know)
+    - [2. Linux Resources :hotel:](#2-linux-resources-hotel)
+    - [3 Linux Quick Guides](#3-linux-quick-guides)
+    - [4. Zabbix Stack :traffic\_light:](#4-zabbix-stack-traffic_light)
+      - [4.1 Resources](#41-resources)
+      - [4.2 Setup \& Configuration](#42-setup--configuration)
+      - [4.3 Upgrades](#43-upgrades)
+      - [4.4 APT Sources](#44-apt-sources)
+    - [5. Apache Tomcat \& Solr (Windows) - Archived](#5-apache-tomcat--solr-windows---archived)
+    - [Archived Stacks](#archived-stacks)
+    - [1.  Elastic Stack (Ubuntu) - Archived](#1--elastic-stack-ubuntu---archived)
+    - [2. Grafana \& Zabbix (Ubuntu) - Archived](#2-grafana--zabbix-ubuntu---archived)
+    - [3. RabbitMQ (Ubuntu) - Archived](#3-rabbitmq-ubuntu---archived)
+    - [4. Telegraf](#4-telegraf)
+    - [5. Docker RabbitMQ](#5-docker-rabbitmq)
+    - [Main Project Repositories](#main-project-repositories)
+      - [1 azure-automation-bicep-and-labs :muscle:](#1-azure-automation-bicep-and-labs-muscle)
+      - [2 AZ-104 Certified Professional Must Know :sunglasses:](#2-az-104-certified-professional-must-know-sunglasses)
+      - [3 Quickguides :fire\_engine:](#3-quickguides-fire_engine)
+    - [Release Notes \& Updates](#release-notes--updates)
+  - [Additional Resources](#additional-resources)
 
 </details>
 
@@ -117,13 +122,13 @@ https://follow-e-lo.com/
 
 Use technologies for their strengths:
 
-| Platform | Technologies |
-|----------|--------------|
-| **Linux** | Bash, cron, Python, Zabbix sender, Telegraf |
-| **Windows** | PowerShell, Schedule tasks, Zabbix sender, Telegraf |
-| **Complex Logic** | Python |
-| **Databases** | MySQL, SQLPlus |
-| **ETL** | Telegraf https://github.com/influxdata/telegraf |
+| Platform          | Technologies                                        |
+| ----------------- | --------------------------------------------------- |
+| **Linux**         | Bash, cron, Python, Zabbix sender, Telegraf         |
+| **Windows**       | PowerShell, Schedule tasks, Zabbix sender, Telegraf |
+| **Complex Logic** | Python                                              |
+| **Databases**     | MySQL, SQLPlus                                      |
+| **ETL**           | Telegraf https://github.com/influxdata/telegraf     |
 
 **Best Practice:** Turn commands into Bash or PowerShell scripts. Replace hardcoded values with variables:
 ```bash
@@ -181,7 +186,17 @@ git push origin main
 
 ### VS Code Extensions & Setup
 
-#### Bash IDE Features
+#### Extensions (chromebook)
+
+* Pylance ** 
+* Python **
+* Python Debugger
+* Python Environments
+
+* Shell-format
+* Better Shell Syntax **
+* Bash IDE **
+  
 - Jump to declaration
 - Find references
 - Code Outline & Show Symbols
