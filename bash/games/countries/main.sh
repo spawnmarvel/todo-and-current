@@ -11,6 +11,13 @@ LGREEN='\e[1;32m'
 YELLOW='\e[1;33m'
 NC='\e[0m' # No Color (Reset) last line or after current line
 
+####
+# Game introduction and instructions
+####
+version=1.3
+
+echo ""
+echo "########"
 #####
 # Debug variables, set to false for production, true for debugging
 #####
@@ -21,13 +28,6 @@ if [[ "$DEBUG_ON" == true ]]; then
     printf "${YELLOW}Debug is on: $text ${NC}\n"
 fi
 
-####
-# Game introduction and instructions
-####
-version=1.3
-
-echo ""
-echo "########"
 # The first argument is the "Format", the others are the "Data"
 printf "${LGREEN}Countries\n"
 printf "${LGREEN}Inspired by https://web.mit.edu/mprat/Public/web/Terminus/Web/main.html \n"
