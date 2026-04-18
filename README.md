@@ -188,6 +188,9 @@ mysql --user=#{MySQL.User} --password=#{MySQL.Password}
 
 ### Git Common Tasks
 
+<details>
+<summary>Show / hide</summary>
+
 #### Fix "Rejected" Push
 When: "Updates were rejected because the tip of your current branch is behind"
 
@@ -198,10 +201,14 @@ This happens when you edited files directly on GitHub or pushed from a different
 git pull --rebase origin main
 git push origin main
 ```
+</details>
 
 ---
 
 ### VS Code Extensions & Setup
+
+<details>
+<summary>Show / hide</summary>
 
 #### Extensions (chromebook)
 
@@ -231,6 +238,8 @@ git push origin main
 5. Choose "Git Bash"
 
 Now run scripts directly: `./your_script.sh`
+
+</details>
 
 ---
 
