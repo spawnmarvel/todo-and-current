@@ -10,15 +10,14 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
 ---
 
 
-## Table of Contents
+# Table of Contents
 
 <details>
 <summary>Show / hide Table of Contents</summary>
 
 - [Todo \& Current :seedling:](#todo--current-seedling)
   - [Philosophy](#philosophy)
-  - [Table of Contents](#table-of-contents)
-  - [](#)
+- [Table of Contents](#table-of-contents)
   - [Setup \& Environment](#setup--environment)
     - [Windows 11 Dark Mode](#windows-11-dark-mode)
     - [Screen Background for Eye Strain](#screen-background-for-eye-strain)
@@ -44,20 +43,20 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
     - [2. Windows Server Hybrid Administrator (vmhybrid01) ⭐](#2-windows-server-hybrid-administrator-vmhybrid01-)
     - [3. Grafana, Loki, and Alloy Agents ⭐](#3-grafana-loki-and-alloy-agents-)
   - [Knowledge Maintenance Checklist](#knowledge-maintenance-checklist)
-    - [1. :bulb: Linux Maintenance](#1-bulb-linux-maintenance)
-    - [2. MySQL Maintenance](#2-mysql-maintenance)
-    - [3. AZ-802: Windows Server Hybrid Administrator (june 2026)](#3-az-802-windows-server-hybrid-administrator-june-2026)
-    - [4. Octopus Deploy (Free)](#4-octopus-deploy-free)
-    - [5. AZ-104: Azure Administrator Maintenance](#5-az-104-azure-administrator-maintenance)
+    - [1. Linux Continous](#1-linux-continous)
+    - [2. MySQL Continous](#2-mysql-continous)
+    - [3. AZ-802: Windows Server Hybrid Administrator Continous](#3-az-802-windows-server-hybrid-administrator-continous)
+    - [4. Octopus Deploy Continous](#4-octopus-deploy-continous)
+    - [5. AZ-104: Azure Administrator Continous](#5-az-104-azure-administrator-continous)
   - [Parked Projects or Completed Projects](#parked-projects-or-completed-projects)
-    - [1. Docker \& Azure :airplane:](#1-docker--azure-airplane)
-    - [2. Docker Stack :helicopter:](#2-docker-stack-helicopter)
+    - [1. Docker \& Azure](#1-docker--azure)
+    - [2. Docker Stack](#2-docker-stack)
     - [3. Python Maintenance (Parked)](#3-python-maintenance-parked)
     - [4. Azure SQL Database (For Fun)](#4-azure-sql-database-for-fun)
   - [Learning Resources and References](#learning-resources-and-references)
     - [1. AZ-104: Certified Professional Must Know](#1-az-104-certified-professional-must-know)
-    - [2. Linux Resources :hotel:](#2-linux-resources-hotel)
-    - [3 Linux Quick Guides](#3-linux-quick-guides)
+    - [2. Linux Resources](#2-linux-resources)
+    - [3 Linux Quick Guides (Azure, zabbix troubleshoot, mind maps, mirror server, ubuntu docs)](#3-linux-quick-guides-azure-zabbix-troubleshoot-mind-maps-mirror-server-ubuntu-docs)
     - [4. Zabbix Stack :traffic\_light:](#4-zabbix-stack-traffic_light)
       - [4.1 Resources](#41-resources)
       - [4.2 Setup \& Configuration](#42-setup--configuration)
@@ -78,7 +77,6 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
   - [Additional Resources](#additional-resources)
 
 </details>
----
 
 ## Setup & Environment
 
@@ -297,7 +295,7 @@ Exam target: **AZ-802** (June 2026)
 
 ## Knowledge Maintenance Checklist
 
-### 1. :bulb: Linux Maintenance
+### 1. Linux Continous
 
 **Completed:**
 - ✅ Bash tutorial W3S + quick guide (100%)
@@ -317,7 +315,7 @@ Exam target: **AZ-802** (June 2026)
 
 ---
 
-### 2. MySQL Maintenance
+### 2. MySQL Continous
 
 **Completed:**
 - ✅ Azure Database for MySQL upgrade 8.0 → 8.4 (100%) - Zabbix 6.0.43
@@ -333,7 +331,7 @@ Exam target: **AZ-802** (June 2026)
 
 ---
 
-### 3. AZ-802: Windows Server Hybrid Administrator (june 2026)
+### 3. AZ-802: Windows Server Hybrid Administrator Continous
 
 **Completed:**
 - ✅ AD DS installed (100%)
@@ -349,7 +347,7 @@ Exam target: **AZ-802** (June 2026)
 
 ---
 
-### 4. Octopus Deploy (Free)
+### 4. Octopus Deploy Continous
 
 **Completed:**
 - ✅ Windows first deployment (100%)
@@ -366,7 +364,7 @@ Exam target: **AZ-802** (June 2026)
 
 ---
 
-### 5. AZ-104: Azure Administrator Maintenance
+### 5. AZ-104: Azure Administrator Continous
 
 **Completed:**
 - ✅ VM updates automation runbook (PS1) (100%)
@@ -389,7 +387,7 @@ Exam target: **AZ-802** (June 2026)
 
 ## Parked Projects or Completed Projects
 
-### 1. Docker & Azure :airplane:
+### 1. Docker & Azure
 
 **Python as Container in Docker:**
 - Getting started tutorial
@@ -407,7 +405,7 @@ Exam target: **AZ-802** (June 2026)
 
 ---
 
-### 2. Docker Stack :helicopter:
+### 2. Docker Stack
 
 **Completed:**
 - ✅ Portainer (100%)
@@ -454,13 +452,13 @@ Fill the gaps in networking, monitoring, web apps:
 
 ---
 
-### 2. Linux Resources :hotel:
+### 2. Linux Resources
 
 **Topics:** UFW, SSH, PS1, Bash quick ref, file system hierarchy, grep, tail, script, env, cron, Python
 
 📖 [Linux & Azure](https://github.com/spawnmarvel/linux-and-azure)
 
-### 3 Linux Quick Guides
+### 3 Linux Quick Guides (Azure, zabbix troubleshoot, mind maps, mirror server, ubuntu docs)
 
 - **Linux and Azure Reference:** [Linux and Azure](https://github.com/spawnmarvel/linux-and-azure)
 - **Zabbix Troubleshoot:** [Linux & Azure Grep It](https://github.com/spawnmarvel/linux-and-azure?tab=readme-ov-file#grep-it)
