@@ -74,6 +74,7 @@ fun_learning() {
     echo "3. Quoting is king."
     echo "4. function_sum(), '$1, $2' bash arguments are silent, we just provide and must code for it."
     echo "5. lowercase trick - ${c} ${c,,} "
+    echo "6. Send debug to stderr (>&2) so it doesn't break the return string, fun_debug txt input >&2"
 }
 # Take a string argument and print it if debug is on
 fun_debug() {
@@ -96,7 +97,8 @@ fun_menu() {
 }
 # simulate echo with args and file append
 fun_save_notebook() {
-    fun_debug "Saving to notebook with argument: $1"
+    # Send debug to stderr (>&2) so it doesn't break the return string
+    fun_debug "Saving to notebook with argument: $1" >&2
 
     local note="$1"
     # --- FUNCTION ARGUMENTS ($1) ---
@@ -113,7 +115,7 @@ fun_save_notebook() {
 }
 # simulate cat to read file line by line and print it with some formatting
 fun_open_notebook() {
-    fun_debug "Opening notebook"
+    fun_debug "Opening notebook" >&2
 
     local notebook="saved_notebook.txt"
     # We check if the notebook is NOT empty using [[ -n ]].
@@ -131,7 +133,7 @@ fun_open_notebook() {
 # simulate printf to print formatted text in terminal, we use shuf to shuffle
 # the array and pick 10 random countries to print as if
 fun_full_scan_terminal() {
-    fun_debug "Scanning terminal for possible flights from $current_location in $current_location_world"
+    fun_debug "Scanning terminal for possible flights from $current_location in $current_location_world" >&2
 
     # 1. Shuffle and save into a NEW array called 'current_terminal'
     # -n 10, pick 10 items
@@ -174,7 +176,7 @@ fun_format_array() {
 # we check the world location and print the possible flights,
 # if we are in a gateway we print both
 fun_check_countries_from_location() {
-    fun_debug "Checking possible flights from $current_location in $current_location_world"
+    fun_debug "Checking possible flights from $current_location in $current_location_world" >&2
 
     local c=0
 
@@ -204,7 +206,7 @@ fun_check_countries_from_location() {
 # some place may overlap, like our starting point scandinavia
 # we can also have special airports that are gateways to multiple continents, like istanbul and tokyo
 fun_verify_continents_flights() {
-    fun_debug "Verifying flight possibilities from $current_location in $current_location_world"
+    fun_debug "Verifying flight possibilities from $current_location in $current_location_world" >&2
 
     flight_possibilities=""
 
@@ -233,7 +235,7 @@ fun_verify_continents_flights() {
 # if it is we move there and print a flying animation,
 # if not we print an error
 fun_destination_move() {
-    fun_debug "Attempting to move to destination: $1 from $current_location in $current_location_world"
+    fun_debug "Attempting to move to destination: $1 from $current_location in $current_location_world" >&2
 
     local move_to_destination="$1"
     local can_fly=false
