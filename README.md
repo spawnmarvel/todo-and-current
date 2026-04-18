@@ -78,7 +78,12 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
 
 </details>
 
+---
+
 ## Setup & Environment
+
+<details>
+<summary>Show / hide Setup & Environment</summary>
 
 ### Windows 11 Dark Mode
 Enable dark mode for reduced eye strain:
@@ -107,6 +112,7 @@ sudo apt autoclean
 # Bash Tip: Use Tab for Programmable Completion
 # Type: ssh, cd, pwd, ls then press Tab once or twice
 ```
+</details>
 
 ---
 
