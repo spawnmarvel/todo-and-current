@@ -317,7 +317,7 @@ Exam target: **AZ-802** (June 2026)
 
 ## Parked Projects or completed projects
 
-### 2. Docker & Azure :airplane:
+### 1. Docker & Azure :airplane:
 
 **Python as Container in Docker:**
 - Getting started tutorial
@@ -335,7 +335,7 @@ Exam target: **AZ-802** (June 2026)
 
 ---
 
-### 3. Docker Stack :helicopter:
+### 2. Docker Stack :helicopter:
 
 **Completed:**
 - ✅ Portainer (100%)
@@ -351,7 +351,7 @@ Exam target: **AZ-802** (June 2026)
 
 ---
 
-### 6. Python Maintenance (Parked)
+### 3. Python Maintenance (Parked)
 
 - 🔄 Code a few lines regularly
 - 📦 py-central-monitor: Fix database logic, send always, store in file
@@ -360,38 +360,34 @@ Exam target: **AZ-802** (June 2026)
 
 ---
 
-### 7. Azure SQL Database (For Fun)
+### 4. Azure SQL Database (For Fun)
 
 📖 [Azure SQL Database](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-sql/README.md)
 
 ---
 
-## Learning Resources & References
-
-### Continuing Education
-
-#### AZ-104: Certified Professional Must Know
+### 5. AZ-104: Certified Professional Must Know
 Fill the gaps in networking, monitoring, and web apps:
 - **Azure VM Tutorials:** [AZ-104 VM](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-vm)
 - **Core Skills:** [AZ-104 Certified Professional](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-administrator-certified-professional)
 - **Azure Speed Test:** https://www.azurespeed.com/Azure/Latency
 - **Network Advanced Tutorial:** [Network advanced tutorial and checklist](https://github.com/spawnmarvel/todo-and-current/tree/main/sysadmin_and_netsh)
 
----
+MS Learn Recommendations
 
-#### MS Learn Recommendations
 - [Secure Windows Server User Accounts](https://learn.microsoft.com/en-us/training/modules/secure-windows-server-user-accounts/?source=recommendations)
 - [Secure Group Managed Service Accounts](https://learn.microsoft.com/en-us/entra/architecture/service-accounts-group-managed?source=recommendations)
 
+
 ---
 
-### Linux Resources :hotel:
+### 6. Linux Resources :hotel:
 
 **Topics:** UFW, SSH, PS1, Bash quick ref, file system hierarchy, grep, tail, script, env, cron, Python
 
 📖 [Linux & Azure](https://github.com/spawnmarvel/linux-and-azure)
 
-#### Linux Quick Guides
+#### 6.1 Linux Quick Guides
 - **Linux and Azure Reference:** [Linux and Azure](https://github.com/spawnmarvel/linux-and-azure)
 - **Zabbix Troubleshoot:** [Linux & Azure Grep It](https://github.com/spawnmarvel/linux-and-azure?tab=readme-ov-file#grep-it)
 - **Mind Maps:** [Linux Mind Maps](https://github.com/spawnmarvel/linux-and-azure/tree/main/z-mind-maps)
@@ -400,25 +396,25 @@ Fill the gaps in networking, monitoring, and web apps:
 
 ---
 
-### Zabbix Stack :traffic_light:
+### 7. Zabbix Stack :traffic_light:
 
-#### Resources
+#### 7.1 Resources
 - **Academy:** https://academy.zabbix.com/courses
 - **Blog:** https://blog.zabbix.com/
 - **Docs:** https://www.zabbix.com/documentation/7.0/en/manual/config/items/itemtypes/browser
 
-#### Setup & Configuration
+#### 7.2 Setup & Configuration
 - **Stack Setup:** [Zabbix Stack](https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/README_stack.md)
 - **Performance Tuning:** [Zabbix Tuning](https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/README_tuning.md)
 - **Templates (Active/Passive):** [Zabbix Templates](https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/templates/README_templates.md)
 - **User Parameter Advanced:** [User Parameters](https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/README_stack.md#user-parameter-advanced)
 
-#### Upgrades
+#### 7.3 Upgrades
 - **Minor Upgrade:** [Zabbix Minor Upgrade](https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/README_upgrade_zabbix_host_one.md)
 - **Major Upgrade:** [Zabbix Major Upgrade](https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/README_upgrade_zabbix_major.md)
 - **SSL/HTTPS:** [Zabbix HTTPS](https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/README_https_zabbix.md)
 
-#### APT Sources
+#### 7.4 APT Sources
 ```
 Ubuntu, MySQL, PHP:
 - archive.ubuntu.com (80, 443)
@@ -430,26 +426,24 @@ Zabbix:
 
 ---
 
-### Archived Stacks
-
-#### Apache Tomcat & Solr (Windows) - Archived
+### 8. Apache Tomcat & Solr (Windows) - Archived
 - Install Java, Apache Tomcat, Solr
 - Fix log levels and sizes
 - Upgrade Apache Tomcat
 
 📖 [Apache Tomcat & Solr](https://github.com/spawnmarvel/quickguides/tree/main/apache_tomcat_and_solr)
 
-#### Elastic Stack (Ubuntu) - Archived
+### 9.  Elastic Stack (Ubuntu) - Archived
 📖 [Kibana, Elasticsearch, Filebeat](https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/kibana-elasticsearch-file-beat/README.md)
 
-#### Grafana & Zabbix (Ubuntu) - Archived
+### 10. Grafana & Zabbix (Ubuntu) - Archived
 - Deploy dashboards and integrations
 - Grafana Agent (OpenTelemetry Collector)
 
 📖 [Grafana Zabbix](https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm/grafana-zabbix)
 📖 [Grafana Agent Docs](https://grafana.com/docs/agent/latest/)
 
-#### RabbitMQ (Ubuntu) - Archived
+### 11. RabbitMQ (Ubuntu) - Archived
 - X.509 Shovel with TLS
 - amqp_client alternatives
 - Certificate requests and renewal
@@ -458,14 +452,14 @@ Zabbix:
 📖 [X.509 Shovel Config](https://github.com/spawnmarvel/quickguides/blob/main/amqp/x509/vm1_advanced_11.config)
 📖 [Certificate Requests](https://github.com/spawnmarvel/quickguides/blob/main/amqp/RequestRenewExample/README.md)
 
-#### Telegraf
+### 12. Telegraf
 Input: file, AMQP, disk, CPU
 Output: file, AMQP, Zabbix
 
 📖 [Telegraf Setup](https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm/telegraf)
 📖 [Telegraf Docs](https://docs.influxdata.com/telegraf/v1/)
 
-#### Docker RabbitMQ
+### 13. Docker RabbitMQ
 📖 [RabbitMQ SSL](https://github.com/spawnmarvel/learning-docker/blob/main/prod-ish/rmq/rmq-ssl/README.md)
 
 ---
