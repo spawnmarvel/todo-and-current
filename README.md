@@ -99,6 +99,11 @@ mysql --user=#{MySQL.User} --password=#{MySQL.Password}
 ### Asking for Help
 Ask Copilot to review your files: "Could we make this better and more readable?"
 
+### Coding mode
+
+1. Start typing and it will give suggestions
+2. To keep it, press Ctrl + Right Arrow key
+
 📖 Learn more: [Copilot README](https://github.com/spawnmarvel/todo-and-current/blob/main/copilot/README.md)
 
 ---

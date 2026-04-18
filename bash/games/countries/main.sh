@@ -34,8 +34,12 @@ echo "It’s not just a game about geography; it’s a CLI (Command Line Interfa
 echo "Type m for menu."
 
 #####
-# vars
+# Debug variables, set to false for production, true for debugging
 #####
+DEBUG_ON=true
+#####
+# Script variables
+####
 
 fly_countries_scandinavia=("Norway" "Sweden" "Denmark")
 fly_countries_europe=("Albania" "Andorra" "Austria" "Belarus" "Belgium" "Bosnia and Herzegovina" "Bulgaria" "Croatia" "Cyprus" "Czech Republic" "Denmark" "Estonia" "Finland" "France" "Germany" "Greece" "Hungary" "Iceland" "Ireland" "Italy" "Kazakhstan" "Kosovo" "Latvia" "Liechtenstein" "Lithuania" "Luxembourg" "Malta" "Moldova" "Monaco" "Montenegro" "Netherlands" "North Macedonia" "Norway" "Poland" "Portugal" "Romania" "Russia" "San Marino" "Serbia" "Slovakia" "Slovenia" "Spain" "Sweden" "Switzerland" "Turkey" "Ukraine" "United Kingdom" "Vatican City")
@@ -45,8 +49,10 @@ fly_countries_north_america=("")
 fly_countries_south_america=("")
 fly_countries_antartica=("")
 fly_countries_oceania=("Australia")
+
 current_location="Norway"
 current_location_world="europe" # europe, asia
+
 # main airports,
 # Hub-and-spoke network.
 # By designating Turkey and Japan (Tokyo) as your "Gateways," you’ve introduced a layer of strategy.
@@ -54,7 +60,7 @@ declare -A airport_codes
 airport_codes["IST"]="Turkey"
 airport_codes["HND"]="Tokyo"
 
-# learned
+# learned lessons
 fun_learning() {
     echo "What did i learn making this or where did i send time debugging?"
     echo "1. bash is pickey about spaces, it needs them."
@@ -63,7 +69,16 @@ fun_learning() {
     echo "4. function_sum(), '$1, $2' bash arguments are silent, we just provide and must code for it."
     echo "5. lowercase trick - ${c} ${c,,} "
 }
-# menu
+# Take a string argument and print it if debug is on
+fun_debug() {
+    text="$1"
+    if [[ "$DEBUG_ON" == true ]]; then
+        echo "Debug: $text"
+    else
+        # Debug is off, do nothing
+    fi
+}
+# simulate menu with no args
 fun_menu() {
     printf "${BLUE} Main Airports: ${NC}"
     printf "${BLUE}%s ${NC}" "${airport_codes[@]}"
@@ -73,7 +88,7 @@ fun_menu() {
     printf "${LGREEN} Menu: (printf : scanning full terminal). ${NC}\n"
     printf "${LGREEN} Menu (TODO): (awk destination : scanning terminal). ${NC}\n"
 }
-# simulate nano with args 1 contaning all text
+# simulate echo with args and file append
 fun_save_notebook() {
     local note="$1"
     # --- FUNCTION ARGUMENTS ($1) ---
@@ -88,7 +103,7 @@ fun_save_notebook() {
         echo "Error: What do you want to write? (Usage: s 'your note here')"
     fi
 }
-# simulate cat with no args
+# simulate cat to read file line by line and print it with some formatting
 fun_open_notebook() {
     local notebook="saved_notebook.txt"
     # We check if the notebook is NOT empty using [[ -n ]].
@@ -103,7 +118,8 @@ fun_open_notebook() {
     done <"$notebook"
 }
 
-# simulate printf for full terminal and random flights
+# simulate printf to print formatted text in terminal, we use shuf to shuffle
+# the array and pick 10 random countries to print as if
 fun_full_scan_terminal() {
     # 1. Shuffle and save into a NEW array called 'current_terminal'
     # -n 10, pick 10 items
@@ -125,7 +141,7 @@ fun_scan_terminal() {
     echo "TBD"
 }
 
-# helper ls to format array
+# helper function to format and print an array of countries in a nice way, we use printf to create columns and newlines
 fun_format_array() {
     local -n fly_countries_arr="$1"
     local c=0
@@ -142,7 +158,9 @@ fun_format_array() {
     done
     printf "\n"
 }
-# simulate ls to list where we can fly
+# simulate ls to check where we can fly from our current location,
+# we check the world location and print the possible flights,
+# if we are in a gateway we print both
 fun_check_countries_from_location() {
     local c=0
 
@@ -172,6 +190,7 @@ fun_check_countries_from_location() {
 
 # check what country we are in an set location world
 # some place may overlap, like our starting point scandinavia
+# we can also have special airports that are gateways to multiple continents, like istanbul and tokyo
 fun_verify_continents_flights() {
     flight_possibilities=""
 
@@ -196,9 +215,9 @@ fun_verify_continents_flights() {
 
 }
 
-#####
-## simulate cd move loop
-#####
+# simulate cd to move to another country, we check if the destination is in the possible flights from our location,
+# if it is we move there and print a flying animation,
+# if not we print an error
 fun_destination_move() {
 
     local move_to_destination="$1"
@@ -282,11 +301,8 @@ fun_destination_move() {
         echo "Error missing destination parameter"
     fi
 }
-#####
-## The main entry loop
-#####
-# Change this full loop to a case statment
-####
+# Main game loop, we read user input and execute commands based on it,
+# we use a case statement to handle different commands
 while true; do
     # 1. Clear variables
     cmd=""
