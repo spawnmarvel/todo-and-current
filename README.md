@@ -127,6 +127,9 @@ https://follow-e-lo.com/
 
 ## Scripting Stack
 
+<details>
+<summary>Show / hide Scripting Stack</summary>
+
 Use technologies for their strengths:
 
 | Platform          | Technologies                                        |
@@ -145,6 +148,8 @@ mysql --user=root --password=Password123
 # Good: 
 mysql --user=#{MySQL.User} --password=#{MySQL.Password}
 ```
+
+</details>
 
 ---
 
