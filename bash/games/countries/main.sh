@@ -68,6 +68,7 @@ airport_codes["HND"]="Tokyo"
 
 # learned lessons
 fun_learning() {
+    echo "#############"
     echo "What did i learn making this or where did i send time debugging?"
     echo "1. bash is pickey about spaces, it needs them."
     echo "2. echo "text" >> file.txt, is silent."
