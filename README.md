@@ -427,6 +427,9 @@ Exam target: **AZ-802** (June 2026)
 
 ## Parked Projects or Completed Projects
 
+<details>
+<summary>Show / hide</summary>
+
 ### 1. Docker & Azure
 
 **Python as Container in Docker:**
@@ -473,6 +476,8 @@ Exam target: **AZ-802** (June 2026)
 ### 4. Azure SQL Database (For Fun)
 
 📖 [Azure SQL Database](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-sql/README.md)
+
+</details>
 
 ---
 
