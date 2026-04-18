@@ -7,6 +7,7 @@
 RED='\e[31m'
 BLUE='\e[34m'
 LGREEN='\e[1;32m'
+YELLOW='\e[1;33m'
 NC='\e[0m' # No Color (Reset) last line or after current line
 
 ####
@@ -37,6 +38,11 @@ echo "Type m for menu."
 # Debug variables, set to false for production, true for debugging
 #####
 DEBUG_ON=true
+
+if [[ "$DEBUG_ON" == true ]]; then
+
+    printf "${YELLOW}Debug is on: $text ${NC}\n"
+fi
 #####
 # Script variables
 ####
@@ -73,10 +79,10 @@ fun_learning() {
 fun_debug() {
     text="$1"
     if [[ "$DEBUG_ON" == true ]]; then
-        echo "Debug: $text"
-    else
-        # Debug is off, do nothing
+        printf "${YELLOW}Debug: $text ${NC}\n"
+
     fi
+    # Debug is off, do nothing
 }
 # simulate menu with no args
 fun_menu() {
@@ -90,6 +96,8 @@ fun_menu() {
 }
 # simulate echo with args and file append
 fun_save_notebook() {
+    fun_debug "Saving to notebook with argument: $1"
+
     local note="$1"
     # --- FUNCTION ARGUMENTS ($1) ---
     # We check if $1 (the first argument) is NOT empty using [[ -n ]].
@@ -105,6 +113,8 @@ fun_save_notebook() {
 }
 # simulate cat to read file line by line and print it with some formatting
 fun_open_notebook() {
+    fun_debug "Opening notebook"
+
     local notebook="saved_notebook.txt"
     # We check if the notebook is NOT empty using [[ -n ]].
     if [[ ! -f "$notebook" ]]; then
@@ -121,6 +131,8 @@ fun_open_notebook() {
 # simulate printf to print formatted text in terminal, we use shuf to shuffle
 # the array and pick 10 random countries to print as if
 fun_full_scan_terminal() {
+    fun_debug "Scanning terminal for possible flights from $current_location in $current_location_world"
+
     # 1. Shuffle and save into a NEW array called 'current_terminal'
     # -n 10, pick 10 items
     # -e treat them as elements
@@ -162,9 +174,9 @@ fun_format_array() {
 # we check the world location and print the possible flights,
 # if we are in a gateway we print both
 fun_check_countries_from_location() {
-    local c=0
+    fun_debug "Checking possible flights from $current_location in $current_location_world"
 
-    echo "debug current_location $current_location current_location_world $current_location_world"
+    local c=0
 
     if [[ "$current_location_world" == "europe" && "$current_location" != "${airport_codes[IST],,}" ]]; then
         # flights in europe
@@ -192,6 +204,8 @@ fun_check_countries_from_location() {
 # some place may overlap, like our starting point scandinavia
 # we can also have special airports that are gateways to multiple continents, like istanbul and tokyo
 fun_verify_continents_flights() {
+    fun_debug "Verifying flight possibilities from $current_location in $current_location_world"
+
     flight_possibilities=""
 
     # 1. gateway instanbul (bridge asia and europe)
@@ -219,6 +233,7 @@ fun_verify_continents_flights() {
 # if it is we move there and print a flying animation,
 # if not we print an error
 fun_destination_move() {
+    fun_debug "Attempting to move to destination: $1 from $current_location in $current_location_world"
 
     local move_to_destination="$1"
     local can_fly=false

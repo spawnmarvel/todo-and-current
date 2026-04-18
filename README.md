@@ -86,7 +86,7 @@ mysql --user=#{MySQL.User} --password=#{MySQL.Password}
 
 ---
 
-## 🛠️ GitHub Copilot & Development
+## GitHub Copilot & Development
 
 ### Using GitHub Copilot Workflow
 1. Create an issue with title, description, path, and steps
