@@ -96,8 +96,9 @@ fun_menu() {
     printf "${LGREEN} Menu: (printf : scanning full terminal). ${NC}\n"
     printf "${LGREEN} Menu (TODO): (awk destination : scanning terminal). ${NC}\n"
     printf "${LGREEN} Game (TODO): (fun_full_scan_terminal, printf). ${NC}\n"
-    printf "${LGREEN} Game (TODO): (if all above done test game and move to next stage). ${NC}\n
+    printf "${LGREEN} Game (TODO): (if all above done test game and move to next stage). ${NC}\n"
 }
+
 # simulate echo with args and file append
 fun_save_notebook() {
     # Send debug to stderr (>&2) so it doesn't break the return string
