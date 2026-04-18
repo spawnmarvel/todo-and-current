@@ -620,10 +620,14 @@ Output: file, AMQP, Zabbix
 
 Keep up with the latest updates:
 
-- **Gemini:** https://gemini.google/release-notes/
 - **AZ-104:** https://learn.microsoft.com/en-us/training/browse/?terms=az-104&source=learn&roles=administrator&products=azure&resource_type=learning%20path
 - **Zabbix:** https://www.zabbix.com/release_notes
+- **Grafana:** https://grafana.com/docs/grafana/latest/whatsnew/
+- **Grafana Alloy:** https://grafana.com/docs/alloy/latest/
+- **Grafana Loki:** https://grafana.com/docs/loki/latest/release-notes/
 - **MySQL:** https://dev.mysql.com/doc/relnotes/mysql/8.0/en/
+- **Octopus Deploy:** https://octopus.com/whatsnew
+- **Gemini:** https://gemini.google/release-notes/
 - **RabbitMQ:** https://www.rabbitmq.com/release-information
 - **Telegraf:** https://docs.influxdata.com/telegraf/v1/release-notes/
 - **Docker:** https://docs.docker.com/tags/release-notes/
