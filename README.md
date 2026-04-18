@@ -19,7 +19,7 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
 6. [Current Priorities: TOP 3](#current-priorities-top-3)
 7. [Knowledge Maintenance Checklist](#knowledge-maintenance-checklist)
 8. [Completed Tasks](#completed-tasks)
-9. [Parked Projects](#parked-projects)
+9. [Parked Projects or completed projects](#parked-projects-or-completed-projects)
 10. [Learning Resources & References](#learning-resources-references)
 
 ---
@@ -313,17 +313,9 @@ Exam target: **AZ-802** (June 2026)
 
 ---
 
-## Completed Tasks
-
-### 1. Bash Tutorial :rocket: :repeat: :rocket:
-
-- ✅ Go over all chapters (100%)
-- ✅ Mirror server and test with Zabbix apt (100%)
-
-
 ---
 
-## Parked Projects
+## Parked Projects or completed projects
 
 ### 2. Docker & Azure :airplane:
 
