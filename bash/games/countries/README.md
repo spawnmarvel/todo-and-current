@@ -44,6 +44,14 @@ Copy and paste this into your terminal:
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/spawnmarvel/todo-and-current/main/bash/games/countries/main.sh | bash
+
+# Local Proxy or ISP Caching
+# Sometimes your local network or a corporate proxy might be "helping" 
+# by caching the response of the curl command.
+
+# The Fix: Use the -H flag to tell the servers you want fresh data.
+
+curl -H "Cache-Control: no-cache" -sSL https://raw.githubusercontent.com/spawnmarvel/todo-and-current/main/bash/games/countries/main.sh | bash
 ```
 This makes the "barrier to entry" almost zero. It’s clean, it’s professional, and it’s how the biggest tools in the world (like Docker or Rust) handle their installers.
 
