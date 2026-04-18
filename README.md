@@ -245,6 +245,9 @@ Now run scripts directly: `./your_script.sh`
 
 ## Infrastructure Essentials
 
+<details>
+<summary>Show / hide</summary>
+
 ### Azure VM Operations
 **Important:** On all Azure VMs, go to Operations > Run command (ps1 / sh)
 
@@ -258,11 +261,21 @@ vmhybrid01 is the **DC and DNS server** - it must be running for network operati
 
 📖 Reference: [Azure AD DS Install Guide](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-ad-ds-windows-server-hybrid-core-infrastructure/README_cloud-only-hybrid-Lab_2_install-ad.md)
 
+</details>
+
+---
+
 ### Fast Linux VM Deployment
+
+<details>
+<summary>Show / hide</summary>
+
 **GOTO:** `iac_fast_biceps`
 - Deploy within 1 min
 - Remove within 1 min
 - Autoshutdown enabled (safety if forgotten)
+
+</details>
 
 ---
 
