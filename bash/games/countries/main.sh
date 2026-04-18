@@ -14,7 +14,7 @@ NC='\e[0m' # No Color (Reset) last line or after current line
 ####
 # Game introduction and instructions
 ####
-version=1.3
+version=1.4
 
 echo ""
 echo "########"
@@ -333,7 +333,7 @@ fun_destination_move() {
 if [[ "$DEBUG_ON" == true ]]; then
 
     fun_learning
-    echo "Debug is on type game commands as normal"
+    echo "Debug is on, type game commands as normal"
 fi
 # Main game loop, we read user input and execute commands based on it,
 # we use a case statement to handle different commands
