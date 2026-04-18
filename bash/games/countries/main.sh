@@ -19,7 +19,7 @@ echo "########"
 # The first argument is the "Format", the others are the "Data"
 printf "${LGREEN}Countries\n"
 printf "${LGREEN}Inspired by https://web.mit.edu/mprat/Public/web/Terminus/Web/main.html \n"
-version=1.2
+version=1.3
 printf "${LGREEN}Version $version ${NC}\n"
 
 echo "########"
