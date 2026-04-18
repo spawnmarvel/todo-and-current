@@ -18,9 +18,9 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
 5. [Infrastructure Essentials](#infrastructure-essentials)
 6. [Current Priorities: TOP 3](#current-priorities-top-3)
 7. [Knowledge Maintenance Checklist](#knowledge-maintenance-checklist)
-8. [Completed Tasks](#completed-tasks)
-9. [Parked Projects or completed projects](#parked-projects-or-completed-projects)
-10. [Learning Resources & References](#learning-resources-references)
+8. [Parked Projects or completed projects](#parked-projects-or-completed-projects)
+9. [Learning Resources & References](#learning-resources-references)
+10. [Release Notes & Updates](#release-notes--updates)
 
 ---
 
@@ -492,7 +492,7 @@ Output: file, AMQP, Zabbix
 
 ---
 
-### Release Notes & Updates :newspaper:
+### Release Notes & Updates
 
 Keep up with the latest updates:
 
