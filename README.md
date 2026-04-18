@@ -12,7 +12,7 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
 ## Table of Contents
 
 1. [Setup & Environment](#setup--environment)
-2. [Tools & Platforms](#tools--platforms)
+2. [Old website parked](#old-website-parked)
 3. [Scripting Stack](#scripting-stack)
 4. [GitHub Copilot & Development](#github-copilot-development)
 5. [Infrastructure Essentials](#infrastructure-essentials)
@@ -313,7 +313,7 @@ Exam target: **AZ-802** (June 2026)
 
 ---
 
-## Completed Tasks ✅
+## Completed Tasks
 
 ### 1. Bash Tutorial :rocket: :repeat: :rocket:
 
@@ -323,7 +323,7 @@ Exam target: **AZ-802** (June 2026)
 
 ---
 
-## Parked Projects 🚁
+## Parked Projects
 
 ### 2. Docker & Azure :airplane:
 
