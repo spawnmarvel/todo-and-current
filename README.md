@@ -23,7 +23,6 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
     - [Screen Background for Eye Strain](#screen-background-for-eye-strain)
     - [Chromebook Linux Maintenance](#chromebook-linux-maintenance)
   - [Old website parked](#old-website-parked)
-    - [E-lo (parked) :anchor:](#e-lo-parked-anchor)
   - [](#)
   - [Scripting Stack](#scripting-stack)
   - [GitHub Copilot and Development](#github-copilot-and-development)
@@ -121,8 +120,6 @@ sudo apt autoclean
 
 <details>
 <summary>Show / hide E-lo (parked)</summary>
-
-### E-lo (parked) :anchor:
 https://follow-e-lo.com/
 
 </details>
