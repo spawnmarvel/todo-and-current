@@ -1,7 +1,8 @@
 #!/bin/bash
 
 ####
-# colors
+# Colors for output, we use ANSI escape codes to add color to our terminal output,
+# this makes it more fun and easier to read.
 ####
 
 RED='\e[31m'
@@ -10,16 +11,26 @@ LGREEN='\e[1;32m'
 YELLOW='\e[1;33m'
 NC='\e[0m' # No Color (Reset) last line or after current line
 
+#####
+# Debug variables, set to false for production, true for debugging
+#####
+DEBUG_ON=true
+
+if [[ "$DEBUG_ON" == true ]]; then
+
+    printf "${YELLOW}Debug is on: $text ${NC}\n"
+fi
+
 ####
-# start
+# Game introduction and instructions
 ####
+version=1.3
 
 echo ""
 echo "########"
 # The first argument is the "Format", the others are the "Data"
 printf "${LGREEN}Countries\n"
 printf "${LGREEN}Inspired by https://web.mit.edu/mprat/Public/web/Terminus/Web/main.html \n"
-version=1.3
 printf "${LGREEN}Version $version ${NC}\n"
 
 echo "########"
@@ -35,16 +46,8 @@ echo "It’s not just a game about geography; it’s a CLI (Command Line Interfa
 echo "Type m for menu."
 
 #####
-# Debug variables, set to false for production, true for debugging
-#####
-DEBUG_ON=true
-
-if [[ "$DEBUG_ON" == true ]]; then
-
-    printf "${YELLOW}Debug is on: $text ${NC}\n"
-fi
-#####
-# Script variables
+# variables for game state, we have arrays of countries for each continent,
+# we have a current location and world location,
 ####
 
 fly_countries_scandinavia=("Norway" "Sweden" "Denmark")
@@ -56,17 +59,20 @@ fly_countries_south_america=("")
 fly_countries_antartica=("")
 fly_countries_oceania=("Australia")
 
+# starting location
 current_location="Norway"
-current_location_world="europe" # europe, asia
+current_location_world="europe"
 
-# main airports,
+# we can also have special airports that are gateways to multiple continents, like istanbul and tokyo
+# main airports
 # Hub-and-spoke network.
 # By designating Turkey and Japan (Tokyo) as your "Gateways," you’ve introduced a layer of strategy.
 declare -A airport_codes
 airport_codes["IST"]="Turkey"
 airport_codes["HND"]="Tokyo"
 
-# learned lessons
+# learning and debug functions, we have a function to print what we learned from making this game,
+# and a function to print debug information if debug is on
 fun_learning() {
     echo "#############"
     echo "What did i learn making this and where did I time debugging."
