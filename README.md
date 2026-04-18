@@ -59,7 +59,7 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
    - 7.3 [Upgrades](#73-upgrades)
    - 7.4 [APT Sources](#74-apt-sources)
    - 8. [Apache Tomcat & Solr (Windows) - Archived](#8-apache-tomcat--solr-windows---archived)
-   - 8.1 [Archived Stacks](#81-archived-stacks)
+   - 8.1 [Archived Stacks](#archived-stacks)
    - 9. [Elastic Stack (Ubuntu) - Archived](#9--elastic-stack-ubuntu---archived)
    - 10. [Grafana & Zabbix (Ubuntu) - Archived](#10-grafana--zabbix-ubuntu---archived)
    - 11. [RabbitMQ (Ubuntu) - Archived](#11-rabbitmq-ubuntu---archived)
@@ -486,7 +486,7 @@ Zabbix:
 
 📖 [Apache Tomcat & Solr](https://github.com/spawnmarvel/quickguides/tree/main/apache_tomcat_and_solr)
 
-### 8.1 Archived Stacks
+### Archived Stacks
 
 ### 9.  Elastic Stack (Ubuntu) - Archived
 📖 [Kibana, Elasticsearch, Filebeat](https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/kibana-elasticsearch-file-beat/README.md)
