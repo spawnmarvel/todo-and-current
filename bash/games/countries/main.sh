@@ -322,6 +322,7 @@ fun_destination_move() {
 # Main game loop, we read user input and execute commands based on it,
 # we use a case statement to handle different commands
 while true; do
+    fun_learning
     # 1. Clear variables
     cmd=""
     args=""
@@ -346,7 +347,6 @@ while true; do
         ;;
     "q" | "quit")
         echo "Quitting Countries"
-        fun_learning
         break
         ;;
     "ls")
