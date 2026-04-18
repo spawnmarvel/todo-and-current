@@ -10,14 +10,15 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
 ---
 
 
-# Table of Contents
+# Table of Contents all headers
 
 <details>
 <summary>Show / hide Table of Contents</summary>
 
 - [Todo \& Current :seedling:](#todo--current-seedling)
   - [Philosophy](#philosophy)
-- [Table of Contents](#table-of-contents)
+- [Table of Contents all headers](#table-of-contents-all-headers)
+  - [Table of Contents main headers](#table-of-contents-main-headers)
   - [Setup \& Environment](#setup--environment)
     - [Windows 11 Dark Mode](#windows-11-dark-mode)
     - [Screen Background for Eye Strain](#screen-background-for-eye-strain)
@@ -74,6 +75,26 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
       - [3 Quickguides :fire\_engine:](#3-quickguides-fire_engine)
     - [Release Notes \& Updates](#release-notes--updates)
   - [Additional Resources](#additional-resources)
+
+</details>
+
+---
+
+## Table of Contents main headers
+
+<details>
+<summary>Show / hide Table of Contents</summary>
+
+- [🔹 Setup & Environment](#setup--environment)
+- [🔹 Elo parked](#elo-parked)
+- [🔹 Scripting Stack](#scripting-stack)
+- [🔹 GitHub Copilot and Development](#github-copilot-and-development)
+- [🔹 Infrastructure Essentials](#infrastructure-essentials)
+- [🔹 Current Priorities: TOP 3](#current-priorities-top-3)
+- [🔹 Knowledge Maintenance Checklist](#knowledge-maintenance-checklist)
+- [🔹 Parked Projects or Completed Projects](#parked-projects-or-completed-projects)
+- [🔹 Learning Resources and References](#learning-resources-and-references)
+- [🔹 Additional Resources](#additional-resources)
 
 </details>
 
