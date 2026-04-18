@@ -49,26 +49,26 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
    - [Azure SQL Database (For Fun)](#4-azure-sql-database-for-fun)
    - [AZ-104: Certified Professional Must Know](#5-az-104-certified-professional-must-know)
 9. [Learning Resources and References](#learning-resources-and-references)
-   - 5.1 [Continuing Education](#51-continuing-education)
-   - 5.2 [MS Learn Recommendations](#52-ms-learn-recommendations)
-   - [Linux Resources](#6-linux-resources-hotel)
+   - 1.1 [Continuing Education](#11-continuing-education)
+   - 2. [MS Learn Recommendations](#2-ms-learn-recommendations)
+   - [Linux Resources](#3-linux-resources-hotel)
    - 6.1 [Linux Quick Guides](#61-linux-quick-guides)
-   - [Zabbix Stack](#7-zabbix-stack-traffic_light)
-   - 7.1 [Resources](#71-resources)
-   - 7.2 [Setup & Configuration](#72-setup--configuration)
-   - 7.3 [Upgrades](#73-upgrades)
-   - 7.4 [APT Sources](#74-apt-sources)
-   - [Apache Tomcat & Solr (Windows) - Archived](#8-apache-tomcat--solr-windows---archived)
-   - 8.1 [Archived Stacks](#archived-stacks)
-   - [Elastic Stack (Ubuntu) - Archived](#9--elastic-stack-ubuntu---archived)
-   - [Grafana & Zabbix (Ubuntu) - Archived](#10-grafana--zabbix-ubuntu---archived)
-   - [RabbitMQ (Ubuntu) - Archived](#11-rabbitmq-ubuntu---archived)
-   - [Telegraf](#12-telegraf)
-   - [Docker RabbitMQ](#13-docker-rabbitmq)
+   - [Zabbix Stack](#5-zabbix-stack-traffic_light)
+   - 5.1 [Resources](#51-resources)
+   - 5.2 [Setup & Configuration](#52-setup--configuration)
+   - 5.3 [Upgrades](#53-upgrades)
+   - 5.4 [APT Sources](#54-apt-sources)
+   - [Apache Tomcat & Solr (Windows) - Archived](#6-apache-tomcat--solr-windows---archived)
+   - [Archived Stacks](#archived-stacks)
+   - [Elastic Stack (Ubuntu) - Archived](#1--elastic-stack-ubuntu---archived)
+   - [Grafana & Zabbix (Ubuntu) - Archived](#2-grafana--zabbix-ubuntu---archived)
+   - [RabbitMQ (Ubuntu) - Archived](#3-rabbitmq-ubuntu---archived)
+   - [Telegraf](#4-telegraf)
+   - [Docker RabbitMQ](#5-docker-rabbitmq)
    - [Main Project Repositories](#main-project-repositories)
-   - 13.1 [azure-automation-bicep-and-labs :muscle:](#131-azure-automation-bicep-and-labs-muscle)
-   - 13.2 [AZ-104 Certified Professional Must Know :sunglasses:](#132-az-104-certified-professional-must-know-sunglasses)
-   - 13.3 [Quickguides :fire_engine:](#133-quickguides-fire_engine)
+   - 5.1 [azure-automation-bicep-and-labs :muscle:](#51-azure-automation-bicep-and-labs-muscle)
+   - 5.2 [AZ-104 Certified Professional Must Know :sunglasses:](#52-az-104-certified-professional-must-know-sunglasses)
+   - 5.3 [Quickguides :fire_engine:](#53-quickguides-fire_engine)
 10. [Release Notes & Updates](#release-notes--updates)
 
 </details>
@@ -425,22 +425,22 @@ Exam target: **AZ-802** (June 2026)
 
 ## Learning Resources and References
 
-### 5. AZ-104: Certified Professional Must Know
-#### 5.1 Continuing Education
+### 1. AZ-104: Certified Professional Must Know
+#### 1.1 Continuing Education
 Fill the gaps in networking, monitoring, web apps:
 - **Azure VM Tutorials:** [AZ-104 VM](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-vm)
 - **Core Skills:** [AZ-104 Certified Professional](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-administrator-certified-professional)
 - **Azure Speed Test:** https://www.azurespeed.com/Azure/Latency
 - **Network Advanced Tutorial:** [Network advanced tutorial and checklist](https://github.com/spawnmarvel/todo-and-current/tree/main/sysadmin_and_netsh)
 
-#### 5.2 MS Learn Recommendations
+#### 2. MS Learn Recommendations
 - [Secure Windows Server User Accounts](https://learn.microsoft.com/en-us/training/modules/secure-windows-server-user-accounts/?source=recommendations)
 - [Secure Group Managed Service Accounts](https://learn.microsoft.com/en-us/entra/architecture/service-accounts-group-managed?source=recommendations)
 
 
 ---
 
-### 6. Linux Resources :hotel:
+### 3. Linux Resources :hotel:
 
 **Topics:** UFW, SSH, PS1, Bash quick ref, file system hierarchy, grep, tail, script, env, cron, Python
 
@@ -455,25 +455,25 @@ Fill the gaps in networking, monitoring, web apps:
 
 ---
 
-### 7. Zabbix Stack :traffic_light:
+### 5. Zabbix Stack :traffic_light:
 
-#### 7.1 Resources
+#### 5.1 Resources
 - **Academy:** https://academy.zabbix.com/courses
 - **Blog:** https://blog.zabbix.com/
 - **Docs:** https://www.zabbix.com/documentation/7.0/en/manual/config/items/itemtypes/browser
 
-#### 7.2 Setup & Configuration
+#### 5.2 Setup & Configuration
 - **Stack Setup:** [Zabbix Stack](https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/README_stack.md)
 - **Performance Tuning:** [Zabbix Tuning](https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/README_tuning.md)
 - **Templates (Active/Passive):** [Zabbix Templates](https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/templates/README_templates.md)
 - **User Parameter Advanced:** [User Parameters](https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/README_stack.md#user-parameter-advanced)
 
-#### 7.3 Upgrades
+#### 5.3 Upgrades
 - **Minor Upgrade:** [Zabbix Minor Upgrade](https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/README_upgrade_zabbix_host_one.md)
 - **Major Upgrade:** [Zabbix Major Upgrade](https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/README_upgrade_zabbix_major.md)
 - **SSL/HTTPS:** [Zabbix HTTPS](https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/README_https_zabbix.md)
 
-#### 7.4 APT Sources
+#### 5.4 APT Sources
 ```
 Ubuntu, MySQL, PHP:
 - archive.ubuntu.com (80, 443)
@@ -485,7 +485,7 @@ Zabbix:
 
 ---
 
-### 8. Apache Tomcat & Solr (Windows) - Archived
+### 6. Apache Tomcat & Solr (Windows) - Archived
 - Install Java, Apache Tomcat, Solr
 - Fix log levels and sizes
 - Upgrade Apache Tomcat
@@ -494,17 +494,17 @@ Zabbix:
 
 ### Archived Stacks
 
-### 9.  Elastic Stack (Ubuntu) - Archived
+### 1.  Elastic Stack (Ubuntu) - Archived
 📖 [Kibana, Elasticsearch, Filebeat](https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/kibana-elasticsearch-file-beat/README.md)
 
-### 10. Grafana & Zabbix (Ubuntu) - Archived
+### 2. Grafana & Zabbix (Ubuntu) - Archived
 - Deploy dashboards and integrations
 - Grafana Agent (OpenTelemetry Collector)
 
 📖 [Grafana Zabbix](https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm/grafana-zabbix)
 📖 [Grafana Agent Docs](https://grafana.com/docs/agent/latest/)
 
-### 11. RabbitMQ (Ubuntu) - Archived
+### 3. RabbitMQ (Ubuntu) - Archived
 - X.509 Shovel with TLS
 - amqp_client alternatives
 - Certificate requests and renewal
@@ -513,27 +513,27 @@ Zabbix:
 📖 [X.509 Shovel Config](https://github.com/spawnmarvel/quickguides/blob/main/amqp/x509/vm1_advanced_11.config)
 📖 [Certificate Requests](https://github.com/spawnmarvel/quickguides/blob/main/amqp/RequestRenewExample/README.md)
 
-### 12. Telegraf
+### 4. Telegraf
 Input: file, AMQP, disk, CPU
 Output: file, AMQP, Zabbix
 
 📖 [Telegraf Setup](https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm/telegraf)
 📖 [Telegraf Docs](https://docs.influxdata.com/telegraf/v1/)
 
-### 13. Docker RabbitMQ
+### 5. Docker RabbitMQ
 📖 [RabbitMQ SSL](https://github.com/spawnmarvel/learning-docker/blob/main/prod-ish/rmq/rmq-ssl/README.md)
 
 ---
 
 ### Main Project Repositories
 
-#### 13.1 azure-automation-bicep-and-labs :muscle:
+#### 1 azure-automation-bicep-and-labs :muscle:
 📖 [Repository](https://github.com/spawnmarvel/azure-automation-bicep-and-labs)
 
-#### 13.2 AZ-104 Certified Professional Must Know :sunglasses:
+#### 2 AZ-104 Certified Professional Must Know :sunglasses:
 📖 [AZ-104 Repository](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-certified-professional)
 
-#### 13.3 Quickguides :fire_engine:
+#### 3 Quickguides :fire_engine:
 - Apache Tomcat & Solr
 - AMQP (Requests, Certificate Decoder, Erlang 26)
 - Azure Administrator AZ-104
