@@ -22,8 +22,7 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
     - [Windows 11 Dark Mode](#windows-11-dark-mode)
     - [Screen Background for Eye Strain](#screen-background-for-eye-strain)
     - [Chromebook Linux Maintenance](#chromebook-linux-maintenance)
-  - [Old website parked](#old-website-parked)
-  - [](#)
+  - [Elo parked](#elo-parked)
   - [Scripting Stack](#scripting-stack)
   - [GitHub Copilot and Development](#github-copilot-and-development)
     - [Using GitHub Copilot Workflow](#using-github-copilot-workflow)
@@ -116,13 +115,14 @@ sudo apt autoclean
 
 ---
 
-## Old website parked
+## Elo parked
 
 <details>
 <summary>Show / hide E-lo (parked)</summary>
 https://follow-e-lo.com/
 
 </details>
+
 ---
 
 ## Scripting Stack
