@@ -114,7 +114,7 @@ fun_save_notebook() {
         echo "Saved: $note to your notebook."
 
     else
-        echo "Error: What do you want to write? (Usage: s 'your note here')"
+        echo "Error: no note provided"
     fi
 }
 # simulate cat to read file line by line and print it with some formatting
