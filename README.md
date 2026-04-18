@@ -48,11 +48,11 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
    - [Python Maintenance (Parked)](#3-python-maintenance-parked)
    - [Azure SQL Database (For Fun)](#4-azure-sql-database-for-fun)
    - [AZ-104: Certified Professional Must Know](#5-az-104-certified-professional-must-know)
-9. [Learning Resources & References](#learning-resources--references)
+9. [Learning Resources and References](#learning-resources-and-references)
    - [Continuing Education](#continuing-education)
    - [MS Learn Recommendations](#ms-learn-recommendations)
-   - [Linux Resources](#linux-resources-hotel)
-   - [Zabbix Stack](#zabbix-stack-traffic_light)
+   - [Linux Resources](#6-linux-resources-hotel)
+   - [Zabbix Stack](#7-zabbix-stack-traffic_light)
    - [Archived Stacks](#archived-stacks)
    - [Main Project Repositories](#main-project-repositories)
 10. [Release Notes & Updates](#release-notes--updates)
@@ -403,15 +403,17 @@ Exam target: **AZ-802** (June 2026)
 
 ---
 
+## Learning Resources and References
+
 ### 5. AZ-104: Certified Professional Must Know
-Fill the gaps in networking, monitoring, and web apps:
+#### Continuing Education
+Fill the gaps in networking, monitoring, web apps:
 - **Azure VM Tutorials:** [AZ-104 VM](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-vm)
 - **Core Skills:** [AZ-104 Certified Professional](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-administrator-certified-professional)
 - **Azure Speed Test:** https://www.azurespeed.com/Azure/Latency
 - **Network Advanced Tutorial:** [Network advanced tutorial and checklist](https://github.com/spawnmarvel/todo-and-current/tree/main/sysadmin_and_netsh)
 
-MS Learn Recommendations
-
+#### MS Learn Recommendations
 - [Secure Windows Server User Accounts](https://learn.microsoft.com/en-us/training/modules/secure-windows-server-user-accounts/?source=recommendations)
 - [Secure Group Managed Service Accounts](https://learn.microsoft.com/en-us/entra/architecture/service-accounts-group-managed?source=recommendations)
 
@@ -469,6 +471,8 @@ Zabbix:
 - Upgrade Apache Tomcat
 
 📖 [Apache Tomcat & Solr](https://github.com/spawnmarvel/quickguides/tree/main/apache_tomcat_and_solr)
+
+### Archived Stacks
 
 ### 9.  Elastic Stack (Ubuntu) - Archived
 📖 [Kibana, Elasticsearch, Filebeat](https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/kibana-elasticsearch-file-beat/README.md)
