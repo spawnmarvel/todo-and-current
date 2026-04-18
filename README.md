@@ -51,24 +51,24 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
 9. [Learning Resources and References](#learning-resources-and-references)
    - 1.1 [Continuing Education](#11-continuing-education)
    - 2. [MS Learn Recommendations](#2-ms-learn-recommendations)
-   - [Linux Resources](#3-linux-resources-hotel)
-   - 6.1 [Linux Quick Guides](#61-linux-quick-guides)
-   - [Zabbix Stack](#5-zabbix-stack-traffic_light)
-   - 5.1 [Resources](#51-resources)
-   - 5.2 [Setup & Configuration](#52-setup--configuration)
-   - 5.3 [Upgrades](#53-upgrades)
-   - 5.4 [APT Sources](#54-apt-sources)
-   - [Apache Tomcat & Solr (Windows) - Archived](#6-apache-tomcat--solr-windows---archived)
+   - 2. [Linux Resources](#2-linux-resources-hotel)
+   - 3 [Linux Quick Guides](#3-linux-quick-guides)
+   - 4. [Zabbix Stack](#4-zabbix-stack-traffic_light)
+   - 4.1 [Resources](#41-resources)
+   - 4.2 [Setup & Configuration](#42-setup--configuration)
+   - 4.3 [Upgrades](#43-upgrades)
+   - 4.4 [APT Sources](#44-apt-sources)
+   - 5. [Apache Tomcat & Solr (Windows) - Archived](#5-apache-tomcat--solr-windows---archived)
    - [Archived Stacks](#archived-stacks)
-   - [Elastic Stack (Ubuntu) - Archived](#1--elastic-stack-ubuntu---archived)
-   - [Grafana & Zabbix (Ubuntu) - Archived](#2-grafana--zabbix-ubuntu---archived)
-   - [RabbitMQ (Ubuntu) - Archived](#3-rabbitmq-ubuntu---archived)
-   - [Telegraf](#4-telegraf)
-   - [Docker RabbitMQ](#5-docker-rabbitmq)
+   - 1. [Elastic Stack (Ubuntu) - Archived](#1-elastic-stack-ubuntu---archived)
+   - 2. [Grafana & Zabbix (Ubuntu) - Archived](#2-grafana--zabbix-ubuntu---archived)
+   - 3. [RabbitMQ (Ubuntu) - Archived](#3-rabbitmq-ubuntu---archived)
+   - 4. [Telegraf](#4-telegraf)
+   - 5. [Docker RabbitMQ](#5-docker-rabbitmq)
    - [Main Project Repositories](#main-project-repositories)
-   - 5.1 [azure-automation-bicep-and-labs :muscle:](#51-azure-automation-bicep-and-labs-muscle)
-   - 5.2 [AZ-104 Certified Professional Must Know :sunglasses:](#52-az-104-certified-professional-must-know-sunglasses)
-   - 5.3 [Quickguides :fire_engine:](#53-quickguides-fire_engine)
+   - 1 [azure-automation-bicep-and-labs :muscle:](#1-azure-automation-bicep-and-labs-muscle)
+   - 2 [AZ-104 Certified Professional Must Know :sunglasses:](#2-az-104-certified-professional-must-know-sunglasses)
+   - 3 [Quickguides :fire_engine:](#3-quickguides-fire_engine)
 10. [Release Notes & Updates](#release-notes--updates)
 
 </details>
@@ -426,27 +426,27 @@ Exam target: **AZ-802** (June 2026)
 ## Learning Resources and References
 
 ### 1. AZ-104: Certified Professional Must Know
-#### 1.1 Continuing Education
+
 Fill the gaps in networking, monitoring, web apps:
 - **Azure VM Tutorials:** [AZ-104 VM](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-vm)
 - **Core Skills:** [AZ-104 Certified Professional](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-administrator-certified-professional)
 - **Azure Speed Test:** https://www.azurespeed.com/Azure/Latency
 - **Network Advanced Tutorial:** [Network advanced tutorial and checklist](https://github.com/spawnmarvel/todo-and-current/tree/main/sysadmin_and_netsh)
 
-#### 2. MS Learn Recommendations
 - [Secure Windows Server User Accounts](https://learn.microsoft.com/en-us/training/modules/secure-windows-server-user-accounts/?source=recommendations)
 - [Secure Group Managed Service Accounts](https://learn.microsoft.com/en-us/entra/architecture/service-accounts-group-managed?source=recommendations)
 
 
 ---
 
-### 3. Linux Resources :hotel:
+### 2. Linux Resources :hotel:
 
 **Topics:** UFW, SSH, PS1, Bash quick ref, file system hierarchy, grep, tail, script, env, cron, Python
 
 📖 [Linux & Azure](https://github.com/spawnmarvel/linux-and-azure)
 
-#### 6.1 Linux Quick Guides
+### 3 Linux Quick Guides
+
 - **Linux and Azure Reference:** [Linux and Azure](https://github.com/spawnmarvel/linux-and-azure)
 - **Zabbix Troubleshoot:** [Linux & Azure Grep It](https://github.com/spawnmarvel/linux-and-azure?tab=readme-ov-file#grep-it)
 - **Mind Maps:** [Linux Mind Maps](https://github.com/spawnmarvel/linux-and-azure/tree/main/z-mind-maps)
@@ -455,25 +455,25 @@ Fill the gaps in networking, monitoring, web apps:
 
 ---
 
-### 5. Zabbix Stack :traffic_light:
+### 4. Zabbix Stack :traffic_light:
 
-#### 5.1 Resources
+#### 4.1 Resources
 - **Academy:** https://academy.zabbix.com/courses
 - **Blog:** https://blog.zabbix.com/
 - **Docs:** https://www.zabbix.com/documentation/7.0/en/manual/config/items/itemtypes/browser
 
-#### 5.2 Setup & Configuration
+#### 4.2 Setup & Configuration
 - **Stack Setup:** [Zabbix Stack](https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/README_stack.md)
 - **Performance Tuning:** [Zabbix Tuning](https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/README_tuning.md)
 - **Templates (Active/Passive):** [Zabbix Templates](https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/templates/README_templates.md)
 - **User Parameter Advanced:** [User Parameters](https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/README_stack.md#user-parameter-advanced)
 
-#### 5.3 Upgrades
+#### 4.3 Upgrades
 - **Minor Upgrade:** [Zabbix Minor Upgrade](https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/README_upgrade_zabbix_host_one.md)
 - **Major Upgrade:** [Zabbix Major Upgrade](https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/README_upgrade_zabbix_major.md)
 - **SSL/HTTPS:** [Zabbix HTTPS](https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/README_https_zabbix.md)
 
-#### 5.4 APT Sources
+#### 4.4 APT Sources
 ```
 Ubuntu, MySQL, PHP:
 - archive.ubuntu.com (80, 443)
@@ -485,7 +485,7 @@ Zabbix:
 
 ---
 
-### 6. Apache Tomcat & Solr (Windows) - Archived
+### 5. Apache Tomcat & Solr (Windows) - Archived
 - Install Java, Apache Tomcat, Solr
 - Fix log levels and sizes
 - Upgrade Apache Tomcat
