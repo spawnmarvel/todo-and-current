@@ -155,6 +155,9 @@ mysql --user=#{MySQL.User} --password=#{MySQL.Password}
 
 ## GitHub Copilot and Development
 
+<details>
+<summary>Show / hide</summary>
+
 ### Using GitHub Copilot Workflow
 1. Create an issue with title, description, path, and steps
 2. Navigate to your repo with VS Code
@@ -178,6 +181,8 @@ mysql --user=#{MySQL.User} --password=#{MySQL.Password}
 2. To keep it, press Ctrl + Right Arrow key or accept
 
 📖 Learn more: [Copilot README](https://github.com/spawnmarvel/todo-and-current/blob/main/copilot/README.md)
+
+</details>
 
 ---
 
