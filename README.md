@@ -11,16 +11,53 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
 
 ## Table of Contents
 
+<details>
+<summary>Show / hide Table of Contents</summary>
+
 1. [Setup & Environment](#setup--environment)
+   - [Windows 11 Dark Mode](#windows-11-dark-mode)
+   - [Screen Background for Eye Strain](#screen-background-for-eye-strain)
+   - [Chromebook Linux Maintenance](#chromebook-linux-maintenance)
 2. [Old website parked](#old-website-parked)
+   - [E-lo (parked)](#e-lo-parked)
 3. [Scripting Stack](#scripting-stack)
+   - [Best Practice](#best-practice)
 4. [GitHub Copilot and Development](#github-copilot-and-development)
+   - [Using GitHub Copilot Workflow](#using-github-copilot-workflow)
+   - [Asking for Help](#asking-for-help)
+   - [Coding mode](#coding-mode)
+   - [Git Common Tasks](#git-common-tasks)
+   - [VS Code Extensions & Setup](#vs-code-extensions--setup)
 5. [Infrastructure Essentials](#infrastructure-essentials)
+   - [Azure VM Operations](#azure-vm-operations)
+   - [AD DS Configuration (vmhybrid01)](#ad-ds-configuration-vmhybrid01)
+   - [Fast Linux VM Deployment](#fast-linux-vm-deployment)
 6. [Current Priorities: TOP 3](#current-priorities-top-3)
+   - [Octopus Deploy for Linux (CI/CD)](#1-octopus-deploy-for-linux-cicd-)
+   - [Windows Server Hybrid Administrator (vmhybrid01)](#2-windows-server-hybrid-administrator-vmhybrid01-)
+   - [Grafana, Loki, and Alloy Agents](#3-grafana-loki-and-alloy-agents-)
 7. [Knowledge Maintenance Checklist](#knowledge-maintenance-checklist)
+   - [Linux Maintenance](#1-bulb-linux-maintenance)
+   - [MySQL Maintenance](#2-mysql-maintenance)
+   - [AZ-802: Windows Server Hybrid Administrator (june 2026)](#3-az-802-windows-server-hybrid-administrator-june-2026)
+   - [Octopus Deploy (Free)](#4-octopus-deploy-free)
+   - [AZ-104: Azure Administrator Maintenance](#5-az-104-azure-administrator-maintenance)
 8. [Parked Projects or Completed Projects](#parked-projects-or-completed-projects)
-9. [Learning Resources & References](#learning-resources-references)
+   - [Docker & Azure](#1-docker--azure-airplane)
+   - [Docker Stack](#2-docker-stack-helicopter)
+   - [Python Maintenance (Parked)](#3-python-maintenance-parked)
+   - [Azure SQL Database (For Fun)](#4-azure-sql-database-for-fun)
+   - [AZ-104: Certified Professional Must Know](#5-az-104-certified-professional-must-know)
+9. [Learning Resources & References](#learning-resources--references)
+   - [Continuing Education](#continuing-education)
+   - [MS Learn Recommendations](#ms-learn-recommendations)
+   - [Linux Resources](#linux-resources-hotel)
+   - [Zabbix Stack](#zabbix-stack-traffic_light)
+   - [Archived Stacks](#archived-stacks)
+   - [Main Project Repositories](#main-project-repositories)
 10. [Release Notes & Updates](#release-notes--updates)
+
+</details>
 
 ---
 
