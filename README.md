@@ -82,9 +82,6 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
 
 ## Table of Contents main headers
 
-<details>
-<summary>Show / hide Table of Contents</summary>
-
 - [🔹 Setup & Environment](#setup--environment)
 - [🔹 Elo parked](#elo-parked)
 - [🔹 Scripting Stack](#scripting-stack)
@@ -95,8 +92,6 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
 - [🔹 Parked Projects or Completed Projects](#parked-projects-or-completed-projects)
 - [🔹 Learning Resources and References](#learning-resources-and-references)
 - [🔹 Additional Resources](#additional-resources)
-
-</details>
 
 ---
 
