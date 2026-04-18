@@ -9,14 +9,16 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
 
 ---
 
-## Table of Contents
+
+# Table of Contents
 
 <details>
 <summary>Show / hide Table of Contents</summary>
 
 - [Todo \& Current :seedling:](#todo--current-seedling)
   - [Philosophy](#philosophy)
-  - [Table of Contents](#table-of-contents)
+- [Table of Contents](#table-of-contents)
+  - [](#)
   - [Setup \& Environment](#setup--environment)
     - [Windows 11 Dark Mode](#windows-11-dark-mode)
     - [Screen Background for Eye Strain](#screen-background-for-eye-strain)
@@ -76,7 +78,6 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
   - [Additional Resources](#additional-resources)
 
 </details>
-
 ---
 
 ## Setup & Environment
