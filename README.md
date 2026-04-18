@@ -148,10 +148,16 @@ mysql --user=#{MySQL.User} --password=#{MySQL.Password}
 6. Commit and push changes
 
 ### Asking for Help
-Ask Copilot to review your files: "Could we make this better and more readable?"
+
+1. Ask Copilot to review your files: "Could we make this better and more readable?"
+2. If you accept it, name this version 1
+3. Ask Copilot to review your files: "Could we make this better and more readable?"
+4. If you accept it, name this version 2
+
 
 ### Coding mode
 
+0. This in in VSC
 1. Start typing and it will give suggestions
 2. To keep it, press Ctrl + Right Arrow key or accept
 
