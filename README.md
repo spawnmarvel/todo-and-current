@@ -483,6 +483,10 @@ Exam target: **AZ-802** (June 2026)
 
 ## Learning Resources and References
 
+<details>
+<summary>Show / hide</summary>
+
+
 ### 1. AZ-104: Certified Professional Must Know
 
 Fill the gaps in networking, monitoring, web apps:
@@ -581,9 +585,14 @@ Output: file, AMQP, Zabbix
 ### 5. Docker RabbitMQ
 📖 [RabbitMQ SSL](https://github.com/spawnmarvel/learning-docker/blob/main/prod-ish/rmq/rmq-ssl/README.md)
 
+</details>
+
 ---
 
 ### Main Project Repositories
+
+<details>
+<summary>Show / hide</summary>
 
 #### 1 azure-automation-bicep-and-labs :muscle:
 📖 [Repository](https://github.com/spawnmarvel/azure-automation-bicep-and-labs)
@@ -602,6 +611,8 @@ Output: file, AMQP, Zabbix
 **Notable:**
 - [Prosys OPC UA Sim + Cogent Client + InfluxDB](https://github.com/spawnmarvel/quickguides/blob/main/cogent-opcua-influxdb/README.md)
 - [Computer Science](https://github.com/spawnmarvel/quickguides/blob/main/computer-science/README.md)
+
+</details>
 
 ---
 
