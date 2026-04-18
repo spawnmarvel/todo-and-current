@@ -14,13 +14,13 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
 1. [Setup & Environment](#setup--environment)
 2. [Tools & Platforms](#tools--platforms)
 3. [Scripting Stack](#scripting-stack)
-4. [GitHub Copilot & Development](#-github-copilot--development)
+4. [GitHub Copilot & Development](#github-copilot-development)
 5. [Infrastructure Essentials](#infrastructure-essentials)
 6. [Current Priorities: TOP 3](#current-priorities-top-3)
 7. [Knowledge Maintenance Checklist](#knowledge-maintenance-checklist)
-8. [Completed Tasks ✅](#completed-tasks-)
-9. [Parked Projects 🚁](#parked-projects-)
-10. [Learning Resources & References](#learning-resources--references)
+8. [Completed Tasks](#completed-tasks)
+9. [Parked Projects](#parked-projects)
+10. [Learning Resources & References](#learning-resources-references)
 
 ---
 
