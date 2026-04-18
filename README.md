@@ -24,6 +24,7 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
     - [Chromebook Linux Maintenance](#chromebook-linux-maintenance)
   - [Old website parked](#old-website-parked)
     - [E-lo (parked) :anchor:](#e-lo-parked-anchor)
+  - [](#)
   - [Scripting Stack](#scripting-stack)
   - [GitHub Copilot and Development](#github-copilot-and-development)
     - [Using GitHub Copilot Workflow](#using-github-copilot-workflow)
@@ -118,9 +119,13 @@ sudo apt autoclean
 
 ## Old website parked
 
+<details>
+<summary>Show / hide E-lo (parked)</summary>
+
 ### E-lo (parked) :anchor:
 https://follow-e-lo.com/
 
+</details>
 ---
 
 ## Scripting Stack
