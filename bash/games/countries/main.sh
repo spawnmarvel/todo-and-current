@@ -95,6 +95,8 @@ fun_menu() {
     printf "${LGREEN} Menu: (nano text : save notebook text), (cat : open notebook). ${NC}\n"
     printf "${LGREEN} Menu: (printf : scanning full terminal). ${NC}\n"
     printf "${LGREEN} Menu (TODO): (awk destination : scanning terminal). ${NC}\n"
+    printf "${LGREEN} Game (TODO): (fun_full_scan_terminal, printf). ${NC}\n"
+    printf "${LGREEN} Game (TODO): (if all above done test game and move to next stage). ${NC}\n
 }
 # simulate echo with args and file append
 fun_save_notebook() {
@@ -288,7 +290,7 @@ fun_destination_move() {
         # You are in the air
         ###
         if [[ "$can_fly" == true ]]; then
-            if [[ "$1" == "$current_location" ]]; then
+            if [[ "${move_to_destination,,}" == "${current_location,,}" ]]; then
                 echo "Domestic flight is not supported? You are in $current_location"
 
             else
@@ -303,8 +305,8 @@ fun_destination_move() {
                     # Wait a tiny bit (0.1 seconds) so we can see it move
                     sleep 0.1
                 done
-                current_location="$move_to_destination"
-                current_location_world="$new_continent"
+                current_location="${move_to_destination}"
+                current_location_world="${new_continent}"
 
                 # This prints a newline and then your text
                 printf "\n${BLUE}Landed safely in $current_location! ${NC}\n"

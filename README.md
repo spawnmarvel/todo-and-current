@@ -178,7 +178,7 @@ mysql --user=#{MySQL.User} --password=#{MySQL.Password}
 
 0. This in in VSC
 1. Start typing and it will give suggestions
-2. To keep it, press Ctrl + Right Arrow key or accept
+2. To keep it, press Ctrl + Right Arrow key or accept or tab
 
 📖 Learn more: [Copilot README](https://github.com/spawnmarvel/todo-and-current/blob/main/copilot/README.md)
 
