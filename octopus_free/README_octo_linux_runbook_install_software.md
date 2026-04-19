@@ -1,5 +1,17 @@
 # Install software with Octopus runbooks
 
+## Table of Contents
+
+- [Install software with Octopus runbooks](#install-software-with-octopus-runbooks)
+  - [Table of Contents](#table-of-contents)
+  - [4.1 Check MySQL and zabbix installed](#41-check-mysql-and-zabbix-installed)
+  - [4.1 Install MySql Runbook](#41-install-mysql-runbook)
+    - [Step 1 upload the packet](#step-1-upload-the-packet)
+    - [Step 2 Upload unzip and install if needed](#step-2-upload-unzip-and-install-if-needed)
+    - [Step 3 Install zip and MySql 8.4](#step-3-install-zip-and-mysql-84)
+  - [4.2 Uinstall MySql Runbook](#42-uinstall-mysql-runbook)
+  - [5 Zabbix stack (MySql is in a different runbook) Runbook](#5-zabbix-stack-mysql-is-in-a-different-runbook-runbook)
+
 ## 4.1 Check MySQL and zabbix installed
 
 We will only install it at one vm, the offline vm first.
