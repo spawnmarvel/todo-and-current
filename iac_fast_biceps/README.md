@@ -88,11 +88,27 @@ ssh user@public-ip
 💠 Run script deploy.sh it will ask for login to azure, then username and password for vm
 
 ```bash
+# this is for session only, after close shell is gone
 export t_id="your-tenant-id-here"
+
+# make it permanent one line
+echo 'export t_id="6dae3ddb-0cf5-4fa6-a49c-c32ae6589d1f""' >> ~/.bashrc
+# verify it
+grep "t_id" ~/.bashrc
+
+# or add it 
+nano ~/.bashrc
+export t_id="your-tenant-id-here"
+source ~/.bashrc
+
 # Now run your script normally
 ./deploy.sh
 
 ```
+
+Using export for a Tenant ID is like carrying a master key in your shirt pocket—it’s incredibly handy until you change your shirt (or close the terminal). 
+
+Moving it into a .bashrc alias or letting the az CLI handle it turns that master key into a biometric lock; it's there when you need it, and you don't have to worry about where you put it.
 
 ### Remove vm linux with powershell or bash and ***  (vmhybrid01 you must stop)
 
