@@ -158,7 +158,7 @@ Since you are currently using the Builder, you can add a filter for the log text
 * The Pro Way (Query Code)
 If you click the Code button next to "Builder," you can write a high-performance search string. Loki uses a language called LogQL.
 
-## nderstanding the "Big Three" Panel Types
+## Understanding the "Big Three" Panel Types
 
 For a production-ready dashboard, you generally want these three specific views:
 
