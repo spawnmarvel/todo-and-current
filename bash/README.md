@@ -28,11 +28,11 @@
 
 In Linux, the **"everything is a file"** philosophy means that nearly all system resources—hardware devices, processes, directories, and network sockets—are represented as data streams within the file system.
 
-| Concept | Description |
-|---------|-------------|
-| **Unified Interface** | Hardware (e.g., hard drives, mice) is represented as files in `/dev` |
-| **File Descriptor Abstraction** | Kernel abstracts resources into file descriptors |
-| **Virtual Filesystem** | `/proc` and `/sys` represent kernel data structures as files |
+| Concept                         | Description                                                          |
+| ------------------------------- | -------------------------------------------------------------------- |
+| **Unified Interface**           | Hardware (e.g., hard drives, mice) is represented as files in `/dev` |
+| **File Descriptor Abstraction** | Kernel abstracts resources into file descriptors                     |
+| **Virtual Filesystem**          | `/proc` and `/sys` represent kernel data structures as files         |
 
 ---
 
@@ -58,11 +58,11 @@ man -k network
 
 ### The 3 Core Differences
 
-| Aspect | Python/PowerShell | Bash |
-|--------|-------------------|------|
-| **Data Model** | Native objects (dictionaries, lists, objects) | Everything is text streams |
-| **Execution** | Script stays in memory, manages state | Each command creates a new process |
-| **Error Handling** | try...except / Try...Catch | Silent failures by default |
+| Aspect             | Python/PowerShell                             | Bash                               |
+| ------------------ | --------------------------------------------- | ---------------------------------- |
+| **Data Model**     | Native objects (dictionaries, lists, objects) | Everything is text streams         |
+| **Execution**      | Script stays in memory, manages state         | Each command creates a new process |
+| **Error Handling** | try...except / Try...Catch                    | Silent failures by default         |
 
 ### 1. Everything is a String
 
@@ -114,21 +114,21 @@ set -euo pipefail
 
 ### File & Directory Operations
 
-| Command | Description |
-|---------|-------------|
-| `ls` | List directory contents |
-| `ls -a` | List hidden files |
-| `ls *pattern*` | List files matching pattern |
-| `cd` | Change directory |
-| `pwd` | Print working directory |
-| `echo` | Display text |
-| `cat` | Concatenate and display files |
-| `cp` | Copy files/directories |
-| `mv` | Move or rename files |
-| `rm` | Delete files |
-| `rm -r` | Delete directory recursively |
-| `touch` | Create empty file or update timestamp |
-| `mkdir` | Create directory |
+| Command        | Description                           |
+| -------------- | ------------------------------------- |
+| `ls`           | List directory contents               |
+| `ls -a`        | List hidden files                     |
+| `ls *pattern*` | List files matching pattern           |
+| `cd`           | Change directory                      |
+| `pwd`          | Print working directory               |
+| `echo`         | Display text                          |
+| `cat`          | Concatenate and display files         |
+| `cp`           | Copy files/directories                |
+| `mv`           | Move or rename files                  |
+| `rm`           | Delete files                          |
+| `rm -r`        | Delete directory recursively          |
+| `touch`        | Create empty file or update timestamp |
+| `mkdir`        | Create directory                      |
 
 ```bash
 # Example
@@ -235,9 +235,14 @@ uptime                              # System uptime
 ping hostname                       # Test connectivity
 ping 10.70.1.43                     # IP address ping
 
+
 # Edit /etc/hosts for hostname resolution
 sudo nano /etc/hosts
 # Add: 10.70.1.43  e1-x-mysql01
+
+# port check example
+nc -zv 192.168.3.7 3100
+# Connection to 192.168.3.7 3100 port [tcp/*] succeeded!
 ```
 
 ### File Transfer
@@ -311,16 +316,16 @@ tar -xvzf archive.tar.gz
 
 ### Permission Codes
 
-| Code | Permission |
-|------|-------------|
-| `0` | No permission |
-| `1` | Execute |
-| `2` | Write |
-| `3` | Write + Execute |
-| `4` | Read |
-| `5` | Read + Execute |
-| `6` | Read + Write |
-| `7` | Read + Write + Execute |
+| Code | Permission             |
+| ---- | ---------------------- |
+| `0`  | No permission          |
+| `1`  | Execute                |
+| `2`  | Write                  |
+| `3`  | Write + Execute        |
+| `4`  | Read                   |
+| `5`  | Read + Execute         |
+| `6`  | Read + Write           |
+| `7`  | Read + Write + Execute |
 
 > **Example**: `755` = owner can rwx, group/others can rx
 
@@ -1196,12 +1201,12 @@ AllowUsers username
 
 Loadable Kernel Modules (LKMs) are pieces of code that can be loaded into or unloaded from the kernel on demand without needing to reboot the entire system. They act like "plug-ins" for your operating system.
 
-| Module | Description |
-|--------|-------------|
-| `usb-storage` | Allows the system to talk to USB flash drives and external hard disks |
-| `ext4` | The standard file system for most Linux distributions |
-| `iptable_filter` / `nftables` | The backbone of the Linux firewall (Netfilter) |
-| `bridge` | Allows the kernel to act like a network switch (vital for VMs or Docker) |
+| Module                        | Description                                                              |
+| ----------------------------- | ------------------------------------------------------------------------ |
+| `usb-storage`                 | Allows the system to talk to USB flash drives and external hard disks    |
+| `ext4`                        | The standard file system for most Linux distributions                    |
+| `iptable_filter` / `nftables` | The backbone of the Linux firewall (Netfilter)                           |
+| `bridge`                      | Allows the kernel to act like a network switch (vital for VMs or Docker) |
 
 ### File System, Permission and Access Control
 
