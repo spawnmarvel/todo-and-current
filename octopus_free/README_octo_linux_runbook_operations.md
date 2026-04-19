@@ -1,5 +1,34 @@
 # Project Linux Day 2 Operations Runbooks
 
+## Table of Contents
+
+- [Project Linux Day 2 Operations Runbooks](#project-linux-day-2-operations-runbooks)
+  - [Table of Contents](#table-of-contents)
+  - [Runbooks vs Deployments](#runbooks-vs-deployments)
+  - [Tips Octopus](#tips-octopus)
+    - [1. Docs and samples](#1-docs-and-samples)
+    - [2. In draft vs publish](#2-in-draft-vs-publish)
+    - [3. Deployment target and add step generic tag](#3-deployment-target-and-add-step-generic-tag)
+    - [4. How to Target a Single Host for a Runbook (or a full envirnment)](#4-how-to-target-a-single-host-for-a-runbook-or-a-full-envirnment)
+    - [5. Delete a runbook or prefix it](#5-delete-a-runbook-or-prefix-it)
+  - [Tips Linux](#tips-linux)
+    - [1. apt or apt-get for install for automation](#1-apt-or-apt-get-for-install-for-automation)
+    - [2 Run "bulletproof" in a CI/CD environment](#2-run-bulletproof-in-a-cicd-environment)
+      - [New "Bulletproof" Script Template](#new-bulletproof-script-template)
+    - [2 Octopus green with white warning fix](#2-octopus-green-with-white-warning-fix)
+    - [3. Variables for automation](#3-variables-for-automation)
+    - [(Network gateway and port proxy for vm with no public ip)](#network-gateway-and-port-proxy-for-vm-with-no-public-ip)
+    - [Install linux tentacle offline](#install-linux-tentacle-offline)
+- [Install and Operations Runbooks](#install-and-operations-runbooks)
+  - [1. Diagnostoics Runbook](#1-diagnostoics-runbook)
+  - [2. Upload packet Runbook](#2-upload-packet-runbook)
+  - [3 Make SSL cert Runbook](#3-make-ssl-cert-runbook)
+    - [Install linux tentacle (this vm has internet access), AD DS must be running](#install-linux-tentacle-this-vm-has-internet-access-ad-ds-must-be-running)
+    - [Make SSL cert Runbook with folder, backup, new cert and key](#make-ssl-cert-runbook-with-folder-backup-new-cert-and-key)
+  - [3.1 Apache add new SSL cert Runbook](#31-apache-add-new-ssl-cert-runbook)
+  - [That completes the basic for now](#that-completes-the-basic-for-now)
+- [4. Upload packet versions and working with vars (2. Upload packet Runbook extended)](#4-upload-packet-versions-and-working-with-vars-2-upload-packet-runbook-extended)
+  - [4.1 Upload a text file and edit versions](#41-upload-a-text-file-and-edit-versions)
 
 ## Runbooks vs Deployments
 
