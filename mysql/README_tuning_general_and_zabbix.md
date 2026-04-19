@@ -1,15 +1,17 @@
 # MySQL General tunning
 
 
-## Table of Contents
+# Table of Contents: MySQL General Tuning
 
 - [🔹 Configuration: Tuning the "Engine"](#configuration-tuning-the-engine)
-- [🔹 Healthy and Unhealthy Zabbix](#healthy-and-unhealty-zabbix)
-- [🔹 Zabbix-Specific Optimization (20GB Database)](#default--minor-tuning)
-- [🔹 Implementation: my.cnf Checklist](#summary-checklist-mycnf)
-- [🔹 High-Impact Zabbix Tuning Strategies](#mysql-general-tunning-zabbix)
+- [🔹 Healthy and unhealty zabbix](#healthy-and-unhealty-zabbix)
+- [🔹 Zabbix-Specific Optimization (20GB Database)](#zabbix-specific-optimization-20gb-database)
+- [🔹 Implementation: my.cnf Checklist](#implementation-mycnf-checklist)
+- [🔹 MySQL General tunning zabbix](#mysql-general-tunning-zabbix)
 
 ---
+
+
 
 ## Configuration: Tuning the "Engine"
 
