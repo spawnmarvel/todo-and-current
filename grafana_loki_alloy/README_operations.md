@@ -90,7 +90,7 @@ No go to the Vm where you want to install it.
 
 ```bash
 
-wget -O alloy-1.15.1-1.amd64.deb "https://stscriptspackets001.blob.core.windows.net/fileslinux/alloy-1.15.1-1.amd64.deb?sp=r&st=2026-04-19T11:17:29Z&se=2026-04-19T19:32:29Z&spr=https&sv=2025-11-05&sr=b&sig=8252ErFw0USXj5xV%2Fi2xoevbqYY%2B1txD7h35Sk%2BLKuQ%3D"
+wget -O alloy-1.15.1-1.amd64.deb "https://staccountname01.blob.core.windows.net/fileslinux/alloy-1.15.1-1.amd64.deb?sp=r&st=2026...."
 
 
 sudo dpkg -i alloy-1.15.1-1.amd64.deb
