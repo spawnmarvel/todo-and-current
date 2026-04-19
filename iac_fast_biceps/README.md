@@ -4,6 +4,23 @@ Continue from Azure Automation bicep and labs
 
 https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/README.md
 
+# Table of Contents
+
+<details>
+<summary>Show / hide Table of Contents</summary>
+
+- [Deploy resources fast](#deploy-resources-fast)
+- [Table of Contents](#table-of-contents)
+  - [vmhybrid01 (must be started for DNS and internet access)](#vmhybrid01-must-be-started-for-dns-and-internet-access)
+  - [Deploy Linux vm with public ip into existing vnet (vmhybrid01 you must start)](#deploy-linux-vm-with-public-ip-into-existing-vnet-vmhybrid01-you-must-start)
+    - [Deploy vm linux with powershell or bash](#deploy-vm-linux-with-powershell-or-bash)
+    - [Remove vm linux with powershell or bash and \*\*\*  (vmhybrid01 you must stop)](#remove-vm-linux-with-powershell-or-bash-and---vmhybrid01-you-must-stop)
+    - [Storage account with files and scripts](#storage-account-with-files-and-scripts)
+      - [Download and run a script](#download-and-run-a-script)
+      - [Download and run a file](#download-and-run-a-file)
+
+</details>
+
 ## vmhybrid01 (must be started for DNS and internet access)
 
 The Azure "Bridge" vmhybrid01 (In the Portal) use domain controller vm as DNS server.
