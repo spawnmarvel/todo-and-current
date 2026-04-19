@@ -1,5 +1,24 @@
 # Continue after install Grafana, Loki and Alloy
 
+# Table of Contents: Grafana, Loki & Alloy Maintenance
+
+- [Continue after install Grafana, Loki and Alloy](#continue-after-install-grafana-loki-and-alloy)
+- [Table of Contents: Grafana, Loki \& Alloy Maintenance](#table-of-contents-grafana-loki--alloy-maintenance)
+  - [Tips for make it production ready (not done for this lab)](#tips-for-make-it-production-ready-not-done-for-this-lab)
+  - [Log from remote server](#log-from-remote-server)
+  - [Log for multiple applications](#log-for-multiple-applications)
+  - [Create a Logs Panel that specifically filters for job="name-agent" so you can monitor the agent's connection health.](#create-a-logs-panel-that-specifically-filters-for-jobname-agent-so-you-can-monitor-the-agents-connection-health)
+  - [Search in logs](#search-in-logs)
+  - [Lets make grafana avaliable from the outside](#lets-make-grafana-avaliable-from-the-outside)
+  - [Live search in dashboard](#live-search-in-dashboard)
+  - [Drill down](#drill-down)
+  - [Drill down by computer and job name](#drill-down-by-computer-and-job-name)
+  - [The Easy Way (UI Builder) or the "Pro Way" using the query code](#the-easy-way-ui-builder-or-the-pro-way-using-the-query-code)
+  - [1. Understanding the "Big Three" Panel Types.](#1-understanding-the-big-three-panel-types)
+  - [2. Mastering LogQL (The "Query Language")](#2-mastering-logql-the-query-language)
+  - [3. Let's Build Your First "Error Counter"](#3-lets-build-your-first-error-counter)
+  - [4. The "Log Breakdown" (Pie Chart)](#4-the-log-breakdown-pie-chart)
+  
 
 ## Tips for make it production ready (not done for this lab)
 
