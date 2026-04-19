@@ -127,6 +127,9 @@ sudo apt autoclean
 # Bash Tip: Use Tab for Programmable Completion
 # Type: ssh, cd, pwd, ls then press Tab once or twice
 ```
+
+***Chromebook partial screen shot, take it and press enter***
+
 </details>
 
 ---
