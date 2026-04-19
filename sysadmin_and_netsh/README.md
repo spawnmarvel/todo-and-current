@@ -8,10 +8,6 @@
    2. [Summary of TCP Transaction Steps](#summary-of-tcp-transaction-steps)
    3. [Network Advanced Tutorial and Checklist](#network-advanced-tutorial-and-checklist)
    4. [Capture Packets and Analyze General](#capture-packets-and-analyze-general)
-      - [Network Shell (netsh)](#network-shell-netsh)
-      - [netsh trace](#netsh-trace)
-      - [etl2pcapng Conversion](#etl2pcapng-conversion)
-      - [Wireshark](#wireshark)
 
 ## Tools
 
