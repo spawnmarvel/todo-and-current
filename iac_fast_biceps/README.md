@@ -134,3 +134,35 @@ export t_id="your-tenant-id-here"
 
 ```
 
+### Storage account with files and script
+
+Lets make a storage account and use blobs for uploading:
+
+* .exe, .deb
+* .ps1, .sh
+
+Networking Tab (The Firewall)
+
+🔵 Public network access: Set to Enabled from selected virtual networks and IP addresses.
+
+🔵 Virtual networks: Click + Add existing virtual network and select the VNet/Subnet where your Linux VMs live. This allows your VMs to "talk" to the storage directly.
+
+🔵 Firewall (IP Addresses): Check the box that says "Add your client IP address".
+
+Note: Since you want to upload from "any machine," you will need to click this button or manually add your current public IP whenever you are at a new location (e.g., home vs. office).
+
+🔵 Resource instances: (Optional) If you use other Azure services (like Logic Apps or Backup), select the "Microsoft.Storage/storageAccounts" resource type here to allow them through.
+
+Then we can fast deploy our files and scripts
+
+stscriptspackets001 | Containers
+
+* fileslinux (and same for windows)
+* scriptslinux (and same for windows)
+
+💠 Linux download files and script from storage acount
+
+```bash
+# we are on the linuc vm we deployed with iac
+vm-uks-temp-001
+```
