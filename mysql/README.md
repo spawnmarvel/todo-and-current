@@ -1,5 +1,24 @@
 # MySQL quick guide
 
+## Table of Contents
+
+- [🔹 Client Installation & Connectivity](#linux-install-mysql-client)
+  - [Linux (Ubuntu 24.04) Setup](#linux-install-mysql-client)
+  - [Chromebook (Debian) Setup](#chromebook-install-mysql-client)
+  - [Connecting to Azure MySQL Flexible Server](#chromebook-azure-mysql-flexible-server-connect)
+- [🔹 Secure Transport & TLS](#ubuntu-24043-lts-19216835-server-connect-mysql-none-tls-already-done-and-tls)
+- [🔹 DDL: Data Definition Language](#ddl-data-definition-language)
+- [🔹 DML: Data Manipulation Language](#dml-data-manipulation-langauge)
+  - [Bulk Loading via LOAD DATA LOCAL INFILE](#load-from-file)
+- [🔹 DCL: Data Control Language](#dcl-data-control-language)
+- [🔹 Server Maintenance & Upgrades](#mysql-80-upgrade-to-84-on-clean-database-for-use-with-zabbix-70-lts)
+  - [Upgrading MySQL 8.0 to 8.4 LTS](#mysql-80-upgrade-to-84-on-clean-database-for-use-with-zabbix-70-lts)
+- [🔹 MySQL Workbench Guide](#mysql-workbench)
+  - [Schema Inspector](#mysql-workbench-inspect-schema)
+- [🔹 Azure Endpoints & Networking](#azure-database-for-mysql-flexible-server-endpoints)
+
+---
+
 https://www.w3schools.com/MySQL/default.asp
 
 ## Linux install mysql client
