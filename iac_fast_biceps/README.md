@@ -6,7 +6,6 @@ https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/README.
 
 # Table of Contents
 
-<summary>Show / hide Table of Contents</summary>
 
 - [Deploy resources fast](#deploy-resources-fast)
 - [Table of Contents](#table-of-contents)
