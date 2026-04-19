@@ -160,6 +160,8 @@ stscriptspackets001 | Containers
 * fileslinux (and same for windows)
 * scriptslinux (and same for windows)
 
+![storage account](https://github.com/spawnmarvel/todo-and-current/blob/main/iac_fast_biceps/images/stacc.png)
+
 #### Download and run a script
 
 💠 Linux download a script from storage acount (DNS server must be running)
