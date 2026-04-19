@@ -6,7 +6,6 @@ https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/README.
 
 # Table of Contents
 
-<details>
 <summary>Show / hide Table of Contents</summary>
 
 - [Deploy resources fast](#deploy-resources-fast)
@@ -19,7 +18,6 @@ https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/README.
       - [Download and run a script](#download-and-run-a-script)
       - [Download and run a file](#download-and-run-a-file)
 
-</details>
 
 ## vmhybrid01 (must be started for DNS and internet access)
 
