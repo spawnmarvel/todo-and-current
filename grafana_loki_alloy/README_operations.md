@@ -111,6 +111,8 @@ sudo nano /etc/alloy/config.alloy
 
 ``` 
 
+config.alloy
+
 ```hcl
 logging {
   level = "info"
@@ -191,6 +193,7 @@ Name it "Loki Inbound" and Finish.
 Now we have two vms.
 
 
+![two vms](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/two_vms.png)
 
 
 ## Log for multiple applications
