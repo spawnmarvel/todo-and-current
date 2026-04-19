@@ -1,5 +1,23 @@
 # MySQL General tunning
 
+
+## Table of Contents
+
+- [🔹 Configuration: Tuning the "Engine"](#configuration-tuning-the-engine)
+- [🔹 Healthy and Unhealthy Zabbix](#healthy-and-unhealty-zabbix)
+- [🔹 Zabbix-Specific Optimization (20GB Database)](#default--minor-tuning)
+- [🔹 Implementation: my.cnf Checklist](#summary-checklist-mycnf)
+- [🔹 High-Impact Zabbix Tuning Strategies](#mysql-general-tunning-zabbix)
+
+---
+
+## Configuration: Tuning the "Engine"
+
+Guidelines for balancing memory and disk efficiency on general-purpose servers.
+- `innodb_buffer_pool_size`: Recommended allocation (70-80% for dedicated, 40-50% for shared).
+- `innodb_dedicated_server`: Auto-tuning for MySQL 8.0+.
+- `innodb_log_file_size` & `innodb_io_capacity`: Optimizing for write activity and storage hardware (HDD vs SSD vs NVMe).
+
 Configuration: Tuning the "Engine"
 For a general-purpose server, the goal is to balance memory usage and disk efficiency.
 
