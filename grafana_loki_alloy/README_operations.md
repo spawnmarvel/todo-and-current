@@ -158,7 +158,7 @@ Since you are currently using the Builder, you can add a filter for the log text
 * The Pro Way (Query Code)
 If you click the Code button next to "Builder," you can write a high-performance search string. Loki uses a language called LogQL.
 
-## Understanding the "Big Three" Panel Types
+## 1. Understanding the "Big Three" Panel Types.
 
 For a production-ready dashboard, you generally want these three specific views:
 
@@ -169,12 +169,12 @@ For a production-ready dashboard, you generally want these three specific views:
 * The Deep Dive (Logs Panel): The actual text of the logs, filtered to show only what’s important.
 
 
-## * 2. Mastering LogQL (The "Query Language")
+## 2. Mastering LogQL (The "Query Language")
 Since you are analyzing Windows and Zabbix logs, you’ll use LogQL. Here are the "Golden Queries" you should learn first:
 
 ![logql](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/logql.png)
 
-## * 3. Let's Build Your First "Error Counter"
+## 3. Let's Build Your First "Error Counter"
 
 Let's create a panel that tells you how many Application Errors occurred on your VM today.
 
