@@ -188,6 +188,7 @@ mysql --user=#{MySQL.User} --password=#{MySQL.Password}
 2. If you accept it, name this version 1
 3. Ask Copilot to review your files: "Could we make this better and more readable?"
 4. If you accept it, name this version 2
+5. Make a toc, table of content
 
 
 ### Coding mode
