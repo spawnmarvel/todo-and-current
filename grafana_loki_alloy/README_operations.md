@@ -190,6 +190,12 @@ Allow the connection.
 
 Name it "Loki Inbound" and Finish.
 
+```bash
+nc -zv 192.168.3.7 3100
+Connection to 192.168.3.7 3100 port [tcp/*] succeeded!
+
+```
+
 Now we have two vms.
 
 
