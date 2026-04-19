@@ -2,48 +2,48 @@ logging {
   level = "info"
 }
 
-// 🔷 1. Zabbix Agent 2
+//  Zabbix Agent (File Source)
 local.file_match "zabbix_agent" {
-  path_targets = [
-    { 
-      "__address__" = "localhost", 
-      "__path__"    = "C:/Program Files/Zabbix Agent 2/zabbix_agent2.log", 
-      "job"         = "zabbix-agent",
-      "computer"    = "vmhybrid01.lab.local", // 🔷 Matches your screenshot filter
-      "service"     = "zabbix-agent",          // 🔷 Added for the Explore App view
-    },
-  ]
+  path_targets = [{ 
+    "__address__" = "localhost", 
+    "__path__"    = "C:/Program Files/Zabbix Agent 2/zabbix_agent2.log", 
+    "job"         = "zabbix-agent",
+    "computer"    = "vmhybrid01.lab.local",
+    "service"     = "zabbix-agent",
+  }]
 }
 
-// 🔷 2. Zabbix Scraper
 loki.source.file "zabbix_scrape" {
   targets    = local.file_match.zabbix_agent.targets
   forward_to = [loki.write.local_loki.receiver]
 }
 
-// 🔷 3. Windows System
+//  The Processor (The "Magic" for Drilldown)
+// This ensures Windows labels are properly indexed for the Drilldown App
+loki.process "windows_processor" {
+  stage.labels {
+    values = {
+      computer = "vmhybrid01.lab.local",
+    }
+  }
+  forward_to = [loki.write.local_loki.receiver]
+}
+
+//  Windows System
 loki.source.windowsevent "local_event_logs" {
   eventlog_name = "System"
-  labels        = { 
-    job      = "windows-system", 
-    computer = "vmhybrid01.lab.local",
-    service  = "windows-system",
-  }
-  forward_to    = [loki.write.local_loki.receiver]
+  labels        = { job = "windows-system", service = "windows-system" }
+  forward_to    = [loki.process.windows_processor.receiver]
 }
 
-// 🔷 4. Windows Application
+//  Windows Application
 loki.source.windowsevent "application_logs" {
   eventlog_name = "Application"
-  labels        = { 
-    job      = "windows-application", 
-    computer = "vmhybrid01.lab.local",
-    service  = "windows-application",
-  }
-  forward_to    = [loki.write.local_loki.receiver]
+  labels        = { job = "windows-application", service = "windows-application" }
+  forward_to    = [loki.process.windows_processor.receiver]
 }
 
-// 🔷 5. Write to Loki
+//  Write to Loki
 loki.write "local_loki" {
   endpoint {
     url = "http://localhost:3100/loki/api/v1/push"

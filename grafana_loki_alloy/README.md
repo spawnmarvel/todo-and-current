@@ -371,18 +371,25 @@ logging {
   level = "info"
 }
 
-// 🔷 3. Windows System
-loki.source.windowsevent "local_event_logs" {
-  eventlog_name = "System"
-  labels        = { 
-    job      = "windows-system", 
-    computer = "vmhybrid01.lab.local",
-    service  = "windows-system",
+//  The Processor (The "Magic" for Drilldown)
+// This ensures Windows labels are properly indexed for the Drilldown App
+loki.process "windows_processor" {
+  stage.labels {
+    values = {
+      computer = "vmhybrid01.lab.local",
+    }
   }
-  forward_to    = [loki.write.local_loki.receiver]
+  forward_to = [loki.write.local_loki.receiver]
 }
 
-// 🔷 5. Loki Destination
+//  Windows System
+loki.source.windowsevent "local_event_logs" {
+  eventlog_name = "System"
+  labels        = { job = "windows-system", service = "windows-system" }
+  forward_to    = [loki.process.windows_processor.receiver]
+}
+
+//  Write to Loki
 loki.write "local_loki" {
   endpoint {
     url = "http://localhost:3100/loki/api/v1/push"
@@ -421,15 +428,11 @@ Now that the data is flowing, we can make it actually useful. Here are two quick
 Right now you only have "System." Open your config.alloy again and add a second block for the Application logs:
 
 ```hcl
-// 🔷 4. Windows Application
+//  Windows Application
 loki.source.windowsevent "application_logs" {
   eventlog_name = "Application"
-  labels        = { 
-    job      = "windows-application", 
-    computer = "vmhybrid01.lab.local",
-    service  = "windows-application",
-  }
-  forward_to    = [loki.write.local_loki.receiver]
+  labels        = { job = "windows-application", service = "windows-application" }
+  forward_to    = [loki.process.windows_processor.receiver]
 }
 ```
 Restart alloy

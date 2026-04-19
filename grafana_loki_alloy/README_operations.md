@@ -84,20 +84,17 @@ Sinxe we have zabbix agent running on the windows vm, lets add it to alloy confi
 We added this for zabbix, we stil have the system configured in this file.
 
 ```hcl
-//  1. Zabbix Agent 2
+//  Zabbix Agent (File Source)
 local.file_match "zabbix_agent" {
-  path_targets = [
-    { 
-      "__address__" = "localhost", 
-      "__path__"    = "C:/Program Files/Zabbix Agent 2/zabbix_agent2.log", 
-      "job"         = "zabbix-agent",
-      "computer"    = "vmhybrid01.lab.local", //  Matches your screenshot filter
-      "service"     = "zabbix-agent",          //  Added for the Explore App view
-    },
-  ]
+  path_targets = [{ 
+    "__address__" = "localhost", 
+    "__path__"    = "C:/Program Files/Zabbix Agent 2/zabbix_agent2.log", 
+    "job"         = "zabbix-agent",
+    "computer"    = "vmhybrid01.lab.local",
+    "service"     = "zabbix-agent",
+  }]
 }
 
-//  2. Zabbix Scraper
 loki.source.file "zabbix_scrape" {
   targets    = local.file_match.zabbix_agent.targets
   forward_to = [loki.write.local_loki.receiver]
