@@ -195,6 +195,8 @@ Click Generate SAS token and URL.
 
 Copy the Blob SAS URL (it will be a very long link).
 
+Step 2:
+
 ```bash
 # we are on the linuc vm we deployed with iac
 vm-uks-temp-001
@@ -223,7 +225,7 @@ which tentacle
 
 💠 Linux download a file from storage acount (DNS server must be running)
 
-tep 1: Generate the link in Azure Portal
+Step 1: Generate the link in Azure Portal
 Go to your storage account and click on Containers.
 
 Click into your fileslinux container.
@@ -237,6 +239,8 @@ Expiry: Set it for a few hours (or however long you need).
 Click Generate SAS token and URL.
 
 Copy the Blob SAS URL (it will be a very long link).
+
+Step 2:
 
 ```bash
 wget -O libmecab2_0.996-14build9_amd64.deb"https://youraccount.blob.core.windows.net/fileslinux/install.sh?sp=r&st=2026-04-19..."
