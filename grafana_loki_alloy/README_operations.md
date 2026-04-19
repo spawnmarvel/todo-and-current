@@ -89,10 +89,104 @@ Download to a vm or a storage account
 No go to the Vm where you want to install it.
 
 ```bash
+
+wget -O alloy-1.15.1-1.amd64.deb "https://stscriptspackets001.blob.core.windows.net/fileslinux/alloy-1.15.1-1.amd64.deb?sp=r&st=2026-04-19T11:17:29Z&se=2026-04-19T19:32:29Z&spr=https&sv=2025-11-05&sr=b&sig=8252ErFw0USXj5xV%2Fi2xoevbqYY%2B1txD7h35Sk%2BLKuQ%3D"
+
+
+sudo dpkg -i alloy-1.15.1-1.amd64.deb
+
+# Refresh the service list
+sudo systemctl daemon-reload
+
+# Enable and start Alloy in one command
+sudo systemctl enable --now alloy
+
+# sudo service alloy status
+● alloy.service - Vendor-agnostic OpenTelemetry Collector distribution with programmable pipelines
+     Loaded: loaded (/usr/lib/systemd/system/alloy.service; enabled; preset: enabled)
+
+# Edit the config file:
+
+sudo nano /etc/alloy/config.alloy
+
 ``` 
 
-Now configure it
+```hcl
+logging {
+  level = "info"
+}
 
+// 1. Define the Log Source
+local.file_match "linux_logs" {
+  path_targets = [
+    { 
+      "job"      = "ubuntu-syslog",
+      "computer" = "vm-uks-temp-001.lab.local",
+      "service"  = "system",
+      "__path__" = "/var/log/syslog", 
+    },
+  ]
+}
+
+// 2. The Processor (Ensures labels are clean for Drilldown)
+loki.process "linux_processor" {
+  stage.labels {
+    values = {
+      computer = "vm-uks-temp-001.lab.local",
+      job      = "ubuntu-syslog",
+    }
+  }
+  forward_to = [loki.write.windows_loki.receiver]
+}
+
+// 3. Scrape and Forward through the Processor
+loki.source.file "local_scrape" {
+  targets    = local.file_match.linux_logs.targets
+  forward_to = [loki.process.linux_processor.receiver]
+}
+
+// 4. Remote Push to Windows
+loki.write "windows_loki" {
+  endpoint {
+    url = "http://192.168.3.7:3100/loki/api/v1/push"
+  }
+}
+```
+
+By default, the alloy user created by the installer might not have permission to read the system logs on Ubuntu 24.04. Run this to grant access:
+
+```bash
+sudo usermod -aG adm alloy
+sudo systemctl restart alloy
+```
+
+How to View the Logs
+
+On Linux, Grafana Alloy doesn't write to a traditional text file (like alloy.log) by default. Instead, it sends its logs to the Systemd Journal.
+
+```bash
+sudo journalctl -u alloy -f
+
+sudo journalctl -u alloy -n 50
+
+sudo journalctl -u alloy --priority=err
+
+```
+
+Step 1: Fix the Windows Firewall
+On your Windows VM (192.168.3.7):
+
+Open Windows Defender Firewall with Advanced Security.
+
+Click Inbound Rules -> New Rule.
+
+Choose Port -> TCP.
+
+Specific local ports: 3100.
+
+Allow the connection.
+
+Name it "Loki Inbound" and Finish.
 
 
 
