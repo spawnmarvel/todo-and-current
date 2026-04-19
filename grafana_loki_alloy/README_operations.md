@@ -5,7 +5,7 @@
 - [Continue after install Grafana, Loki and Alloy](#continue-after-install-grafana-loki-and-alloy)
 - [Table of Contents: Grafana, Loki \& Alloy Maintenance](#table-of-contents-grafana-loki--alloy-maintenance)
   - [Tips for make it production ready (not done for this lab)](#tips-for-make-it-production-ready-not-done-for-this-lab)
-  - [Log from remote server](#log-from-remote-server)
+  - [Log from remote server install on linux](#log-from-remote-server-install-on-linux)
   - [Log for multiple applications](#log-for-multiple-applications)
   - [Create a Logs Panel that specifically filters for job="name-agent" so you can monitor the agent's connection health.](#create-a-logs-panel-that-specifically-filters-for-jobname-agent-so-you-can-monitor-the-agents-connection-health)
   - [Search in logs](#search-in-logs)
@@ -58,9 +58,9 @@ Once you switch Loki to HTTPS, you have to update every other piece of your stac
 * Firewall: You still use port 3100, but the traffic inside that "pipe" is now encrypted.
 
 
-## Log from remote server
+## Log from remote server install on linux
 
-* Install and configure alloy on server
+* Install and configure alloy on a linux server server
 * For this to work, your Loki VM (vmhybrid) must allow incoming traffic on port 3100.`
 * Point to Loki VM in config
 
@@ -71,7 +71,30 @@ loki.write "local_loki" {
     url = "http://vmhybrid.lab.local:3100/loki/api/v1/push"
   }
 }
+
 ```
+Internet access
+
+* https://grafana.com/docs/alloy/latest/set-up/install/linux/
+
+No internet access
+
+* Vm ubuntu-24_04-lts
+
+Download to a vm or a storage account
+
+* https://github.com/grafana/alloy/releases
+* alloy-1.15.1-1.amd64.deb
+
+No go to the Vm where you want to install it.
+
+```bash
+``` 
+
+Now configure it
+
+
+
 
 ## Log for multiple applications
 
