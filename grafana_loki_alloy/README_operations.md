@@ -3,17 +3,17 @@
 
 ## Tips for make it production ready (not done for this lab)
 
-🔷 Service Recovery (The "Auto-Restart") for Grafana, Loki and Alloy
+* Service Recovery (The "Auto-Restart") for Grafana, Loki and Alloy
 
-🔷 Alerting on "Silent Failures"
+* Alerting on "Silent Failures"
 
-🔷 🔷 Pro-tip: Create a simple "Heartbeat" alert in Grafana. If the log volume for vmhybrid01 drops to 0 for more than 5 minutes, have Grafana send you an email or Zabbix trigger.
+* * Pro-tip: Create a simple "Heartbeat" alert in Grafana. If the log volume for vmhybrid01 drops to 0 for more than 5 minutes, have Grafana send you an email or Zabbix trigger.
 
-🔷 Backup: Do you have a backup of loki-config.yaml and your .alloy file stored somewhere off this VM?
+* Backup: Do you have a backup of loki-config.yaml and your .alloy file stored somewhere off this VM?
 
-🔷 Firewall: Double-check that only your trusted devices can hit port 3100
+* Firewall: Double-check that only your trusted devices can hit port 3100
 
-🔷 Option B: Native Loki TLS (The Standalone Way)
+* Option B: Native Loki TLS (The Standalone Way)
 
 Loki does support TLS directly in the server block. This keeps things "standalone" without needing Nginx.
 
@@ -29,14 +29,14 @@ server:
 
 ```
 
-🔷 Important: The "Domino Effect"
+* Important: The "Domino Effect"
 Once you switch Loki to HTTPS, you have to update every other piece of your stack, or they will stop working:
 
-🔷 Alloy: You must update the url in your .alloy file from http:// to https://. If you are using a self-signed certificate, you will also need to add insecure_skip_verify = true in the Alloy client block so it doesn't reject the connection.
+* Alloy: You must update the url in your .alloy file from http:// to https://. If you are using a self-signed certificate, you will also need to add insecure_skip_verify = true in the Alloy client block so it doesn't reject the connection.
 
-🔷 Grafana: You must update the Loki Datasource URL to https://vmhybrid01.lab.local:3100.
+* Grafana: You must update the Loki Datasource URL to https://vmhybrid01.lab.local:3100.
 
-🔷 Firewall: You still use port 3100, but the traffic inside that "pipe" is now encrypted.
+* Firewall: You still use port 3100, but the traffic inside that "pipe" is now encrypted.
 
 
 ## Log from remote server
@@ -65,20 +65,20 @@ Sinxe we have zabbix agent running on the windows vm, lets add it to alloy confi
 We added this for zabbix, we stil have the system configured in this file.
 
 ```hcl
-// 🔷 1. Zabbix Agent 2
+//  1. Zabbix Agent 2
 local.file_match "zabbix_agent" {
   path_targets = [
     { 
       "__address__" = "localhost", 
       "__path__"    = "C:/Program Files/Zabbix Agent 2/zabbix_agent2.log", 
       "job"         = "zabbix-agent",
-      "computer"    = "vmhybrid01.lab.local", // 🔷 Matches your screenshot filter
-      "service"     = "zabbix-agent",          // 🔷 Added for the Explore App view
+      "computer"    = "vmhybrid01.lab.local", //  Matches your screenshot filter
+      "service"     = "zabbix-agent",          //  Added for the Explore App view
     },
   ]
 }
 
-// 🔷 2. Zabbix Scraper
+//  2. Zabbix Scraper
 loki.source.file "zabbix_scrape" {
   targets    = local.file_match.zabbix_agent.targets
   forward_to = [loki.write.local_loki.receiver]
@@ -96,18 +96,18 @@ loki.source.file "zabbix_scrape" {
 * If it is ok, start service, else fix it.
 
 
-🔷 Create a Logs Panel that specifically filters for job="zabbix-agent" so you can monitor the agent's connection health.
+## Create a Logs Panel that specifically filters for job="name-agent" so you can monitor the agent's connection health.
 
 ![logs_zabbix](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/logs_zabbix.png)
 
 
-# Search in logs
+## Search in logs
 
 Now that we have two logs to listen to
 
-🔷 Windows System and Applications and Zabbix agent, lets start to analyse them.
+* Windows System and Applications and Zabbix agent, lets start to analyse them.
 
-### Lets make grafana avaliable from the outside
+## Lets make grafana avaliable from the outside
 
 * NSG port 3000
 * Windows FW port 3000
@@ -118,11 +118,11 @@ Now that we have two logs to listen to
 Pro-Tip: The "Live" Search
 If you are trying to find a specific word in a massive list of logs already on your screen, you can use the standard browser search:
 
-🔷 Press Ctrl + F on your keyboard.
+*  Press Ctrl + F on your keyboard.
 
-🔷 Type error.
+* Type error.
 
-🔷 This will highlight every time that word appears in the log window.
+* This will highlight every time that word appears in the log window.
 
 ![live search](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/live_search.png)
 
@@ -144,57 +144,57 @@ Since we added filters, we can now drill down the logs.
 
 To search for errors specifically, you have two options: the "Easy Way" using the UI buttons, or the "Pro Way" using the query code.
 
-🔷 The Easy Way (UI Builder)
+* The Easy Way (UI Builder)
 Since you are currently using the Builder, you can add a filter for the log text:
 
-🔷 In your Query Builder, look for the box labeled Line contains.
+* In your Query Builder, look for the box labeled Line contains.
 
-🔷 Type the word error (case-insensitive) into that box.
+* Type the word error (case-insensitive) into that box.
 
-🔷 If you want to find multiple things, click the + below it and add another "Line contains" for fail.
+* If you want to find multiple things, click the + below it and add another "Line contains" for fail.
 
-🔷 Click Run query.
+* Click Run query.
 
-🔷 The Pro Way (Query Code)
+* The Pro Way (Query Code)
 If you click the Code button next to "Builder," you can write a high-performance search string. Loki uses a language called LogQL.
 
-## 🔷 1. Understanding the "Big Three" Panel Types
+## nderstanding the "Big Three" Panel Types
 
 For a production-ready dashboard, you generally want these three specific views:
 
-🔷 The Status Overview (Stat Panel): A big number showing the count of "Errors" in the last hour. If it's 0, it’s green; if it's > 5, it turns red.
+* The Status Overview (Stat Panel): A big number showing the count of "Errors" in the last hour. If it's 0, it’s green; if it's > 5, it turns red.
 
-🔷 The Noise Trend (Time Series): A graph showing log volume over time. A sudden "spike" in the graph usually means an app is crashing or a disk is filling up.
+* The Noise Trend (Time Series): A graph showing log volume over time. A sudden "spike" in the graph usually means an app is crashing or a disk is filling up.
 
-🔷 The Deep Dive (Logs Panel): The actual text of the logs, filtered to show only what’s important.
+* The Deep Dive (Logs Panel): The actual text of the logs, filtered to show only what’s important.
 
 
-## 🔷 2. Mastering LogQL (The "Query Language")
+## * 2. Mastering LogQL (The "Query Language")
 Since you are analyzing Windows and Zabbix logs, you’ll use LogQL. Here are the "Golden Queries" you should learn first:
 
 ![logql](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/logql.png)
 
-## 🔷 3. Let's Build Your First "Error Counter"
+## * 3. Let's Build Your First "Error Counter"
 
 Let's create a panel that tells you how many Application Errors occurred on your VM today.
 
-🔷 Click Add > Visualization in your dashboard.
+* Click Add > Visualization in your dashboard.
 
-🔷 Select Stat from the panel list on the right.
+* Select Stat from the panel list on the right.
 
-🔷 Use this query:
+* Use this query:
 count_over_time({eventlog_name="Application", levelText="Error"}[24h])
 
-🔷 In the Standard Options, set the unit to Short.
+* In the Standard Options, set the unit to Short.
 
-🔷 Set a Threshold: Base is Green, and at 1, it turns Red.
+* Set a Threshold: Base is Green, and at 1, it turns Red.
 
-## 🔷 4. The "Log Breakdown" (Pie Chart)
+## * 4. The "Log Breakdown" (Pie Chart)
 
 It’s very helpful to see which source is the "noisiest."
 
-🔷 Query: sum by (job) (count_over_time({instance="vmhybrid01"}[1h]))
+* Query: sum by (job) (count_over_time({instance="vmhybrid01"}[1h]))
 
-🔷 Panel: Pie Chart.
+* Panel: Pie Chart.
 
-🔷 Result: You’ll see if Windows System logs are drowning out your Zabbix logs.
+* Result: You’ll see if Windows System logs are drowning out your Zabbix logs.
