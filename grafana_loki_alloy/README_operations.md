@@ -170,6 +170,7 @@ For a production-ready dashboard, you generally want these three specific views:
 
 
 ## 2. Mastering LogQL (The "Query Language")
+
 Since you are analyzing Windows and Zabbix logs, you’ll use LogQL. Here are the "Golden Queries" you should learn first:
 
 ![logql](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/logql.png)
@@ -189,7 +190,7 @@ count_over_time({eventlog_name="Application", levelText="Error"}[24h])
 
 * Set a Threshold: Base is Green, and at 1, it turns Red.
 
-## * 4. The "Log Breakdown" (Pie Chart)
+## 4. The "Log Breakdown" (Pie Chart)
 
 It’s very helpful to see which source is the "noisiest."
 
