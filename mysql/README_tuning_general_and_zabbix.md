@@ -65,6 +65,8 @@ Without this, your Linux OS and MySQL both try to cache the same data (Double Bu
 Larger log files allow MySQL to "smooth out" the writing process.
 * innodb_log_file_size = 512M or 1G.
 
+## Implementation: my.cnf Checklist
+
 Summary Checklist (my.cnf)
 Add or edit these lines under the [mysqld] section of your configuration file (usually /etc/mysql/my.cnf or /etc/my.cnf):
 
