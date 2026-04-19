@@ -8,6 +8,15 @@ Kibana and Grafana are both powerful, open-source data visualization tools, but 
 
 https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm/kibana-elasticsearch-file-beat
 
+# Table of Contents
+
+- [🔹 Architecture & Comparison](#grafana-loki-and-alloy)
+- [🔹 Implementation: Windows Server Stack](#grafana-loki-and-alloy-stack-on-windows-server)
+- [🔹 1. Grafana Setup](#1-grafana-on-windows)
+- [🔹 2. Loki Setup](#2-loki-on-windows)
+- [🔹 3. Alloy Agent (The Collector)](#3-alloy-agent-on-windows-the-collector)
+- [🔹 Dashboards & Advanced Operations](#build-your-first-dashboard-loki-logs)
+- [🔹 Connecting Zabbix to Grafana](#grafana-connect-to-zabbix)
 
 ## Grafana
 
