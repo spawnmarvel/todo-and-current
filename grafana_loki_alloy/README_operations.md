@@ -188,6 +188,9 @@ Allow the connection.
 
 Name it "Loki Inbound" and Finish.
 
+Now we have two vms.
+
+
 
 
 ## Log for multiple applications
