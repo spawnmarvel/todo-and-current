@@ -647,6 +647,7 @@ Keep up with the latest updates:
 - **Grafana Loki:** https://grafana.com/docs/loki/latest/release-notes/
 - **MySQL:** https://dev.mysql.com/doc/relnotes/mysql/8.0/en/
 - **MySQL APT:** https://dev.mysql.com/downloads/
+- **MySQL on Linux Using the MySQL APT Repository** https://dev.mysql.com/doc/refman/8.4/en/linux-installation-apt-repo.html
 - **Octopus Deploy:** https://octopus.com/whatsnew
 - **Gemini:** https://gemini.google/release-notes/
 - **RabbitMQ:** https://www.rabbitmq.com/release-information
