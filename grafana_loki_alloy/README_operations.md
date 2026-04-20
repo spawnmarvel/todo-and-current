@@ -332,6 +332,10 @@ Let's create a panel that tells you how many Application Errors occurred on your
 
 ```logql
 sum(count_over_time({job="windows-application", computer="vmhybrid01.lab.local"} | json | levelText="Error" [24h]))
+
+# or
+
+sum(count_over_time({job="windows-application", computer="vmhybrid01.lab.local"} | json | levelText="Error" [1h]))
 ```
 
 * In the Standard Options, set the unit to Short.
