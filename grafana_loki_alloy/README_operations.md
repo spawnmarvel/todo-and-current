@@ -346,6 +346,8 @@ sum(count_over_time({job="windows-application", computer="vmhybrid01.lab.local"}
 
 * windows-application
 
+* Save it and use it
+
 ![error_count](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/error_count.png)
 
 ## 4. The "Log Breakdown" (Pie Chart)
