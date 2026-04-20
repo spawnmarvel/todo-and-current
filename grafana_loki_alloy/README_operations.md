@@ -329,7 +329,10 @@ Let's create a panel that tells you how many Application Errors occurred on your
 * Select Stat from the panel list on the right.
 
 * Use this query:
-count_over_time({eventlog_name="Application", levelText="Error"}[24h])
+
+```logql
+sum(count_over_time({job="windows-application", computer="vmhybrid01.lab.local"} | json | levelText="Error" [24h]))
+```
 
 * In the Standard Options, set the unit to Short.
 
