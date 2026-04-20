@@ -342,6 +342,12 @@ sum(count_over_time({job="windows-application", computer="vmhybrid01.lab.local"}
 
 * Set a Threshold: Base is Green, and at 1, it turns Red.
 
+* In the Query A block (the Error query), look for the "Legend" field at the bottom.
+
+* windows-application
+
+![error_count](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/error_count.png)
+
 ## 4. The "Log Breakdown" (Pie Chart)
 
 It’s very helpful to see which source is the "noisiest."
