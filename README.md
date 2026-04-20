@@ -646,7 +646,7 @@ Keep up with the latest updates:
 - **Grafana Alloy:** https://grafana.com/docs/alloy/latest/
 - **Grafana Loki:** https://grafana.com/docs/loki/latest/release-notes/
 - **MySQL:** https://dev.mysql.com/doc/relnotes/mysql/8.0/en/
-- **MySQL APT: ** https://dev.mysql.com/downloads/
+- **MySQL APT:** https://dev.mysql.com/downloads/
 - **Octopus Deploy:** https://octopus.com/whatsnew
 - **Gemini:** https://gemini.google/release-notes/
 - **RabbitMQ:** https://www.rabbitmq.com/release-information
