@@ -35,13 +35,21 @@ LogQL queries are in the following format:
 ```loqql 
 { log stream selector } | log pipeline
 ```
-Log stream selector:
+### Log stream selector:
 
 The log stream selector, also called label selector, is a string containing key-value pairs like this:
 
 ```loqql 
 {service_name="nginx", status="500"}
 ```
+
+### Log Pipeline
+
+### Filter expressions
+
+### Parser expressions
+
+### Format expressions
 
 ## Types of LogQL queries
 
