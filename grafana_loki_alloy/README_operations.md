@@ -320,6 +320,8 @@ Since you are analyzing Windows and Zabbix logs, you’ll use LogQL. Here are th
 
 ![logql](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/logql.png)
 
+But more in this in README_operations_logql.md
+
 ## 3. Let's Build Your First "Error Counter"
 
 Let's create a panel that tells you how many Application Errors occurred on your VM today.
