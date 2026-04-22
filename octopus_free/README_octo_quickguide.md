@@ -12,6 +12,7 @@
   - [Tutorial First Runbook quickguide](#tutorial-first-runbook-quickguide)
     - [How to runbook linux quickguide](#how-to-runbook-linux-quickguide)
   - [Runbook Samples](#runbook-samples)
+  - [Runbook Examples](#runbook-examples)
 
 The free edition is good for a small environment with up to 10 servers.
 
@@ -513,3 +514,10 @@ Publishing a runbook will snapshot the runbook process and the associated assets
 Check it out
 
 https://octopus.com/docs/getting-started/samples-instance#runbooks-azure
+
+## Runbook Examples
+
+https://octopus.com/docs/runbooks/runbook-examples
+
+![runbook examples](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/runbook_examples.png)
+
