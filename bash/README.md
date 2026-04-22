@@ -605,7 +605,7 @@ crontab -e
 
 ## Practical Examples
 
-## Zabbix MySql tuning
+## Zabbix MySql tuning single instance 2 vCPUs and 8GB of RAM
 
 For a small environment monitoring 10 hosts, a VM with 2 vCPUs and 8GB of RAM is more than enough—in fact, it's quite comfortable.
 
