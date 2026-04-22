@@ -605,6 +605,25 @@ crontab -e
 
 ## Practical Examples
 
+## Zabbix MySql tuning
+
+For a small environment monitoring 10 hosts, a VM with 2 vCPUs and 8GB of RAM is more than enough—in fact, it's quite comfortable.
+
+* Zabbix is very efficient, but since you are putting both the Zabbix Server and the MySQL Database on the same Ubuntu instance, the database is what will actually eat the most resources over time.
+* You could actually handle up to 50–100 hosts on this SKU before you'd need to worry about upgrading. For just 10 hosts, this VM will be "idling" most of the time.
+
+```bash
+# MySQL InnoDB Buffer Pool:
+# Set this to about 4GB (50% of your RAM). This keeps the database tables in memory 
+# so Zabbix doesn't have to keep hitting the 127GB OS disk you have.
+Edit /etc/mysql/mysql.conf.d/mysqld.cnf: innodb_buffer_pool_size = 4G
+
+# Zabbix Cache:
+# Increase the internal Zabbix configuration cache to handle the data processing smoothly.
+Edit /etc/zabbix/zabbix_server.conf: CacheSize=128M
+
+```
+
 ### UFW Firewall
 
 ```bash
