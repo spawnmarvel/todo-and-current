@@ -1056,6 +1056,10 @@ sudo blkid /dev/sda1
 sudo nano /etc/fstab
 # Add: UUID=your-uuid-here /datadrive ext4 defaults,nofail 0 2
 
+# Before you close the terminal, you should always verify that your fstab entry is typo-free.
+sudo mount -a
+# no output
+
 # Set ownership to current user (so you can write without sudo)
 sudo chown $USER:$USER /datadrive
 
