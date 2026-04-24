@@ -1037,6 +1037,9 @@ sudo fdisk /dev/sda
 ## Last sector: Press Enter (defaults to using the whole 50 GiB).
 ## Type w: This is the most important part—it writes the changes to the disk and exits.
 
+# check it
+lsblk -o NAME,HCTL,SIZE,MOUNTPOINT | grep -i "sd"
+
 # Format the partition with ext4 filesystem
 sudo mkfs.ext4 /dev/sda1
 
