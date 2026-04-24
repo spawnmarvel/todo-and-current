@@ -146,6 +146,9 @@ rm -r zabbix_agent2.d/ # remove folder recursively
 ```bash
 # Basic usage
 grep '"'"'pattern'"'"' filename
+
+sudo grep 'Value*' /etc/zabbix/zabbix_server.conf
+
 grep -i '"'"'search_term'"'"' file.txt      # Case insensitive
 grep -r '"'"'search_term'"'"' /path         # Recursive search
 grep -v '"'"'search_term'"'"' file.txt      # Invert match
