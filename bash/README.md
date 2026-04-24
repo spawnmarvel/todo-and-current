@@ -950,6 +950,63 @@ sudo systemctl status apache2
 
 ---
 
+### Mount Data Drive (fdisk) Ubuntu 24.04
+
+Partition, format, and mount a raw disk (e.g., /dev/sda) to store data like MySQL databases.
+
+```bash
+# Find the disk (look for one without a mount point - it's unused)
+lsblk -o NAME,HCTL,SIZE,MOUNTPOINT | grep -i "sd"
+
+# Create partition with fdisk
+sudo fdisk /dev/sda
+# Commands:
+#   g   - Create new GPT partition table
+#   n   - Create new partition (press Enter for defaults)
+#   w   - Write changes and exit
+
+# type g, n,partion number press enter, first sector press enter, last sector press enter and on command press w
+# Created a new partition 1 of type 'Linux filesystem' and of size 50 GiB.
+
+# 1 Type g: This creates the empty GPT partition table.
+# 2 Type n: To create a new partition.
+## Partition number: Press Enter (defaults to 1).
+## First sector: Press Enter (defaults to the start of the disk).
+## Last sector: Press Enter (defaults to using the whole 50 GiB).
+## Type w: This is the most important part—it writes the changes to the disk and exits.
+
+# check it
+lsblk -o NAME,HCTL,SIZE,MOUNTPOINT | grep -i "sd"
+
+# Format the partition with ext4 filesystem
+sudo mkfs.ext4 /dev/sda1
+
+# Create mount point directory and mount the partition
+sudo mkdir -p /datadrive
+sudo mount /dev/sda1 /datadrive
+
+# Make mount permanent (survives reboot) using fstab
+# Get the unique UUID of the partition
+sudo blkid /dev/sda1
+
+# Add to /etc/fstab so it mounts automatically on boot
+# Format: UUID=<uuid> <mountpoint> <filesystem> <options> <dump> <fsck>
+sudo nano /etc/fstab
+# Add: UUID=your-uuid-here /datadrive ext4 defaults,nofail 0 2
+
+# Before you close the terminal, you should always verify that your fstab entry is typo-free.
+sudo mount -a
+# no output
+
+# Set ownership to current user (so you can write without sudo)
+sudo chown $USER:$USER /datadrive
+
+# Verify the mount
+lsblk -o NAME,SIZE,MOUNTPOINT | grep "sd"
+```
+
+---
+
 ### Install MySQL 8.4 Offline (SCP + dpkg)
 
 Install MySQL on an offline VM by copying packages via SCP. Useful when the VM has no internet access.
@@ -1012,62 +1069,7 @@ sudo netstat -plnt | grep 3306
 
 ---
 
-### Mount Data Drive (fdisk) Ubuntu 24.04
 
-Partition, format, and mount a raw disk (e.g., /dev/sda) to store data like MySQL databases.
-
-```bash
-# Find the disk (look for one without a mount point - it's unused)
-lsblk -o NAME,HCTL,SIZE,MOUNTPOINT | grep -i "sd"
-
-# Create partition with fdisk
-sudo fdisk /dev/sda
-# Commands:
-#   g   - Create new GPT partition table
-#   n   - Create new partition (press Enter for defaults)
-#   w   - Write changes and exit
-
-# type g, n,partion number press enter, first sector press enter, last sector press enter and on command press w
-# Created a new partition 1 of type 'Linux filesystem' and of size 50 GiB.
-
-# 1 Type g: This creates the empty GPT partition table.
-# 2 Type n: To create a new partition.
-## Partition number: Press Enter (defaults to 1).
-## First sector: Press Enter (defaults to the start of the disk).
-## Last sector: Press Enter (defaults to using the whole 50 GiB).
-## Type w: This is the most important part—it writes the changes to the disk and exits.
-
-# check it
-lsblk -o NAME,HCTL,SIZE,MOUNTPOINT | grep -i "sd"
-
-# Format the partition with ext4 filesystem
-sudo mkfs.ext4 /dev/sda1
-
-# Create mount point directory and mount the partition
-sudo mkdir -p /datadrive
-sudo mount /dev/sda1 /datadrive
-
-# Make mount permanent (survives reboot) using fstab
-# Get the unique UUID of the partition
-sudo blkid /dev/sda1
-
-# Add to /etc/fstab so it mounts automatically on boot
-# Format: UUID=<uuid> <mountpoint> <filesystem> <options> <dump> <fsck>
-sudo nano /etc/fstab
-# Add: UUID=your-uuid-here /datadrive ext4 defaults,nofail 0 2
-
-# Before you close the terminal, you should always verify that your fstab entry is typo-free.
-sudo mount -a
-# no output
-
-# Set ownership to current user (so you can write without sudo)
-sudo chown $USER:$USER /datadrive
-
-# Verify the mount
-lsblk -o NAME,SIZE,MOUNTPOINT | grep "sd"
-```
-
----
 
 ### Move MySQL Data Directory
 
