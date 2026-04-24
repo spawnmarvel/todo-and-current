@@ -1019,7 +1019,7 @@ wget https://dev.mysql.com/get/Downloads/MySQL-8.4/mysql-server_8.4.0-1ubuntu24.
 # Download dependency (libmecab2 is required for MySQL full-text search)
 wget http://archive.ubuntu.com/ubuntu/pool/main/m/mecab/libmecab2_0.996-14build9_amd64.deb
 
-# 2. Transfer via SCP to the offline VM
+# 2. Transfer via SCP to the offline VM, scp works in powershell also
 scp mysql-server_8.4.0-1ubuntu24.04_amd64.deb-bundle.tar username@vm-ip:/tmp/
 scp libmecab2_0.996-14build9_amd64.deb username@vm-ip:/tmp/
 
