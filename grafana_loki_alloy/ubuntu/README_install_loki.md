@@ -2,6 +2,8 @@
 
 Installing Loki on Ubuntu using the .deb package is straightforward, but there are a few "extra" steps needed to make it run properly as a system service.
 
+## Install Loki
+
 🔷 Step 1: Download and Install the .deb
 
 On your Ubuntu VM, download the Loki package. I recommend version 3.0.0 or higher to ensure you have the latest TSDB features you were using on Windows.
@@ -18,3 +20,13 @@ sudo apt install ./loki_3.0.0_amd64.deb
 
 sudo dpkg -i loki_3.0.0_amd64.deb
 ```
+
+## Configure Loki
+
+
+## Install and configure Alloy agent
+
+
+## Use Lokql to query data
+
+
