@@ -1027,6 +1027,16 @@ sudo fdisk /dev/sda
 #   n   - Create new partition (press Enter for defaults)
 #   w   - Write changes and exit
 
+# type g, n,partion number press enter, first sector press enter, last sector press enter and on command press w
+# Created a new partition 1 of type 'Linux filesystem' and of size 50 GiB.
+
+# 1 Type g: This creates the empty GPT partition table.
+# 2 Type n: To create a new partition.
+## Partition number: Press Enter (defaults to 1).
+## First sector: Press Enter (defaults to the start of the disk).
+## Last sector: Press Enter (defaults to using the whole 50 GiB).
+## Type w: This is the most important part—it writes the changes to the disk and exits.
+
 # Format the partition with ext4 filesystem
 sudo mkfs.ext4 /dev/sda1
 
