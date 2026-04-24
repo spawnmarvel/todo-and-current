@@ -27,6 +27,6 @@ sudo dpkg -i loki_3.0.0_amd64.deb
 ## Install and configure Alloy agent
 
 
-## Use Lokql to query data
+## Use Logql to query data
 
 
