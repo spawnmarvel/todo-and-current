@@ -1158,17 +1158,22 @@ truncate -s 100M filename
 
 ```bash
 # 1. Load
-uptime
 top
+htop
+uptime
+
 
 # 2. Memory
 free -m
 
 # 3. Disk
 df -h
-df -i
+# size of files
+du -sh *
 
 # 4. Heavy resource
+ps -eo pid,ppid,cmd,%mem --sort=-%mem | head 
+
 ps aux --sort=-%cpu | head
 ps aux --sort=-%mem | head
 
