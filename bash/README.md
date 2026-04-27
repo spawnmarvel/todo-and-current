@@ -158,11 +158,16 @@ grep -v '"'"'search_term'"'"' file.txt      # Invert match
 grep -i '"'"'error'"'"' syslog              # Contains "error"
 grep -i '"'"'heartbeat.*error'"'"' syslog   # "heartbeat" then anything then "error"
 ```
-### find - files
+### find - Search any object, not just files
 
 ```bash
-find /etc/ -name "*.conf"                   # find all .conf
+sudo find /etc/ -name "*.conf"                   # Find all .conf
 
+sudo find /var/log -size +100M                   # Larger than 100MB
+
+sudo find /etc -mtime -1                         # Modified in the last 24 hours 
+
+sudo sudo find /var/log -cmin -10                # Changed in the last 10 minutes
 ```
 ### awk - Field Processing
 

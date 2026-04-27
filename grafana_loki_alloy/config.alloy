@@ -2,48 +2,59 @@ logging {
   level = "info"
 }
 
-//  Zabbix Agent (File Source)
+// 1. Zabbix Agent Source
 local.file_match "zabbix_agent" {
   path_targets = [{ 
     "__address__" = "localhost", 
     "__path__"    = "C:/Program Files/Zabbix Agent 2/zabbix_agent2.log", 
     "job"         = "zabbix-agent",
-    "computer"    = "vmhybrid01.lab.local",
     "service"     = "zabbix-agent",
   }]
 }
 
 loki.source.file "zabbix_scrape" {
   targets    = local.file_match.zabbix_agent.targets
-  forward_to = [loki.write.local_loki.receiver]
+  // Better: forward to the processor, not directly to write
+  forward_to = [loki.process.global_processor.receiver]
 }
 
-//  The Processor (The "Magic" for Drilldown)
-// This ensures Windows labels are properly indexed for the Drilldown App
-loki.process "windows_processor" {
-  stage.labels {
+// 2. Windows Event Sources
+loki.source.windowsevent "local_event_logs" {
+  eventlog_name = "System"
+  labels        = { job = "windows-eventlog", service = "system" }
+  forward_to    = [loki.process.global_processor.receiver]
+}
+
+loki.source.windowsevent "application_logs" {
+  eventlog_name = "Application"
+  labels        = { job = "windows-eventlog", service = "application" }
+  forward_to    = [loki.process.global_processor.receiver]
+}
+
+// 3. Centralized Processor
+loki.process "global_processor" {
+  // Ensures every log passing through gets the computer label
+  stage.static_labels {
     values = {
       computer = "vmhybrid01.lab.local",
     }
   }
+
+  // Example: Extracting log level from Zabbix logs if they are standard format
+  stage.regex {
+    expression = "^(?P<time>\\d+:\\d+:\\d+)\\s+(?P<level>[A-Z]+)"
+  }
+
+  stage.labels {
+    values = {
+      level = "",
+    }
+  }
+
   forward_to = [loki.write.local_loki.receiver]
 }
 
-//  Windows System
-loki.source.windowsevent "local_event_logs" {
-  eventlog_name = "System"
-  labels        = { job = "windows-system", service = "windows-system" }
-  forward_to    = [loki.process.windows_processor.receiver]
-}
-
-//  Windows Application
-loki.source.windowsevent "application_logs" {
-  eventlog_name = "Application"
-  labels        = { job = "windows-application", service = "windows-application" }
-  forward_to    = [loki.process.windows_processor.receiver]
-}
-
-//  Write to Loki
+// 4. Destination
 loki.write "local_loki" {
   endpoint {
     url = "http://localhost:3100/loki/api/v1/push"
