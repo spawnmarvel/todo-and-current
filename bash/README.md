@@ -148,6 +148,7 @@ rm -r zabbix_agent2.d/ # remove folder recursively
 grep '"'"'pattern'"'"' filename
 
 sudo grep 'Value*' /etc/zabbix/zabbix_server.conf
+sudo grep -r "error" /var/log/              # search recu for error
 
 grep -i '"'"'search_term'"'"' file.txt      # Case insensitive
 grep -r '"'"'search_term'"'"' /path         # Recursive search
@@ -157,7 +158,12 @@ grep -v '"'"'search_term'"'"' file.txt      # Invert match
 grep -i '"'"'error'"'"' syslog              # Contains "error"
 grep -i '"'"'heartbeat.*error'"'"' syslog   # "heartbeat" then anything then "error"
 ```
+### find - files
 
+```bash
+find /etc/ -name "*.conf"                   # find all .conf
+
+```
 ### awk - Field Processing
 
 ```bash
@@ -273,6 +279,8 @@ rsync -avz localdir user@host:/path/
 ip addr                             # Show interfaces
 ip a                                # Short form
 hostname -I                         # Get IP address
+netstat                             # Show all open ports
+ss -tulpn                           # tcp, udp, listen, process, numeric
 ```
 
 ### Firewall (UFW)
