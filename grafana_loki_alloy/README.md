@@ -8,6 +8,11 @@ Kibana and Grafana are both powerful, open-source data visualization tools, but 
 
 https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm/kibana-elasticsearch-file-beat
 
+## Note! The .conf files may change
+
+The config files for loki and alloy may change so look at the aactual conf's in this repository.
+
+
 # Table of Contents
 
 - [🔹 Architecture & Comparison](#grafana-loki-and-alloy)
