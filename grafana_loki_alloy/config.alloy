@@ -2,59 +2,85 @@ logging {
   level = "info"
 }
 
-// 1. Zabbix Agent Source
+// --- 1. SOURCES ---
+
 local.file_match "zabbix_agent" {
   path_targets = [{ 
     "__address__" = "localhost", 
     "__path__"    = "C:/Program Files/Zabbix Agent 2/zabbix_agent2.log", 
     "job"         = "zabbix-agent",
-    "service"     = "zabbix-agent",
   }]
 }
 
 loki.source.file "zabbix_scrape" {
   targets    = local.file_match.zabbix_agent.targets
-  // Better: forward to the processor, not directly to write
-  forward_to = [loki.process.global_processor.receiver]
+  forward_to = [loki.process.unified_logs.receiver]
 }
 
-// 2. Windows Event Sources
-loki.source.windowsevent "local_event_logs" {
+loki.source.windowsevent "system_logs" {
   eventlog_name = "System"
-  labels        = { job = "windows-eventlog", service = "system" }
-  forward_to    = [loki.process.global_processor.receiver]
+  labels        = { job = "windows-system" }
+  forward_to    = [loki.process.unified_logs.receiver]
 }
 
 loki.source.windowsevent "application_logs" {
   eventlog_name = "Application"
-  labels        = { job = "windows-eventlog", service = "application" }
-  forward_to    = [loki.process.global_processor.receiver]
+  labels        = { job = "windows-application" }
+  forward_to    = [loki.process.unified_logs.receiver]
 }
 
-// 3. Centralized Processor
-loki.process "global_processor" {
-  // Ensures every log passing through gets the computer label
+// --- 2. THE UNIFIER ---
+
+loki.process "unified_logs" {
+  
+  // A. Set the computer name for EVERY log stream
   stage.static_labels {
     values = {
       computer = "vmhybrid01.lab.local",
     }
   }
 
-  // Example: Extracting log level from Zabbix logs if they are standard format
-  stage.regex {
-    expression = "^(?P<time>\\d+:\\d+:\\d+)\\s+(?P<level>[A-Z]+)"
+  // B. Process Windows JSON
+  stage.json {
+    expressions = {
+      msg    = "message",   // Extract the actual human-readable text
+      lvl    = "levelText", // Extract 'Information', 'Error', etc.
+      source = "source",
+    }
   }
 
+  // C. Process Zabbix Text (Extract level if present)
+  stage.regex {
+    expression = "^(?P<time>\\S+)\\s+(?P<zabbix_lvl>[A-Z]+)"
+  }
+
+  // D. Assign labels for searching
   stage.labels {
     values = {
-      level = "",
+      level  = "lvl",
+      level  = "zabbix_lvl",
+      source = "source",
     }
+  }
+
+  // E. CLEANUP: Change the log line from JSON to just the message
+  // This makes Windows logs look like Zabbix logs (Clean text)
+  stage.output {
+    source = "msg"
+  }
+
+  // F. Normalize Level names
+  stage.replace {
+    source     = "level"
+    expression = "Information"
+    replace    = "info"
   }
 
   forward_to = [loki.write.local_loki.receiver]
 }
 
-// 4. Destination
+// --- 3. DESTINATION ---
+
 loki.write "local_loki" {
   endpoint {
     url = "http://localhost:3100/loki/api/v1/push"
