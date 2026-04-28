@@ -291,7 +291,7 @@ vmhybrid01 is the **DC and DNS server** - it must be running for network operati
 <details>
 <summary>Show / hide</summary>
 
-**GOTO:** `iac_fast_biceps`
+**GOTO:** `iac_fast_biceps` https://github.com/spawnmarvel/todo-and-current/tree/main/iac_fast_biceps
 - Deploy within 1 min
 - Remove within 1 min
 - Autoshutdown enabled (safety if forgotten)
