@@ -312,6 +312,8 @@ sudo apt install alloy
 # 4 Check it
 sudo systemctl status alloy.service
 # 5 edit conf,  For a full configuration reference, see https://grafana.com/docs/alloy
+# copy config https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/config_remote.alloy
+# set the computer = "YOUR-VM-NAME.lab.local",
 sudo nano /etc/alloy/config.alloy
 # 5.1 By default, the alloy user cannot read /var/log/syslog on Ubuntu
 sudo usermod -aG adm alloy
@@ -326,6 +328,7 @@ sudo alloy run /etc/alloy/config.alloy
 sudo systemctl start alloy.service
 sudo systemctl enable alloy.service
 sudo systemctl status alloy.service
+
 ```
 - Install Octopus Tenatcle linux
 
@@ -337,6 +340,7 @@ wget https://download.octopusdeploy.com/linux-tentacle/tentacle_9.1.3801_amd64.d
 sudo dpkg -i tentacle_9.1.3801_amd64.deb
 # 3 To set up a Tentacle instance, run the following script:
 /opt/octopus/tentacle/configure-tentacle.sh
+# YOUR-VM-NAME-tenatcle
 # Firewall is open in main.bicep
 ```
 ---
