@@ -118,42 +118,87 @@ logging {
   level = "info"
 }
 
-// 1. Define the Log Source
+// 1. Define the Log Source (Ubuntu Syslog)
 local.file_match "linux_logs" {
   path_targets = [
     { 
       "job"      = "ubuntu-syslog",
       "computer" = "vm-uks-temp-001.lab.local",
-      "service"  = "system",
       "__path__" = "/var/log/syslog", 
     },
   ]
 }
 
-// 2. The Processor (Ensures labels are clean for Drilldown)
+// 2. The Unified Processor (Adapted for Linux)
 loki.process "linux_processor" {
-  stage.labels {
+  
+  // A. Ensure the computer label matches the new VM name
+  stage.static_labels {
     values = {
       computer = "vm-uks-temp-001.lab.local",
-      job      = "ubuntu-syslog",
     }
   }
+
+  // B. Extract Level and Message from Syslog
+  // Typical syslog: Apr 28 15:00:00 hostname service[pid]: INFO: message
+  stage.regex {
+    expression = "^(?P<timestamp>\\S+\\s+\\d+\\s+\\S+)\\s+(?P<host>\\S+)\\s+(?P<service>\\S+):\\s+(?P<lvl>[A-Z]+):\\s+(?P<msg>.*)$"
+  }
+
+  // C. Map extracted fields to labels
+  stage.labels {
+    values = {
+      level   = "lvl",
+      service = "service",
+    }
+  }
+
+  // D. THE TRANSLATOR: Normalizes Linux levels to match your Windows Dashboard
+  stage.replace {
+    source     = "level"
+    expression = "(?i)^err$|^error$|^emerg$|^crit$"
+    replace    = "error"
+  }
+  stage.replace {
+    source     = "level"
+    expression = "(?i)^info$|^notice$"
+    replace    = "info"
+  }
+  stage.replace {
+    source     = "level"
+    expression = "(?i)^warn$|^warning$"
+    replace    = "warning"
+  }
+
+  // E. CLEANUP: Keep the dashboard looking clean
+  // If the regex above doesn't match a line perfectly, it stays as is.
+  stage.output {
+    source = "msg"
+  }
+
   forward_to = [loki.write.windows_loki.receiver]
 }
 
-// 3. Scrape and Forward through the Processor
+// 3. Scrape and Forward
 loki.source.file "local_scrape" {
   targets    = local.file_match.linux_logs.targets
   forward_to = [loki.process.linux_processor.receiver]
 }
 
-// 4. Remote Push to Windows
+// 4. Remote Push to your main Windows Loki
 loki.write "windows_loki" {
   endpoint {
     url = "http://192.168.3.7:3100/loki/api/v1/push"
   }
 }
 ```
+
+Why this is "Equal" to your Main Config:
+🟦 Global Searchability: By using the same computer and level labels, this VM will automatically appear in your main dashboard's dropdown menus.
+
+🟦 Normalized Levels: Since I added the stage.replace blocks, your Error Counter on the main dashboard will now count Linux errors and Windows errors together.
+
+🟦 Clean Display: The stage.output ensures that the timestamp and hostname (which are already in the Grafana columns) aren't repeated inside the log message, keeping your table view clean.
 
 By default, the alloy user created by the installer might not have permission to read the system logs on Ubuntu 24.04. Run this to grant access:
 
