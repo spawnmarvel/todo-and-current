@@ -303,6 +303,8 @@ vmhybrid01 is the **DC and DNS server** - it must be running for network operati
 
 ```bash
 wget https://download.octopusdeploy.com/linux-tentacle/tentacle_9.1.3801_amd64.deb
+# To set up a Tentacle instance, run the following script:
+/opt/octopus/tentacle/configure-tentacle.sh
 ```
 ---
 
