@@ -34,7 +34,7 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
     - [VS Code Extensions \& Setup](#vs-code-extensions--setup)
       - [Extensions (chromebook)](#extensions-chromebook)
       - [Setting Up Git Bash Terminal in VS Code](#setting-up-git-bash-terminal-in-vs-code)
-  - [Infrastructure Essentials Hybrid](#infrastructure-essentials-hybrid)
+  - [Infrastructure Essentials hybrid](#infrastructure-essentials-hybrid)
     - [Azure VM Operations](#azure-vm-operations)
     - [AD DS Configuration (vmhybrid01)](#ad-ds-configuration-vmhybrid01)
   - [Fast Linux VM Deployment IAC](#fast-linux-vm-deployment-iac)
@@ -295,6 +295,7 @@ vmhybrid01 is the **DC and DNS server** - it must be running for network operati
 - Remove within 1 min
 - Autoshutdown enabled (safety if forgotten)
 - Scripts at storage account
+- Firewall (IP Addresses): Check the box that says "Add your client IP address".
 
 
 ---
