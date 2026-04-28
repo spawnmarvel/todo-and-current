@@ -34,7 +34,7 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
     - [VS Code Extensions \& Setup](#vs-code-extensions--setup)
       - [Extensions (chromebook)](#extensions-chromebook)
       - [Setting Up Git Bash Terminal in VS Code](#setting-up-git-bash-terminal-in-vs-code)
-  - [Infrastructure Essentials](#infrastructure-essentials)
+  - [Infrastructure Essentials Hybrid](#infrastructure-essentials-hybrid)
     - [Azure VM Operations](#azure-vm-operations)
     - [AD DS Configuration (vmhybrid01)](#ad-ds-configuration-vmhybrid01)
   - [Fast Linux VM Deployment IAC](#fast-linux-vm-deployment-iac)
@@ -86,7 +86,7 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
 - [🔹 Elo parked](#elo-parked)
 - [🔹 Scripting Stack](#scripting-stack)
 - [🔹 GitHub Copilot and Development](#github-copilot-and-development)
-- [🔹 Infrastructure Essentials](#infrastructure-essentials)
+- [🔹 Infrastructure Essentials Hybrid](#infrastructure-essentials-hybrid)
 - [🔹 Fast Linux VM Deployment IAC](#fast-linux-vm-deployment-iac)
 - [🔹 Current Priorities: TOP 3](#current-priorities-top-3)
 - [🔹 Knowledge Maintenance Checklist](#knowledge-maintenance-checklist)
@@ -264,7 +264,7 @@ Now run scripts directly: `./your_script.sh`
 
 ---
 
-## Infrastructure Essentials
+## Infrastructure Essentials hybrid
 
 <details>
 <summary>Show / hide</summary>
