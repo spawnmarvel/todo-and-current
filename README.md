@@ -297,7 +297,13 @@ vmhybrid01 is the **DC and DNS server** - it must be running for network operati
 - Scripts at storage account
 - Firewall (IP Addresses): Check the box that says "Add your client IP address".
 
+- Install Grafana Alloy https://grafana.com/docs/alloy/latest/set-up/install/linux/
 
+- Install Octopus Tenatcle linux
+
+```bash
+wget https://download.octopusdeploy.com/linux-tentacle/tentacle_9.1.3801_amd64.deb
+```
 ---
 
 ## Current Priorities: TOP 3
