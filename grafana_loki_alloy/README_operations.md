@@ -372,46 +372,14 @@ For a production-ready dashboard, you generally want these three specific views:
 
 Since you are analyzing Windows and Zabbix logs, you’ll use LogQL. Here are the "Golden Queries" you should learn first:
 
-![logql](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/logql.png)
-
 But more in this in README_operations_logql.md
 
 ## 3. Let's Build Your First "Error Counter"
 
 Let's create a panel that tells you how many Application Errors occurred on your VM today.
 
-* Click Add > Visualization in your dashboard.
-
-* Select Stat from the panel list on the right.
-
-* Use this query:
-
-```logql
-sum(count_over_time({job="windows-application", computer="vmhybrid01.lab.local"} | json | levelText="Error" [24h]))
-
-# or
-
-sum(count_over_time({job="windows-application", computer="vmhybrid01.lab.local"} | json | levelText="Error" [1h]))
-```
-
-* In the Standard Options, set the unit to Short.
-
-* Set a Threshold: Base is Green, and at 1, it turns Red.
-
-* In the Query A block (the Error query), look for the "Legend" field at the bottom.
-
-* windows-application
-
-* Save it and use it
-
-![error_count](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/error_count.png)
 
 ## 4. The "Log Breakdown" (Pie Chart)
 
 It’s very helpful to see which source is the "noisiest."
 
-* Query: sum by (job) (count_over_time({instance="vmhybrid01"}[1h]))
-
-* Panel: Pie Chart.
-
-* Result: You’ll see if Windows System logs are drowning out your Zabbix logs.
