@@ -37,7 +37,7 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
   - [Infrastructure Essentials](#infrastructure-essentials)
     - [Azure VM Operations](#azure-vm-operations)
     - [AD DS Configuration (vmhybrid01)](#ad-ds-configuration-vmhybrid01)
-  - [Fast Linux VM Deployment](#fast-linux-vm-deployment)
+  - [Fast Linux VM Deployment IAC](#fast-linux-vm-deployment-iac)
   - [Current Priorities: TOP 3](#current-priorities-top-3)
     - [1. Octopus Deploy for Linux (CI/CD) ⭐](#1-octopus-deploy-for-linux-cicd-)
     - [2. Windows Server Hybrid Administrator (vmhybrid01) ⭐](#2-windows-server-hybrid-administrator-vmhybrid01-)
@@ -87,7 +87,7 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
 - [🔹 Scripting Stack](#scripting-stack)
 - [🔹 GitHub Copilot and Development](#github-copilot-and-development)
 - [🔹 Infrastructure Essentials](#infrastructure-essentials)
-- [🔹 Fast Linux VM Deployment](#fast-linux-vm-deployment)
+- [🔹 Fast Linux VM Deployment IAC](#fast-linux-vm-deployment-iac)
 - [🔹 Current Priorities: TOP 3](#current-priorities-top-3)
 - [🔹 Knowledge Maintenance Checklist](#knowledge-maintenance-checklist)
 - [🔹 Parked Projects or Completed Projects](#parked-projects-or-completed-projects)
@@ -286,7 +286,7 @@ vmhybrid01 is the **DC and DNS server** - it must be running for network operati
 
 ---
 
-## Fast Linux VM Deployment
+## Fast Linux VM Deployment IAC
 
 <details>
 <summary>Show / hide</summary>
