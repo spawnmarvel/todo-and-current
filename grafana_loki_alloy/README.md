@@ -10,7 +10,7 @@ https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm/ki
 
 ## Note! The .conf files may change
 
-The config files for loki and alloy may change so look at the aactual conf's in this repository.
+The config files for loki and alloy may change so look at the actual conf's in this repository.
 
 
 # Table of Contents
