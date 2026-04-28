@@ -288,8 +288,6 @@ vmhybrid01 is the **DC and DNS server** - it must be running for network operati
 
 ## Fast Linux VM Deployment IAC
 
-<details>
-<summary>Show / hide</summary>
 
 **GOTO:** `iac_fast_biceps` https://github.com/spawnmarvel/todo-and-current/tree/main/iac_fast_biceps
 - Deploy within 1 min
@@ -297,7 +295,6 @@ vmhybrid01 is the **DC and DNS server** - it must be running for network operati
 - Autoshutdown enabled (safety if forgotten)
 - Scripts at storage account
 
-</details>
 
 ---
 
