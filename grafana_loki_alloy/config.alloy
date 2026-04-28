@@ -4,76 +4,91 @@ logging {
 
 // --- 1. SOURCES ---
 
+// Zabbix Agent (File Source)
 local.file_match "zabbix_agent" {
   path_targets = [{ 
     "__address__" = "localhost", 
     "__path__"    = "C:/Program Files/Zabbix Agent 2/zabbix_agent2.log", 
     "job"         = "zabbix-agent",
+    "service"     = "zabbix-agent",
   }]
 }
 
 loki.source.file "zabbix_scrape" {
   targets    = local.file_match.zabbix_agent.targets
-  forward_to = [loki.process.unified_logs.receiver]
+  forward_to = [loki.process.unified_processor.receiver]
 }
 
-loki.source.windowsevent "system_logs" {
+// Windows System Events
+loki.source.windowsevent "local_event_logs" {
   eventlog_name = "System"
-  labels        = { job = "windows-system" }
-  forward_to    = [loki.process.unified_logs.receiver]
+  labels        = { job = "windows-system", service = "windows-system" }
+  forward_to    = [loki.process.unified_processor.receiver]
 }
 
+// Windows Application Events
 loki.source.windowsevent "application_logs" {
   eventlog_name = "Application"
-  labels        = { job = "windows-application" }
-  forward_to    = [loki.process.unified_logs.receiver]
+  labels        = { job = "windows-application", service = "windows-application" }
+  forward_to    = [loki.process.unified_processor.receiver]
 }
 
-// --- 2. THE UNIFIER ---
+// --- 2. THE PROCESSOR ---
 
-loki.process "unified_logs" {
+loki.process "unified_processor" {
   
-  // A. Set the computer name for EVERY log stream
+  // A. Set the computer name for EVERYTHING
   stage.static_labels {
     values = {
       computer = "vmhybrid01.lab.local",
     }
   }
 
-  // B. Process Windows JSON
+  // B. Extract Windows Fields (Catches raw JSON data)
   stage.json {
     expressions = {
-      msg    = "message",   // Extract the actual human-readable text
-      lvl    = "levelText", // Extract 'Information', 'Error', etc.
+      msg    = "message",
+      win_lv = "level",      // Extracts 'E', 'I', or numbers
+      win_tx = "levelText",  // Extracts 'Information', 'Error'
       source = "source",
     }
   }
 
-  // C. Process Zabbix Text (Extract level if present)
+  // C. Extract Zabbix Level (Extracts levels from text lines)
   stage.regex {
-    expression = "^(?P<time>\\S+)\\s+(?P<zabbix_lvl>[A-Z]+)"
+    expression = "^(?P<time>\\S+)\\s+(?P<zabbix_lv>[A-Z]+)"
   }
 
-  // D. Assign labels for searching
+  // D. Map to searchable labels
   stage.labels {
     values = {
-      level  = "lvl",
-      level  = "zabbix_lvl",
+      level  = "win_lv",
+      level  = "win_tx",
+      level  = "zabbix_lv",
       source = "source",
     }
   }
 
-  // E. CLEANUP: Change the log line from JSON to just the message
-  // This makes Windows logs look like Zabbix logs (Clean text)
-  stage.output {
-    source = "msg"
-  }
-
-  // F. Normalize Level names
+  // E. THE TRANSLATOR: Normalizes E, I, 4, Information to lowercase info/error
   stage.replace {
     source     = "level"
-    expression = "Information"
+    expression = "(?i)^e$|^error$|^2$|^err$"
+    replace    = "error"
+  }
+  stage.replace {
+    source     = "level"
+    expression = "(?i)^i$|^info$|^information$|^4$"
     replace    = "info"
+  }
+  stage.replace {
+    source     = "level"
+    expression = "(?i)^w$|^warning$|^3$|^warn$"
+    replace    = "warning"
+  }
+
+  // F. CLEANUP: Forces the log line in the dashboard to be clean text
+  stage.output {
+    source = "msg"
   }
 
   forward_to = [loki.write.local_loki.receiver]
