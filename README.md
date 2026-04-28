@@ -303,12 +303,40 @@ vmhybrid01 is the **DC and DNS server** - it must be running for network operati
 - Install Octopus Tenatcle linux
 
 ```bash
+# run
+# 1 Import the GPG key and add the Grafana package repository.
+# Run the full script
+# 2
+sudo apt update
+# 3 install
+sudo apt install alloy
+# 4 Check it
+sudo systemctl status alloy.service
+# 5 edit conf,  For a full configuration reference, see https://grafana.com/docs/alloy
+sudo nano /etc/alloy/config.alloy
+# 5.1 By default, the alloy user cannot read /var/log/syslog on Ubuntu
+sudo usermod -aG adm alloy
+# 6 test config
+# If it works: It will print a "clean" version of your config to the terminal.
+# If it fails: It will give you a specific line number and error message (e.g., "expected block end, found }").
+sudo alloy fmt /etc/alloy/config.alloy
+# 7 test it in terminal
+sudo alloy run /etc/alloy/config.alloy
+# 7.1 stop it ctrl c
+# 8 enable as service
+sudo systemctl start alloy.service
+sudo systemctl enable alloy.service
+sudo systemctl status alloy.service
+```
+
+```bash
+# 1 get it
 wget https://download.octopusdeploy.com/linux-tentacle/tentacle_9.1.3801_amd64.deb
-
+# 2 install it
 sudo dpkg -i tentacle_9.1.3801_amd64.deb
-
-# To set up a Tentacle instance, run the following script:
+# 3 To set up a Tentacle instance, run the following script:
 /opt/octopus/tentacle/configure-tentacle.sh
+# Firewall is open in main.bicep
 ```
 ---
 
