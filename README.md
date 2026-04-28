@@ -295,7 +295,7 @@ vmhybrid01 is the **DC and DNS server** - it must be running for network operati
 - Remove within 1 min
 - Autoshutdown enabled (safety if forgotten)
 - Firewall for 10933 is in main.bicep
-- Scripts at storage account
+- Scripts at storage account (or use below bash for Alloy and Tenatcle)
 - Firewall (IP Addresses): Check the box that says "Add your client IP address".
 
 - Install Grafana Alloy https://grafana.com/docs/alloy/latest/set-up/install/linux/
