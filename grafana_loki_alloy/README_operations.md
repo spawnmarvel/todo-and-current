@@ -7,6 +7,7 @@
   - [Tips for make it production ready (not done for this lab)](#tips-for-make-it-production-ready-not-done-for-this-lab)
   - [Log from remote server install on linux](#log-from-remote-server-install-on-linux)
   - [Log for multiple applications](#log-for-multiple-applications)
+  - [Explore](#explore)
   - [Create a Logs Panel that specifically filters for job="name-agent" so you can monitor the agent's connection health.](#create-a-logs-panel-that-specifically-filters-for-jobname-agent-so-you-can-monitor-the-agents-connection-health)
   - [Search in logs](#search-in-logs)
   - [Lets make grafana avaliable from the outside](#lets-make-grafana-avaliable-from-the-outside)
@@ -245,6 +246,14 @@ Now we have two vms.
 
 
 ![two vms](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/two_vms.png)
+
+
+## Explore
+
+Go to Explore to see your lables, jobs and get to know what you have collected.
+
+![explorer](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/explore.png)
+
 
 
 ## Log for multiple applications
