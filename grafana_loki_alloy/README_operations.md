@@ -252,7 +252,7 @@ Now we have two vms.
 
 Go to Explore to see your lables, jobs and get to know what you have collected.
 
-![explorer](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/explore.png)
+![explorer](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/explorer.png)
 
 
 
