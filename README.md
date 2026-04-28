@@ -301,6 +301,7 @@ vmhybrid01 is the **DC and DNS server** - it must be running for network operati
 - Install Grafana Alloy https://grafana.com/docs/alloy/latest/set-up/install/linux/
 
 ```bash
+ssh
 # run
 # 1 Import the GPG key and add the Grafana package repository.
 # Run the full script
@@ -329,6 +330,7 @@ sudo systemctl status alloy.service
 - Install Octopus Tenatcle linux
 
 ```bash
+ssh
 # 1 get it
 wget https://download.octopusdeploy.com/linux-tentacle/tentacle_9.1.3801_amd64.deb
 # 2 install it
