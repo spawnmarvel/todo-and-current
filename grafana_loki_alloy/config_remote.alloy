@@ -1,3 +1,6 @@
+// Version: 1.0.0
+// Remote Linux VM: vm-uks-temp-001.lab.local
+
 logging {
   level = "info"
 }
@@ -13,23 +16,23 @@ local.file_match "linux_logs" {
   ]
 }
 
-// 2. The Unified Processor (Adapted for Linux)
+// 2. The Unified Processor (Adapted for Linux Syslog)
 loki.process "linux_processor" {
   
-  // A. Ensure the computer label matches the new VM name
+  // A. Static Label for the Drilldown App
   stage.static_labels {
     values = {
       computer = "vm-uks-temp-001.lab.local",
     }
   }
 
-  // B. Extract Level and Message from Syslog
-  // Typical syslog: Apr 28 15:00:00 hostname service[pid]: INFO: message
+  // B. Extract Metadata from Syslog Text
+  // Standard format: Apr 29 11:00:00 hostname service[pid]: LEVEL: message
   stage.regex {
-    expression = "^(?P<timestamp>\\S+\\s+\\d+\\s+\\S+)\\s+(?P<host>\\S+)\\s+(?P<service>\\S+):\\s+(?P<lvl>[A-Z]+):\\s+(?P<msg>.*)$"
+    expression = "^(?P<timestamp>\\S+\\s+\\d+\\s+\\S+)\\s+(?P<host>\\S+)\\s+(?P<service>[^\\s\\[:]+)(?:\\[(?P<pid>\\d+)\\])?:\\s+(?P<lvl>[A-Z]+)?:?\\s*(?P<msg>.*)$"
   }
 
-  // C. Map extracted fields to labels
+  // C. Map extracted fields to Loki labels
   stage.labels {
     values = {
       level   = "lvl",
@@ -37,7 +40,7 @@ loki.process "linux_processor" {
     }
   }
 
-  // D. THE TRANSLATOR: Normalizes Linux levels to match your Windows Dashboard
+  // D. THE TRANSLATOR: Normalizes Linux levels to your Dashboard standard
   stage.replace {
     source     = "level"
     expression = "(?i)^err$|^error$|^emerg$|^crit$"
@@ -45,7 +48,7 @@ loki.process "linux_processor" {
   }
   stage.replace {
     source     = "level"
-    expression = "(?i)^info$|^notice$"
+    expression = "(?i)^info$|^notice$|^informational$"
     replace    = "info"
   }
   stage.replace {
@@ -54,8 +57,7 @@ loki.process "linux_processor" {
     replace    = "warning"
   }
 
-  // E. CLEANUP: Keep the dashboard looking clean
-  // If the regex above doesn't match a line perfectly, it stays as is.
+  // E. CLEANUP: Keep the dashboard looking clean by only outputting the message
   stage.output {
     source = "msg"
   }
@@ -69,7 +71,7 @@ loki.source.file "local_scrape" {
   forward_to = [loki.process.linux_processor.receiver]
 }
 
-// 4. Remote Push to your main Windows Loki
+// 4. Remote Push to Windows Loki Instance
 loki.write "windows_loki" {
   endpoint {
     url = "http://192.168.3.7:3100/loki/api/v1/push"

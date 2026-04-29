@@ -1,3 +1,6 @@
+# Version: 1.0.0
+# Windows-Friendly Loki Config for Grafana Labs' "Alloy" Lab Environment
+
 # Authentication: Disabled
 # Why it's good: Simplifies the lab setup. You don't have to manage complex headers 
 # or multi-tenant IDs. It makes communication between Alloy, Loki, and Grafana "plug-and-play."
