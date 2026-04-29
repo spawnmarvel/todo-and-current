@@ -8,8 +8,6 @@
 
 Import-Module WebAdministration
 # Get-IISAppPool -Name "myAppPool"
-Restart-WebAppPool -Name "myAppPool"
-# Swap space goes down after 1 min to normal 15gb
 
 # 1. Define the log file path
 $logFile = "F:\LogsPS1\AppPool_Watchdog_log.txt" 
@@ -25,3 +23,7 @@ function Write-Log {
     $logEntry | Out-File -FilePath $logFile -Append
 }
 
+
+Restart-WebAppPool -Name "myAppPool"
+# Swap space goes down after 1 min to normal 15gb
+Write-Log "Restarted myAppPool"
