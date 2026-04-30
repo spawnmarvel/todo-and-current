@@ -366,7 +366,7 @@ sudo dpkg -i tentacle_9.1.3801_amd64.deb
 
 ---
 
-### 2. Grafana, Loki, and Alloy Agents, Zabbix default ⭐
+### 2. Grafana, Loki, and Alloy Agents and Zabbix default ⭐
 
 **Goal:** Set up log monitoring stack loki
 
