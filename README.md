@@ -367,6 +367,7 @@ sudo dpkg -i tentacle_9.1.3801_amd64.deb
 - Use time on the default agent 2 for trapping
 - Use time on snmp trapping
 - Use time on default templates
+- Files [Zabbix monitor VM's and SNMP default](https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm/zabbix_monitor_vms_snmp_default)
 
 ---
 
