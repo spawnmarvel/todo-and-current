@@ -39,8 +39,8 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
     - [AD DS Configuration (vmhybrid01)](#ad-ds-configuration-vmhybrid01)
   - [Fast Linux VM Deployment IAC](#fast-linux-vm-deployment-iac)
   - [Current Priorities: TOP 3](#current-priorities-top-3)
-    - [1. Octopus Deploy for Linux (CI/CD) ⭐](#1-octopus-deploy-for-linux-cicd-)
-    - [2. Grafana, Loki, and Alloy Agents and Zabbix default ⭐](#3-grafana-loki-and-alloy-agents-and-zabbix-default)
+    - [1. Grafana, Loki, and Alloy Agents and Zabbix default ⭐](#3-grafana-loki-and-alloy-agents-and-zabbix-default)
+    - [2. Octopus Deploy for Linux (CI/CD) ⭐](#1-octopus-deploy-for-linux-cicd-)
     - [3. Windows Server Hybrid Administrator (vmhybrid01) ⭐](#2-windows-server-hybrid-administrator-vmhybrid01-)
   - [Knowledge Maintenance Checklist](#knowledge-maintenance-checklist)
     - [1. Linux Continous](#1-linux-continous)
@@ -347,26 +347,7 @@ sudo dpkg -i tentacle_9.1.3801_amd64.deb
 
 ## Current Priorities: TOP 3
 
-### 1. Octopus Deploy for Linux (CI/CD) ⭐
-
-**Setup:**
-- Use IAC Linux VM for fast deploy and remove
-- Two projects: Windows & Linux
-- Focusing on Linux project now
-
-**Current Tasks:**
-- Diagnostics using normal Linux commands ✅ 100%
-- Upload packages and variables (needs more time)
-- Install software (MySQL, etc.)
-- All Linux apps and day 2 operations
-
-**Guide:** [Octopus Linux Runbook Operations](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/README_octo_linux_runbook_operations.md)
-
-**Progress:** ![deploy123](https://github.com/spawnmarvel/todo-and-current/blob/main/images/deploy123.png)
-
----
-
-### 2. Grafana, Loki, and Alloy Agents and Zabbix default ⭐
+### 1. Grafana, Loki, and Alloy Agents and Zabbix default ⭐
 
 **Goal:** Set up log monitoring stack loki
 
@@ -386,6 +367,25 @@ sudo dpkg -i tentacle_9.1.3801_amd64.deb
 - Use time on the default agent 2 for trapping
 - Use time on snmp trapping
 - Use time on default templates
+
+---
+
+### 2. Octopus Deploy for Linux (CI/CD) ⭐
+
+**Setup:**
+- Use IAC Linux VM for fast deploy and remove
+- Two projects: Windows & Linux
+- Focusing on Linux project now
+
+**Current Tasks:**
+- Diagnostics using normal Linux commands ✅ 100%
+- Upload packages and variables (needs more time)
+- Install software (MySQL, etc.)
+- All Linux apps and day 2 operations
+
+**Guide:** [Octopus Linux Runbook Operations](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/README_octo_linux_runbook_operations.md)
+
+**Progress:** ![deploy123](https://github.com/spawnmarvel/todo-and-current/blob/main/images/deploy123.png)
 
 ---
 
