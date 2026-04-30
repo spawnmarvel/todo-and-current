@@ -364,9 +364,9 @@ sudo dpkg -i tentacle_9.1.3801_amd64.deb
 
 **Tasks:**
 - Use the stack we have and agent 2
-- Use time on Windows by Zabbix agent active
-- Use time on Linux by Zabbix agent active
-- Use time on Linux by SNMP active
+- Windows by Zabbix agent active and user param
+- Linux by Zabbix agent active and user param
+- Linux by SNMP
 - Use time on default templates
 - Files [Zabbix monitor VM's and SNMP default](https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm/zabbix_monitor_vms_snmp_default)
 
