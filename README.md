@@ -40,8 +40,8 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
   - [Fast Linux VM Deployment IAC](#fast-linux-vm-deployment-iac)
   - [Current Priorities: TOP 3](#current-priorities-top-3)
     - [1. Octopus Deploy for Linux (CI/CD) ⭐](#1-octopus-deploy-for-linux-cicd-)
-    - [2. Windows Server Hybrid Administrator (vmhybrid01) ⭐](#2-windows-server-hybrid-administrator-vmhybrid01-)
-    - [3. Grafana, Loki, and Alloy Agents ⭐](#3-grafana-loki-and-alloy-agents-)
+    - [2. Grafana, Loki, and Alloy Agents and Zabbix default ⭐](#3-grafana-loki-and-alloy-agents-and-zabbix-default)
+    - [3. Windows Server Hybrid Administrator (vmhybrid01) ⭐](#2-windows-server-hybrid-administrator-vmhybrid01-)
   - [Knowledge Maintenance Checklist](#knowledge-maintenance-checklist)
     - [1. Linux Continous](#1-linux-continous)
     - [2. MySQL Continous](#2-mysql-continous)
@@ -366,7 +366,30 @@ sudo dpkg -i tentacle_9.1.3801_amd64.deb
 
 ---
 
-### 2. Windows Server Hybrid Administrator (vmhybrid01) ⭐
+### 2. Grafana, Loki, and Alloy Agents, Zabbix default ⭐
+
+**Goal:** Set up log monitoring stack loki
+
+**Tasks:**
+- Install and configure Grafana
+- Configure Loki
+- Deploy Alloy agents across infrastructure
+- Monitor logs from all services
+- Mastering LogQL (The "Query Language")
+- Build main 3 dashboards
+- Files [Grafana, Loki and Alloy](https://github.com/spawnmarvel/todo-and-current/tree/main/grafana_loki_alloy)
+
+**Goal:** Set up log metric stack zabbix
+
+**Tasks:**
+- Use the stack we have
+- Use time on the default agent 2 for trapping
+- Use time on snmp trapping
+- Use time on default templates
+
+---
+
+### 3. Windows Server Hybrid Administrator (vmhybrid01) ⭐
 
 Exam target: **AZ-802** (June 2026)
 
@@ -386,20 +409,7 @@ Exam target: **AZ-802** (June 2026)
 
 ---
 
-### 3. Grafana, Loki, and Alloy Agents ⭐
 
-**Goal:** Set up log monitoring stack
-
-**Tasks:**
-- Install and configure Grafana
-- Configure Loki
-- Deploy Alloy agents across infrastructure
-- Monitor logs from all services
-- Mastering LogQL (The "Query Language")
-- Build main 3 dashboards
-- Files [Grafana, Loki and Alloy](https://github.com/spawnmarvel/todo-and-current/tree/main/grafana_loki_alloy)
-
----
 
 ## Knowledge Maintenance Checklist
 
