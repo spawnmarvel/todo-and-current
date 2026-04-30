@@ -368,6 +368,7 @@ sudo dpkg -i tentacle_9.1.3801_amd64.deb
 - Linux by Zabbix agent active and user param
 - Linux by SNMP
 - Use time on default templates
+- A project for maximizing all default monitoring and not write a single script.
 - Files [Zabbix monitor VM's and SNMP default](https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm/zabbix_monitor_vms_snmp_default)
 
 ---
