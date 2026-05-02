@@ -788,7 +788,7 @@ SSLCertificateFile      /etc/ssl/certs/vmzabbix03.crt
 SSLCertificateKeyFile   /etc/ssl/private/vmzabbix03.key
 ```
 
-Swap the cert on vmzabbix01 that is running apache.
+Swap the cert on vmzabbix that is running apache.
 
 ```bash
 # 1. Setup paths
