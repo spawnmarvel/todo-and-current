@@ -772,7 +772,7 @@ And we have backups and the new cert and key.
 
 ## 3.1 Apache add new SSL cert Runbook
 
-Assuming runbook 3 is completed, then we update with step.
+Assuming runbook 3 is completed, then we update with a new step.
 
 ```bash
 pwd
@@ -793,7 +793,7 @@ Swap the cert on vmzabbix01 that is running apache.
 ```bash
 # 1. Setup paths
 TARGET_DIR="/etc/automation_cert"
-CERT_NAME="vmzabbix03"
+CERT_NAME="#{Linux.vmzabbix}"
 
 # 2. Navigate and verify
 cd "$TARGET_DIR" || exit 1
