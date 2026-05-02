@@ -17,24 +17,40 @@ To keep the mental model clear:
 
 ![hub and spoke](https://github.com/spawnmarvel/todo-and-current/blob/main/hub_and_spoke/images/topology2.png)
 
-## Environment
+## Environment (updated 02.05.2026)
 
-vnet-noe-europe
-172.64.0.0/26, 64 addresses
+All vms was removed expect for vmhybrid01 DNS and AD DS server.
+The reason for this was to make true hub and spoke, where all new vm as in sw
 
-Subnets
-* default 172.64.0.0/28 - 9
-
-Peered virtual network address space
-* vnet-noe-2-uks peered to vnet-uks-central
-
-vnet-uks-central
+vnet-uks-central (hub)
 192.168.0.0/20, 4096 addresses
 
 Subnet
 * Vms03 192.168.3.0/24 - 247
 * Dmzs02 192.168.2.0/28 - 11
 
+Peered virtual network
+* vnet-swc-2-uks-peering
+
+vnet-sw-central (spike)
+172.16.0.0/22, 1024 addresses
+
+Subnets
+* Vm01 172.16.0.0/26 - 58
+
+Peered virtual network
+* vnet-uks-2-swc-peering
+
+
+So had to update DNS server for sw to 192.168.3.7.
+
+You must repeat "Step C" from your UKS setup for the new Sweden VNet. Azure needs to know that for any VM born in the 172.16.0.0/22 range, it should hand out your DC's IP during the DHCP handshake.
+
+1. In the Azure Portal, navigate to your Sweden Central VNet (172.16.0.0/22).
+2. On the left-hand menu, select DNS servers.
+3. Switch the radio button from Default (Azure-provided) to Custom.
+4. Enter the IP of your UKS Domain Controller: 192.168.3.7.
+5. Click Save and restart vms that are new in sw.
 
 
 ### Network gateway and port proxy
