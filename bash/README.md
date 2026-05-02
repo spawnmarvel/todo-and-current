@@ -1055,6 +1055,9 @@ sudo dpkg -i libmecab2_*.deb
 # Install all MySQL packages at once (dpkg resolves internal dependencies)
 sudo dpkg -i mysql-*.deb
 # Add a root password
+sudo mysql -u root -p
+Enter password:
+# Welcome to the MySQL monitor.  Commands end with ; or \g.
 
 # 4. Set root password (use caching_sha2_password for secure authentication)
 sudo mysql
