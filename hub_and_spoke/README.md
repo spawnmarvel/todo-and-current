@@ -163,8 +163,7 @@ Address         Port        Address         Port
 ## Install Fail2Ban (The Automated Guard) (option)
 
 vm
-* vmzabbix
-* dmzdocker03
+* vmzabbix03
 
 ```bash
 # install: 
@@ -194,7 +193,7 @@ ction.d  fail2ban.conf  fail2ban.d  filter.d  jail.conf  jail.d  paths-arch.conf
 # View your main jail configuration if you made it
 cat /etc/fail2ban/jail.local
 ```
-Since you have PasswordAuthentication no and are using SSH Keys, you are almost immune to being locked out by Fail2Ban.
+Since you will sett PasswordAuthentication no and are using SSH Keys after, you are almost immune to being locked out by Fail2Ban.
 
 ⚠️ The One Exception (The "Too Many Keys" Error)
 There is only one way you might accidentally trigger a lockout while using keys:
