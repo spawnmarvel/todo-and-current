@@ -1073,6 +1073,7 @@ FLUSH PRIVILEGES;
 
 # 5. Secure installation (removes test DB, anonymous users, etc.)
 sudo mysql_secure_installation
+# n, n, y, y, y, y
 
 # 6. Allow remote access (change bind-address from 127.0.0.1 to 0.0.0.0)
 sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
