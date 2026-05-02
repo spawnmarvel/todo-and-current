@@ -17,7 +17,7 @@ To keep the mental model clear:
 
 ![hub and spoke](https://github.com/spawnmarvel/todo-and-current/blob/main/hub_and_spoke/images/topology2.png)
 
-## Environment (updated 02.05.2026)
+## Environment (updated 02.05.2026) after this header is not updated
 
 All vms was removed expect for vmhybrid01 DNS and AD DS server.
 The reason for this was to make true hub and spoke, where all new vm as in sw
@@ -52,6 +52,13 @@ You must repeat "Step C" from your UKS setup for the new Sweden VNet. Azure need
 4. Enter the IP of your UKS Domain Controller: 192.168.3.7.
 5. Click Save and restart vms that are new in sw.
 
+
+Test it.
+
+```bash
+ resolvectl status | grep "DNS Servers"
+       DNS Servers: 192.168.3.7
+```
 
 ### Network gateway and port proxy
 
