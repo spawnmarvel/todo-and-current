@@ -231,25 +231,54 @@ If you don't want a VPN at all, you can keep SSH public but make it impossible t
 This stops the "brute force" bots in your logs cold. They can guess passwords all day, but the server will simply refuse to even ask for one.
 
 ```bash
-# Either use the key you all ready have
-# check it
+# --- BASH ---
+
+# Either use the key you already have
+# Check existing keys
 cd ~/.ssh
 
-# linux
+# Linux/macOS: Display the public key
 sudo cat ~/.ssh/id_ed25519.pub
-# windows
-Get-Content $HOME\.ssh\id_ed25519.pub
 
-# Create an SSH key on your laptop: 
+# Create a new SSH key if needed
 ssh-keygen -t ed25519 -C "myname or laptopid"
 
-# Copy it to the VM: 
-cat ~/.ssh/id_ed25519.pub
-# 
+# Copy the key to the VM
+# Method 1: Using ssh-copy-id (Recommended)
 ssh-copy-id YOUR-USERNAME@<your-azure-ip>
 
+# Method 2: Manual cat if needed
+cat ~/.ssh/id_ed25519.pub
+
+# Connect to the VM
 ssh username@ip
 
+```
+
+```ps1
+# --- POWERSHELL ---
+
+# Either use the key you already have
+# Check existing keys
+Set-Location $HOME\.ssh
+
+# Windows: Display the public key
+Get-Content $HOME\.ssh\id_ed25519.pub
+
+# Create a new SSH key if needed
+ssh-keygen.exe -t ed25519 -C "myname or laptopid"
+
+# Copy the key to the VM
+# Note: Windows does not have ssh-copy-id by default. 
+# You can use this command to pipe the key to the server:
+Get-Content $HOME\.ssh\id_ed25519.pub | ssh YOUR-USERNAME@<your-azure-ip> "mkdir -p ~/.ssh && chmod 700 ~/.ssh && cat >> ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys"
+
+# Connect to the VM
+ssh username@ip
+```
+The edit sshd_config
+
+```bash
 # Edit 
 sudo nano /etc/ssh/sshd_config
 #  and set:
