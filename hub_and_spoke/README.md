@@ -208,8 +208,7 @@ sudo sshd -T | grep -i maxauthtries
 ## Hardened "Standard" SSH (The "No-New-Software" Path)
 
 Vm
-* vmzabbix02m public ip ssh
-* dmzdocker03 public ip ssh
+* vmzabbix03 public ip ssh
 
 Ssh clients
 * penguin
