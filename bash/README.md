@@ -1077,6 +1077,7 @@ sudo mysql_secure_installation
 
 # 6. Allow remote access (change bind-address from 127.0.0.1 to 0.0.0.0)
 sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+# If it exists, change it. If it doesn't exist, scroll to the bottom of the [mysqld] section and add:
 # Change: bind-address = 0.0.0.0
 
 # Restart MySQL and verify it's listening on all interfaces
