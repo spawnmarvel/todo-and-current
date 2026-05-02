@@ -320,7 +320,7 @@ Get architecture for ubuntu vm
 
 ```bash
 uname -a
-Linux vmzabbix02 6.17.0-1008-azure #8~24.04.1-Ubuntu SMP Mon Jan 26 18:35:40 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+Linux vmzabbix03 6.17.0-1008-azure #8~24.04.1-Ubuntu SMP Mon Jan 26 18:35:40 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
 
 dpkg --print-architecture
 amd64
@@ -377,7 +377,7 @@ Using the .deb file is better than the .tar.gz because it automatically register
 
 ```bash
 hostname
-vmzabbix02
+vmzabbix03
 
 ```
 
@@ -617,7 +617,7 @@ Configure it
 Log
 
 ```log
-Name of Tentacle instance (default Tentacle):vmzabbix02
+Name of Tentacle instance (default Tentacle):vmzabbix03
 What kind of Tentacle would you like to configure: 1) Listening or 2) Polling (default 1): 1
 Where would you like Tentacle to store configuration, logs, and working files? (/etc/octopus):
 Where would you like Tentacle to install applications to? (/home/Octopus/Applications):
@@ -625,12 +625,12 @@ Enter the port that this Tentacle will listen on (10933):
 Should the Tentacle use a proxy to communicate with Octopus? (y/N): n
 Enter the thumbprint of the Octopus Server: C6xxxxxxxxxxxxxxxxxxxxxxx
 [...]
-Saving instance: vmzabbix02
-Setting home directory to: /etc/octopus/vmzabbix02
+Saving instance: vmzabbix03
+Setting home directory to: /etc/octopus/vmzabbix03
 A new certificate has been generated and installed. Thumbprint:
 C3xxxxxxxxxxxxxxxxxxxxxxxx
 [...}]
-Tentacle instance 'vmzabbix02' is now installed
+Tentacle instance 'vmzabbix03' is now installed
 ```
 In the octopus mananger portal we used, enter manual:
 
@@ -643,9 +643,26 @@ Test connectivity in octopus.
 
 ### Make SSL cert Runbook with folder, backup, new cert and key
 
-Make a cert on vmzabbix02 (this vm has internet access) since it is running zabbix apache, then we can check the cert in browser if it has changed later.
+Make a cert on vmzabbix03 (this vm has internet access) since it is running zabbix apache, then we can check the cert in browser if it has changed later.
 
-First lets make a folder for the automation
+Assuming we manually created certs and configured apache.
+
+```bash
+mkdir /etc/automation_cert
+
+# and we ran
+sudo openssl req -newkey rsa:4096 -x509 -sha256 -days 365 -nodes \
+  -out vmzabbix03.crt -keyout vmzabbix03.key \
+  -subj "/C=NO/ST=Hordaland/L=BER/O=Socrates.inc/OU=IT/CN=vmzabbix03"
+
+# And apache is configured to use the certificates.
+sudo nano /etc/apache2/sites-available/default-ssl.conf
+
+# SSLCertificateFile    /etc/ssl/certs/vmzabbix03.crt
+# SSLCertificateKeyFile /etc/ssl/private/vmzabbix03.key
+
+```
+Then we can start octopus the script process.
 
 ```bash
 # Define the path
@@ -761,14 +778,14 @@ Assuming runbook 3 is completed, then we update with step.
 pwd
 # /etc/automation_cert
 ls
-backups  vmzabbix02.crt  vmzabbix02.key
+backups  vmzabbix03.crt  vmzabbix03.key
 ```
 
 And assuming /etc/apache2/sites-enabled/default-ssl.conf
 
 ```ini
-SSLCertificateFile      /etc/ssl/certs/vmzabbix02.crt
-SSLCertificateKeyFile   /etc/ssl/private/vmzabbix02.key
+SSLCertificateFile      /etc/ssl/certs/vmzabbix03.crt
+SSLCertificateKeyFile   /etc/ssl/private/vmzabbix03.key
 ```
 
 Swap the cert on vmzabbix01 that is running apache.
@@ -776,7 +793,7 @@ Swap the cert on vmzabbix01 that is running apache.
 ```bash
 # 1. Setup paths
 TARGET_DIR="/etc/automation_cert"
-CERT_NAME="vmzabbix02"
+CERT_NAME="vmzabbix03"
 
 # 2. Navigate and verify
 cd "$TARGET_DIR" || exit 1
