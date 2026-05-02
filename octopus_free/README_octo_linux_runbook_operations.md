@@ -677,13 +677,12 @@ Then lets make a variable in octopus for the hostname.
 
 1. From the Linux Day2 Operations you created earlier, click Project Variables in the left menu.
 2. Click Create Variables.
-3. Add Linux.vmzabbix02 in the Name column,
-Add the vmzabbix02 (hostname), in the Value column,
+3. Add Linux.vmzabbix in the Name column,
+Add the vmzabbix03 (hostname), in the Value column,
 4. Click the Scope column and  and a the same vmtag (no not select the Development/staging/production environment.)
 
 Click Save.
 
-![linux var](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/linux_var.png)
 
 Now add a new step, with making the cert and key using octopus var.
 
