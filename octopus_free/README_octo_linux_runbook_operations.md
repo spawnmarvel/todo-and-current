@@ -690,7 +690,7 @@ Now add a new step, with making the cert and key using octopus var.
 # 1. Setup Variables
 CERT_DIR="/etc/automation_cert"
 BACKUP_DIR="${CERT_DIR}/backups"
-CERT_NAME="#{Linux.vmzabbix02}"
+CERT_NAME="#{Linux.vmzabbix}"
 CERT_SUBJ="/C=US/ST=NewYork/L=NYC/O=IT/CN=${CERT_NAME}"
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 
