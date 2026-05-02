@@ -1059,11 +1059,13 @@ sudo mysql -u root -p
 Enter password:
 # Welcome to the MySQL monitor.  Commands end with ; or \g.
 
+# This is optional, since we already are in
 # 4. Set root password (use caching_sha2_password for secure authentication)
 sudo mysql
 ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'admin4561';
 FLUSH PRIVILEGES;
 
+# This is good practice
 # Create a regular user for daily work (don't use root for everything)
 CREATE USER 'johnwick'@'%' IDENTIFIED BY 'YourUserPassword123!';
 GRANT ALL PRIVILEGES ON *.* TO 'johnwick'@'%' WITH GRANT OPTION;
