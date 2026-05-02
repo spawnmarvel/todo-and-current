@@ -645,7 +645,7 @@ Test connectivity in octopus.
 
 Make a cert on vmzabbix03 (this vm has internet access) since it is running zabbix apache, then we can check the cert in browser if it has changed later.
 
-Assuming we manually created certs and configured apache.
+Assuming we manually created certs and configured apache and apache is running ssl.
 
 ```bash
 mkdir /etc/automation_cert
