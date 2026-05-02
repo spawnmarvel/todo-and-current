@@ -39,7 +39,7 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
     - [AD DS Configuration (vmhybrid01)](#ad-ds-configuration-vmhybrid01)
   - [Fast Linux VM Deployment IAC](#fast-linux-vm-deployment-iac)
   - [Current Priorities: TOP 3](#current-priorities-top-3)
-    - [1. Grafana, Loki, and Alloy Agents and Zabbix default ⭐](#1-grafana-loki-and-alloy-agents-and-zabbix-default)
+    - [1. Grafana, Loki, and Alloy Agents and Zabbix default ⭐](#1-grafana-loki-and-alloy-agents-and-zabbix-default-)
     - [2. Octopus Deploy for Linux (CI/CD) ⭐](#2-octopus-deploy-for-linux-cicd-)
     - [3. Windows Server Hybrid Administrator (vmhybrid01) ⭐](#3-windows-server-hybrid-administrator-vmhybrid01-)
   - [Knowledge Maintenance Checklist](#knowledge-maintenance-checklist)
@@ -222,6 +222,12 @@ This happens when you edited files directly on GitHub or pushed from a different
 git pull --rebase origin main
 git push origin main
 ```
+
+**Get latest and override local changes:**
+```bash
+git restore .
+```
+
 </details>
 
 ---
