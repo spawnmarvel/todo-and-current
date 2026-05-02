@@ -782,10 +782,10 @@ CERT_NAME="vmzabbix02"
 cd "$TARGET_DIR" || exit 1
 echo "Moving files from $(pwd)..."
 
-# 3. Move files to official system locations
-sudo mv "${CERT_NAME}.crt" "/etc/ssl/certs/${CERT_NAME}.crt"
+# 3. Move/ copy files to official system locations
+sudo cp "${CERT_NAME}.crt" "/etc/ssl/certs/${CERT_NAME}.crt"
 # Fixed: ensured the extension stays .key
-sudo mv "${CERT_NAME}.key" "/etc/ssl/private/${CERT_NAME}.key"
+sudo cp "${CERT_NAME}.key" "/etc/ssl/private/${CERT_NAME}.key"
 
 # 4. Set Permissions (Crucial for Apache access)
 sudo chown root:www-data "/etc/ssl/private/${CERT_NAME}.key"
