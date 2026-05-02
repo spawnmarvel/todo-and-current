@@ -71,7 +71,7 @@ vmhybrid01
 * 192.168.3.7
 * Public ip
 
-docker03getmirrortest
+docker03getmirrortest example
 * 172.64.0.5
 
 #### Network Gateway
@@ -105,7 +105,7 @@ Add NSG also for vmhybrid01 for inbound 10934 since we already have a tenatcle f
 
 ### Network Gateway
 
-vmchaos09
+vmchaos09 example
 * 192.168.3.4
 
 1. The "Signpost" Command (Windows)
@@ -124,7 +124,7 @@ New-NetFirewallRule -DisplayName "Octopus Linux Forwarding" -Direction Inbound -
 
 ### Network Gateway
 
-vmsnmpsim01
+vmsnmpsim01 example
 * 192.168.3.6
 
 1. The "Signpost" Command (Windows)
