@@ -1081,6 +1081,11 @@ sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
 # Restart MySQL and verify it's listening on all interfaces
 sudo systemctl restart mysql
 sudo netstat -plnt | grep 3306
+
+# check it
+sudo service mysql status
+# ● mysql.service - MySQL Community Server
+#     Loaded: loaded (/usr/lib/systemd/system/mysql.service; enabled; preset: enabled)
 ```
 
 > Learn more: [MySQL README](../mysql/README.md)
