@@ -347,7 +347,10 @@ sudo dpkg -i tentacle_9.1.3801_amd64.deb
 # 3 To set up a Tentacle instance, run the following script:
 /opt/octopus/tentacle/configure-tentacle.sh
 # YOUR-VM-NAME-tenatcle
-# Firewall is open in main.bicep
+vmzabbix03-tentacle
+# /etc/octopus
+# /home/Octopus/Applications
+sudo service vmzabbix03-tentacle status
 ```
 ---
 
