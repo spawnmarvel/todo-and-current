@@ -1,6 +1,6 @@
-// Parameters
-param location string = 'uksouth'
-param vmName string = 'vm-uks-temp-001'
+// v1.2 - Added SSH (22) and Port 10933 for Any source
+param location string = 'swedencentral'
+param vmName string = 'vm-swc-temp-001'
 param adminUsername string
 
 @secure()
@@ -8,12 +8,12 @@ param adminPassword string
 
 // Variables 
 var vmSize = 'Standard_B2s'
-var vnetName = 'vnet-uks-central'
-var vnetRG = 'Rg-vnet-uks-central'
-var subnetName = 'Vms03'
+var vnetName = 'vnet-sw-central'
+var vnetRG = 'Rg-vnet-sw-central'
+var subnetName = 'Vms01'
 var publicIPName = '${vmName}-pip'
 var nicName = '${vmName}-nic'
-var nsgName = '${vmName}-nsg' // Added NSG Name
+var nsgName = '${vmName}-nsg'
 
 // 1. Reference the VNet
 resource vnet 'Microsoft.Network/virtualNetworks@2023-11-01' existing = {
@@ -21,22 +21,35 @@ resource vnet 'Microsoft.Network/virtualNetworks@2023-11-01' existing = {
   scope: resourceGroup(vnetRG) 
 }
 
-// 2. Create the NSG with port 10933 open
+// 2. Create the NSG with SSH and 10933 open to any
 resource nsg 'Microsoft.Network/networkSecurityGroups@2023-11-01' = {
   name: nsgName
   location: location
   properties: {
     securityRules: [
       {
-        name: 'Allow-10933-Inbound'
+        name: 'Allow-SSH-Inbound-Any'
         properties: {
           priority: 1000
           access: 'Allow'
           direction: 'Inbound'
           protocol: 'Tcp'
           sourcePortRange: '*'
+          destinationPortRange: '22'
+          sourceAddressPrefix: '*' 
+          destinationAddressPrefix: '*'
+        }
+      }
+      {
+        name: 'Allow-10933-Inbound-Any'
+        properties: {
+          priority: 1010
+          access: 'Allow'
+          direction: 'Inbound'
+          protocol: 'Tcp'
+          sourcePortRange: '*'
           destinationPortRange: '10933'
-          sourceAddressPrefix: '*' // Change to your IP for better security
+          sourceAddressPrefix: '*'
           destinationAddressPrefix: '*'
         }
       }
@@ -53,7 +66,7 @@ resource publicIP 'Microsoft.Network/publicIPAddresses@2023-11-01' = {
   }
 }
 
-// 4. Create the NIC (Now associated with the NSG)
+// 4. Create the NIC
 resource nic 'Microsoft.Network/networkInterfaces@2023-11-01' = {
   name: nicName
   location: location
@@ -73,7 +86,7 @@ resource nic 'Microsoft.Network/networkInterfaces@2023-11-01' = {
       }
     ]
     networkSecurityGroup: {
-      id: nsg.id // Linking the NSG to the NIC
+      id: nsg.id 
     }
   }
 }

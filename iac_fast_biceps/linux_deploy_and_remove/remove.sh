@@ -22,7 +22,7 @@ fi
 az login --tenant "$t_id" --output none
 
 # 3. Define the target
-RG_NAME="RG-uks-temp-resources-001"
+RG_NAME="RG-swc-temp-resources-001"
 
 # 4. Remove the Resource Group and everything inside it
 # Using --no-wait makes it behave like PowerShell's -AsJob

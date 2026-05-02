@@ -26,10 +26,10 @@ WHAT_IF_MODE=false
 az login --tenant "$t_id" --output none
 
 # 3. Define Variables
-RG_NAME="RG-uks-temp-resources-001"
-LOCATION="uksouth"
+RG_NAME="RG-swc-temp-resources-001"
+LOCATION="swedencentral"
 TEMPLATE_PATH="./main.bicep"
-VM_NAME="vm-uks-temp-001"
+VM_NAME="vm-swc-temp-001"
 
 # 4. Create Resource Group if it doesn't exist
 echo "Checking for Resource Group: $RG_NAME..."

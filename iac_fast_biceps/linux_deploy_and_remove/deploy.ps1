@@ -13,10 +13,10 @@ $WhatIfMode = $false
 Connect-AzAccount -TenantId $t_id
 
 # 3. Define Variables
-$rgName = "RG-uks-temp-resources-001"
-$location = "uksouth"
+$rgName = "RG-swc-temp-resources-001"
+$location = "swedencentral"
 $templatePath = ".\main.bicep"
-$vmName = "vm-uks-temp-001"
+$vmName = "vm-swc-temp-001"
 
 # 4. Create Resource Group if it doesn't exist
 Write-Host "Checking for Resource Group: $rgName..." -ForegroundColor Cyan

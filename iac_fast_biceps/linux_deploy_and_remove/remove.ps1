@@ -5,7 +5,7 @@ $t_id = [System.Environment]::GetEnvironmentVariable("t_id", "User")
 Connect-AzAccount -TenantId $t_id -ErrorAction SilentlyContinue
 
 # 3. Define the target
-$rgName = "RG-uks-temp-resources-001"
+$rgName = "RG-swc-temp-resources-001"
 
 # 4. Remove the Resource Group and everything inside it
 Write-Host "Warning: This will delete everything inside $rgName!" -ForegroundColor Red
