@@ -22,7 +22,7 @@
 - [Install and Operations Runbooks](#install-and-operations-runbooks)
   - [1. Diagnostoics Runbook](#1-diagnostoics-runbook)
   - [2. Upload packet Runbook](#2-upload-packet-runbook)
-  - [3 Make SSL cert Runbook](#3-make-ssl-cert-runbook)
+  - [3 Renew SSL cert Runbook](#3-renew-ssl-cert-runbook)
     - [Install linux tentacle (this vm has internet access), AD DS must be running](#install-linux-tentacle-this-vm-has-internet-access-ad-ds-must-be-running)
     - [Make SSL cert Runbook with folder, backup, new cert and key](#make-ssl-cert-runbook-with-folder-backup-new-cert-and-key)
   - [3.1 Apache add new SSL cert Runbook](#31-apache-add-new-ssl-cert-runbook)
@@ -575,7 +575,7 @@ cd /etc/octopus/tentacle-name/Files
 
 ![mysql_pack_path](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/mysql_pack_path.png)
 
-## 3 Make SSL cert Runbook
+## 3 Renew SSL cert Runbook
 
 
 ### Install linux tentacle (this vm has internet access), AD DS must be running
