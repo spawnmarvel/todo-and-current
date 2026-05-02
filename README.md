@@ -372,7 +372,8 @@ sudo service vmzabbix03-tentacle status
 **Goal:** Set up log metric stack zabbix
 
 **Tasks:**
-- Use the stack we have and agent 2
+- Installed new stack (Zabbix 7 LTS, dpkg MySql 8.4) and a new vnet in swden central peerd to DNS net 
+- Zabbix agent 2
 - Windows by Zabbix agent active and user param
 - Linux by Zabbix agent active and user param
 - Linux by SNMP
