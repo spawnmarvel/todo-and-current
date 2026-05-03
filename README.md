@@ -423,6 +423,7 @@ Exam target: **AZ-802** (June 2026)
 - ✅ Cloud-Only Hybrid Lab completed (100%)
 - ✅ Port proxy for inbound for vms in 172.16.0.0 (ps1)
 - ✅ Wingate www proxy service outbound for vms in 172.16.0.0
+- 🔄 Check for updates on vmhybrid01
 
 **In Progress:**
 - 📚 MS Learn Active Directory Domain Services
