@@ -306,7 +306,9 @@ vmhybrid01 is the **DC and DNS server** - it must be running for network operati
 - Firewall (IP Addresses): Check the box that says "Add your client IP address".
 - ssh keygen is in /hub_and_spoke
 
-- Install Grafana Alloy https://grafana.com/docs/alloy/latest/set-up/install/linux/
+- Install Grafana Alloy Linux
+
+- https://grafana.com/docs/alloy/latest/set-up/install/linux/
 
 ```bash
 ssh
@@ -354,6 +356,8 @@ vmzabbix03-tentacle
 # /home/Octopus/Applications
 sudo service vmzabbix03-tentacle status
 ```
+
+Install Zabbix agent 2 Linux
 ---
 
 ## Current Priorities: TOP 3
@@ -414,8 +418,11 @@ sudo service vmzabbix03-tentacle status
 Exam target: **AZ-802** (June 2026)
 
 **Completed:**
-- ✅ AD DS is installed (100%)
+- ✅ vnet-uks-2-swc-peering,  192 to 172, 172 to 192
+- ✅ AD DS is installed (100%), 192.168.0.0
 - ✅ Cloud-Only Hybrid Lab completed (100%)
+- ✅ Port proxy for inbound for vms in 172.16.0.0 (ps1)
+- ✅ Wingate www proxy service outbound for vms in 172.16.0.0
 
 **In Progress:**
 - 📚 MS Learn Active Directory Domain Services
