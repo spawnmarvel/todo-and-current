@@ -39,7 +39,8 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
     - [AD DS Configuration (vmhybrid01)](#ad-ds-configuration-vmhybrid01)
   - [Fast Linux VM Deployment IAC](#fast-linux-vm-deployment-iac)
   - [Current Priorities: TOP 3](#current-priorities-top-3)
-    - [1. Grafana, Loki, and Alloy Agents and Zabbix default ⭐](#1-grafana-loki-and-alloy-agents-and-zabbix-default-)
+    - [1. Zabbix default ⭐](#1-zabbix-default-)
+    - [1.1 Grafana, Loki, and Alloy Agents and Zabbix default ⭐](#11-grafana-loki-and-alloy-agents-and-zabbix-default-)
     - [2. Octopus Deploy for Linux (CI/CD) ⭐](#2-octopus-deploy-for-linux-cicd-)
     - [3. Windows Server Hybrid Administrator (vmhybrid01) ⭐](#3-windows-server-hybrid-administrator-vmhybrid01-)
   - [Knowledge Maintenance Checklist](#knowledge-maintenance-checklist)
@@ -357,7 +358,22 @@ sudo service vmzabbix03-tentacle status
 
 ## Current Priorities: TOP 3
 
-### 1. Grafana, Loki, and Alloy Agents and Zabbix default ⭐
+### 1. Zabbix default ⭐
+
+**Goal:** Set up log metric stack zabbix using trap and default
+
+**Tasks:**
+- Installed new stack (Zabbix 7 LTS, dpkg MySql 8.4) and a new vnet in swden central peerd to DNS net 
+- Zabbix agent 2
+- Windows by Zabbix agent active and user param
+- Linux by Zabbix agent active and user param
+- Linux by SNMP
+- Use time on default templates
+- A project for maximizing all default monitoring and not write a single script.
+- Files [Zabbix monitor VM's and SNMP default](https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm/zabbix_monitor_vms_snmp_default)
+
+
+### 1.1 Grafana, Loki, and Alloy Agents and Zabbix default ⭐
 
 **Goal:** Set up log monitoring stack loki
 
@@ -370,17 +386,7 @@ sudo service vmzabbix03-tentacle status
 - Build main 3 dashboards
 - Files [Grafana, Loki and Alloy](https://github.com/spawnmarvel/todo-and-current/tree/main/grafana_loki_alloy)
 
-**Goal:** Set up log metric stack zabbix
 
-**Tasks:**
-- Installed new stack (Zabbix 7 LTS, dpkg MySql 8.4) and a new vnet in swden central peerd to DNS net 
-- Zabbix agent 2
-- Windows by Zabbix agent active and user param
-- Linux by Zabbix agent active and user param
-- Linux by SNMP
-- Use time on default templates
-- A project for maximizing all default monitoring and not write a single script.
-- Files [Zabbix monitor VM's and SNMP default](https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm/zabbix_monitor_vms_snmp_default)
 
 ---
 
