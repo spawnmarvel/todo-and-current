@@ -566,8 +566,8 @@ Note: Your Grafana dashboards will show "No Data" for a few seconds until Alloy 
 
 ## Grafana connect to zabbix
 
-* Create a user in zabbix
-* URL: https://192.168.3.5/zabbix/api_jsonrpc.php
+* Create a user in zabbix, full admin
+* URL: https://ZABBIX-IP/zabbix/api_jsonrpc.php
 * You might need to check skip TLS verification
 
 Checking "Skip TLS Verify" is a classic move in a lab environment. It happens because your Zabbix web server is likely using a Self-Signed Certificate or one issued by a local Certificate Authority (CA) that your Grafana server doesn't trust yet.
