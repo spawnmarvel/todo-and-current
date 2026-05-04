@@ -422,7 +422,7 @@ Exam target: **AZ-802** (June 2026)
 - ✅ AD DS is installed (100%), 192.168.0.0
 - ✅ Cloud-Only Hybrid Lab completed (100%)
 - ✅ Port proxy for inbound for vms in 172.16.0.0 (ps1)
-- ✅ Wingate www proxy service outbound for vms in 172.16.0.0
+- ✅ Wingate www proxy service outbound for vms in 172.16.0.0, https://www.wingate.com/
 - 🔄 Check for updates on vmhybrid01
 
 **In Progress:**
