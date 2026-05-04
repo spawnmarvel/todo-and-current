@@ -6,6 +6,10 @@ Installing Loki on Ubuntu using the .deb package is straightforward, but there a
 
 🔷 Step get the grafana repos
 
+Since Loki is part of the Grafana ecosystem, it is hosted in the same official Grafana APT repository. You only need to add the repository once to install both grafana and loki.
+
+Grafana Alloy is part of the same official Grafana APT repository
+
 How to Grafana with apt
 
 Grafana OSS	grafana	https://apt.grafana.com stable main
@@ -67,6 +71,10 @@ sudo dpkg -i loki_3.0.0_amd64.deb
 
 
 ## Install and configure Alloy agent
+
+Since Loki is part of the Grafana ecosystem, it is hosted in the same official Grafana APT repository. You only need to add the repository once to install both grafana and loki.
+
+Grafana Alloy is part of the same official Grafana APT repository.
 
 
 ## Use Logql to query data
