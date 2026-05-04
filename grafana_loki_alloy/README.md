@@ -93,7 +93,38 @@ Lets test a simpler stack
 ![stack](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/images/stack2.png)
 
 ## 1. Grafana on Windows
+
+Yes, Grafana requires a backend database to function.  
+
+It is important to distinguish between the Backend Database (where Grafana stores its own configuration) and Data Sources (where the metrics and logs you want to visualize are stored).
+
+The Backend Database (Internal Storage)
+- Grafana uses a relational database to store its "internal" data, such as:
+- User accounts and permissions.  
+- Dashboards and folder structures.  
+- Data source configurations (the connection strings to your metrics).  
+- Alert rules and notification settings.
+
+Supported Backend Databases:
+
+- SQLite 3: The default. It is stored as a local file (grafana.db). It's great for testing but not recommended for production or high-availability setups because it doesn't support multiple Grafana instances sharing the same data.  
+- PostgreSQL: The recommended choice for production environments.
+- MySQL / MariaDB: A solid alternative for production and high-availability clusters
+
+Data Sources (External Storage)
+
+While Grafana has an internal database for its settings, it does not store the actual performance metrics (like CPU usage, temperature, or stock prices) inside its backend database. Instead, it queries external Data Sources in real-time, such as:
+
+- Prometheus (Metrics)  
+- Loki (Logs)  
+- InfluxDB (Time-series)  
+- Elasticsearch (Search/Logs)  
+- SQL Databases (Postgres, MySQL, MS SQL)
+
+
 Grafana provides a standard Windows installer (.msi) or a standalone .zip file.
+
+When you run that MSI installer for Windows, Grafana will default to using SQLite for its backend database.
 
 🔷 Installation: Download the installer from the official Grafana download page.
 
