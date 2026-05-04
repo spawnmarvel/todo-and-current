@@ -121,6 +121,7 @@ While Grafana has an internal database for its settings, it does not store the a
 - Elasticsearch (Search/Logs)  
 - SQL Databases (Postgres, MySQL, MS SQL)
 
+***To set up Grafana with a MySQL backend on Windows, you need to prepare the MySQL database first and then point Grafana to it via its configuration file.***
 
 Grafana provides a standard Windows installer (.msi) or a standalone .zip file.
 
