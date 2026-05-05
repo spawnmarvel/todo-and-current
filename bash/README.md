@@ -18,9 +18,10 @@
 10. [File Compression](#file-compression)
 11. [File Permissions](#file-permissions)
 12. [Bash Scripting](#bash-scripting)
-13. [Practical Examples](#practical-examples)
-14. [Troubleshooting](#troubleshooting)
-15. [Linux Concepts](#linux-concepts)
+13. [Bash Piping](#bash-piping)
+14. [Practical Examples](#practical-examples)
+15. [Troubleshooting](#troubleshooting)
+16. [Linux Concepts](#linux-concepts)
 
 ---
 
@@ -618,6 +619,13 @@ crontab -e
 - [Bash Reference Manual](https://www.gnu.org/software/bash/manual/)
 
 ---
+
+## Bash Piping
+
+```bash
+
+``` 
+- https://www.geeksforgeeks.org/linux-unix/piping-in-unix-or-linux/
 
 ## Practical Examples
 
