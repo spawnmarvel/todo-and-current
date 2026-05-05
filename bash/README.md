@@ -622,8 +622,72 @@ crontab -e
 
 ## Bash Piping
 
+* A pipe is a form of redirection (transfer of standard output to some other destination)
+* Pipes are unidirectional i.e., data flows from left to right through the pipeline. 
 ```bash
+# command_1 | command_2 | command_3 | .... | command_N 
 
+# 1. List all files and directories and give them as input to `grep` command using piping in Linux
+ls | grep test1.txt
+test1.txt
+
+# 2. List all files and directories and give them as input to `more` commands using piping in Linux.
+ls -l | more
+
+# 3. Sort a list of files by size (5 column) using piping in Linux
+ls -l | sort -k 5
+
+# 4. Use sort and uniq command to sort a file and print unique values using piping in Linux
+cat test1.txt 
+steven ram
+james bond
+mika lima
+steven ram
+
+sort test1.txt | uniq 
+
+# 5. Use head and tail to print lines in a particular range in a file.
+cat history.log | head -7 | tail -5
+
+# 7. Use cat, grep and tee command to read the particular entry from a file and store in a new file
+cat test1.txt | grep "steven"
+steven ram
+steven ram
+
+man tee
+#  tee - read from standard input and write to standard output and files
+cat test1.txt | grep "steven" | tee test2.txt
+steven ram
+steven ram
+cat test2.txt
+
+# You can skip the cat command and let grep read the file directly.
+grep "steven" test1.txt | tee test2.txt
+
+# example zabbix logs look for error / failed / houskeeping
+# lets pipe stuff, but first lets follow it
+sudo tail -f /var/log/zabbix/zabbix_server.log 
+
+
+# grep error
+sudo grep "error" /var/log/zabbix/zabbix_server.log 
+sudo grep "house" /var/log/zabbix/zabbix_server.log
+
+# tee it, T-splitter
+# Just as a physical T-pipe allows water to flow in one direction and then "splits" it into two different paths, 
+# The tee command takes the output of a process and splits it: 
+# one stream goes to your screen (standard output) 
+# and the other goes into a file.
+sudo grep "error" /var/log/zabbix/zabbix_server.log | tee zabbix_error.txt
+sudo grep "house" /var/log/zabbix/zabbix_server.log | tee zabbix_house.txt
+
+cat zabbix_error.txt  
+cat zabbix_house.txt  
+
+# 8.How can I redirect the output of a piped command to file in Unix or Linux?
+sudo tail -f /var/log/zabbix/zabbix_server.log  > tmp_zabbix_server.log
+# The Manual "Watch & Stop" (Best for Debugging)
+sudo tail -f /var/log/zabbix/zabbix_server.log | tee tmp_zabbix_server.log
 ``` 
 - https://www.geeksforgeeks.org/linux-unix/piping-in-unix-or-linux/
 
