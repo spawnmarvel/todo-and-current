@@ -664,6 +664,9 @@ cat test2.txt
 # You can skip the cat command and let grep read the file directly.
 grep "steven" test1.txt | tee test2.txt
 
+# -a append (not overwrite as above) 
+grep "steven" test1.txt | tee -a test2.txt
+
 # example zabbix logs look for error / failed / houskeeping
 # lets pipe stuff, but first lets follow it
 sudo tail -f /var/log/zabbix/zabbix_server.log 
