@@ -18,7 +18,7 @@
 10. [File Compression](#file-compression)
 11. [File Permissions](#file-permissions)
 12. [Bash Scripting](#bash-scripting)
-13. [Bash Piping Tee](#bash-piping-tee)
+13. [Bash Piping](#bash-piping)
 14. [Practical Examples](#practical-examples)
 15. [Troubleshooting](#troubleshooting)
 16. [Linux Concepts](#linux-concepts)
@@ -620,7 +620,7 @@ crontab -e
 
 ---
 
-## Bash Piping Tee
+## Bash Piping
 
 * A pipe is a form of redirection (transfer of standard output to some other destination)
 * Pipes are unidirectional i.e., data flows from left to right through the pipeline. 
@@ -628,17 +628,17 @@ crontab -e
 ```bash
 # command_1 | command_2 | command_3 | .... | command_N 
 
-# 1. List all files and directories and give them as input to `grep` command using piping in Linux
+# List all files and directories and give them as input to `grep` command using piping in Linux
 ls | grep test1.txt
 test1.txt
 
-# 2. List all files and directories and give them as input to `more` commands using piping in Linux.
+# List all files and directories and give them as input to `more` commands using piping in Linux.
 ls -l | more
 
-# 3. Sort a list of files by size (5 column) using piping in Linux
+# Sort a list of files by size (5 column) using piping in Linux
 ls -l | sort -k 5
 
-# 4. Use sort and uniq command to sort a file and print unique values using piping in Linux
+# Use sort and uniq command to sort a file and print unique values using piping in Linux
 cat test1.txt 
 steven ram
 james bond
@@ -647,16 +647,17 @@ steven ram
 
 sort test1.txt | uniq 
 
-# 5. Use head and tail to print lines in a particular range in a file.
+# Use head and tail to print lines in a particular range in a file.
 cat history.log | head -7 | tail -5
 
 ``` 
-* Tee
+
+Tee  :electric_plug:
 
 This command is useful when you want to see the output on the screen and save it to a file simultaneously.
 
 ```bash  
-# 7. Use cat, grep and tee command to read the particular entry from a file and store in a new file
+# Use cat, grep and tee command to read the particular entry from a file and store in a new file
 cat test1.txt | grep "steven"
 steven ram
 steven ram
