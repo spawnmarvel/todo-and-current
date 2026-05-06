@@ -624,9 +624,7 @@ crontab -e
 
 * A pipe is a form of redirection (transfer of standard output to some other destination)
 * Pipes are unidirectional i.e., data flows from left to right through the pipeline. 
-* Tee
 
-This command is useful when you want to see the output on the screen and save it to a file simultaneously.
 ```bash
 # command_1 | command_2 | command_3 | .... | command_N 
 
@@ -652,6 +650,12 @@ sort test1.txt | uniq
 # 5. Use head and tail to print lines in a particular range in a file.
 cat history.log | head -7 | tail -5
 
+``` 
+* Tee
+
+This command is useful when you want to see the output on the screen and save it to a file simultaneously.
+
+```bash  
 # 7. Use cat, grep and tee command to read the particular entry from a file and store in a new file
 cat test1.txt | grep "steven"
 steven ram
