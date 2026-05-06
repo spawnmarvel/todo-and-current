@@ -624,6 +624,9 @@ crontab -e
 
 * A pipe is a form of redirection (transfer of standard output to some other destination)
 * Pipes are unidirectional i.e., data flows from left to right through the pipeline. 
+* Tee
+- This command is useful when you want to see the output on the screen and save it to a file simultaneously.
+- 
 ```bash
 # command_1 | command_2 | command_3 | .... | command_N 
 
