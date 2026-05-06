@@ -18,7 +18,7 @@
 10. [File Compression](#file-compression)
 11. [File Permissions](#file-permissions)
 12. [Bash Scripting](#bash-scripting)
-13. [Bash Piping](#bash-piping)
+13. [Bash Piping Tee](#bash-piping-tee)
 14. [Practical Examples](#practical-examples)
 15. [Troubleshooting](#troubleshooting)
 16. [Linux Concepts](#linux-concepts)
@@ -620,7 +620,7 @@ crontab -e
 
 ---
 
-## Bash Piping
+## Bash Piping Tee
 
 * A pipe is a form of redirection (transfer of standard output to some other destination)
 * Pipes are unidirectional i.e., data flows from left to right through the pipeline. 
