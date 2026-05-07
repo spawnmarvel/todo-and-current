@@ -379,6 +379,8 @@ Install Zabbix agent 2 Linux
 
 ### 1.1 Grafana, Loki, and Alloy Agents and Zabbix default ⭐
 
+**Sys Admin Drill** [GOTO](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/README.md#sys-admin-drill)
+
 **Goal:** Set up log monitoring stack loki
 
 **Tasks:**
