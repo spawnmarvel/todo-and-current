@@ -360,6 +360,10 @@ chmod 755 script.sh                 # Numeric
 chmod +x script.sh                  # Add execute
 chmod -R 755 directory/             # Recursive
 
+# Example: chmod 755 demo.sh
+# user has full (rwx), group and others have read and execute (r-x)
+chmod 755 demo.sh
+
 # Change owner
 sudo chown user:group file.txt
 
