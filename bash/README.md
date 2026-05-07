@@ -30,12 +30,6 @@
 
 In Linux, the **"everything is a file"** philosophy means that nearly all system resources—hardware devices, processes, directories, and network sockets—are represented as data streams within the file system.
 
-| Concept                         | Description                                                          |
-| ------------------------------- | -------------------------------------------------------------------- |
-| **Unified Interface**           | Hardware (e.g., hard drives, mice) is represented as files in `/dev` |
-| **File Descriptor Abstraction** | Kernel abstracts resources into file descriptors                     |
-| **Virtual Filesystem**          | `/proc` and `/sys` represent kernel data structures as files         |
-
 ---
 
 ## Man Pages
@@ -1369,6 +1363,19 @@ Loadable Kernel Modules (LKMs) are pieces of code that can be loaded into or unl
 | `ext4`                        | The standard file system for most Linux distributions                    |
 | `iptable_filter` / `nftables` | The backbone of the Linux firewall (Netfilter)                           |
 | `bridge`                      | Allows the kernel to act like a network switch (vital for VMs or Docker) |
+
+---
+## Linux Philosophy
+
+In Linux, the **"everything is a file"** philosophy means that nearly all system resources—hardware devices, processes, directories, and network sockets—are represented as data streams within the file system.
+
+| Concept                         | Description                                                          |
+| ------------------------------- | -------------------------------------------------------------------- |
+| **Unified Interface**           | Hardware (e.g., hard drives, mice) is represented as files in `/dev` |
+| **File Descriptor Abstraction** | Kernel abstracts resources into file descriptors                     |
+| **Virtual Filesystem**          | `/proc` and `/sys` represent kernel data structures as files         |
+
+---
 
 ### Top vs Htop
 
