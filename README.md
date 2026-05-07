@@ -362,7 +362,9 @@ Install Zabbix agent 2 Linux
 
 ## Current Priorities: TOP 3
 
-**Sys Admin Drill** [GOTO open new tab take 5 min](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/README.md#sys-admin-drill)
+### Sys Admin Drill
+
+ [GOTO open new tab take 5 min](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/README.md#sys-admin-drill)
 
 ### 1. Zabbix default ⭐
 
