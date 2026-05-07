@@ -1387,12 +1387,65 @@ In a real sysadmin job, 90% of your day starts with:
 
 
 ```bash
-# top - built-in process viewer
-top -d 60
+# 1. The "Orientation" (Where am I?)
+pwd
+
+# List files (adds a / to folders so you can tell them apart).
+ls -F
+
+# See the "hidden" secrets and file sizes.
+ls -lah
+
+# 2. The "Health Check" (Is the server okay?)
+top -d 5
+top -n 1 -b | head -n 20 | tee cpu_usage.tx
+# append it
+top -n 1 -b | head -n 20 | tee -a cpu_usage.txt
+
+# pid is first, get service that pid is running
+systemctl status 987 # the PID you want to check from top
 
 # htop - enhanced version (install if needed)
-sudo apt update
-sudo apt install htop
-htop
+# sudo apt update
+# sudo apt install htop
+htop -d 50
+# tab toggle Main / IO
+
+df -h
+df -h | tee disk_report.txt
+uptime
+
+# 3. The "Detective" (Finding things)
+sudo grep "error" /var/log/zabbix/zabbix_server.log
+#  -i, --ignore-case
+sudo grep -i "error" /var/log/syslog | tee error_report.txt
+cat error_report.txt
+cat error_report.txt | grep -i "19:23:12.836770*"
+
+# The Real-Time Pro
+# (This looks specifically in the /etc folder for configuration files).
+find /etc/ -name "*.conf"
+
+tail -f /var/log/syslog
+tail -n 20 /var/log/syslog | tee recent_logs.txt
+
+# 4. The Location Tools: Understanding which vs. whereis
+
+# Metacognitive Tip: 
+# When you're stuck, ask yourself:
+# Do I just need to run this file (which), 
+# or do I need to study it (whereis)?" 
+# This helps you pick the right tool for the job.
+
+# Shows the path of the executable that would run if you typed the command
+which zabbix_server
+which python3
+
+# Think of whereis as the "Big Brother" of which. It’s more thorough. It doesn't just look for the executable; 
+# it also looks for the source code and the manual pages (documentation)
+whereis zabbix_server
+whereis python3
+
+
 
 ```
