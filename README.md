@@ -362,6 +362,8 @@ Install Zabbix agent 2 Linux
 
 ## Current Priorities: TOP 3
 
+**Sys Admin Drill** [GOTO](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/README.md#sys-admin-drill)
+
 ### 1. Zabbix default ⭐
 
 **Goal:** Set up log metric stack zabbix using trap and default
@@ -378,8 +380,6 @@ Install Zabbix agent 2 Linux
 
 
 ### 1.1 Grafana, Loki, and Alloy Agents and Zabbix default ⭐
-
-**Sys Admin Drill** [GOTO](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/README.md#sys-admin-drill)
 
 **Goal:** Set up log monitoring stack loki
 
