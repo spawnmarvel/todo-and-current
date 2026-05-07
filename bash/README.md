@@ -1379,6 +1379,12 @@ In Linux, the **"everything is a file"** philosophy means that nearly all system
 
 ## Sys Admin Drill
 
+Think of this like a "warm-up" for a sysadmin. Every time you open your terminal, run through these four categories. Don't just read them—type them!
+In a real sysadmin job, 90% of your day starts with: 
+* Where is the problem (tail)
+* which process is causing it (top)
+* and do we have space to fix it (df)?
+
 
 ```bash
 # top - built-in process viewer
