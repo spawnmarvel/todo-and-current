@@ -1382,3 +1382,4 @@ sudo apt install htop
 htop
 ```
 
+## Sys Admin Drill
