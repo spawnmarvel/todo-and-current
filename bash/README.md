@@ -22,6 +22,7 @@
 14. [Practical Examples](#practical-examples)
 15. [Troubleshooting](#troubleshooting)
 16. [Linux Concepts](#linux-concepts)
+17. [Sys admin drill](#sys-admin-drill)
 
 ---
 
