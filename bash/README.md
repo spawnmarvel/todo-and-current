@@ -1370,15 +1370,6 @@ Loadable Kernel Modules (LKMs) are pieces of code that can be loaded into or unl
 | `iptable_filter` / `nftables` | The backbone of the Linux firewall (Netfilter)                           |
 | `bridge`                      | Allows the kernel to act like a network switch (vital for VMs or Docker) |
 
-### File System, Permission and Access Control
-
-```bash
-# Example: chmod 755 demo.sh
-# user has full (rwx), group and others have read and execute (r-x)
-chmod 755 demo.sh
-./demo.sh
-```
-
 ### Top vs Htop
 
 ```bash
