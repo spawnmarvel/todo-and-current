@@ -1377,7 +1377,8 @@ In Linux, the **"everything is a file"** philosophy means that nearly all system
 
 ---
 
-### Top vs Htop
+## Sys Admin Drill
+
 
 ```bash
 # top - built-in process viewer
@@ -1387,10 +1388,5 @@ top -d 60
 sudo apt update
 sudo apt install htop
 htop
-```
 
-## Sys Admin Drill
-
-
-```bash
 ```
