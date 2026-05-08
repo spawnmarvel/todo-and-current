@@ -129,6 +129,15 @@ When you choose this option, the Services to which this account can present dele
 
 * Result: Even if the f_iis_kerb account is compromised, it can only impersonate users to that specific file share, nowhere else in the domain.
 
+
+![cifs](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_app_kerberos/image/cifs.png)
+
+Result:
+
+![delegation add](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_app_kerberos/image/delegation_add.png)
+
+
+
 Here is what happens when you select "Trust this user for delegation to specified services only" and "Use any authentication protocol":
 
 1. It absolutely still uses Kerberos
