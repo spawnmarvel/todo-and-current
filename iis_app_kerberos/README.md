@@ -49,7 +49,8 @@ New-ADUser -Name "IIS Kerberos Service" `
            -AccountPassword (Read-Host -AsSecureString "Enter a secure password")
 ```
 
-Thislima456-2026
+Saved on desktop, f_iis_kerb.txt
+
 
 
 ![f iis kerb](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_app_kerberos/image/f_iis_kerb.png)
