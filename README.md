@@ -359,7 +359,10 @@ sudo service vmzabbix03-tentacle status
 
 Install Zabbix agent 2 Linux
 
-Wingate www procu service
+```bash
+```
+
+Wingate www proxy service
 
 ```bash
 # add on each vm
