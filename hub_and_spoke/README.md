@@ -28,8 +28,8 @@ To keep the mental model clear:
 
 9. Vnet UK Central
 
-- Has a public ip for RPD and 443 for grafana. This should be a DMZ server and not the AD DS server, but NLA and ip white listing is ok.
-- We should extually create a new windows dmz server, but it is to expensive, so vmhybrid01 has multiple roles
+- DNS server has a public ip for RDP and 443 for grafana. This should be a DMZ server and not the AD DS server, but NLA and ip white listing is enabled is ok.
+- We should extually create a new windows dmz server, but it is to expensive, so vmhybrid01 has multiple roles.
 - We could expose zabbix management via proxy (but the direct ssh with fail2ban and ip white listing is ok).
 
 ![hub and spoke](https://github.com/spawnmarvel/todo-and-current/blob/main/hub_and_spoke/images/topology6.png)
