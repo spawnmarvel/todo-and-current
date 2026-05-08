@@ -149,7 +149,23 @@ This is a superpower for IIS. It allows a user to connect to your website using 
 
 * ***With this: IIS asks the Domain Controller to "translate" the NTLM session into a Kerberos ticket for the specific service you've whitelisted.***
 
-## Step 4: Configure the IIS Application Pool
+## Step 4: Configure the IIS Application Pool and create app
+
+Create the New Pool
+Open IIS Manager.
+
+* In the Connections pane, right-click Application Pools and select Add Application Pool....
+
+* Name: mywebapp.
+
+* .NET CLR Version: .NET CLR Version v4.0.30319.
+
+* Managed pipeline mode: Integrated.
+
+* Click OK.
+
+![app_pool](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_app_kerberos/image/app_pool.png)
+
 
 Now we tell IIS to "log in" as this domain account.
 
