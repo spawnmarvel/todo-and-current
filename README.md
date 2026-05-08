@@ -358,6 +358,21 @@ sudo service vmzabbix03-tentacle status
 ```
 
 Install Zabbix agent 2 Linux
+
+Wingate www procu service
+
+```bash
+# add on each vm
+nc -zv 192.168.3.7 3128
+Connection to 192.168.3.7 3128 port [tcp/*] succeeded!
+
+# add procy
+echo 'Acquire::http::Proxy "http://192.168.3.7:3128";' | sudo tee /etc/apt/apt.conf.d/99proxy
+echo 'Acquire::https::Proxy "http://192.168.3.7:3128";' | sudo tee -a /etc/apt/apt.conf.d/99proxy
+
+# works due to proxy
+sudo apt now works
+```
 ---
 
 ## Current Priorities: TOP 3
