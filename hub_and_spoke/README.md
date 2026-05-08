@@ -15,7 +15,24 @@ To keep the mental model clear:
 
 4. Configuration Tool: netsh.
 
-![hub and spoke](https://github.com/spawnmarvel/todo-and-current/blob/main/hub_and_spoke/images/topology3.png)
+5. Wingate www proxy service
+
+6. Zabbix and agents
+
+7. Octopus deploy and agents
+
+8. Vnet SW Central
+
+- Has a public ip for zabbix and ssh to 172.**, the ssh could be removed, and also the public ip.
+- We could expose zabbix management via proxy (but the direct ssh with fail2ban and ip white listing is ok)
+
+9. Vnet UK Central
+
+- Has a public ip for RPD and 443 for grafana. This should be a DMZ server and not the AD DS server, but NLA and ip white listing is ok.
+- We should extually create a new windows dmz server, but it is to expensive, so vmhybrid01 has multiple roles
+- We could expose zabbix management via proxy (but the direct ssh with fail2ban and ip white listing is ok).
+
+![hub and spoke](https://github.com/spawnmarvel/todo-and-current/blob/main/hub_and_spoke/images/topology6.png)
 
 ## Environment
 
