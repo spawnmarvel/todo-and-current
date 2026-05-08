@@ -147,7 +147,7 @@ This is a superpower for IIS. It allows a user to connect to your website using 
 
 * Without this: If the user logs into IIS with NTLM, the double-hop to the file share would fail immediately.
 
-* With this: IIS asks the Domain Controller to "translate" the NTLM session into a Kerberos ticket for the specific service you've whitelisted.
+* ***With this: IIS asks the Domain Controller to "translate" the NTLM session into a Kerberos ticket for the specific service you've whitelisted.***
 
 ## Step 4: Configure the IIS Application Pool
 
