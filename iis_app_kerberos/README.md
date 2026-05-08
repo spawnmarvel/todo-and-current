@@ -73,6 +73,14 @@ This is typically done via the Local Security Policy on the IIS server (vmhybrid
 
 ![policy](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_app_kerberos/image/policy.png)
 
+Add f_iis_kerb to local administrator also
+
+On a Domain Controller, there is no local SAM database; the server uses the Active Directory database instead. Therefore, you cannot use compmgmt.msc to add a user to a local "Administrators" group because local groups don't exist in the traditional sense.
+
+Open Active Directory Users and Computers (dsa.msc).
+
+![local_admin](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_app_kerberos/image/local_admin.png)
+
 ## Step 2: Register the SPN (Service Principal Name)
 
 The SPN is what allows a client to find the service account. If you don't do this, the browser won't know which account to request a Kerberos ticket for, and it will fall back to NTLM
