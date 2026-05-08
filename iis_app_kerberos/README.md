@@ -1,4 +1,4 @@
-# IIS web app with a remote storage account with auth Negotiate and NTLM
+# IIS web app with a remote storage account and auth Negotiate and NTLM
 
 
 Setting up Kerberos authentication for an IIS site that accesses a remote file share involves several moving parts, primarily dealing with Double-Hop authentication. Since you are using a local account for the ASP.NET authentication but want to use Negotiate/NTLM for the site, there are specific configuration steps to ensure the identity flows correctly.
