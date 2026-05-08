@@ -105,13 +105,40 @@ setspn -l f_iis_kerb
 
 This is the most critical "Double-Hop" step. It gives the service account permission to take the user's "Identity" and show it to the file share.
 
+Yes, it can still use Kerberos! In fact, what you are describing is Kerberos Constrained Delegation (KCD) with Protocol Transition. This is a more secure "least-privilege" approach compared to the "unconstrained" delegation we discussed earlier.
+
+
 * Open Active Directory Users and Computers (dsa.msc).
 
 * Find f_iis_kerb.
 
 * Right-click > Properties > Delegation tab.
 
-* Select "Trust this user for delegation to any service (Kerberos only)".
+* Select "Trust this user for delegation to specified services only".
+
+* "Use any authentication protocol"
+
+![use_any](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_app_kerberos/image/use_any.png)
+
+The "Specified Services" List
+When you choose this option, the Services to which this account can present delegated credentials list at the bottom of the tab becomes active.
+
+* You must click Add, then Users or Computers, and find the server holding your file share.
+
+* You then select the cifs service (Common Internet File System) for that server.
+
+* Result: Even if the f_iis_kerb account is compromised, it can only impersonate users to that specific file share, nowhere else in the domain.
+
+Here is what happens when you select "Trust this user for delegation to specified services only" and "Use any authentication protocol":
+
+1. It absolutely still uses Kerberos
+2. Protocol Transition (The "Any" Part)
+
+This is a superpower for IIS. It allows a user to connect to your website using NTLM (or even something like a client certificate), and IIS can "transition" that identity into a Kerberos ticket to talk to the backend file share.
+
+* Without this: If the user logs into IIS with NTLM, the double-hop to the file share would fail immediately.
+
+* With this: IIS asks the Domain Controller to "translate" the NTLM session into a Kerberos ticket for the specific service you've whitelisted.
 
 ## Step 4: Configure the IIS Application Pool
 
