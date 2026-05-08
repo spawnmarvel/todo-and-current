@@ -16,13 +16,28 @@ https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-ad-d
 Since you have your lab.local domain and your networking "plumbing" ready, we will now rebuild the IIS Kerberos flow using a Domain Service Account. This is the professional way to handle the "Double-Hop" problem because it allows the service identity to exist across the entire network, not just on one machine.
 
 
-## Step 1: Create the Domain Service Account
+## Step 1: Create the Domain Service Account and enable iis
+
+
+On your Windows Server 2025 (vmhybrid01), run this as Administrator. This command installs the core web server, the Windows Authentication module (required for Kerberos), and the ASP.NET 4.8 framework.
+
+```ps1
+Install-WindowsFeature -Name Web-Server, 
+    Web-Windows-Auth, 
+    Web-Asp-Net45, 
+    Web-Mgmt-Console -IncludeManagementTools
+```
+
+Visit site
+
+http://vmhybrid01.lab.local/
+
 
 Run this on your Domain Controller (vmhybrid01). We are creating a user that acts as the "Identity" for your web server.
 
 ```ps1
 # 1. Define the account
-$SvcAccount = "svc_iis_kerb"
+$SvcAccount = "f_iis_kerb"
 
 # 2. Create the account in Active Directory
 New-ADUser -Name "IIS Kerberos Service" `
@@ -39,8 +54,8 @@ The SPN is what allows a client to find the service account. If you don't do thi
 
 ```ps1
 # Link the website address to the service account
-setspn -S HTTP/vmhybrid01 lab\svc_iis_kerb
-setspn -S HTTP/vmhybrid01.lab.local lab\svc_iis_kerb
+setspn -S HTTP/vmhybrid01 lab\f_iis_kerb
+setspn -S HTTP/vmhybrid01.lab.local lab\f_iis_kerb
 ```
 
 ## Step 3: Enable Kerberos Delegation
@@ -49,7 +64,7 @@ This is the most critical "Double-Hop" step. It gives the service account permis
 
 * Open Active Directory Users and Computers (dsa.msc).
 
-* Find svc_iis_kerb.
+* Find f_iis_kerb.
 
 * Right-click > Properties > Delegation tab.
 
@@ -65,7 +80,7 @@ Now we tell IIS to "log in" as this domain account.
 
 * Right-click your site's pool > Advanced Settings.
 
-* Change Identity to Custom Account and enter lab\svc_iis_kerb.
+* Change Identity to Custom Account and enter lab\f_iis_kerb.
 
 ## Step 5: Set Up the "Simple Website" (The Code)
 
@@ -108,7 +123,7 @@ Finally, ensure IIS is set to use the correct "handshake" protocol.
 
 * Ensure Negotiate is at the top.
 
-* Share Permissions: Go to your C:\RemoteData folder. Ensure svc_iis_kerb has Read access in both the Sharing and Security tabs.
+* Share Permissions: Go to your C:\RemoteData folder. Ensure f_iis_kerb has Read access in both the Sharing and Security tabs.
 
 ## How to verify in your lab
 
