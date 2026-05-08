@@ -177,6 +177,20 @@ Now we tell IIS to "log in" as this domain account.
 
 * Change Identity to Custom Account and enter lab\f_iis_kerb.
 
+* Password: (The password you set when creating the account in dsa.msc).
+
+* Click OK on all windows
+
+Link your Website to the New Pool
+
+* Under Sites in the left pane, select your website.
+
+* In the Actions pane (right side), click Basic Settings....
+
+* Click Select... next to Application Pool and choose mywebapp.
+
+* Click OK.
+
 ## Step 5: Set Up the "Simple Website" (The Code)
 
 Create a file named default.aspx in your site's folder. This script will try to reach out to the file share using the credentials IIS is holding.
