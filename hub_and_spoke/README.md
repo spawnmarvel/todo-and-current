@@ -17,10 +17,8 @@ To keep the mental model clear:
 
 ![hub and spoke](https://github.com/spawnmarvel/todo-and-current/blob/main/hub_and_spoke/images/topology2.png)
 
-## Environment (updated 02.05.2026) after this header is not updated
+## Environment
 
-All vms was removed expect for vmhybrid01 DNS and AD DS server.
-The reason for this was to make true hub and spoke, where all new vm as in sw
 
 vnet-uks-central (hub)
 192.168.0.0/20, 4096 addresses
