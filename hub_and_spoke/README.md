@@ -119,41 +119,24 @@ Now you can install Octopus tentacle and configure it in the Octopus Management 
 
 ### Network Gateway
 
-vmchaos09 example
-* 192.168.3.4
+vmsnmp03
+* 172.16.0.6
 
 1. The "Signpost" Command (Windows)
 
 v4tov4
 
 ```ps1
-netsh interface portproxy add v4tov4 listenport=10935 listenaddress=0.0.0.0 connectport=10933 connectaddress=192.168.3.4
+netsh interface portproxy add v4tov4 listenport=10935 listenaddress=0.0.0.0 connectport=10933 connectaddress=172.16.0.6
 ```
 
 2. Open the Windows Firewall
 
 ```ps1
-New-NetFirewallRule -DisplayName "Octopus Linux Forwarding" -Direction Inbound -LocalPort 10935 -Protocol TCP -Action Allow
+New-NetFirewallRule -DisplayName "Octopus Linux Forwarding2" -Direction Inbound -LocalPort 10935 -Protocol TCP -Action Allow
 ```
 
-### Network Gateway
 
-vmsnmpsim01 example
-* 192.168.3.6
-
-1. The "Signpost" Command (Windows)
-
-v4tov4
-
-```ps1
-netsh interface portproxy add v4tov4 listenport=10936 listenaddress=0.0.0.0 connectport=10933 connectaddress=192.168.3.6
-```
-
-2. Open the Windows Firewall
-
-```ps1
-New-NetFirewallRule -DisplayName "Octopus Linux Forwarding" -Direction Inbound -LocalPort 10936 -Protocol TCP -Action Allow
-```
 
 ## netsh netsh interface portproxy show all
 
@@ -175,7 +158,16 @@ Listen on ipv4:             Connect to ipv4:
 Address         Port        Address         Port
 --------------- ----------  --------------- ----------
 0.0.0.0         10936       192.168.3.6     10933
+0.0.0.0         10935       172.16.0.6      10933
 0.0.0.0         10934       172.16.0.5      10933
+
+# next run
+Listen on ipv4:             Connect to ipv4:
+
+Address         Port        Address         Port
+--------------- ----------  --------------- ----------
+0.0.0.0         10934       172.16.0.5      10933
+0.0.0.0         10935       172.16.0.6      10933
 
 ```
 
