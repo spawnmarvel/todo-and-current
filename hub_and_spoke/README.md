@@ -29,20 +29,30 @@ Subnet
 * Vms03 192.168.3.0/24 - 247
 * Dmzs02 192.168.2.0/28 - 11
 
+Servers
+* AD DS vmhybrid01, 192.168.3.7
+
 Peered virtual network
 * vnet-swc-2-uks-peering
 
-vnet-sw-central (spike)
+vnet-sw-central (spoke)
 172.16.0.0/22, 1024 addresses
 
 Subnets
 * Vm01 172.16.0.0/26 - 58
 
+Servers
+* vmzabbix03, 172.16.0.4
+* vmsnmp03, 172.16.0.6
+* vmchaos03, 172.16.0.5
+
+
+
 Peered virtual network
 * vnet-uks-2-swc-peering
 
 
-So had to update DNS server for sw to 192.168.3.7.
+So had to update DNS server for sw to 192.168.3.7, since we made a new vnet in sweden central.
 
 You must repeat "Step C" from your UKS setup for the new Sweden VNet. Azure needs to know that for any VM born in the 172.16.0.0/22 range, it should hand out your DC's IP during the DHCP handshake.
 
@@ -64,15 +74,15 @@ Test it.
 
 Network gateway and port proxy for vm with no public ip
 
-Since your Windows Server (vmhybrid01) has a public IP and is peered with the network as your private Linux box (docker03getmirrortest), you can use it as a ***Network Gateway***.
+Since your Windows Server (vmhybrid01) has a public IP and is peered with the network as your private Linux box (vmchaos03), you can use it as a ***Network Gateway***.
 
 
 vmhybrid01
 * 192.168.3.7
 * Public ip
 
-docker03getmirrortest example
-* 172.64.0.5
+vmchaos03 example
+* 172.16.0.5
 
 #### Network Gateway
 
@@ -87,7 +97,7 @@ On your Windows Server 2025, open PowerShell as Administrator and run this comma
 ```ps1
 # Add the new one on Port 10934
 # Run this on your Windows Server to create a dedicated lane for the Linux traffic:
-netsh interface portproxy add v4tov4 listenport=10934 listenaddress=0.0.0.0 connectport=10933 connectaddress=172.64.0.5
+netsh interface portproxy add v4tov4 listenport=10934 listenaddress=0.0.0.0 connectport=10933 connectaddress=172.16.0.5
 ```
 * listenport=10934: The port Octopus will call, we up one port since we already have at tentacle for vmhybrid01
 * listenaddress=0.0.0.0: Tells Windows to listen on all its IPs (including the public one).
@@ -99,7 +109,9 @@ netsh interface portproxy add v4tov4 listenport=10934 listenaddress=0.0.0.0 conn
 New-NetFirewallRule -DisplayName "Octopus Linux Forwarding" -Direction Inbound -LocalPort 10934 -Protocol TCP -Action Allow
 ```
 
-Add NSG also for vmhybrid01 for inbound 10934 since we already have a tenatcle for vmhybrid01, we must use a different port for docker03getmirrortest.
+Add NSG also for vmhybrid01 for inbound 10934 since we already have a tenatcle for vmhybrid01, we must use a different port for vmchaos03.
+
+Now you can install Octopus tentacle and configure it in the Octopus Management.
 
 ## Add a new port proxy
 
@@ -146,6 +158,12 @@ New-NetFirewallRule -DisplayName "Octopus Linux Forwarding" -Direction Inbound -
 ```ps1
 # This shows you exactly what iphlpsvc is currently forwarding
 netsh interface portproxy show all
+
+# Version 1.0.1
+# Removes a specific IPv4 to IPv4 portproxy rule
+# Version 1.0.2
+# Removes the specific portproxy rule for port 10936
+netsh interface portproxy delete v4tov4 listenport=10936 listenaddress=0.0.0.0
 ```
 
 log
@@ -154,9 +172,8 @@ Listen on ipv4:             Connect to ipv4:
 
 Address         Port        Address         Port
 --------------- ----------  --------------- ----------
-0.0.0.0         10934       172.64.0.5      10933
-0.0.0.0         10935       192.168.3.4     10933
 0.0.0.0         10936       192.168.3.6     10933
+0.0.0.0         10934       172.16.0.5      10933
 
 ```
 
