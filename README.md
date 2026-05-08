@@ -306,7 +306,9 @@ vmhybrid01 is the **DC and DNS server** - it must be running for network operati
 - Firewall (IP Addresses): Check the box that says "Add your client IP address".
 - ssh keygen is in /hub_and_spoke
 
-- Install Grafana Alloy Linux
+---
+
+Install Grafana Alloy Linux
 
 - https://grafana.com/docs/alloy/latest/set-up/install/linux/
 
@@ -340,7 +342,8 @@ sudo systemctl enable alloy.service
 sudo systemctl status alloy.service
 
 ```
-- Install Octopus Tenatcle linux
+
+Install Octopus Tenatcle linux
 
 ```bash
 ssh
