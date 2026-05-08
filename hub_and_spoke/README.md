@@ -111,7 +111,9 @@ New-NetFirewallRule -DisplayName "Octopus Linux Forwarding" -Direction Inbound -
 
 Add NSG also for vmhybrid01 for inbound 10934 since we already have a tenatcle for vmhybrid01, we must use a different port for vmchaos03.
 
-Now you can install Octopus tentacle and configure it in the Octopus Management.
+Now you can install Octopus tentacle and configure it in the Octopus Management since we have a Wingate proxy
+
+[Wingate proxy](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-ad-ds-windows-server-hybrid-core-infrastructure/README_cloud-only-hybrid-Lab_2_install-ad.md#extra-section-the-http-proxy-method-for-outbund-private-vms-apt)
 
 ## Add a new port proxy
 
