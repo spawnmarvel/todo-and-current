@@ -133,7 +133,7 @@ netsh interface portproxy add v4tov4 listenport=10935 listenaddress=0.0.0.0 conn
 2. Open the Windows Firewall
 
 ```ps1
-New-NetFirewallRule -DisplayName "Octopus Linux Forwarding2" -Direction Inbound -LocalPort 10935 -Protocol TCP -Action Allow
+New-NetFirewallRule -DisplayName "Octopus Linux Forwarding" -Direction Inbound -LocalPort 10935 -Protocol TCP -Action Allow
 ```
 
 
