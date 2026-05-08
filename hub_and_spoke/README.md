@@ -15,7 +15,7 @@ To keep the mental model clear:
 
 4. Configuration Tool: netsh.
 
-![hub and spoke](https://github.com/spawnmarvel/todo-and-current/blob/main/hub_and_spoke/images/topology2.png)
+![hub and spoke](https://github.com/spawnmarvel/todo-and-current/blob/main/hub_and_spoke/images/topology3.png)
 
 ## Environment
 
