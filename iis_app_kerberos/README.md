@@ -71,6 +71,8 @@ This is typically done via the Local Security Policy on the IIS server (vmhybrid
 
 * Click Apply and OK.
 
+![policy](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_app_kerberos/image/policy.png)
+
 ## Step 2: Register the SPN (Service Principal Name)
 
 The SPN is what allows a client to find the service account. If you don't do this, the browser won't know which account to request a Kerberos ticket for, and it will fall back to NTLM
