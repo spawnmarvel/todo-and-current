@@ -40,7 +40,6 @@ Run this on your Domain Controller (vmhybrid01). We are creating a user that act
 ```ps1
 # 1. Define the account
 $SvcAccount = "f_iis_kerb"
-
 # 2. Create the account in Active Directory
 New-ADUser -Name "IIS Kerberos Service" `
            -SamAccountName $SvcAccount `
@@ -49,6 +48,27 @@ New-ADUser -Name "IIS Kerberos Service" `
            -PasswordNeverExpires $true `
            -AccountPassword (Read-Host -AsSecureString "Enter a secure password")
 ```
+
+Thislima456-2026
+
+
+![f iis kerb](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_app_kerberos/image/f_iis_kerb.png)
+
+Grant "Log on as a service"
+
+This is typically done via the Local Security Policy on the IIS server (vmhybrid01).
+
+* Click Start, type secpol.msc, and press Enter.
+
+* Navigate to Local Policies > User Rights Assignment.
+
+* Find Log on as a service in the list and double-click it.
+
+* Click Add User or Group....
+
+* Type f_iis_kerb (or lab\f_iis_kerb), click Check Names, and then click OK.
+
+* Click Apply and OK.
 
 ## Step 2: Register the SPN (Service Principal Name)
 
