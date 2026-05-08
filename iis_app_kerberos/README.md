@@ -93,6 +93,12 @@ The SPN is what allows a client to find the service account. If you don't do thi
 # Link the website address to the service account
 setspn -S HTTP/vmhybrid01 lab\f_iis_kerb
 setspn -S HTTP/vmhybrid01.lab.local lab\f_iis_kerb
+
+# check it
+setspn -l f_iis_kerb
+# Registered ServicePrincipalNames for CN=IIS Kerberos Service,CN=Users,DC=lab,DC=local:
+#       HTTP/vmhybrid01.lab.local
+#       HTTP/vmhybrid01
 ```
 
 ## Step 3: Enable Kerberos Delegation
