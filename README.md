@@ -390,7 +390,7 @@ wget
 
  [GOTO open new tab take 5 min](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/README.md#sys-admin-drill)
 
-#### AP22 Admin drill (deny internet, Azure Update Manager)
+#### AP22 Admin drill (deny internet, Azure Update Manager, mstsc from vmhybrid01)
 
 ---
 
