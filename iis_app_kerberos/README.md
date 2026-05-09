@@ -384,7 +384,7 @@ Add the Virtual Directory to "MyKerberosApp"
 
 * Click OK.
 
-![data share](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_app_kerberos/image/data_share.png)
+![data share](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_app_kerberos/image/datashare.png)
 
 
 ## IIS authentication
