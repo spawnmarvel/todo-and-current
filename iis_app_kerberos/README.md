@@ -615,3 +615,5 @@ With those settings applied, your laboratory setup is now in the "Gold Standard"
 * Delegation: You have trusted the service account for delegation to the cifs service on vmhybrid01.
 
 * Impersonation: IIS is set to impersonate the authenticated user, allowing your identity (imsdal) to "hop" from the web server to the file storage.
+
+![proof](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_app_kerberos/image/proof.png)
