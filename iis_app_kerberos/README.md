@@ -386,19 +386,24 @@ Add the Virtual Directory to "MyKerberosApp"
 
 ![data share](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_app_kerberos/image/data_share.png)
 
-Configure Pass-through Authentication
 
-This is the setting that forces IIS to use the visitor's Kerberos ticket to talk to that share.
+## IIS authentication
 
-* Select the new DataShare virtual directory in the left pane.
 
-* In the Actions pane (right), click Basic Settings....
+Manually Create the web.config
+Instead of clicking "Enable" in the GUI, create a file named web.config inside your local folder C:\RemoteData (which is the source of the share) with this exact content:
 
-* Click Connect as....
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <system.web>
+        <identity impersonate="true" />
+    </system.web>
+</configuration>
 
-* Ensure Application user (pass-through authentication) is selected.
+```
 
-* Click OK.
+![auth iis](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_app_kerberos/image/auth_iis.png)
 
 ## How to verify in your lab
 
