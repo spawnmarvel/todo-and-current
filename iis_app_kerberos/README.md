@@ -361,6 +361,14 @@ This controls access across the network.
 
 ![share right2](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_app_kerberos/image/share_rights2.png)
 
+Path
+
+![network path](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_app_kerberos/image/network_path.png)
+
+
+Since you are using a Virtual Directory or UNC Path in your ASP.NET code to list the files, adding the share to IIS as a Virtual Directory is a smart move. It provides a secondary way to verify your Kerberos configuration.
+
+When you add the share as a Virtual Directory, IIS itself handles the "hop" for static files, whereas your code handles it for the file listing.
 
 ## How to verify in your lab
 
