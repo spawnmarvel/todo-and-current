@@ -427,3 +427,4 @@ Login
 
 ![login ntlm](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_app_kerberos/image/login_ntlm.png)
 
+## Final Refinement: Transition to True Delegation
