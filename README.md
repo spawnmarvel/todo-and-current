@@ -392,8 +392,8 @@ wget
 
 #### AP22 Admin drill 5 min  :apple:
 
-Deny internet, no call home, mstsc from vmhybrid01,  Azure Update Manager ? (pre start, az update, post stop)
-
+- Deny internet, no call home, mstsc from vmhybrid01,  Azure Update Manager ? (pre start, az update, post stop)
+- On 172.16.0.7 go over the AdministrationTools saved on desktop AdministrationTools.txt, set = done
 ---
 
 ### 1. Zabbix default ⭐
