@@ -677,3 +677,22 @@ If you are still seeing Cached Tickets: (0) after following those steps, but the
 
 
 ![proof2](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_app_kerberos/image/proof2.png)
+
+## Remote server
+
+
+
+If you browse to the site from a different remote server (a third machine that is neither the Domain Controller nor the IIS server), you are performing the "True Double-Hop" test. This is the ultimate way to see if Kerberos is working as intended or if it is relying on the server-side "magic" of Protocol Transition.
+
+Here is what will happen and how to interpret the results:
+
+1. The Result you should see
+
+If you log into Server B as LAB\imsdal and open the browser to [http://vmhybrid01.lab.local:8080](http://vmhybrid01.lab.local:8080):
+
+* Success: The page loads, shows Logged in as: LAB\imsdal, and lists the files from the remote share.
+
+* Ticket Check: Run klist on Server B. You will finally see the HTTP/vmhybrid01.lab.local:8080 ticket.
+
+* Why?: Since you are now "remote," the client machine must request a service ticket from the Domain Controller to authenticate to IIS. It can no longer rely on local session handshakes.
+
