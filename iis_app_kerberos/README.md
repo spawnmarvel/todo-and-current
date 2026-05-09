@@ -427,4 +427,95 @@ Login
 
 ![login ntlm](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_app_kerberos/image/login_ntlm.png)
 
+
+## PS1 verify Negotiate oRswGaADCgEAoxIEEAEAAAAKRXS7Vw5jqgAAAAA=
+
+```ps1
+$url = "http://vmhybrid01.lab.local:8080/" # Replace with your URL
+
+try {
+    # 1. First, we clear any existing session to ensure a fresh auth handshake
+    $response = Invoke-WebRequest -Uri $url -UseDefaultCredentials -Method Get
+
+    # 2. Check the "WWW-Authenticate" or "Persistent-Auth" headers
+    # Note: In a successful 200 OK, the server often sends back a 'Set-Cookie' 
+    # or 'Persistent-Auth' header containing the confirmation token.
+    
+    $authHeader = $response.Headers['WWW-Authenticate']
+    if (-not $authHeader) {
+        $authHeader = $response.Headers['Persistent-Auth']
+    }
+
+    Write-Host "--- Authentication Results ---" -ForegroundColor Cyan
+    Write-Host "URL: $url"
+    
+    if ($authHeader -match "Negotiate\s+(YII|oYG)") {
+        Write-Host "Result: SUCCESS (Kerberos detected)" -ForegroundColor Green
+        Write-Host "Token Start: $($authHeader.Substring(0, 15))..."
+    } 
+    elseif ($authHeader -match "Negotiate\s+TlRMTV") {
+        Write-Host "Result: FALLBACK (NTLM detected)" -ForegroundColor Yellow
+        Write-Host "Reason: The 'TlRMTV' prefix indicates NTLM is being used instead of Kerberos."
+    }
+    else {
+        Write-Host "Result: UNKNOWN" -ForegroundColor Red
+        Write-Host "Header found: $authHeader"
+    }
+
+} catch {
+    if ($_.Exception.Response.StatusCode -eq 401) {
+        Write-Host "Result: UNAUTHORIZED (401)" -ForegroundColor Red
+        Write-Host "The server offered: $($_.Exception.Response.Headers['WWW-Authenticate'])"
+    } else {
+        Write-Error $_.Exception.Message
+    }
+}
+
+# example output
+# URL: https://vhuebguiubuib/DataREST.dll/
+# Result: SUCCESS (Kerberos detected)
+# Token Start: Negotiate oYG1M...
+```
+
+Result
+
+```txt
+--- Authentication Results ---
+URL: http://vmhybrid01.lab.local:8080/
+Result: UNKNOWN
+Header found: Negotiate oRswGaADCgEAoxIEEAEAAAAKRXS7Vw5jqgAAAAA=
+```
+
+The header Negotiate oRswGaADCgEAoxIEEAEAAAAKRXS7Vw5jqgAAAAA= is a legitimate Kerberos GSS-API token.
+
+* Why the script said UNKNOWN: Your regex was looking for oYG or YII (standard for initial Kerberos requests). Your token started with oRs, which is a different part of the Kerberos handshake.
+
+* Proof it isn't NTLM: NTLM tokens always start with TlRMTV. Since yours doesn't, you have successfully avoided the NTLM fallback.
+
+### Why you are still getting the Pop-up
+
+
+Intranet Zone Trust (Most Likely)
+By default, browsers like Edge and Chrome will not automatically pass your Windows credentials to a site unless it is explicitly in the Local Intranet zone.
+
+The Fix:
+
+* Open Internet Options (via Control Panel or Start).
+
+* Go to Security > Local intranet > Sites > Advanced.
+
+* Add [http://vmhybrid01.lab.local](http://vmhybrid01.lab.local) and [http://vmhybrid01.lab.local:8080](http://vmhybrid01.lab.local:8080).
+
+* Restart Edge. The box should disappear.
+
+
+![intranet](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_app_kerberos/image/intranet.png)
+
+visit
+
+Open your browser to http://vmhybrid01.lab.local:8080.
+
+![no popup](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_app_kerberos/image/no_popup.png)
+
+
 ## Final Refinement: Transition to True Delegation
