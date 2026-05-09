@@ -554,3 +554,21 @@ Cached Tickets: (1)
         Cache Flags: 0x1 -> PRIMARY
         Kdc Called: vmhybrid01
 ```
+
+Since you don't see the HTTP service ticket in klist, but you are able to see the files and stay logged in (as shown in image_fe3013.png), your browser is currently using NTLM instead of Kerberos.
+
+
+When klist doesn't show an HTTP/vmhybrid01.lab.local ticket, it means the client never requested one from the Domain Controller. Because you enabled Protocol Transition ("Use any authentication protocol") in Step 3, IIS is taking your NTLM login and "upgrading" it to a Kerberos ticket on the backend to talk to the file share. This is why the site works, but your klist looks empty.
+
+
+Check the "Integrated Windows Authentication" setting:
+
+In Internet Options > Advanced tab, scroll down to Security.
+
+Ensure Enable Integrated Windows Authentication* is checked. (Requires a restart of the OS to take full effect).
+
+![auth_was_on](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_app_kerberos/image/auth_was_on.png)
+
+The fact that Enable Integrated Windows Authentication is already checked confirms your system is configured to support the handshake. If klist is still empty despite the page working, we have narrowed it down to the "last mile" of browser-to-server negotiation.
+
+Since you've verified the Intranet Zone and the advanced settings, there are only two "ghosts in the machine" left that typically cause a silent fallback to NTLM:
