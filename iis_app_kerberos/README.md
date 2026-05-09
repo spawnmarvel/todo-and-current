@@ -654,3 +654,13 @@ Note: If Kerberos isn't 100% perfect, the site will now show a 401 Unauthorized 
 
 
 ![remove_ntlm](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_app_kerberos/image/remove_ntlm.png)
+
+The Final Test Sequence
+
+* Remove NTLM: In the Providers window (from image_936458.png), select NTLM and click Remove, leaving only Negotiate.
+
+* IISReset: Run iisreset in an Administrator PowerShell window to ensure all cached authentication sessions are cleared.
+
+* Purge Client Tickets: On your client machine, run klist purge to start with a completely clean slate.
+
+* Visit the Site: Navigate to [http://vmhybrid01.lab.local:8080](http://vmhybrid01.lab.local:8080).
