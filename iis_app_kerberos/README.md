@@ -183,15 +183,19 @@ Now we tell IIS to "log in" as this domain account.
 
 ![identity](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_app_kerberos/image/identity.png)
 
-Link your Website to the New Pool
 
-* Under Sites in the left pane, select your website.
 
-* In the Actions pane (right side), click Basic Settings....
+Link the Website to "mywebapp"
 
-* Click Select... next to Application Pool and choose mywebapp.
 
-* Click OK.
+Create the Physical Directory
+Before adding the site in IIS, create the folder where your code will live.
+
+* Create a folder at C:\inetpub\mywebapp.
+
+* Move your default.aspx file into this folder, code is in step 5 below
+
+![site](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_app_kerberos/image/site.png)
 
 ## Step 5: Set Up the "Simple Website" (The Code)
 
