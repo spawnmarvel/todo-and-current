@@ -402,7 +402,7 @@ Instead of clicking "Enable" in the GUI, create a file named web.config inside y
 </configuration>
 ```
 
-![auth iis](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_app_kerberos/image/auth_iis.png)
+![auth iis2](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_app_kerberos/image/auth_iis2.png)
 
 ## How to verify in your lab
 
