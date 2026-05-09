@@ -571,4 +571,20 @@ Ensure Enable Integrated Windows Authentication* is checked. (Requires a restart
 
 The fact that Enable Integrated Windows Authentication is already checked confirms your system is configured to support the handshake. If klist is still empty despite the page working, we have narrowed it down to the "last mile" of browser-to-server negotiation.
 
-Since you've verified the Intranet Zone and the advanced settings, there are only two "ghosts in the machine" left that typically cause a silent fallback to NTLM:
+Since you've verified the Intranet Zone and the advanced settings, there are only two "ghosts in the machine" left that typically cause a silent fallback to NTLM.
+
+
+Service Account AES Support
+If your service account f_iis_kerb was created with defaults, it might be trying to use an encryption type the client doesn't like for the web service.
+
+* Go to Active Directory Users and Computers.
+
+* Open properties for f_iis_kerb.
+
+* In the Account tab, under Account options, check:
+
+* This account supports Kerberos AES 128 bit encryption
+
+* This account supports Kerberos AES 256 bit encryption
+
+![check_aes](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_app_kerberos/image/check_aes.png)
