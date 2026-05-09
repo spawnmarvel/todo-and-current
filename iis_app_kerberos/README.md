@@ -397,10 +397,9 @@ Instead of clicking "Enable" in the GUI, create a file named web.config inside y
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
     <system.web>
-        <identity impersonate="true" />
+        <identity impersonate="true" userName="lab\f_iis_kerb" password="YourPasswordHere" />
     </system.web>
 </configuration>
-
 ```
 
 ![auth iis](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_app_kerberos/image/auth_iis.png)
