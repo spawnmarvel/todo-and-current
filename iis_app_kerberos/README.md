@@ -209,11 +209,11 @@ Create a file named default.aspx in your site's folder. This script will try to 
     <h1>Kerberos File Browser</h1>
     <p>Logged in as: <b><%= User.Identity.Name %></b></p>
     <hr />
-    <h3>Files in Share (\\vmhybrid01\DataShare):</h3>
+    <h3>Files in Share (\\vmhybrid01\RemoteData):</h3>
     <ul>
         <% 
         try {
-            string sharePath = @"\\vmhybrid01\DataShare";
+            string sharePath = @"\\vmhybrid01\RemoteData";
             foreach (string file in Directory.GetFiles(sharePath)) {
                 Response.Write("<li>" + Path.GetFileName(file) + "</li>");
             }
@@ -347,7 +347,7 @@ This controls access across the network.
 
 * In the same Properties window, go to the Sharing tab.
 
-* Click Advanced Sharing... and ensure Share this folder is checked (Name: DataShare).
+* Click Advanced Sharing... and ensure Share this folder is checked (Name: RemoteData).
 
 * Click the Permissions button.
 
@@ -406,7 +406,13 @@ Instead of clicking "Enable" in the GUI, create a file named web.config inside y
 
 ## How to verify in your lab
 
-On a client VM, open the site using the FQDN: [http://vmhybrid01.lab.local](http://vmhybrid01.lab.local).
+* Once the web.config is in place:
+
+* Refresh IIS Manager.
+
+* The ASP.NET Impersonation status should now show as Enabled.
+
+Open your browser to [http://vmhybrid01.lab.local:8080](http://vmhybrid01.lab.local:8080).
 
 * If you see the files: Success! Kerberos delegated your identity to the share.
 
@@ -414,3 +420,10 @@ On a client VM, open the site using the FQDN: [http://vmhybrid01.lab.local](http
 
 
 If you get an "Access Denied" for the files but the page loads, it usually means the Delegation step in AD wasn't applied or the SPN is missing.
+
+![pop up](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_app_kerberos/image/pop_up.png)
+
+Login
+
+![login ntlm](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_app_kerberos/image/login_ntlm.png)
+
