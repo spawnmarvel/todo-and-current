@@ -617,3 +617,23 @@ With those settings applied, your laboratory setup is now in the "Gold Standard"
 * Impersonation: IIS is set to impersonate the authenticated user, allowing your identity (imsdal) to "hop" from the web server to the file storage.
 
 ![proof](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_app_kerberos/image/proof.png)
+
+
+That final screenshot is the ultimate proof of a successful lab! You have achieved a fully functional Kerberos Constrained Delegation (KCD) with Protocol Transition.
+
+Here is a breakdown of what your "Victory Lap" image shows:
+
+1. Proof of Delegation (The "Double-Hop")
+The Browser: It shows you are logged in as LAB\imsdal and can see file1.txt and file2.txt.
+
+The Reality: Because those files live on a remote share (\\vmhybrid01\RemoteData), the only way they appear is if the web server successfully "hopped" your identity to the storage folder.
+
+2. The Power of Protocol Transition
+PowerShell (klist): You noticed Cached Tickets: (0). This means your browser likely used NTLM for the first leg.
+
+The Transition: Despite using NTLM at the frontend, your setting "Use any authentication protocol" allowed IIS to "transition" that NTLM session into a Kerberos ticket for the backend file share. This is a critical hybrid infrastructure skill.
+
+3. Verification of Identity
+IIS Manager: Your mywebapp application pool is correctly running under the lab\f_iis_kerb service account.
+
+PowerShell ISE: The Negotiate header found (oRswGaA...) confirms the server is correctly offering Kerberos/Negotiate as an authentication provider.
