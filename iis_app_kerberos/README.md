@@ -603,3 +603,15 @@ Even if your klist remains empty on the client (due to the Protocol Transition s
 
 
 ![iis_restart](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_app_kerberos/image/iis_restart.png)
+
+
+The "Double-Hop" Recap
+With those settings applied, your laboratory setup is now in the "Gold Standard" state. Here is why it works:
+
+* Service Identity: f_iis_kerb is properly configured as a domain user.
+
+* Permissions: You have granted full access to the RemoteData share.
+
+* Delegation: You have trusted the service account for delegation to the cifs service on vmhybrid01.
+
+* Impersonation: IIS is set to impersonate the authenticated user, allowing your identity (imsdal) to "hop" from the web server to the file storage.
