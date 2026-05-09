@@ -353,7 +353,7 @@ This controls access across the network.
 
 * Click Add..., type f_iis_kerb, and click OK.
 
-* Give it Read permissions.
+* Give it Read, write, change permissions. I gave it full control
 
 * Crucial: Also ensure Domain Users (or the specific user you will log in with) has Read permissions here so their impersonated identity can pass through the share.
 
