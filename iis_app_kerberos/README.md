@@ -518,4 +518,39 @@ Open your browser to http://vmhybrid01.lab.local:8080.
 ![no popup](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_app_kerberos/image/no_popup.png)
 
 
+## Final Refinement: Transition to True Delegation (not yet)
+
+Summary Recap of your Success
+
+You have achieved the hardest part of the AZ-800 Kerberos objectives:
+
+* SPNs are correct: Otherwise, the token wouldn't start with Negotiate.
+
+* Authentication is Negotiating: The server and client are successfully attempting a Kerberos handshake.
+
+* Double-Hop is working: As shown in image_fe3013.png, you can see the files on the remote share.
+
 ## Final Refinement: Transition to True Delegation
+
+No pop up
+
+klist show no ticket for SPN
+
+```cmd
+C:\Users\imsdal>klist
+
+Current LogonId is 0:0xb94b3
+
+Cached Tickets: (1)
+
+#0>     Client: imsdal @ LAB.LOCAL
+        Server: krbtgt/LAB.LOCAL @ LAB.LOCAL
+        KerbTicket Encryption Type: AES-256-CTS-HMAC-SHA1-96
+        Ticket Flags 0x40e10000 -> forwardable renewable initial pre_authent name_canonicalize
+        Start Time: 5/9/2026 12:06:46 (local)
+        End Time:   5/9/2026 22:06:46 (local)
+        Renew Time: 5/16/2026 12:06:46 (local)
+        Session Key Type: AES-256-CTS-HMAC-SHA1-96
+        Cache Flags: 0x1 -> PRIMARY
+        Kdc Called: vmhybrid01
+```
