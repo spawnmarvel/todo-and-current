@@ -589,4 +589,17 @@ If your service account f_iis_kerb was created with defaults, it might be trying
 
 Added them.
 
+Restart the App Pool after changing this.
+
 ![check_aes](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_app_kerberos/image/check_aes.png)
+
+
+Final Verification
+
+Refresh your browser at [http://vmhybrid01.lab.local:8080](http://vmhybrid01.lab.local:8080). 
+
+Even if your klist remains empty on the client (due to the Protocol Transition setting allowing an NTLM-to-Kerberos upgrade on the server), the fact that your files are visible is the definitive proof of success.
+
+
+
+![iis_restart](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_app_kerberos/image/iis_restart.png)
