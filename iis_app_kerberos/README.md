@@ -253,20 +253,94 @@ Result
 ![new site rv](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_app_kerberos/image/new_site_rv.png)
 
 
+## 5.2 Update the SPN for the New Port
 
+Since Kerberos tickets are often port-sensitive if you use a non-standard port, you should register the SPN including the port number:
+
+```ps1
+setspn -S HTTP/vmhybrid01:8080 lab\f_iis_kerb
+setspn -S HTTP/vmhybrid01.lab.local:8080 lab\f_iis_kerb
+
+setspn -L f_iis_kerb
+
+# Registered ServicePrincipalNames for CN=IIS Kerberos Service,CN=Users,DC=lab,# DC=local:
+#        HTTP/vmhybrid01.lab.local:8080
+#        HTTP/vmhybrid01:8080
+#        HTTP/vmhybrid01.lab.local
+#        HTTP/vmhybrid01
+
+```
+
+Whether you should remove the existing SPNs depends on how you intend to access the site. In a lab environment, it is generally best to keep them, as they do not conflict with each other.
+
+Why you should keep all four SPNs:
+
+* Port-Specific Resolution: Browsers are highly specific about ports. If you access the site via [http://vmhybrid01.lab.local:8080](http://vmhybrid01.lab.local:8080), the browser will explicitly look for the SPN ending in :8080.
+
+* Default Port Fallback: If you ever decide to move the site back to the default Port 80, the SPNs without the port numbers (HTTP/vmhybrid01.lab.local) will be required for Kerberos to work.
+
+* No Technical Conflict: Having multiple SPNs registered to the same service account (f_iis_kerb) is perfectly valid and common practice.
+
+The Only Time to Remove Them
+You should only remove an SPN if it is duplicated on a different account. If you ever see an error in your browser like ERR_S_PRINCIPAL_NAME_MISMATCH, check for duplicates.
+
+To see if there are duplicates, you can run:
+
+```ps1
+setspn -X
+
+```
 ## Step 6: Authentication Providers and Permissions
 
-Finally, ensure IIS is set to use the correct "handshake" protocol.
+New sites default to "Anonymous Authentication," which will break Kerberos.
 
-* In IIS, click your Site > Authentication.
+* Select your new MyKerberosApp site in the left pane.
+
+* Double-click Authentication.
+
+* Disable Anonymous Authentication.
 
 * Enable Windows Authentication.
 
-* Right-click Windows Authentication > Providers.
+* Right-click Windows Authentication > Providers > Ensure Negotiate is at the top.
 
-* Ensure Negotiate is at the top.
+* Click Advanced Settings in the right Actions pane and uncheck "Enable Kernel-mode authentication."
 
-* Share Permissions: Go to your C:\RemoteData folder. Ensure f_iis_kerb has Read access in both the Sharing and Security tabs.
+![configure app](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_app_kerberos/image/configure_app.png)
+
+
+## Summary of your Current SPN List
+
+Your current list is actually the "Gold Standard" for a robust lab setup because it covers every way a user might type the URL:
+
+1. HTTP/vmhybrid01.lab.local:8080: Standard FQDN with Port.
+
+2. HTTP/vmhybrid01:8080: NetBIOS name with Port.
+
+3. HTTP/vmhybrid01.lab.local: Standard FQDN (Port 80 fallback).
+
+4. HTTP/vmhybrid01: NetBIOS name (Port 80 fallback).
+
+## Sharefolder
+
+1. NTFS Permissions (The "Gate")
+
+This controls access at the disk level.
+
+Navigate to C:\RemoteData in File Explorer.
+
+Right-click the folder and select Properties.
+
+Go to the Security tab and click Edit..., then Add....
+
+Type f_iis_kerb and click OK.
+
+Ensure Read & execute, List folder contents, and Read are checked.
+
+Click OK and OK.
+
+![share rights](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_app_kerberos/image/share_rights.png)
+
 
 ## How to verify in your lab
 
