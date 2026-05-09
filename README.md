@@ -392,6 +392,8 @@ wget
 
 #### AP22 Admin drill (deny internet, Azure Update Manager)
 
+---
+
 ### 1. Zabbix default ⭐
 
 **Goal:** Set up log metric stack zabbix using trap and default
