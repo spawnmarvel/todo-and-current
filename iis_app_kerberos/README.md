@@ -226,6 +226,34 @@ Create a file named default.aspx in your site's folder. This script will try to 
 </html>
 ```
 
+## 5.1 Add the New Site in IIS
+
+* In IIS Manager, right-click the Sites folder and select Add Website....
+
+* Site name: MyKerberosApp.
+
+* Application pool: Click Select... and choose the mywebapp pool you created (the one running as lab\f_iis_kerb).
+
+* Physical path: Browse to C:\inetpub\mywebapp.
+
+* Binding:
+
+* Type: http
+
+* IP address: All Unassigned
+
+* Port: 8080 (Use a different port like 8080 so it doesn't conflict with the Default Web Site on port 80).
+
+Click OK.
+
+![new site](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_app_kerberos/image/new_site.png)
+
+Result
+
+![new site rv](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_app_kerberos/image/new_site_rv.png)
+
+
+
 ## Step 6: Authentication Providers and Permissions
 
 Finally, ensure IIS is set to use the correct "handshake" protocol.
