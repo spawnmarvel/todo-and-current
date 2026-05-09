@@ -386,9 +386,11 @@ wget
 
 ## Current Priorities: TOP 3
 
-### Sys Admin Drill
+#### Sys Admin Drill 5 min
 
  [GOTO open new tab take 5 min](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/README.md#sys-admin-drill)
+
+#### AP22 Admin drill (deny internet, Azure Update Manager)
 
 ### 1. Zabbix default ⭐
 
