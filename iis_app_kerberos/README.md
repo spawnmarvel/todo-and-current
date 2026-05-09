@@ -181,6 +181,8 @@ Now we tell IIS to "log in" as this domain account.
 
 * Click OK on all windows
 
+![identity](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_app_kerberos/image/identity.png)
+
 Link your Website to the New Pool
 
 * Under Sites in the left pane, select your website.
