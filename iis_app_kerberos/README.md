@@ -637,3 +637,20 @@ The Transition: Despite using NTLM at the frontend, your setting "Use any authen
 IIS Manager: Your mywebapp application pool is correctly running under the lab\f_iis_kerb service account.
 
 PowerShell ISE: The Negotiate header found (oRswGaA...) confirms the server is correctly offering Kerberos/Negotiate as an authentication provider.
+
+## How to Enforce the Kerberos Ticket
+
+Even though your "Double-Hop" is working via Protocol Transition, you can force the client to request a service ticket (HTTP/vmhybrid01.lab.local:8080) by following these steps:
+
+Disable NTLM on the Website (The Nuclear Option):
+
+In IIS Manager, go to your site's Authentication settings.
+
+Right-click Windows Authentication > Providers.
+
+Remove NTLM from the list, leaving only Negotiate.
+
+Note: If Kerberos isn't 100% perfect, the site will now show a 401 Unauthorized instead of falling back.
+
+
+![remove_ntlm](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_app_kerberos/image/remove_ntlm.png)
