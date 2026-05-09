@@ -341,6 +341,26 @@ Click OK and OK.
 
 ![share rights](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_app_kerberos/image/share_rights.png)
 
+Share Permissions (The "Road")
+
+This controls access across the network.
+
+* In the same Properties window, go to the Sharing tab.
+
+* Click Advanced Sharing... and ensure Share this folder is checked (Name: DataShare).
+
+* Click the Permissions button.
+
+* Click Add..., type f_iis_kerb, and click OK.
+
+* Give it Read permissions.
+
+* Crucial: Also ensure Domain Users (or the specific user you will log in with) has Read permissions here so their impersonated identity can pass through the share.
+
+* Click OK on all windows.
+
+![share right2](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_app_kerberos/image/share_rights2.png)
+
 
 ## How to verify in your lab
 
