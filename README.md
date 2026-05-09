@@ -392,7 +392,7 @@ wget
 
 #### AP22 Admin drill 5 min  :apple:
 
-Deny internet, Azure Update Manager, mstsc from vmhybrid01
+Deny internet, no call home, mstsc from vmhybrid01,  Azure Update Manager ?
 
 ---
 
