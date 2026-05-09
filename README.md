@@ -390,7 +390,7 @@ wget
 
  [GOTO open new tab take 5 min](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/README.md#sys-admin-drill)
 
-#### AP22 14.2 Admin drill 5 min  :apple:
+#### AP22 Token Admin drill 5 min  :apple:
 
 - Deny internet, no call home, mstsc from vmhybrid01,  Azure Update Manager ? (pre start, az update, post stop)
 - On 172.16.0.7 go over the AdministrationTools saved on desktop AdministrationTools.txt, set = done
