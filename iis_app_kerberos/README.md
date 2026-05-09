@@ -370,6 +370,36 @@ Since you are using a Virtual Directory or UNC Path in your ASP.NET code to list
 
 When you add the share as a Virtual Directory, IIS itself handles the "hop" for static files, whereas your code handles it for the file listing.
 
+
+Add the Virtual Directory to "MyKerberosApp"
+
+* Open IIS Manager.
+
+* Right-click your site MyKerberosApp > Add Virtual Directory....
+
+* Alias: DataShare.
+
+* Physical Path: Use the UNC path: \\vmhybrid01\RemoteData.
+
+
+* Click OK.
+
+![data share](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_app_kerberos/image/data_share.png)
+
+Configure Pass-through Authentication
+
+This is the setting that forces IIS to use the visitor's Kerberos ticket to talk to that share.
+
+* Select the new DataShare virtual directory in the left pane.
+
+* In the Actions pane (right), click Basic Settings....
+
+* Click Connect as....
+
+* Ensure Application user (pass-through authentication) is selected.
+
+* Click OK.
+
 ## How to verify in your lab
 
 On a client VM, open the site using the FQDN: [http://vmhybrid01.lab.local](http://vmhybrid01.lab.local).
