@@ -664,3 +664,16 @@ The Final Test Sequence
 * Purge Client Tickets: On your client machine, run klist purge to start with a completely clean slate.
 
 * Visit the Site: Navigate to [http://vmhybrid01.lab.local:8080](http://vmhybrid01.lab.local:8080).
+
+
+What the Results Mean
+
+* If the site loads and shows files: You have achieved True Kerberos Delegation. Run klist on your client; you will finally see the HTTP/vmhybrid01.lab.local:8080 ticket.
+
+* If you get a 401 Unauthorized: This confirms the browser was relying on NTLM. It typically means the browser doesn't trust the site for Kerberos (check Local Intranet Zone again) or there is an encryption mismatch (check the AES boxes in image_937ebb.png).
+
+
+If you are still seeing Cached Tickets: (0) after following those steps, but the website is successfully showing you the files from the remote share, it means one thing: Protocol Transition is working so perfectly that the "Double-Hop" is happening entirely on the server side without the client ever needing to request a service ticket.
+
+
+![proof2](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_app_kerberos/image/proof2.png)
