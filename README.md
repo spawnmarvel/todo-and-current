@@ -386,11 +386,13 @@ wget
 
 ## Current Priorities: TOP 3
 
-#### Sys Admin Drill 5 min
+#### Sys Admin Drill 5 min :apple:
 
  [GOTO open new tab take 5 min](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/README.md#sys-admin-drill)
 
-#### AP22 Admin drill (deny internet, Azure Update Manager, mstsc from vmhybrid01)
+#### AP22 Admin drill 5 min  :apple:
+
+Deny internet, Azure Update Manager, mstsc from vmhybrid01
 
 ---
 
