@@ -587,4 +587,6 @@ If your service account f_iis_kerb was created with defaults, it might be trying
 
 * This account supports Kerberos AES 256 bit encryption
 
+Added them.
+
 ![check_aes](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_app_kerberos/image/check_aes.png)
