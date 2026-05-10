@@ -1386,7 +1386,7 @@ In a real sysadmin job, 90% of your day starts with:
 * and do we have space to fix it (df)?
 
 
-You can use Git Bash on windows for super quick 5 min drill. ⭐ 
+***You can use Git Bash on windows for super quick 5 min drill.⭐*** 
 
 ```bash
 pwd
@@ -1408,7 +1408,8 @@ grep -i "failed" log/rabbit\@BER-0803.log | tail -n 10 | tee failed_report_rabbi
 cat failed_report_rabbit.txt
 ```
 
-Below is ubuntu.
+--- 
+***Below is ubuntu. ⭐***
 
 ```bash
 # 1. The "Orientation" (Where am I?)
@@ -1474,6 +1475,49 @@ which python3
 whereis zabbix_server
 whereis python3
 
+```
+---
 
+***#/bin/bash. ⭐***
+
+| Code | Permission             |
+| ---- | ---------------------- |
+| `0`  | No permission          |
+| `1`  | Execute                |
+| `2`  | Write                  |
+| `3`  | Write + Execute        |
+| `4`  | Read                   |
+| `5`  | Read + Execute         |
+| `6`  | Read + Write           |
+| `7`  | Read + Write + Execute |
+
+```bash
+# 1. Create
+sudo nano script.sh
+
+#!/bin/bash
+echo "Hi there"
+
+# 2. Authorize, adds execute permission to the owner, group, and others
+chmod +x script.sh 
+
+# 3. Test, run it
+bash script.sh
+./script.sh
+
+# View permission
+ls -l script.sh
+# -rwxr-xr-x 1 root root 16 May 10 17:32 script.sh
+
+# 4. Standardize, change permissions, The standard web/script permission
+# User has full (rwx), group and others have read and execute (r-x)
+chmod 755 script.sh              
+       
+# 5. Transfer, change owner from root to imsdal
+sudo chown imsdal file.txt
+
+# View permission
+ls -l script.sh
+# -rwxr-xr-x 1 imsdal root 16 May 10 17:32 script.sh
 
 ```
