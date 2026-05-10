@@ -388,7 +388,7 @@ wget
 
 #### Sys Admin Drill 5 min :apple:
 
- [GOTO open new tab take 5 min](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/README.md#sys-admin-drill)
+ ✅ [GOTO open new tab take 5 min](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/README.md#sys-admin-drill)
 
 #### AP22 Token Admin drill 5 min Cogent and script (tag) is configured  :apple:
 
