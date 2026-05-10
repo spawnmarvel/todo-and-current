@@ -457,6 +457,7 @@ Exam target: **AZ-802** (June 2026)
 - ✅ Wingate www proxy service outbound for vms in 172.16.0.0, https://www.wingate.com/
 - ⭐ Wingate for linux [GOTO](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-ad-ds-windows-server-hybrid-core-infrastructure/README_cloud-only-hybrid-Lab_2_install-ad.md#extra-section-the-http-proxy-method-for-outbund-private-vms-apt)
 - ✅ Domain joined
+- ✅ dsa.msc, ad explorer
 - 🔄 Check for updates on vmhybrid01
 
 **In Progress:**
