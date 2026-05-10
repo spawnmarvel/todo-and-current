@@ -1478,7 +1478,7 @@ whereis python3
 ```
 ---
 
-***#/bin/bash. ⭐***
+*** sudo nano script.sh, #/bin/bash. ⭐***
 
 | Code | Permission             |
 | ---- | ---------------------- |
