@@ -1385,6 +1385,9 @@ In a real sysadmin job, 90% of your day starts with:
 * which process is causing it (top)
 * and do we have space to fix it (df)?
 
+---
+***You can use Git Bash on windows for super quick 5 min drill ***⭐ 
+---
 
 ```bash
 # 1. The "Orientation" (Where am I?)
