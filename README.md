@@ -401,11 +401,11 @@ wget
 **Goal:** Set up log metric stack zabbix using trap and default
 
 **Tasks:**
-- Installed new stack (Zabbix 7 LTS, dpkg MySql 8.4) and a new vnet in swden central peerd to DNS net 
-- Zabbix agent 2
+- ✅ Installed new stack (Zabbix 7 LTS, dpkg MySql 8.4) and a new vnet in swden central peerd to DNS net 
+- ✅ Zabbix agent 2
 - Windows by Zabbix agent active and user param
 - Linux by Zabbix agent active and user param
-- Linux by SNMP
+- ✅ Linux by SNMP
 - Use time on default templates
 - A project for maximizing all default monitoring and not write a single script.
 - Files [Zabbix monitor VM's and SNMP default](https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm/zabbix_monitor_vms_snmp_default)
@@ -416,27 +416,25 @@ wget
 **Goal:** Set up log monitoring stack loki
 
 **Tasks:**
-- Install and configure Grafana
-- Configure Loki
+- ✅ Install and configure Grafana
+- ✅ Configure Loki
 - Deploy Alloy agents across infrastructure
 - Monitor logs from all services
 - Mastering LogQL (The "Query Language")
 - Build main 3 dashboards
 - Files [Grafana, Loki and Alloy](https://github.com/spawnmarvel/todo-and-current/tree/main/grafana_loki_alloy)
 
-
-
 ---
 
 ### 2. Octopus Deploy for Linux (CI/CD) ⭐
 
 **Setup:**
-- Use IAC Linux VM for fast deploy and remove
+- ✅ Use IAC Linux VM for fast deploy and remove to smoke test
 - Two projects: Windows & Linux
 - Focusing on Linux project now
 
 **Current Tasks:**
-- Diagnostics using normal Linux commands ✅ 100%
+- ✅ Diagnostics using normal Linux commands
 - Upload packages and variables (needs more time)
 - Install software (MySQL, etc.)
 - All Linux apps and day 2 operations
