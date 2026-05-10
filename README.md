@@ -465,6 +465,7 @@ Exam target: **AZ-802** (June 2026)
 - 📚 MS Learn Group Policy
 - 📚 MS Learn Azure Arc
 - 📚 MS Learn Azure File Sync
+- 📚 Simple aspx kerberos app with f key, then add cifs for share
 
 
 **Study Plan:**
