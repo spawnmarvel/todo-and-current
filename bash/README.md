@@ -1388,6 +1388,26 @@ In a real sysadmin job, 90% of your day starts with:
 
 You can use Git Bash on windows for super quick 5 min drill. ⭐ 
 
+```bash
+pwd
+cd c:\RabbitmqBaseFolder
+ls -F
+ls -lah
+df -h | tee disk_report.txt
+
+cat disk_report.txt
+
+find . -name "*.conf"
+
+tail -n 20 log/rabbit\@BER-0803.log
+
+grep -i "jim" names.txt
+grep -i "admin22" log/rabbit\@BER-0803.log
+grep -i "failed" log/rabbit\@BER-0803.log | tail -n 10
+grep -i "failed" log/rabbit\@BER-0803.log | tail -n 10 | tee failed_report_rabbit.txt
+cat failed_report_rabbit.txt
+```
+
 Below is ubuntu.
 
 ```bash
@@ -1421,6 +1441,10 @@ uptime
 
 # 3. The "Detective" (Finding things)
 sudo grep "error" /var/log/zabbix/zabbix_server.log
+# last 10
+sudo grep "error" /var/log/zabbix/zabbix_server.log | tail -n 10
+# tee 4ever
+sudo grep "error" /var/log/zabbix/zabbix_server.log | tail -n 10 | error_report_zabbix.txt 
 #  -i, --ignore-case
 sudo grep -i "error" /var/log/syslog | tee error_report.txt
 cat error_report.txt
