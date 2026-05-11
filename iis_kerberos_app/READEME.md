@@ -101,35 +101,15 @@ Ensure the user f_iis_kerb has "Trusted for delegation" enabled in AD if you pla
 ## 3. IIS Configuration
 Follow these steps to configure the App Pool and the Site:
 
-Create and Configure the App Pool
-🔹 Identity: Open IIS Manager > Application Pools. Select your pool > Advanced Settings. Change Identity to f_iis_kerb.
-🔹 Load User Profile: Set Load User Profile to True.
+1. Create the Application Pool
 
-Configure Authentication
-🔹 Disable Anonymous: Go to your Site > Authentication. Disable Anonymous Authentication.
-🔹 Enable Windows Auth: Enable Windows Authentication.
-🔹 Providers: Right-click Windows Authentication > Providers. Ensure Negotiate is at the top, followed by NTLM.
+* In IIS Manager, right-click Application Pools and select Add Application Pool.
 
-Advanced Settings (Kernel Mode)
-🔹 Right-click Windows Authentication > Advanced Settings.
-🔹 Ensure Extended Protection is Off (for initial testing).
-🔹 Enable Kernel-mode authentication should be checked, but if you are using a custom service account like f_iis_kerb, you may need to disable it or configure useAppPoolCredentials in the configuration editor
+* Name it KerbAppPool.
 
-## 4. Setting useAppPoolCredentials
-To ensure IIS uses the service account's SPN instead of the Computer Account's SPN:
+* Keep .NET CLR version at .NET CLR Version v4.0.30319 and Managed pipeline mode as Integrated.
 
-* In IIS Manager, select the Site.
+* Click OK.
 
-* Open Configuration Editor.
 
-* Navigate to system.webServer/security/authentication/windowsAuthentication.
-
-* Set useAppPoolCredentials to True.
-
-* Click Apply.
-
-## 5. Client-Side Browser Setup
-
-For the browser to send Kerberos tickets:
-🔹 Add the URL ([https://webserver.domain.com](https://webserver.domain.com)) to the Local Intranet zone in Internet Options.
-🔹 Ensure "Enable Integrated Windows Authentication" is checked in the browser's advanced settings.
+![apppool](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/apppool.png)
