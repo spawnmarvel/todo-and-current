@@ -528,7 +528,7 @@ You've built a rock-solid, production-grade authentication flow. Are there any o
 
 * cifs is added to delgation earlier
 
-![cifs](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/cifs.png)
+![cifs](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/cifs_on.png)
 
 ## Add alias TODO
 
