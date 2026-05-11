@@ -24,6 +24,8 @@ To set up a Kerberos-authenticated IIS application, you need to coordinate the A
 </html>
 ```
 
+![app](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/app.png)
+
 ## 2. Active Directory Configuration (The SPN)
 
 
@@ -39,12 +41,24 @@ setspn -S HTTP/vmhybrid01.lab.local f_iis_kerb
 setspn -S HTTP/vmhybrid01 f_iis_kerb
 
 ```
+![f_iis_kerb](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/f_iis_kerb.png)
+
+```ps1
+setspn -L f_iis_kerb
+Registered ServicePrincipalNames for CN=IIS Kerberos Service,CN=Users,DC=lab,DC=local:
+        HTTP/vmhybrid01.lab.local
+        HTTP/vmhybrid01
+```
 
 Permissions Check
+
 For the site to load, the service account f_iis_kerb needs permission to read this folder:
 🔹 Right-click the kerbtest folder > Properties.
 🔹 Go to the Security tab and click Edit.
 🔹 Add f_iis_kerb and grant it Read & execute, List folder contents, and Read
+
+
+![folder security](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/folder.png)
 
 * dsa.exe
 
