@@ -162,3 +162,70 @@ Sitea app
 
 ![site_app](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/site_app.png)
 
+
+## 4. Enable Windows Authentication
+
+1. Enable Windows Authentication
+
+* In the left tree of IIS Manager, click on your new site, KerberosTest.
+
+* In the center pane (Features View), double-click the Authentication icon.
+
+* Disable "Anonymous Authentication" (this is vital, otherwise IIS won't ask for credentials).
+
+* Enable "Windows Authentication".
+
+2. Configure Providers (Negotiate)
+
+The "Provider" tells IIS which security protocol to try first.
+
+Select Windows Authentication so it is highlighted.
+
+In the right-hand Actions pane (or by right-clicking), click Providers....
+
+Ensure Negotiate is at the top of the list.
+
+Ensure NTLM is second.
+
+Click OK.
+
+Note: "Negotiate" is the mechanism that allows Kerberos to happen.
+
+![providers](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/providers.png)
+
+3. Adjust Advanced Settings
+
+* This part is often missed, but it is critical when using a custom service account like f_iis_kerb.
+
+* While still in the Authentication screen, click Advanced Settings... in the right-hand pane.
+
+* Uncheck "Enable Kernel-mode authentication".
+
+Reason: Kernel mode tries to use the machine's local identity to decrypt tickets. 
+
+We want to use the f_iis_kerb identity instead.
+
+
+![kernel_off](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/kernel_off.png)
+
+* Ensure Extended Protection is set to Off (to avoid 401 errors during initial testing).
+
+* Click OK.
+
+One final "hidden" setting
+
+We need to tell IIS explicitly to use the App Pool's credentials to look up the Kerberos SPN.
+
+Click on your site (KerberosTest) in the left panel.
+
+In the center pane, double-click Configuration Editor.
+
+At the top, change the Section dropdown to:
+system.webServer/security/authentication/windowsAuthentication
+
+Find the row for useAppPoolCredentials and change it from False to True.
+
+Click Apply in the top-right corner.
+
+![use app pool cred](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/true.png)
+
