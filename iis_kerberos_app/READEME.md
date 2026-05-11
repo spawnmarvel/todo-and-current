@@ -316,3 +316,17 @@ Cached Tickets: (2)
         Kdc Called: vmhybrid01.lab.local
 ```
 
+This is a major success! The page displaying Negotiate on the remote host vmap2203 means the Kerberos handshake was successful.
+
+However, looking at your klist output, we can see exactly how the "Double Hop" and delegation logic is playing out.
+
+Analyzing your klist results
+
+🔹 Ticket #0 (krbtgt): This is your TGT (Ticket Granting Ticket). It's your "passport" that proves who you are to the Domain Controller so you can ask for other service tickets.
+
+🔹 Ticket #1 (LDAP): This is a service ticket for LDAP. Notice the flag ok_as_delegate. This is appearing because you configured Constrained Delegation on the f_iis_kerb account earlier.
+
+
+### Why don't you see an HTTP/vmhybrid01 ticket yet?
+
+If the browser is showing Negotiate, a ticket was definitely used. Sometimes klist doesn't show it immediately if the session is cached or if the browser is using a different logon session.
