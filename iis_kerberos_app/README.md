@@ -526,7 +526,7 @@ You've built a rock-solid, production-grade authentication flow. Are there any o
 
 * Map IIS with a virtual share
 
-* cifs is added to delgation earlier
+* cifs was added to delgation earlier
 
 ![cifs](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/cifs_on.png)
 
