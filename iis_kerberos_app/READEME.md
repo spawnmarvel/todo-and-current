@@ -229,3 +229,48 @@ Click Apply in the top-right corner.
 
 ![use app pool cred](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/true.png)
 
+
+NTFS Verification
+
+```ps1
+# Check permissions for the folder
+get-acl "C:\inetpub\kerbtest" | select-object -expandproperty access | where-object {$_.IdentityReference -like "*f_iis_kerb*"}
+```
+
+Result
+
+```txt
+FileSystemRights  : ReadAndExecute, Synchronize
+AccessControlType : Allow
+IdentityReference : LAB\f_iis_kerb
+IsInherited       : False
+InheritanceFlags  : ContainerInherit, ObjectInherit
+PropagationFlags  : None
+```
+
+## Final "Ready to Test" Checklist
+
+Before you open the browser, perform a quick reset to make sure all these IIS and NTFS changes are "live":
+
+* Open an Administrative Command Prompt.
+
+* Type iisreset and hit Enter.
+
+How to test on localhost
+
+* Navigate to http://vmhybrid01.lab.local:8080
+
+
+![test localhost](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/test_localhost.png)
+
+How to Test On a different machine (a client joined to the same domain), open a browser.
+
+* Navigate to http://vmhybrid01.lab.local:8080
+
+* If a login box appears, enter your own domain credentials (not the service account).
+
+* Once the page loads, look at Auth Type:
+
+* Negotiate = Success (Kerberos is working).
+
+* NTLM = Something is wrong (usually an SPN mismatch or Browser Intranet Zone issue).
