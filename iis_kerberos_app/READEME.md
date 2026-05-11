@@ -79,12 +79,13 @@ For the site to load, the service account f_iis_kerb needs permission to read th
 
 🔴 Critical Security Risk: Admin Membership
 
-In the bottom right "Attribute Editor" snippet, I see:
+🔹 In the bottom right "Attribute Editor" snippet, I see:
 memberOf: CN=Administrators,CN=Builtin,DC=lab,DC=local
 
-You should remove this user from the Domain "Administrators" group. A service account running an IIS App Pool should never be a Domain Admin or a Builtin Administrator. 
+🔹You should remove this user from the Domain "Administrators" group. A service account running an IIS App Pool should never be a Domain Admin or a Builtin Administrator. 
 
-It only needs "Log on as a batch job" rights on the local web server and "Read" permissions on your application folder. Keeping it as an admin creates a significant security vulnerability.
+🔹It only needs "Log on as a batch job" rights on the local web server and "Read" permissions on your application folder. Keeping it as an admin creates a significant security vulnerability.
+
 
 🟡 Configuration Note: Delegation Type
 
