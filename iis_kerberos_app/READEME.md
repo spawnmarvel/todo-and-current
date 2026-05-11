@@ -72,7 +72,9 @@ For the site to load, the service account f_iis_kerb needs permission to read th
 🟢 What is Correct
 
 🔹 Encryption: AES 128 and AES 256 are both enabled. This is ideal for modern Kerberos security.
+
 🔹 SPNs: You have registered HTTP/vmhybrid01 and HTTP/vmhybrid01.lab.local. This covers both the short name and the FQDN.
+
 🔹 Delegation: You have "Constrained Delegation" enabled for the cifs service on vmhybrid01.lab.local. This is correct if your web app needs to access file shares on that server using the user's identity.
 
 🔴 Critical Security Risk: Admin Membership
@@ -80,12 +82,16 @@ For the site to load, the service account f_iis_kerb needs permission to read th
 In the bottom right "Attribute Editor" snippet, I see:
 memberOf: CN=Administrators,CN=Builtin,DC=lab,DC=local
 
-You should remove this user from the Domain "Administrators" group. A service account running an IIS App Pool should never be a Domain Admin or a Builtin Administrator. It only needs "Log on as a batch job" rights on the local web server and "Read" permissions on your application folder. Keeping it as an admin creates a significant security vulnerability.
+You should remove this user from the Domain "Administrators" group. A service account running an IIS App Pool should never be a Domain Admin or a Builtin Administrator. 
+
+It only needs "Log on as a batch job" rights on the local web server and "Read" permissions on your application folder. Keeping it as an admin creates a significant security vulnerability.
 
 🟡 Configuration Note: Delegation Type
 
 On the Delegation tab, you have selected "Use any authentication protocol" (Protocol Transition).
+
 🔹 This is fine, but it is "less secure" than "Use Kerberos only."
+
 🔹 Use "any authentication protocol" if users might connect via NTLM or other methods but you still need the app to "transition" them to Kerberos to talk to the backend cifs service.
 
 
