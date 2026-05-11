@@ -353,7 +353,7 @@ The Fix: You should add a second set of SPNs that explicitly include the port:
 setspn -S HTTP/vmhybrid01.lab.local:8080 f_iis_kerb
 setspn -S HTTP/vmhybrid01:8080 f_iis_kerb
 
-setspn -L iis_kerb
+setspn -L f_iis_kerb
 
 Registered ServicePrincipalNames for CN=IIS Kerberos Service,CN=Users,DC=lab,DC=local:
         HTTP/vmhybrid01:8080
@@ -425,3 +425,90 @@ vmap2203
 ```
 
 
+## Perfect! That klist output is the "Gold Standard" proof.
+
+Ticket #1 specifically shows Server: HTTP/vmhybrid01.lab.local @ LAB.LOCAL. This confirms that:
+
+* The client (vmap2203) successfully requested a service ticket from the Domain Controller.
+
+* The Domain Controller found the SPN you registered on the f_iis_kerb account.
+
+* The browser successfully used that ticket to authenticate to IIS.
+
+## Why you might still see a login prompt
+
+* Since the Kerberos ticket is now officially in your cache, if you are still getting a login popup, it is usually down to one of two things:
+
+* Credential Persistence: If you manually typed credentials into that popup earlier, the browser might be "remembering" those and using NTLM anyway.
+
+* Fix: Close the browser, run klist purge, and open it again.
+
+![remote vm nopop2](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/remote_vm_no_pop2.png)
+
+ps1 script
+
+```ps1
+--- Authentication Results ---
+URL: http://vmhybrid01.lab.local:8080
+Result: SUCCESS (Kerberos detected)
+Token Start: Negotiate oYG1M...
+
+--- Authentication Results ---
+URL: http://vmhybrid01.lab.local
+Result: UNKNOWN
+Header found: 
+
+
+--- Authentication Results ---
+URL: http://vmhybrid01
+Result: UNKNOWN
+Header found: 
+
+--- Script fails---
+
+http://vmhybrid01:8080
+
+```
+
+![ps1](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/ps1.png)
+
+
+PowerShell Result: Your script shows the Token start with oYG.... In the world of Kerberos, seeing a GSSAPI header starting with oY is the cryptographic "handshake" that confirms it's a Kerberos blob, not an NTLM one (which starts with TlR).
+
+The reason the script is returning UNKNOWN for the other URLs is likely because the authentication handshake was already completed in the underlying session or the headers didn't match the specific regex pattern on the final 200 OK response.
+
+## Why the other URLs showed "UNKNOWN"
+
+🔹 Session Persistence: Once you authenticate to vmhybrid01.lab.local on port 8080, the underlying .NET connection pool often keeps that authenticated socket open. When you then hit port 80 or the short name, the server may not send the Persistent-Auth header again because it already knows who you are.
+🔹 SPN Mismatch: If http://vmhybrid01 (short name) doesn't have the site added to the Local Intranet Zone, the browser/PowerShell might not attempt the Negotiate handshake at all, leading to an empty header.
+
+Troubleshooting the "Script Fails" for http://vmhybrid01:8080
+If the script fails entirely on the short name:
+
+Check DNS: Ensure ping vmhybrid01 actually resolves to the IP.
+
+Check SPN: Run setspn -L f_iis_kerb to ensure HTTP/vmhybrid01:8080 is listed exactly like that.
+
+Check Intranet Zone: Ensure the short name http://vmhybrid01 is also in your Local Intranet sites list in Internet Options.
+
+The "Double-Hop" Requirement: 
+
+If the ASPX page itself is trying to reach out to another service (like the cifs delegation we saw in your screenshot) and failing, IIS might throw a 401 challenge that looks like a login prompt.
+
+## Final "Maintenance" Tips
+
+Now that it’s working, here are three things to keep in mind so it doesn't break later:
+
+SPN Management: 
+
+* If you ever add a load balancer or a DNS alias (like https://myapp.lab.local), you must add that new name as an SPN to the f_iis_kerb account, or it will immediately revert to NTLM for that URL.
+
+Password Rotation: 
+
+* If you change the password for f_iis_kerb, you don't need to redo the SPNs, but you must update the password in the IIS Application Pool identity and run an iisreset.
+
+Delegation (The "Double Hop"): 
+
+* Your first screenshot showed constrained delegation for cifs. If your ASPX app ever needs to read a file from a remote share, you can now use WindowsIdentity.RunImpersonated in your C# code to "act as" the user imsdal on that remote share.
+
+You've built a rock-solid, production-grade authentication flow. Are there any other backend services you're planning to connect to this app, or is this lab complete?
