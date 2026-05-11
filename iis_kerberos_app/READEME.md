@@ -278,3 +278,5 @@ How to Test On a different machine (a client joined to the same domain), open a 
 * Negotiate = Success (Kerberos is working).
 
 * NTLM = Something is wrong (usually an SPN mismatch or Browser Intranet Zone issue).
+
+![remote vm](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/remote_vm.png)
