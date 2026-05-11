@@ -113,3 +113,17 @@ Follow these steps to configure the App Pool and the Site:
 
 
 ![apppool](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/apppool.png)
+
+2. Set the Identity (The "Who")
+
+* Select KerbAppPool in the list and click Advanced Settings in the right-hand "Actions" pane.
+
+* Find Identity, click the ... button.
+
+* Choose Custom account and click Set.
+
+* Enter LAB\f_iis_kerb and the password.
+
+* While still in Advanced Settings, find Load User Profile and set it to True.
+
+![identity](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/identity.png)
