@@ -337,3 +337,47 @@ When the browser provides the "Negotiate" mechanism, it first tries to find a Ke
 
 ![popup](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/pop_up.png)
 
+
+## Why Kerberos is failing on Port 8080
+
+There are two specific reasons why this is happening:
+
+1. The Port in the SPN
+By default, browsers ignore the port number when generating an SPN request. When you visit http://vmhybrid01.lab.local:8080, the browser looks for HTTP/vmhybrid01.lab.local.
+
+The Problem: If your browser is configured to be "strict" (common in modern Edge/Chrome), it might be looking for an SPN that includes the port: HTTP/vmhybrid01.lab.local:8080.
+
+The Fix: You should add a second set of SPNs that explicitly include the port:
+
+```cmd
+setspn -S HTTP/vmhybrid01.lab.local:8080 f_iis_kerb
+setspn -S HTTP/vmhybrid01:8080 f_iis_kerb
+
+setspn -L iis_kerb
+
+Registered ServicePrincipalNames for CN=IIS Kerberos Service,CN=Users,DC=lab,DC=local:
+        HTTP/vmhybrid01:8080
+        HTTP/vmhybrid01.lab.local:8080
+        HTTP/vmhybrid01.lab.local
+        HTTP/vmhybrid01
+
+```
+
+The login popup and the empty klist (0 cached tickets) mean the browser is still refusing to use Kerberos, even though the SPNs are now perfect. Since the SPNs are registered to a user account (f_iis_kerb), any "Security" mismatch will cause the browser to stop and ask for credentials manually.
+
+Here is how to clear the "Pop-up" hurdle:
+
+1. The "Intranet Zone" Rule
+Even with the correct SPNs, browsers like Edge and Chrome will not send a Kerberos ticket to a site unless they are 100% sure it is a "Local Intranet" site. If it thinks it's an "Internet" site, it will prompt for a login as a security precaution.
+
+On vmap2203, do this:
+
+🔹 Open Internet Options (inetcpl.cpl).
+
+🔹 Go to Security > Local Intranet > Sites > Advanced.
+
+🔹 Add http://vmhybrid01.lab.local (and http://vmhybrid01 if you use the short name).
+
+🔹 Crucial: Ensure "Require server verification (https:)" is unchecked since you are using port 80/8080.
+
+![intranet](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/intranet.png)
