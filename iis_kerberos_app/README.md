@@ -520,7 +520,15 @@ You've built a rock-solid, production-grade authentication flow. Are there any o
 
 ## Read files on remote share TODO
 
-Update the default.aspx files to also list all files in share:
+* Update the default.aspx files to also list all files in share
+
+* f_iise_kerb read, write on share
+
+* Map IIS with a virtual share
+
+* cifs is added to delgation earlier
+
+![cifs](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/cifs.png)
 
 ## Add alias TODO
 
