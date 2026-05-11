@@ -127,3 +127,38 @@ Follow these steps to configure the App Pool and the Site:
 * While still in Advanced Settings, find Load User Profile and set it to True.
 
 ![identity](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/identity.png)
+
+3. Creating the Site and Assigning the App Pool
+
+Open IIS Manager.
+
+* Add the Site:
+
+* Right-click Sites in the left-hand connections tree.
+
+* Select Add Website...
+
+* Fill in the Details:
+
+* Site name: KerberosTest
+
+* Application pool: Click Select... and choose the KerbAppPool you just created.
+
+* Physical path: Browse to C:\inetpub\kerbtest.
+
+* Binding: * Type: http
+
+* IP address: All Unassigned
+
+* Port: 80 (or another port if 80 is taken).
+
+* Host name: Enter vmhybrid01.lab.local (this must match the SPN we saw in your screenshot).
+
+Click OK.
+
+![new site](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/new_site.png)
+
+Sitea app
+
+![site_app](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/site_app.png)
+
