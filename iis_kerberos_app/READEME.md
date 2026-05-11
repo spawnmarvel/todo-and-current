@@ -50,6 +50,10 @@ Registered ServicePrincipalNames for CN=IIS Kerberos Service,CN=Users,DC=lab,DC=
         HTTP/vmhybrid01
 ```
 
+Run as
+
+![run_as](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/run_as.png)
+
 Permissions Check
 
 For the site to load, the service account f_iis_kerb needs permission to read this folder:
