@@ -261,7 +261,7 @@ How to test on localhost
 * Navigate to http://vmhybrid01.lab.local:8080
 
 
-![test localhost](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/test_localhost.png)
+![test localhost2](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/test_localhost2.png)
 
 That is a perfect result! Seeing Negotiate while the App Pool Identity is LAB\f_iis_kerb confirms that your SPN, the useAppPoolCredentials setting, and the App Pool identity are all working in harmony.
 
@@ -279,7 +279,7 @@ How to Test On a different machine (a client joined to the same domain), open a 
 
 * NTLM = Something is wrong (usually an SPN mismatch or Browser Intranet Zone issue).
 
-![remote vm](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/remote_vm.png)
+![remote vm2](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/remote_vm2.png)
 
 klist 
 
