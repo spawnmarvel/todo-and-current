@@ -5,6 +5,8 @@ To set up a Kerberos-authenticated IIS application, you need to coordinate the A
 
 ## 1. The ASPX Web Application
 
+* C:\inetpub\kerbtest
+* default.aspx
 ```cs
 <%-- Version 1.0.0 --%>
 <%@ Page Language="C#" %>
@@ -31,12 +33,21 @@ For Kerberos to work, the Service Principal Name (SPN) must be registered to the
 
 ```ps1
 # Set the SPN for the FQDN: 
-setspn -S HTTP/webserver.domain.com f_iis_kerb
+setspn -S HTTP/vmhybrid01.lab.local f_iis_kerb
 
 # Set the SPN for the Short Name: 
-setspn -S HTTP/webserver f_iis_kerb
+setspn -S HTTP/vmhybrid01 f_iis_kerb
 
 ```
+
+Permissions Check
+For the site to load, the service account f_iis_kerb needs permission to read this folder:
+🔹 Right-click the kerbtest folder > Properties.
+🔹 Go to the Security tab and click Edit.
+🔹 Add f_iis_kerb and grant it Read & execute, List folder contents, and Read
+
+* dsa.exe
+
 
 [!IMPORTANT]
 Ensure the user f_iis_kerb has "Trusted for delegation" enabled in AD if you plan to pass these credentials to a backend database or another service.
