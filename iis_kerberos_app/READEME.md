@@ -437,11 +437,13 @@ Ticket #1 specifically shows Server: HTTP/vmhybrid01.lab.local @ LAB.LOCAL. This
 
 ## Why you might still see a login prompt
 
-* Since the Kerberos ticket is now officially in your cache, if you are still getting a login popup, it is usually down to one of two things:
+Since the Kerberos ticket is now officially in your cache, if you are still getting a login popup, it is usually down to one of two things:
 
-* Credential Persistence: If you manually typed credentials into that popup earlier, the browser might be "remembering" those and using NTLM anyway.
+1. Credential Persistence: If you manually typed credentials into that popup earlier, the browser might be "remembering" those and using NTLM anyway.
 
 * Fix: Close the browser, run klist purge, and open it again.
+
+2. The "Double-Hop" Requirement: If the ASPX page itself is trying to reach out to another service (like the cifs delegation we saw in your screenshot) and failing, IIS might throw a 401 challenge that looks like a login prompt.
 
 ![remote vm nopop2](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/remote_vm_no_pop2.png)
 
@@ -519,6 +521,6 @@ Add alias:
 
 * app01.lab.local
 
-## Read files on remote share.
+## Read files on remote share TODO
 
 Update the default.aspx files to also list all files in share:
