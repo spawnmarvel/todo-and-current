@@ -381,3 +381,47 @@ On vmap2203, do this:
 🔹 Crucial: Ensure "Require server verification (https:)" is unchecked since you are using port 80/8080.
 
 ![intranet](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/intranet.png)
+
+## Browser "Strict" SPN Lookups
+
+Some modern browsers are very picky about ports. Now that you added the port-specific SPNs, you should close all browser windows on vmap2203. Kerberos tickets are often requested only at the start of a session.
+
+* Close Edge/Chrome.
+
+* Open CMD and run klist purge.
+
+* Re-open the browser and go to http://vmhybrid01.lab.local:8080
+
+![remote vm nopop](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/remote_vm_no_pop.png)
+
+```cmd
+
+Cached Tickets: (2)
+
+#0>     Client: imsdal @ LAB.LOCAL
+        Server: krbtgt/LAB.LOCAL @ LAB.LOCAL
+        KerbTicket Encryption Type: AES-256-CTS-HMAC-SHA1-96
+        Ticket Flags 0x40e10000 -> forwardable renewable initial pre_authent name_canonicalize
+        Start Time: 5/11/2026 19:22:39 (local)
+        End Time:   5/12/2026 5:22:39 (local)
+        Renew Time: 5/18/2026 19:22:39 (local)
+        Session Key Type: AES-256-CTS-HMAC-SHA1-96
+        Cache Flags: 0x1 -> PRIMARY
+        Kdc Called: vmhybrid01.lab.local
+
+#1>     Client: imsdal @ LAB.LOCAL
+        Server: HTTP/vmhybrid01.lab.local @ LAB.LOCAL
+        KerbTicket Encryption Type: AES-256-CTS-HMAC-SHA1-96
+        Ticket Flags 0x40a10000 -> forwardable renewable pre_authent name_canonicalize
+        Start Time: 5/11/2026 19:22:39 (local)
+        End Time:   5/12/2026 5:22:39 (local)
+        Renew Time: 5/18/2026 19:22:39 (local)
+        Session Key Type: AES-256-CTS-HMAC-SHA1-96
+        Cache Flags: 0
+        Kdc Called: vmhybrid01.lab.local
+
+C:\Windows\System32>hostname
+vmap2203
+```
+
+
