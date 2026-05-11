@@ -330,3 +330,10 @@ Analyzing your klist results
 ### Why don't you see an HTTP/vmhybrid01 ticket yet?
 
 If the browser is showing Negotiate, a ticket was definitely used. Sometimes klist doesn't show it immediately if the session is cached or if the browser is using a different logon session.
+
+The reason you are seeing a login pop-up and no HTTP ticket in klist—even though the page says "Negotiate"—is because the browser has actually fallen back to NTLM.
+
+When the browser provides the "Negotiate" mechanism, it first tries to find a Kerberos ticket. If it fails, it uses NTLM. NTLM is technically a "Negotiate" sub-protocol, which is why your ASPX page still reports "Negotiate" as the auth type, but your identity is actually being verified via NTLM (which doesn't create a ticket in klist).
+
+![popup](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/pop_up.png)
+
