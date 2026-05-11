@@ -524,6 +524,6 @@ Update the default.aspx files to also list all files in share:
 
 ## Add alias TODO
 
-Add alias:
+Add alias after cifs is success:
 
 * app01.lab.local
