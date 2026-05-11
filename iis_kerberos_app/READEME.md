@@ -512,3 +512,13 @@ Delegation (The "Double Hop"):
 * Your first screenshot showed constrained delegation for cifs. If your ASPX app ever needs to read a file from a remote share, you can now use WindowsIdentity.RunImpersonated in your C# code to "act as" the user imsdal on that remote share.
 
 You've built a rock-solid, production-grade authentication flow. Are there any other backend services you're planning to connect to this app, or is this lab complete?
+
+## Add alias TODO
+
+Add alias:
+
+* app01.lab.local
+
+## Read files on remote share.
+
+Update the default.aspx files to also list all files in share:
