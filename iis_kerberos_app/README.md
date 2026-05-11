@@ -518,12 +518,12 @@ Delegation (The "Double Hop"):
 
 You've built a rock-solid, production-grade authentication flow. Are there any other backend services you're planning to connect to this app, or is this lab complete?
 
+## Read files on remote share TODO
+
+Update the default.aspx files to also list all files in share:
+
 ## Add alias TODO
 
 Add alias:
 
 * app01.lab.local
-
-## Read files on remote share TODO
-
-Update the default.aspx files to also list all files in share:
