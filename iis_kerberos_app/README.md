@@ -524,6 +524,8 @@ You've built a rock-solid, production-grade authentication flow. Are there any o
 
 * f_iise_kerb read, write on share
 
+* impersonation IIS
+
 * Map IIS with a virtual share
 
 * cifs was added to delgation earlier
