@@ -280,3 +280,39 @@ How to Test On a different machine (a client joined to the same domain), open a 
 * NTLM = Something is wrong (usually an SPN mismatch or Browser Intranet Zone issue).
 
 ![remote vm](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/remote_vm.png)
+
+klist 
+
+```cmd
+C:\Users\imsdal.LAB>hostname
+vmap2203
+
+C:\Users\imsdal.LAB>klist
+
+Current LogonId is 0:0xb280d
+
+Cached Tickets: (2)
+
+#0>     Client: imsdal @ LAB.LOCAL
+        Server: krbtgt/LAB.LOCAL @ LAB.LOCAL
+        KerbTicket Encryption Type: AES-256-CTS-HMAC-SHA1-96
+        Ticket Flags 0x40e10000 -> forwardable renewable initial pre_authent name_canonicalize
+        Start Time: 5/11/2026 18:48:46 (local)
+        End Time:   5/12/2026 4:48:46 (local)
+        Renew Time: 5/18/2026 18:48:46 (local)
+        Session Key Type: AES-256-CTS-HMAC-SHA1-96
+        Cache Flags: 0x1 -> PRIMARY
+        Kdc Called: vmhybrid01.lab.local
+
+#1>     Client: imsdal @ LAB.LOCAL
+        Server: LDAP/vmhybrid01.lab.local/lab.local @ LAB.LOCAL
+        KerbTicket Encryption Type: AES-256-CTS-HMAC-SHA1-96
+        Ticket Flags 0x40a50000 -> forwardable renewable pre_authent ok_as_delegate name_canonicalize
+        Start Time: 5/11/2026 18:48:46 (local)
+        End Time:   5/12/2026 4:48:46 (local)
+        Renew Time: 5/18/2026 18:48:46 (local)
+        Session Key Type: AES-256-CTS-HMAC-SHA1-96
+        Cache Flags: 0
+        Kdc Called: vmhybrid01.lab.local
+```
+
