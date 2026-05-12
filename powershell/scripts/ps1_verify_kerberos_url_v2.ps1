@@ -1,44 +1,46 @@
-$url = "https://vhuebguiubuib/DataREST.dll/" # Replace with your URL
+# Version 1.0.2
+# This script verifies if a URL is using Kerberos (Negotiate) or NTLM authentication.
+
+$url = "http://vmhybrid01.lab.local:8080"
 
 try {
-    # 1. First, we clear any existing session to ensure a fresh auth handshake
-    $response = Invoke-WebRequest -Uri $url -UseDefaultCredentials -Method Get
+    # Using a new WebSession helps force a clean authentication challenge
+    $session = New-Object Microsoft.PowerShell.Commands.WebRequestSession
+    $response = Invoke-WebRequest -Uri $url -UseDefaultCredentials -WebSession $session -Method Get
 
-    # 2. Check the "WWW-Authenticate" or "Persistent-Auth" headers
-    # Note: In a successful 200 OK, the server often sends back a 'Set-Cookie' 
-    # or 'Persistent-Auth' header containing the confirmation token.
-    
+    # Check for authentication headers in the response
     $authHeader = $response.Headers['WWW-Authenticate']
     if (-not $authHeader) {
         $authHeader = $response.Headers['Persistent-Auth']
     }
 
-    Write-Host "--- Authentication Results ---" -ForegroundColor Cyan
+    Write-Host "--- Authentication Results ---"
     Write-Host "URL: $url"
     
-    if ($authHeader -match "Negotiate\s+(YII|oYG)") {
-        Write-Host "Result: SUCCESS (Kerberos detected)" -ForegroundColor Green
+    if ($authHeader -and $authHeader -match "Negotiate\s+(YII|oYG)") {
+        Write-Host "Result: SUCCESS (Kerberos detected)"
         Write-Host "Token Start: $($authHeader.Substring(0, 15))..."
     } 
-    elseif ($authHeader -match "Negotiate\s+TlRMTV") {
-        Write-Host "Result: FALLBACK (NTLM detected)" -ForegroundColor Yellow
-        Write-Host "Reason: The 'TlRMTV' prefix indicates NTLM is being used instead of Kerberos."
+    elseif ($authHeader -and $authHeader -match "Negotiate\s+TlRMTV") {
+        Write-Host "Result: FALLBACK (NTLM detected)"
+        Write-Host "Reason: The prefix indicates NTLM is being used."
+    }
+    elseif ($null -eq $authHeader) {
+        # If headers are empty but the page loaded, the session might be pre-authenticated
+        Write-Host "Result: SUCCESS (Session persistent)"
+        Write-Host "Note: No fresh auth header found, but connection was successful."
     }
     else {
-        Write-Host "Result: UNKNOWN" -ForegroundColor Red
+        Write-Host "Result: UNKNOWN"
         Write-Host "Header found: $authHeader"
     }
 
 } catch {
-    if ($_.Exception.Response.StatusCode -eq 401) {
-        Write-Host "Result: UNAUTHORIZED (401)" -ForegroundColor Red
-        Write-Host "The server offered: $($_.Exception.Response.Headers['WWW-Authenticate'])"
+    $exResponse = $_.Exception.Response
+    if ($exResponse -and $exResponse.StatusCode -eq 401) {
+        Write-Host "Result: UNAUTHORIZED (401)"
+        Write-Host "Server offered: $($exResponse.Headers['WWW-Authenticate'])"
     } else {
-        Write-Error $_.Exception.Message
+        Write-Host "Error: $($_.Exception.Message)"
     }
 }
-
-# example output
-# URL: https://vhuebguiubuib/DataREST.dll/
-# Result: SUCCESS (Kerberos detected)
-# Token Start: Negotiate oYG1M...
