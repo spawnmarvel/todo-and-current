@@ -4,6 +4,15 @@
 
 ## Concepts
 
+## Why it’s Useful in Hybrid Environments
+
+In environments where you manage both Azure cloud and on-prem servers, RabbitMQ is often used to:
+
+* Bridge Networks: Use a "Shovel" or "Federation" plugin to move messages between local servers and the cloud reliably.
+
+* Handle Traffic Spikes: It acts as a buffer. If your web server gets hit with 10,000 requests at once, RabbitMQ holds them in a queue so your database isn't overwhelmed.  
+
+* Monitoring Integration: You can feed system events into RabbitMQ and have them consumed by tools like Zabbix or Grafana Loki for centralized logging.
 
 ## RabbitMQ tutorial - "Hello world!" Introduction
 
