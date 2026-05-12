@@ -263,6 +263,7 @@ nc -zv 192.168.3.7 3100
 # but tells it not to send the actual file body.
 # curl - just check 
 curl -I https://apt.grafana.com/gpg.key
+# HTTP/1.1 200 OK: Everything is perfect. You can reach the site and the file exists.
 
 # curl - download files
 curl -O https://example.com/file    # Save with original name
