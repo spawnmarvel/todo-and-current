@@ -258,10 +258,17 @@ nc -zv 192.168.3.7 3100
 ### File Transfer
 
 ```bash
+
+# A "HEAD" request asks the server for the headers only (metadata like file size, server type, and status codes) 
+# but tells it not to send the actual file body.
+# curl - just check 
+curl -I https://apt.grafana.com/gpg.key
+
 # curl - download files
 curl -O https://example.com/file    # Save with original name
 curl -L https://example.com         # Follow redirects
 curl -I https://example.com         # Fetch headers only
+
 
 # wget - non-interactive downloader
 wget https://example.com/file
