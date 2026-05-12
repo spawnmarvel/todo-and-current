@@ -1106,6 +1106,8 @@ sudo chown $USER:$USER /datadrive
 
 # Verify the mount
 lsblk -o NAME,SIZE,MOUNTPOINT | grep "sd"
+
+dh -h /datadrive
 ```
 
 ---
