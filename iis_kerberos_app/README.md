@@ -870,3 +870,11 @@ Step 3: Update IIS Bindings
 
 Step 4: Client Verification (klist)
 
+
+
+To wrap up this project with a custom alias, we need to ensure Active Directory knows that this new name belongs to the same f_iis_kerb service. Kerberos is extremely sensitive to names; if the browser goes to a name that doesn't have an SPN, it will immediately fail back to NTLM.
+
+
+Open DNS Manager on your Domain Controller.
+
+![alias](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/alias.png)
