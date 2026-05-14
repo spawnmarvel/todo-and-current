@@ -690,6 +690,13 @@ Expected Outcome:
 
 ![vmap2203](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/vmap2203.png)
 
+| Action	       | Purpose |
+| ---------------------| -------- |
+| Share Folder	       | Creates the network entry point for cifs delegation.|
+| Enable Impersonation | Swaps the thread identity to the logged-in user.|
+| Bypass Validation    | Resolves the 500.24 error in Integrated Mode.|
+| UNC Path in Code     | Triggers the actual Kerberos "Double-Hop" to the share.|
+
 Note!! Cifs was added to delgation in an earlier step.
 
 ![cifs](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/cifs_on.png)
