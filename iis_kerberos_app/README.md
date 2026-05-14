@@ -754,6 +754,14 @@ Note!! Cifs was added to delgation in an earlier step.
 
 1. The Short Answer
 
+2. The "Why" (Technical Breakdown)
+
+3. Implications for Kerberos Delegation
+
+---
+
+1. The Short Answer
+
 Technically, yes, you can configure a specific user in the IIS settings for ASP.NET Impersonation. However, doing so breaks the Kerberos Double-Hop you just built.
 
 If you hardcode a specific user (like LAB\admin) in the IIS settings, the application will always act as that one specific person, regardless of who is actually browsing the site.
@@ -794,6 +802,48 @@ The beauty of your current "Authenticated User" setup is Identity Flow.
 
 
 ![setuser2](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/set_user2.png)
+
+
+1. The Role of Physical Path Credentials
+
+2. Why it Breaks the Double-Hop
+
+3. The "Pass-Through" Rule
+
+---
+
+1. The Role of Physical Path Credentials
+
+In the screenshot for your datashare virtual directory, the Physical Path Credentials (and the "Connect As" dialog) are designed to solve a specific problem: giving IIS a set of "keys" to open a folder when the service account doesn't have permissions.
+
+Usually, when you use a UNC path like \\vmhybrid01.lab.local\kerb_share, IIS needs to prove to the file server that it has permission to look inside.
+
+2. Why it Breaks the Double-Hop
+
+Even though you can set a specific user here, you must not do it for this project. Here is why:
+
+* Identity Hijacking: If you enter a specific user, IIS stops "acting as" imsdal. It starts acting as that hardcoded user only for that specific folder.
+
+* Kerberos Failure: Kerberos Constrained Delegation  relies on the original user's token being passed from the web server to the file share. If you hardcode credentials in IIS, the original token is thrown away and replaced by a local password-based session. This "kills" the Kerberos flow.
+
+* Security & Auditing: If you use a specific user, every single file accessed through the web app will look like it was opened by that one account in the Windows Security logs, rather than the actual person browsing the site.
+
+3. The "Pass-Through" Rule
+
+For your setup to work as seen in your successful test (where you saw file1.txt and file2.txt), this property must remain on the default:
+Application user (pass-through authentication).
+
+When to use Pass-Through:
+
+* When you want Kerberos Delegation to work.
+
+* When you want the file server to see the actual user's name in the logs.
+
+* When you want the folder's NTFS permissions to be checked against the person visiting the website.
+
+***When to use a Specific User***:
+
+Only in simple environments where you don't use Kerberos and just need a "service account" to grab files for everyone regardless of who they are.
 
 ## Add alias TODO
 
