@@ -690,6 +690,10 @@ Expected Outcome:
 
 ![vmap2203](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/vmap2203.png)
 
+The fact that Current Thread Identity shows LAB\imsdal while the browser lists file1.txt and file2.txt from a UNC share proves that your delegation for the cifs service is functioning perfectly.
+
+
+
 Summary of Steps Taken
 
 | Action	       | Purpose |
@@ -702,6 +706,47 @@ Summary of Steps Taken
 Note!! Cifs was added to delgation in an earlier step.
 
 ![cifs](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/cifs_on.png)
+
+## This is your "Master Blueprint" for when you need to do this again.
+
+🔵 Phase 1: Active Directory (The Foundation)
+
+* Service Account: Created f_iis_kerb.
+
+* Encryption: Enabled AES 128/256 on the account properties.
+
+* SPNs: Registered HTTP/vmhybrid01.lab.local and HTTP/vmhybrid01.lab.local:8080 to the user account.
+
+* Delegation: Configured Constrained Delegation for the cifs service on vmhybrid01.lab.local.
+
+🔵 Phase 2: File System (The Target)
+
+* Physical Folder: Created C:\kerb_share.
+
+* Windows Share: Created the share \\vmhybrid01.lab.local\kerb_share.
+
+* Permissions: Granted Read access to the end-user (imsdal) on both the Share and NTFS levels.
+
+🔵 Phase 3: IIS Configuration (The Engine)
+
+* App Pool: Running as LAB\f_iis_kerb with Load User Profile = True.
+
+* Windows Auth: Enabled, with Negotiate as the primary provider.
+
+* Kernel Mode: Disabled (Required when using a custom service account).
+
+* useAppPoolCredentials: Set to True in the Configuration Editor.
+
+* ASP.NET Impersonation: Enabled at the IIS level to automate the identity swap.
+
+* Validation Bypass: Set validateIntegratedModeConfiguration to False to allow Impersonation in Integrated Mode.
+
+🔵 Phase 4: IIS Virtual Directory (The Bridge)
+
+* Alias: Created datashare pointing to the UNC path \\vmhybrid01.lab.local\kerb_share.
+
+* Pass-through: Set to use Application User (allowing the delegated Kerberos token to pass through to the file system).
+
 
 ## Add alias TODO
 
