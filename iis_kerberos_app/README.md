@@ -928,3 +928,27 @@ Registered ServicePrincipalNames for CN=IIS Kerberos Service,CN=Users,DC=lab,DC=
 * Click OK and then Close.
 
 ![alias_iis](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/alias_iis.png)
+
+4. Client Verification (klist)
+
+
+Now, let's head over to your client machine (vmap2203) to see the ticket in action.
+
+* Clear old tickets: 
+
+```cmd
+klist purge
+```
+
+* Add to Intranet Zone: Ensure http://kerberosapp.lab.local is added to the Local Intranet zone in Internet Options.
+
+![vmap2203_intranet](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/vm2203_intranet.png)
+
+* Browse the site: Navigate to http://kerberosapp.lab.local:8080.
+
+* Check the Ticket:
+
+```cmd
+klist
+
+```
