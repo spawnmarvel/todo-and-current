@@ -1054,3 +1054,13 @@ The Canonicalization "fail" usually happens when a client resolves an alias to a
 ## The "Literal Name" Problem
 
 If you cannot add the HTTP/kerberosapp SPN, Mac computers will likely fail to use Kerberos.
+
+Unlike Windows, which often "flattens" an alias to the real hostname (vmhybrid01), macOS is much more literal. When a Mac user types http://kerberosapp.lab.local into their browser, the OS looks for a ticket matching that exact name.
+
+* If that SPN doesn't exist in Active Directory:
+
+* The Domain Controller looks for HTTP/kerberosapp and finds nothing.
+
+* It returns an error to the Mac (usually KDC_ERR_S_PRINCIPAL_UNKNOWN).
+
+* The Mac cannot generate a Kerberos token for the web server.
