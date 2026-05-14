@@ -752,13 +752,45 @@ Note!! Cifs was added to delgation in an earlier step.
 
 ![setuser](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/set_user.png)
 
-The Short Answer
+1. The Short Answer
+
 Technically, yes, you can configure a specific user in the IIS settings for ASP.NET Impersonation. However, doing so breaks the Kerberos Double-Hop you just built.
 
 If you hardcode a specific user (like LAB\admin) in the IIS settings, the application will always act as that one specific person, regardless of who is actually browsing the site.
 
+2. The "Why" (Technical Breakdown)
 
+The Token Limitation
 
+Kerberos delegation relies on a Service Ticket that contains a "delegation flag." When imsdal logs into your site, IIS receives a token that says, "I am imsdal, and I give f_iis_kerb permission to act on my behalf for CIFS." If you change the setting to a Specific User:
+
+* IIS throws away the browser's Kerberos token.
+
+* IIS creates a fresh local token for the hardcoded user using a password stored in the IIS configuration.
+
+* Because this new token was created locally by IIS (and not via a Kerberos KDC request from the actual user), it does not have the delegation flags required to perform a "Second Hop" to a remote share.
+
+Virtual Directory (datashare) Context
+
+* If you set a specific user on the datashare virtual directory specifically:
+
+* The web app will run as imsdal.
+
+* As soon as it tries to enter the /datashare folder, IIS will try to swap the identity to your specific user.
+
+* This usually results in a 401 Unauthorized or a login prompt because the transition between a delegated Kerberos identity and a hardcoded "Connect As" identity is cryptographically incompatible in Integrated Pipeline mode.
+
+3. Implications for Kerberos Delegation
+
+The beauty of your current "Authenticated User" setup is Identity Flow.
+
+1. Auditing: If 10 different users access the share, the Windows File Server logs show 10 different names. If you use a "Specific User," the logs will only ever show that one account, making it impossible to know who actually deleted or viewed a file.
+
+2. Security: Using a "Specific User" requires storing that user's password in the IIS configuration (or a web.config). This is a security risk.
+
+3. Permissions: You would have to give that "Specific User" NTFS rights to everything, rather than using the fine-grained permissions already assigned to individual users in Active Directory.
+
+***The Verdict: While IIS allows you to click the button and type a name, it essentially "kills" the Kerberos flow you worked so hard to set up.***
 
 ## Add alias TODO
 
