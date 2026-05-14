@@ -875,6 +875,38 @@ Step 4: Client Verification (klist)
 To wrap up this project with a custom alias, we need to ensure Active Directory knows that this new name belongs to the same f_iis_kerb service. Kerberos is extremely sensitive to names; if the browser goes to a name that doesn't have an SPN, it will immediately fail back to NTLM.
 
 
-Open DNS Manager on your Domain Controller.
+1. Open DNS Manager on your Domain Controller.
 
 ![alias](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/alias.png)
+
+```cmd
+>nslookup kerberosapp
+Server:  UnKnown
+Address:  ::1
+
+Name:    vmhybrid01.lab.local
+Address:  192.168.3.7
+Aliases:  kerberosapp.lab.local
+```
+
+2. Register the New SPNs
+
+```cmd
+setspn -S HTTP/kerberosapp.lab.local f_iis_kerb
+setspn -S HTTP/kerberosapp f_iis_kerb
+setspn -S HTTP/kerberosapp.lab.local:8080 f_iis_kerb
+setspn -S HTTP/kerberosapp:8080 f_iis_kerb
+
+setspn -L f_iis_kerb
+Registered ServicePrincipalNames for CN=IIS Kerberos Service,CN=Users,DC=lab,DC=local:
+        HTTP/kerberosapp:8080
+        HTTP/kerberosapp.lab.local:8080
+        HTTP/kerberosapp
+        HTTP/kerberosapp.lab.local
+        HTTP/vmhybrid01:8080
+        HTTP/vmhybrid01.lab.local:8080
+        HTTP/vmhybrid01.lab.local
+        HTTP/vmhybrid01
+        
+```
+
