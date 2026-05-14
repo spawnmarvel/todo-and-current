@@ -956,7 +956,97 @@ klist purge
 
 ![vmap2203_alias](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/vmap2203_alias.png)
 
+Looking at your latest output in image, the test is a complete success. Even though you are browsing to the alias kerberosapp.lab.local, you are seeing the ticket for the canonical host.
 
 
+Here is the breakdown of what your klist shows:
+
+* Client: imsdal @ LAB.LOCAL (The correct end-user).
+
+* Server: HTTP/vmhybrid01.lab.local @ LAB.LOCAL.
+
+* Encryption: AES-256-CTS-HMAC-SHA1-96 (The highest security level).
+
+Understanding Ticket Resolution
+
+### Windows feature called Canonicalization
+
+You might notice that the ticket name in klist shows vmhybrid01 instead of kerberosapp. This happens because of a Windows feature called Canonicalization:
+
+1. Your browser asks DNS for kerberosapp.lab.local.
+
+2. DNS returns the IP 192.168.3.7.
+
+3. Windows does a "reverse lookup" or checks the A-record and finds that the primary name for that IP is vmhybrid01.lab.local.
+
+4. It requests the ticket for the Canonical Name (vmhybrid01) instead of the alias.
+
+5. Because you have registered both sets of SPNs on the f_iis_kerb account (as seen in your setspn -L output), Kerberos remains happy and issues the ticket successfully.
 
 
+Your lab is now fully verified and operational using a custom DNS alias! You have successfully configured:
+
+* A-Record for name resolution.
+
+* SPNs for service identification.
+
+* Constrained Delegation for the second hop.
+
+* IIS Impersonation for identity flow.
+
+ps1 script
+
+```ps1
+--- Authentication Results ---
+URL: http://kerberosapp.lab.local:8080
+Result: SUCCESS (Kerberos detected)
+Token Start: Negotiate oYG2M...
+
+```
+
+The result explicitly states "SUCCESS (Kerberos detected)", but the most technical proof is the Token Start string: Negotiate oYG2M....
+
+
+The "Negotiate" Handshake
+
+In Windows infrastructure, "Negotiate" is a container that tries to use Kerberos first and only falls back to NTLM if Kerberos fails. You can identify which one was used by the base64 string that follows:
+
+* oY... (Your Result): This is the magic prefix for a GSS-API Kerberos token. Whenever you see a token starting with oY, you can be 100% certain it is Kerberos.
+* That’s a **base64-encoded Kerberos token** being sent by the client to IIS.
+
+* Tl... (NTLM): If the token started with TlRMTVNT..., that would indicate a fallback to NTLM.
+
+### Canonicalization MAC
+
+On a Mac, the behavior is slightly different because macOS uses a different Kerberos implementation (Heimdal or MIT) compared to Windows (MS-LSA).
+
+If you are on a Mac and browse to http://kerberosapp.lab.local:8080, your success depends on whether the Mac "flattens" the name or sends the ticket for the literal name you typed.
+
+
+1. The "Canonicalization" Difference
+
+
+* Windows: Sees kerberosapp -> Resolves to IP -> Resolves IP to vmhybrid01 -> Requests ticket for HTTP/vmhybrid01.
+
+* macOS: Sees kerberosapp -> Requests ticket for HTTP/kerberosapp.
+
+
+2. Will Kerberos fail on Mac?
+
+It will not fail, provided you have done your homework in Active Directory. Because you already registered the alias SPNs earlier:
+
+* HTTP/kerberosapp
+
+* HTTP/kerberosapp.lab.local
+
+3. The Solution for Mac Clients
+
+To ensure a smooth experience on a Mac, you must check three things:
+
+* DNS A-Record: As you discovered, an A-Record is better than a CNAME for Mac clients to avoid confusing the SPNEGO handshake.
+
+* Domain Suffix: Ensure the Mac's search domain is set to lab.local in Network Settings.
+
+* SPN Coverage: You must have the SPN for the alias registered on the service account. (You already confirmed this is done).
+
+The Canonicalization "fail" usually happens when a client resolves an alias to a host that has no SPNs. Since you have registered both the host and the alias SPNs on f_iis_kerb, your "Double-Hop" is now cross-platform compatible. It will work on Windows, Mac, and even Linux clients.
