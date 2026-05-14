@@ -879,6 +879,8 @@ To wrap up this project with a custom alias, we need to ensure Active Directory 
 
 ![alias](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/alias.png)
 
+Check it
+
 ```cmd
 >nslookup kerberosapp
 Server:  UnKnown
@@ -903,7 +905,7 @@ Registered ServicePrincipalNames for CN=IIS Kerberos Service,CN=Users,DC=lab,DC=
         HTTP/kerberosapp.lab.local:8080
         HTTP/kerberosapp
         HTTP/kerberosapp.lab.local
-        
+
         HTTP/vmhybrid01:8080
         HTTP/vmhybrid01.lab.local:8080
         HTTP/vmhybrid01.lab.local
@@ -911,3 +913,18 @@ Registered ServicePrincipalNames for CN=IIS Kerberos Service,CN=Users,DC=lab,DC=
 
 ```
 
+3. Update IIS Bindings
+
+* Open IIS Manager > Sites > KerberosTest.
+
+* In the right-hand Actions pane, click Bindings....
+
+* Click Add....
+
+* Type: http, Port: 8080, Host name: kerberosapp.lab.local.
+
+* (Optional) Add another for the short name kerberosapp on port 8080.
+
+* Click OK and then Close.
+
+![alias_iis](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/alias_iis.png)
