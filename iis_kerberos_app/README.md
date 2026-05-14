@@ -879,7 +879,7 @@ To wrap up this project with a custom alias, we need to ensure Active Directory 
 
 If you want to force the ticket to show HTTP/kerberosapp.lab.local, you usually have to use an A Record instead of a CNAME in DNS.
 
-![alias2](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/alias2_a.png)
+![alias3](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/alias3_a.png)
 
 Check it
 
