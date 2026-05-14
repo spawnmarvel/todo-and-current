@@ -889,7 +889,7 @@ A record
 Check it
 
 ```cmd
->nslookup kerberosapp
+nslookup kerberosapp.lab.local
 Server:  UnKnown
 Address:  ::1
 
@@ -952,9 +952,11 @@ klist purge
 
 * Browse the site: Navigate to http://kerberosapp.lab.local:8080.
 
-* Check the Ticket:
+* Check the result.
 
-```cmd
-klist
+![vmap2203_alias](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/vmap2203_alias.png)
 
-```
+
+
+
+
