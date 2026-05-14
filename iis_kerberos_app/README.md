@@ -518,17 +518,64 @@ Delegation (The "Double Hop"):
 
 You've built a rock-solid, production-grade authentication flow. Are there any other backend services you're planning to connect to this app, or is this lab complete?
 
-## Read files on remote share TODO
+## Read files on remote share
 
-* Update the default.aspx files to also list all files in share
+1. Windows File Share Creation
 
-* f_iise_kerb read, write on share
+* On vmhybrid01, right-click C:\kerb_share and select Properties.
 
-* impersonation IIS
+* Go to the Sharing tab and click Advanced Sharing.
 
-* Map IIS with a virtual share
+* Check Share this folder.
 
-* cifs was added to delgation earlier
+* Share name: Ensure it is kerb_share.
+
+* Click Permissions:
+
+* Add LAB\imsdal (or "Domain Users") and grant Read.
+
+* Add LAB\f_iis_kerb and grant Read.
+
+Click OK on all windows.
+
+2. IIS Virtual Directory Mapping
+
+* Open IIS Manager and expand Sites > KerberosTest.
+
+* Right-click KerberosTest and select Add Virtual Directory...
+
+* Alias: datashare.
+
+* Physical Path: \\vmhybrid01.lab.local\kerb_share.
+
+* Click Connect as...: Ensure Application user (pass-through authentication) is selected.
+
+Click OK.
+
+![fileshare_set1](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/fileshare_set1.png)
+
+3. IIS Authentication & Impersonation Configuration
+
+This is where we enable the automatic "identity swap" at the server level.
+
+* Select the KerberosTest site in IIS Manager.
+
+* Double-click Authentication.  
+
+* ASP.NET Impersonation: Right-click and select Enable.  
+
+* Impersonation Settings: While highlighted, click Edit... in the right-hand panel. Select Authenticated User and click OK.  
+
+* Windows Authentication: Must remain Enabled.  
+
+* Kernel Mode: Right-click Windows Authentication > Advanced Settings. Ensure Enable Kernel-mode authentication is Unchecked.
+
+4. Application Code Update
+
+5. Final Verification
+
+
+Cifs was added to delgation earlier.
 
 ![cifs](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/cifs_on.png)
 
