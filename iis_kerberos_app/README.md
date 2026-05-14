@@ -750,7 +750,7 @@ Note!! Cifs was added to delgation in an earlier step.
 ## Two questions
 
 
-![setuser](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/setuser.png)
+![setuser](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/set_user.png)
 
 The Short Answer
 Technically, yes, you can configure a specific user in the IIS settings for ASP.NET Impersonation. However, doing so breaks the Kerberos Double-Hop you just built.
