@@ -747,6 +747,18 @@ Note!! Cifs was added to delgation in an earlier step.
 
 * Pass-through: Set to use Application User (allowing the delegated Kerberos token to pass through to the file system).
 
+## Two questions
+
+
+![setuser](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/setuser.png)
+
+The Short Answer
+Technically, yes, you can configure a specific user in the IIS settings for ASP.NET Impersonation. However, doing so breaks the Kerberos Double-Hop you just built.
+
+If you hardcode a specific user (like LAB\admin) in the IIS settings, the application will always act as that one specific person, regardless of who is actually browsing the site.
+
+
+
 
 ## Add alias TODO
 
