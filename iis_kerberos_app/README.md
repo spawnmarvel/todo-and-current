@@ -690,6 +690,8 @@ Expected Outcome:
 
 ![vmap2203](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/vmap2203.png)
 
+Summary of Steps Taken
+
 | Action	       | Purpose |
 | ---------------------| -------- |
 | Share Folder	       | Creates the network entry point for cifs delegation.|
