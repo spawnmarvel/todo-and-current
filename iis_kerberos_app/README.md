@@ -792,6 +792,9 @@ The beauty of your current "Authenticated User" setup is Identity Flow.
 
 ***The Verdict: While IIS allows you to click the button and type a name, it essentially "kills" the Kerberos flow you worked so hard to set up.***
 
+
+![setuser2](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/set_user2.png)
+
 ## Add alias TODO
 
 Add alias after cifs is success:
