@@ -629,6 +629,12 @@ The web.config seesm to have been autocreated when we configured impersonation.
 
 5. Final Verification
 
+* IIS Reset: Run iisreset in an admin command prompt to ensure the new configuration is loaded.  
+
+* Remote Test: Open the site from vmap2203.
+
+* Check: The Current Thread Identity should now be LAB\imsdal, and the files in the share should be listed.
+
 
 Cifs was added to delgation earlier.
 
