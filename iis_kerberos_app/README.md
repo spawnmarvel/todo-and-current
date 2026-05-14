@@ -903,10 +903,11 @@ Registered ServicePrincipalNames for CN=IIS Kerberos Service,CN=Users,DC=lab,DC=
         HTTP/kerberosapp.lab.local:8080
         HTTP/kerberosapp
         HTTP/kerberosapp.lab.local
+        
         HTTP/vmhybrid01:8080
         HTTP/vmhybrid01.lab.local:8080
         HTTP/vmhybrid01.lab.local
         HTTP/vmhybrid01
-        
+
 ```
 
