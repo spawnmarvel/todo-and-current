@@ -1050,3 +1050,7 @@ To ensure a smooth experience on a Mac, you must check three things:
 * SPN Coverage: You must have the SPN for the alias registered on the service account. (You already confirmed this is done).
 
 The Canonicalization "fail" usually happens when a client resolves an alias to a host that has no SPNs. Since you have registered both the host and the alias SPNs on f_iis_kerb, your "Double-Hop" is now cross-platform compatible. It will work on Windows, Mac, and even Linux clients.
+
+## The "Literal Name" Problem
+
+If you cannot add the HTTP/kerberosapp SPN, Mac computers will likely fail to use Kerberos.
