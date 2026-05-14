@@ -570,6 +570,9 @@ This is where we enable the automatic "identity swap" at the server level.
 
 * Kernel Mode: Right-click Windows Authentication > Advanced Settings. Ensure Enable Kernel-mode authentication is Unchecked.
 
+
+![fileshare_set2](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/fileshare_set2.png)
+
 4. Application Code Update
 
 5. Final Verification
