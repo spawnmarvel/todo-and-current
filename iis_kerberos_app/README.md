@@ -3,6 +3,12 @@
 
 To set up a Kerberos-authenticated IIS application, you need to coordinate the Active Directory service account, the IIS configuration, and the application code
 
+* This is Constrained Delegation
+* Using Kerberos Constrained Delegation (KCD) with Protocol Transition.
+
+Constrained (This Setup): The server can only act as the user for specific services listed in the box (e.g., cifs/vmhybrid01.lab.local)
+
+It is not, Unconstrained: The server can act as the user to any service on the network (very insecure).
 
 ![success_no_alias](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/succes_no_alias.png)
 
