@@ -948,7 +948,7 @@ klist purge
 
 * Add to Intranet Zone: Ensure http://kerberosapp.lab.local is added to the Local Intranet zone in Internet Options.
 
-![vmap2203_intranet](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/vm2203_intranet.png)
+![vmap2203_intranet](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/vmap2203_intranet.png)
 
 * Browse the site: Navigate to http://kerberosapp.lab.local:8080.
 
