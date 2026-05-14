@@ -855,8 +855,18 @@ When to use Pass-Through:
 
 Only in simple environments where you don't use Kerberos and just need a "service account" to grab files for everyone regardless of who they are.
 
-## Add alias TODO
+## Add alias
 
-Add alias after cifs is success:
+Add alias after cifs is success, it is succees.
 
-* app01.lab.local
+* kerberosapp.lab.local
+
+
+Step 1: Create the DNS CNAME Alias
+
+Step 2: Register the New SPNs
+
+Step 3: Update IIS Bindings
+
+Step 4: Client Verification (klist)
+
