@@ -4,7 +4,7 @@
 To set up a Kerberos-authenticated IIS application, you need to coordinate the Active Directory service account, the IIS configuration, and the application code
 
 
-![success_no_alias](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/success_ni_alias.png)
+![success_no_alias](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/success_no_alias.png)
 
 
 ## 1. The ASPX Web Application
