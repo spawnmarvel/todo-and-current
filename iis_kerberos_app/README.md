@@ -518,7 +518,7 @@ Delegation (The "Double Hop"):
 
 You've built a rock-solid, production-grade authentication flow. Are there any other backend services you're planning to connect to this app, or is this lab complete?
 
-## Read files on remote share
+## Read files on share
 
 1. Windows File Share Creation
 
@@ -668,16 +668,29 @@ system.webServer/validation
 
 ![vmhybrid01_ok](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/vmhybrid01_ok.png)
 
+### Read file on share from remote vmap2203
+
+
+
 * Remote Test: Open the site from vmap2203.
 
 ```cmd
 klist purge
 ```
 
-* Check: The Current Thread Identity should now be LAB\imsdal, and the files in the share should be listed.
+Expected Outcome:
 
+* The 500.24 error is gone.
 
-Cifs was added to delgation earlier.
+* User Identity: LAB\imsdal
+
+* Current Thread Identity: LAB\imsdal (This confirms IIS-level impersonation is working).
+
+* File List: Should show the files inside the share.
+
+![vmap2203](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/vmap2203.png)
+
+Note!! Cifs was added to delgation in an earlier step.
 
 ![cifs](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/cifs_on.png)
 
