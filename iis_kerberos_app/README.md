@@ -881,6 +881,11 @@ If you want to force the ticket to show HTTP/kerberosapp.lab.local, you usually 
 
 ![alias3](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/alias3_a.png)
 
+A record
+
+![a_record](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/a_record.png)
+
+
 Check it
 
 ```cmd
@@ -888,9 +893,8 @@ Check it
 Server:  UnKnown
 Address:  ::1
 
-Name:    vmhybrid01.lab.local
+Name:    kerberosapp.lab.local
 Address:  192.168.3.7
-Aliases:  kerberosapp.lab.local
 ```
 
 2. Register the New SPNs
