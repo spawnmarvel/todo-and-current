@@ -629,9 +629,50 @@ The web.config seesm to have been autocreated when we configured impersonation.
 
 5. Final Verification
 
-* IIS Reset: Run iisreset in an admin command prompt to ensure the new configuration is loaded.  
+* IIS Reset vmhybrid01: Run iisreset in an admin command prompt to ensure the new configuration is loaded.  
+
+* http://vmhybrid01.lab.local:8080/
+
+```log
+IIS 10.0 Detailed Error - 500.24 - Internal Server Error on vmhybrid01 and vmap2203: HTTP Error 500.24 - Internal Server Error
+
+An ASP.NET setting has been detected that does not apply in Integrated managed pipeline mode.
+
+Most likely causes:
+
+system.web/identity@impersonate is set to true.
+```
+
+This error occurs because IIS Integrated Pipeline Mode (the modern default) does not like it when impersonate="true" is set in the configuration while other validation checks are active. Since we want to keep the modern Integrated mode and keep impersonation active at the IIS level, we need to tell IIS to bypass this specific configuration check.
+
+Via Configuration Editor (Recommended):
+
+* Open IIS Manager and select your site KerberosTest.
+
+* Double-click Configuration Editor.
+
+* In the Section dropdown at the top, navigate to:
+system.webServer/validation
+
+* Find validateIntegratedModeConfiguration and set it to False.
+
+* Click Apply in the right-hand panel.
+
+![false](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/false.png)
+
+
+* IIS Reset vmhybrid01: Run iisreset in an admin command prompt to ensure the new configuration is loaded.  
+
+* http://vmhybrid01.lab.local:8080/
+
+
+![vmhybrid01_ok](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/vmhybrid01_ok.png)
 
 * Remote Test: Open the site from vmap2203.
+
+```cmd
+klist purge
+```
 
 * Check: The Current Thread Identity should now be LAB\imsdal, and the files in the share should be listed.
 
