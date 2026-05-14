@@ -575,6 +575,58 @@ This is where we enable the automatic "identity swap" at the server level.
 
 4. Application Code Update
 
+Update your default.aspx with this simplified version. Since IIS is handling impersonation, the thread already carries the user's identity.
+
+```cs
+<%-- Version 1.0.5 --%>
+<%-- Short: Lists files using IIS-level Impersonation and UNC path --%>
+<%@ Page Language="C#" %>
+<%@ Import Namespace="System.IO" %>
+<%@ Import Namespace="System.Security.Principal" %>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kerberos Double-Hop Test</title>
+</head>
+<body>
+    <h2>Authentication Details</h2>
+    <p><b>User Identity:</b> <%= User.Identity.Name %></p>
+    <p><b>Auth Type:</b> <%= User.Identity.AuthenticationType %></p>
+    <p><b>Current Thread Identity:</b> <%= WindowsIdentity.GetCurrent().Name %></p>
+
+    <hr />
+
+    <h2>File Share Contents</h2>
+    <ul>
+    <%
+        // We use the UNC path to trigger the Kerberos CIFS delegation
+        string sharePath = @"\\vmhybrid01.lab.local\kerb_share"; 
+        
+        try {
+            if (Directory.Exists(sharePath)) {
+                string[] files = Directory.GetFiles(sharePath);
+                foreach (string file in files) {
+                    Response.Write("<li>" + Path.GetFileName(file) + "</li>");
+                }
+                if (files.Length == 0) Response.Write("<li>Share is empty.</li>");
+            } else {
+                Response.Write("<li style='color:red;'>Path unreachable: " + sharePath + "</li>");
+            }
+        }
+        catch (Exception ex) {
+            Response.Write("<p style='color:red;'>Access Error: " + ex.Message + "</p>");
+        }
+    %>
+    </ul>
+</body>
+</html>
+```
+
+The web.config seesm to have been autocreated when we configured impersonation.
+
+![web_config](https://github.com/spawnmarvel/todo-and-current/blob/main/iis_kerberos_app/images/web_config.png)
+
 5. Final Verification
 
 
