@@ -1412,6 +1412,7 @@ ls -lah
 
 # 2. The "Health Check" (Is the server okay?)
 top -d 5
+# top , -n 1 (1 time, a snapshot), -b raw clean text 
 top -n 1 -b | head -n 20 | tee cpu_usage.tx
 # append it
 top -n 1 -b | head -n 20 | tee -a cpu_usage.txt
