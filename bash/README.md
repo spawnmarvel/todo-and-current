@@ -1391,32 +1391,11 @@ In Linux, the **"everything is a file"** philosophy means that nearly all system
 
 Think of this like a "warm-up" for a sysadmin. Every time you open your terminal, run through these four categories. Don't just read them—type them!
 In a real sysadmin job, 90% of your day starts with: 
+
 * Where is the problem (tail)
 * which process is causing it (top)
 * and do we have space to fix it (df)?
 
-
-***You can use Git Bash on windows for super quick 5 min drill.*** 
-
-```bash
-pwd
-cd c:\RabbitmqBaseFolder
-ls -F
-ls -lah
-df -h | tee disk_report.txt
-
-cat disk_report.txt
-
-find . -name "*.conf"
-
-tail -n 20 log/rabbit\@BER-0803.log
-
-grep -i "jim" names.txt
-grep -i "admin22" log/rabbit\@BER-0803.log
-grep -i "failed" log/rabbit\@BER-0803.log | tail -n 10
-grep -i "failed" log/rabbit\@BER-0803.log | tail -n 10 | tee failed_report_rabbit.txt
-cat failed_report_rabbit.txt
-```
 
 --- 
 ***Ubuntu.⭐***
@@ -1530,4 +1509,26 @@ sudo chown imsdal file.txt
 ls -l script.sh
 # -rwxr-xr-x 1 imsdal root 16 May 10 17:32 script.sh
 
+```
+
+***You can use Git Bash on windows for super quick 5 min drill.*** 
+
+```bash
+pwd
+cd c:\RabbitmqBaseFolder
+ls -F
+ls -lah
+df -h | tee disk_report.txt
+
+cat disk_report.txt
+
+find . -name "*.conf"
+
+tail -n 20 log/rabbit\@BER-0803.log
+
+grep -i "jim" names.txt
+grep -i "admin22" log/rabbit\@BER-0803.log
+grep -i "failed" log/rabbit\@BER-0803.log | tail -n 10
+grep -i "failed" log/rabbit\@BER-0803.log | tail -n 10 | tee failed_report_rabbit.txt
+cat failed_report_rabbit.txt
 ```
