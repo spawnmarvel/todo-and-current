@@ -1,4 +1,4 @@
-# Version 1.0.3
+# Version 1.0.5
 # This script verifies if a URL is using Kerberos (Negotiate) or NTLM authentication by inspecting response headers and exceptions.
 
 $url = "http://name.example.com"
@@ -21,11 +21,11 @@ try {
         Write-Host "Result: SUCCESS (Kerberos detected)"
         Write-Host "Token Start: $($authHeader.Substring(0, 15))..."
     } 
-    elif ($authHeader -and ($authHeader -match "Negotiate\s+TlRMTV" -or $authHeader -match "NTLM")) {
+    elseif ($authHeader -and ($authHeader -match "Negotiate\s+TlRMTV" -or $authHeader -match "NTLM")) {
         Write-Host "Result: FALLBACK (NTLM detected)"
         Write-Host "Reason: The header or token prefix indicates NTLM is being used."
     }
-    elif ($null -eq $authHeader) {
+    elseif ($null -eq $authHeader) {
         # If the page loaded successfully but headers are stripped, look at connection flags if available
         Write-Host "Result: SUCCESS (Authenticated)"
         Write-Host "Note: Connection established successfully using default credentials."
@@ -49,7 +49,7 @@ try {
         if ($rawChallenge -match "Negotiate\s+(YII|oYG|oXQ)") {
             Write-Host "Protocol: Kerberos (Negotiate) token detected in the 401 challenge."
         }
-        elif ($rawChallenge -match "Negotiate\s+TlRMTV" -or $rawChallenge -match "NTLM") {
+        elseif ($rawChallenge -match "Negotiate\s+TlRMTV" -or $rawChallenge -match "NTLM") {
             Write-Host "Protocol: NTLM detected in the 401 challenge."
         }
         else {
