@@ -1440,6 +1440,12 @@ df -h | tee disk_report.txt
 # list block devices
 lsblk
 
+# file space usage for current folder
+du -sh .
+# file space usage for files in current folder.
+du -sh *
+
+
 uptime
 
 # 3. The "Detective" (Finding things)
