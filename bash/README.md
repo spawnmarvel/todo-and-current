@@ -1411,6 +1411,11 @@ ls -F
 ls -lah
 
 # 2. The "Health Check" (Is the server okay?)
+
+# display free and used memory
+free -h
+
+# display processes
 top -d 5
 # top , -n 1 (1 time, a snapshot), -b raw clean text
 top -n 1 -b | head -n 20
@@ -1428,8 +1433,13 @@ systemctl status 987 # the PID you want to check from top
 htop -d 50
 # tab toggle Main / IO
 
+# system space usage
 df -h
 df -h | tee disk_report.txt
+
+# list block devices
+lsblk
+
 uptime
 
 # 3. The "Detective" (Finding things)
