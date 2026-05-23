@@ -1437,7 +1437,7 @@ sudo grep "error" /var/log/zabbix/zabbix_server.log
 # last 10
 sudo grep "error" /var/log/zabbix/zabbix_server.log | tail -n 10
 # tee 4ever
-sudo grep "error" /var/log/zabbix/zabbix_server.log | tail -n 10 | error_report_zabbix.txt 
+sudo grep "error" /var/log/zabbix/zabbix_server.log | tail -n 10 | tee error_report_zabbix.txt 
 #  -i, --ignore-case
 sudo grep -i "error" /var/log/syslog | tee error_report.txt
 cat error_report.txt
