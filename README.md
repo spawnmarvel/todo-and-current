@@ -417,7 +417,7 @@ Study plan:
 
 
 **In Progress:**
-- 📚 MS Learn Active Directory Domain Services [Azure learn github] (https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-ad-ds-windows-server-hybrid-core-infrastructure/README_cloud-only-hybrid-Lab_3_mslearn-ad_arc.md)
+- 📚 MS Learn Active Directory Domain Services [Azure learn github](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-ad-ds-windows-server-hybrid-core-infrastructure/README_cloud-only-hybrid-Lab_3_mslearn-ad_arc.md)
 - 📚 MS Learn Azure Arc
 - 📚 MS Learn Azure File Sync
 
@@ -435,9 +435,8 @@ Study plan:
 
 
 **Study Plan:**
-- Complete all MS Learn modules
-- Study guide: [Azure AD DS & Hybrid Infrastructure](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-ad-ds-windows-server-hybrid-core-infrastructure)
-- Schedule exam for June 2026
+- Complete all MS Learn modulese
+- Build the home lab with AD DS
 
 
 ---
