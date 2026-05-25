@@ -397,7 +397,7 @@ wget
 **In Progress:**
 - 📚 Linux by Zabbix agent active and Zabbix Agent 2 built-in native functions
 - 📚 Windows and linux log monitoring, keywords
-- 📚 Ai 20h course
+- 📚 Ai 20h course [Ai 20h course] (https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm/zabbix_monitor_vms_snmp_default#ai-20h-course)
 
 **Completed:**
 - ✅ Installed new stack (Zabbix 7 LTS, dpkg MySql 8.4) and a new vnet in swden central peerd to DNS net 
@@ -417,7 +417,7 @@ Study plan:
 
 
 **In Progress:**
-- 📚 MS Learn Active Directory Domain Services
+- 📚 MS Learn Active Directory Domain Services [Azure learn github] (https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-ad-ds-windows-server-hybrid-core-infrastructure/README_cloud-only-hybrid-Lab_3_mslearn-ad_arc.md)
 - 📚 MS Learn Group Policy
 - 📚 MS Learn Azure Arc
 - 📚 MS Learn Azure File Sync
@@ -428,7 +428,7 @@ Study plan:
 - ✅ Cloud-Only Hybrid Lab completed (100%)
 - ✅ Port proxy for inbound for vms in 172.16.0.0 (ps1)
 - ✅ Wingate www proxy service outbound for vms in 172.16.0.0, https://www.wingate.com/
-- ⭐ Wingate for linux [GOTO](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-ad-ds-windows-server-hybrid-core-infrastructure/README_cloud-only-hybrid-Lab_2_install-ad.md#extra-section-the-http-proxy-method-for-outbund-private-vms-apt)
+- ⭐ Wingate for linux [http proxy](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-ad-ds-windows-server-hybrid-core-infrastructure/README_cloud-only-hybrid-Lab_2_install-ad.md#extra-section-the-http-proxy-method-for-outbund-private-vms-apt)
 - ✅ Domain joined
 - ✅ dsa.msc, ad explorer
 - ✅ Simple aspx kerberos app with f key, then add cifs for share
