@@ -89,7 +89,7 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
 - [🔹 GitHub Copilot and Development](#github-copilot-and-development)
 - [🔹 Infrastructure Essentials Hybrid](#infrastructure-essentials-hybrid)
 - [🔹 Fast Linux VM Deployment IAC](#fast-linux-vm-deployment-iac)
-- [🔹 Current Priorities: TOP 3 but 1 at the time 20h](#current-priorities-top-3-but1-at-the-time-20h)
+- [🔹 Current Priorities: TOP 3 but 1 at the time 20h](#current-priorities-top-3-but-1-at-the-time-20h)
 - [🔹 Knowledge Maintenance Checklist](#knowledge-maintenance-checklist)
 - [🔹 Parked Projects or Completed Projects](#parked-projects-or-completed-projects)
 - [🔹 Learning Resources and References](#learning-resources-and-references)
