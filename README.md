@@ -394,22 +394,25 @@ wget
 
 ### 1. Zabbix default ⭐
 
-**Goal:** Set up log metric stack zabbix using trap and default
+**In Progress:**
 
-**Tasks:**
+
+**Completed:**
 - ✅ Installed new stack (Zabbix 7 LTS, dpkg MySql 8.4) and a new vnet in swden central peerd to DNS net 
 - ✅ Zabbix agent 2
-- Windows by Zabbix agent active and user param
-- Linux by Zabbix agent active and user param
+- Windows by Zabbix agent active and use Zabbix Agent 2 built-in native functions
+- Linux by Zabbix agent active and Zabbix Agent 2 built-in native functions
 - ✅ Linux by SNMP
-- Use time on default templates
+
+Study plan:
+
 - A project for maximizing all default monitoring and not write a single script.
 - Files [Zabbix monitor VM's and SNMP default](https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm/zabbix_monitor_vms_snmp_default)
 
 
 ---
 
-### Windows Server Hybrid Administrator (vmhybrid01) ⭐
+### 2. Windows Server Hybrid Administrator (vmhybrid01) ⭐
 
 Exam target: **AZ-802** (June 2026)
 
