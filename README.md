@@ -395,13 +395,12 @@ wget
 ### 1. Zabbix default ⭐
 
 **In Progress:**
-
+- 📚 Windows by Zabbix agent active and use Zabbix Agent 2 built-in native functions
+- 📚 Linux by Zabbix agent active and Zabbix Agent 2 built-in native functions
 
 **Completed:**
 - ✅ Installed new stack (Zabbix 7 LTS, dpkg MySql 8.4) and a new vnet in swden central peerd to DNS net 
 - ✅ Zabbix agent 2
-- Windows by Zabbix agent active and use Zabbix Agent 2 built-in native functions
-- Linux by Zabbix agent active and Zabbix Agent 2 built-in native functions
 - ✅ Linux by SNMP
 
 Study plan:
@@ -414,7 +413,12 @@ Study plan:
 
 ### 2. Windows Server Hybrid Administrator (vmhybrid01) ⭐
 
-Exam target: **AZ-802** (June 2026)
+
+**In Progress:**
+- 📚 MS Learn Active Directory Domain Services
+- 📚 MS Learn Group Policy
+- 📚 MS Learn Azure Arc
+- 📚 MS Learn Azure File Sync
 
 **Completed:**
 - ✅ vnet-uks-2-swc-peering,  192 to 172, 172 to 192
@@ -425,14 +429,8 @@ Exam target: **AZ-802** (June 2026)
 - ⭐ Wingate for linux [GOTO](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-ad-ds-windows-server-hybrid-core-infrastructure/README_cloud-only-hybrid-Lab_2_install-ad.md#extra-section-the-http-proxy-method-for-outbund-private-vms-apt)
 - ✅ Domain joined
 - ✅ dsa.msc, ad explorer
+- ✅ Simple aspx kerberos app with f key, then add cifs for share
 - 🔄 Check for updates on vmhybrid01
-
-**In Progress:**
-- 📚 MS Learn Active Directory Domain Services
-- 📚 MS Learn Group Policy
-- 📚 MS Learn Azure Arc
-- 📚 MS Learn Azure File Sync
-- 📚 Simple aspx kerberos app with f key, then add cifs for share
 
 
 **Study Plan:**
