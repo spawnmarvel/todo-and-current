@@ -89,7 +89,8 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
 - [🔹 GitHub Copilot and Development](#github-copilot-and-development)
 - [🔹 Infrastructure Essentials Hybrid](#infrastructure-essentials-hybrid)
 - [🔹 Fast Linux VM Deployment IAC](#fast-linux-vm-deployment-iac)
-- [🔹 Current Priorities: TOP 3 but 1 at the time 20h](#current-priorities-top-3-but-1-at-the-time-20h)
+- [🔹 Current Priorities: TOP 2 but 1 at the time 20h](#current-priorities-top-2-but-1-at-the-time-20h)
+- [🔹 Backlog](#backlog)
 - [🔹 Knowledge Maintenance Checklist](#knowledge-maintenance-checklist)
 - [🔹 Parked Projects or Completed Projects](#parked-projects-or-completed-projects)
 - [🔹 Learning Resources and References](#learning-resources-and-references)
@@ -384,17 +385,12 @@ wget
 ```
 ---
 
-## Current Priorities: TOP 3 but 1 at the time 20h
+## Current Priorities: TOP 2 but 1 at the time 20h
 
 #### Sys Admin Drill 5 min :apple:
 
  📚 [GOTO open new tab take 5 min](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/README.md#sys-admin-drill)
 
-#### AP22 Token Admin drill 5 min Cogent and script (tag) is configured  :apple:
-
-- Deny internet, no call home, mstsc from vmhybrid01,  Azure Update Manager ? (pre start, az update, post stop)
-- On 172.16.0.7 go over the AdministrationTools saved on desktop AdministrationTools.txt, set = done
----
 
 ### 1. Zabbix default ⭐
 
@@ -411,41 +407,9 @@ wget
 - Files [Zabbix monitor VM's and SNMP default](https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm/zabbix_monitor_vms_snmp_default)
 
 
-### 1.1 Grafana, Loki, and Alloy Agents and Zabbix default ⭐
-
-**Goal:** Set up log monitoring stack loki
-
-**Tasks:**
-- ✅ Install and configure Grafana
-- ✅ Configure Loki
-- Deploy Alloy agents across infrastructure
-- Monitor logs from all services
-- Mastering LogQL (The "Query Language")
-- Build main 3 dashboards
-- Files [Grafana, Loki and Alloy](https://github.com/spawnmarvel/todo-and-current/tree/main/grafana_loki_alloy)
-
 ---
 
-### 2. Octopus Deploy for Linux (CI/CD) ⭐
-
-**Setup:**
-- ✅ Use IAC Linux VM for fast deploy and remove to smoke test
-- Two projects: Windows & Linux
-- Focusing on Linux project now
-
-**Current Tasks:**
-- ✅ Diagnostics using normal Linux commands
-- Upload packages and variables (needs more time)
-- Install software (MySQL, etc.)
-- All Linux apps and day 2 operations
-
-**Guide:** [Octopus Linux Runbook Operations](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/README_octo_linux_runbook_operations.md)
-
-**Progress:** ![deploy123](https://github.com/spawnmarvel/todo-and-current/blob/main/images/deploy123.png)
-
----
-
-### 3. Windows Server Hybrid Administrator (vmhybrid01) ⭐
+### Windows Server Hybrid Administrator (vmhybrid01) ⭐
 
 Exam target: **AZ-802** (June 2026)
 
@@ -472,6 +436,49 @@ Exam target: **AZ-802** (June 2026)
 - Complete all MS Learn modules
 - Study guide: [Azure AD DS & Hybrid Infrastructure](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-ad-ds-windows-server-hybrid-core-infrastructure)
 - Schedule exam for June 2026
+
+
+---
+
+## Backlog
+
+
+### AP22 Token Admin drill 5 min Cogent and script (tag) is configured  :apple:
+
+- Deny internet, no call home, mstsc from vmhybrid01,  Azure Update Manager ? (pre start, az update, post stop)
+- On 172.16.0.7 go over the AdministrationTools saved on desktop AdministrationTools.txt, set = done
+
+
+### Grafana, Loki, and Alloy Agents and Zabbix default ⭐ (work use it)
+
+**Goal:** Set up log monitoring stack loki
+
+**Tasks:**
+- ✅ Install and configure Grafana
+- ✅ Configure Loki
+- Deploy Alloy agents across infrastructure
+- Monitor logs from all services
+- Mastering LogQL (The "Query Language")
+- Build main 3 dashboards
+- Files [Grafana, Loki and Alloy](https://github.com/spawnmarvel/todo-and-current/tree/main/grafana_loki_alloy)
+
+
+### Octopus Deploy for Linux (CI/CD) ⭐ (work use it)
+
+**Setup:**
+- ✅ Use IAC Linux VM for fast deploy and remove to smoke test
+- Two projects: Windows & Linux
+- Focusing on Linux project now
+
+**Current Tasks:**
+- ✅ Diagnostics using normal Linux commands
+- Upload packages and variables (needs more time)
+- Install software (MySQL, etc.)
+- All Linux apps and day 2 operations
+
+**Guide:** [Octopus Linux Runbook Operations](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/README_octo_linux_runbook_operations.md)
+
+**Progress:** ![deploy123](https://github.com/spawnmarvel/todo-and-current/blob/main/images/deploy123.png)
 
 ---
 
