@@ -395,13 +395,15 @@ wget
 ### 1. Zabbix default ⭐
 
 **In Progress:**
-- 📚 Windows by Zabbix agent active and use Zabbix Agent 2 built-in native functions
 - 📚 Linux by Zabbix agent active and Zabbix Agent 2 built-in native functions
+- 📚 Windows and linux log monitoring, keywords
+- 📚 Ai 20h course
 
 **Completed:**
 - ✅ Installed new stack (Zabbix 7 LTS, dpkg MySql 8.4) and a new vnet in swden central peerd to DNS net 
 - ✅ Zabbix agent 2
 - ✅ Linux by SNMP
+- ✅ Windows by Zabbix agent active and use Zabbix Agent 2 built-in native functions
 
 Study plan:
 
