@@ -29,7 +29,7 @@ After work and fun with no pressure: Linux, Azure, Octopus depoloy with linux, A
 
 PROMPT:
 
-"I need to learn topic fast. Build me a 20-hour plan focused on the 20% that drives 80% of results. Break it into 10 two-hour sessions with the best resources and a 15-minute review at the end of each."
+"I need to learn topic fast. Build me a 20-hour plan focused on the 20% that drives 80% of results. Break it into 20 one-hour sessions with the best resources and a 15-minute review at the end of each."
 
 ## 2. Create a CHEAT SHEET
 
