@@ -3,11 +3,11 @@
 ## Info & background
 
 
-Education
+Education:
 
 https://www4.uib.no/program/informasjonsvitskap-bachelor
 
-Cert
+Certs: 
 
 https://learn.microsoft.com/en-us/credentials/certifications/azure-administrator/?practice-assessment-type=certification
 
