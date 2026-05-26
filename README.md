@@ -387,9 +387,9 @@ wget
 
 ## Current Priorities: TOP 2 but 1 at the time 20h
 
-#### Sys Admin Drill 5 min :apple:
+* Sys Admin Drill 5 min :apple: [Open new tab](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/README.md#sys-admin-drill)
+* Use Octopus deploy for work and home
 
- 📚 [GOTO open new tab take 5 min](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/README.md#sys-admin-drill)
 
 
 ### 1. Zabbix default ⭐
