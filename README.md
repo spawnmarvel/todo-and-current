@@ -387,8 +387,8 @@ wget
 
 ## Current Priorities: TOP 2 but 1 at the time 20h
 
-* Sys Admin Drill 5 min :apple: [Open new tab](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/README.md#sys-admin-drill)
-* Use Octopus deploy for work and home
+* :apple: Sys admin drill 5 min [Open new tab](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/README.md#sys-admin-drill)
+* :apple: Octopus deploy for work and home
 
 
 
