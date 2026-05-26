@@ -404,6 +404,7 @@ wget
 - ✅ Zabbix agent 2
 - ✅ Linux by SNMP
 - ✅ Windows by Zabbix agent active and use Zabbix Agent 2 built-in native functions
+- ✅ [zabbix proxy](https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/README_stack_proxy_architecture.md)
 
 Study plan:
 
