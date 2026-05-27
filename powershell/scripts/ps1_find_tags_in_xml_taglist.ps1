@@ -37,6 +37,11 @@ $inputFile  = "C:\Users\lima\input_tags.txt"        # Your input tag list
 $xmlFile    = "C:\Users\lima\lima.Databridge.Connector.IO.WinService_TagList.xml"  # Your XML file
 $outputFile = "C:\Users\lima\matched_tags.txt"
 
+Write-Host "Files:"
+Write-Host (Get-Item $inputFile).Name 
+Write-Host (Get-Item $xmlFile).Name 
+Write-Host (Get-Item $outputFile).Name
+
 # Load XML
 [xml]$xmlContent = Get-Content $xmlFile
 
