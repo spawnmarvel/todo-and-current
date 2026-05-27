@@ -65,7 +65,7 @@ $output | Set-Content $outputFile
 Write-Host "Done! Matches written to $outputFile"
 Write-Host "Found: $foundCount of $($tags.Count) tags."
 if ($foundCount -eq $tags.Count) {
-    Write-Host "✅ All input tags were found!"
+    Write-Host "All input tags were found!"
 } else {
-    Write-Host "❌ Some tags were not found."
+    Write-Host "Some tags were not found."
 }
