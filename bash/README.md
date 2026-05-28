@@ -1411,7 +1411,7 @@ ls -ld /*/
 cd /usr/local/share/
 mkdir op
 sudo chmod 777 /usr/local/share/op
-# 7 (Owner)      7 (Group)     7 (Everyone Else)
+# 7 (Owner)      7 (Group)     5 (Everyone Else)
 
 # List files (adds a / to folders so you can tell them apart).
 ls -F
