@@ -1409,9 +1409,14 @@ ls -ld /*/
 
 # create a share so all can access.
 cd /usr/local/share/
+# Creating the folder op inside /usr/local/share is an excellent choice. It perfectly adheres to the Linux Filesystem Hierarchy Standard (FHS) for custom, shared system data.
 mkdir op
 sudo chmod 775 /usr/local/share/op
 # 7 (Owner)      7 (Group)     5 (Everyone Else)
+
+# on Debian and almost all other Linux distributions, users is a built-in, default system group
+# Changes the group to 'users' so normal team members can write to it
+sudo chown :users /usr/local/share/op
 
 # List files (adds a / to folders so you can tell them apart).
 ls -F
