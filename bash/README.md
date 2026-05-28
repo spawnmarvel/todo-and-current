@@ -1404,6 +1404,15 @@ In a real sysadmin job, 90% of your day starts with:
 # 1. The "Orientation" (Where am I?)
 pwd
 
+# list all folder after /
+ls -ld /*/
+
+# create a share so all can access.
+cd /usr/local/share/
+mkdir op
+sudo chmod 777 /usr/local/share/op
+# 7 (Owner)      7 (Group)     7 (Everyone Else)
+
 # List files (adds a / to folders so you can tell them apart).
 ls -F
 
