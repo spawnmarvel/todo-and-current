@@ -1415,7 +1415,8 @@ sudo chmod 775 /usr/local/share/op
 # 7 (Owner)      7 (Group)     5 (Everyone Else)
 
 # on Debian and almost all other Linux distributions, users is a built-in, default system group
-# Changes the group to 'users' so normal team members can write to it
+# Because you ran the command using sudo, the folder is owned by root:root (User: root, Group: root).
+# Changes the group to 'users' so normal team members can write to it without using sudo.
 sudo chown :users /usr/local/share/op
 
 # List files (adds a / to folders so you can tell them apart).
