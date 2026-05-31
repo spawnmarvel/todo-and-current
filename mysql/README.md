@@ -641,6 +641,52 @@ AND payload->>'$.msg' LIKE '%Starting%';
 ```
 
 
+Stored Procedure for Log Cleanup
+
+To maintain the performance of your log_entries table, it is essential to prune old records periodically. A stored procedure encapsulates this logic, allowing you to trigger the cleanup manually or via the MySQL Event Scheduler.
+
+```sql
+-- Version 1.0.9
+-- Procedure: cleanup_old_logs
+-- Description: Deletes log entries from log_entries table older than 10 days.
+
+DELIMITER //
+
+CREATE PROCEDURE cleanup_old_logs()
+BEGIN
+    DELETE FROM log_entries
+    WHERE timestamp < (NOW() - INTERVAL 10 DAY);
+END //
+
+DELIMITER ;
+
+```
+
+Automation Strategy
+
+Once created, you can execute the procedure manually, or configure a MySQL Event to run automatically in the background.
+
+Manual Execution
+
+```sql
+CALL cleanup_old_logs();
+```
+
+Automatic Execution (MySQL Event Scheduler)
+
+To ensure this runs once daily, enable the Event Scheduler and create a recurring event:
+
+```sql
+-- Ensure the scheduler is running
+SET GLOBAL event_scheduler = ON;
+
+-- Schedule the cleanup to run every night at 02:00 AM
+CREATE EVENT daily_log_cleanup
+ON SCHEDULE EVERY 1 DAY
+STARTS (CURRENT_DATE + INTERVAL 1 DAY + INTERVAL 2 HOUR)
+DO CALL cleanup_old_logs();
+```
+
 
 Strategic Recommendation
 
