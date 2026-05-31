@@ -17,9 +17,10 @@
   - [Schema Inspector](#mysql-workbench-inspect-schema)
 - [🔹 Azure Endpoints & Networking](#azure-database-for-mysql-flexible-server-endpoints)
 
-- [Hybrid Modeling](hybrid-modeling)
-- [Setting up a Key-Value Table](setting-up-a-key-value-table)
-- [Structuring Hybrid Relational-JSON Data](structuring-hybrid-relational-json-data)
+- [Hybrid Modeling](#hybrid-modeling)
+- [Setting up a Key-Value Table](#setting-up-a-key-value-table)
+- [Structuring Hybrid Relational-JSON Data](#structuring-hybrid-relational-json-data)
+
 ---
 
 https://www.w3schools.com/MySQL/default.asp
