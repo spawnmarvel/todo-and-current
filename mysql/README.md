@@ -19,7 +19,7 @@
 
 - [Hybrid Modeling](hybrid-modeling)
 - [Setting up a Key-Value Table](setting-up-a-key-value-table)
-- [Structuring Hybrid Relational-JSON Data](structuring-hybrid- relational-json-data)
+- [Structuring Hybrid Relational-JSON Data](structuring-hybrid-relational-json-data)
 ---
 
 https://www.w3schools.com/MySQL/default.asp
