@@ -398,7 +398,7 @@ wget
 **In Progress:**
 - 📚 Linux by Zabbix agent active and Zabbix Agent 2 built-in native functions
 - 📚 Windows and linux log monitoring, keywords
-- 📚 Ai 20h course [Ai 20h course](https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm/zabbix_monitor_vms_snmp_default#ai-20h-course)
+- 📚 Zabbxi default and Ai 20h course [Zabbix default and Ai 20h course](https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm/zabbix_monitor_vms_snmp_default#ai-20h-course)
 
 **Completed:**
 - ✅ Installed new stack (Zabbix 7 LTS, dpkg MySql 8.4) and a new vnet in swden central peerd to DNS net 
