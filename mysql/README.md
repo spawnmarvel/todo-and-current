@@ -492,6 +492,50 @@ The true power of MySQL 8.4 lies in its ability to combine these "moods" of data
 
 ## Setting up a Key-Value Table
 
+To use MySQL as a key-value store, the most efficient approach is to create a compact table using the InnoDB storage engine. By using the PRIMARY KEY on the key column, MySQL creates a clustered index, ensuring that looking up a value by its key is an $O(\log n)$ operation—extremely fast for high-concurrency access.
+
+Implementation: Dedicated Log Key-Value Store
+
+This structure focuses on keeping metadata separate from the bulky log entries themselves. By indexing the log_key, you ensure that state lookups do not slow down your primary log processing.
+
+
+```sql
+
+create database key_value_store;
+
+```
+
+Table
+
+```sql
+-- Version 1.0.0
+-- Simple key-value store setup for general configuration or metadata caching
+
+use key_value_store;
+
+CREATE TABLE kv_store (
+    kv_key VARCHAR(255) NOT NULL,
+    kv_value JSON, -- Using JSON allows storing complex objects/arrays
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    PRIMARY KEY (kv_key)
+) ENGINE=InnoDB;
+```
+
+Insert or Update (Upsert)
+
+```sql
+INSERT INTO kv_store (kv_key, kv_value)
+VALUES ('session_123', '{"user_id": 42, "role": "admin"}')
+ON DUPLICATE KEY UPDATE kv_value = VALUES(kv_value);
+```
+
+Retrieving Data
+
+```sql
+SELECT kv_value FROM kv_store WHERE kv_key = 'session_123';
+```
+
+
 ## Structuring Hybrid Relational-JSON Data
 
 Using JSON columns in MySQL allows you to maintain a rigid schema for core entity data while allowing flexibility for "extra" attributes that vary between items. 
@@ -501,7 +545,6 @@ This approach avoids "sparse table" syndrome—where you have a massive table wi
 ```sql
 create database product_catalog;
 
-use product_catalog;
 ```
 
 Example: Product Catalog with Dynamic Attributes
@@ -510,7 +553,99 @@ In this example, the products table has fixed columns for core data (id, sku, pr
 
 ```sql
 
+-- Version 1.0.1
+-- Hybrid product catalog using JSON for dynamic attributes
+
+use product_catalog;
+
+CREATE TABLE products (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    sku VARCHAR(50) UNIQUE,
+    name VARCHAR(255),
+    price DECIMAL(10, 2),
+    attributes JSON, -- Dynamic data goes here
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB;
+
 ```
 
-## Key value store
+Inserting Hybrid Data
 
+```sql
+-- Insert a laptop with technical specs
+INSERT INTO products (sku, name, price, attributes)
+VALUES ('LAP-001', 'Pro Laptop', 1500.00, '{"ram": "16GB", "cpu": "i7", "os": "Linux"}');
+
+-- Insert a shirt with different attributes
+INSERT INTO products (sku, name, price, attributes)
+VALUES ('SHIRT-001', 'Cotton Tee', 20.00, '{"size": "L", "material": "cotton", "color": "blue"}');
+```
+
+### Hybrid Relational-JSON (For Log Content)
+
+
+Use this pattern for the logs themselves. By using fixed columns for searchable fields (e.g., timestamp, log_level, server_name) and a JSON column for the varying log message payloads, you get the performance of SQL with the flexibility of a document store.
+
+
+```sql
+create database log_handler;
+```
+
+```sql
+
+-- Version 1.0.6
+-- Best for: Storing, filtering, and analyzing actual log entries
+
+use log_handler;
+
+CREATE TABLE log_entries (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+    server_name VARCHAR(100),
+    level VARCHAR(10),
+    payload JSON, -- Flexible attributes (e.g., error codes, session IDs)
+    INDEX idx_timestamp (timestamp),
+    INDEX idx_server (server_name)
+) ENGINE=InnoDB;
+```
+
+Insert
+
+```sql
+-- Usage: Storing a complex log event
+INSERT INTO log_entries (server_name, level, payload)
+VALUES (
+    'web-server-01', 
+    'INFO', 
+    JSON_OBJECT(
+        'process', 'RabbitMQ', 
+        'msg', 'Starting RabbitMQ 3.12.1', 
+        'erlang_ver', '26.0'
+    )
+);
+
+```
+
+Select the data
+
+```sql
+
+-- Version 1.0.8
+-- Querying for logs from a specific server containing a specific string in the JSON payload
+
+SELECT *
+FROM log_entries
+WHERE server_name = 'web-server-01'
+AND payload->>'$.msg' LIKE '%Starting%';
+
+```
+
+
+
+Strategic Recommendation
+
+* Use the Key-Value table as your "control plane" to know where your scripts are in the log files.
+
+* Use the Hybrid table as your "data plane" to store the actual logs for querying, reporting, and troubleshooting.
+
+By keeping these distinct, you avoid bloating your operational metadata with massive amounts of historical log data, keeping your monitoring systems fast and efficient.
