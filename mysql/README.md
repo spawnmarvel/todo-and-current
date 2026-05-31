@@ -17,6 +17,9 @@
   - [Schema Inspector](#mysql-workbench-inspect-schema)
 - [🔹 Azure Endpoints & Networking](#azure-database-for-mysql-flexible-server-endpoints)
 
+- [Hybrid Modeling](hybrid-modeling)
+- [Setting up a Key-Value Table](setting-up-a-key-value-table)
+- [Structuring Hybrid Relational-JSON Data](structuring-hybrid- relational-json-data)
 ---
 
 https://www.w3schools.com/MySQL/default.asp
@@ -472,3 +475,41 @@ The connection now through Allow public access to this resource through the inte
 * mysqlzabbix0101 | Networking where we add client ip.
 
 Lets change that to, Create private endpoints to allow hosts in the selected virtual network to access this server.
+
+
+## Hybrid Modeling
+
+
+The true power of MySQL 8.4 lies in its ability to combine these "moods" of data management into a single application. You do not have to choose between relational and NoSQL; you can:
+
+🔹 Use Relational Tables for structured data like users, orders, and transactional integrity.
+
+🔹 Use JSON Columns within those same tables for flexible, semi-structured product attributes or logs.
+
+🔹 Use Key-Value Patterns for high-speed configuration or session caches, all governed by the same transactional engine.
+
+
+## Setting up a Key-Value Table
+
+## Structuring Hybrid Relational-JSON Data
+
+Using JSON columns in MySQL allows you to maintain a rigid schema for core entity data while allowing flexibility for "extra" attributes that vary between items. 
+
+This approach avoids "sparse table" syndrome—where you have a massive table with hundreds of columns that are mostly empty (NULL).
+
+```sql
+create database product_catalog;
+
+use product_catalog;
+```
+
+Example: Product Catalog with Dynamic Attributes
+
+In this example, the products table has fixed columns for core data (id, sku, price), while attributes holds variable data like "color," "material," or "battery life" depending on the category.
+
+```sql
+
+```
+
+## Key value store
+
