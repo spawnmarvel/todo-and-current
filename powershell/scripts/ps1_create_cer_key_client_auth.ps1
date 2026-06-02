@@ -20,7 +20,7 @@ $cerPath = Join-Path $targetDir "MyDualPurposeCert.cer"
 $password = ConvertTo-SecureString "Provide-ap-password" -AsPlainText -Force
 
 $certParams = @{
-    Subject = "CN=MyDualPurposeCert"
+    Subject = "CN=MyDualPurposeCert.local"
     DnsName = "MyDualPurposeCert.local"
     KeyLength = 2048
     KeyAlgorithm = "RSA"
