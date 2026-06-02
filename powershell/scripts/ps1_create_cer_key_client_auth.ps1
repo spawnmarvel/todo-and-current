@@ -1,7 +1,14 @@
 # Version: 1.4.0
 # Description: Generates a self-signed X.509 certificate (10 years expiry, Client/Server EKU) and exports both .pfx and .cer files to C:\temp.
-# If you want to use this certificate infrastructure on a different machine, you need to change the DNS name in the script to match the target machine's actual hostname and domain, run the generation script, 
+# If you want to use this certificate infrastructure on a different machine, you need to change the 
+# DNS name in the script to match the target machine's actual hostname and domain, run the generation script, 
 # and then move the exported files.
+
+# Because this is a self-signed certificate, it acts as its own root authority (it is signed by itself). 
+# In a Mutual TLS (mTLS) architecture, the remote server cannot verify your client application's identity
+# unless it explicitly trusts the root that issued your certificate. 
+# Since you are the root, the remote server must have your certificate in its trust store.
+
 # Ensure the target directory exists
 $targetDir = "C:\temp"
 if (-not (Test-Path -Path $targetDir)) {
