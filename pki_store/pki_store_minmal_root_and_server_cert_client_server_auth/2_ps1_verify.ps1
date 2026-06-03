@@ -18,3 +18,4 @@ openssl x509 -noout -modulus -in C:\temp\server.crt | openssl sha256 && openssl 
 # Line 1: The fingerprint of your server certificate's public key component.
 # Line 2: The fingerprint of your private key's modulus.
 # If the two alpha-numeric strings match exactly, your key pair matches.
+# SUCCESS! Your private key matches the certificate perfectly. Both SHA-256 modulus hashes return the exact same signature string:
