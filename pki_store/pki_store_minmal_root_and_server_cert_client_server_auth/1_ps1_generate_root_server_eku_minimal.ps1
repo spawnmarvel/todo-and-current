@@ -16,6 +16,14 @@ Set-Location -Path $targetDir
 Write-Host "Executing Step 1: Creating configuration file at C:\temp\extensions.cnf..."
 
 $configContent = @"
+[ req ]
+default_bits        = 2048
+distinguished_name  = req_distinguished_name
+string_mask         = utf8only
+
+[ req_distinguished_name ]
+# Empty section allows -subj parameter values to override completely without errors
+
 [ root_ca_ext ]
 basicConstraints = critical, CA:TRUE
 keyUsage = critical, digitalSignature, cRLSign, keyCertSign
