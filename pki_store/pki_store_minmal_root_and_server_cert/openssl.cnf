@@ -1,0 +1,20 @@
+# Version: 1.0.0
+# Description: Configuration containing X509v3 extensions for a Root CA and a dual-purpose Server/Client Auth certificate.
+
+[ root_ca_ext ]
+basicConstraints = critical, CA:TRUE
+keyUsage = critical, digitalSignature, cRLSign, keyCertSign
+subjectKeyIdentifier = hash
+authorityKeyIdentifier = keyid:always,issuer
+
+[ server_client_ext ]
+basicConstraints = critical, CA:FALSE
+keyUsage = critical, digitalSignature, keyEncipherment
+extendedKeyUsage = critical, serverAuth, clientAuth
+subjectKeyIdentifier = hash
+authorityKeyIdentifier = keyid,issuer
+subjectAltName = @alt_names
+
+[ alt_names ]
+DNS.1 = remote-server.domain.com
+DNS.2 = localhost
