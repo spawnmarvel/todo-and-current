@@ -39,8 +39,7 @@ authorityKeyIdentifier = keyid,issuer
 subjectAltName = @alt_names
 
 [ alt_names ]
-DNS.1 = remote-server.domain.com
-DNS.2 = localhost
+DNS.1 = name.domain.no
 "@
 
 Set-Content -Path "C:\temp\extensions.cnf" -Value $configContent
@@ -54,7 +53,7 @@ Write-Host "Executing Step 2: Generating 4096-bit Root CA and 15-Year Self-Signe
 openssl genrsa -out "C:\temp\rootCA.key" 4096
 
 # Create Root Certificate with a 15-year lifetime (5479 days)
-openssl req -x509 -new -nodes -key "C:\temp\rootCA.key" -sha256 -days 5479 -out "C:\temp\rootCA.crt" -subj "/CN=MyInternalRootCA" -config "C:\temp\extensions.cnf" -extensions root_ca_ext
+openssl req -x509 -new -nodes -key "C:\temp\rootCA.key" -sha256 -days 5479 -out "C:\temp\rootCA.crt" -subj "/CN=InternalRootCA" -config "C:\temp\extensions.cnf" -extensions root_ca_ext
 
 # ==========================================
 # STEP 3: GENERATE SERVER KEY AND CSR
@@ -65,7 +64,7 @@ Write-Host "Executing Step 3: Generating 2048-bit Server Key and Certificate Sig
 openssl genrsa -out "C:\temp\server.key" 2048
 
 # Generate Server Request
-openssl req -new -key "C:\temp\server.key" -out "C:\temp\server.csr" -subj "/CN=remote-server.domain.com"
+openssl req -new -key "C:\temp\server.key" -out "C:\temp\server.csr" -subj "/CN=name.domain.no"
 
 # ==========================================
 # STEP 4: SIGN THE SERVER CERTIFICATE (10 YEARS)
