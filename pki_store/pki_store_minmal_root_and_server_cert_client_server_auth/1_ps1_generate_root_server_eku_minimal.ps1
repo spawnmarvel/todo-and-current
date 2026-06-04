@@ -41,7 +41,8 @@ subjectKeyIdentifier = hash
 authorityKeyIdentifier = keyid,issuer
 subjectAltName = @alt_names
 
-# You must change this DNS to your actual DNS name or IP address for the server certificate to be valid for that name when used in browsers or other clients. For testing purposes, you can use a placeholder, but it should match the CN or be included as a SAN for proper validation.
+# You must change this DNS to your actual DNS name or IP address for the server certificate to be valid for that name when used in browsers or other clients. 
+# For testing purposes, you can use a placeholder, but it should match the CN or be included as a SAN for proper validation.
 [ alt_names ]
 DNS.1 = name.domain.no
 "@
