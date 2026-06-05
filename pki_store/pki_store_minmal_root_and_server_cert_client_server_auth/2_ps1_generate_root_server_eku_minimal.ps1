@@ -49,3 +49,20 @@ openssl s_client -connect your-broker-host:5671 -key C:\path\to\client.key.pem -
 # At server end you will see in the logs a messages handsshake timeout, handshake
 # This is because the openssl s_client command does not complete the handshake, it just tests the certificate and then closes the connection.
 
+# ==========================================
+# STEP 6: GENERATE A NEW CERT  WITH THE SAME KEY USAGE BUT DIFFENTENT CN AND SAN
+# ==========================================
+
+# Before running this section, you MUST open "C:\temp\extensions.cnf" and alter the [alt_names] section 
+# to match your new destination hostname or IP address. For example:
+# [ alt_names ]
+# DNS.1 = newname.domain.no
+
+# 1. Generate a new Certificate Signing Request (CSR) reusing the existing server.key
+openssl req -new -key "C:\temp\server.key" -out "C:\temp\server.csr" -subj "/CN=newname.domain.no"
+
+# 2. Sign the new CSR using the original Root CA with a 10-year lifetime (3652 days) and the updated extensions configuration
+openssl x509 -req -in "C:\temp\server.csr" -CA "C:\temp\rootCA.crt" -CAkey "C:\temp\rootCA.key" -CAcreateserial -out "C:\temp\server.crt" -days 3652 -sha256 -extfile "C:\temp\extensions.cnf" -extensions server_client_ext
+
+# 3. Verify the newly generated certificate properties match your updated SAN profile
+openssl x509 -in "C:\temp\server.crt" -noout -text | findstr /C:"CN=" /C:"DNS:"
