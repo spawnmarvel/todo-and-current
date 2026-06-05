@@ -1,6 +1,5 @@
-# Version: 1.7.0
+# Version: 1.8.0
 # Description: Generates a 15-Year Root CA and uses it to sign a 10-Year dual-purpose Server/Client cert inside C:\temp.
-
 
 #### NOTE!! Run this with CMD AS ADMININSTRATOR and navigate to where you have openssl installed, then run the following command to execute the script:
 #### NOTE!! In my case it is:
