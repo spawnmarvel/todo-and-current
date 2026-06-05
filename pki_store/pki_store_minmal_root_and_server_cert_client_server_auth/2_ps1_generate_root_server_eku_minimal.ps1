@@ -66,3 +66,17 @@ openssl x509 -req -in "C:\temp\server.csr" -CA "C:\temp\rootCA.crt" -CAkey "C:\t
 
 # 3. Verify the newly generated certificate properties match your updated SAN profile
 openssl x509 -in "C:\temp\server.crt" -noout -text | findstr /C:"CN=" /C:"DNS:"
+
+# ==========================================
+# STEP 7: CRITICAL SECURITY - SECURING THE ROOT CA KEY
+# ==========================================
+# The "rootCA.key" file is the master cryptographic key for your entire infrastructure. 
+# Anyone who obtains access to this file can forge valid, trusted certificates for any domain or server name in your network.
+
+# 1. NEVER store "rootCA.key" on live production servers or public-facing broker machines.
+# 2. After generating and signing your server certificates, move "rootCA.key" off the server entirely.
+# 3. Store the key in a secure, centralized location, such as:
+#    - A secure offline administrative vault (e.g., an encrypted offline USB drive stored in a physical safe).
+#    - An enterprise-grade credential manager or hardware security module (HSM).
+# 4. If you leave the key in "C:\temp" temporarily for administrative tasks, apply strict Windows NTFS ACLs 
+#    so only local Administrators can read or access the file.
