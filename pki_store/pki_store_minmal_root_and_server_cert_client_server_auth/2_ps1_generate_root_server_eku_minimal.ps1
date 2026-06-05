@@ -33,3 +33,19 @@ openssl req -new -key "C:\temp\server.key" -out "C:\temp\server.csr" -subj "/CN=
 
 # Sign the server certificate with a 10-year lifetime (3652 days)
 openssl x509 -req -in "C:\temp\server.csr" -CA "C:\temp\rootCA.crt" -CAkey "C:\temp\rootCA.key" -CAcreateserial -out "C:\temp\server.crt" -days 3652 -sha256 -extfile "C:\temp\extensions.cnf" -extensions server_client_ext
+
+
+# ==========================================
+# STEP 5: TEST CERTIFICATE
+# ==========================================
+
+# Rabbitmq uses pem format for certificates, so you may need to convert the server certificate and key to pem format if they are not already in that format.
+# After you have added the root certificate to the Trusted Root Certification Authorities store at the server, you can test the server certificate with the following command:
+# This assumes you have a client certificate with the same EKU (Client Authentication) and that you have added the root certificate to the Trusted Root Certification Authorities store at the client as well.
+openssl s_client -connect your-broker-host:5671 -key C:\path\to\client.key.pem -cert C:\path\to\client.cert.pem -CAfile C:\path\to\cacert.pem -state
+
+# output should show "Verify return code: 0 (ok)" if the certificate is valid and trusted.
+# This is a test a to a live remote broker, it will not impact the shovel that are already running, but it will show you if the certificate is valid and trusted by the client and server.
+# At server end you will see in the logs a messages handsshake timeout, handshake
+# This is because the openssl s_client command does not complete the handshake, it just tests the certificate and then closes the connection.
+
