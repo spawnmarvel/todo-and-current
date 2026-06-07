@@ -420,14 +420,16 @@ Study plan:
 **Goal:** Set up log monitoring stack loki
 
 **Tasks:**
-- ✅ Install and configure Grafana
-- ✅ Configure Loki
+- Install Grafana and loki on Ubuntu
 - Deploy Alloy agents across infrastructure
 - Monitor logs from all services
 - Mastering LogQL (The "Query Language")
 - Build main 3 dashboards
 - Files [Grafana, Loki and Alloy](https://github.com/spawnmarvel/todo-and-current/tree/main/grafana_loki_alloy)
 
+**Completed:**
+- ✅ Install and configure Grafana on Windows for test
+- ✅ Configure Loki Windows for test
 
 ### Do MS learn
 
