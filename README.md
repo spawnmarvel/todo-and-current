@@ -464,26 +464,6 @@ Study plan:
 
 ---
 
-### Windows Server Hybrid Administrator (vmhybrid01) ⭐ (is gone)
-
-
-**In Progress:**
-- 📚 MS Learn Active Directory Domain Services [Azure learn github](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-ad-ds-windows-server-hybrid-core-infrastructure/README_cloud-only-hybrid-Lab_3_mslearn-ad_arc.md)
-- 📚 MS Learn Azure Arc
-- 📚 MS Learn Azure File Sync
-
-**Completed:**
-- ✅ vnet-uks-2-swc-peering,  192 to 172, 172 to 192
-- ✅ AD DS is installed (100%), 192.168.0.0
-- ✅ Cloud-Only Hybrid Lab completed (100%)
-- ✅ Port proxy for inbound for vms in 172.16.0.0 (ps1)
-- ✅ Wingate www proxy service outbound for vms in 172.16.0.0, https://www.wingate.com/
-- ⭐ Wingate for linux [http proxy](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-ad-ds-windows-server-hybrid-core-infrastructure/README_cloud-only-hybrid-Lab_2_install-ad.md#extra-section-the-http-proxy-method-for-outbund-private-vms-apt)
-- ✅ Domain joined
-- ✅ dsa.msc, ad explorer
-- ✅ Simple aspx kerberos app with f key, then add cifs for share
-- 🔄 Check for updates on vmhybrid01
-
 ## Knowledge Maintenance Checklist
 
 ### 1. Linux Continous
@@ -580,6 +560,28 @@ Study plan:
 
 <details>
 <summary>Show / hide</summary>
+
+### 0. Windows Server Hybrid Administrator (vmhybrid01) ⭐ (is gone)
+
+
+**In Progress:**
+- 📚 MS Learn Active Directory Domain Services [Azure learn github](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-ad-ds-windows-server-hybrid-core-infrastructure/README_cloud-only-hybrid-Lab_3_mslearn-ad_arc.md)
+- 📚 MS Learn Azure Arc
+- 📚 MS Learn Azure File Sync
+
+**Completed:**
+- ✅ vnet-uks-2-swc-peering,  192 to 172, 172 to 192
+- ✅ AD DS is installed (100%), 192.168.0.0
+- ✅ Cloud-Only Hybrid Lab completed (100%)
+- ✅ Port proxy for inbound for vms in 172.16.0.0 (ps1)
+- ✅ Wingate www proxy service outbound for vms in 172.16.0.0, https://www.wingate.com/
+- ⭐ Wingate for linux [http proxy](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-ad-ds-windows-server-hybrid-core-infrastructure/README_cloud-only-hybrid-Lab_2_install-ad.md#extra-section-the-http-proxy-method-for-outbund-private-vms-apt)
+- ✅ Domain joined
+- ✅ dsa.msc, ad explorer
+- ✅ Simple aspx kerberos app with f key, then add cifs for share
+- 🔄 Check for updates on vmhybrid01
+
+
 
 ### 1. Docker & Azure
 
