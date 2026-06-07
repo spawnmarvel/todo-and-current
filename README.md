@@ -415,44 +415,7 @@ Study plan:
 
 ---
 
-### 2. Windows Server Hybrid Administrator (vmhybrid01) ⭐
-
-
-**In Progress:**
-- 📚 MS Learn Active Directory Domain Services [Azure learn github](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-ad-ds-windows-server-hybrid-core-infrastructure/README_cloud-only-hybrid-Lab_3_mslearn-ad_arc.md)
-- 📚 MS Learn Azure Arc
-- 📚 MS Learn Azure File Sync
-
-**Completed:**
-- ✅ vnet-uks-2-swc-peering,  192 to 172, 172 to 192
-- ✅ AD DS is installed (100%), 192.168.0.0
-- ✅ Cloud-Only Hybrid Lab completed (100%)
-- ✅ Port proxy for inbound for vms in 172.16.0.0 (ps1)
-- ✅ Wingate www proxy service outbound for vms in 172.16.0.0, https://www.wingate.com/
-- ⭐ Wingate for linux [http proxy](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-ad-ds-windows-server-hybrid-core-infrastructure/README_cloud-only-hybrid-Lab_2_install-ad.md#extra-section-the-http-proxy-method-for-outbund-private-vms-apt)
-- ✅ Domain joined
-- ✅ dsa.msc, ad explorer
-- ✅ Simple aspx kerberos app with f key, then add cifs for share
-- 🔄 Check for updates on vmhybrid01
-
-
-**Study Plan:**
-- Complete all MS Learn modulese
-- Build the home lab with AD DS
-
-
----
-
-## Backlog
-
-
-### AP22 Token Admin drill 5 min Cogent and script (tag) is configured  :apple:
-
-- Deny internet, no call home, mstsc from vmhybrid01,  Azure Update Manager ? (pre start, az update, post stop)
-- On 172.16.0.7 go over the AdministrationTools saved on desktop AdministrationTools.txt, set = done
-
-
-### Grafana, Loki, and Alloy Agents and Zabbix default ⭐ (work use it)
+### 2. Grafana, Loki, and Alloy Agents and Zabbix default ⭐ (work use it)
 
 **Goal:** Set up log monitoring stack loki
 
@@ -464,6 +427,22 @@ Study plan:
 - Mastering LogQL (The "Query Language")
 - Build main 3 dashboards
 - Files [Grafana, Loki and Alloy](https://github.com/spawnmarvel/todo-and-current/tree/main/grafana_loki_alloy)
+
+
+### Do MS learn
+
+- 📚 MS Learn Active Directory Domain Services [Azure learn github](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-ad-ds-windows-server-hybrid-core-infrastructure/README_cloud-only-hybrid-Lab_3_mslearn-ad_arc.md)
+- 📚 MS Learn Azure Arc
+
+---
+
+## Backlog
+
+
+### AP22 Token Admin drill 5 min Cogent and script (tag) is configured  :apple:
+
+- Deny internet, no call home, mstsc from vmhybrid01,  Azure Update Manager ? (pre start, az update, post stop)
+- On 172.16.0.7 go over the AdministrationTools saved on desktop AdministrationTools.txt, set = done
 
 
 ### Octopus Deploy for Linux (CI/CD) ⭐ (work use it)
@@ -485,7 +464,25 @@ Study plan:
 
 ---
 
+### Windows Server Hybrid Administrator (vmhybrid01) ⭐ (is gone)
 
+
+**In Progress:**
+- 📚 MS Learn Active Directory Domain Services [Azure learn github](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-ad-ds-windows-server-hybrid-core-infrastructure/README_cloud-only-hybrid-Lab_3_mslearn-ad_arc.md)
+- 📚 MS Learn Azure Arc
+- 📚 MS Learn Azure File Sync
+
+**Completed:**
+- ✅ vnet-uks-2-swc-peering,  192 to 172, 172 to 192
+- ✅ AD DS is installed (100%), 192.168.0.0
+- ✅ Cloud-Only Hybrid Lab completed (100%)
+- ✅ Port proxy for inbound for vms in 172.16.0.0 (ps1)
+- ✅ Wingate www proxy service outbound for vms in 172.16.0.0, https://www.wingate.com/
+- ⭐ Wingate for linux [http proxy](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-ad-ds-windows-server-hybrid-core-infrastructure/README_cloud-only-hybrid-Lab_2_install-ad.md#extra-section-the-http-proxy-method-for-outbund-private-vms-apt)
+- ✅ Domain joined
+- ✅ dsa.msc, ad explorer
+- ✅ Simple aspx kerberos app with f key, then add cifs for share
+- 🔄 Check for updates on vmhybrid01
 
 ## Knowledge Maintenance Checklist
 
