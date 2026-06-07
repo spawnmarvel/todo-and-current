@@ -416,7 +416,7 @@ Study plan:
 
 ---
 
-### 2. Grafana, Loki, and Alloy Agents and Zabbix default ⭐ (work use it)
+### 2. Grafana, Loki, and Alloy Agents and Zabbix default ⭐
 
 **Goal:** Set up log monitoring stack loki
 
