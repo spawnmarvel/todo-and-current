@@ -19,10 +19,42 @@ Since you are tired of the Windows/WinGate routing loops, you can build a lightw
 sudo apt update && sudo apt install squid -y
 
 ```
+
+Step 1: Apply Permanent Proxy on Private Nodes
+
 By default, Squid listens on port 3128. You would just point your private nodes to it by adding these lines back to their ~/.bashrc files, targeting your Linux jump box instead of the old Windows server:
 
 ```bash
-export http_proxy="http://<INTERNAL_IP_OF_VMZABBIX03>:3128"
-export https_proxy="http://<INTERNAL_IP_OF_VMZABBIX03>:3128"
+sudo tee -a /etc/environment << 'EOF'
+http_proxy="http://172.16.0.4:3128"
+https_proxy="http://172.16.0.4:3128"
+HTTP_PROXY="http://172.16.0.4:3128"
+HTTPS_PROXY="http://172.16.0.4:3128"
+no_proxy="localhost,127.0.0.1,168.63.129.16"
+NO_PROXY="localhost,127.0.0.1,168.63.129.16"
+EOF
+```
+
+Step 2: Configure Dedicated Proxy Paths for Apt
+
+```bash
+sudo tee /etc/apt/apt.conf.d/99proxy << 'EOF'
+Acquire::http::Proxy "http://172.16.0.4:3128/";
+Acquire::https::Proxy "http://172.16.0.4:3128/";
+EOF
+```
+
+Step 3: Verification Test
+
+```bash
+# To initialize the changes instantly without waiting for a machine reboot, reload your current shell environment parameters on the private nodes:
+source /etc/environment
+
+# Verify that the operating system recognizes the new permanent paths:
+env | grep -i proxy
 
 ```
+
+The Output Check: Your console should display the variables pointing to 172.16.0.4:3128.
+
+The Final Egress Check: Test a secure header fetch: curl -I https://www.google.com. If you receive a valid web status code back, your private nodes are officially routing through your Squid gateway!
