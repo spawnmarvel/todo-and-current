@@ -420,9 +420,18 @@ Study plan:
 
 - 📚 MS Learn Active Directory Domain Services [Azure learn github](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-ad-ds-windows-server-hybrid-core-infrastructure/README_cloud-only-hybrid-Lab_3_mslearn-ad_arc.md)
 - 📚 MS Virtual machine stuff
-- 📚 MS 
+- 📚 MS AZ-104 extended
 - 📚 MS do not build things in the portal, use cli and ps1
-- 📚 ap22db for fun
+
+
+### AP22 
+
+- 📚 ap22db for fun and learning
+- 📚 ap22db cogent and data flow
+- 📚 Think about windows updates
+
+**Completed:**
+- ✅ vmap22db, deny internet outbund
 
 ---
 
