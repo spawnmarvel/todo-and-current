@@ -423,6 +423,7 @@ Study plan:
 - 📚 MS AZ-104 extended
 - 📚 Azure DO NOT build things in the portal, use cli and ps1
 - 📚 [Grafana and loki ubuntu](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/ubuntu/README_install_loki.md)
+- 📚 X.509 and openssl
 
 
 ### AP22, silent zen master
