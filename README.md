@@ -398,15 +398,14 @@ wget
 
 **In Progress:**
 - 📚 Linux by Zabbix agent active and Zabbix Agent 2 built-in native functions
-- 📚 Windows and linux log monitoring, keywords
+- 📚 Windows and linux log monitoring, keywords. Use vmap22db (there will be a alloy agent there also)
 - 📚 Zabbxi default and Ai 20h course [Zabbix default and Ai 20h course](https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm/zabbix_monitor_vms_snmp_default#ai-20h-course)
 - 🔄 Squid proxy for offline updates?
 
 **Completed:**
 - ✅ Installed new stack (Zabbix 7 LTS, dpkg MySql 8.4) and a new vnet in sweden central
-- ✅ Zabbix agent 2
-- ✅ Linux by SNMP
 - ✅ Windows by Zabbix agent active and use Zabbix Agent 2 built-in native functions
+- ✅ Linux by SNMP
 - ✅ [zabbix proxy](https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/README_stack_proxy_architecture.md)
 
 Study plan:
@@ -427,8 +426,8 @@ Study plan:
 
 ### AP22 
 
-- 📚 ap22db for fun and learning
-- 📚 ap22db cogent and data flow
+- 📚 vmap22db for fun and learning
+- 📚 vmap22db cogent and data flow
 - 🔄 Think about windows updates, offline?
 
 **Completed:**
