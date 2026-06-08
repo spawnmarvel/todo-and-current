@@ -422,7 +422,7 @@ Study plan:
 - 📚 MS Virtual machine stuff
 - 📚 MS 
 - 📚 MS do not build things in the portal, use cli and ps1
-- 📚 ap22db for fun
+- 📚 ap22db, opc da and ua, cogent.
 
 ---
 
