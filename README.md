@@ -421,7 +421,7 @@ Study plan:
 - 📚 MS Learn Active Directory Domain Services [Azure learn github](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-ad-ds-windows-server-hybrid-core-infrastructure/README_cloud-only-hybrid-Lab_3_mslearn-ad_arc.md)
 - 📚 MS Virtual machine stuff
 - 📚 MS AZ-104 extended
-- 📚 MS do not build things in the portal, use cli and ps1
+- 📚 Azure DO NOT build things in the portal, use cli and ps1
 - 📚 [Grafana and loki ubuntu](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/ubuntu/README_install_loki.md)
 
 
