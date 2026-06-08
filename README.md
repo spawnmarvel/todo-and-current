@@ -425,7 +425,7 @@ Study plan:
 - 📚 [Grafana and loki ubuntu](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/ubuntu/README_install_loki.md)
 
 
-### AP22 
+### AP22, silent zen master
 
 - 📚 vmap22db for fun and learning
 - 📚 vmap22db cogent and data flow
