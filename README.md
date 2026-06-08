@@ -416,7 +416,7 @@ Study plan:
 
 ---
 
-### 2. Grafana, Loki, and Alloy Agents and Zabbix default ⭐
+### 2. Grafana, Loki, and Alloy Agents and Zabbix default ⭐ (work use it)
 
 **Goal:** Set up log monitoring stack loki
 
@@ -441,15 +441,6 @@ Study plan:
 
 ---
 
-## Backlog
-
-
-### AP22 Token Admin drill 5 min Cogent and script (tag) is configured  :apple:
-
-- Deny internet, no call home, mstsc from vmhybrid01,  Azure Update Manager ? (pre start, az update, post stop)
-- On 172.16.0.7 go over the AdministrationTools saved on desktop AdministrationTools.txt, set = done
-
-
 ### Octopus Deploy for Linux (CI/CD) ⭐ (work use it)
 
 **Setup:**
@@ -466,6 +457,15 @@ Study plan:
 **Guide:** [Octopus Linux Runbook Operations](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/README_octo_linux_runbook_operations.md)
 
 **Progress:** ![deploy123](https://github.com/spawnmarvel/todo-and-current/blob/main/images/deploy123.png)
+
+## Backlog
+
+
+### AP22 Token Admin drill 5 min Cogent and script (tag) is configured  :apple:
+
+- Deny internet, no call home, mstsc from vmhybrid01,  Azure Update Manager ? (pre start, az update, post stop)
+- On 172.16.0.7 go over the AdministrationTools saved on desktop AdministrationTools.txt, set = done
+
 
 ---
 

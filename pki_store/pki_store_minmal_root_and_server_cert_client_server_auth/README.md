@@ -31,3 +31,4 @@ https://letsencrypt.org/2025/05/14/ending-tls-client-authentication
 * Zero Verification Overhead: You don't have to worry about a cloud verification engine failing to validate your servers every 30 days over the internet. Your RabbitMQ nodes handle identity checks locally in memory using native math.
 
 * Symmetric Protection: While the public web is forced to abandon persistent internal validation mechanics, your internal data transport channel remains highly hardened, decentralized, and entirely self-sustained
+
