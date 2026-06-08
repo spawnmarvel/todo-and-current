@@ -435,7 +435,9 @@ Study plan:
 ### Do MS learn
 
 - 📚 MS Learn Active Directory Domain Services [Azure learn github](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-ad-ds-windows-server-hybrid-core-infrastructure/README_cloud-only-hybrid-Lab_3_mslearn-ad_arc.md)
-- 📚 MS Learn Azure Arc
+- 📚 MS Virtual machine stuff
+- 📚 MS 
+- 📚 MS 
 
 ---
 
