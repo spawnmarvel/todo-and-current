@@ -416,38 +416,17 @@ Study plan:
 
 ---
 
-### 2. Grafana, Loki, and Alloy Agents and Zabbix default ⭐ (work use it)
-
-**Goal:** Set up log monitoring stack loki
-
-**Tasks:**
-- Install Grafana and loki on Ubuntu
-- Deploy Alloy agents across infrastructure
-- Monitor logs from all services
-- Mastering LogQL (The "Query Language")
-- Build main 3 dashboards
-- Files [Grafana, Loki and Alloy](https://github.com/spawnmarvel/todo-and-current/tree/main/grafana_loki_alloy)
-
-**Completed:**
-- ✅ Install and configure Grafana on Windows for test
-- ✅ Configure Loki Windows for test
-
 ### Do MS learn
 
 - 📚 MS Learn Active Directory Domain Services [Azure learn github](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-ad-ds-windows-server-hybrid-core-infrastructure/README_cloud-only-hybrid-Lab_3_mslearn-ad_arc.md)
 - 📚 MS Virtual machine stuff
 - 📚 MS 
 - 📚 MS do not build things in the portal, use cli and ps1
+- 📚 ap22db for fun
 
 ---
 
 ## Backlog
-
-
-### AP22 Token Admin drill 5 min Cogent and script (tag) is configured  :apple:
-
-- Deny internet, no call home, mstsc from vmhybrid01,  Azure Update Manager ? (pre start, az update, post stop)
-- On 172.16.0.7 go over the AdministrationTools saved on desktop AdministrationTools.txt, set = done
 
 
 ### Octopus Deploy for Linux (CI/CD) ⭐ (work use it)
@@ -466,6 +445,23 @@ Study plan:
 **Guide:** [Octopus Linux Runbook Operations](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/README_octo_linux_runbook_operations.md)
 
 **Progress:** ![deploy123](https://github.com/spawnmarvel/todo-and-current/blob/main/images/deploy123.png)
+
+
+### Grafana, Loki, and Alloy Agents and Zabbix default ⭐ (work use it)
+
+**Goal:** Set up log monitoring stack loki
+
+**Tasks:**
+- Install Grafana and loki on Ubuntu
+- Deploy Alloy agents across infrastructure
+- Monitor logs from all services
+- Mastering LogQL (The "Query Language")
+- Build main 3 dashboards
+- Files [Grafana, Loki and Alloy](https://github.com/spawnmarvel/todo-and-current/tree/main/grafana_loki_alloy)
+
+**Completed:**
+- ✅ Install and configure Grafana on Windows for test
+- ✅ Configure Loki Windows for test
 
 ---
 
