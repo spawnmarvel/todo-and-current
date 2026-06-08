@@ -416,10 +416,11 @@ Study plan:
 
 ---
 
-### Do MS learn
+### 2. Do MS learn
 
 - 📚 MS Learn Active Directory Domain Services [Azure learn github](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-ad-ds-windows-server-hybrid-core-infrastructure/README_cloud-only-hybrid-Lab_3_mslearn-ad_arc.md)
 - 📚 MS Virtual machine stuff
+<<<<<<< HEAD
 - 📚 MS AZ-104 extended
 - 📚 MS do not build things in the portal, use cli and ps1
 
@@ -432,6 +433,10 @@ Study plan:
 
 **Completed:**
 - ✅ vmap22db, deny internet outbund
+=======
+- 📚 MS do not build things in the portal, use cli and ps1
+- 📚 ap22db, opc da and ua, cogent.
+>>>>>>> 14dcb77a0ec7e05223391cf977fa356f98da4dcb
 
 ---
 
