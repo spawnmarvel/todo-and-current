@@ -432,12 +432,12 @@ Study plan:
 - ✅ Install and configure Grafana on Windows for test
 - ✅ Configure Loki Windows for test
 
-### Do MS learn and do not build things in the portal, use cli and ps1
+### Do MS learn
 
 - 📚 MS Learn Active Directory Domain Services [Azure learn github](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-ad-ds-windows-server-hybrid-core-infrastructure/README_cloud-only-hybrid-Lab_3_mslearn-ad_arc.md)
 - 📚 MS Virtual machine stuff
 - 📚 MS 
-- 📚 MS 
+- 📚 MS do not build things in the portal, use cli and ps1
 
 ---
 
