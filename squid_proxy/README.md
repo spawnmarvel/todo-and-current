@@ -18,6 +18,30 @@ Since you are tired of the Windows/WinGate routing loops, you can build a lightw
 # Run this on your public-facing jump box: vmzabbix03
 sudo apt update && sudo apt install squid -y
 
+# Step 1: Create an Allowed Domains List
+sudo nano /etc/squid/allowed-domains.txt
+
+# Add the required domains for Ubuntu operations:
+.ubuntu.com
+.debian.org
+
+# Step 2: Update squid.conf
+sudo nano /etc/squid/squid.conf
+
+# Locate the section where ACLs are defined (usually near the top) and define your whitelist rule. Crucially, ensure your http_access allow rule is placed above any catch-all http_access deny all lines:
+# Define an ACL pointing to your whitelist file
+acl allowed_ubuntu_sites dstdomain "/etc/squid/allowed-domains.txt"
+
+# Allow access from your internal networks to these sites
+http_access allow allowed_ubuntu_sites
+
+# Keep your existing default rules below this line
+http_access deny all
+
+# Step 3: Reload Squid
+sudo squid -k reconfigure
+# Or alternatively
+sudo systemctl reload squid
 ```
 
 Step 1: Apply Permanent Proxy on Private Nodes
@@ -50,6 +74,9 @@ Step 3: Verification Test
 # To initialize the changes instantly without waiting for a machine reboot, reload your current shell environment parameters on the private nodes:
 source /etc/environment
 
+ # Export the contents of /etc/environment into your current session
+export $(cat /etc/environment | grep -v '^#' | xargs)
+
 # Verify that the operating system recognizes the new permanent paths:
 env | grep -i proxy
 
@@ -58,3 +85,11 @@ env | grep -i proxy
 The Output Check: Your console should display the variables pointing to 172.16.0.4:3128.
 
 The Final Egress Check: Test a secure header fetch: curl -I https://www.google.com. If you receive a valid web status code back, your private nodes are officially routing through your Squid gateway!
+
+```bash
+# Test 1: Verify system environment proxying via curl
+curl -I https://www.google.com
+
+# Test 2: Verify apt package manager proxying
+sudo apt-get update
+```
