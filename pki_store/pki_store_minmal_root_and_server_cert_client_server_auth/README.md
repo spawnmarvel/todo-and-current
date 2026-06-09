@@ -32,3 +32,17 @@ https://letsencrypt.org/2025/05/14/ending-tls-client-authentication
 
 * Symmetric Protection: While the public web is forced to abandon persistent internal validation mechanics, your internal data transport channel remains highly hardened, decentralized, and entirely self-sustained
 
+
+
+## What the End of Dual-EKU TLS Means for ClientAuth and mTLS
+
+
+When internal PKI is the better fit
+
+Not all ClientAuth use cases require a public PKI. In many cases, an internal PKI is the more secure and practical choice.
+
+Client authentication may be on its way out of the Web PKI, but that doesn’t mean it’s going away. 
+
+In fact, this is a chance to rethink how you secure critical systems, whether they're internal applications or connections to partners across the internet.
+
+https://www.digicert.com/blog/do-you-use-public-tls-certificates-for-mtls
