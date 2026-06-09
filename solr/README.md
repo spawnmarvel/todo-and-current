@@ -9,6 +9,14 @@ http://localhost:8983/solr
 <delete><query>*:*</query></delete>
 ```
 
+If you get a IndexWriter is Closed
+
+* stop tomcat, solr
+* remove file write.lock
+* start tomcat, solr
+
+And run the document delete all again.
+
 Document Type: XML
 
 🔹 Command Used: <delete><query>*:*</query></delete>
