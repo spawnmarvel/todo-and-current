@@ -431,7 +431,7 @@ Study plan:
 
 - 📚 vmap22db for fun and learning
 - 📚 vmap22db cogent and data flow
-- 🔄 Think about windows updates, offline?
+- 🔄 Windows updates manually, NSG Allow_Azure_DNS, Allow_Windows_Update, start vm then Azure Update Manager
 
 **Completed:**
 - ✅ vmap22db, deny internet outbund
