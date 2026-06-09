@@ -10,4 +10,4 @@ http://localhost:8983/solr
 ```
 
 
-![management]https://github.com/spawnmarvel/todo-and-current/blob/main/solr/images/solr.png
+![management](https://github.com/spawnmarvel/todo-and-current/blob/main/solr/images/solr.png)
