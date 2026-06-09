@@ -5,9 +5,7 @@
 
 http://localhost:8983/solr
 
-```xml
-<delete><query>*:*</query></delete>
-```
+
 
 If you get a IndexWriter is Closed
 
@@ -17,12 +15,24 @@ If you get a IndexWriter is Closed
 
 And run the document delete all again.
 
-Document Type: XML
+Method 1: Using the Solr Admin UI
+You can clear the index directly from the browser administration panel.
 
-🔹 Command Used: <delete><query>*:*</query></delete>
+🔹 1. Open your browser and navigate to your Solr Admin dashboard (typically http://localhost:8983/solr/).
 
-🔹 Parameters: commitWithin=1000 (meaning changes will be permanently written/committed to the index within 1000 milliseconds) and overwrite=true.
+🔹 2. Select your specific core or collection from the Core/Collection Selector dropdown menu on the left side panel.
 
-🔹 Status: success with a status: 0 response, indicating the query executed perfectly and wiped the index clean.
+🔹 3. Click on the Documents tab.
+
+🔹 4. Change the Document Type dropdown setting to XML.
+
+🔹 5. In the Document(s) text area box, input the following text exactly:
+
+```xml
+<delete><query>*:*</query></delete>
+```
+🔹 6. Ensure that the Commit Within value is specified (e.g., 1000) or pass a clean hard commit parameter if desired.
+
+🔹 7. Click the Submit Document button. The right-hand panel will display a success block message matching status: 0
 
 ![management](https://github.com/spawnmarvel/todo-and-current/blob/main/solr/images/solr.png)
