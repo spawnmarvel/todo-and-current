@@ -419,6 +419,8 @@ Study plan:
 ### Misc: MS learn, AZ-104 extended, install Grafana and loki ubuntu, x.509
 
 - 📚 MS Learn Active Directory Domain Services [Azure learn github](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-ad-ds-windows-server-hybrid-core-infrastructure/README_cloud-only-hybrid-Lab_3_mslearn-ad_arc.md)
+
+- 📚 [Microsoft Applied Skills: Administer Active Directory Domain Services](https://learn.microsoft.com/en-us/credentials/applied-skills/administer-active-directory-domain-services/)
 - 📚 MS Virtual machine stuff
 - 📚 MS AZ-104 extended
 - 📚 Azure DO NOT build things in the portal, use cli and ps1
