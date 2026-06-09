@@ -416,7 +416,7 @@ Study plan:
 
 ---
 
-### Do Misc: MS learn, AZ-104 extended, install Grafana and loki ubuntu
+### Misc: MS learn, AZ-104 extended, install Grafana and loki ubuntu, x.509
 
 - 📚 MS Learn Active Directory Domain Services [Azure learn github](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-ad-ds-windows-server-hybrid-core-infrastructure/README_cloud-only-hybrid-Lab_3_mslearn-ad_arc.md)
 - 📚 MS Virtual machine stuff
@@ -427,7 +427,7 @@ Study plan:
 - 📚 X.509 and openssl
 
 
-### AP22, silent zen master
+### AP22, silent zen
 
 - 📚 vmap22db for fun and learning
 - 📚 vmap22db cogent and data flow
