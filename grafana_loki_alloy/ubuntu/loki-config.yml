@@ -20,6 +20,7 @@ server:
   grpc_listen_port: 9096
   
   # Secures external REST traffic by serving native HTTPS directly from the Loki binary
+  # comment out this block to disable TLS and serve HTTP instead (not recommended for production)
   http_tls_config:
     cert_file: /etc/loki/certs/loki.crt  # Path to your public SSL certificate
     key_file: /etc/loki/certs/loki.key    # Path to your private SSL key (chmod 600)
