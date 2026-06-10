@@ -267,5 +267,5 @@ Grafana Alloy is part of the same official Grafana APT repository.
 ## Use Logql to query data
 
 
-## Connect to grafana
+## Install Grafana and connect
 
