@@ -256,7 +256,6 @@ Result
 
 ```
 
-
 ## Install and configure Alloy agent on windows
 
 Since Loki is part of the Grafana ecosystem, it is hosted in the same official Grafana APT repository. You only need to add the repository once to install both grafana and loki.
