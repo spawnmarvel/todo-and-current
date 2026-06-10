@@ -70,6 +70,179 @@ sudo dpkg -i loki_3.0.0_amd64.deb
 ## Configure Loki
 
 
+```bash
+whereis loki
+
+loki: /usr/bin/loki /etc/lok
+
+cd /etc/loki
+ls
+config.yml
+
+sudo cp config.yml config.yml_bck
+
+# use the config in the folder
+# loki.config.yml
+
+```
+
+Now test loki
+
+```bash
+
+# Generate a nanosecond timestamp for Loki's API requirement
+TIMESTAMP=$(date +%s%N)
+
+# Push a test log entry with an escaped exclamation mark
+TIMESTAMP=$(date +%s%N)
+curl -H "Content-Type: application/json" \
+     -XPOST "http://localhost:3100/loki/api/v1/push" \
+     -d "{\"streams\": [{\"stream\": {\"job\": \"ubuntu-test\"}, \"values\": [[\"$TIMESTAMP\", \"Loki testing on Ubuntu looks good\"]]}]}"
+
+# You can then verify this stream was created by running:
+# Calculate the nanosecond timestamp for 6 hours ago
+START_TIME=$(date -d "6 hours ago" +%s%N)
+
+# Query Loki using the absolute timestamp
+curl -G -s "http://localhost:3100/loki/api/v1/query_range" \
+  --data-urlencode 'query={job="ubuntu-test"}' \
+  --data-urlencode "start=$START_TIME"
+```
+
+Output
+
+```txt
+{"status":"success","data":{"resultType":"streams","result":[{"stream":{"detected_level":"unknown","job":"ubuntu-test","service_name":"ubuntu-test"},"values":[["1781076573586704353","Loki testing on Ubuntu looks good"]]}],"stats":{"summary":{"bytesProcessedPerSecond":2189
+
+[...]
+```
+
+## Enable loki and paths
+
+
+
+```bash
+# Reload systemd to pick up any recent configuration changes
+sudo systemctl daemon-reload
+
+# Enable Loki to start at boot and start it right now
+sudo systemctl enable loki --now
+
+# Verify it is active and running cleanly
+sudo systemctl status loki
+
+● loki.service - Loki service
+     Loaded: loaded (/etc/systemd/system/loki.service; enabled; preset: enabled)
+     Active: active (running) since Wed 2026-06-10 07:15:45 UTC; 17min ago
+```
+
+## Https://localhost:3100/loki/
+
+```bash
+
+# Create certificates directory inside Loki configuration path
+sudo mkdir -p /etc/loki/certs
+
+# Generate a 365-day self-signed certificate and private key
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
+  -keyout /etc/loki/certs/loki.key \
+  -out /etc/loki/certs/loki.crt \
+  -subj "/CN=vmgrafanaloki03"
+
+
+sudo systemctl stop loki
+
+cd /etc/loki
+sudo cp config.yml config.yml_bck_no_ssl
+
+# Update the Loki Configuration File
+sudo nano /etc/loki/config.yml
+
+# paste the new config with ssl commented out
+
+# Check the User and Group directives inside the Loki service file
+systemctl cat loki | grep -E "User=|Group="
+User=loki
+
+# Run the following command to create the base storage directory along with all the internal folders defined in your config.yml (chunks, rules, wal, and compactor):
+sudo mkdir -p /var/lib/loki/chunks /var/lib/loki/rules /var/lib/loki/wal /var/lib/loki/compactor
+
+# Set proper user and group ownership for the data volume paths
+sudo chown -R loki:nogroup /var/lib/loki
+
+# Double-check that your configuration path ownership is also set correctly
+sudo chown -R loki:nogroup /etc/loki
+sudo chmod 600 /etc/loki/certs/loki.key
+
+sudo service loki start
+sudo server loki status
+
+```
+
+
+Test API:
+
+```bash
+# 1. Generate a current nanosecond timestamp
+TIMESTAMP=$(date +%s%N)
+
+# 2. Push a log line to the HTTPS endpoint on port 3100
+curl -k -H "Content-Type: application/json" \
+     -XPOST "https://localhost:3100/loki/api/v1/push" \
+     -d "{\"streams\": [{\"stream\": {\"job\": \"secure-native-test\"}, \"values\": [[\"$TIMESTAMP\", \"Confirmed: Loki native HTTPS is fully operational\"]]}]}"
+
+
+# Querying Logs Back Over Native HTTPS
+curl -k -G -s "https://localhost:3100/loki/api/v1/query_range" \
+  --data-urlencode 'query={job="secure-native-test"}' \
+  --data-urlencode 'since=30m'
+
+
+```
+
+Ok
+
+
+```txt
+{"status":"success","data":{"resultType":"streams","result":[{"stream":{"detected_level":"unknown","job":"secure-native-test","service_name":"secure-native-test"},"values":[["1781078145373911944","Confirmed: Loki native HTTPS is fully operational"]]}],"stats"
+```
+
+
+
+## Files and dirs
+
+
+/etc/loki/config.yml
+
+* The main configuration file for Loki (Version 1.0.5
+
+/etc/loki/certs/loki.crt
+
+/etc/loki/certs/loki.key
+
+/var/lib/loki
+
+* These directories andle your 15 GB disk allocation budget. The automated compactor sweeps these folders every 10 minutes to clear data blocks older than 30 days.
+
+/var/lib/loki/chunks/
+
+* Holds your actual compressed log lines
+
+
+/var/lib/loki/wal/
+
+* Incoming logs are written here instantly before hitting memory caches. If your server loses power abruptly, Loki replays this directory on startup to ensure zero log data loss.
+
+/var/lib/loki/compactor/
+
+* The automated janitor's work yard. The compactor uses this folder as an active sandbox scratchpad to merge index tables, calculate retention deadlines, and delete files that have exceeded your 30-day storage target window.
+
+/var/lib/loki/rules/
+
+* Stores localized alerting and recording rules schemas. If you tell Loki to monitor logs for explicit patterns (like searching for specific error strings) and trigger actions, those processing routines stay indexed here.
+
+
+
 ## Install and configure Alloy agent
 
 Since Loki is part of the Grafana ecosystem, it is hosted in the same official Grafana APT repository. You only need to add the repository once to install both grafana and loki.

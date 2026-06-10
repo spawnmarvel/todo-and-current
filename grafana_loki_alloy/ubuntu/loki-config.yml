@@ -1,0 +1,95 @@
+# Version: 1.0.5
+# Ubuntu Loki Config: Production-ready single-binary lab layout with native HTTPS.
+# Designed for a maximum 15GB disk budget, 30-day data retention, and isolated gRPC.
+
+# ==============================================================================
+# AUTHENTICATION
+# ==============================================================================
+# Disables multi-tenancy requirement. When false, you do not need to provide 
+# an 'X-Scope-OrgID' HTTP header on API ingestion or query requests.
+auth_enabled: false
+
+# ==============================================================================
+# SERVER BLOCK (NETWORK & SECURITY)
+# ==============================================================================
+server:
+  # The listening port for external REST API endpoints (Ingestion, LogQL Queries, WebUI)
+  http_listen_port: 3100
+  
+  # The internal port used for communication between Loki's distributed engine modules
+  grpc_listen_port: 9096
+  
+  # Secures external REST traffic by serving native HTTPS directly from the Loki binary
+  http_tls_config:
+    cert_file: /etc/loki/certs/loki.crt  # Path to your public SSL certificate
+    key_file: /etc/loki/certs/loki.key    # Path to your private SSL key (chmod 600)
+  
+  # Note: grpc_tls_config is deliberately omitted to prevent loopback handshakes 
+  # from failing inside the unencrypted local inmemory ring.
+
+# ==============================================================================
+# COMMON STORAGE & RING ARCHITECTURE
+# ==============================================================================
+common:
+  # Binds internal loopback synchronization strictly to the local system adapter
+  instance_addr: 127.0.0.1
+  
+  # The root directory prefix where Loki constructs its operational file structures
+  path_prefix: /var/lib/loki
+  
+  # Configures standard local storage parameters instead of cloud object stores (S3/GCS)
+  storage:
+    filesystem:
+      chunks_directory: /var/lib/loki/chunks  # Location for compressed log target volumes
+      rules_directory: /var/lib/loki/rules    # Location for recording and alerting rule evaluations
+      
+  # Standalone environment optimization: No data replication required across nodes
+  replication_factor: 1
+  
+  # Configures the coordination ring to use memory instead of external Key-Value stores
+  ring:
+    kvstore:
+      store: inmemory  # Removes the overhead of installing and running Consul or Etcd
+
+# ==============================================================================
+# INGESTER (MEMORY MANAGEMENT & WRITE-AHEAD LOG)
+# ==============================================================================
+ingester:
+  # Max time an uncommitted log chunk can sit idle in RAM before being flushed to disk
+  chunk_idle_period: 30m
+  
+  # Maximum age of a log chunk before forcing a hard disk flush, regardless of its size
+  max_chunk_age: 1h
+  
+  # Target size (in bytes) for compressed chunks. 1.5MB optimizes lookup speed and block sizes
+  chunk_target_size: 1572864
+  
+  # Write-Ahead Log (WAL): Prevents data loss if the system or Loki process crashes
+  wal:
+    enabled: true
+    dir: /var/lib/loki/wal                     # Path where incoming RAM state is journaled
+    replay_memory_ceiling: 2GB                 # Caps memory usage during WAL crash recovery loops
+
+# ==============================================================================
+# SCHEMA CONFIGURATION (INDEX ENGINE)
+# ==============================================================================
+schema_config:
+  configs:
+    - from: 2024-01-01                         # Hard starting epoch for this storage schema format
+      store: tsdb                              # Modern Time Series Database index engine (fastest)
+      object_store: filesystem                 # Direct disk mapping for the storage backend
+      schema: v13                              # Modern production schema layout version
+      index:
+        prefix: index_                         # File naming convention prefix for index chunks
+        period: 24h                            # Rotates indices daily to facilitate easy block purging
+
+# ==============================================================================
+# LIMITS & DISK PROTECTION (15GB ALLOCATION SAFETY RAILS)
+# ==============================================================================
+limits_config:
+  # Hard maximum timeframe log entries are allowed to live (30 days * 24 hours = 720h)
+  retention_period: 720h
+  
+  # Rate limiting per stream to prevent rogue apps from flooding the disk
+  ingestion_rate_mb: 5                         # Restricts normal incoming bandwidth to 5MB/s
+  ingestion_burst_size_mb: 10                  # Allows temporary traffic bursts up to 10MB
