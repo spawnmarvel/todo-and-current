@@ -242,6 +242,20 @@ Ok
 * Stores localized alerting and recording rules schemas. If you tell Loki to monitor logs for explicit patterns (like searching for specific error strings) and trigger actions, those processing routines stay indexed here.
 
 
+## Verify https
+
+Loki does not have a full graphical user interface (GUI) web dashboard of its own—that is what Grafana is for. Instead, Loki will return raw data structured in JSON format.
+
+https://localhost:3100/loki/api/v1/status/buildinfo
+
+
+Result
+
+```txt
+{"version":"3.7.2","revision":"7486c4a7","branch":"release-3.7.x","buildUser":"user@6245646549632","buildDate":"2026-05-13T08:54:45Z","goVersion":""}
+
+```
+
 
 ## Install and configure Alloy agent
 
