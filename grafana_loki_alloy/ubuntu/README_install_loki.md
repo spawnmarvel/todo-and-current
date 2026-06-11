@@ -361,6 +361,24 @@ Result
 
 ```
 
+
+## Learn log ql
+
+
+```bash
+# since logcli is installed, always run
+export LOKI_ADDR="https://vmgrafanaloki03:3100"
+```
+
+Standard query
+
+```bash
+logcli query '{job="zabbix", computer="vmap22db"}' --since=1h
+
+logcli query '{job="zabbix", computer="vmap22db"}' --since=1m
+```
+
+
 ## Check disk usage
 
 ```bash
