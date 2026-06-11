@@ -400,7 +400,7 @@ wget
 - 📚 Linux by Zabbix agent active and Zabbix Agent 2 built-in native functions
 - 📚 Windows and linux log monitoring, keywords. Use vmap22db (there will be a alloy agent there also)
 - 📚 Zabbxi default and Ai 20h course [Zabbix default and Ai 20h course](https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm/zabbix_monitor_vms_snmp_default#ai-20h-course), see if we have coverd 80%.
-- 🔄 Squid proxy for offline linux updates updates?
+- 🔄 Squid proxy for offline linux updates updates
 
 **Completed:**
 - ✅ Installed new stack (Zabbix 7 LTS, dpkg MySql 8.4) and a new vnet in sweden central
@@ -432,8 +432,8 @@ Study plan:
 
 ### AP22, silent zen
 
-- 📚 vmap22db for fun and learning OPC UA with Prosys OPC UA simulation server, Cogent
-- 📚 vmap22db CRUD
+- 📚 vmap22db learning OPC UA with Prosys OPC UA simulation server, Cogent
+- 📚 vmap22db CRUD and tools
 - 🔄 Windows updates manually, NSG Allow_Azure_DNS, Allow_Windows_Update
 - 🔄 start vm then Azure Update Manager or got to vmap22db | Updates ?
 
