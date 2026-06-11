@@ -212,7 +212,7 @@ Ok
 ```
 
 
-https://4.234.149.144:3100/ready
+https://xx.xx.xx.xx:3100/ready
 
 Seeing Ingester not ready: waiting for 15s after being ready on your browser screen means your new Loki server is actually booting up exactly as designed.
 
