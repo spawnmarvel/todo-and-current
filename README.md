@@ -431,8 +431,8 @@ Study plan:
 
 ### AP22, silent zen
 
-- 📚 vmap22db for fun and learning OPC UA with Prosys OPC UA simulation server
-- 📚 vmap22db cogent and data flow
+- 📚 vmap22db for fun and learning OPC UA with Prosys OPC UA simulation server, Cogent
+- 📚 vmap22db as work, add, stop, edit etc
 - 🔄 Windows updates manually, NSG Allow_Azure_DNS, Allow_Windows_Update
 - 🔄 start vm then Azure Update Manager or got to vmap22db | Updates ?
 
