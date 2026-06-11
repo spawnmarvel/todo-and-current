@@ -1,96 +1,76 @@
 # Version: 1.0.5
-# Ubuntu Loki Config: Production-ready single-binary lab layout with native HTTPS.
-# Designed for a maximum 15GB disk budget, 30-day data retention, and isolated gRPC.
+# Ubuntu Loki Config: Native HTTPS API with Unencrypted Internal gRPC Ring
+# Short Description: Configures a secure native HTTPS Loki instance with local TSDB storage, write-ahead logs, and automated log retention policy management.
 
-# ==============================================================================
-# AUTHENTICATION
-# ==============================================================================
-# Disables multi-tenancy requirement. When false, you do not need to provide 
-# an 'X-Scope-OrgID' HTTP header on API ingestion or query requests.
+# Disable multi-tenancy authentication; runs Loki in single-tenant mode where no X-Scope-OrgID header is required
 auth_enabled: false
 
-# ==============================================================================
-# SERVER BLOCK (NETWORK & SECURITY)
-# ==============================================================================
+# Core network listener configurations
 server:
-  # The listening port for external REST API endpoints (Ingestion, LogQL Queries, WebUI)
+  # The native HTTPS REST API port used by LogCLI and Grafana Alloy for query/push pipelines
   http_listen_port: 3100
-  
-  # The internal port used for communication between Loki's distributed engine modules
+  # The internal unencrypted high-performance gRPC port used for inter-module communications
   grpc_listen_port: 9096
-  
-  # Secures external REST traffic by serving native HTTPS directly from the Loki binary
-  # comment out this block to disable TLS and serve HTTP instead (not recommended for production)
+  # Secures the http_listen_port using your custom SAN self-signed certificates
   http_tls_config:
-    cert_file: /etc/loki/certs/loki.crt  # Path to your public SSL certificate
-    key_file: /etc/loki/certs/loki.key    # Path to your private SSL key (chmod 600)
-  
-  # Note: grpc_tls_config is deliberately omitted to prevent loopback handshakes 
-  # from failing inside the unencrypted local inmemory ring.
+    cert_file: /etc/loki/certs/loki.crt  # Path to your Base64 encoded x509 public certificate containing SAN extensions
+    key_file: /etc/loki/certs/loki.key    # Path to your private key file (requires strict 640 loki:nogroup permissions)
 
-# ==============================================================================
-# COMMON STORAGE & RING ARCHITECTURE
-# ==============================================================================
+# Shared common structural defaults for simplified single-node deployment mapping
 common:
-  # Binds internal loopback synchronization strictly to the local system adapter
+  # Binds the internal coordination communications strictly to the local loopback adapter
   instance_addr: 127.0.0.1
-  
-  # The root directory prefix where Loki constructs its operational file structures
+  # Base directory prefix used by helper modules if explicit directories are omitted
   path_prefix: /var/lib/loki
-  
-  # Configures standard local storage parameters instead of cloud object stores (S3/GCS)
+  # Shared data layer configuration blocks
   storage:
     filesystem:
-      chunks_directory: /var/lib/loki/chunks  # Location for compressed log target volumes
-      rules_directory: /var/lib/loki/rules    # Location for recording and alerting rule evaluations
-      
-  # Standalone environment optimization: No data replication required across nodes
+      chunks_directory: /var/lib/loki/chunks  # Location on disk where passive compressed log data blocks are committed
+      rules_directory: /var/lib/loki/rules    # Directory block for processing alerting and recording evaluation rule files
+  # Number of nodes that must hold a copy of a log stream chunk (1 = no clustering duplication required)
   replication_factor: 1
-  
-  # Configures the coordination ring to use memory instead of external Key-Value stores
+  # The coordinate tracking ring configuration
   ring:
     kvstore:
-      store: inmemory  # Removes the overhead of installing and running Consul or Etcd
+      store: inmemory  # Keeps the distributed key-value ring mapping entirely within RAM for efficient local operations
 
-# ==============================================================================
-# INGESTER (MEMORY MANAGEMENT & WRITE-AHEAD LOG)
-# ==============================================================================
+# Memory buffer and ingestion lifecycle management configuration
 ingester:
-  # Max time an uncommitted log chunk can sit idle in RAM before being flushed to disk
+  # Keeps a log data block open in memory for up to 30 minutes waiting for additional log lines to arrive
   chunk_idle_period: 30m
-  
-  # Maximum age of a log chunk before forcing a hard disk flush, regardless of its size
+  # Forces a log chunk to freeze, close, and prepare for disk write after 1 hour regardless of activity
   max_chunk_age: 1h
-  
-  # Target size (in bytes) for compressed chunks. 1.5MB optimizes lookup speed and block sizes
+  # The target size threshold (approx 1.5MB compressed) that triggers a chunk to cut and commit to storage
   chunk_target_size: 1572864
-  
-  # Write-Ahead Log (WAL): Prevents data loss if the system or Loki process crashes
+  # Write-Ahead Log configuration to guarantee zero log line data loss during an abrupt power down or process crash
   wal:
     enabled: true
-    dir: /var/lib/loki/wal                     # Path where incoming RAM state is journaled
-    replay_memory_ceiling: 2GB                 # Caps memory usage during WAL crash recovery loops
+    dir: /var/lib/loki/wal                        # Directory where the active uncompressed log data stream is appended instantly
+    replay_memory_ceiling: 2GB                    # Maximum memory buffer allocation utilized to rebuild state files during a cold boot replay
 
-# ==============================================================================
-# SCHEMA CONFIGURATION (INDEX ENGINE)
-# ==============================================================================
+# Database schema index and storage engine formatting definition
 schema_config:
   configs:
-    - from: 2024-01-01                         # Hard starting epoch for this storage schema format
-      store: tsdb                              # Modern Time Series Database index engine (fastest)
-      object_store: filesystem                 # Direct disk mapping for the storage backend
-      schema: v13                              # Modern production schema layout version
+    - from: 2024-01-01                            # Activation timestamp execution threshold for this configuration schema track
+      store: tsdb                                 # Utilizes the modern, high-performance Time Series Database index engine
+      object_store: filesystem                    # Targets the local physical storage array instead of a cloud bucket container
+      schema: v13                                 # The active index structural layout version standard
       index:
-        prefix: index_                         # File naming convention prefix for index chunks
-        period: 24h                            # Rotates indices daily to facilitate easy block purging
+        prefix: index_                            # Filename prefix signature added to all generated index databases
+        period: 24h                               # Shards index databases into clean 24-hour file buckets to streamline file searches
 
-# ==============================================================================
-# LIMITS & DISK PROTECTION (15GB ALLOCATION SAFETY RAILS)
-# ==============================================================================
+# Performance guardrails and security threshold ceilings
 limits_config:
-  # Hard maximum timeframe log entries are allowed to live (30 days * 24 hours = 720h)
-  retention_period: 720h
-  
-  # Rate limiting per stream to prevent rogue apps from flooding the disk
-  ingestion_rate_mb: 5                         # Restricts normal incoming bandwidth to 5MB/s
-  ingestion_burst_size_mb: 10                  # Allows temporary traffic bursts up to 10MB
+  retention_period: 480h                          # Your maximum ceiling buffer (480h = 20 days,  20 * 24 = 480h) that logs are legally allowed to live on disk
+  ingestion_rate_mb: 5                            # Hard ceiling capping standard stream transfers at 5MB per second per connection
+  ingestion_burst_size_mb: 10                     # Allows short temporary network spikes up to 10MB per second before dropping lines
+  max_entries_limit_per_query: 5000               # Maximizes the terminal buffer extraction size (overrides the 30-line default limit)
+
+# Storage optimization and automated log maintenance engine
+compactor:
+  working_directory: /var/lib/loki/compactor       # Temporary workspace directory used to merge small index files together
+  compaction_interval: 10m                        # Executes an optimization pass every 10 minutes to minimize storage overhead
+  retention_enabled: true                         # Activates the automated backend log purging routine based on limits_config values
+  retention_delete_delay: 2h                      # Delay window applied to marked data before hard disk deletion occurs to allow indexes to sync
+  retention_delete_worker_count: 150              # Number of parallel processing workers allocated to sweep and purge expired disk blocks
+  delete_request_store: filesystem                # Keeps a persistent audit trail file tracking all executed chunk deletion actions
