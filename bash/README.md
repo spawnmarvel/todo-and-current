@@ -1474,6 +1474,17 @@ sudo grep -i "error" /var/log/syslog | tee error_report.txt
 cat error_report.txt
 cat error_report.txt | grep -i "19:23:12.836770*"
 
+# journal
+sudo journalctl -u loki.service -n 50 --no-pager
+# v1.0.0
+sudo journalctl -u mysql -n 50 --no-pager
+# v1.0.0
+sudo journalctl -u zabbix-server -n 50 --no-pager
+# v1.1.0
+# Purpose: Read the last 50 lines of Grafana server logs without a pager.
+sudo journalctl -u grafana-server -n 50 --no-pager
+
+
 # The Real-Time Pro
 # (This looks specifically in the /etc folder for configuration files).
 find /etc/ -name "*.conf"
