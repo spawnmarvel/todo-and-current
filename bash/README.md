@@ -1483,7 +1483,8 @@ sudo journalctl -u zabbix-server -n 50 --no-pager
 # v1.1.0
 # Purpose: Read the last 50 lines of Grafana server logs without a pager.
 sudo journalctl -u grafana-server -n 50 --no-pager
-
+# You might notice that you don't always have to type .service at the end. 
+# Systemd automatically assumes you mean a service unit if you pass a plain name.
 
 # The Real-Time Pro
 # (This looks specifically in the /etc folder for configuration files).
