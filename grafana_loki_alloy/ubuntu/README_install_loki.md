@@ -136,7 +136,7 @@ sudo systemctl status loki
      Active: active (running) since Wed 2026-06-10 07:15:45 UTC; 17min ago
 ```
 
-## Https://localhost:3100/loki/
+## https
 
 ```bash
 
@@ -211,6 +211,11 @@ Ok
 {"status":"success","data":{"resultType":"streams","result":[{"stream":{"detected_level":"unknown","job":"secure-native-test","service_name":"secure-native-test"},"values":[["1781078145373911944","Confirmed: Loki native HTTPS is fully operational"]]}],"stats"
 ```
 
+
+https://4.234.149.144:3100/ready
+
+
+![ubuntu success](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/ubuntu/images/ubuntu_loki.png)
 
 
 ## Files and dirs
@@ -330,6 +335,8 @@ export LOKI_ADDR="https://vmgrafanaloki03:3100"
 
 # 2. Rerun your Zabbix historical query
 logcli query '{job="zabbix", computer="vmap22db"}' --since=1h
+
+logcli query '{job="zabbix", computer="vmap22db"}' --since=1m
 
 ```
 
