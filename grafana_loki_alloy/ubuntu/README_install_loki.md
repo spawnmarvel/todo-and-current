@@ -147,7 +147,8 @@ sudo mkdir -p /etc/loki/certs
 sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
   -keyout /etc/loki/certs/loki.key \
   -out /etc/loki/certs/loki.crt \
-  -subj "/CN=vmgrafanaloki03"
+  -subj "/CN=vmgrafanaloki03" \
+  -addext "subjectAltName = DNS:vmgrafanaloki03, DNS:localhost, IP:192.168.3.4"
 
 
 sudo systemctl stop loki
@@ -174,8 +175,11 @@ sudo chown -R loki:nogroup /var/lib/loki
 sudo chown -R loki:nogroup /etc/loki
 sudo chmod 600 /etc/loki/certs/loki.key
 
+# Verify that the owner mappings are correct
+ls -la /etc/loki/certs
+
 sudo service loki start
-sudo server loki status
+sudo service loki status
 
 ```
 
@@ -275,7 +279,7 @@ Silent install
 
 * Run the installer
 
-* cp old config and make a new config.alloy
+* C:\Program Files\GrafanaLabs\Alloy cp old config and make a new config.alloy
 
 * When done, visit
 
@@ -285,6 +289,54 @@ http://localhost:12345
 
 ## Use Logql to query data
 
+```bash
+# Download the latest LogCLI zip archive (Version 3.0.0 matching your build)
+wget https://github.com/grafana/loki/releases/download/v3.0.0/logcli-linux-amd64.zip
 
+# Unzip the archive (install unzip first via 'sudo apt install unzip' if needed)
+unzip logcli-linux-amd64.zip
+
+# Move the executable binary to your local bin folder
+sudo mv logcli-linux-amd64 /usr/local/bin/logcli
+
+# Verify the installation was successful
+logcli --version
+
+sudo nano /etc/hosts
+# 192.168.3.4    vmgrafanaloki03
+
+# 1. Copy your certificate asset to the system's anchor directory
+sudo cp /etc/loki/certs/loki.crt /usr/local/share/ca-certificates/loki.crt
+
+# 2. Force the operating system to rebuild its trusted certificate registry
+sudo update-ca-certificates
+
+
+# env vars
+export LOKI_ADDR="https://vmgrafanaloki03:3100"
+
+# 2. Rerun your Zabbix historical query
+logcli query '{job="zabbix", computer="vmap22db"}' --since=1h
+
+```
+
+
+Result
+
+```log
+2026/06/11 13:09:53 https://vmgrafanaloki03:3100/loki/api/v1/query_range?direction=BACKWARD&end=1781183393648662938&limit=30&query=%7Bjob%3D%22zabbix%22%2C+computer%3D%22vmap22db%22%7D&start=1781179793648662938
+2026/06/11 13:09:53 Common labels: {computer="vmap22db", detected_level="unknown", filename="C:\\Program Files\\Zabbix Agent 2\\zabbix_agent2.log", job="zabbix", service_name="zabbix"}
+2026-06-11T12:52:37Z {} 2026/06/11 12:43:21.006918 [101] active check configuration update from host [vmap22db] started to fail
+2026-06-11T12:52:37Z {} 2026/06/11 12:43:15.896963 using plugin 'Uptime' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026-06-11T12:52:37Z {} 2026/06/11 12:43:15.897503 using plugin 'WindowsPerfInstance' (built-in) providing following interfaces: exporter, maximum capacity: 1, active checks on start enabled: false
+2026-06-11T12:52:37Z {} 2026/06/11 12:43:24.007195 [101] sending of heartbeat message for [vmap22db] started to fail
+2026-06-11T12:52:37Z {} 2026/06/11 12:43:15.896963 using plugin 'VFSDir' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026-06-11T12:52:37Z {} 2026/06/11 12:43:15.896963 using plugin 'VfsFs' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026-06-11T12:52:37Z {} 2026/06/11 12:43:16.188652 Zabbix Agent2 hostname: [vmap22db]
+2026-06-11T12:52:37Z {} 2026/06/11 12:43:15.897503 using plugin 'ZabbixAsync' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026-06-11T12:52:37Z {} 2026/06/11 12:43:15.897503 using plugin 'Wmi' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026-06-11T12:52:37Z {} 2026/06/11 12:43:21.006918 [101] cannot connect to [172.16.0.4:10051]: dial tcp :0->172.16.0.4:10051: i/o timeout
+
+```
 ## Install Grafana and connect
 
