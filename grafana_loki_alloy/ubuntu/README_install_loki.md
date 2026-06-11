@@ -360,5 +360,19 @@ Result
 2026-06-11T12:52:37Z {} 2026/06/11 12:43:21.006918 [101] cannot connect to [172.16.0.4:10051]: dial tcp :0->172.16.0.4:10051: i/o timeout
 
 ```
+
+## Check disk usage
+
+```bash
+# To see the exact amount of disk space your Loki instance is currently consuming within its /var/lib/loki path-prefix, execute the summary disk usage command:
+sudo du -sh /var/lib/loki
+216K    /var/lib/loki
+
+# Check the Overall Partition Disk Space
+df -h /var/lib/loki
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root        29G  2.3G   26G   8% /
+
+```
 ## Install Grafana and connect
 
