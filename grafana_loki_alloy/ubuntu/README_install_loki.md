@@ -262,6 +262,26 @@ Since Loki is part of the Grafana ecosystem, it is hosted in the same official G
 
 Grafana Alloy is part of the same official Grafana APT repository.
 
+https://grafana.com/docs/alloy/latest/set-up/install/
+
+
+Silent install
+
+* Navigate to the releases page on GitHub.
+
+* Scroll down to the Assets section.
+
+* Download alloy-installer-windows-amd64.exe
+
+* Run the installer
+
+* cp old config and make a new config.alloy
+
+* When done, visit
+
+http://localhost:12345
+
+
 
 ## Use Logql to query data
 

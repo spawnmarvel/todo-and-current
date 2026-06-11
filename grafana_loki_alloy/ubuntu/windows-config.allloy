@@ -1,0 +1,46 @@
+// Version: 1.0.2
+// Windows Alloy Pipeline: Stream Tech CloudConnect logs to remote native HTTPS Loki instance
+// Injecting static metadata labels for job tracking and host identification
+
+// 1. Target and match the specific CloudConnect log file structure
+local.file_match "zabbix_logs" {
+  path_targets = [{
+    __address__ = "localhost",
+    __path__    = "C:/ProgramData/zabbix*.log",
+  }]
+}
+
+// 2. Intercept stream blocks to permanently stamp your custom job and server labels
+loki.relabel "add_custom_labels" {
+  forward_to = [loki.write.send_to_loki.receiver]
+
+  // Inject the required job tracking identifier
+  rule {
+    target_label = "job"
+    replacement  = "zabbix"
+  }
+
+  // Inject the explicit lab environment computer hostname
+  rule {
+    target_label = "computer"
+    replacement  = "vmap22db"
+  }
+}
+
+// 3. Read and tail discovered logs, and forward them into the label mapping stage
+loki.source.file "watch_cloudconnect" {
+  targets    = local.file_match.cloudconnect_logs.targets
+  forward_to = [loki.relabel.add_custom_labels.receiver]
+}
+
+// 4. Encrypt and push the processed text rows out to your Ubuntu server disk partition
+loki.write "send_to_loki" {
+  endpoint {
+    url = "https://10.75.104.4:3100/loki/api/v1/push"
+    
+    // Instruct Alloy to trust your custom self-signed certificate over the wire
+    tls_config {
+      insecure_skip_verify = true
+    }
+  }
+}
