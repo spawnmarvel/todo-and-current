@@ -584,6 +584,12 @@ Go to explorer and run query
 ![loki explorer](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/ubuntu/images/loki_explorer.png)
 
 
+Go to Drilldown and do the same
+
+![drilldown](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/ubuntu/images/drilldown.png)
+
+
+
 
 ## Learn log ql
 
