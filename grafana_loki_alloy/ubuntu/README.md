@@ -588,6 +588,11 @@ Go to Drilldown and do the same
 
 ![drilldown](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/ubuntu/images/drilldown.png)
 
+And give it some time, you will see event logs also
+
+![event_log](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/ubuntu/images/event_log.png)
+
+
 
 
 
