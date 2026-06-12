@@ -576,5 +576,9 @@ sudo systemctl restart loki.service
 
 Go to explorer and run query
 
+```logql
+{job="zabbix", computer="vmap22db"}
+```
+
 ![loki explorer](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/ubuntu/images/loki_explorer.png)
 
