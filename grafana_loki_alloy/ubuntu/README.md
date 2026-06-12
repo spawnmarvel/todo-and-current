@@ -328,6 +328,7 @@ SERVICE_NAME: Alloy
 
 
 
+sc config "Alloy" binPath= "\"C:\Program Files\GrafanaLabs\Alloy\alloy-service-windows-amd64.exe\" --disable-reporting --config=\"C:\Program Files\GrafanaLabs\Alloy\config.alloy\""
 ```
 
 * C:\Program Files\GrafanaLabs\Alloy cp old config and make a new config.alloy
@@ -425,7 +426,7 @@ Standard query
 ```bash
 logcli query '{job="zabbix", computer="vmap22db"}' --since=1h
 
-logcli query '{job="zabbix", computer="vmap22db"}' --since=1m
+logcli query '{job="zabbix", computer="vmap22db"}' --since=5m
 ```
 
 
