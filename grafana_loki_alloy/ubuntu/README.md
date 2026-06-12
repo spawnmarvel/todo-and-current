@@ -328,6 +328,8 @@ SERVICE_NAME: Alloy
 
 
 
+REM not sure if we need this
+
 sc config "Alloy" binPath= "\"C:\Program Files\GrafanaLabs\Alloy\alloy-service-windows-amd64.exe\" --disable-reporting --config=\"C:\Program Files\GrafanaLabs\Alloy\config.alloy\""
 ```
 
