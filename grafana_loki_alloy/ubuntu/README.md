@@ -582,3 +582,20 @@ Go to explorer and run query
 
 ![loki explorer](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/ubuntu/images/loki_explorer.png)
 
+
+
+## Learn log ql
+
+
+```bash
+# since logcli is installed, always run
+export LOKI_ADDR="https://vmgrafanaloki03:3100"
+```
+
+Standard query
+
+```bash
+logcli query '{job="zabbix", computer="vmap22db"}' --since=1h
+
+logcli query '{job="zabbix", computer="vmap22db"}' --since=1m
+```
