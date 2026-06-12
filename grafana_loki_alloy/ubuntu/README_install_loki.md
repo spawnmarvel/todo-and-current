@@ -282,11 +282,61 @@ Silent install
 
 * Scroll down to the Assets section.
 
-* Download alloy-installer-windows-amd64.exe
+* Download alloy-installer-windows-amd64.zip and unzip it
 
-* Run the installer
+* CD to where .exe is
+
+```cmd
+cd c:\Users\imsdal\Desktop\alloy-installer-windows-amd64.exe>
+dir
+
+06/08/2026  01:54 PM       101,898,440 alloy-installer-windows-amd64.exe
+
+alloy-installer-windows-amd64.exe /S /DISABLEREPORTING=yes
+
+sc qc "Alloy"
+[SC] QueryServiceConfig SUCCESS
+
+SERVICE_NAME: Alloy
+        TYPE               : 10  WIN32_OWN_PROCESS
+        START_TYPE         : 2   AUTO_START  (DELAYED)
+        ERROR_CONTROL      : 1   NORMAL
+        BINARY_PATH_NAME   : "C:\Program Files\GrafanaLabs\Alloy\alloy-service-windows-amd64.exe"
+        LOAD_ORDER_GROUP   :
+        TAG                : 0
+        DISPLAY_NAME       : Alloy
+        DEPENDENCIES       :
+        SERVICE_START_NAME : LocalSystem
+
+
+sc config "Alloy" binPath= "\"C:\Program Files\GrafanaLabs\Alloy\alloy-service-windows-amd64.exe\" --disable-reporting"
+[SC] ChangeServiceConfig SUCCESS
+
+sc qc "Alloy"
+[SC] QueryServiceConfig SUCCESS
+
+SERVICE_NAME: Alloy
+        TYPE               : 10  WIN32_OWN_PROCESS
+        START_TYPE         : 2   AUTO_START  (DELAYED)
+        ERROR_CONTROL      : 1   NORMAL
+        BINARY_PATH_NAME   : "C:\Program Files\GrafanaLabs\Alloy\alloy-service-windows-amd64.exe" --disable-reporting
+        LOAD_ORDER_GROUP   :
+        TAG                : 0
+        DISPLAY_NAME       : Alloy
+        DEPENDENCIES       :
+        SERVICE_START_NAME : LocalSystem
+
+
+
+```
 
 * C:\Program Files\GrafanaLabs\Alloy cp old config and make a new config.alloy
+
+* Restart service
+
+* If you need to uninstall, it is no longer in control panel, but a uninstall.exe in folder.
+
+![windows install](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/ubuntu/images/windows_install.png)
 
 * When done, visit
 
