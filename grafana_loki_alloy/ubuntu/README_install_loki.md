@@ -444,3 +444,132 @@ Filesystem      Size  Used Avail Use% Mounted on
 ```
 ## Install Grafana and connect
 
+
+We all ready have a ll pre requistes from loki, they are from the same keyrings
+
+```bash
+# Updates the list of available packages
+sudo apt-get update
+
+# To install Grafana OSS, run the following command:
+sudo apt install grafana
+
+sudo systemctl status grafana-server.service
+
+# We will use the same cert as we have for loki and copy them
+# Let's create a dedicated, secure directory path to host these shared monitoring certificates:
+sudo mkdir -p /etc/ssl/certs/monitoring
+
+sudo mv /etc/loki/certs/loki.crt /etc/ssl/certs/monitoring/monitoring.crt
+sudo mv /etc/loki/certs/loki.key /etc/ssl/certs/monitoring/monitoring.key
+
+# Add new group
+sudo groupadd --system monitoring-certs
+
+# Add Grafana system user to the group
+sudo usermod -aG monitoring-certs grafana
+
+# Add Loki system user to the group
+sudo usermod -aG monitoring-certs loki
+
+# 1. Set user ownership to root and group ownership to our new group
+sudo chown -R root:monitoring-certs /etc/ssl/certs/monitoring
+
+# 2. Secure the directory (Read/Execute for the group, hidden from everyone else)
+sudo chmod 750 /etc/ssl/certs/monitoring
+
+# 3. Secure the certificate files (Read-only for the group, completely locked down)
+sudo chmod 640 /etc/ssl/certs/monitoring/monitoring.crt
+sudo chmod 640 /etc/ssl/certs/monitoring/monitoring.key
+
+
+```
+
+The Custom.ini Verification
+Yes, absolutely. By default, Grafana stores its factory settings inside /etc/grafana/grafana.ini. You should never edit that file directly because package updates can overwrite it and wipe out your changes.
+
+Instead of modifying complex systemd service scripts to force Grafana to read a new file, the easiest and most reliable solution on Ubuntu is to put your custom parameters directly into the file it is already reading: /etc/grafana/grafana.ini
+
+```bash
+sudo nano /etc/grafana/grafana.ini
+
+```
+
+custom.ini
+
+```ini
+#################################### Server ####################################
+[server]
+# Protocol (http, https, h2, socket)
+protocol = https
+
+# The http port to use
+http_port = 3000
+
+# listen on all interfaces
+http_addr = 0.0.0.0
+
+# https certs & key file paths
+cert_file = /etc/ssl/certs/monitoring/monitoring.crt
+cert_key = /etc/ssl/certs/monitoring/monitoring.key
+
+```
+
+Enable and restart
+
+```bash
+
+# 1. Reload systemd to recognize configuration changes
+sudo systemctl daemon-reload
+
+# 2. Enable the service to boot automatically on restart
+sudo systemctl enable grafana-server.service
+
+# 3. Restart the service to apply group updates and SSL
+sudo systemctl restart grafana-server.service
+
+# 4. verify
+sudo systemctl status grafana-server.service
+
+# 5. Check port in use
+ss -tulpn | grep 3000
+
+# If you see 0.0.0.0:3000 in a LISTEN state, your configuration is completely active.
+
+
+# check error for cert
+sudo journalctl -u grafana-server.service --no-pager -n 20
+
+```
+
+Open port 3000 and visit, https://xx.xx.xxx.xx:3000
+
+https://grafana.com/docs/grafana/latest/setup-grafana/installation/debian/
+
+## Add Loki ad datasource
+
+
+Locate the server or http_tls_config blocks where the certificate paths are defined, and make sure they point exactly to the new moved paths:
+
+```bash
+
+cat /etc/loki/config.yml
+
+```
+
+Path
+
+```yml
+server:
+  http_listen_port: 3100
+  # Ensure these point to the new location:
+  http_tls_config:
+    cert_file: /etc/ssl/certs/monitoring/monitoring.crt
+    key_file: /etc/ssl/certs/monitoring/monitoring.key
+```
+
+```bash
+sudo systemctl restart loki.service
+```
+
+![loki connect](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/ubuntu/images/loki_connect.png)
