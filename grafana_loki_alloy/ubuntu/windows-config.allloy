@@ -1,49 +1,43 @@
-// Version: 1.0.16
-// Description: Optimize local logging parameters and silence outbound telemetry warnings
-// Windows Alloy Pipeline: Stream Tech CloudConnect logs to remote native HTTPS Loki instance
-// Injecting static metadata labels for job tracking and host identification
+// Version: 1.0.35
+// Description: Fixed the path typo to point exactly to the active Zabbix Agent 2 installation log.
 
 logging {
-  level  = "warn"
+  level = "warn"
 }
 
-// 1. Target and match the specific CloudConnect log file structure
+// 1. Target the exact path of your active Zabbix Agent 2 log file
 local.file_match "zabbix_logs" {
   path_targets = [{
     __address__ = "localhost",
-    __path__    = "C:/ProgramData/zabbix*.log",
+    __path__    = "C:/Program Files/Zabbix Agent 2/zabbix_agent2.log",
   }]
 }
 
-// 2. Intercept stream blocks to permanently stamp your custom job and server labels
+// 2. Read the tracked files and pass them straight into the labeling engine
+loki.source.file "watch_zabbix" {
+  targets    = local.file_match.zabbix_logs.targets
+  forward_to = [loki.relabel.add_custom_labels.receiver]
+}
+
+// 3. Inject your tracking fields and extract your dynamic system hostname
 loki.relabel "add_custom_labels" {
   forward_to = [loki.write.send_to_loki.receiver]
 
-  // Inject the required job tracking identifier
   rule {
     target_label = "job"
     replacement  = "zabbix"
   }
 
-  // Inject the explicit lab environment computer hostname
   rule {
-    target_label = "computer"
-    replacement  = "vmap22db"
+    source_labels = ["__computer_name__"]
+    target_label  = "computer"
   }
 }
 
-// 3. Read and tail discovered logs, and forward them into the label mapping stage
-loki.source.file "watch_cloudconnect" {
-  targets    = local.file_match.cloudconnect_logs.targets
-  forward_to = [loki.relabel.add_custom_labels.receiver]
-}
-
-// 4. Encrypt and push the processed text rows out to your Ubuntu server disk partition
+// 4. Securely stream the logs over the wire to your remote Ubuntu endpoint
 loki.write "send_to_loki" {
   endpoint {
     url = "https://10.75.104.4:3100/loki/api/v1/push"
-    
-    // Instruct Alloy to trust your custom self-signed certificate over the wire
     tls_config {
       insecure_skip_verify = true
     }
