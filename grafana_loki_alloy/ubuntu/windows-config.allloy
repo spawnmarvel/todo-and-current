@@ -1,11 +1,13 @@
-// Version: 1.0.31
-// Description: Connected the file scraper components natively to the custom relabel receiver block.
+// Version: 1.0.45
+// Description: Multi-source pipeline tracking distinct job names for Zabbix files and Windows Application Event Logs.
 
 logging {
   level = "warn"
 }
 
-// 1. Discover the log target layout paths on the local file partitions
+// ==========================================
+// SOURCE 1: FLAT FILE LOG SCRAPER (ZABBIX)
+// ==========================================
 local.file_match "zabbix_logs" {
   path_targets = [{
     __address__ = "localhost",
@@ -13,30 +15,54 @@ local.file_match "zabbix_logs" {
   }]
 }
 
-// 2. Read the tracked files and forward them STRAIGHT into the relabel step
-loki.source.file "watch_zabbix" {
+loki.source.file "watch_zabbix_file" {
   targets    = local.file_match.zabbix_logs.targets
-  forward_to = [loki.relabel.add_custom_labels.receiver]
+  forward_to = [loki.relabel.label_zabbix_file.receiver]
 }
 
-// 3. Intercept the log chunks to stamp your required job and tracking tags
-loki.relabel "add_custom_labels" {
-  forward_to = [loki.write.send_to_loki.receiver]
+loki.relabel "label_zabbix_file" {
+  forward_to = [loki.relabel.add_system_labels.receiver]
 
-  // Establish the job identification tracking handle
   rule {
     target_label = "job"
     replacement  = "zabbix"
   }
+}
 
-  // Extract the Windows system host identifier dynamically and assign it to computer
+// ==========================================
+// SOURCE 2: WINDOWS APPLICATION EVENT LOGS
+// ==========================================
+loki.source.windowsevent "watch_windows_application_events" {
+  eventlog_name = "Application"
+  xpath_query   = "*" 
+  forward_to    = [loki.relabel.label_windows_events.receiver]
+}
+
+loki.relabel "label_windows_events" {
+  forward_to = [loki.relabel.add_system_labels.receiver]
+
   rule {
-    source_labels = ["__computer_name__"]
-    target_label  = "computer"
+    target_label = "job"
+    replacement  = "windows-eventlog"
   }
 }
 
-// 4. Ship the completely processed data streams to your central Ubuntu server partitions over HTTPS
+// ==========================================
+// UNIFIED PIPELINE MATRIX GLOBAL LABELS
+// ==========================================
+loki.relabel "add_system_labels" {
+  forward_to = [loki.write.send_to_loki.receiver]
+
+  // Inject the explicit lab environment computer hostname
+  rule {
+    target_label = "computer"
+    replacement  = "vmap22db"
+  }
+}
+
+// ==========================================
+// OUTBOUND SSL ROUTE TO LOKI ENGINE
+// ==========================================
 loki.write "send_to_loki" {
   endpoint {
     url = "https://192.168.3.4:3100/loki/api/v1/push"
