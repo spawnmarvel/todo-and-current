@@ -1,6 +1,11 @@
-// Version: 1.0.2
+// Version: 1.0.16
+// Description: Optimize local logging parameters and silence outbound telemetry warnings
 // Windows Alloy Pipeline: Stream Tech CloudConnect logs to remote native HTTPS Loki instance
 // Injecting static metadata labels for job tracking and host identification
+
+logging {
+  level  = "warn"
+}
 
 // 1. Target and match the specific CloudConnect log file structure
 local.file_match "zabbix_logs" {

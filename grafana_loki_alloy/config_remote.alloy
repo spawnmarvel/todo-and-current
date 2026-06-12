@@ -1,8 +1,9 @@
-// Version: 1.0.0
+// Version: 1.0.16
+// Description: Optimize local logging parameters and silence outbound telemetry warnings
 // Remote Linux VM: vm-uks-temp-001.lab.local
 
 logging {
-  level = "info"
+  level = "warn"
 }
 
 // 1. Define the Log Source (Ubuntu Syslog)
