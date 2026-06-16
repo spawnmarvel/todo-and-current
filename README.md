@@ -454,6 +454,7 @@ Study plan:
 - 📚 vmap22db CRUD and tools
 - 🔄 Windows updates manually, NSG Allow_Azure_DNS, Allow_Windows_Update
 - 🔄 start vm then Azure Update Manager or got to vmap22db | Updates ?
+- 🔄 Na, must download kb and do manual
 
 **Completed:**
 - ✅ vmap22db, deny internet outbund
