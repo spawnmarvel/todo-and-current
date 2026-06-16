@@ -416,7 +416,7 @@ Study plan:
 
 ---
 
-### Grafana, Loki, and Alloy Agents ⭐ (work use it)
+### Grafana, Loki, and Alloy Agents ⭐
 
 **Goal:** Set up log monitoring stack loki
 
