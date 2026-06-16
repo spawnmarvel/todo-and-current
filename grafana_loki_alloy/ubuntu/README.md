@@ -634,7 +634,9 @@ Consistency Across Platforms
 * Windows Event Logs and flat Linux/Zabbix text files format their data completely differently.
 * The new config standardizes both streams perfectly.
 
-### We have two logs we are collecting.
+### Zabbix and Windows event logs
+
+We are curently collecting:
 
 * job="zabbix"
 * job="windows-eventlog"
