@@ -434,7 +434,7 @@ Study plan:
 ---
 
 
-### Misc: MS learn, AZ-104 extended, install Grafana and loki ubuntu, x.509
+### Misc: MS learn, AZ-104 extended
 
 - 📚 MS Learn Active Directory Domain Services [Azure learn github](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-ad-ds-windows-server-hybrid-core-infrastructure/README_cloud-only-hybrid-Lab_3_mslearn-ad_arc.md)
 
@@ -444,11 +444,9 @@ Study plan:
 - 📚 MS AZ-104 extended
 - 📚 Azure DO NOT build things in the portal, use cli and ps1
 - 📚 Azure event hub
-- 📚 Learn log ql
-- 📚 X.509 and openssl
 
 
-### AP22, silent zen
+### AP22, silent zen, Cogent OPC UA, C-R and tools
 
 - 📚 vmap22db learning OPC UA with Prosys OPC UA simulation server, Cogent
 - 📚 vmap22db CRUD and tools
