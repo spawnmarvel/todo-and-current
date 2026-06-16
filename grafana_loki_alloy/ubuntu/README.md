@@ -708,8 +708,55 @@ Windows events
 
 ```bash
 # first run to check what you want to filter on
-logcli query '{job="windows-eventlog", computer="vmap22db"}' --since=10m
+logcli query '{job="windows-eventlog", computer="vmap22db"}' --since=10h --limit=1000
+
+# then get all error's
+logcli query '{job="windows-eventlog", computer="vmap22db"} |~ "(?i)error"' --since=10h --limit=500
+
+# count them
+logcli instant-query 'count_over_time({job="windows-eventlog", computer="vmap22db"} |~ "(?i)error" [10h])'
+
+logcli instant-query 'count_over_time({job="windows-eventlog", computer="vmap22db"} |~ "(?i)error" [1h])'
+
 ```
+
+Result for count is:
+
+
+```json
+// 10h
+[
+  {
+    "metric": {
+      "channel": "Application",
+      "computer": "vmap22db",
+      "detected_level": "error",
+      "job": "windows-eventlog",
+      "service_name": "windows-eventlog"
+    },
+    "value": [
+      1781635785.589,
+      "45"
+
+// 1h
+
+  {
+    "metric": {
+      "channel": "Application",
+      "computer": "vmap22db",
+      "detected_level": "error",
+      "job": "windows-eventlog",
+      "service_name": "windows-eventlog"
+    },
+    "value": [
+      1781635802.685,
+      "33"
+    ]
+```
+
+
+Now that you have mastered basic text filtering and metric counting, you can explore more advanced LogQL query patterns. These formulas help you investigate spikes, parse unstructured data, and isolate system issues across Windows and Zabbix logs.
+
 
 https://grafana.com/docs/loki/latest/query/
 
