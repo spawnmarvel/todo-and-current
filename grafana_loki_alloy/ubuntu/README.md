@@ -608,6 +608,19 @@ A Loki log consists of:
 * labels/selectors
 * content of the log line.
 
+Loki indexes the timestamp and labels, but not the rest of the log line.
+
+LogQL queries are in the following format:
+
+```bash
+# The log stream selector is mandatory while the log pipeline is optional.
+{ log stream selector } | log pipeline
+
+# The log stream selector, also called label selector, is a string containing key-value pairs like this:
+{job="zabbix", computer="vmap22db"}
+
+``` 
+
 Note!
 ```txt
 service_name is a default label that Loki creates and tries to populate with 
@@ -656,8 +669,47 @@ logcli query '{job="zabbix", computer="vmap22db"}' --since=1m
 logcli query '{job="windows-eventlog", computer="vmap22db"}' --since=1h
 
 logcli query '{job="windows-eventlog", computer="vmap22db"}' --since=10m
+
+# By default, the logcli tool appends a hard maximum of --limit=30 entries to queries unless you explicitly override it.
+
+logcli query '{job="zabbix", computer="vmap22db"}' --since=1h --limit=1000
+
+logcli query '{job="windows-eventlog", computer="vmap22db"}' --since=1h --limit=1000
 ```
 
+Filter logs
+
+Filtering Logs Using LogQL Line Filters
+
+```bash
+# LogQL uses pipeline operators (|=) to scan the text inside log lines.
+# To catch both [Cpu] and any other instance of cpu or CPU, 
+# use the case-insensitive line filter operator |~ combined with a regex modifier (?i)
+logcli query '{job="zabbix", computer="vmap22db"} |~ "(?i)cpu"' --since=10m --limit=500
+
+```
+
+Result from the query
+
+```log
+026-06-16T18:36:38Z {} 2026/06/16 18:36:38.063335 [Cpu] collected CPU performance data
+2026-06-16T18:36:38Z {} 2026/06/16 18:36:38.062772 [Cpu] starting to collect CPU performance data
+2026-06-16T18:36:37Z {} 2026/06/16 18:36:37.063402 [Cpu] collected CPU performance data
+2026-06-16T18:36:37Z {} 2026/06/16 18:36:37.061061 [Cpu] starting to collect CPU performance data
+2026-06-16T18:36:36Z {} 2026/06/16 18:36:36.062479 [Cpu] collected CPU performance data
+2026-06-16T18:36:36Z {} 2026/06/16 18:36:36.060894 [Cpu] starting to collect CPU performance data
+2026-06-16T18:36:35Z {} 2026/06/16 18:36:35.063380 [Cpu] collected CPU performance data
+2026-06-16T18:36:35Z {} 2026/06/16 18:36:35.061615 [Cpu] starting to collect CPU performance data
+2026-06-16T18:36:34Z {} 2026/06/16 18:36:34.062345 [Cpu] collected CPU performance data
+2026-06-16T18:36:34Z {} 2026/06/16 18:36:34.060691 [Cpu] starting to collect CPU performance data
+```
+
+Windows events
+
+```bash
+# first run to check what you want to filter on
+logcli query '{job="windows-eventlog", computer="vmap22db"}' --since=10m
+```
 
 https://grafana.com/docs/loki/latest/query/
 
