@@ -595,8 +595,32 @@ And give it some time, you will see event logs also
 ![event_log](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/ubuntu/images/event_log.png)
 
 
+## Grafana fundamentals
+
+https://grafana.com/tutorials/grafana-fundamentals/
+
 ## Learn log ql
 
+
+A Loki log consists of:
+
+* a timestamp
+* labels/selectors
+* content of the log line.
+
+Note!
+``txt
+service_name is a default label that Loki creates and tries to populate with something in the log line that looks like a service name. 
+The service name label is used to find and explore logs in Logs Drilldown. 
+However, the default can be changed in Loki configuration.
+
+Yes, the updated configuration is significantly better and more robust for a production or lab environment. By explicitly declaring your labels instead of relying on Loki's default behavior, you gain predictable indexing and faster query performance.
+```
+
+We have two logs we are collecting.
+
+* job="zabbix"
+* job="windows-eventlog"
 
 ```bash
 # since logcli is installed, always run
@@ -611,6 +635,5 @@ logcli query '{job="zabbix", computer="vmap22db"}' --since=1h
 logcli query '{job="zabbix", computer="vmap22db"}' --since=1m
 ```
 
-## Grafana fundamentals
 
-https://grafana.com/tutorials/grafana-fundamentals/
+https://grafana.com/docs/loki/latest/query/
