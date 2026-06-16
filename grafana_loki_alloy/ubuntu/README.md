@@ -610,11 +610,16 @@ A Loki log consists of:
 
 Note!
 ```txt
-service_name is a default label that Loki creates and tries to populate with something in the log line that looks like a service name. 
+service_name is a default label that Loki creates and tries to populate with 
+something in the log line that looks like a service name. 
+
 The service name label is used to find and explore logs in Logs Drilldown. 
 However, the default can be changed in Loki configuration.
 
-Yes, the updated configuration is significantly better and more robust for a production or lab environment. By explicitly declaring your labels instead of relying on Loki's default behavior, you gain predictable indexing and faster query performance.
+Yes, the updated configuration is significantly better and more robust for 
+a production or lab environment. 
+By explicitly declaring your labels instead of relying on Loki's default behavior, 
+you gain predictable indexing and faster query performance.
 ```
 
 We have two logs we are collecting.
