@@ -622,6 +622,18 @@ By explicitly declaring your labels instead of relying on Loki's default behavio
 you gain predictable indexing and faster query performance.
 ```
 
+Why This Configuration is Better
+
+Prevents High Cardinality Issues
+
+* Loki relies on labels to index log streams, 
+* Hardcoding it to zabbix-agent or windows-application keeps your index clean.
+
+Consistency Across Platforms
+
+* Windows Event Logs and flat Linux/Zabbix text files format their data completely differently.
+* The new config standardizes both streams perfectly.
+
 We have two logs we are collecting.
 
 * job="zabbix"
