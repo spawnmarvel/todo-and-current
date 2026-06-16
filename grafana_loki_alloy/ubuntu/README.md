@@ -595,9 +595,6 @@ And give it some time, you will see event logs also
 ![event_log](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/ubuntu/images/event_log.png)
 
 
-
-
-
 ## Learn log ql
 
 
@@ -613,3 +610,7 @@ logcli query '{job="zabbix", computer="vmap22db"}' --since=1h
 
 logcli query '{job="zabbix", computer="vmap22db"}' --since=1m
 ```
+
+## Grafana fundamentals
+
+https://grafana.com/tutorials/grafana-fundamentals/
