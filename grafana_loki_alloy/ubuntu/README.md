@@ -415,7 +415,7 @@ Result
 ```
 
 
-## Learn log ql
+## Test with log ql
 
 
 ```bash
