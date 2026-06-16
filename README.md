@@ -431,7 +431,7 @@ Study plan:
 **Completed:**
 - ✅ Install and configure Grafana on Windows for test
 - ✅ Configure Loki Windows for test
-- ✅ Install [Grafana and loki ubuntu](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/ubuntu/README_install_loki.md)
+- ✅ Install [Grafana and loki ubuntu](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/ubuntu/README.md)
 
 ---
 
