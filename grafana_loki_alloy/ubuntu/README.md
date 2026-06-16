@@ -652,7 +652,13 @@ Standard query
 logcli query '{job="zabbix", computer="vmap22db"}' --since=1h
 
 logcli query '{job="zabbix", computer="vmap22db"}' --since=1m
+
+logcli query '{job="windows-eventlog", computer="vmap22db"}' --since=1h
+
+logcli query '{job="windows-eventlog", computer="vmap22db"}' --since=10m
 ```
 
 
 https://grafana.com/docs/loki/latest/query/
+
+### Make Grafana dasboards
