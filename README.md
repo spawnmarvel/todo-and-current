@@ -416,6 +416,24 @@ Study plan:
 
 ---
 
+### Grafana, Loki, and Alloy Agents ⭐ (work use it)
+
+**Goal:** Set up log monitoring stack loki
+
+**Tasks:**
+- [Grafana fundamentals](https://grafana.com/tutorials/grafana-fundamentals/)
+- Mastering LogQL (The "Query Language")
+- Build main 3 dashboards
+- Files [Grafana, Loki and Alloy](https://github.com/spawnmarvel/todo-and-current/tree/main/grafana_loki_alloy)
+
+**Completed:**
+- ✅ Install and configure Grafana on Windows for test
+- ✅ Configure Loki Windows for test
+- ✅ Install [Grafana and loki ubuntu](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/ubuntu/README_install_loki.md)
+
+---
+
+
 ### Misc: MS learn, AZ-104 extended, install Grafana and loki ubuntu, x.509
 
 - 📚 MS Learn Active Directory Domain Services [Azure learn github](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-ad-ds-windows-server-hybrid-core-infrastructure/README_cloud-only-hybrid-Lab_3_mslearn-ad_arc.md)
@@ -426,7 +444,6 @@ Study plan:
 - 📚 MS AZ-104 extended
 - 📚 Azure DO NOT build things in the portal, use cli and ps1
 - 📚 Azure event hub
-- ✅ Install [Grafana and loki ubuntu](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/ubuntu/README_install_loki.md)
 - 📚 Learn log ql
 - 📚 X.509 and openssl
 
@@ -464,23 +481,6 @@ Study plan:
 **Progress:** ![deploy123](https://github.com/spawnmarvel/todo-and-current/blob/main/images/deploy123.png)
 
 
-### Grafana, Loki, and Alloy Agents and Zabbix default ⭐ (work use it)
-
-**Goal:** Set up log monitoring stack loki
-
-**Tasks:**
-- Install Grafana and loki on Ubuntu
-- Deploy Alloy agents across infrastructure
-- Monitor logs from all services
-- Mastering LogQL (The "Query Language")
-- Build main 3 dashboards
-- Files [Grafana, Loki and Alloy](https://github.com/spawnmarvel/todo-and-current/tree/main/grafana_loki_alloy)
-
-**Completed:**
-- ✅ Install and configure Grafana on Windows for test
-- ✅ Configure Loki Windows for test
-
----
 
 ## Knowledge Maintenance Checklist
 
