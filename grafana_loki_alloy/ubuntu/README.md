@@ -761,3 +761,20 @@ Now that you have mastered basic text filtering and metric counting, you can exp
 https://grafana.com/docs/loki/latest/query/
 
 ### Make Grafana dasboards
+
+Translating to Grafana Dashboard Panel (Code/LogQL Mode)
+
+If you are building a log visualization panel inside a permanent dashboard, switch your query editor to Code mode and populate the options:
+
+```bash
+# from
+logcli query '{job="zabbix", computer="vmap22db"}' --since=1h
+# to
+{job="zabbix", computer="vmap22db"}
+
+```
+Grafana has a built-in tailing feature.
+
+When looking at your 1-hour Zabbix log history in Explore, click the Live button in the top right toolbar. Grafana will lock onto the log stream and scroll new Zabbix agent lines down your screen in real time as they generate.
+
+
