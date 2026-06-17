@@ -402,7 +402,7 @@ wget
 **In Progress:**
 - 📚 Linux by Zabbix agent active and Zabbix Agent 2 built-in native functions
 - 📚 Windows and linux log monitoring, keywords. Use vmap22db (there will be a alloy agent there also)
-- 📚 Zabbxi default and Ai 20h course [Zabbix default and Ai 20h course](https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm/zabbix_monitor_vms_snmp_default#ai-20h-course), see if we have coverd 80%.
+- 📚 Zabbxi default and Ai 20h course [Zabbix default 80%](https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm/zabbix_monitor_vms_snmp_default#ai-20h-course), see if we have coverd 80%.
 - 🔄 Squid proxy for offline linux updates updates
 
 **Completed:**
@@ -410,7 +410,7 @@ wget
 - ✅ Windows by Zabbix agent active and use Zabbix Agent 2 built-in native functions
 - ✅ Linux by SNMP
 - ✅ [zabbix proxy](https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/README_stack_proxy_architecture.md)
-- [Zabbix agent Supported item keys, i.e vfs ](https://www.zabbix.com/documentation/current/en/manual/config/items/itemtypes/zabbix_agent)
+- ✅ [Zabbix agent Supported item keys, i.e vfs ](https://www.zabbix.com/documentation/current/en/manual/config/items/itemtypes/zabbix_agent)
 
 Study plan:
 
