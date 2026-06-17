@@ -768,9 +768,9 @@ If you are building a log visualization panel inside a permanent dashboard, swit
 
 ```bash
 # from
-logcli query '{job="zabbix", computer="vmap22db"}' --since=1h
+logcli query '{job="windows-eventlog", computer="vmap22db"}'
 # to
-{job="zabbix", computer="vmap22db"}
+{job="windows-eventlog", computer="vmap22db"}
 
 ```
 Grafana has a built-in tailing feature.
@@ -781,6 +781,9 @@ Count
 
 ```bash
 sum(count_over_time({job="windows-eventlog", computer="vmap22db"} |~ "(?i)error" [$__interval]))
-````
+```
+
+Now we have a dashboard with some statistic and we can view each log message if needed.
+
 
 
