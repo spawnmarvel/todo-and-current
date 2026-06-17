@@ -426,7 +426,7 @@ Study plan:
 
 **Tasks:**
 - [Grafana fundamentals](https://grafana.com/tutorials/grafana-fundamentals/)
-- Mastering LogQL (The "Query Language") (LogQL) [https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/ubuntu/README.md#learn-log-ql]
+- Mastering LogQL (The "Query Language") (LogQL)[https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/ubuntu/README.md#learn-log-ql]
 - Build main 3 dashboards
 
 **Completed:**
