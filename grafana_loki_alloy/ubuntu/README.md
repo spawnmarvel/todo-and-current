@@ -595,6 +595,14 @@ And give it some time, you will see event logs also
 ![event_log](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/ubuntu/images/event_log.png)
 
 
+
+```logql
+{computer="vmap22db",job="windows-eventlog"}
+```
+
+
+![event_log2](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/ubuntu/images/event_log2.png)
+
 ## Grafana fundamentals
 
 https://grafana.com/tutorials/grafana-fundamentals/
