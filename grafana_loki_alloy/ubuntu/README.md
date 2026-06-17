@@ -415,7 +415,7 @@ Result
 ```
 
 
-## Learn log ql
+## Test with log ql
 
 
 ```bash
@@ -595,8 +595,64 @@ And give it some time, you will see event logs also
 ![event_log](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/ubuntu/images/event_log.png)
 
 
+## Grafana fundamentals
+
+https://grafana.com/tutorials/grafana-fundamentals/
+
 ## Learn log ql
 
+
+A Loki log consists of:
+
+* a timestamp
+* labels/selectors
+* content of the log line.
+
+Loki indexes the timestamp and labels, but not the rest of the log line.
+
+LogQL queries are in the following format:
+
+```bash
+# The log stream selector is mandatory while the log pipeline is optional.
+{ log stream selector } | log pipeline
+
+# The log stream selector, also called label selector, is a string containing key-value pairs like this:
+{job="zabbix", computer="vmap22db"}
+
+``` 
+
+Note!
+```txt
+service_name is a default label that Loki creates and tries to populate with 
+something in the log line that looks like a service name. 
+
+The service name label is used to find and explore logs in Logs Drilldown. 
+However, the default can be changed in Loki configuration.
+
+Yes, the updated configuration is significantly better and more robust for 
+a production or lab environment. 
+By explicitly declaring your labels instead of relying on Loki's default behavior, 
+you gain predictable indexing and faster query performance.
+```
+
+Why This Configuration is Better
+
+Prevents High Cardinality Issues
+
+* Loki relies on labels to index log streams, 
+* Hardcoding it to zabbix-agent or windows-application keeps your index clean.
+
+Consistency Across Platforms
+
+* Windows Event Logs and flat Linux/Zabbix text files format their data completely differently.
+* The new config standardizes both streams perfectly.
+
+### Zabbix and Windows event logs
+
+We are curently collecting:
+
+* job="zabbix"
+* job="windows-eventlog"
 
 ```bash
 # since logcli is installed, always run
@@ -609,8 +665,99 @@ Standard query
 logcli query '{job="zabbix", computer="vmap22db"}' --since=1h
 
 logcli query '{job="zabbix", computer="vmap22db"}' --since=1m
+
+logcli query '{job="windows-eventlog", computer="vmap22db"}' --since=1h
+
+logcli query '{job="windows-eventlog", computer="vmap22db"}' --since=10m
+
+# By default, the logcli tool appends a hard maximum of --limit=30 entries to queries unless you explicitly override it.
+
+logcli query '{job="zabbix", computer="vmap22db"}' --since=1h --limit=1000
+
+logcli query '{job="windows-eventlog", computer="vmap22db"}' --since=1h --limit=1000
 ```
 
-## Grafana fundamentals
+Filter logs
 
-https://grafana.com/tutorials/grafana-fundamentals/
+Filtering Logs Using LogQL Line Filters
+
+```bash
+# LogQL uses pipeline operators (|=) to scan the text inside log lines.
+# To catch both [Cpu] and any other instance of cpu or CPU, 
+# use the case-insensitive line filter operator |~ combined with a regex modifier (?i)
+logcli query '{job="zabbix", computer="vmap22db"} |~ "(?i)cpu"' --since=10m --limit=500
+
+```
+
+Result from the query
+
+```log
+026-06-16T18:36:38Z {} 2026/06/16 18:36:38.063335 [Cpu] collected CPU performance data
+2026-06-16T18:36:38Z {} 2026/06/16 18:36:38.062772 [Cpu] starting to collect CPU performance data
+2026-06-16T18:36:37Z {} 2026/06/16 18:36:37.063402 [Cpu] collected CPU performance data
+2026-06-16T18:36:37Z {} 2026/06/16 18:36:37.061061 [Cpu] starting to collect CPU performance data
+2026-06-16T18:36:36Z {} 2026/06/16 18:36:36.062479 [Cpu] collected CPU performance data
+2026-06-16T18:36:36Z {} 2026/06/16 18:36:36.060894 [Cpu] starting to collect CPU performance data
+2026-06-16T18:36:35Z {} 2026/06/16 18:36:35.063380 [Cpu] collected CPU performance data
+2026-06-16T18:36:35Z {} 2026/06/16 18:36:35.061615 [Cpu] starting to collect CPU performance data
+2026-06-16T18:36:34Z {} 2026/06/16 18:36:34.062345 [Cpu] collected CPU performance data
+2026-06-16T18:36:34Z {} 2026/06/16 18:36:34.060691 [Cpu] starting to collect CPU performance data
+```
+
+Windows events
+
+```bash
+# first run to check what you want to filter on
+logcli query '{job="windows-eventlog", computer="vmap22db"}' --since=10h --limit=1000
+
+# then get all error's
+logcli query '{job="windows-eventlog", computer="vmap22db"} |~ "(?i)error"' --since=10h --limit=500
+
+# count them
+logcli instant-query 'count_over_time({job="windows-eventlog", computer="vmap22db"} |~ "(?i)error" [10h])'
+
+logcli instant-query 'count_over_time({job="windows-eventlog", computer="vmap22db"} |~ "(?i)error" [1h])'
+
+```
+
+Result for count is:
+
+
+```json
+// 10h
+[
+  {
+    "metric": {
+      "channel": "Application",
+      "computer": "vmap22db",
+      "detected_level": "error",
+      "job": "windows-eventlog",
+      "service_name": "windows-eventlog"
+    },
+    "value": [
+      1781635785.589,
+      "45"
+
+// 1h
+
+  {
+    "metric": {
+      "channel": "Application",
+      "computer": "vmap22db",
+      "detected_level": "error",
+      "job": "windows-eventlog",
+      "service_name": "windows-eventlog"
+    },
+    "value": [
+      1781635802.685,
+      "33"
+    ]
+```
+
+
+Now that you have mastered basic text filtering and metric counting, you can explore more advanced LogQL query patterns. These formulas help you investigate spikes, parse unstructured data, and isolate system issues across Windows and Zabbix logs.
+
+
+https://grafana.com/docs/loki/latest/query/
+
+### Make Grafana dasboards

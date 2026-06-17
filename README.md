@@ -38,11 +38,13 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
     - [Azure VM Operations](#azure-vm-operations)
     - [AD DS Configuration (vmhybrid01)](#ad-ds-configuration-vmhybrid01)
   - [Fast Linux VM Deployment IAC](#fast-linux-vm-deployment-iac)
-  - [Current Priorities: TOP 3](#current-priorities-top-3)
+  - [Current Priorities: TOP 2 but 1 at the time 20h](#current-priorities-top-2-but-1-at-the-time-20h)
     - [1. Zabbix default ⭐](#1-zabbix-default-)
-    - [1.1 Grafana, Loki, and Alloy Agents and Zabbix default ⭐](#11-grafana-loki-and-alloy-agents-and-zabbix-default-)
-    - [2. Octopus Deploy for Linux (CI/CD) ⭐](#2-octopus-deploy-for-linux-cicd-)
-    - [3. Windows Server Hybrid Administrator (vmhybrid01) ⭐](#3-windows-server-hybrid-administrator-vmhybrid01-)
+    - [Grafana, Loki, and Alloy Agents ⭐](#grafana-loki-and-alloy-agents-)
+    - [Misc: MS learn, AZ-104 extended](#misc-ms-learn-az-104-extended)
+    - [AP22, silent zen, Cogent OPC UA, C-R and tools](#ap22-silent-zen-cogent-opc-ua-c-r-and-tools)
+  - [Backlog](#backlog)
+    - [Octopus Deploy for Linux (CI/CD) ⭐ (work use it)](#octopus-deploy-for-linux-cicd--work-use-it)
   - [Knowledge Maintenance Checklist](#knowledge-maintenance-checklist)
     - [1. Linux Continous](#1-linux-continous)
     - [2. MySQL Continous](#2-mysql-continous)
@@ -50,6 +52,7 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
     - [4. Octopus Deploy Continous](#4-octopus-deploy-continous)
     - [5. AZ-104: Azure Administrator Continous](#5-az-104-azure-administrator-continous)
   - [Parked Projects or Completed Projects](#parked-projects-or-completed-projects)
+    - [0. Windows Server Hybrid Administrator (vmhybrid01) ⭐ (is gone)](#0-windows-server-hybrid-administrator-vmhybrid01--is-gone)
     - [1. Docker \& Azure](#1-docker--azure)
     - [2. Docker Stack](#2-docker-stack)
     - [3. Python Maintenance (Parked)](#3-python-maintenance-parked)
@@ -425,12 +428,11 @@ Study plan:
 - [Grafana fundamentals](https://grafana.com/tutorials/grafana-fundamentals/)
 - Mastering LogQL (The "Query Language")
 - Build main 3 dashboards
-- Files [Grafana, Loki and Alloy](https://github.com/spawnmarvel/todo-and-current/tree/main/grafana_loki_alloy)
 
 **Completed:**
 - ✅ Install and configure Grafana on Windows for test
 - ✅ Configure Loki Windows for test
-- ✅ Install [Grafana and loki ubuntu](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/ubuntu/README_install_loki.md)
+- ✅ Install [Grafana and loki ubuntu](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/ubuntu/README.md)
 
 ---
 
