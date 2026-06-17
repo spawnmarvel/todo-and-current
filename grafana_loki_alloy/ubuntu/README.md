@@ -780,10 +780,14 @@ When looking at your 1-hour Zabbix log history in Explore, click the Live button
 Count
 
 ```bash
-sum(count_over_time({job="windows-eventlog", computer="vmap22db"} |~ "(?i)error" [$__interval]))
+sum(count_over_time({job="windows-eventlog", computer="vmap22db"} | json | detected_level = "error" [$__interval])) 
+
+sum(count_over_time({job="windows-eventlog", computer="vmap22db"} | json | detected_level = "info" [$__interval]))  
+
 ```
 
 Now we have a dashboard with some statistic and we can view each log message if needed.
 
 
 
+![dashboard1](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/ubuntu/images/dashboard1.png)
