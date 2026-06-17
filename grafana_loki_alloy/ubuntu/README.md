@@ -777,4 +777,10 @@ Grafana has a built-in tailing feature.
 
 When looking at your 1-hour Zabbix log history in Explore, click the Live button in the top right toolbar. Grafana will lock onto the log stream and scroll new Zabbix agent lines down your screen in real time as they generate.
 
+Count
+
+```bash
+sum(count_over_time({job="windows-eventlog", computer="vmap22db"} |~ "(?i)error" [$__interval]))
+````
+
 
