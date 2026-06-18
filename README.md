@@ -454,7 +454,7 @@ Study plan:
 - 📚 vmap22db 15 granted
 - 📚 Cogent and 2 interfaces Cim
 - 📚 Clean restart multiple interfaces, with sql m task
-- 📚 CRUD operations 
+- 📚 CRUD operations, definition ed., calc
 - 📚 Other admin tools
 - 🔄 Windows updates manually, Edit NSG from deny to allow until updates are downloaded on server. 
 
