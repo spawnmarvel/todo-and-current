@@ -449,10 +449,13 @@ Study plan:
 - 📚 Azure event hub
 
 
-### AP22, silent zen, Cogent OPC UA, C-R and tools
+### AP22, Silent Zen Master
 
-- 📚 vmap22db learning OPC UA with Prosys OPC UA simulation server, Cogent
-- 📚 vmap22db CRUD and tools
+- 📚 vmap22db 15 granted
+- 📚 Cogent and 2 interfaces Cim
+- 📚 Clean restart multiple interfaces, with sql m task
+- 📚 CRUD operations 
+- 📚 Other admin tools
 - 🔄 Windows updates manually, Edit NSG from deny to allow until updates are downloaded on server. 
 
 **Completed:**
