@@ -453,9 +453,7 @@ Study plan:
 
 - 📚 vmap22db learning OPC UA with Prosys OPC UA simulation server, Cogent
 - 📚 vmap22db CRUD and tools
-- 🔄 Windows updates manually, NSG Allow_Azure_DNS, Allow_Windows_Update
-- 🔄 start vm then Azure Update Manager or got to vmap22db | Updates ?
-- 🔄 Na, must download kb and do manual
+- 🔄 Windows updates manually, Edit NSG from deny to allow until updates are downloaded on server. 
 
 **Completed:**
 - ✅ vmap22db, deny internet outbund
