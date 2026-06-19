@@ -437,7 +437,7 @@ Study plan:
 ---
 
 
-### Misc: MS learn, AZ-104 extended
+### Misc: MS learn, AZ-104 extended, Octopus deploy for windows
 
 - 📚 MS Learn Active Directory Domain Services [Azure learn github](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-ad-ds-windows-server-hybrid-core-infrastructure/README_cloud-only-hybrid-Lab_3_mslearn-ad_arc.md)
 
@@ -447,6 +447,7 @@ Study plan:
 - 📚 MS AZ-104 extended
 - 📚 Azure DO NOT build things in the portal, use cli and ps1
 - 📚 Azure event hub
+- 📚 Do some octopus deploy for windows like RabbitMQ, etc
 
 
 ### AP22, silent zen, Cogent OPC UA, C-R and tools
