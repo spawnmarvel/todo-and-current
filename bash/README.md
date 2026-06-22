@@ -1459,6 +1459,8 @@ lsblk
 du -sh .
 # file space usage for files in current folder.
 du -sh *
+# check loki for example
+sudo du -sh /var/lib/loki/*
 
 
 uptime
