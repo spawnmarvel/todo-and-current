@@ -2,7 +2,7 @@ REM echo off
 REM Install the application as a windows service
 
 REM Service Name
-set service_name=GApplicationName.1
+set service_name=ApplicationName.1
 
 REM Service location
 set path=%~dp0

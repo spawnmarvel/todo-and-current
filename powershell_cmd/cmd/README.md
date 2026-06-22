@@ -28,5 +28,12 @@ Robocopy "c:\Program Files (x86)\folder\folder2" "c:\Program Files (x86)\folder\
 
 Reg service
 
-* ReqWinService.bat, run as admin from foldere where config is. Change var with name.
-* UnReqWinService.bat, run as admin from foldere where config is. Change var with name.
+Change var service_name and .exe file for both:
+
+* ReqWinService.bat, run as admin from foldere where config is. 
+* UnReqWinService.bat, run as admin from foldere where config is.
+
+```cmd
+set service_name=
+set file=
+```
