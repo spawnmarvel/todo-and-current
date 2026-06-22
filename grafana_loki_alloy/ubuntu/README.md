@@ -868,13 +868,13 @@ Result, here we only have warning
 Lets count them
 
 ```logql
-// we can now just count all since ti will only be warnings and errors
+// we can now just count all since it will only be warnings and errors
 
 logcli instant-query 'count_over_time({job="windows-eventlog", computer="vmap22db"} [5m])'
 
 ```
 
-Result is empty since 5 min has passed, lets run the powershell 2 times (to generate 2 warnings) and waith 1 min.
+Result is empty since 5 min has passed, lets run the powershell 2 times (to generate 2 warnings) and wait 1 min.
 
 
 ```json
