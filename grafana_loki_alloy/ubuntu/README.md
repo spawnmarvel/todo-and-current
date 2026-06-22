@@ -786,6 +786,29 @@ loki.source.windowsevent "watch_windows_application_events" {
 }
 ```
 
+
+Lets run a query before
+
+```logql
+
+export LOKI_ADDR="https://vmgrafanaloki03:3100"
+
+logcli query '{job="windows-eventlog", computer="vmap22db"}' --since=30m --limit=1000
+
+```
+
+Result
+
+```txt
+{detected_level="info"}    {"source":"Alloy","channel":"Application","computer":"vmap22db","event_id":1,"level":4,"levelText":"Information","opCodeText":"Info","keywords":"Classic","timeCreated":"2026-06-19T14:00:57.1423898Z","eventRecordID":4679,"event_data":"\u003cData\u003einterrupt received\n\u003c/Data\u003e","message":"interrupt received\n"}
+2026/06/22 12:16:55 https://vmgrafanaloki03:3100/loki/api/v1/query_range?direction=BACKWARD&end=1782130536894922401&limit=941&query=%7Bjob%3D%22windows-eventlog%22%2C+computer%3D%22vmap22db%22%7D&start=1782128815882149263
+2026/06/22 12:16:55 Common labels: {channel="Application", computer="vmap22db", detected_level="info", job="windows-eventlog", service_name="windows-eventlog"}
+
+```
+
+Now lets update the configuration.
+
+
 ### Make Grafana dasboards
 
 Translating to Grafana Dashboard Panel (Code/LogQL Mode)
