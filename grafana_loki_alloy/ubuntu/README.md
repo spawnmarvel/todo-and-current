@@ -895,6 +895,8 @@ Result is empty since 5 min has passed, lets run the powershell 2 times (to gene
 
 ```
 
+![ps1_ev](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/ubuntu/images/ps1_ev.png)
+
 ### Make Grafana dasboards
 
 Translating to Grafana Dashboard Panel (Code/LogQL Mode)
