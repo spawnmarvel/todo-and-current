@@ -1,4 +1,4 @@
-# CMD
+# CMD quick guide
 
 
 # Commands
