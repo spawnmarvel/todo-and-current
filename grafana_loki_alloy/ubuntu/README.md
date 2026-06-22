@@ -768,6 +768,24 @@ Now that you have mastered basic text filtering and metric counting, you can exp
 
 https://grafana.com/docs/loki/latest/query/
 
+
+## Update alloy config Drop All "Information" Logs Entirely
+
+
+Which Method Should You Choose?
+
+* Use Method 1 (Alloy Config) if your Loki server disk space is filling up too fast or you know for sure you will never look at those specific event numbers.
+
+* Use Method 2 (LogQL) if you want to keep the raw history available for deep audits but want a clean view for your day-to-day dashboard gauges.
+
+```yml
+loki.source.windowsevent "watch_windows_application_events" {
+  eventlog_name = "Application"
+  xpath_query   = "*[System[(Level=1 or Level=2 or Level=3)]]" 
+  forward_to    = [loki.relabel.label_windows_events.receiver]
+}
+```
+
 ### Make Grafana dasboards
 
 Translating to Grafana Dashboard Panel (Code/LogQL Mode)
