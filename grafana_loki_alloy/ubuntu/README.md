@@ -779,10 +779,18 @@ Which Method Should You Choose?
 * Use Method 2 (LogQL) if you want to keep the raw history available for deep audits but want a clean view for your day-to-day dashboard gauges.
 
 ```yml
-loki.source.windowsevent "watch_windows_application_events" {
-  eventlog_name = "Application"
-  xpath_query   = "*[System[(Level=1 or Level=2 or Level=3)]]" 
-  forward_to    = [loki.relabel.label_windows_events.receiver]
+{
+// loki.source.windowsevent "watch_windows_application_events" {
+//  eventlog_name = "Application"
+  xpath_query   = "*"
+//  forward_to    = [loki.relabel.label_windows_events.receiver]
+}
+
+}
+{
+
+  // updated to 
+  xpath_query   = "*[System[(Level=1 or Level=2 or Level=3)]]"
 }
 ```
 
