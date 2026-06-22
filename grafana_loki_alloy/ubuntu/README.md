@@ -778,6 +778,8 @@ Which Method Should You Choose?
 
 * Use Method 2 (LogQL) if you want to keep the raw history available for deep audits but want a clean view for your day-to-day dashboard gauges.
 
+To completely block information logs at the source and only allow Errors and Warnings through, filter by Level (Level 4 is Information):
+
 ```yml
 {
 // loki.source.windowsevent "watch_windows_application_events" {
