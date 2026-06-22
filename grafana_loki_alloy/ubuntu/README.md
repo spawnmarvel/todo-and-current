@@ -807,7 +807,7 @@ logcli query '{job="windows-eventlog", computer="vmap22db"}' --since=30m --limit
 
 ```
 
-Result
+Result here we have info
 
 ```txt
 {detected_level="info"}    {"source":"Alloy","channel":"Application","computer":"vmap22db","event_id":1,"level":4,"levelText":"Information","opCodeText":"Info","keywords":"Classic","timeCreated":"2026-06-19T14:00:57.1423898Z","eventRecordID":4679,"event_data":"\u003cData\u003einterrupt received\n\u003c/Data\u003e","message":"interrupt received\n"}
@@ -816,8 +816,84 @@ Result
 
 ```
 
-Now lets update the configuration.
+Now lets update the configuration as mentioned above.
 
+
+
+Run this ps1 script a few time
+
+```ps1
+
+# Version: 1.0.0
+# Description: Registers a custom event source if missing and writes a test warning entry.
+
+$SourceName = "PowerShellTestScript"
+$LogName    = "Application"
+
+try {
+    # Check if the source exists, create it if it doesn't
+    if (-not [System.Diagnostics.EventLog]::SourceExists($SourceName)) {
+        Write-Host "Source '$SourceName' not found. Registering new event source..."
+        New-EventLog -LogName $LogName -Source $SourceName -ErrorAction Stop
+    }
+
+    # Write the Warning Event
+    Write-EventLog -LogName $LogName -Source $SourceName -EventId 101 -EntryType Warning -Message "System validation test: This warning confirms log collection pipelines are operational." -ErrorAction Stop
+    
+    Write-Host "Success: Warning written to $LogName/$SourceName with Event ID 101."
+}
+catch {
+    Write-Host "Encountered Error: " $_.Exception.Message
+}
+```
+
+Now collect the new logs
+
+```logql
+
+logcli query '{job="windows-eventlog", computer="vmap22db"}' --since=5m
+```
+
+Result, here we only have warning
+
+```txt
+
+2026/06/22 12:29:27 Common labels: {channel="Application", computer="vmap22db", detected_level="warn", job="windows-eventlog", service_name="windows-eventlog"}
+2026-06-22T12:25:27Z {} {"source":"PowerShellTestScript","channel":"Application","computer":"vmap22db","event_id":101,"level":3,"task":1,"levelText":"Warning","opCodeText":"Info","keywords":"Classic","timeCreated":"2026-06-22T12:25:25.2990725Z","eventRecordID":4763,"event_data":"\u003cData\u003eSystem validation test: This warning confirms log collection pipelines are operational.\u003c/Data\u003e","message":"System validation test: This warning confirms log collection pipelines are operational."}
+
+[...]
+
+```
+
+Lets count them
+
+```logql
+// we can now just count all since ti will only be warnings and errors
+
+logcli instant-query 'count_over_time({job="windows-eventlog", computer="vmap22db"} [5m])'
+
+```
+
+Result is empty since 5 min has passed, lets run the powershell 2 times (to generate 2 warnings) and waith 1 min.
+
+
+```json
+[
+  {
+    "metric": {
+      "channel": "Application",
+      "computer": "vmap22db",
+      "detected_level": "warn",
+      "job": "windows-eventlog",
+      "service_name": "windows-eventlog"
+    },
+    "value": [
+      1782131560.152,
+      "2"
+    ]
+  }
+
+```
 
 ### Make Grafana dasboards
 
