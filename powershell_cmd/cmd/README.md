@@ -26,7 +26,14 @@ Robocopy "c:\Program Files (x86)\folder\folder2" "c:\Program Files (x86)\folder\
 
 ```
 
-Reg service
+* /e, Copies subdirectories. This option automatically includes empty directories.
+* /secfix, Fixes file security on all files, even skipped ones.
+* /timefix, Fixes file times on all files, even skipped ones.
+
+
+https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/robocopy
+
+Reg service / sc create
 
 Change var service_name and file for:
 
