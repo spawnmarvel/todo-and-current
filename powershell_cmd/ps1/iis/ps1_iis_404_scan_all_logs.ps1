@@ -8,6 +8,9 @@ $FilesToScanCount = 100
 # ---------------------
 
 Write-Host "Starting multi-log statistical asset 404 scan pipeline..."
+$d = Get-Date
+Write-host "Started script " $d
+Write-Host "The current hostname is: $env:COMPUTERNAME" -ForegroundColor Cyan
 
 # Verify if the target log directory exists
 if (-not (Test-Path -Path $LogDirectory)) {

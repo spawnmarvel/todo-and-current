@@ -11,6 +11,9 @@ $AssetPattern = "\.woff2|\.woff|\.css"
 # ---------------------
 
 Write-Host "Starting 404 isolation pipeline..."
+$d = Get-Date
+Write-host "Started script " $d
+Write-Host "The current hostname is: $env:COMPUTERNAME" -ForegroundColor Cyan
 
 # Verify if the target log file exists
 if (-not (Test-Path -Path $LogFilePath -PathType Leaf)) {
