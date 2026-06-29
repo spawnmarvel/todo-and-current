@@ -3,7 +3,7 @@
 
 Param (
     [string]$LogFilePath = "F:\Logs\W3SVC1\u_ex260623.log",
-    [string]$OutputFilePath = "$Home\Desktop\iis_404_errors_only.txt"
+    [string]$OutputFilePath = "$Home\Desktop\IIS-Script-and-logs\iis_404_errors_only.txt"
 )
 
 # --- Configuration ---
