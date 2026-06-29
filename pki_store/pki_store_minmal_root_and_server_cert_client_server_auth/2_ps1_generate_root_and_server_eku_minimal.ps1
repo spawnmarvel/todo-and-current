@@ -1,6 +1,11 @@
 # Version: 1.8.0
 # Description: Generates a 15-Year Root CA and uses it to sign a 10-Year dual-purpose Server/Client cert inside C:\temp.
 
+# Before running this section, you MUST open "C:\temp\extensions.cnf" and alter the [alt_names] section 
+# to match your new destination hostname. For example:
+# [ alt_names ]
+# DNS.1 = newname.domain.no
+
 #### NOTE!! Run this with CMD AS ADMININSTRATOR and navigate to where you have openssl installed, then run the following command to execute the script:
 #### NOTE!! In my case it is:
 c:\Program Files\OpenSSL-Win64\bin>openssl version
@@ -53,7 +58,7 @@ openssl s_client -connect your-broker-host:5671 -key C:\path\to\client.key.pem -
 # ==========================================
 
 # Before running this section, you MUST open "C:\temp\extensions.cnf" and alter the [alt_names] section 
-# to match your new destination hostname or IP address. For example:
+# to match your new destination hostname. For example:
 # [ alt_names ]
 # DNS.1 = newname.domain.no
 
