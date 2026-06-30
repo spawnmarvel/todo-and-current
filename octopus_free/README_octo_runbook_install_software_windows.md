@@ -11,4 +11,4 @@ Upload packet but zip first
 Uploaded to octopus
 
 
-![packets]https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/packets_rmq.png
+![packets](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/packets_rmq.png)
