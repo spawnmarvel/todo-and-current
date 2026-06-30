@@ -81,3 +81,111 @@ Write-Host "Packets extracted and prepared in $destinationStage."
 ```
 
 ![packets stage](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/packets_rmq_stage.png)
+
+
+### Step 2: Install Erlang & Verify ERLANG_HOME
+
+Step Type: Run a Script
+
+Package Reference: None (Reads directly from your local staging directory)
+
+```ps1
+# Version: 3.5.0
+# Description: Installs Erlang only if missing, sets ERLANG_HOME if not defined, and runs verification checks.
+
+# --- IDEMPOTENCY CHECK: Is ERLANG_HOME already valid? ---
+$existingHome = [Environment]::GetEnvironmentVariable("ERLANG_HOME", [EnvironmentVariableTarget]::Machine)
+
+if ($existingHome -and (Test-Path "$existingHome\bin\erl.exe")) {
+    Write-Host "Idempotency Notice: ERLANG_HOME is already set to '$existingHome' and erl.exe exists."
+    Write-Host "Erlang is already installed and configured. Skipping installation steps entirely."
+    exit 0
+}
+
+Write-Host "Erlang is not fully installed or configured. Proceeding with installation sequence..."
+
+$stageDir = "C:\Octopus_Stage\Erlang"
+$installer = Get-ChildItem -Path $stageDir -Filter "otp_win64_*.exe" -Recurse | Select-Object -First 1
+
+if ($installer) {
+    Write-Host "Found Erlang installer at: $($installer.FullName)"
+    Write-Host "Running silent installation..."
+    
+    $process = Start-Process -FilePath $installer.FullName -ArgumentList "/S" -Wait -NoNewWindow -PassThru
+    
+    if ($process.ExitCode -eq 0) {
+        Write-Host "Erlang installer finished successfully."
+    } else {
+        Write-Warning "Erlang installer exited with code: $($process.ExitCode)"
+    }
+    
+    # --- DYNAMIC LOCATION PATH FINDER ---
+    $erlangHomePath = $null
+
+    # Method 1: Check Windows Registry
+    $regPaths = @(
+        "HKLM:\SOFTWARE\Ericsson\Erlang",
+        "HKLM:\SOFTWARE\Wow6432Node\Ericsson\Erlang"
+    )
+
+    foreach ($regPath in $regPaths) {
+        if (Test-Path $regPath) {
+            $subKeys = Get-ChildItem -Path $regPath -ErrorAction SilentlyContinue
+            foreach ($subKey in $subKeys) {
+                $pathVal = (Get-ItemProperty -Path $subKey.PsPath -Name "(default)" -ErrorAction SilentlyContinue)."(default)"
+                if ($pathVal -and (Test-Path $pathVal)) {
+                    $erlangHomePath = $pathVal
+                    Write-Host "Found Erlang installation path via Registry: $erlangHomePath"
+                    break
+                }
+            }
+        }
+        if ($erlangHomePath) { break }
+    }
+
+    # Method 2: Fallback Broad Directory Search
+    if (-not $erlangHomePath) {
+        Write-Warning "Registry path not found. Falling back to multi-directory scan..."
+        $searchPaths = @(
+            [Environment]::GetFolderPath("ProgramFiles"),
+            ${env:ProgramFiles(x86)}
+        )
+        
+        foreach ($targetBase in $searchPaths) {
+            if ($targetBase) {
+                $erlFolder = Get-ChildItem -Path $targetBase -Directory -Filter "*Erlang*" -ErrorAction SilentlyContinue | Select-Object -First 1
+                if (-not $erlFolder) {
+                    $erlFolder = Get-ChildItem -Path $targetBase -Directory -Filter "erl-*" -ErrorAction SilentlyContinue | Select-Object -First 1
+                }
+                
+                if ($erlFolder) {
+                    $erlangHomePath = $erlFolder.FullName
+                    Write-Host "Found Erlang installation path via Fallback Scan: $erlangHomePath"
+                    break
+                }
+            }
+        }
+    }
+
+    # --- SET AND VERIFY ENVIRONMENT VARIABLE ---
+    if ($erlangHomePath) {
+        Write-Host "Setting system-wide environment variable ERLANG_HOME to: $erlangHomePath"
+        [Environment]::SetEnvironmentVariable("ERLANG_HOME", $erlangHomePath, [EnvironmentVariableTarget]::Machine)
+        
+        # Verification
+        $verifiedHome = [Environment]::GetEnvironmentVariable("ERLANG_HOME", [EnvironmentVariableTarget]::Machine)
+        if ($verifiedHome -and (Test-Path "$verifiedHome\bin\erl.exe")) {
+            Write-Host "Verification Success: ERLANG_HOME variable valid and erl.exe detected."
+        } else {
+            Write-Error "Verification Failure: ERLANG_HOME path set to '$verifiedHome' but 'bin\erl.exe' is missing."
+            exit 1
+        }
+    } else {
+        Write-Error "Critical Failure: Unable to locate the Erlang installation path via Registry or File System scan."
+        exit 1
+    }
+} else {
+    Write-Error "Erlang installer executable not found inside $stageDir."
+    exit 1
+}
+```
