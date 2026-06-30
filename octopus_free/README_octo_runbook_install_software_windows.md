@@ -90,8 +90,8 @@ Step Type: Run a Script
 Package Reference: None (Reads directly from your local staging directory)
 
 ```ps1
-# Version: 3.5.0
-# Description: Installs Erlang only if missing, sets ERLANG_HOME if not defined, and runs verification checks.
+# Version: 3.8.0
+# Description: Installs Erlang, registers ERLANG_HOME globally, and broadcasts a system update to refresh new CMD sessions.
 
 # --- IDEMPOTENCY CHECK: Is ERLANG_HOME already valid? ---
 $existingHome = [Environment]::GetEnvironmentVariable("ERLANG_HOME", [EnvironmentVariableTarget]::Machine)
@@ -135,7 +135,7 @@ if ($installer) {
                 $pathVal = (Get-ItemProperty -Path $subKey.PsPath -Name "(default)" -ErrorAction SilentlyContinue)."(default)"
                 if ($pathVal -and (Test-Path $pathVal)) {
                     $erlangHomePath = $pathVal
-                    Write-Host "Found Erlang installation path via Registry: $erlangHomePath"
+                    Write-Host "Found Erlang installation path via Registry: $pathVal"
                     break
                 }
             }
@@ -167,17 +167,49 @@ if ($installer) {
         }
     }
 
-    # --- SET AND VERIFY ENVIRONMENT VARIABLE ---
+    # --- SET ENVIRONMENT VARIABLES & BROADCAST SYSTEM REFRESH ---
     if ($erlangHomePath) {
+        # 1. Update ERLANG_HOME permanently at Machine Layer
         Write-Host "Setting system-wide environment variable ERLANG_HOME to: $erlangHomePath"
         [Environment]::SetEnvironmentVariable("ERLANG_HOME", $erlangHomePath, [EnvironmentVariableTarget]::Machine)
         
-        # Verification
-        $verifiedHome = [Environment]::GetEnvironmentVariable("ERLANG_HOME", [EnvironmentVariableTarget]::Machine)
-        if ($verifiedHome -and (Test-Path "$verifiedHome\bin\erl.exe")) {
-            Write-Host "Verification Success: ERLANG_HOME variable valid and erl.exe detected."
+        # 2. Update Machine PATH permanently
+        $erlangBinPath = "$erlangHomePath\bin"
+        $currentMachinePath = [Environment]::GetEnvironmentVariable("Path", [EnvironmentVariableTarget]::Machine)
+        
+        if ($currentMachinePath -notlike "*$erlangBinPath*") {
+            Write-Host "Appending Erlang bin folder to system-wide Machine PATH variable..."
+            $newMachinePath = "$currentMachinePath;$erlangBinPath"
+            [Environment]::SetEnvironmentVariable("Path", $newMachinePath, [EnvironmentVariableTarget]::Machine)
+        }
+
+        # 3. Native Win32 API Compilation to Broadcast Environment Refresh Message
+        Write-Host "Broadcasting WM_SETTINGCHANGE message to refresh Explorer Shell environment..."
+        try {
+            $Signature = @'
+[DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Auto)]
+public static extern IntPtr SendMessageTimeout(
+    IntPtr hWnd, uint Msg, IntPtr wParam, string lParam, 
+    uint fuFlags, uint uTimeout, out IntPtr lpdwResult);
+'@
+            $Win32API = Add-Type -MemberDefinition $Signature -Name "Win32SendMessage" -Namespace "Win32API" -PassThru
+            
+            $HWND_BROADCAST = [IntPtr]0xffff
+            $WM_SETTINGCHANGE = 0x001A
+            $SMTO_ABORTIFHUNG = 0x0002
+            $result = [IntPtr]::Zero
+            
+            $Win32API::SendMessageTimeout($HWND_BROADCAST, $WM_SETTINGCHANGE, [IntPtr]::Zero, "Environment", $SMTO_ABORTIFHUNG, 5000, [ref]$result) | Out-Null
+            Write-Host "System environment refresh broadcast completed."
+        } catch {
+            Write-Warning "Could not send environment refresh broadcast: $_"
+        }
+
+        # Verification block against stability
+        if (Test-Path "$erlangHomePath\bin\erl.exe") {
+            Write-Host "Verification Success: ERLANG_HOME variable valid and active."
         } else {
-            Write-Error "Verification Failure: ERLANG_HOME path set to '$verifiedHome' but 'bin\erl.exe' is missing."
+            Write-Error "Verification Failure: ERLANG_HOME path set to '$erlangHomePath' but 'bin\erl.exe' is missing."
             exit 1
         }
     } else {
@@ -247,3 +279,56 @@ Write-Host "Pre-configuration checks completed successfully."
 
 
 ![pre rmq](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/pre_rmq.png)
+
+
+
+### Step 4: Install RabbitMQ Server (Idempotent)
+
+This step reads ERLANG_HOME directly from the registry location seen in image_654259.png to ensure the installation path is recognized, then checks if the Windows service already exists before trying to run the installer.
+
+Step Type: Run a Script
+
+Package Reference: None (Reads from C:\Octopus_Stage\RabbitMQ)
+
+```ps1
+# Version: 3.3.0
+# Description: Installs RabbitMQ silently only if the 'RabbitMQ' service is not already registered.
+
+# --- IDEMPOTENCY CHECK ---
+$existingService = Get-Service -Name "RabbitMQ" -ErrorAction SilentlyContinue
+
+if ($existingService) {
+    Write-Host "Idempotency Notice: The 'RabbitMQ' Windows service is already registered."
+    Write-Host "Skipping installation phase."
+    exit 0
+}
+
+# Force loading ERLANG_HOME from the machine layer to guarantee the installer sees it
+$machineErlangHome = [Environment]::GetEnvironmentVariable("ERLANG_HOME", [EnvironmentVariableTarget]::Machine)
+if (-not $machineErlangHome) {
+    Write-Error "Critical Prerequisite Missing: ERLANG_HOME could not be resolved from the system registry."
+    exit 1
+}
+$env:ERLANG_HOME = $machineErlangHome
+
+# Locate installer from Step 1 unpack folder
+$stageDir = "C:\Octopus_Stage\RabbitMQ"
+$installer = Get-ChildItem -Path $stageDir -Filter "rabbitmq-server-*.exe" -Recurse | Select-Object -First 1
+
+if ($installer) {
+    Write-Host "Found RabbitMQ installer at: $($installer.FullName)"
+    Write-Host "Executing silent installation sequence..."
+    
+    $process = Start-Process -FilePath $installer.FullName -ArgumentList "/S" -Wait -NoNewWindow -PassThru
+    
+    if ($process.ExitCode -eq 0) {
+        Write-Host "RabbitMQ installer executed successfully."
+    } else {
+        Write-Warning "RabbitMQ installer returned an unexpected exit code: $($process.ExitCode)"
+    }
+} else {
+    Write-Error "RabbitMQ installer executable not found inside $stageDir."
+    exit 1
+}
+```
+
