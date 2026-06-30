@@ -83,7 +83,7 @@ Write-Host "Packets extracted and prepared in $destinationStage."
 ![packets stage](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/packets_rmq_stage.png)
 
 
-### Step 2: Install Erlang & Verify ERLANG_HOME
+### Step 2: Install Erlang & Verify ERLANG_HOME (Idempotent)
 
 Step Type: Run a Script
 
@@ -194,3 +194,53 @@ It is idempotent
 
 
 ![install erl](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/install_erl.png)
+
+
+### Step 3: Pre-Configure RabbitMQ Environment (Idempotent)
+
+This step creates your custom data directories and registers the RabbitMQ base and configuration paths. If the configuration files already exist, it will leave them untouched.
+
+Step Type: Run a Script
+
+Package Reference: None
+
+
+
+```ps1
+# Version: 1.2.0
+# Description: Idempotently creates RabbitMQ base/config structures and sets environment variables.
+
+$rabbitBase = "C:\RabbitMQ_Base"
+$configDir = "$rabbitBase\config"
+$configFile = "$configDir\rabbitmq.conf"
+$advancedConfigFile = "$configDir\advanced.config"
+
+# 1. Idempotent Directory Creation
+if (-not (Test-Path $configDir)) {
+    Write-Host "Creating RabbitMQ Base and Config directories..."
+    New-Item -ItemType Directory -Force -Path $configDir | Out-Null
+} else {
+    Write-Host "Idempotency Check: Configuration directories already exist."
+}
+
+# 2. Idempotent Config Stub Dropping
+if (-not (Test-Path $configFile)) {
+    Write-Host "Creating base rabbitmq.conf file..."
+    New-Item -ItemType File -Path $configFile -Force | Out-Null
+    Set-Content -Path $configFile -Value "listeners.tcp.default = 5672"
+}
+
+if (-not (Test-Path $advancedConfigFile)) {
+    Write-Host "Creating advanced.config file..."
+    New-Item -ItemType File -Path $advancedConfigFile -Force | Out-Null
+    Set-Content -Path $advancedConfigFile -Value "[]."
+}
+
+# 3. Set Environment Variables at Machine Target
+Write-Host "Asserting RabbitMQ System Environment Variables..."
+[Environment]::SetEnvironmentVariable("RABBITMQ_BASE", $rabbitBase, [EnvironmentVariableTarget]::Machine)
+[Environment]::SetEnvironmentVariable("RABBITMQ_CONFIG_FILE", $configFile, [EnvironmentVariableTarget]::Machine)
+[Environment]::SetEnvironmentVariable("RABBITMQ_ADVANCED_CONFIG_FILE", $advancedConfigFile, [EnvironmentVariableTarget]::Machine)
+
+Write-Host "Pre-configuration checks completed successfully."
+```
