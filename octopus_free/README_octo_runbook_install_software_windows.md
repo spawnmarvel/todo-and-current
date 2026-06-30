@@ -135,8 +135,8 @@ Step Type: Run a Script
 Script Type: PowerShell
 
 ```ps1
-# Version: 1.4.0
-# Description: Idempotently configures ERLANG_HOME and PATH using the proven .NET Machine Target engine.
+# Version: 1.4.2
+# Description: Idempotently configures ERLANG_HOME and PATH using the proven .NET Machine Target engine and signals the OS for instant notification without a reboot.
 
 # 1. Locate the path where Erlang was dropped
 $programFiles = [Environment]::GetFolderPath("ProgramFiles")
@@ -148,6 +148,7 @@ if (-not $erlFolder) {
 
 if ($erlFolder) {
     $erlangHomePath = $erlFolder.FullName.TrimEnd('\')
+    $variableChanged = $false
     
     # 2. Advanced Idempotency Check using Proven Machine Target Evaluation
     $existingHome = [Environment]::GetEnvironmentVariable("ERLANG_HOME", [EnvironmentVariableTarget]::Machine)
@@ -163,6 +164,7 @@ if ($erlFolder) {
         
         Write-Host "Asserting Erlang System Environment Variable to: $erlangHomePath"
         [Environment]::SetEnvironmentVariable("ERLANG_HOME", $erlangHomePath, [EnvironmentVariableTarget]::Machine)
+        $variableChanged = $true
     }
     
     # 3. Idempotently append to Machine Path registry string using the Proven Engine
@@ -173,8 +175,24 @@ if ($erlFolder) {
         Write-Host "Appending Erlang bin folder to system-wide Machine PATH..."
         $newMachinePath = "$currentMachinePath;$erlangBinPath"
         [Environment]::SetEnvironmentVariable("Path", $newMachinePath, [EnvironmentVariableTarget]::Machine)
+        $variableChanged = $true
     } else {
         Write-Host "Idempotency Check: Erlang bin directory path is already included inside the Machine PATH environment map."
+    }
+
+    # 4. If changes were made, notify the OS globally so you do not have to reboot
+    if ($variableChanged) {
+        Write-Host "Changes detected. Sending system broadcast (WM_SETTINGCHANGE) to refresh environment blocks instantly..."
+        try {
+            $signature = '[DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Auto)] public static extern IntPtr SendMessageTimeout(IntPtr hWnd, uint Msg, IntPtr wParam, string lParam, uint fuFlags, uint uTimeout, out IntPtr lpdwResult);'
+            $type = Add-Type -MemberDefinition $signature -Name "Win32Utils" -Namespace "OctopusEnvironmentRefresh" -PassThru
+            $result = [IntPtr]::Zero
+            # Send message to HWND_BROADCAST (0xffff) targeting "Environment"
+            $type::SendMessageTimeout([IntPtr]0xffff, 0x001A, [IntPtr]::Zero, "Environment", 0x0002, 4000, [ref]$result) | Out-Null
+            Write-Host "System environment broadcast completed successfully."
+        } catch {
+            Write-Warning "Failed to broadcast environment update signal: $_"
+        }
     }
 
     Write-Host "Erlang environment verification phase completed successfully."
@@ -186,12 +204,17 @@ if ($erlFolder) {
 
 
 
-## What is up with cmd set?
+### What is up with cmd set?
 
 Check that we can run set and view environment vars also
 
+https://serverfault.com/questions/8855/how-do-you-add-a-windows-environment-variable-without-rebooting
 
-### Step 4: Pre-Configure RabbitMQ Environment (Idempotent)
+https://stackoverflow.com/questions/12323621/windows-x64-rabbitmq-install-error-with-erlang-environment-var-erlang-home
+
+### Need a boot yes
+
+### Step 5: Pre-Configure RabbitMQ Environment (Idempotent)
 
 This step creates your custom data directories and registers the RabbitMQ base and configuration paths. If the configuration files already exist, it will leave them untouched.
 
