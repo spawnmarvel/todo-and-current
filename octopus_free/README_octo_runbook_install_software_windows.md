@@ -90,20 +90,21 @@ Step Type: Run a Script
 Package Reference: None (Reads directly from your local staging directory)
 
 ```ps1
-# Version: 3.8.0
-# Description: Installs Erlang, registers ERLANG_HOME globally, and broadcasts a system update to refresh new CMD sessions.
+# Version: 1.1.0
+# Description: Idempotently executes the Erlang setup installer only if no existing installation directory is discovered.
 
-# --- IDEMPOTENCY CHECK: Is ERLANG_HOME already valid? ---
-$existingHome = [Environment]::GetEnvironmentVariable("ERLANG_HOME", [EnvironmentVariableTarget]::Machine)
+$programFiles = [Environment]::GetFolderPath("ProgramFiles")
+$existingErl = Get-ChildItem -Path $programFiles -Directory -Filter "*Erlang*" -ErrorAction SilentlyContinue | Select-Object -First 1
+if (-not $existingErl) {
+    $existingErl = Get-ChildItem -Path $programFiles -Directory -Filter "erl-*" -ErrorAction SilentlyContinue | Select-Object -First 1
+}
 
-if ($existingHome -and (Test-Path "$existingHome\bin\erl.exe")) {
-    Write-Host "Idempotency Notice: ERLANG_HOME is already set to '$existingHome' and erl.exe exists."
-    Write-Host "Erlang is already installed and configured. Skipping installation steps entirely."
+if ($existingErl -and (Test-Path "$($existingErl.FullName)\bin\erl.exe")) {
+    Write-Host "Idempotency Check: Erlang binaries detected at '$($existingErl.FullName)'. Skipping installer execution."
     exit 0
 }
 
-Write-Host "Erlang is not fully installed or configured. Proceeding with installation sequence..."
-
+Write-Host "Erlang execution folder not detected. Proceeding with installation..."
 $stageDir = "C:\Octopus_Stage\Erlang"
 $installer = Get-ChildItem -Path $stageDir -Filter "otp_win64_*.exe" -Recurse | Select-Object -First 1
 
@@ -114,107 +115,9 @@ if ($installer) {
     $process = Start-Process -FilePath $installer.FullName -ArgumentList "/S" -Wait -NoNewWindow -PassThru
     
     if ($process.ExitCode -eq 0) {
-        Write-Host "Erlang installer finished successfully."
+        Write-Host "Erlang installer completed successfully."
     } else {
         Write-Warning "Erlang installer exited with code: $($process.ExitCode)"
-    }
-    
-    # --- DYNAMIC LOCATION PATH FINDER ---
-    $erlangHomePath = $null
-
-    # Method 1: Check Windows Registry
-    $regPaths = @(
-        "HKLM:\SOFTWARE\Ericsson\Erlang",
-        "HKLM:\SOFTWARE\Wow6432Node\Ericsson\Erlang"
-    )
-
-    foreach ($regPath in $regPaths) {
-        if (Test-Path $regPath) {
-            $subKeys = Get-ChildItem -Path $regPath -ErrorAction SilentlyContinue
-            foreach ($subKey in $subKeys) {
-                $pathVal = (Get-ItemProperty -Path $subKey.PsPath -Name "(default)" -ErrorAction SilentlyContinue)."(default)"
-                if ($pathVal -and (Test-Path $pathVal)) {
-                    $erlangHomePath = $pathVal
-                    Write-Host "Found Erlang installation path via Registry: $pathVal"
-                    break
-                }
-            }
-        }
-        if ($erlangHomePath) { break }
-    }
-
-    # Method 2: Fallback Broad Directory Search
-    if (-not $erlangHomePath) {
-        Write-Warning "Registry path not found. Falling back to multi-directory scan..."
-        $searchPaths = @(
-            [Environment]::GetFolderPath("ProgramFiles"),
-            ${env:ProgramFiles(x86)}
-        )
-        
-        foreach ($targetBase in $searchPaths) {
-            if ($targetBase) {
-                $erlFolder = Get-ChildItem -Path $targetBase -Directory -Filter "*Erlang*" -ErrorAction SilentlyContinue | Select-Object -First 1
-                if (-not $erlFolder) {
-                    $erlFolder = Get-ChildItem -Path $targetBase -Directory -Filter "erl-*" -ErrorAction SilentlyContinue | Select-Object -First 1
-                }
-                
-                if ($erlFolder) {
-                    $erlangHomePath = $erlFolder.FullName
-                    Write-Host "Found Erlang installation path via Fallback Scan: $erlangHomePath"
-                    break
-                }
-            }
-        }
-    }
-
-    # --- SET ENVIRONMENT VARIABLES & BROADCAST SYSTEM REFRESH ---
-    if ($erlangHomePath) {
-        # 1. Update ERLANG_HOME permanently at Machine Layer
-        Write-Host "Setting system-wide environment variable ERLANG_HOME to: $erlangHomePath"
-        [Environment]::SetEnvironmentVariable("ERLANG_HOME", $erlangHomePath, [EnvironmentVariableTarget]::Machine)
-        
-        # 2. Update Machine PATH permanently
-        $erlangBinPath = "$erlangHomePath\bin"
-        $currentMachinePath = [Environment]::GetEnvironmentVariable("Path", [EnvironmentVariableTarget]::Machine)
-        
-        if ($currentMachinePath -notlike "*$erlangBinPath*") {
-            Write-Host "Appending Erlang bin folder to system-wide Machine PATH variable..."
-            $newMachinePath = "$currentMachinePath;$erlangBinPath"
-            [Environment]::SetEnvironmentVariable("Path", $newMachinePath, [EnvironmentVariableTarget]::Machine)
-        }
-
-        # 3. Native Win32 API Compilation to Broadcast Environment Refresh Message
-        Write-Host "Broadcasting WM_SETTINGCHANGE message to refresh Explorer Shell environment..."
-        try {
-            $Signature = @'
-[DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Auto)]
-public static extern IntPtr SendMessageTimeout(
-    IntPtr hWnd, uint Msg, IntPtr wParam, string lParam, 
-    uint fuFlags, uint uTimeout, out IntPtr lpdwResult);
-'@
-            $Win32API = Add-Type -MemberDefinition $Signature -Name "Win32SendMessage" -Namespace "Win32API" -PassThru
-            
-            $HWND_BROADCAST = [IntPtr]0xffff
-            $WM_SETTINGCHANGE = 0x001A
-            $SMTO_ABORTIFHUNG = 0x0002
-            $result = [IntPtr]::Zero
-            
-            $Win32API::SendMessageTimeout($HWND_BROADCAST, $WM_SETTINGCHANGE, [IntPtr]::Zero, "Environment", $SMTO_ABORTIFHUNG, 5000, [ref]$result) | Out-Null
-            Write-Host "System environment refresh broadcast completed."
-        } catch {
-            Write-Warning "Could not send environment refresh broadcast: $_"
-        }
-
-        # Verification block against stability
-        if (Test-Path "$erlangHomePath\bin\erl.exe") {
-            Write-Host "Verification Success: ERLANG_HOME variable valid and active."
-        } else {
-            Write-Error "Verification Failure: ERLANG_HOME path set to '$erlangHomePath' but 'bin\erl.exe' is missing."
-            exit 1
-        }
-    } else {
-        Write-Error "Critical Failure: Unable to locate the Erlang installation path via Registry or File System scan."
-        exit 1
     }
 } else {
     Write-Error "Erlang installer executable not found inside $stageDir."
@@ -222,13 +125,73 @@ public static extern IntPtr SendMessageTimeout(
 }
 ```
 
-It is idempotent
+
+### Step 3: Set ERLANG_HOME (Idempotent via Machine Target)
+
+This step checks your machine's environment target path using the proven method. If ERLANG_HOME matches the active installation directory path, it skips setting it again.
+
+Step Type: Run a Script
+
+Script Type: PowerShell
+
+```ps1
+# Version: 1.4.0
+# Description: Idempotently configures ERLANG_HOME and PATH using the proven .NET Machine Target engine.
+
+# 1. Locate the path where Erlang was dropped
+$programFiles = [Environment]::GetFolderPath("ProgramFiles")
+$erlFolder = Get-ChildItem -Path $programFiles -Directory -Filter "*Erlang*" -ErrorAction SilentlyContinue | Select-Object -First 1
+
+if (-not $erlFolder) {
+    $erlFolder = Get-ChildItem -Path $programFiles -Directory -Filter "erl-*" -ErrorAction SilentlyContinue | Select-Object -First 1
+}
+
+if ($erlFolder) {
+    $erlangHomePath = $erlFolder.FullName.TrimEnd('\')
+    
+    # 2. Advanced Idempotency Check using Proven Machine Target Evaluation
+    $existingHome = [Environment]::GetEnvironmentVariable("ERLANG_HOME", [EnvironmentVariableTarget]::Machine)
+    
+    if ($existingHome -eq $erlangHomePath -and (Test-Path $existingHome)) {
+        Write-Host "Idempotency Check: ERLANG_HOME is already configured to a valid path at '$existingHome'."
+    } else {
+        if (-not $existingHome) {
+            Write-Warning "ERLANG_HOME was missing from the Machine layer (possibly removed manually). Restoring..."
+        } elseif (-not (Test-Path $existingHome)) {
+            Write-Warning "ERLANG_HOME was pointing to an invalid or missing path '$existingHome'. Updating..."
+        }
+        
+        Write-Host "Asserting Erlang System Environment Variable to: $erlangHomePath"
+        [Environment]::SetEnvironmentVariable("ERLANG_HOME", $erlangHomePath, [EnvironmentVariableTarget]::Machine)
+    }
+    
+    # 3. Idempotently append to Machine Path registry string using the Proven Engine
+    $erlangBinPath = "$erlangHomePath\bin"
+    $currentMachinePath = [Environment]::GetEnvironmentVariable("Path", [EnvironmentVariableTarget]::Machine)
+    
+    if ($currentMachinePath -notlike "*$erlangBinPath*") {
+        Write-Host "Appending Erlang bin folder to system-wide Machine PATH..."
+        $newMachinePath = "$currentMachinePath;$erlangBinPath"
+        [Environment]::SetEnvironmentVariable("Path", $newMachinePath, [EnvironmentVariableTarget]::Machine)
+    } else {
+        Write-Host "Idempotency Check: Erlang bin directory path is already included inside the Machine PATH environment map."
+    }
+
+    Write-Host "Erlang environment verification phase completed successfully."
+} else {
+    Write-Error "Critical Failure: Could not find the Erlang installation directory inside Program Files."
+    exit 1
+}
+```
 
 
-![install erl](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/install_erl.png)
+
+## What is up with cmd set?
+
+Check that we can run set and view environment vars also
 
 
-### Step 3: Pre-Configure RabbitMQ Environment (Idempotent)
+### Step 4: Pre-Configure RabbitMQ Environment (Idempotent)
 
 This step creates your custom data directories and registers the RabbitMQ base and configuration paths. If the configuration files already exist, it will leave them untouched.
 
@@ -275,6 +238,8 @@ Write-Host "Asserting RabbitMQ System Environment Variables..."
 [Environment]::SetEnvironmentVariable("RABBITMQ_ADVANCED_CONFIG_FILE", $advancedConfigFile, [EnvironmentVariableTarget]::Machine)
 
 Write-Host "Pre-configuration checks completed successfully."
+
+
 ```
 
 
@@ -284,7 +249,7 @@ Write-Host "Pre-configuration checks completed successfully."
 
 ### Step 4: Install RabbitMQ Server (Idempotent)
 
-This step reads ERLANG_HOME directly from the registry location seen in image_654259.png to ensure the installation path is recognized, then checks if the Windows service already exists before trying to run the installer.
+This step reads ERLANG_HOME directly from the registry location seen in image.png to ensure the installation path is recognized, then checks if the Windows service already exists before trying to run the installer.
 
 Step Type: Run a Script
 
