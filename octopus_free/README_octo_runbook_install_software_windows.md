@@ -244,3 +244,6 @@ Write-Host "Asserting RabbitMQ System Environment Variables..."
 
 Write-Host "Pre-configuration checks completed successfully."
 ```
+
+
+![pre rmq](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/pre_rmq.png)
