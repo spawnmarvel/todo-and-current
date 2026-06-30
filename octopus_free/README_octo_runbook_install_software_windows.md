@@ -189,3 +189,8 @@ if ($installer) {
     exit 1
 }
 ```
+
+It is idempotent
+
+
+![install erl](https://github.com/spawnmarvel/todo-and-current/blob/main/octopus_free/images/install_erl.png)
