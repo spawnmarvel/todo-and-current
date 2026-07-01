@@ -402,6 +402,7 @@ wget
 **In Progress:**
 - 📚 Linux by Zabbix agent active and Zabbix Agent 2 built-in native functions
 - 📚 Windows and linux log monitoring, keywords. Use vmap22db (there will be a alloy agent there also)
+- 📚 Zabbix Script Action (Recommended)
 - 📚 Zabbxi default and Ai 20h course [Zabbix default 80%](https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm/zabbix_monitor_vms_snmp_default#ai-20h-course), see if we have coverd 80%.
 - 🔄 Squid proxy for offline linux updates updates
 
