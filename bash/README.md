@@ -1422,6 +1422,9 @@ sudo chmod 775 /usr/local/share/op
 # Changes the group to 'users' so normal team members can write to it without using sudo.
 sudo chown :users /usr/local/share/op
 
+# check security on folder
+ls -ld op
+
 # List files (adds a / to folders so you can tell them apart).
 ls -F
 
