@@ -369,23 +369,7 @@ Install Zabbix agent 2 Linux
 ```bash
 ```
 
-Wingate www proxy service
 
-```bash
-# add on each vm
-nc -zv 192.168.3.7 3128
-Connection to 192.168.3.7 3128 port [tcp/*] succeeded!
-
-# Persistence: If you want this to work every time you log in, add those export lines to the end of your ~/.bashrc file
-echo 'export http_proxy="http://192.168.3.7:3128"' >> ~/.bashrc
-echo 'export https_proxy="http://192.168.3.7:3128"' >> ~/.bashrc
-source ~/.bashrc
-
-# works due to proxy
-sudo apt update
-sudo apt upgrade
-wget
-```
 ---
 
 ## Current Priorities: TOP 2 but 1 at the time 20h
@@ -404,7 +388,7 @@ wget
 - 📚 Windows and linux log monitoring, keywords. Use vmap22db (there will be a alloy agent there also)
 - 📚 Zabbix Script Action (Recommended)
 - 📚 Zabbxi default and Ai 20h course [Zabbix default 80%](https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm/zabbix_monitor_vms_snmp_default#ai-20h-course), see if we have coverd 80%.
-- 🔄 Squid proxy for offline linux updates updates
+- 🔄 Squid proxy for offline linux updates updates [Squid proxy](https://github.com/spawnmarvel/todo-and-current/blob/main/squid_proxy/README.md)
 
 **Completed:**
 - ✅ Installed new stack (Zabbix 7 LTS, dpkg MySql 8.4) and a new vnet in sweden central
