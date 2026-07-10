@@ -386,7 +386,7 @@ Install Zabbix agent 2 Linux
 **In Progress:**
 - 📚 Linux by Zabbix agent active and Zabbix Agent 2 built-in native functions
 - 📚 Windows and linux log monitoring, keywords. Use vmap22db (there will be a alloy agent there also)
-- 📚 Zabbxi default, A project for maximizing all default monitoring [default zabbix](https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm/zabbix_monitor_vms_snmp_default#ai-20h-course), see if we have covered 80%.
+- 📚 Zabbxi default, A project for maximizing all default monitoring [default zabbix](https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitor_vms_snmp_default/README.md), see if we have covered 80%.
 - 🔄 Squid proxy for offline linux updates updates [Squid proxy](https://github.com/spawnmarvel/todo-and-current/blob/main/squid_proxy/README.md)
 
 **Completed:**
