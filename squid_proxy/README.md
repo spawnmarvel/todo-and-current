@@ -15,6 +15,8 @@ Since you are tired of the Windows/WinGate routing loops, you can build a lightw
 
 ```bash
 
+
+ssh user@172.16.0.4
 # Run this on your public-facing jump box: vmzabbix03
 sudo apt update && sudo apt install squid -y
 
