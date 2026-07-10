@@ -1413,19 +1413,24 @@ ls /var/log/zabbix/
 # create a share so all can access.
 cd /usr/local/share/
 # Creating the folder op inside /usr/local/share is an excellent choice. It perfectly adheres to the Linux Filesystem Hierarchy Standard (FHS) for custom, shared system data.
-mkdir op
+sudo mkdir op
 
 # It dictates who can read (r), write (w), or execute (x) a file across three user classes
 sudo chmod 775 /usr/local/share/op
 # 7 (Owner)      7 (Group)     5 (Everyone Else)
+
+# check security on folder
+ls -ld op
+drwxrwxr-x 2 root root 4096 Jul 10 08:16 op
 
 # On Debian and almost all other Linux distributions, users is a built-in, default system group
 # Because you ran the command using sudo, the folder is owned by root:root (User: root, Group: root).
 # Changes the group to 'users' so normal team members can write to it without using sudo.
 sudo chown :users /usr/local/share/op
 
-# check security on folder
+# check security on folder after change
 ls -ld op
+drwxrwxr-x 2 root users 4096 Jul 10 08:16 op
 
 # List files (adds a / to folders so you can tell them apart).
 ls -F
