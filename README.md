@@ -374,7 +374,7 @@ Install Zabbix agent 2 Linux
 
 ## Current Priorities: TOP 2 but 1 at the time 20h
 
-* :apple: Do sys admin drill 5 min [Open new tab](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/README.md#sys-admin-drill)
+* :apple: Do sys admin drill 5 min [Open new tab go to sys admin](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/README.md#sys-admin-drill)
 * :apple: Use octopus deploy for work and home
 * :apple: Do some MySQL for fun, json, key -value store, tuning.
 * :apple: Deploy Ubuntu in Azure, not windows, if needed, deploy for a short time.
