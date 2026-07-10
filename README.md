@@ -421,7 +421,7 @@ Study plan:
 
 ---
 
-### Grafana, Loki, and Alloy Agents ⭐
+### 2. Grafana, Loki, and Alloy Agents ⭐
 
 **Goal:** Set up log monitoring stack loki
 
@@ -438,7 +438,7 @@ Study plan:
 ---
 
 
-### Misc: MS learn, AZ-104 extended, Octopus deploy for windows
+### 3. Misc: MS learn, AZ-104 extended, Octopus deploy for windows
 
 - 📚 MS Learn Active Directory Domain Services [Azure learn github](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-ad-ds-windows-server-hybrid-core-infrastructure/README_cloud-only-hybrid-Lab_3_mslearn-ad_arc.md)
 
@@ -451,7 +451,7 @@ Study plan:
 - 📚 Do some octopus deploy for windows like RabbitMQ, etc
 
 
-### AP22, Silent Zen Master
+### 4. AP22, Silent Zen Master
 
 - 📚 vmap22db 15 granted
 - 📚 Cogent and 2 interfaces Cim
