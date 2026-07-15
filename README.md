@@ -404,19 +404,10 @@ Study plan:
 
 ---
 
-### 2. Grafana, Loki, and Alloy Agents ⭐
+### 2 MS Learn MySQL for relax, fun and points
 
-**Goal:** Set up log monitoring stack loki
-
-**Tasks:**
-- [Grafana fundamentals](https://grafana.com/tutorials/grafana-fundamentals/)
-- Mastering LogQL (The "Query Language") [LogQL](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/ubuntu/README.md#learn-log-ql)
-- Build main 3 dashboards
-
-**Completed:**
-- ✅ Install and configure Grafana on Windows for test
-- ✅ Configure Loki Windows for test
-- ✅ Install [Grafana and loki ubuntu](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/ubuntu/README.md)
+- 📚 Do all MS learn for MySQL
+- 📚 https://learn.microsoft.com/en-us/training/browse/?terms=mysql&source=learn
 
 ---
 
@@ -469,6 +460,19 @@ Study plan:
 **Progress:** ![deploy123](https://github.com/spawnmarvel/todo-and-current/blob/main/images/deploy123.png)
 
 
+### Grafana, Loki, and Alloy Agents ⭐
+
+**Goal:** Set up log monitoring stack loki
+
+**Tasks:**
+- [Grafana fundamentals](https://grafana.com/tutorials/grafana-fundamentals/)
+- Mastering LogQL (The "Query Language") [LogQL](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/ubuntu/README.md#learn-log-ql)
+- Build main 3 dashboards
+
+**Completed:**
+- ✅ Install and configure Grafana on Windows for test
+- ✅ Configure Loki Windows for test
+- ✅ Install [Grafana and loki ubuntu](https://github.com/spawnmarvel/todo-and-current/blob/main/grafana_loki_alloy/ubuntu/README.md)
 
 ## Knowledge Maintenance Checklist
 
