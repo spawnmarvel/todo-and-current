@@ -16,7 +16,7 @@ https://www.mysqltutorial.org/
 * [11. MySQL Import and Export](#11-mysql-import-and-export)
 
 
-## Load the Sample Database into MySQL Server
+## 1. Load the Sample Database into MySQL Server
 
 We use the classicmodels database as a MySQL sample database to help you work with MySQL quickly and effectively.
 
@@ -41,15 +41,15 @@ https://www.mysqltutorial.org/getting-started-with-mysql/mysql-sample-database/
 ![classic models](https://github.com/spawnmarvel/todo-and-current/blob/main/mysql/images/classicmodels.png)
 
 
-## Querying data
+## 2. Querying data
 
 https://www.mysqltutorial.org/mysql-basics/mysql-select-from/
 
-## Managing databases
+## 3. Managing databases
 
 https://www.mysqltutorial.org/mysql-basics/selecting-a-mysql-database-using-use-statement/
 
-## Managing tables
+## 4. Managing tables
 
 https://www.mysqltutorial.org/mysql-basics/mysql-create-table/
 
