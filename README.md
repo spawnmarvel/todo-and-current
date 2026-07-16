@@ -404,7 +404,7 @@ Study plan:
 
 ---
 
-### 2. MS Learn MySQL for relax, fun and points
+### 2. MS Learn MySQL for relax, fun and points ⭐
 
 - 📚 Do all MS learn for MySQL
 - 📚 https://learn.microsoft.com/en-us/training/browse/?terms=mysql&source=learn
