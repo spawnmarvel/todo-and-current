@@ -1,4 +1,20 @@
-# https://www.mysqltutorial.org/
+# MySQL Tutorial Quick Reference
+
+https://www.mysqltutorial.org/
+
+## Table of Contents
+* [1. Load the Sample Database into MySQL Server](#1-load-the-sample-database-into-mysql-server)
+* [2. Querying Data](#2-querying-data)
+* [3. Managing Databases](#3-managing-databases)
+* [4. Managing Tables](#4-managing-tables)
+* [5. MySQL Constraints](#5-mysql-constraints)
+* [6. Insert Data](#6-insert-data)
+* [7. Update Data](#7-update-data)
+* [8. Delete Data](#8-delete-data)
+* [9. MySQL Data Types](#9-mysql-data-types)
+* [10. MySQL Globalization](#10-mysql-globalization)
+* [11. MySQL Import and Export](#11-mysql-import-and-export)
+
 
 ## Load the Sample Database into MySQL Server
 
