@@ -52,7 +52,12 @@ Linux:
 Use Azure Database for MySQL flexible servers
 
 * mysqlzabbix0101
-* 
+
+1. Build the classicmodels in Azure
+2. Use bash mysql cli for sql
+
+
+
 ## 2. Querying data
 
 
@@ -74,7 +79,7 @@ https://www.mysqltutorial.org/mysql-basics/mysql-select-from/
 ## 3. Managing databases
 
 https://www.mysqltutorial.org/mysql-basics/selecting-a-mysql-database-using-use-statement/
-
++
 ## 4. Managing tables
 
 https://www.mysqltutorial.org/mysql-basics/mysql-create-table/
