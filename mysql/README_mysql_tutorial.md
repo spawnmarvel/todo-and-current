@@ -3,20 +3,25 @@
 https://www.mysqltutorial.org/
 
 ## Table of Contents
-* [1. Load the Sample Database into MySQL Server](#1-load-the-sample-database-into-mysql-server)
-* [2. Querying Data](#2-querying-data)
-* [3. Managing Databases](#3-managing-databases)
-* [4. Managing Tables](#4-managing-tables)
-* [5. MySQL Constraints](#5-mysql-constraints)
-* [6. Insert Data](#6-insert-data)
-* [7. Update Data](#7-update-data)
-* [8. Delete Data](#8-delete-data)
-* [9. MySQL Data Types](#9-mysql-data-types)
-* [10. MySQL Globalization](#10-mysql-globalization)
-* [11. MySQL Import and Export](#11-mysql-import-and-export)
+- [MySQL Tutorial Quick Reference](#mysql-tutorial-quick-reference)
+  - [Table of Contents](#table-of-contents)
+  - [1. Load the Sample Database into MySQL Server](#1-load-the-sample-database-into-mysql-server)
+  - [2. Querying data](#2-querying-data)
+  - [3. Managing databases](#3-managing-databases)
+  - [4. Managing tables](#4-managing-tables)
+  - [5. Mysql constraints](#5-mysql-constraints)
+  - [6. Insert data](#6-insert-data)
+  - [7. Update data](#7-update-data)
+  - [8. Delete data](#8-delete-data)
+  - [9. Mysql Data types](#9-mysql-data-types)
+  - [10. Mysql Globalization](#10-mysql-globalization)
+  - [11. Mysql import and export](#11-mysql-import-and-export)
 
 
 ## 1. Load the Sample Database into MySQL Server
+
+
+Windows:
 
 We use the classicmodels database as a MySQL sample database to help you work with MySQL quickly and effectively.
 
@@ -41,6 +46,13 @@ https://www.mysqltutorial.org/getting-started-with-mysql/mysql-sample-database/
 ![classic models](https://github.com/spawnmarvel/todo-and-current/blob/main/mysql/images/classicmodels.png)
 
 
+
+Linux:
+
+Use Azure Database for MySQL flexible servers
+
+* mysqlzabbix0101
+* 
 ## 2. Querying data
 
 
