@@ -1,7 +1,6 @@
 # https://www.mysqltutorial.org/
 
-## MySQL Sample Database
-
+## Load the Sample Database into MySQL Server
 
 We use the classicmodels database as a MySQL sample database to help you work with MySQL quickly and effectively.
 
@@ -25,3 +24,43 @@ https://www.mysqltutorial.org/getting-started-with-mysql/mysql-sample-database/
 
 ![classic models](https://github.com/spawnmarvel/todo-and-current/blob/main/mysql/images/classicmodels.png)
 
+
+## Querying data
+
+https://www.mysqltutorial.org/mysql-basics/mysql-select-from/
+
+## Managing databases
+
+https://www.mysqltutorial.org/mysql-basics/selecting-a-mysql-database-using-use-statement/
+
+## Managing tables
+
+https://www.mysqltutorial.org/mysql-basics/mysql-create-table/
+
+## Mysql constraints
+
+https://www.mysqltutorial.org/mysql-basics/mysql-primary-key/
+
+## Insert data
+
+https://www.mysqltutorial.org/mysql-basics/mysql-insert/
+
+## Update data
+
+https://www.mysqltutorial.org/mysql-basics/mysql-update/
+
+## Delete data
+
+https://www.mysqltutorial.org/mysql-basics/mysql-delete-join/
+
+## Mysql Data types
+
+https://www.mysqltutorial.org/mysql-basics/mysql-bit/
+
+## Mysql Globalization
+
+https://www.mysqltutorial.org/mysql-basics/mysql-character-set/
+
+## Mysql import and export
+
+https://www.mysqltutorial.org/mysql-basics/import-csv-file-mysql-table/
