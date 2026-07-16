@@ -53,30 +53,30 @@ https://www.mysqltutorial.org/mysql-basics/selecting-a-mysql-database-using-use-
 
 https://www.mysqltutorial.org/mysql-basics/mysql-create-table/
 
-## Mysql constraints
+## 5. Mysql constraints
 
 https://www.mysqltutorial.org/mysql-basics/mysql-primary-key/
 
-## Insert data
+## 6. Insert data
 
 https://www.mysqltutorial.org/mysql-basics/mysql-insert/
 
-## Update data
+## 7. Update data
 
 https://www.mysqltutorial.org/mysql-basics/mysql-update/
 
-## Delete data
+## 8. Delete data
 
 https://www.mysqltutorial.org/mysql-basics/mysql-delete-join/
 
-## Mysql Data types
+## 9. Mysql Data types
 
 https://www.mysqltutorial.org/mysql-basics/mysql-bit/
 
-## Mysql Globalization
+## 10. Mysql Globalization
 
 https://www.mysqltutorial.org/mysql-basics/mysql-character-set/
 
-## Mysql import and export
+## 11. Mysql import and export
 
 https://www.mysqltutorial.org/mysql-basics/import-csv-file-mysql-table/
