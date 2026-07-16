@@ -13,5 +13,5 @@ https://www.mysqltutorial.org/getting-started-with-mysql/mysql-sample-database/
 
 
 
-https://github.com/spawnmarvel/todo-and-current/blob/main/mysql/images/classicmodels.png
+![classic models](https://github.com/spawnmarvel/todo-and-current/blob/main/mysql/images/classicmodels.png)
 
