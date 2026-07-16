@@ -43,6 +43,10 @@ https://www.mysqltutorial.org/getting-started-with-mysql/mysql-sample-database/
 
 ## 2. Querying data
 
+![query](https://github.com/spawnmarvel/todo-and-current/blob/main/mysql/images/query.png)
+
+
+
 https://www.mysqltutorial.org/mysql-basics/mysql-select-from/
 
 ## 3. Managing databases
