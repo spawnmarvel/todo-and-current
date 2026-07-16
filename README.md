@@ -412,7 +412,10 @@ Study plan:
 ---
 
 
-### 3. Misc: MS learn, AZ-104 extended, Octopus deploy for windows
+
+## Backlog
+
+### Misc: MS learn, AZ-104 extended, Octopus deploy for windows
 
 - 📚 MS Learn Active Directory Domain Services [Azure learn github](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-ad-ds-windows-server-hybrid-core-infrastructure/README_cloud-only-hybrid-Lab_3_mslearn-ad_arc.md)
 
@@ -425,7 +428,7 @@ Study plan:
 - 📚 Do some octopus deploy for windows like RabbitMQ, etc
 
 
-### 4. AP22, Silent Zen Master
+### AP22, Silent Zen Master ⭐ (work use it)
 
 - 📚 vmap22db 15 granted
 - 📚 Cogent and 2 interfaces Cim
@@ -436,11 +439,6 @@ Study plan:
 
 **Completed:**
 - ✅ vmap22db, deny internet outbund
-
----
-
-## Backlog
-
 
 ### Octopus Deploy for Linux (CI/CD) ⭐ (work use it)
 
