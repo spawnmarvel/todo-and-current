@@ -59,7 +59,52 @@ There are also some considerations specific to deployment of an offline, standal
 
 ## Manage certificate enrollment
 
+* A certificate is a small file that contains several pieces of information about its owner. This data can include the owner's email address, the owner's name, the certificate usage type, the validity period, and the URLs for AIA and CDP locations.
+* Certificate templates define how users and devices can request and use Enterprise CA issued certificates based on that template. 
+
+
 ## Manage certiticate revocation
+
+Revocation is the process in which you disable the validity of one or more certificates. By initiating the revocation process, you publish a certificate thumbprint in the corresponding CRL. This indicates that a specific certificate is no longer valid.
+
+NOTE!
+
+Every certificate has its own validity period, after which it is no longer considered valid. With revocation, you can invalidate the certificate before that period passes, for example, to remediate certificate compromise.
 
 ## Manage certificate trusts
 
+When using certificates, it is important that you consider who or what might need to assess their authenticity and validity. There are three types of certificates that you can use:
+
+* Internal certificates from an organizational CA, such as a server hosting the AD CS role.
+* External certificates from a public CA such as an organization that provides commercial cybersecurity software or identity services.
+* A self-signed certificate.
+
+If you deploy an Enterprise Root CA and use it to enroll certificates onto your users' domain-joined devices, these devices will accept the enrolled certificates as trusted. However, any workgroup device will consider the same certificates as untrusted. To resolve this issue, you can:
+
+* Obtain public certificates from an external CA for the workgroup devices. This comes with an extra cost of public certificates.
+* Configure the workgroup devices to trust the Enterprise Root CA. This requires additional configuration.
+
+#### Manage certificates and certificate trusts in Windows
+
+
+You can manage certificates that are stored within the Windows operating system by using a range of tools, including Windows Admin Center, the Certificates Microsoft Management Console snap-in, Windows PowerShell, and certutil command line tool.
+
+
+Each store consists of several folders, including:
+
+* Personal, to local user, computer or service.
+* Trusted Root Certificate Authorities, containes certificates of trusted root CAs.
+* Enterprice Trust, containes certificates of trusted root CAs from other organizations.
+* Intermediate Certificate Authorities, Contains certificates issued to subordinate CAs.
+
+#### Create a self-signed certificate for testing purposes
+
+While self-signed certificates are not suitable for production scenarios, they can be useful for testing purpose (bullshit).
+
+```ps1
+# The following example creates a self-signed SSL server certificate in the local machine personal store 
+# with the subject alternative name set to www.fabrikam.com, www.contoso.com 
+# and Subject and Issuer name set to www.fabrikam.com
+
+New-SelfSignedCertificate -DnsName "www.fabrikam.com", "www.contoso.com" -CertStoreLocation "cert:\LocalMachine\My"
+```
