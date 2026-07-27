@@ -48,6 +48,9 @@ A multilevel CA hierarchy isn't mandatory. For smaller, less complex environment
 
 When using AD CS, you can deploy two types of CAs: standalone and enterprise. These types of CAs are not about hierarchy, but instead, about functionality and integration with AD DS.
 
+
+A standalone CA doesn't depend on AD DS. An enterprise CA requires AD DS, to provide additional functionality, such as autoenrollment. Autoenrollment allows domain users and domain-joined devices to enroll automatically for certificates after you enable automatic certificate enrollment through Group Policy.
+
 There are also some considerations specific to deployment of an offline, standalone root CA:
 
 * Before you issue a subordinate certificate from the root CA, make sure that you provide at least one certificate revocation list distribution point (CDP) and AIA location that will be available to all clients.
