@@ -431,7 +431,7 @@ Study plan:
 
 ### Misc: MS learn, AZ-104 extended, Octopus deploy for windows
 
-- 📚 [Microsoft Applied Skills: Configure secure access to your workloads using Azure networking](https://learn.microsoft.com/en-us/credentials/applied-skills/configure-secure-workloads-use-azure-virtual-networking/)
+- 📚 [Microsoft Applied Skills: Administrer Active Directory Domain Service](https://learn.microsoft.com/nb-no/credentials/applied-skills/administer-active-directory-domain-services/)
 - 📚 MS Virtual machine stuff
 - 📚 MS AZ-104 extended
 - 📚 Azure DO NOT build things in the portal, use cli and ps1
