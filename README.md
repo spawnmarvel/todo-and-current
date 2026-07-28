@@ -429,7 +429,7 @@ Study plan:
 **Completed:**
 - ✅ vmap22db, deny internet outbund
 
-### Misc: MS learn, AZ-104 extended, Octopus deploy for windows
+### Misc: MS learn, AZ-104 extended, Octopus deploy for windows. MS learn change language to Norwegian (bottom left)
 
 - 📚 [Microsoft Applied Skills: Administrer Active Directory Domain Service](https://learn.microsoft.com/nb-no/credentials/applied-skills/administer-active-directory-domain-services/)
 - 📚 MS Virtual machine stuff
