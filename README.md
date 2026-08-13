@@ -439,7 +439,7 @@ Study plan:
 
 **Completed:**
 - ✅ MS Learn Active Directory Domain Services
-- [Microsoft Applied Skills: Administrer Active Directory Domain Service](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-ad-ds-windows-server-hybrid-core-infrastructure/README_applied_skills.md)
+- ✅ [Microsoft Applied Skills: Administrer Active Directory Domain Service](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-ad-ds-windows-server-hybrid-core-infrastructure/README_applied_skills.md)
 
 ### Octopus Deploy for Linux (CI/CD) ⭐ (work use it)
 
