@@ -6,7 +6,7 @@ https://www.mysqltutorial.org/
 - [MySQL Tutorial Quick Reference](#mysql-tutorial-quick-reference)
   - [Table of Contents](#table-of-contents)
   - [1. Load the Sample Database into MySQL Server](#1-load-the-sample-database-into-mysql-server)
-  - [2. Querying data](#2-querying-data)
+  - [2. Describe and Querying data](#2-describe-and-querying-data)
   - [3. Managing databases](#3-managing-databases)
   - [4. Managing tables](#4-managing-tables)
   - [5. Mysql constraints](#5-mysql-constraints)
@@ -93,7 +93,7 @@ show tables;
 
 
 
-## 2. Querying data
+## 2. Describe and Querying data
 
 
 ```sql
@@ -101,6 +101,18 @@ show tables;
 select * from classicmodels.customers
 
 select customerName from classicmodels.customers
+
+-- or
+
+use classicmodels;
+
+-- get columns and types
+describe customers;
+
+
+select * from customers
+
+select customerName from customers
 
 
 ```
