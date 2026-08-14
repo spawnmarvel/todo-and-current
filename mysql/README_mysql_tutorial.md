@@ -97,6 +97,12 @@ show tables;
 ## 2. Describe and Querying data
 
 
+Workbench
+
+![query](https://github.com/spawnmarvel/todo-and-current/blob/main/mysql/images/query.png)
+
+or sql in terminal
+
 ```sql
 
 select * from classicmodels.customers
@@ -118,7 +124,7 @@ select customerName from customers
 
 ```
 
-![query](https://github.com/spawnmarvel/todo-and-current/blob/main/mysql/images/query.png)
+
 
 
 
