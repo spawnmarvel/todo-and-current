@@ -66,11 +66,27 @@ ls
 # load the database
 SOURCE mysqlsampledatabase.sql;
 
+# show all db's
 show databases;
-+--------------------+
-| Database           |
-+--------------------+
-| bookstore          |
+
+# use it
+use classicmodels;
+
+# show tables
+show tables;
++-------------------------+
+| Tables_in_classicmodels |
++-------------------------+
+| customers               |
+| employees               |
+| offices                 |
+| orderdetails            |
+| orders                  |
+| payments                |
+| productlines            |
+| products                |
++-------------------------+
+8 rows in set (0.014 sec)
 
 
 ``` 
