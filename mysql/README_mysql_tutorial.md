@@ -31,6 +31,7 @@ EER diagram
 
 https://www.mysqltutorial.org/getting-started-with-mysql/mysql-sample-database/
 
+![eer](https://github.com/spawnmarvel/todo-and-current/blob/main/mysql/images/eer.png)
 
 * Launch MySQL Workbench
 * Click on the Administration tab (next to Schemas)
