@@ -57,6 +57,25 @@ Use Azure Database for MySQL flexible servers
 2. Use bash mysql cli for sql
 
 
+```bash
+cd todo-and-current/mysql
+ls
+# images                   README.md                 README_tuning_general_and_zabbix.md
+# mysqlsampledatabase.sql  README_mysql_tutorial.md
+
+# load the database
+SOURCE mysqlsampledatabase.sql;
+
+show databases;
++--------------------+
+| Database           |
++--------------------+
+| bookstore          |
+
+
+``` 
+
+
 
 ## 2. Querying data
 
