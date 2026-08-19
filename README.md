@@ -413,7 +413,7 @@ Study plan:
 ---
 
 
-
+![shuhari](https://github.com/spawnmarvel/todo-and-current/blob/main/images/shuhari.png)
 ## Backlog
 
 ### AP22, Silent Zen Master ⭐ (work use it)
