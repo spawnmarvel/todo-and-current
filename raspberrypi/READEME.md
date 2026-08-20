@@ -24,7 +24,7 @@ Nettverkspesifikasjoner for Raspberry Pi 4 B
 
 Raspberry Pi 4 offisielt deksel, rød/hvit
 
-https://www.power.no/data-og-tilbehoer/datakomponenter/tilbehoer/raspberry-pi-4-offisielt-deksel-roedhvit/p-3959176/
+https://www.dustin.no/product/5020006823/4-case---redwhite-for-rpi-4
 
 
 
