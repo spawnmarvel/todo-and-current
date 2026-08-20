@@ -413,8 +413,9 @@ Study plan:
 ---
 
 
-### 0 Rasberry PI, IOT sensor, Grafana, Python and fun ⭐
+### 100 Rasberry PI, IOT sensor, Grafana, Python and fun ⭐
 
+---
 
 ![shuhari](https://github.com/spawnmarvel/todo-and-current/blob/main/images/shuhari2.png)
 ## Backlog
