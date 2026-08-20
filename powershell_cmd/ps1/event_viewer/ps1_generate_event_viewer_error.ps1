@@ -1,0 +1,1 @@
+Write-EventLog -LogName Application -Source "Perflib" -EventId 1000 -EntryType Error -Message "Test error event generated for system monitoring."
