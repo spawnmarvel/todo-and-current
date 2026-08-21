@@ -30,6 +30,8 @@ https://www.dustin.no/product/5020006823/4-case---redwhite-for-rpi-4
 
 ## DHT22 AM2302 Digital Temperatursensor Temperature Humidity Sensor Replace SHT15 Logger
 
+* blåtann?, wifi?
+
 https://elkim.no/produkt/dht22-am2302-digital-temperatursensor-temperature-humidity-sensor-replace-sht15-logger/
 
 
