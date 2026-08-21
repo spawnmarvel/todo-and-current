@@ -35,6 +35,8 @@ https://www.dustin.no/product/5020006823/4-case---redwhite-for-rpi-4
 https://elkim.no/produkt/dht22-am2302-digital-temperatursensor-temperature-humidity-sensor-replace-sht15-logger/
 
 
+Check other sensors
+
 ## IOT
 
 * Python: Kjører out-of-the-box på Raspberry Pi OS. Du kan begynne å skrive skripter for å lese av temperatur- og fuktighetssensorer med én gang uten å installere noe ekstra miljø.
