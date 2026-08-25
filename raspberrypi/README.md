@@ -265,3 +265,26 @@ Rull helt ned og trykk på Save & test. Du skal få en grønn melding som bekref
 
 
 ![prom](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/prom.png)
+
+Importer et ferdig Raspberry Pi / Node Exporter Dashboard
+
+I stedet for å bygge grafer manuelt, kan du importere et ferdig dashboard som viser alt av helsedata:
+
+* I Grafana, klikk på + (Create / Import) øverst til høyre eller i sidemenyen, og velg Import dashboard.
+
+![import](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/import.png)
+
+
+* I feltet Import via grafana.com, skriv inn ID: 1860 (et populært Node Exporter Full dashboard) og trykk Load
+
+![1860](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/1860.png)
+
+
+* (Velg Prometheus under Select a Prometheus data source)
+
+* Trykk Import, ja
+
+Nå har du et fullstendig helse-dashboard som viser CPU-belastning, RAM-bruk, disker, temperaturer og nettverkstrafikk direkte fra localhost
+
+
+![dash](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/dash.png)
