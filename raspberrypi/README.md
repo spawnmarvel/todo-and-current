@@ -111,4 +111,4 @@ Skriv til kortet: Trykk Save og deretter Yes for å starte formateringen og skri
 
 Når det er ferdig, tar du ut kortet, setter det inn i Raspberry Pi 4, og kobler til strømmen. Gi den et par minutter til å koble seg til Wi-Fi, så er du klar til å koble til via SSH!
 
-![Install os]()
+![Install os](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/os.png)
