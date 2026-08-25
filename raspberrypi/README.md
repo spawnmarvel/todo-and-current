@@ -112,3 +112,37 @@ Skriv til kortet: Trykk Save og deretter Yes for å starte formateringen og skri
 Når det er ferdig, tar du ut kortet, setter det inn i Raspberry Pi 4, og kobler til strømmen. Gi den et par minutter til å koble seg til Wi-Fi, så er du klar til å koble til via SSH!
 
 ![Install os](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/os.png)
+
+## Koble til
+
+
+Vi kjører et enkelt PowerShell-skript som vasker hele subnettet og lister ut alle aktive IP-adresser på nettverket ditt
+
+```ps1
+Get-NetNeighbor -AddressFamily IPv4 | Where-Object { $_.State -ne "Unreachable" -and $_.IPAddress -like "192.168.10.*" } | Select-Object IPAddress, LinkLayerAddress
+
+# da skal du finne en ny ip21, 
+# evt trekk ut strøm fra raspberry pi og sette den tilbake igjen
+```
+
+Ping
+
+```ps1
+ping mira1.local
+```
+
+Koble til
+
+```bash
+ssh chilliman@mira1.local
+
+uname -a
+Linux mira1 6.18.34+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.18.34-1+rpt1 (2026-06-09) aarch64 GNU/Linux
+
+free -h
+top -d 5
+
+ip address show
+# 192.168.10.212
+```
+
