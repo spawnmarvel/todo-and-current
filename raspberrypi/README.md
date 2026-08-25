@@ -230,7 +230,40 @@ Besøk Grafana
 
 admin (se bitw)
 
+## Grafana ssl https://mira1.local:3000/
 
+```bash
+sudo mkdir -p /etc/grafana/certs
+
+cd /etc/grafana/certs
+
+sudo openssl req -x509 -nodes -days 3650 -newkey rsa:2048 \
+  -keyout grafana.key \
+  -out grafana.crt \
+  -subj "/CN=mira1.local"
+
+sudo chown -R grafana:grafana /etc/grafana/certs
+sudo chmod 600 grafana.key
+sudo chmod 644 grafana.crt
+
+
+sudo nano /etc/grafana/grafana.ini
+
+# remove ; before parameter
+# protocol = https
+# add:
+# cert_file = /etc/grafana/certs/grafana.crt
+# cert_key = /etc/grafana/certs/grafana.key
+
+
+sudo systemctl restart grafana-server
+sudo systemctl status grafana-server
+
+● grafana-server.service - Grafana instance
+     Loaded: loaded (/usr/lib/systemd/system/grafana-server.service; enabled; preset: enabled)
+     Active: active (running) since Tue 2026-08-25 21:49:33 CEST; 3s ago
+
+```
 ## Grafana monitorer localhost med prometheus-node-exporter
 
 
