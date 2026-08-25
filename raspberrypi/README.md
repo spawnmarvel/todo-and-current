@@ -322,6 +322,11 @@ Nå har du et fullstendig helse-dashboard som viser CPU-belastning, RAM-bruk, di
 
 ![dash](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/dash.png)
 
+Det er predefinert oppsett.
+
+
+![dash2](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/dash2.png)
+
 ## Slå av Raspberry pi
 
 
