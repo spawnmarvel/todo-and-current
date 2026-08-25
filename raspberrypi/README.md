@@ -1,7 +1,5 @@
 
-# Rasberry PI OIT
-
-
+# Rasberry PI IOT
 
 * Raspberry Pi 4 Model B (4GB): Et solid valg.
 * Kingston Canvas Select Plus 64GB: Helt riktig valg til denne brukssaken – pålitelig nok til å kjøre operativsystemet og tåle kontinuerlig skriving av loggdata uten å koste skjorta
@@ -27,6 +25,7 @@ Raspberry Pi 4 offisielt deksel, rød/hvit
 https://www.dustin.no/product/5020006823/4-case---redwhite-for-rpi-4
 
 
+![PI](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/pi.png)
 
 ## Sensor 
 
