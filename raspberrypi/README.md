@@ -337,7 +337,7 @@ Vent ca. 10–15 sekunder til det grønne lyset slutter å blinke helt og kun de
 
 
 
-## Zigbee
+## Zigbee og MQTT
 
 Når målet er å bygge ut et enhetlig økosystem fra én temperaturmåler til fuktighet, bevegelse og andre sensorer over tid, står valget i praksis mellom tre hovedprotokoller
 
