@@ -85,4 +85,30 @@ Med 4 GB RAM og 64 GB lagring har du massevis av overskudd. Du kan kjøre følge
 
 https://www.raspberrypi.com/documentation/computers/getting-started.html
 
-##
+## Slik installerer du OS trinn for trinn
+
+1. Last ned verktøyet: Gå til raspberrypi.com/software og last ned og installer Raspberry Pi Imager på PC-en din. Download for windows.
+
+2. Koble til minnekortet: Sett Kingston 64GB-microSD-kortet inn i SD-kortadapteren, og plugg det i PC-en.
+
+Velg enhet og system i Imager:
+
+1. Choose Device: Velg Raspberry Pi 4.
+
+2. Choose OS: Velg Raspberry Pi OS (64-bit).
+
+3. Choose Storage: Velg minnekortet ditt.
+
+Tilpass innstillinger (viktig for hodeløs oppstart): Når programmet spør om du vil bruke forhåndsinnstillinger (OS Customisation), velg Edit Settings:
+
+1. Sett et valgfritt brukernavn og passord. chilliman, Optimus1234.
+
+2. Huk av for trådløst nettverk, og skriv inn Wi-Fi-navn (SSID), passord og landkode NO.
+
+3. Gå til fanen for tjenester (Services) og aktiver SSH (med passordautentisering).
+
+Skriv til kortet: Trykk Save og deretter Yes for å starte formateringen og skrivingen.
+
+Når det er ferdig, tar du ut kortet, setter det inn i Raspberry Pi 4, og kobler til strømmen. Gi den et par minutter til å koble seg til Wi-Fi, så er du klar til å koble til via SSH!
+
+![Install os]()
