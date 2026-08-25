@@ -80,3 +80,9 @@ Med 4 GB RAM og 64 GB lagring har du massevis av overskudd. Du kan kjøre følge
 * Home Assistant: Hvis du vil automatisere vanning, vekstlys eller varme basert på målingene.
 
 * MQTT-broker (Mosquitto): Hvis du vil koble til flere trådløse sensorer etter hvert.
+
+## Docs
+
+https://www.raspberrypi.com/documentation/computers/getting-started.html
+
+##
