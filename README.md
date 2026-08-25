@@ -413,7 +413,7 @@ Study plan:
 ---
 
 
-### 100 Rasberry PI, IOT sensor, MQTT, Grafana, Python, Linux and fun ⭐
+### 10. Rasberry PI, IOT sensor, MQTT, Grafana, Python, Linux and fun ⭐
 
 - 📚 Learn IOT and play with sensors
 - 📚 Use MQTT and NoSQL
