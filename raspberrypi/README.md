@@ -288,3 +288,13 @@ Nå har du et fullstendig helse-dashboard som viser CPU-belastning, RAM-bruk, di
 
 
 ![dash](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/dash.png)
+
+## Slå av Raspberry pi
+
+
+```bash
+sudo shutdown -h now
+```
+
+Vent ca. 10–15 sekunder til det grønne lyset slutter å blinke helt og kun det røde lyset lyser fast (eller slukker). Da kan du trygt ta ut USB-C-kabelen.
+
