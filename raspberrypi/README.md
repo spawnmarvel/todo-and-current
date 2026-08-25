@@ -87,7 +87,7 @@ https://www.raspberrypi.com/documentation/computers/getting-started.html
 
 ## Slik installerer du OS trinn for trinn
 
-1. Last ned verktøyet: Gå til raspberrypi.com/software og last ned og installer Raspberry Pi Imager på PC-en din. Download for windows.
+1. Last ned verktøyet: Gå til raspberrypi.com/software og last ned og installer Raspberry Pi Imager på PC-en din. Download for windows. Installer og kjøre det deretter som admin.
 
 2. Koble til minnekortet: Sett Kingston 64GB-microSD-kortet inn i SD-kortadapteren, og plugg det i PC-en.
 
