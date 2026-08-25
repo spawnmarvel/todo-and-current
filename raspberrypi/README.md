@@ -121,7 +121,7 @@ Vi kjører et enkelt PowerShell-skript som vasker hele subnettet og lister ut al
 ```ps1
 Get-NetNeighbor -AddressFamily IPv4 | Where-Object { $_.State -ne "Unreachable" -and $_.IPAddress -like "192.168.10.*" } | Select-Object IPAddress, LinkLayerAddress
 
-# da skal du finne en ny ip21, 
+# da skal du finne en ny ip adresse, 
 # evt trekk ut strøm fra raspberry pi og sette den tilbake igjen
 ```
 
