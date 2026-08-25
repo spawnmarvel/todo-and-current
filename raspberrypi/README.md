@@ -190,17 +190,21 @@ tmpfs           1.0M     0  1.0M   0% /run/credentials/getty@tty1.service
 ## Grafana
 
 ```bash
-# Legg til GPG-nøkkel og arkiv
-sudo apt-get install -y apt-transport-https software-properties-common wget
+# 1. Installer nødvendige verktøy
+sudo apt install -y apt-transport-https wget gpg
+
+# 2. Opprett nøkkelmappe og last ned Grafana sin GPG-nøkkel
 sudo mkdir -p /etc/apt/keyrings/
 wget -q -O - https://apt.grafana.com/gpg.key | gpg --dearmor | sudo tee /etc/apt/keyrings/grafana.gpg > /dev/null
+
+# 3. Legg til Grafana-arkivet i kildelisten
 echo "deb [signed-by=/etc/apt/keyrings/grafana.gpg] https://apt.grafana.com stable main" | sudo tee /etc/apt/sources.list.d/grafana.list
 
-# Oppdater og installer Grafana
+# Oppdater
 sudo apt update
 
 # Pakken grafana: Open Source Edition (OSS) – gratis å bruke til alle formål.
-sudo apt install -y grafana
+sudo apt install grafana
 
 
 # Aktiver
@@ -212,6 +216,52 @@ sudo systemctl start grafana-server
 
 sudo systemctl status grafana-server
 
+grafana-server.service - Grafana instance
+     Loaded: loaded (/usr/lib/systemd/system/grafana-server.service; enabled; preset: enabled)
+     Active: active (running) since Tue 2026-08-25 18:32:12 CEST; 5s ago
 
 ```
 
+Besøk Grafana
+
+* http://192.168.10.212:3000
+
+* http://mira1.local:3000/login
+
+admin (se bitw)
+
+
+## Grafana monitorer localhost med prometheus-node-exporter
+
+
+```bash
+sudo apt update
+sudo apt install -y prometheus prometheus-node-exporter
+
+# Start og aktiver tjenestene
+sudo systemctl enable --now prometheus
+sudo systemctl enable --now prometheus-node-exporter
+
+# sjekk den
+sudo systemctl status prometheus-node-exporter
+
+prometheus-node-exporter.service - Prometheus exporter for machine metrics
+     Loaded: loaded (/usr/lib/systemd/system/prometheus-node-exporter.service; enabled; preset: enabled)
+     Active: active (running) since Tue 2026-08-25 18:37:58 CEST; 44s ago
+```
+
+Koble til i Grafana
+
+
+* Åpne Grafana i nettleseren ([http://192.168.10.212:3000](http://192.168.10.212:3000)).
+
+* Gå til Connections (tannhjul/meny i venstremenyen) Data sources Add data source.Velg Prometheus.
+
+* I feltet Prometheus server URL, Skriv inn:
+
+http://localhost:9090
+
+Rull helt ned og trykk på Save & test. Du skal få en grønn melding som bekrefter at datakilden fungerer.
+
+
+![prom](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/prom.png)
