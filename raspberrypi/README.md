@@ -101,7 +101,7 @@ Velg enhet og system i Imager:
 
 Tilpass innstillinger (viktig for hodeløs oppstart): Når programmet spør om du vil bruke forhåndsinnstillinger (OS Customisation), velg Edit Settings:
 
-1. Sett et valgfritt brukernavn og passord. chilliman, view bitw.
+1. Sett et valgfritt brukernavn og passord. (view bitw).
 
 2. Huk av for trådløst nettverk, og skriv inn Wi-Fi-navn (SSID), passord og landkode NO.
 
