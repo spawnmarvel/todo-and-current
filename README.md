@@ -417,6 +417,7 @@ Study plan:
 
 - 📚 Learn IOT and play with sensors
 - 📚 Use MQTT and NoSQL
+- 📚 [Raspberry Pi 4 docs](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/)
 ---
 
 ![shuhari](https://github.com/spawnmarvel/todo-and-current/blob/main/images/shuhari2.png)
