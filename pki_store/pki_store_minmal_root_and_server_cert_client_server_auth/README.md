@@ -46,3 +46,13 @@ Client authentication may be on its way out of the Web PKI, but that doesn’t m
 In fact, this is a chance to rethink how you secure critical systems, whether they're internal applications or connections to partners across the internet.
 
 https://www.digicert.com/blog/do-you-use-public-tls-certificates-for-mtls
+
+## How to
+
+Run the powershell and openssl scripts in 1 to 3.
+
+Note read the comments before you execute them, DNS.1 in .cnf must be changed for each server host.
+
+* 1_ps1_make_cnf.ps1
+* 2_ps1_generate_root_and_server_eku_minimal.ps1
+* 3_ps1_verify.ps1
