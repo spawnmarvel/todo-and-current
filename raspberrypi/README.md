@@ -142,7 +142,62 @@ Linux mira1 6.18.34+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.18.34-1+rpt1 (2026-06-0
 free -h
 top -d 5
 
+
+df -h
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.6G     0  1.6G   0% /dev
+tmpfs           760M  9.1M  751M   2% /run
+/dev/mmcblk0p2   57G  6.6G   48G  13% /
+tmpfs           1.9G  224K  1.9G   1% /dev/shm
+tmpfs           5.0M   16K  5.0M   1% /run/lock
+tmpfs           1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
+tmpfs           1.9G  4.0K  1.9G   1% /tmp
+/dev/mmcblk0p1  505M   87M  418M  18% /boot/firmware
+tmpfs           380M   64K  380M   1% /run/user/1000
+tmpfs           1.0M     0  1.0M   0% /run/credentials/getty@tty1.service
+
 ip address show
 # 192.168.10.212
+
+exit
+
+ssh chilliman@192.168.10.212
+
+# oppdater
+sudo apt update
+
+# kjør oppgradering, det tar litt tid
+sudo apt upgrade
+
+```
+
+
+
+## Grafana
+
+```bash
+# Legg til GPG-nøkkel og arkiv
+sudo apt-get install -y apt-transport-https software-properties-common wget
+sudo mkdir -p /etc/apt/keyrings/
+wget -q -O - https://apt.grafana.com/gpg.key | gpg --dearmor | sudo tee /etc/apt/keyrings/grafana.gpg > /dev/null
+echo "deb [signed-by=/etc/apt/keyrings/grafana.gpg] https://apt.grafana.com stable main" | sudo tee /etc/apt/sources.list.d/grafana.list
+
+# Oppdater og installer Grafana
+sudo apt update
+
+# Pakken grafana: Open Source Edition (OSS) – gratis å bruke til alle formål.
+sudo apt install -y grafana
+
+
+# Aktiver
+sudo systemctl daemon-reload
+sudo systemctl enable grafana-server
+sudo systemctl start grafana-server
+
+# Sjekk running
+
+sudo systemctl status grafana-server
+
+
 ```
 
