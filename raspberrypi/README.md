@@ -169,6 +169,20 @@ sudo apt update
 # kjør oppgradering, det tar litt tid
 sudo apt upgrade
 
+
+df -h
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.6G     0  1.6G   0% /dev
+tmpfs           760M  9.1M  751M   2% /run
+/dev/mmcblk0p2   57G  7.2G   48G  14% /
+tmpfs           1.9G  224K  1.9G   1% /dev/shm
+tmpfs           5.0M   16K  5.0M   1% /run/lock
+tmpfs           1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
+tmpfs           1.9G  4.0K  1.9G   1% /tmp
+/dev/mmcblk0p1  505M   79M  426M  16% /boot/firmware
+tmpfs           380M   64K  380M   1% /run/user/1000
+tmpfs           1.0M     0  1.0M   0% /run/credentials/getty@tty1.service
+
 ```
 
 
