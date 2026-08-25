@@ -28,7 +28,7 @@ https://www.dustin.no/product/5020006823/4-case---redwhite-for-rpi-4
 
 
 
-## Sesorer 
+## Sensor 
 
 Siden du vil unngå kabler, er Bluetooth Low Energy (BLE) eller Wi-Fi den enkleste løsningen. Da trenger du ikke koble noe direkte til GPIO-stiftene på Pi-en – alt leses av trådløst over nettverket eller antenne
 
@@ -297,4 +297,39 @@ sudo shutdown -h now
 ```
 
 Vent ca. 10–15 sekunder til det grønne lyset slutter å blinke helt og kun det røde lyset lyser fast (eller slukker). Da kan du trygt ta ut USB-C-kabelen.
+
+
+
+## Zigbee
+
+Når målet er å bygge ut et enhetlig økosystem fra én temperaturmåler til fuktighet, bevegelse og andre sensorer over tid, står valget i praksis mellom tre hovedprotokoller
+
+
+Zigbee (Mest populær for universelt sensornettverk):
+
+* Hvorfor den brukes: Den absolutt mest brukte protokollen for trådløse batteridrevne sensorer (Aqara, Sonoff, IKEA Tradfri, Philips Hue).
+
+* Arkitektur: Danner et mesh-nettverk der strømforsynte enheter (som smartplugger) fungerer som repeatere.
+
+* Sensorutvalg: Gigantisk utvalg av rimelige temperatur-, fuktighets-, bevegelses-, dør/vindu- og lekkasjesensorer.
+
+* Krav: Krever en USB Zigbee-dongel (f.eks. Sonoff Zigbee 3.0 USB Dongle Plus til ca. 200–300 kr) plugget i Raspberry Pi-en.
+
+Wi-Fi (Enkelt i starten, men krevende på sikt)
+
+BLE / Bluetooth Low Energy (Billigst for temperatur, begrenset for bevegelse)
+
+* Hvorfor den brukes: Ekstremt billige temperatursensorer (f.eks. Xiaomi Mijia eller Govee til under en hundrelapp).
+
+* Begrensninger: Dårlig rekkevidde gjennom vegger, danner ikke mesh, og utvalget av bevegelsessensorer og annet tilbehør er marginalt sammenlignet med Zigbee.
+
+
+
+1. USB Zigbee Co-ordinator (Coordinator/Dongel)
+
+Funksjon: Plugges direkte inn i en av USB-portene på Raspberry Pi-en (mira1). Den fungerer som antenne og radio-gateway for nettverket ditt
+
+2. Trådløs Zigbee-temperatursensor
+
+Når du har plugget inn USB-dongelen, installerer vi Zigbee2MQTT på Raspberry Pi-en.
 
