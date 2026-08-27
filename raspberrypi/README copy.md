@@ -36,9 +36,6 @@
 
 * You can run a web server (such as Nginx, Apache, or directly through Grafana/Home Assistant) and access it on your local network or over the internet via port 80 (HTTP) or 443 (HTTPS).
 
-Official Raspberry Pi 4 Case, Red/White
-
-https://www.dustin.no/product/5020006823/4-case---redwhite-for-rpi-4
 
 ![PI](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/pi.png)
 
