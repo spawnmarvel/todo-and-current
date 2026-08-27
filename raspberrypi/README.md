@@ -13,6 +13,7 @@
 - [Monitor localhost with Prometheus Node Exporter](#monitor-localhost-with-prometheus-node-exporter)
 - [Shut Down Raspberry Pi](#shut-down-raspberry-pi)
 - [Zigbee Sensors and MQTT](#zigbee-sensors-and-mqtt)
+- [Preparing mira1 for Zigbee2MQTT](#preparing-mira1-for-zigbee2mqtt)
 
 # Raspberry Pi IoT
 
@@ -320,3 +321,5 @@ After connecting the USB Zigbee dongle, install Zigbee2MQTT on the Raspberry Pi.
 We choose Zigbee Sensors.
 
 ![sonoff](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/sonoff.png)
+
+## Preparing mira1 for Zigbee2MQTT
