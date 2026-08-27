@@ -1,98 +1,106 @@
+# Raspberry Pi IoT
 
-# Rasberry PI IOT
+## Table of Contents
 
-* Raspberry Pi 4 Model B (4GB): Et solid valg.
-* Kingston Canvas Select Plus 64GB: Helt riktig valg til denne brukssaken – pålitelig nok til å kjøre operativsystemet og tåle kontinuerlig skriving av loggdata uten å koste skjorta
-* Raspberry Pi 27W USB-C Strømforsyning: Denne er beregnet for Pi 5, men fungerer helt fint på Pi 4. Hvis Komplett har den offisielle 15W USB-C-strømforsyningen på lager, sparer du noen få tiere til, men 27W-versjonen du har valgt fungerer helt trygt.
+- [Hardware](#hardware)
+- [Raspberry Pi 4 Network Specifications](#raspberry-pi-4-network-specifications)
+- [IoT](#iot)
+- [Documentation](#documentation)
+- [How to Install Raspberry Pi OS Step by Step](#how-to-install-raspberry-pi-os-step-by-step)
+- [Connect](#connect)
+- [Grafana](#grafana)
+- [Grafana SSL (HTTPS)](#grafana-ssl-https)
+- [Monitor localhost with Prometheus Node Exporter](#monitor-localhost-with-prometheus-node-exporter)
+- [Shut Down Raspberry Pi](#shut-down-raspberry-pi)
+- [Zigbee Sensors and MQTT](#zigbee-sensors-and-mqtt)
 
-Nettverkspesifikasjoner for Raspberry Pi 4 B
+# Raspberry Pi IoT
 
-* Wi-Fi: Innebygd toband strålingsskjermet trådløst nettverk (2.4 GHz og 5.0 GHz IEEE 802.11ac).
+## Hardware
 
-* Ethernet: Ekte Gigabit Ethernet-port (10/100/1000 Mbit/s) for maksimal stabilitet dersom du har nettverkskabel i nærheten.
+* Raspberry Pi 4 Model B (4GB): A solid choice.
+* Kingston Canvas Select Plus 64GB: An excellent choice for this use case—reliable enough to run the operating system and handle continuous log writing without being expensive.
+* Raspberry Pi 27W USB-C Power Supply: Designed for the Pi 5, but works perfectly with the Pi 4. If the official 15W USB-C power supply is available, you can save a little money, but the 27W version is completely safe to use.
 
-* Bluetooth: Innebygd Bluetooth 5.0 (BLE), som også gjør det mulig å hente data fra trådløse Bluetooth-temperatursensorer.
+## Raspberry Pi 4 Network Specifications
 
-* Micro-HDMI-porter
+* Wi-Fi: Built-in dual-band wireless networking (2.4 GHz and 5.0 GHz IEEE 802.11ac).
 
-* * Du må ha enten en Micro-HDMI til HDMI-kabel eller et lite Micro-HDMI til HDMI-adapter for å koble den til en vanlig TV eller dataskjerm
+* Ethernet: True Gigabit Ethernet port (10/100/1000 Mbit/s) for maximum stability if you have access to a network cable.
 
-* Du kan kjøre en webtjener (som Nginx, Apache eller direkte via Grafana/Home Assistant) og aksessere den på lokalnettet eller over internett via port 80 (HTTP) eller 443 (HTTPS).
+* Bluetooth: Built-in Bluetooth 5.0 (BLE), which also allows you to collect data from wireless Bluetooth temperature sensors.
 
+* Micro-HDMI ports
 
-Raspberry Pi 4 offisielt deksel, rød/hvit
+* * You will need either a Micro-HDMI to HDMI cable or a Micro-HDMI to HDMI adapter to connect it to a regular TV or computer monitor.
 
-https://www.dustin.no/product/5020006823/4-case---redwhite-for-rpi-4
+* You can run a web server (such as Nginx, Apache, or directly through Grafana/Home Assistant) and access it on your local network or over the internet via port 80 (HTTP) or 443 (HTTPS).
 
 
 ![PI](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/pi.png)
 
+## IoT
 
-## IOT
+* Python: Runs out of the box on Raspberry Pi OS. You can immediately start writing scripts to read temperature and humidity sensors without installing any additional environment.
 
-* Python: Kjører out-of-the-box på Raspberry Pi OS. Du kan begynne å skrive skripter for å lese av temperatur- og fuktighetssensorer med én gang uten å installere noe ekstra miljø.
+With 4 GB RAM and 64 GB storage, you have plenty of resources available. You can run the following directly on the device:
 
-Med 4 GB RAM og 64 GB lagring har du massevis av overskudd. Du kan kjøre følgende direkte på brikken:
+* Grafana: Create dashboards and visualize temperature trends over time.
 
-* Grafana: For å lage dæsjbord og visualisere temperaturutviklingen over tid.
+* Time-series database (InfluxDB / Prometheus): Efficient storage for all your temperature measurements.
 
-* Tidsseriedatabase (InfluxDB / Prometheus): For effektiv lagring av alle temperaturmålingene dine.
+* Home Assistant: Automate irrigation, grow lights, or heating based on sensor readings.
 
-* Home Assistant: Hvis du vil automatisere vanning, vekstlys eller varme basert på målingene.
+* MQTT broker (Mosquitto): Connect additional wireless sensors as your system grows.
 
-* MQTT-broker (Mosquitto): Hvis du vil koble til flere trådløse sensorer etter hvert.
-
-## Docs
+## Documentation
 
 https://www.raspberrypi.com/documentation/computers/getting-started.html
 
-## Slik installerer du OS trinn for trinn
+## How to Install Raspberry Pi OS Step by Step
 
-1. Last ned verktøyet: Gå til raspberrypi.com/software og last ned og installer Raspberry Pi Imager på PC-en din. Download for windows. Installer og kjøre det deretter som admin.
+1. Download the tool: Go to raspberrypi.com/software and download and install Raspberry Pi Imager on your PC. Download the Windows version. Install it and run it as Administrator.
 
-2. Koble til minnekortet: Sett Kingston 64GB-microSD-kortet inn i SD-kortadapteren, og plugg det i PC-en.
+2. Insert the memory card: Insert the Kingston 64GB microSD card into the SD card adapter and connect it to your PC.
 
-Velg enhet og system i Imager:
+Select the device and operating system in Imager:
 
-1. Choose Device: Velg Raspberry Pi 4.
+1. Choose Device: Select Raspberry Pi 4.
 
-2. Choose OS: Velg Raspberry Pi OS (64-bit).
+2. Choose OS: Select Raspberry Pi OS (64-bit).
 
-3. Choose Storage: Velg minnekortet ditt.
+3. Choose Storage: Select your memory card.
 
-Tilpass innstillinger (viktig for hodeløs oppstart): Når programmet spør om du vil bruke forhåndsinnstillinger (OS Customisation), velg Edit Settings:
+Customize the settings (important for headless startup). When asked if you want to use OS Customisation, choose Edit Settings:
 
-1. Sett et valgfritt brukernavn og passord. (view bitw).
+1. Set a username and password of your choice. (See Bitwarden.)
 
-2. Huk av for trådløst nettverk, og skriv inn Wi-Fi-navn (SSID), passord og landkode NO.
+2. Enable wireless networking and enter your Wi-Fi name (SSID), password, and country code (NO).
 
-3. Gå til fanen for tjenester (Services) og aktiver SSH (med passordautentisering).
+3. Go to the Services tab and enable SSH (with password authentication).
 
-Skriv til kortet: Trykk Save og deretter Yes for å starte formateringen og skrivingen.
+Write the image to the card: Click Save and then Yes to begin formatting and writing.
 
-Når det er ferdig, tar du ut kortet, setter det inn i Raspberry Pi 4, og kobler til strømmen. Gi den et par minutter til å koble seg til Wi-Fi, så er du klar til å koble til via SSH!
+When the process finishes, remove the card, insert it into the Raspberry Pi 4, and connect the power. Give it a couple of minutes to connect to Wi-Fi, then you're ready to connect via SSH!
 
 ![Install os](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/os.png)
 
-## Koble til
+## Connect
 
+We run a simple PowerShell script that scans the subnet and lists all active IP addresses on your network.
 
-Vi kjører et enkelt PowerShell-skript som vasker hele subnettet og lister ut alle aktive IP-adresser på nettverket ditt
 
 ```ps1
 Get-NetNeighbor -AddressFamily IPv4 | Where-Object { $_.State -ne "Unreachable" -and $_.IPAddress -like "192.168.10.*" } | Select-Object IPAddress, LinkLayerAddress
 
-# da skal du finne en ny ip adresse, 
-# evt trekk ut strøm fra raspberry pi og sette den tilbake igjen
-```
+# You should find a new IP address.
+# If not, disconnect the Raspberry Pi power and reconnect it.
 
-Ping
-
-```ps1
 ping mira1.local
 ```
 
-Koble til
+Connect:
+
 
 ```bash
 ssh chilliman@mira1.local
@@ -102,7 +110,6 @@ Linux mira1 6.18.34+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.18.34-1+rpt1 (2026-06-0
 
 free -h
 top -d 5
-
 
 df -h
 Filesystem      Size  Used Avail Use% Mounted on
@@ -124,12 +131,11 @@ exit
 
 ssh chilliman@192.168.10.212
 
-# oppdater
+# Update package lists
 sudo apt update
 
-# kjør oppgradering, det tar litt tid
+# Upgrade packages (this will take a while)
 sudo apt upgrade
-
 
 df -h
 Filesystem      Size  Used Avail Use% Mounted on
@@ -143,55 +149,51 @@ tmpfs           1.9G  4.0K  1.9G   1% /tmp
 /dev/mmcblk0p1  505M   79M  426M  16% /boot/firmware
 tmpfs           380M   64K  380M   1% /run/user/1000
 tmpfs           1.0M     0  1.0M   0% /run/credentials/getty@tty1.service
-
 ```
-
-
 
 ## Grafana
 
 ```bash
-# 1. Installer nødvendige verktøy
+# 1. Install required tools
 sudo apt install -y apt-transport-https wget gpg
 
-# 2. Opprett nøkkelmappe og last ned Grafana sin GPG-nøkkel
+# 2. Create the key directory and download Grafana's GPG key
 sudo mkdir -p /etc/apt/keyrings/
 wget -q -O - https://apt.grafana.com/gpg.key | gpg --dearmor | sudo tee /etc/apt/keyrings/grafana.gpg > /dev/null
 
-# 3. Legg til Grafana-arkivet i kildelisten
+# 3. Add the Grafana repository
 echo "deb [signed-by=/etc/apt/keyrings/grafana.gpg] https://apt.grafana.com stable main" | sudo tee /etc/apt/sources.list.d/grafana.list
 
-# Oppdater
+# Update
 sudo apt update
 
-# Pakken grafana: Open Source Edition (OSS) – gratis å bruke til alle formål.
+# Install Grafana Open Source Edition (OSS)
 sudo apt install grafana
 
-
-# Aktiver
+# Enable and start Grafana
 sudo systemctl daemon-reload
 sudo systemctl enable grafana-server
 sudo systemctl start grafana-server
 
-# Sjekk running
-
+# Check status
 sudo systemctl status grafana-server
 
 grafana-server.service - Grafana instance
      Loaded: loaded (/usr/lib/systemd/system/grafana-server.service; enabled; preset: enabled)
      Active: active (running) since Tue 2026-08-25 18:32:12 CEST; 5s ago
-
 ```
 
-Besøk Grafana
+Visit Grafana
 
 * http://192.168.10.212:3000
-
 * http://mira1.local:3000/login
 
-admin (se bitw)
+admin (see Bitwarden)
 
-## Grafana ssl https://mira1.local:3000/
+## Grafana SSL (HTTPS)
+
+https://mira1.local:3000/
+
 
 ```bash
 sudo mkdir -p /etc/grafana/certs
@@ -207,15 +209,13 @@ sudo chown -R grafana:grafana /etc/grafana/certs
 sudo chmod 600 grafana.key
 sudo chmod 644 grafana.crt
 
-
 sudo nano /etc/grafana/grafana.ini
 
-# remove ; before parameter
+# Remove ; before the parameter
 # protocol = https
-# add:
+# Add:
 # cert_file = /etc/grafana/certs/grafana.crt
 # cert_key = /etc/grafana/certs/grafana.key
-
 
 sudo systemctl restart grafana-server
 sudo systemctl status grafana-server
@@ -223,20 +223,19 @@ sudo systemctl status grafana-server
 ● grafana-server.service - Grafana instance
      Loaded: loaded (/usr/lib/systemd/system/grafana-server.service; enabled; preset: enabled)
      Active: active (running) since Tue 2026-08-25 21:49:33 CEST; 3s ago
-
 ```
-## Grafana monitorer localhost med prometheus-node-exporter
 
+## Monitor localhost with Prometheus Node Exporter
 
 ```bash
 sudo apt update
 sudo apt install -y prometheus prometheus-node-exporter
 
-# Start og aktiver tjenestene
+# Enable and start the services
 sudo systemctl enable --now prometheus
 sudo systemctl enable --now prometheus-node-exporter
 
-# sjekk den
+# Check status
 sudo systemctl status prometheus-node-exporter
 
 prometheus-node-exporter.service - Prometheus exporter for machine metrics
@@ -244,93 +243,80 @@ prometheus-node-exporter.service - Prometheus exporter for machine metrics
      Active: active (running) since Tue 2026-08-25 18:37:58 CEST; 44s ago
 ```
 
-Koble til i Grafana
+Connect it in Grafana:
 
+* Open Grafana in your browser (http://192.168.10.212:3000).
+* Go to Connections → Data Sources → Add data source. Select Prometheus.
+* In the Prometheus server URL field, enter:
 
-* Åpne Grafana i nettleseren ([http://192.168.10.212:3000](http://192.168.10.212:3000)).
-
-* Gå til Connections (tannhjul/meny i venstremenyen) Data sources Add data source.Velg Prometheus.
-
-* I feltet Prometheus server URL, Skriv inn:
-
+```ps1
 http://localhost:9090
+```
 
-Rull helt ned og trykk på Save & test. Du skal få en grønn melding som bekrefter at datakilden fungerer.
-
+Scroll to the bottom and click Save & Test. You should see a green confirmation message.
 
 ![prom](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/prom.png)
 
-Importer et ferdig Raspberry Pi / Node Exporter Dashboard
+Import a ready-made Raspberry Pi / Node Exporter dashboard.
 
-I stedet for å bygge grafer manuelt, kan du importere et ferdig dashboard som viser alt av helsedata:
+Instead of building graphs manually, import a dashboard that displays all health metrics:
 
-* I Grafana, klikk på + (Create / Import) øverst til høyre eller i sidemenyen, og velg Import dashboard.
+* In Grafana, click + (Create / Import) and select Import dashboard.
 
 ![import](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/import.png)
 
-
-* I feltet Import via grafana.com, skriv inn ID: 1860 (et populært Node Exporter Full dashboard) og trykk Load
+* In the Import via grafana.com field, enter Dashboard ID: 1860 (Node Exporter Full) and click Load.
 
 ![1860](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/1860.png)
 
+* Select Prometheus as the data source.
+* Click Import.
 
-* (Velg Prometheus under Select a Prometheus data source)
-
-* Trykk Import, ja
-
-Nå har du et fullstendig helse-dashboard som viser CPU-belastning, RAM-bruk, disker, temperaturer og nettverkstrafikk direkte fra localhost
-
+You now have a complete health dashboard displaying CPU usage, RAM usage, disks, temperatures, and network traffic directly from localhost.
 
 ![dash](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/dash.png)
 
-Det er predefinert oppsett.
-
+The dashboard comes with predefined panels.
 
 ![dash2](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/dash2.png)
 
-## Slå av Raspberry pi
-
+## Shut Down Raspberry Pi
 
 ```bash
 sudo shutdown -h now
 ```
+Wait about 10–15 seconds until the green activity LED stops blinking and only the red power LED remains on (or turns off). You can then safely disconnect the USB-C power cable.
 
-Vent ca. 10–15 sekunder til det grønne lyset slutter å blinke helt og kun det røde lyset lyser fast (eller slukker). Da kan du trygt ta ut USB-C-kabelen.
+## Zigbee Sensors and MQTT
 
+When the goal is to build a unified ecosystem that grows from a single temperature sensor to humidity, motion, and other sensors over time, the choice is essentially between three main protocols.
 
+Zigbee (Most popular for universal sensor networks):
 
-## Sensor Zigbee og MQTT
+* Why it's used: The most widely used protocol for wireless battery-powered sensors (Aqara, Sonoff, IKEA Tradfri, Philips Hue).
 
-Når målet er å bygge ut et enhetlig økosystem fra én temperaturmåler til fuktighet, bevegelse og andre sensorer over tid, står valget i praksis mellom tre hovedprotokoller
+* Architecture: Forms a mesh network where mains-powered devices (such as smart plugs) act as repeaters.
 
+* Sensor selection: A huge range of affordable temperature, humidity, motion, door/window, and leak sensors.
 
-Zigbee (Mest populær for universelt sensornettverk):
+* Requirements: Requires a USB Zigbee coordinator (for example, Sonoff Zigbee 3.0 USB Dongle Plus) connected to the Raspberry Pi.
 
-* Hvorfor den brukes: Den absolutt mest brukte protokollen for trådløse batteridrevne sensorer (Aqara, Sonoff, IKEA Tradfri, Philips Hue).
+Wi-Fi (Simple to start with, but harder to scale long term)
 
-* Arkitektur: Danner et mesh-nettverk der strømforsynte enheter (som smartplugger) fungerer som repeatere.
+BLE / Bluetooth Low Energy (Cheapest for temperature sensors, limited for motion sensors)
 
-* Sensorutvalg: Gigantisk utvalg av rimelige temperatur-, fuktighets-, bevegelses-, dør/vindu- og lekkasjesensorer.
+* Why it's used: Extremely inexpensive temperature sensors (for example, Xiaomi Mijia or Govee).
 
-* Krav: Krever en USB Zigbee-dongel (f.eks. Sonoff Zigbee 3.0 USB Dongle Plus til ca. 200–300 kr) plugget i Raspberry Pi-en.
+* Limitations: Limited range through walls, no mesh networking, and a much smaller ecosystem than Zigbee.
 
-Wi-Fi (Enkelt i starten, men krevende på sikt)
+1. USB Zigbee Coordinator (Coordinator/Dongle)
 
-BLE / Bluetooth Low Energy (Billigst for temperatur, begrenset for bevegelse)
+Function: Connects directly to one of the Raspberry Pi USB ports (mira1). It serves as the radio gateway and antenna for your Zigbee network.
 
-* Hvorfor den brukes: Ekstremt billige temperatursensorer (f.eks. Xiaomi Mijia eller Govee til under en hundrelapp).
+2. Wireless Zigbee Temperature Sensor
 
-* Begrensninger: Dårlig rekkevidde gjennom vegger, danner ikke mesh, og utvalget av bevegelsessensorer og annet tilbehør er marginalt sammenlignet med Zigbee.
+After connecting the USB Zigbee dongle, install Zigbee2MQTT on the Raspberry Pi.
 
-
-
-1. USB Zigbee Co-ordinator (Coordinator/Dongel)
-
-Funksjon: Plugges direkte inn i en av USB-portene på Raspberry Pi-en (mira1). Den fungerer som antenne og radio-gateway for nettverket ditt
-
-2. Trådløs Zigbee-temperatursensor
-
-Når du har plugget inn USB-dongelen, installerer vi Zigbee2MQTT på Raspberry Pi-en.
+We choose Zigbee Sensors.
 
 ![sonoff](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/sonoff.png)
-
