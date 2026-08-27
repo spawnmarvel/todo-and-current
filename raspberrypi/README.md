@@ -323,3 +323,5 @@ We choose Zigbee Sensors.
 ![sonoff](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/sonoff.png)
 
 ## Preparing mira1 for Zigbee2MQTT
+
+Get Node.js and Zigbee2MQTT
