@@ -325,3 +325,8 @@ We choose Zigbee Sensors.
 ## Preparing mira1 for Zigbee2MQTT
 
 Get Node.js and Zigbee2MQTT
+
+
+MQTT Explorer is a comprehensive MQTT client that provides a structured overview of your MQTT topics and makes working with devices/services on your broker dead-simple.
+
+* https://mqtt-explorer.com/
