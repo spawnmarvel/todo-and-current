@@ -317,4 +317,6 @@ Function: Connects directly to one of the Raspberry Pi USB ports (mira1). It ser
 
 After connecting the USB Zigbee dongle, install Zigbee2MQTT on the Raspberry Pi.
 
+We choose Zigbee Sensors.
+
 ![sonoff](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/sonoff.png)
