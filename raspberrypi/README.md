@@ -27,44 +27,6 @@ https://www.dustin.no/product/5020006823/4-case---redwhite-for-rpi-4
 
 ![PI](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/pi.png)
 
-## Sensor 
-
-Siden du vil unngå kabler, er Bluetooth Low Energy (BLE) eller Wi-Fi den enkleste løsningen. Da trenger du ikke koble noe direkte til GPIO-stiftene på Pi-en – alt leses av trådløst over nettverket eller antenne
-
-* blåtann, wifi
-
-
-Anbefalte modeller (Bluetooth / Wi-Fi)
-
-Xiaomi Mijia Thermometer 2 (Bluetooth / BLE):
-
-* Hva det er: Meget billig og populær liten sensor med e-ink/LCD-skjerm.
-
-* Hvordan den fungerer: Sender kontinuerlig temperatur og fuktighet via BLE. Raspberry Pi 4 har innebygd Bluetooth og kan snappe opp målingene i bakgrunnen uten at sensoren må parres manuelt.
-
-RuuviTag (Bluetooth / BLE):
-
-* Hva det er: Finskbygd, robust og vanntett sensorknapp.
-
-* Hvordan den fungerer: Ekstremt god rekkevidde og høy presisjon på temperatur, fuktighet og lufttrykk. Sender åpne BLE-data som Pi-en enkelt leser av.
-
-Shelly Plus H&T (Wi-Fi):
-
-* Hva det er: Trådløs sensor som kobles direkte på Wi-Fi-nettet ditt.
-
-* Hvordan den fungerer: Sender måledata direkte til Pi-en over lokalnettet via MQTT eller HTTP (REST API). Krever ingen Bluetooth-rekkevidde, bare Wi-Fi-dekning.
-
-Inkbird IBS-TH2 (Bluetooth):
-
-* Hva det er: Kompakt BLE-temperatursensor (fås også i versjon med ekstern probekabel dersom du vil måle direkte i jorda).
-
-Get data
-
-* Python-skript: Du kan bruke biblioteker som bleak eller bluepy i Python for å lytte på BLE-signaler fra f.eks. Xiaomi eller RuuviTag og lagre dataene direkte.
-
-* MQTT: Shelly-sensoren kan konfigureres i eget webgrensesnitt til å sende målinger direkte til en Mosquitto MQTT-broker som kjører på Raspberry Pi-en din.
-
-* Home Assistant / BleAutomator: Kjører du Home Assistant på Pi-en, oppdager den automatiske BLE-sensorer i nærheten uten at du trenger å skrive kode.
 
 ## IOT
 
