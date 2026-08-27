@@ -337,7 +337,7 @@ Vent ca. 10–15 sekunder til det grønne lyset slutter å blinke helt og kun de
 
 
 
-## Zigbee og MQTT
+## Sensor Zigbee og MQTT
 
 Når målet er å bygge ut et enhetlig økosystem fra én temperaturmåler til fuktighet, bevegelse og andre sensorer over tid, står valget i praksis mellom tre hovedprotokoller
 
@@ -369,4 +369,6 @@ Funksjon: Plugges direkte inn i en av USB-portene på Raspberry Pi-en (mira1). D
 2. Trådløs Zigbee-temperatursensor
 
 Når du har plugget inn USB-dongelen, installerer vi Zigbee2MQTT på Raspberry Pi-en.
+
+![sonoff](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/sonoff.png)
 
