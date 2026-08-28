@@ -109,6 +109,9 @@ ssh chilliman@mira1.local
 uname -a
 Linux mira1 6.18.34+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.18.34-1+rpt1 (2026-06-09) aarch64 GNU/Linux
 
+cat /proc/device-tree/model; echo
+Raspberry Pi 4 Model B Rev 1.5
+
 free -h
 top -d 5
 
