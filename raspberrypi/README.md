@@ -981,3 +981,5 @@ Grafana
 
 
 Now we monitor!
+
+![done](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/done.png)
