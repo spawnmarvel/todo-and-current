@@ -1492,6 +1492,10 @@ sudo grep -i "error" /var/log/syslog | tee error_report.txt
 cat error_report.txt
 cat error_report.txt | grep -i "19:23:12.836770*"
 
+# configuration grep multiple parameters
+sudo grep -E 'DBName|DBUser' zabbix_server.conf
+sudo grep -E 'DBName|DBUser|DBPass*' zabbix_server.conf
+
 # journal
 sudo journalctl -u loki.service -n 50 --no-pager
 # v1.0.0
