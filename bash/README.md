@@ -1404,6 +1404,9 @@ In a real sysadmin job, 90% of your day starts with:
 # 1. The "Orientation" (Where am I?)
 pwd
 
+# show all users
+w
+
 # list all folder after /
 ls -ld /*/
 
