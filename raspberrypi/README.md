@@ -2,6 +2,10 @@
 
 ## Table of Contents
 
+- [Operating System & Core Runtimes](#operating-system--core-runtimes)
+- [MQTT Broker & Gateway](#mqtt-broker--gateway)
+- [Monitoring, Metrics & Visualization](#monitoring-metrics--visualization)
+- [Client & Desktop Tools](#client--desktop-tools)
 - [Hardware](#hardware)
 - [Raspberry Pi 4 Network Specifications](#raspberry-pi-4-network-specifications)
 - [IoT](#iot)
@@ -20,7 +24,47 @@
 - [Force Telemetry Request via MQTT from Sonoff SNZB-02P](#force-telemetry-request-via-mqtt-from-sonoff-snzb-02p)
 - [Sensor Data to Grafana](#sensor-data-to-grafana)
 
+
+
 # Raspberry Pi IoT
+
+## Operating System & Core Runtimes
+
+Raspberry Pi OS (64-bit) – Base Linux operating system (Debian-based kernel 6.18.34+rpt-rpi-v8).
+
+Raspberry Pi Imager – Flashing utility used on Windows to image the microSD card and pre-configure SSH/Wi-Fi settings.
+
+Node.js (v22.23.2 LTS) – JavaScript runtime environment required to build and execute Zigbee2MQTT.
+
+npm (v10.8.2) – Node Package Manager used for installing Node dependencies and managing the Zigbee2MQTT service.
+
+Git, Make, GCC, G++ – Linux development and compilation build tools (build-essential).
+
+## MQTT Broker & Gateway
+
+Zigbee2MQTT (v2.13.0+) – Bridges Zigbee communication from the Sonoff Dongle Plus MG24 into structured MQTT payloads.
+
+Mosquitto (mosquitto & mosquitto-clients) – Open-source MQTT broker running on port 1883 with local CLI publishing/subscribing utilities (mosquitto_sub, mosquitto_pub).
+
+## Monitoring, Metrics & Visualization
+
+Grafana (Open Source Edition) – Dashboard visualization interface running on port 3000 (configured with custom self-signed SSL certificates over HTTPS).
+
+Prometheus Server – Time-series database running on port 9090 to scrape and store system and sensor telemetry.
+
+Prometheus Node Exporter (prometheus-node-exporter) – System metrics collector running on port 9100 exposing host health (CPU, RAM, temp, disk usage).
+
+mqtt2prometheus (v0.1.7) – Exporter service running on port 9641 that parses MQTT payloads from zigbee2mqtt/+ into Prometheus metrics (temperature, humidity, battery, linkquality).
+
+OpenSSL – Used to generate self-signed X.509 SSL certificates (grafana.crt, grafana.key) for securing Grafana web traffic.
+
+## Client & Desktop Tools
+
+PowerShell 7 / Windows Terminal – Used on PC for network discovery (Get-NetNeighbor) and SSH connection management.
+
+MQTT Explorer – Cross-platform desktop MQTT client used to visualize the topic tree and inspect raw JSON payloads.
+
+Bitwarden – Credential manager used for storing service passwords.
 
 ## Hardware
 
