@@ -448,6 +448,9 @@ Created symlink '/etc/systemd/system/multi-user.target.wants/zigbee2mqtt.service
 
 Do not start the service just yet. Zigbee2MQTT requires a basic configuration.yaml file to know how to communicate with Mosquitto MQTT; otherwise, it will crash on startup.
 
+
+![dongle](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/dongle.png)
+
 * Once your Sonoff USB dongle arrives, we will verify its exact USB serial path using
 
 ```bash
