@@ -978,3 +978,6 @@ Now the dashboard is ready, go down and move the sensor.
 Grafana
 
 ![grafana_plant](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/grafana_plant.png)
+
+
+Now we monitor!
