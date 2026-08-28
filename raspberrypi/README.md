@@ -112,6 +112,8 @@ With 4 GB RAM and 64 GB storage, you have plenty of resources available. You can
 
 * MQTT broker (Mosquitto): Connect additional wireless sensors as your system grows.
 
+![toplogy](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/topolgy.png)
+
 ## Documentation
 
 https://www.raspberrypi.com/documentation/computers/getting-started.html
