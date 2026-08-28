@@ -228,6 +228,14 @@ sudo systemctl status grafana-server
 
 ## Monitor localhost with Prometheus Node Exporter
 
+
+prometheus (Prometheus Server): Acts as the time-series database backend on port 9090. It periodically pulls (scrapes) metrics from Node Exporter, stores them in its local time-series database on disk, and serves them to Grafana
+
+
+prometheus-node-exporter (Node Exporter): Acts as the system metric collector running on port 9100. It exposes raw Linux system metrics (like CPU temperature, memory usage, and uptime) as text endpoints for Prometheus Server to collect.
+
+Your Grafana dashboard connects to Prometheus on port 9090 as its TSDB data source, which in turn queries the data scraped from Node Exporter
+
 ```bash
 sudo apt update
 sudo apt install -y prometheus prometheus-node-exporter
