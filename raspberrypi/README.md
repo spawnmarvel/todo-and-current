@@ -455,6 +455,9 @@ Zigbee2MQTT
 
 * https://www.zigbee2mqtt.io/
 
+SONOFF Dongle-PMG24
+
+* https://www.zigbee2mqtt.io/devices/Dongle-PMG24.html#sonoff-dongle-pmg24
 
 MQTT Explorer is a comprehensive MQTT client that provides a structured overview of your MQTT topics and makes working with devices/services on your broker dead-simple.
 
