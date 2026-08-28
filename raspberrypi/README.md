@@ -347,7 +347,7 @@ Accsessible also on phone.
 
 ![phone](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/phone.png)
 
-We created a grafana alert also (more will come), but we need to check temperature and uptime.
+We created a grafana alert also (more will come), but we need to check temperature, disk, ram and uptime on the raspberry pi also.
 
 ![uptime2](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/uptime2.png)
 
