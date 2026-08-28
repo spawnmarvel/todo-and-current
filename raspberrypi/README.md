@@ -114,6 +114,18 @@ With 4 GB RAM and 64 GB storage, you have plenty of resources available. You can
 
 This is what we will build.
 
+No, Zigbee is not a proprietary protocol.
+
+It is an open global standard managed by the Connectivity Standards Alliance (CSA, formerly the Zigbee Alliance). Because it is built on the open IEEE 802.15.4 physical layer, any hardware manufacturer can build Zigbee-compatible devices without paying licensing fees to a single private owner.
+
+Key Characteristics of Zigbee
+
+● Open Specifications: The core networking and messaging standards are public and maintained by hundreds of member companies within the CSA.
+
+● Cross-Vendor Interoperability: Devices from different manufacturers (e.g., Sonoff, Aqara, Philips Hue, IKEA) can communicate on the same mesh network.
+
+● Community-Driven Extensions: Tools like Zigbee2MQTT can decode payloads from nearly any manufacturer because the standard profile clusters (like Zigbee Home Automation and Zigbee 3.0) follow predictable open specifications.
+
 ![toplogy](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/toplogy.jpg)
 
 ## Documentation
