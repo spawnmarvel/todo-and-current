@@ -752,4 +752,177 @@ I went down and moved it, and then it pushed values.
 
 ![mqtt_blow](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/mqtt_blow.png)
 
+### Sensor data to Grafana
+
+```bash
+which prometheus
+/usr/bin/prometheus
+
+# Check systemd service status
+sudo systemctl status prometheus
+
+# Check if port 9090 is listening
+curl -s http://localhost:9090/-/healthy
+Prometheus Server is Healthy
+
+```
+
+Install Exporter
+
+```bash
+# Download version 0.1.7 for Linux ARM64
+wget https://github.com/hikhvar/mqtt2prometheus/releases/download/v0.1.7/mqtt2prometheus_0.1.7_linux_arm64.tar.gz
+
+# Extract binary
+tar -xvf mqtt2prometheus_0.1.7_linux_arm64.tar.gz
+
+# Move binary to /usr/local/bin
+sudo mv mqtt2prometheus /usr/local/bin/
+rm mqtt2prometheus_0.1.7_linux_arm64.tar.gz
+
+# Create configuration file
+sudo bash -c 'cat <<EOF > /etc/mqtt2prometheus.yaml
+mqtt:
+  server: tcp://127.0.0.1:1883
+  topic_path: "zigbee2mqtt/+"
+  device_id_regex: "zigbee2mqtt/(?P<deviceid>[a-zA-Z0-9_]+)"
+
+metrics:
+  - prom_name: "temperature"
+    mqtt_name: "temperature"
+    help: "Plant sensor temperature in Celsius"
+    type: "gauge"
+  - prom_name: "humidity"
+    mqtt_name: "humidity"
+    help: "Plant sensor relative humidity percentage"
+    type: "gauge"
+  - prom_name: "battery"
+    mqtt_name: "battery"
+    help: "Plant sensor battery level"
+    type: "gauge"
+  - prom_name: "linkquality"
+    mqtt_name: "linkquality"
+    help: "Zigbee link quality indicator"
+    type: "gauge"
+EOF'
+
+
+# Create and start systemd service
+sudo bash -c 'cat <<EOF > /etc/systemd/system/mqtt2prometheus.service
+[Unit]
+Description=MQTT to Prometheus Exporter
+After=network.target mosquitto.service
+
+[Service]
+ExecStart=/usr/local/bin/mqtt2prometheus -config /etc/mqtt2prometheus.yaml
+Restart=always
+User=nobody
+
+[Install]
+WantedBy=multi-user.target
+EOF'
+
+sudo systemctl daemon-reload
+sudo systemctl enable --now mqtt2prometheus
+
+sudo systemctl restart mqtt2prometheus.service
+
+sudo systemctl status mqtt2prometheus.service
+mqtt2prometheus.service - MQTT to Prometheus Exporter
+     Loaded: loaded (/etc/systemd/system/mqtt2prometheus.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2026-08-28 23:56:03 CEST; 4s ago
+
+```
+Verify Exporter Output
+
+Once started, confirm that the metrics endpoint is serving data locally:
+
+```bash
+# blow or move the sensor
+
+curl -s http://localhost:9641/metrics | grep -E "temperature|humidity"
+# HELP humidity Plant sensor relative humidity percentage
+# TYPE humidity gauge
+humidity{sensor="plant_sensor1",topic="zigbee2mqtt/plant_sensor1"} 83.3 1787954275403
+# HELP temperature Plant sensor temperature in Celsius
+# TYPE temperature gauge
+temperature{sensor="plant_sensor1",topic="zigbee2mqtt/plant_sensor1"} 23.3 1787954275403
+
+```
+
+
+Step 1: Add Scrape Job to Prometheus Configuration
+Open /etc/prometheus/prometheus.yml in your editor:
+
+```bash
+sudo nano /etc/prometheus/prometheus.yml
+```
+
+Under the scrape_configs: section, append the new exporter job
+
+```yml
+- job_name: 'zigbee_sensors'
+    static_configs:
+      - targets: ['localhost:9641']
+```
+
+Step 2: Reload Prometheus
+Save the file and reload the Prometheus service configuration:
+
+```bash
+sudo systemctl reload prometheus
+```
+
+Verify that Prometheus sees the new target as UP by checking http://mira1:9090/targets or running:
+
+```bash
+curl -s http://localhost:9090/api/v1/targets | grep zigbee_sensors
+
+```
+
+log
+
+```json
+{"status":"success","data":{"activeTargets":[{"discoveredLabels":{"__address__":"localhost:9100","__metrics_path__":"/metrics","__scheme__":"http","__scrape_interval__":"15s","__scrape_timeout__":"10s","job":"node"},"labels":{"instance":"localhost:9100","job":"node"},"scrapePool":"node","scrapeUrl":"http://localhost:9100/metrics","globalUrl":"http://mira1:9100/metrics","lastError":"","lastScrape":"2026-08-29T00:01:19.524908702+02:00","lastScrapeDuration":0.227885045,"health":"up","scrapeInterval":"15s","scrapeTimeout":"10s"},{"discoveredLabels":{"__address__":"localhost:9090","__metrics_path__":"/metrics","__scheme__":"http","__scrape_interval__":"5s","__scrape_timeout__":"5s","job":"prometheus"},"labels":{"instance":"localhost:9090","job":"prometheus"},"scrapePool":"prometheus","scrapeUrl":"http://localhost:9090/metrics","globalUrl":"http://mira1:9090/metrics","lastError":"","lastScrape":"2026-08-29T00:01:16.798531823+02:00","lastScrapeDuration":0.034452304,"health":"up","scrapeInterval":"5s","scrapeTimeout":"5s"},{"discoveredLabels":{"__address__":"localhost:9641","__metrics_path__":"/metrics","__scheme__":"http","__scrape_interval__":"15s","__scrape_timeout__":"10s","job":"zigbee_sensors"},"labels":{"instance":"localhost:9641","job":"zigbee_sensors"},"scrapePool":"zigbee_sensors","scrapeUrl":"http://localhost:9641/metrics","globalUrl":"http://mira1:9641/metrics","lastError":"","lastScrape":"2026-08-29T00:01:19.266747279+02:00","lastScrapeDuration":0.011026352,"health":"up","scrapeInterval":"15s","scrapeTimeout":"10s"}],"droppedTargets":[],"droppedTargetCounts":{"node":0,"prometheus":0,"zigbee_sensors":0}}}
+```
+
+
+Step 3: Create Panels in Grafana
+
+1. Open Grafana in your web browser (http://mira1:3000 or http://<PI_IP>:3000).
+
+2. Navigate to Dashboards > New Dashboard > Add Visualization.
+
+3. Select your Prometheus data source.
+
+4. Configure the following PromQL queries for your panels:
+
+Temperature Panel:
+
+* PromQL Query: temperature{sensor="plant_sensor1"}
+
+* Panel Type: Time Series or Gauge
+
+* Unit: Celsius (°C) (misc > Celsius (°C))
+
+Humidity Panel:
+
+* PromQL Query: humidity{sensor="plant_sensor1"}
+
+* Panel Type: Time Series or Gauge
+
+* Unit: Percent (0-100) (relative > Percent (0-100))
+
+Target Thresholds for Capsicum (Chili & Paprika)
+
+For chili and paprika plants (Capsicum):
+
+* Vegetative & Growth Phase: 55% – 65% RH
+* Flowering & Pollination Phase: 45% – 55% RH (High humidity above 65% during flowering causes pollen to clump, reducing fruit set)
+* Critical High Threshold: $> 75%$ RH
+
+
+
+![grafana_limit](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/grafana_limit.png)
+
 
