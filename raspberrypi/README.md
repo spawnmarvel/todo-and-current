@@ -349,7 +349,7 @@ Accsessible also on phone.
 
 We created a grafana alert also (more will come), but we need to check temperature and uptime.
 
-![uptime](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/uptime.png)
+![uptime2](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/uptime2.png)
 
 The alert
 
