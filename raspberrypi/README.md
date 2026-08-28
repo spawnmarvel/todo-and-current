@@ -14,6 +14,11 @@
 - [Shut Down Raspberry Pi](#shut-down-raspberry-pi)
 - [Zigbee Sensors and MQTT](#zigbee-sensors-and-mqtt)
 - [Preparing mira1 for Zigbee2MQTT](#preparing-mira1-for-zigbee2mqtt)
+- [Verify Incoming Temperature Data](#verify-incoming-temperature-data)
+- [Assign a Friendly Name in Zigbee2MQTT](#assign-a-friendly-name-in-zigbee2mqtt)
+- [Get and View Data](#get-and-view-data)
+- [Force Telemetry Request via MQTT from Sonoff SNZB-02P](#force-telemetry-request-via-mqtt-from-sonoff-snzb-02p)
+- [Sensor Data to Grafana](#sensor-data-to-grafana)
 
 # Raspberry Pi IoT
 
