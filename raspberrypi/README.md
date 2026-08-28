@@ -1,4 +1,4 @@
-# Raspberry Pi IoT
+# Raspberry Pi IoT Chilli farm
 
 ## Table of Contents
 
