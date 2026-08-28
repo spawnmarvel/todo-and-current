@@ -449,22 +449,307 @@ Created symlink '/etc/systemd/system/multi-user.target.wants/zigbee2mqtt.service
 Do not start the service just yet. Zigbee2MQTT requires a basic configuration.yaml file to know how to communicate with Mosquitto MQTT; otherwise, it will crash on startup.
 
 
+* Sonoff Dongle Plus MG24 (Silicon Labs EFR32MG24 chip)
+
+* 1-meter USB extension cable (essential for reducing 2.4GHz USB 3.0 port interference on the Pi 4)
+
+* Sonoff SNZB-02P temperature/humidity sensor
+
 ![dongle](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/dongle.png)
 
-* Once your Sonoff USB dongle arrives, we will verify its exact USB serial path using
+
+Step 1: Connect Hardware
+
+* Plug the USB extension cable into a USB 2.0 port (black port) on mira1.
+
+* Plug the Sonoff Dongle Plus MG24 into the cable.
+
+* Remove the battery insulation tab from the SNZB-02P sensor.
+
+Step 2: Identify Serial Port Path
+Run this command in SSH on mira1 to find the exact persistent path of the MG24 dongle:
 
 ```bash
+ls -la /dev/serial/by-id/
+ls -la /dev/serial/by-id/
+total 0
+drwxr-xr-x 2 root root 60 Aug 28 22:34 .
+drwxr-xr-x 4 root root 80 Aug 28 22:34 ..
+lrwxrwxrwx 1 root root 13 Aug 28 22:34 usb-SONOFF_SONOFF_Dongle_Plus_MG24_6862721ec2f5ef11a0df99a29ed47d52-if00-port0 -> ../../ttyUSB0
+```
+Step 3:
+
+* Update configuration.yaml
+
+* Start and Verify Zigbee2MQTT Service
+
+* Pair SNZB-02P Sensor & Verify MQTT
+
+```bash
+sudo nano /opt/zigbee2mqtt/data/configuration.yaml
+```
+
+Config
+
+```yml
+homeassistant: false
+permit_join: true
+mqtt:
+  base_topic: zigbee2mqtt
+  server: 'mqtt://localhost:1883'
+serial:
+  port: /dev/serial/by-id/usb-SONOFF_SONOFF_Dongle_Plus_MG24_6862721ec2f5ef11a0df99a29ed47d52-if00-port0
+  adapter: ember
+```
+
+Start and verify Zigbee2MQTT service
+
+```bash
+# Start service
+sudo systemctl start zigbee2mqtt
+
+sudo journalctl -u zigbee2mqtt.service -f --no-pager
+
+#  Error: EACCES: permission denied, open '/opt/zigbee2mqtt/data/configuration.yaml'
+# ah we should have run nano with no sudo, fix ut back to owner
+
+
+sudo chown -R chilliman:chilliman /opt/zigbee2mqtt/
+sudo systemctl start zigbee2mqtt
+
+sudo journalctl -u zigbee2mqtt.service -f --no-pager
 
 ```
 
-Zigbee2MQTT
+More error:
+The Ember adapter initialized successfully and communicated with your Sonoff USB dongle (zh:ember: [STACK STATUS] Network up). However, the service crashed on the MQTT connection step:
 
-* https://www.zigbee2mqtt.io/
+error: z2m: MQTT failed to connect, exiting... ()
 
-SONOFF Dongle-PMG24
+This indicates Mosquitto is either not running, or its default local listener configuration is rejecting connection attempts on 127.0.0.1:1883
 
-* https://www.zigbee2mqtt.io/devices/Dongle-PMG24.html#sonoff-dongle-pmg24
+We need mosquitto
+
+```bash
+
+# Update package repositories and install Mosquitto broker + CLI utilities
+sudo apt update
+sudo apt install -y mosquitto mosquitto-clients
+
+# Create config directory and write local listener settings
+sudo mkdir -p /etc/mosquitto/conf.d
+sudo bash -c 'cat <<EOF > /etc/mosquitto/conf.d/local.conf
+listener 1883 0.0.0.0
+allow_anonymous true
+EOF'
+
+# Enable and start the Mosquitto service
+sudo systemctl enable --now mosquitto
+
+# Verify service is running
+sudo systemctl status mosquitto
+
+mosquitto.service - Mosquitto MQTT Broker
+     Loaded: loaded (/usr/lib/systemd/system/mosquitto.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2026-08-28 22:47:52 CEST; 1min 11s ago
+
+```
+
+Once Mosquitto shows active (running), restart Zigbee2MQTT and tail the live logs:
+
+```bash
+
+# Restart Zigbee2MQTT
+sudo systemctl restart zigbee2mqtt
+
+# Tail real-time service logs
+sudo journalctl -u zigbee2mqtt -f --no-pager
+
+```
+
+Logs
+
+```log
+Aug 28 22:49:42 mira1 npm[8563]: [2026-08-28 22:49:42] info:         zh:ember: [STACK STATUS] Network up.
+Aug 28 22:49:42 mira1 npm[8563]: [2026-08-28 22:49:42] info:         zh:ember: [INIT TC] Adapter network matches config.
+Aug 28 22:49:42 mira1 npm[8563]: [2026-08-28 22:49:42] info:         zh:ember: [CONCENTRATOR] Started source route discovery. 1248ms until next broadcast.
+Aug 28 22:49:42 mira1 npm[8563]: [2026-08-28 22:49:42] info:         z2m: zigbee-herdsman started (resumed)
+Aug 28 22:49:42 mira1 npm[8563]: [2026-08-28 22:49:42] info:         z2m: Coordinator firmware version: '{"meta":{"build":0,"ezsp":13,"major":7,"minor":4,"patch":5,"revision":"7.4.5 [GA]","special":0,"type":170},"type":"EmberZNet"}'
+Aug 28 22:49:42 mira1 npm[8563]: [2026-08-28 22:49:42] info:         z2m: Currently 0 devices are joined.
+Aug 28 22:49:42 mira1 npm[8563]: [2026-08-28 22:49:42] info:         z2m: Connecting to MQTT server at mqtt://localhost:1883
+Aug 28 22:49:42 mira1 npm[8563]: [2026-08-28 22:49:42] info:         z2m: Connected to MQTT server
+Aug 28 22:49:42 mira1 npm[8563]: [2026-08-28 22:49:42] info:         z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/state', payload '{"state":"online"}'
+Aug 28 22:49:43 mira1 npm[8563]: [2026-08-28 22:49:43] info:         z2m: Zigbee2MQTT started!
+```
+
+Everything is up and running.
+
+* Mosquitto MQTT: Listening and accepting connections.
+
+* Zigbee Coordinator: Sonoff MG24 running EmberZNet firmware 7.4.5.
+
+* Zigbee2MQTT: Online and connected to mqtt://localhost:1883.
+
+Next Step: Pair Your Sensor
+
+* Take the Sonoff SNZB-02P sensor.
+
+* Press and hold the reset/pairing button on the side for 5 seconds until the LED indicator begins flashing.
+
+* Keep the sensor close to the Sonoff USB dongle on mira1 for initial pairing.
+
+
+
+### Verify Incoming Temperature Data
+
+To observe the incoming telemetry payload, open a second terminal session on mira1 and subscribe to all Zigbee topics:
+
+
+```bash
+mosquitto_sub -h localhost -t "zigbee2mqtt/#" -v
+
+```
+
+```log
+
+zigbee2mqtt/bridge/state {"state":"online"}
+zigbee2mqtt/bridge/converters []
+zigbee2mqtt/bridge/info {"commit":"fcbb7ff4","config":{"advanced":{"cache_state":true,"cache_state_persistent":true,"cache_state_send_on_startup":true,"channel":11,"elapsed":false,"enable_external_js":true,"ext_pan_id":[221,221,221,221,221,221,221,221],"last_seen":"disable","log_console_json":false,"log_debug_namespace_ignore":"","log_debug_to_mqtt_frontend":false,"log_directories_to_keep":10,"log_directory":"/opt/zigbee2mqtt/data/log/%TIMESTAMP%","log_file":"log.log","log_level":"info","log_namespaced_levels":{},"log_output":["console","file"],"log_rotation":true,"log_symlink_current":false,"log_syslog":{},"output":"json","pan_id":6754,"timestamp_format":"YYYY-MM-DD HH:mm:ss"},"availability":{"active":{"backoff":true,"max_jitter":30000,"pause_on_backoff_gt":0,"timeout":10},"enabled":false,"passive":{"timeout":1500}},"blocklist":[],"device_options":{},"devices":{},"frontend":{"base_url":"/","enabled":false,"package":"zigbee2mqtt-windfront","port":8080},"groups":{},"health":{"interval":10,"reset_on_check":false},"homeassistant":{"discovery_topic":"homeassistant","enabled":false,"experimental_event_entities":false,"legacy_action_sensor":false,"status_topic":"homeassistant/status"},"map_options":{"graphviz":{"colors":{"fill":{"coordinator":"#e04e5d","enddevice":"#fff8ce","router":"#4ea3e0"},"font":{"coordinator":"#ffffff","enddevice":"#000000","router":"#ffffff"},"line":{"active":"#009900","inactive":"#994444"}}}},"mqtt":{"base_topic":"zigbee2mqtt","force_disable_retain":false,"include_device_information":false,"keepalive":60,"maximum_packet_size":1048576,"reject_unauthorized":true,"server":"mqtt://localhost:1883","version":4},"ota":{"default_maximum_data_size":50,"disable_automatic_update_check":false,"image_block_request_timeout":150000,"image_block_response_delay":250,"update_check_interval":1440},"passlist":[],"serial":{"adapter":"ember","disable_led":false,"port":"/dev/serial/by-id/usb-SONOFF_SONOFF_Dongle_Plus_MG24_6862721ec2f5ef11a0df99a29ed47d52-if00-port0"},"version":5},"config_schema":{"definitions":{"device":{"properties":{"debounce":{"description":"Debounces messages of this device","requiresRestart":true,"title":"Debounce","type":"number"},"debounce_ignore":{"description":"Protects unique payload values of specified payload properties from overriding within debounce time","examples":["action"],"items":{"type":"string"},"title":"Ignore debounce","type":"array"},"disable_automatic_update_check":{"default":false,"description":"Zigbee devices may request a firmware update, and do so frequently, causing Zigbee2MQTT to reach out to third party servers. If you disable these device initiated checks, you can still initiate a firmware update check manually.","title":"Disable automatic update check","type":"boolean"},"disabled":{"description":"Disables the device (excludes device from network scans, availability and group state updates)","requiresRestart":true,"title":"Disabled","type":"boolean"},"filtered_attributes":{"description":"Filter attributes with regex from published payload.","examples":["^temperature$","^battery$","^action$"],"items":{"type":"string"},"title":"Filtered publish attributes","type":"array"},"filtered_cache":{"description":"Filter attributes with regex from
+```
+
+The payload from Mosquitto confirms that Zigbee2MQTT is fully operational:
+
+* Bridge State: online
+
+* Adapter: ember on /dev/serial/by-id/usb-SONOFF_SONOFF_Dongle_Plus_MG24_...
+
+* MQTT Server: mqtt://localhost:1883
+
+A red light blinking once per second on the Sonoff SNZB-02P means it is actively broadcasting pairing requests, but it is not receiving an acknowledgment back from the Zigbee coordinator to complete the handshake.
+
+
+Enable Permissive Joining & Reset
+
+Sometimes the coordinator needs an explicit command to open pairing mode. Run these steps on mira1
+
+```bash
+# Re-open permit joining on mira1:
+mosquitto_pub -h localhost -t "zigbee2mqtt/bridge/request/permit_join" -m '{"value": true, "time": 180}'
+```
+
+Reset the sensor into Pairing Mode:
+
+Press and hold the button for full 5–7 seconds until the LED flashes three times (or starts blinking slowly on its own).
+
+Release the button immediately.
+
+Place the sensor right next to the Sonoff MG24 USB antenna and let it sit undisturbed for 10–20 seconds while it completes the 180-second pairing window automatically.
+
+Check your journalctl log stream—you should see Zigbee2MQTT register device_joined followed by interviewing
+
+```bash
+sudo journalctl -u zigbee2mqtt -f --no-pager
+```
+
+log
+
+```log
+Aug 28 23:09:06 mira1 npm[8563]: [2026-08-28 23:09:06] info:         z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/0x70d07efffea42afc', payload '{"battery":100,"humidity":49.7,"humidity_calibration":0,"linkquality":255,"temperature":25.3,"temperature_calibration":0}'
+Aug 28 23:09:41 mira1 npm[8563]: [2026-08-28 23:09:41] info:         z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/0x70d07efffea42afc', payload '{"battery":100,"humidity":49.7,"humidity_calibration":0,"linkquality":255,"temperature":25.3,"temperature_calibration":0,"update":{"installed_version":8704,"latest_release_notes":null,"latest_source":"https://raw.githubusercontent.com/Koenkk/zigbee-OTA/master/images/Sonoff/snzb-02p_v2.2.0.ota","latest_version":8704,"state":"idle"}}'
+Aug 28 23:09:43 mira1 npm[8563]: [2026-08-28 23:09:43] info:         z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/health', payload '{"response_time":1787951383058,"os":{"load_average":[0.04,0.01,0.02],"memory_used_mb":789.75,"memory_percent":20.8059},"process":{"uptime_sec":1204,"memory_used_mb":131.27,"memory_percent":3.4584},"mqtt":{"connected":true,"queued":0,"published":178,"received":7},"devices":{"0x70d07efffea42afc":{"messages":101,"messages_per_sec":0.2926,"leave_count":2,"network_address_changes":0}}}'
+Aug 28 23:10:17 mira1 npm[8563]: [2026-08-28 23:10:17] info:         zh:ember: [STACK STATUS] Network closed.
+```
+
+### Key Telemetry Output
+
+The sensor paired successfully and is actively reporting live data over MQTT:
+
+* IEEE Address: 0x70d07efffea42afc
+
+* Temperature: 25.3 °C
+
+* Humidity: 49.7 %
+
+* Battery: 100%
+
+* Link Quality: 255 (maximum signal strength)
+
+
+### Assign a Friendly Name in Zigbee2MQTT
+
+To change the default IEEE address topic (zigbee2mqtt/0x70d07efffea42afc) to something descriptive like plant_sensor, publish an MQTT command:
+
+```bash
+mosquitto_pub -h localhost -t "zigbee2mqtt/bridge/request/device/rename" -m '{"from": "0x70d07efffea42afc", "to": "plant_sensor1"}'
+```
+
+When the sensor reports its next periodic update (or when you trigger a reading by warming it with your hand), you will see the payload published directly to zigbee2mqtt/plant_sensor1
+
+```json
+{"battery":100,"humidity":49.7,"humidity_calibration":0,"linkquality":255,"temperature":25.3,"temperature_calibration":0}
+```
+
+### Get and view data
+
+```bash
+# Listen to all Zigbee2MQTT messages:
+mosquitto_sub -h localhost -t "zigbee2mqtt/#" -v
+
+```
+
+```bash
+# Listen only to your plant sensor:
+mosquitto_sub -h localhost -t "zigbee2mqtt/plant_sensor1" -v
+```
 
 MQTT Explorer is a comprehensive MQTT client that provides a structured overview of your MQTT topics and makes working with devices/services on your broker dead-simple.
 
 * https://mqtt-explorer.com/
+
+### Force Telemetry Request via MQTT from Sonoff SNZB-02P
+
+Reporting Frequency Factors
+
+The Sonoff SNZB-02P sends values based on two triggers:
+
+Threshold Triggers (Immediate): The sensor wakes up instantly and sends an MQTT update whenever a noticeable change in temperature or humidity occurs.
+
+Periodic Heartbeat (Time-based): If environment conditions remain completely static, the sensor sends a periodic report to confirm it is online and report battery status (typically every 1 to 4 hours).
+
+You can request Zigbee2MQTT to read the current values over MQTT
+
+```bash
+# Request temperature read
+# Just move the sensor or blow on it
+mosquitto_pub -h localhost -t "zigbee2mqtt/plant_sensor1/get" -m '{"temperature": ""}'
+
+# Request humidity read
+# Just move the sensor or blow on it
+mosquitto_pub -h localhost -t "zigbee2mqtt/plant_sensor1/get" -m '{"humidity": ""}'
+```
+
+
+***Explanation of MQTT Explorer Output***
+
+The screenshot shows that plant_sensor1 is now present in the topic tree on the left, but you are currently selecting the request topic:
+
+zigbee2mqtt / plant_sensor1 / get
+
+The payload {"temperature": ""} shown in the right pane is the outgoing command you published to request a reading, rather than the data payload returned by the sensor.
+
+
+Why Values Are Not Updating
+
+The SNZB-02P is currently sleeping to preserve its CR2477 battery. It will not process the /get request sitting in the queue until either
+
+* A reportable environment change occurs (temperature shift > 0.2 C or humidity shift > 1%).
+
+* Its periodic wake-up timer triggers.
+
+* The physical button on the sensor is pressed
+
+I went down and moved it, and then it pushed values.
+
+![mqtt_blow](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/mqtt_blow.png)
+
+
