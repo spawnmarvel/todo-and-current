@@ -349,13 +349,107 @@ We choose Zigbee Sensors.
 
 ## Preparing mira1 for Zigbee2MQTT
 
-Get Node.js and Zigbee2MQTT
+Get Node.js, Zigbee2MQTT and MQTT Explorer.
+
+
+Execute these commands in your SSH terminal on mira1 to add the NodeSource repository and install Node.js 20 LTS along with required compilation tools:
+
+```bash
+# Add NodeSource repository and install Node.js 20 LTS + build essentials
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+sudo apt install -y nodejs git make g++ gcc
+
+# Verify Node.js and npm versions
+node -v
+v20.20.2
+npm -v
+10.8.2
+```
+
+Node.js is an open-source, cross-platform JavaScript runtime environment.
+
+Why it is used: It allows applications to run background processes, handle networking, manage file systems, and execute server-side logic efficiently using minimal CPU and memory resources.
+
+npm stands for Node Package Manager. It is installed automatically alongside Node.js
+
+How it works: It is the default package manager for the Node.js ecosystem, serving as a command-line tool paired with an online registry of shared software libraries (packages).
+
+Create the installation directory, clone the official Zigbee2MQTT repository, and install the node dependencies:
+
+```bash
+# Create target directory and set user ownership
+sudo mkdir -p /opt/zigbee2mqtt
+sudo chown -R $USER:$USER /opt/zigbee2mqtt
+
+# Clone Zigbee2MQTT repository
+git clone --depth 1 https://github.com/Koenkk/zigbee2mqtt.git /opt/zigbee2mqtt
+cd /opt/zigbee2mqtt
+
+# Install dependencies and build Zigbee2MQTT
+npm install
+
+# upgrade node
+# Node.js Version Warning: Zigbee2MQTT v2.13.0 requires Node.js ^22.2.0, Node 24, or Node 26. Running Node v20.20.2 caused the engine warnings.
+
+# Add NodeSource repository for Node.js 22.x
+curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
+
+sudo apt install -y nodejs
+# Verify Node.js version is v22.x
+node -v
+v22.23.2
+
+d /opt/zigbee2mqtt
+
+# Compile TypeScript files
+npm run build
+
+# Verify dist/ folder now exists
+ls -la dist/
+
+# Once dist/ is created, proceed with configuring the systemd service file:
+
+sudo nano /etc/systemd/system/zigbee2mqtt.service
+```
+
+ini
+```ini
+[Unit]
+Description=zigbee2mqtt
+After=network.target mosquitto.service
+
+[Service]
+Environment=NODE_ENV=production
+Type=simple
+User=chilliman
+ExecStart=/usr/bin/npm start
+WorkingDirectory=/opt/zigbee2mqtt
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+RestartSec=10s
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Save file and:
+
+```bash
+sudo systemctl daemon-reload
+sudo systemctl enable zigbee2mqtt.service
+Created symlink '/etc/systemd/system/multi-user.target.wants/zigbee2mqtt.service' → '/etc/systemd/system/zigbee2mqtt.service'.
+```
+
+***Do not start the service just yet***
+
+Do not start the service just yet. Zigbee2MQTT requires a basic configuration.yaml file to know how to communicate with Mosquitto MQTT; otherwise, it will crash on startup.
+
+* Once your Sonoff USB dongle arrives, we will verify its exact USB serial path using
+
+
 
 
 MQTT Explorer is a comprehensive MQTT client that provides a structured overview of your MQTT topics and makes working with devices/services on your broker dead-simple.
 
 * https://mqtt-explorer.com/
-
-```bash
-
-```
