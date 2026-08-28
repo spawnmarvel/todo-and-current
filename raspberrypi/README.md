@@ -447,7 +447,13 @@ Do not start the service just yet. Zigbee2MQTT requires a basic configuration.ya
 
 * Once your Sonoff USB dongle arrives, we will verify its exact USB serial path using
 
+```bash
 
+```
+
+Zigbee2MQTT
+
+* https://www.zigbee2mqtt.io/
 
 
 MQTT Explorer is a comprehensive MQTT client that provides a structured overview of your MQTT topics and makes working with devices/services on your broker dead-simple.
