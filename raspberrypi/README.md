@@ -1,5 +1,12 @@
 # Raspberry Pi IoT Chilli Monitoring
 
+
+The goal of this setup is to build a local, reliable monitoring pipeline for indoor plant environments. 
+
+Capsicum (chili and paprika) plants require strict climate control—specifically target humidity levels ($45\% - 65\%$) and ambient temperatures ($21C - 28C)—to ensure healthy transpiration, avoid fungal growth, and optimize flower pollination. 
+
+Manual checks or basic standalone sensor displays lack historical tracking, visual thresholds, and alert capabilities, making an automated end-to-end monitoring solution necessary
+
 ## Table of Contents
 
 - [Operating System & Core Runtimes](#operating-system--core-runtimes)
