@@ -783,13 +783,6 @@ mosquitto_pub -h localhost -t "zigbee2mqtt/plant_sensor1/get" -m '{"humidity": "
 
 ***Explanation of MQTT Explorer Output***
 
-The screenshot shows that plant_sensor1 is now present in the topic tree on the left, but you are currently selecting the request topic:
-
-zigbee2mqtt / plant_sensor1 / get
-
-The payload {"temperature": ""} shown in the right pane is the outgoing command you published to request a reading, rather than the data payload returned by the sensor.
-
-
 Why Values Are Not Updating
 
 The SNZB-02P is currently sleeping to preserve its CR2477 battery. It will not process the /get request sitting in the queue until either
