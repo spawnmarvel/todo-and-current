@@ -779,6 +779,7 @@ mosquitto_pub -h localhost -t "zigbee2mqtt/plant_sensor1/get" -m '{"temperature"
 mosquitto_pub -h localhost -t "zigbee2mqtt/plant_sensor1/get" -m '{"humidity": ""}'
 ```
 
+![blow](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/blow.png)
 
 ***Explanation of MQTT Explorer Output***
 
