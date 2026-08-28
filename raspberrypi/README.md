@@ -929,3 +929,7 @@ For chili and paprika plants (Capsicum):
 Now the dashboard is ready, go down and move the sensor.
 
 ![mqtt_explorer](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/mqtt_explorer.png)
+
+Grafana
+
+![grafana_plant](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/grafana_plant.png)
