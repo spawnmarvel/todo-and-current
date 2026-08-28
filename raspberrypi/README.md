@@ -793,7 +793,7 @@ The SNZB-02P is currently sleeping to preserve its CR2477 battery. It will not p
 
 * The physical button on the sensor is pressed
 
-I went down and moved it, and then it pushed values.
+I went down and moved it and blew air on it, and then it pushed values.
 
 ![mqtt_blow](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/mqtt_blow.png)
 
