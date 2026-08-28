@@ -921,8 +921,11 @@ For chili and paprika plants (Capsicum):
 * Flowering & Pollination Phase: 45% – 55% RH (High humidity above 65% during flowering causes pollen to clump, reducing fruit set)
 * Critical High Threshold: $> 75%$ RH
 
-
-
 ![grafana_limit](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/grafana_limit.png)
 
 
+
+
+Now the dashboard is ready, go down and move the sensor.
+
+![mqtt_explorer](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/mqtt_explorer.png)
