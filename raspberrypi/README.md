@@ -281,6 +281,23 @@ The dashboard comes with predefined panels.
 
 ![dash2](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/dash2.png)
 
+Accsessible also on phone.
+
+![phone](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/phone.png)
+
+We created a grafana alert also (more will come), but we need to check temperature and uptime.
+
+![uptime](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/uptime.png)
+
+The alert
+
+![alert](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/alert.png)
+
+
+
+
+
+
 ## Shut Down Raspberry Pi
 
 ```bash
@@ -330,3 +347,7 @@ Get Node.js and Zigbee2MQTT
 MQTT Explorer is a comprehensive MQTT client that provides a structured overview of your MQTT topics and makes working with devices/services on your broker dead-simple.
 
 * https://mqtt-explorer.com/
+
+```bash
+
+```
