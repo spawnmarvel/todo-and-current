@@ -1019,7 +1019,7 @@ Now we monitor!
 
 ## Extended with Python and MQTT
 
-1. Get to know Eclipse Mosquitto
+1. Get to know Eclipse Mosquitto and Python paho-mqtt
 
 2. MQTT Explorer Setup Connection
 
@@ -1034,3 +1034,13 @@ An open source MQTT broker
 * https://mosquitto.org/
 
 Let's get to know the broker before we start coding.
+
+
+### Python
+
+```py
+import paho.mqtt.client as mqtt
+```
+
+https://pypi.org/project/paho-mqtt/
+
