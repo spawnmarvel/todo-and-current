@@ -126,6 +126,15 @@ Key Characteristics of Zigbee
 
 ● Community-Driven Extensions: Tools like Zigbee2MQTT can decode payloads from nearly any manufacturer because the standard profile clusters (like Zigbee Home Automation and Zigbee 3.0) follow predictable open specifications.
 
+OPC UA / DA to MQTT Bridge (Unified Pipeline)
+
+To keep your current setup (Mosquitto -> mqtt2prometheus -> Prometheus), you can bridge OPC UA or OPC DA tags to MQTT topics (such as industrial/opc/temperature):
+
+● For OPC UA: Use an edge broker gateway (such as Telegraf, Node-RED, or HiveMQ Edge) running directly on Linux to connect to the OPC UA server and publish payloads to Mosquitto.
+
+● For OPC DA (Legacy): Because OPC DA requires Windows DCOM, run a gateway tool (like OpenOPC, Cogent DataHub, or Node-RED on a Windows machine) to read DCOM tags and publish them over network MQTT to Mosquitto on the Raspberry Pi.
+
+
 ![toplogy](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/toplogy.jpg)
 
 ## Documentation
