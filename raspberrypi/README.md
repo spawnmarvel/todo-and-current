@@ -1012,7 +1012,7 @@ Grafana
 
 ![grafana_plant](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/grafana_plant.png)
 
-Grafana with limits
+Grafana with limits a day later.
 
 ![grafana_plant_lim](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/grafana_plant_lim.png)
 
