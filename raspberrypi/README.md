@@ -112,7 +112,6 @@ With 4 GB RAM and 64 GB storage, you have plenty of resources available. You can
 
 * MQTT broker (Mosquitto): Connect additional wireless sensors as your system grows.
 
-This is what we will build.
 
 No, Zigbee is not a proprietary protocol.
 
@@ -134,6 +133,7 @@ To keep your current setup (Mosquitto -> mqtt2prometheus -> Prometheus), you can
 
 ● For OPC DA (Legacy): Because OPC DA requires Windows DCOM, run a gateway tool (like OpenOPC, Cogent DataHub, or Node-RED on a Windows machine) to read DCOM tags and publish them over network MQTT to Mosquitto on the Raspberry Pi.
 
+This is what we will build.
 
 ![toplogy](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/toplogy.jpg)
 
