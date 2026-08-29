@@ -133,7 +133,7 @@ To keep your current setup (Mosquitto -> mqtt2prometheus -> Prometheus), you can
 
 ● For OPC DA (Legacy): Because OPC DA requires Windows DCOM, run a gateway tool (like OpenOPC, Cogent DataHub, or Node-RED on a Windows machine) to read DCOM tags and publish them over network MQTT to Mosquitto on the Raspberry Pi.
 
-This is what we will build.
+This is what we will build today:
 
 ![toplogy](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/toplogy.jpg)
 
