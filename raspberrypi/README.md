@@ -30,6 +30,7 @@ Manual checks or basic standalone sensor displays lack historical tracking, visu
 - [Get and View Data](#get-and-view-data)
 - [Force Telemetry Request via MQTT from Sonoff SNZB-02P](#force-telemetry-request-via-mqtt-from-sonoff-snzb-02p)
 - [Sensor Data to Grafana](#sensor-data-to-grafana)
+- [Extended with Python and MQTT](#extended-with-python-and-mqtt)
 
 
 
@@ -1015,3 +1016,21 @@ Grafana
 Now we monitor!
 
 ![done](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/done.png)
+
+## Extended with Python and MQTT
+
+1. Get to know Eclipse Mosquitto
+
+2. MQTT Explorer Setup Connection
+
+3. Python Script (v1.0.0)
+
+4. Verification in MQTT Explorer
+
+### Eclipse Mosquitto
+
+An open source MQTT broker
+
+* https://mosquitto.org/
+
+Let's get to know the broker before we start coding.
