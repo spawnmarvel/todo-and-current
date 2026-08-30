@@ -26,6 +26,12 @@ sudo nano /etc/squid/allowed-domains.txt
 # Add the required domains for Ubuntu operations:
 .ubuntu.com
 .debian.org
+# we added a server with role zabbix proxy, then we added new repos:
+.zabbix.com
+# on the same server we tested for wget mysql 8.4 and added
+.mysql.com
+
+
 
 # Step 2: Update squid.conf
 sudo nano /etc/squid/squid.conf
@@ -95,3 +101,46 @@ curl -I https://www.google.com
 # Test 2: Verify apt package manager proxying
 sudo apt-get update
 ```
+
+## Test on the offline proxy server ubuntu 26.04
+
+
+Zabbix
+
+* https://www.zabbix.com/download?zabbix=7.0&os_distribution=ubuntu&os_version=26.04&components=proxy&db=sqlite3&ws=
+
+MySQL
+
+* https://dev.mysql.com/downloads/mysql/8.4.html
+
+```bash
+
+# zabbix 7 lts ubuntu 26.04 proxy and sqlite3
+wget https://repo.zabbix.com/zabbix/7.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_latest_7.0+ubuntu26.04_all.deb
+
+
+
+# mysql 8.4 for ubuntu 26.04 .tar
+wget https://dev.mysql.com/get/Downloads/MySQL-8.4/mysql-server_8.4.11-1ubuntu26.04_amd64.deb-bundle.tar
+
+
+# .deb
+wget https://dev.mysql.com/get/Downloads/MySQL-8.4/mysql-server_8.4.11-1ubuntu26.04_amd64.deb
+
+
+# mysql 8.4 for ubuntu 24.04 .tar
+wget https://dev.mysql.com/get/Downloads/MySQL-8.4/mysql-server_8.4.0-1ubuntu24.04_amd64.deb-bundle.tar
+
+# .deb
+wget https://dev.mysql.com/get/Downloads/mysql-server_8.4.11-1ubuntu24.04_amd64.deb
+
+
+
+ls
+
+mysql-server_8.4.0-1ubuntu24.04_amd64.deb-bundle.tar  mysql-server_8.4.11-1ubuntu26.04_amd64.deb             zabbix-release_latest_7.0+ubuntu26.04_all.deb
+mysql-server_8.4.11-1ubuntu24.04_amd64.deb            mysql-server_8.4.11-1ubuntu26.04_amd64.deb-bundle.tar
+
+
+```
+
