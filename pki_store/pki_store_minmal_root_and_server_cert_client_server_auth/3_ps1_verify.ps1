@@ -1,16 +1,16 @@
 # Version: 1.1.0
-# Description: Verifies the expiration years and properties of both the Root CA and the Server Certificate in C:\temp.
+# Description: Verifies the expiration years and properties of both the Root CA and the Server Certificate in C:\my-custom-pki.
 
 # Extract Validity and Basic Constraints to prove it's a 15-year CA
-openssl x509 -in C:\temp\rootCA.crt -noout -subject -dates
+openssl x509 -in C:\my-custom-pki\rootCA.crt -noout -subject -dates
 
 
 # Extract Validity, EKU, and SAN properties
-openssl x509 -in C:\temp\server.crt -noout -subject -dates -purpose
+openssl x509 -in C:\my-custom-pki\server.crt -noout -subject -dates -purpose
 
 
 # Server Asset Verification One-Liner
-openssl x509 -noout -modulus -in C:\temp\server.crt | openssl sha256 && openssl rsa -noout -modulus -in C:\temp\server.key | openssl sha256
+openssl x509 -noout -modulus -in C:\my-custom-pki\server.crt | openssl sha256 && openssl rsa -noout -modulus -in C:\my-custom-pki\server.key | openssl sha256
 
 # (stdin)= 6d6ab7e5d5d2ff8c6b0bd5ca28baea5eadb294584f0beeeb9b53a2c45d085a50
 # (stdin)= 6d6ab7e5d5d2ff8c6b0bd5ca28baea5eadb294584f0beeeb9b53a2c45d085a50

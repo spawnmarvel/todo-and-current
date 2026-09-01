@@ -5,7 +5,7 @@
 #### NOTE!! Run this with powershell
 
 # Ensure the target directory exists
-$targetDir = "C:\temp"
+$targetDir = "C:\my-custom-pki"
 if (-not (Test-Path -Path $targetDir)) {
     New-Item -ItemType Directory -Path $targetDir | Out-Null
 }
@@ -47,6 +47,6 @@ subjectAltName = @alt_names
 DNS.1 = name.domain.no
 "@
 
-Set-Content -Path "C:\temp\extensions.cnf" -Value $configContent
+Set-Content -Path "C:\my-custom-pki\extensions.cnf" -Value $configContent
 
 
