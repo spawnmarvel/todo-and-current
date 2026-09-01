@@ -142,4 +142,11 @@ telemetry_topic = "factory/level1/door1/sensor1/telemetry"
 
 ```
 
-![uns](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/iamgespy/uns.png)
+Telemetry
+
+![uns telemetry](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/iamgespy/uns_telemetry.png)
+
+Status
+
+![uns status](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/iamgespy/uns_status.png)
+
