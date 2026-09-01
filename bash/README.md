@@ -1481,6 +1481,9 @@ sudo du -sh /var/lib/loki/*
 uptime
 
 # 3. The "Detective" (Finding things)
+# Find config file, look at output
+systemctl status grafana-server.service 
+
 # List active systemd service units currently in a running sub-state.
 systemctl list-units --type=service --state=running
 # List all active services (including finished one-shot background tasks):
