@@ -51,4 +51,33 @@ View in MQTT Explorer
 
 ### Consume
 
+To do consume, we must first start the consumer in one session.
+
+```cmd
+python sub_mqtt.py
+Connecting to Mosquitto broker at 192.168.10.212:1883...
+Connected to Mosquitto. Subscribing to 'factory/#'...
+```
+
+Then we start the publisher and publish a new packet
+
+```cmd
+python pub_mqtt.py
+Published message to 'factory/level1/door1/sensor1': {"sensor": "sensor1", "open": false}
+
+```
+
+Now back at the consumer
+
+```cmd
+python sub_mqtt.py
+Connecting to Mosquitto broker at 192.168.10.212:1883...
+Connected to Mosquitto. Subscribing to 'factory/#'...
+
+[RECEIVED] Topic: factory/level1/door1/sensor1
+Payload: {'sensor': 'sensor1', 'open': False}
+ -> Sensor ID: sensor1
+ -> Door Status: CLOSED
+```
+
 https://pypi.org/project/paho-mqtt/

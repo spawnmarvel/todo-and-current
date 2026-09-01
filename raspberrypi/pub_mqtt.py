@@ -1,41 +1,53 @@
 #!/usr/bin/env python3
-# Version: 1.0.0
-# Description: Simple MQTT publisher to test sending data to Mosquitto.
+# Version: 1.1.0
+# Description: OOP-based MQTT publisher to send door sensor telemetry to Mosquitto.
 # pip install paho-mqtt
 
 import json
 import time
 import paho.mqtt.client as mqtt
 
-# Broker configuration
-# raspberrypi:
-BROKER_HOST = "192.168.10.212"
-BROKER_PORT = 1883
-TOPIC = "factory/level1/door1/sensor1"
+
+class DoorSensorPublisher:
+    def __init__(self, host: str = "192.168.10.212", port: int = 1883):
+        self.host = host
+        self.port = port
+        self.client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
+
+    def connect(self):
+        """Establishes connection to the MQTT broker and starts background loop."""
+        self.client.connect(self.host, self.port)
+        self.client.loop_start()
+
+    def publish_status(self, topic: str, sensor_id: str, is_open: bool):
+        """Formats door state data into JSON and publishes to target topic."""
+        data = {
+            "sensor": sensor_id,
+            "open": is_open
+        }
+        payload = json.dumps(data)
+        self.client.publish(topic, payload)
+        print(f"Published message to '{topic}': {payload}")
+
+    def disconnect(self):
+        """Stops background loop and disconnects cleanly from broker."""
+        time.sleep(1)
+        self.client.loop_stop()
+        self.client.disconnect()
+
 
 def main():
-    # Instantiate client using Paho MQTT v2 API standard
-    client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
+    topic = "factory/level1/door1/sensor1"
+    
+    # Initialize OOP Publisher instance
+    publisher = DoorSensorPublisher(host="192.168.10.212", port=1883)
+    
+    try:
+        publisher.connect()
+        publisher.publish_status(topic=topic, sensor_id="sensor1", is_open=False)
+    finally:
+        publisher.disconnect()
 
-    # Connect to Mosquitto broker
-    client.connect(BROKER_HOST, BROKER_PORT)
-    client.loop_start()
-
-    # Telemetry test payload
-    data = {
-        "sensor": "sensor1",
-        "open": True
-    }
-
-    # Convert dict to JSON string and publish
-    payload = json.dumps(data)
-    client.publish(TOPIC, payload)
-    print(f"Published message to '{TOPIC}': {payload}")
-
-    # Allow background thread time to complete transmission
-    time.sleep(1)
-    client.loop_stop()
-    client.disconnect()
 
 if __name__ == "__main__":
     main()
