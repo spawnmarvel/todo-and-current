@@ -1481,7 +1481,21 @@ sudo du -sh /var/lib/loki/*
 
 uptime
 
+
 # 3. The "Detective" (Finding things)
+
+# List active systemd service units currently in a running sub-state.
+systemctl list-units --type=service --state=running
+# List all active services (including finished one-shot background tasks):
+systemctl list-units --type=service --state=active
+# List all installed service units regardless of state (enabled, disabled, active, inactive):
+systemctl list-unit-files --type=service
+
+# Lists all non-system, user-installed applications that are actively listening for incoming TCP/UDP network connections, 
+# showing their open ports, Process IDs (PIDs), and binary names.
+sudo ss -tulpn | grep LISTEN | grep -vE '(systemd-|dbus|cron|rsyslog|udevd)'
+
+# grep stuff
 sudo grep "error" /var/log/zabbix/zabbix_server.log
 # last 10
 sudo grep "error" /var/log/zabbix/zabbix_server.log | tail -n 10
