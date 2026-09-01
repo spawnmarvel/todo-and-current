@@ -1507,7 +1507,7 @@ cat error_report.txt | grep -i "19:23:12.836770*"
 sudo grep -E 'DBName|DBUser' zabbix_server.conf
 sudo grep -E 'DBName|DBUser|DBPass*' zabbix_server.conf
 
-# journal
+# journal syslog errors, global
 sudo journalctl -u loki.service -n 50 --no-pager
 # v1.0.0
 sudo journalctl -u mysql -n 50 --no-pager
