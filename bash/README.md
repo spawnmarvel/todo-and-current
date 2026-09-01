@@ -1478,12 +1478,9 @@ du -sh *
 # check loki for example
 sudo du -sh /var/lib/loki/*
 
-
 uptime
 
-
 # 3. The "Detective" (Finding things)
-
 # List active systemd service units currently in a running sub-state.
 systemctl list-units --type=service --state=running
 # List all active services (including finished one-shot background tasks):
