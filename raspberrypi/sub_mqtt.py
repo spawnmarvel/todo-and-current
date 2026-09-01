@@ -7,7 +7,7 @@ import json
 import paho.mqtt.client as mqtt
 
 
-class DoorSensorConsumer:
+class SensorConsumer:
     def __init__(self, host: str = "192.168.10.212", port: int = 1883, topic_pattern: str = "factory/#"):
         self.host = host
         self.port = port
@@ -41,7 +41,7 @@ class DoorSensorConsumer:
                 print(f" -> Sensor ID: {data['sensor']}")
             if "open" in data:
                 status = "OPEN" if data["open"] else "CLOSED"
-                print(f" -> Door Status: {status}")
+                print(f" ->  Status: {status}")
 
         except json.JSONDecodeError:
             print(f"Received non-JSON message on {msg.topic}: {msg.payload}")
@@ -61,7 +61,7 @@ class DoorSensorConsumer:
 
 
 def main():
-    consumer = DoorSensorConsumer(
+    consumer = SensorConsumer(
         host="192.168.10.212",
         port=1883,
         topic_pattern="factory/#"

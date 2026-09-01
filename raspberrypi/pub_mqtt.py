@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # Version: 1.1.0
-# Description: OOP-based MQTT publisher to send door sensor telemetry to Mosquitto.
+# Description: OOP-based MQTT publisher to send  sensor telemetry to Mosquitto.
 # pip install paho-mqtt
 
 import json
@@ -8,7 +8,7 @@ import time
 import paho.mqtt.client as mqtt
 
 
-class DoorSensorPublisher:
+class SensorPublisher:
     def __init__(self, host: str = "192.168.10.212", port: int = 1883):
         self.host = host
         self.port = port
@@ -20,7 +20,7 @@ class DoorSensorPublisher:
         self.client.loop_start()
 
     def publish_status(self, topic: str, sensor_id: str, is_open: bool, retain: bool):
-        """Formats door state data into JSON and publishes to target topic."""
+        """Formats  state data into JSON and publishes to target topic."""
         data = {
             "sensor": sensor_id,
             "open": is_open
@@ -37,10 +37,10 @@ class DoorSensorPublisher:
 
 
 def main():
-    topic = "factory/level1/door1/sensor1"
+    topic = "factory/level1/1/sensor1"
     
     # Initialize OOP Publisher instance
-    publisher = DoorSensorPublisher(host="192.168.10.212", port=1883)
+    publisher = SensorPublisher(host="192.168.10.212", port=1883)
     
     try:
         publisher.connect()
