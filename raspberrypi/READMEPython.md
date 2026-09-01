@@ -39,7 +39,7 @@ Published message to 'factory/level1/door1/sensor1': {"sensor": "sensor1", "open
 View in MQTT Explorer
 
 
-![pub 1](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/imagespy/pub1.png)
+![pub 1](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/iamgespy/pub1.png)
 
 
 #### Consume
