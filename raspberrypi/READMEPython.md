@@ -19,6 +19,7 @@
 - [Consume](#consume)
 - [Retained Messages](#retained-messages)
 - [Clean up mapping and path](#clean-up-mapping-and-path)
+- [TLS/SSL]
 
 ## Eclipse Mosquitto
 
@@ -150,3 +151,6 @@ Status
 
 ![uns status](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/iamgespy/uns_status.png)
 
+## TLS/SSL
+
+Before we start to dive into this, lets secure mosquito with ssl (we must update the promethus also on the raspberry)
