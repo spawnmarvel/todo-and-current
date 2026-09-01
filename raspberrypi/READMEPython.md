@@ -9,20 +9,27 @@
 
 4. Verification in MQTT Explorer
 
-### Eclipse Mosquitto
+5. Secure mqtt and build or mirror something fun
+
+## Table of Contents
+
+- [Eclipse Mosquitto](#eclipse-mosquitto)
+- [Python](#python)
+- [Publish](#publish)
+- [Consume](#consume)
+
+## Eclipse Mosquitto
 
 An open source MQTT broker
 
 * https://mosquitto.org/
 
-Let's get to know the broker before we start coding.
+Let's get to know the broker as we do coding.
 
 
-### Python
+## Python
 
-
-
-#### Publish
+### Publish
 
 ```cmd
 pip install paho-mqtt
@@ -42,6 +49,6 @@ View in MQTT Explorer
 ![pub 1](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/iamgespy/pub1.png)
 
 
-#### Consume
+### Consume
 
 https://pypi.org/project/paho-mqtt/
