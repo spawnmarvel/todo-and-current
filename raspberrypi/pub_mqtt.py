@@ -19,14 +19,14 @@ class DoorSensorPublisher:
         self.client.connect(self.host, self.port)
         self.client.loop_start()
 
-    def publish_status(self, topic: str, sensor_id: str, is_open: bool):
+    def publish_status(self, topic: str, sensor_id: str, is_open: bool, retain: bool):
         """Formats door state data into JSON and publishes to target topic."""
         data = {
             "sensor": sensor_id,
             "open": is_open
         }
         payload = json.dumps(data)
-        self.client.publish(topic, payload)
+        self.client.publish(topic, payload, retain=retain)
         print(f"Published message to '{topic}': {payload}")
 
     def disconnect(self):
@@ -44,7 +44,7 @@ def main():
     
     try:
         publisher.connect()
-        publisher.publish_status(topic=topic, sensor_id="sensor1", is_open=False)
+        publisher.publish_status(topic=topic, sensor_id="sensor1", is_open=False, retain=True)
     finally:
         publisher.disconnect()
 
