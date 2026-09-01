@@ -9,17 +9,20 @@
 
 4. Verification in MQTT Explorer
 
-5. Secure mqtt and build or mirror something fun
-
 ## Table of Contents
 
-- [Eclipse Mosquitto](#eclipse-mosquitto)
-- [Python](#python)
-- [Publish](#publish)
-- [Consume](#consume)
-- [Retained Messages](#retained-messages)
-- [Clean up mapping and path](#clean-up-mapping-and-path)
-- [TLS/SSL](#tlsssl)
+- [Python and MQTT](#python-and-mqtt)
+  - [Table of Contents](#table-of-contents)
+  - [Eclipse Mosquitto](#eclipse-mosquitto)
+  - [Python](#python)
+    - [Publish](#publish)
+    - [Consume](#consume)
+    - [Retained Messages](#retained-messages)
+      - [When to Use retain=True](#when-to-use-retaintrue)
+      - [When NOT to Use retain=True](#when-not-to-use-retaintrue)
+      - [Key Takeaway](#key-takeaway)
+  - [Clean up mapping and path](#clean-up-mapping-and-path)
+
 
 ## Eclipse Mosquitto
 
@@ -151,6 +154,3 @@ Status
 
 ![uns status](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/iamgespy/uns_status.png)
 
-## TLS/SSL
-
-Before we start to dive into this, lets secure mosquito with ssl (we must update the promethus also on the raspberry)
