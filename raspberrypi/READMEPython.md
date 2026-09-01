@@ -134,7 +134,7 @@ Think of MQTT topics as storage slots:
 
 ## Clean up mapping and path
 
-So if we are to build something w eneed to think about a structure, lets clean up the publisher a bit and use retain for state and telemetry.
+So if we are to build something we need to think about a structure, lets clean up the publisher a bit and use retain for state and telemetry and use uns.
 
 ```ini
 status_topic = "factory/level1/door1/sensor1/status"
