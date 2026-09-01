@@ -18,6 +18,7 @@
 - [Publish](#publish)
 - [Consume](#consume)
 - [Retained Messages](#retained-messages)
+- [Clean up mapping and path](#clean-up-mapping-and-path)
 
 ## Eclipse Mosquitto
 
@@ -130,3 +131,15 @@ Think of MQTT topics as storage slots:
 ● retain=False: Treat the message like a live radio broadcast (if you aren't listening when it airs, you miss it).
 
 ● retain=True: Treat the message like a status board (the current value remains displayed on the wall until replaced by a new one).
+
+## Clean up mapping and path
+
+So if we are to build something w eneed to think about a structure, lets clean up the publisher a bit and use retain for state and telemetry.
+
+```ini
+status_topic = "factory/level1/door1/sensor1/status"
+telemetry_topic = "factory/level1/door1/sensor1/telemetry"
+
+```
+
+![uns](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/iamgespy/uns.png)
