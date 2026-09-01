@@ -1031,40 +1031,7 @@ Now we monitor!
 
 4. Verification in MQTT Explorer
 
-### Eclipse Mosquitto
-
-An open source MQTT broker
-
-* https://mosquitto.org/
-
-Let's get to know the broker before we start coding.
+GOTO READMEPython.ms
 
 
-### Python
-
-
-
-#### Publish
-
-```cmd
-pip install paho-mqtt
-python pub_mqtt.py
-
-```
-
-Log
-
-```log
-Published message to 'factory/level1/door1/sensor1': {"sensor": "sensor1", "open": true}
-```
-
-View in MQTT Explorer
-
-
-![pub 1](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/imagespy/pub1.png)
-
-
-#### Consume
-
-https://pypi.org/project/paho-mqtt/
 
