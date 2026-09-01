@@ -1,7 +1,7 @@
 # Version: 1.8.0
-# Description: Generates a 15-Year Root CA and uses it to sign a 10-Year dual-purpose Server/Client cert inside C:\temp.
+# Description: Generates a 15-Year Root CA and uses it to sign a 10-Year dual-purpose Server/Client cert inside C:\my-custom-pki.
 
-# Before running this section, you MUST open "C:\temp\extensions.cnf" and alter the [alt_names] section 
+# Before running this section, you MUST open "C:\my-custom-pki\extensions.cnf" and alter the [alt_names] section 
 # to match your new destination hostname. For example:
 # [ alt_names ]
 # DNS.1 = newname.domain.no
@@ -16,27 +16,27 @@ c:\Program Files\OpenSSL-Win64\bin>openssl version
 # ==========================================
 
 # Generate Root Key
-openssl genrsa -out "C:\temp\rootCA.key" 4096
+openssl genrsa -out "C:\my-custom-pki\rootCA.key" 4096
 
 # Create Root Certificate with a 15-year lifetime (5479 days)
-openssl req -x509 -new -nodes -key "C:\temp\rootCA.key" -sha256 -days 5479 -out "C:\temp\rootCA.crt" -subj "/CN=InternalRootCA" -config "C:\temp\extensions.cnf" -extensions root_ca_ext
+openssl req -x509 -new -nodes -key "C:\my-custom-pki\rootCA.key" -sha256 -days 5479 -out "C:\my-custom-pki\rootCA.crt" -subj "/CN=InternalRootCA" -config "C:\my-custom-pki\extensions.cnf" -extensions root_ca_ext
 
 # ==========================================
 # STEP 3: GENERATE SERVER KEY AND CSR
 # ==========================================
 
 # Generate Server Key
-openssl genrsa -out "C:\temp\server.key" 2048
+openssl genrsa -out "C:\my-custom-pki\server.key" 2048
 
 # Generate Server Request
-openssl req -new -key "C:\temp\server.key" -out "C:\temp\server.csr" -subj "/CN=name.domain.no"
+openssl req -new -key "C:\my-custom-pki\server.key" -out "C:\my-custom-pki\server.csr" -subj "/CN=name.domain.no"
 
 # ==========================================
 # STEP 4: SIGN THE SERVER CERTIFICATE (10 YEARS)
 # ==========================================
 
 # Sign the server certificate with a 10-year lifetime (3652 days)
-openssl x509 -req -in "C:\temp\server.csr" -CA "C:\temp\rootCA.crt" -CAkey "C:\temp\rootCA.key" -CAcreateserial -out "C:\temp\server.crt" -days 3652 -sha256 -extfile "C:\temp\extensions.cnf" -extensions server_client_ext
+openssl x509 -req -in "C:\my-custom-pki\server.csr" -CA "C:\my-custom-pki\rootCA.crt" -CAkey "C:\my-custom-pki\rootCA.key" -CAcreateserial -out "C:\my-custom-pki\server.crt" -days 3652 -sha256 -extfile "C:\my-custom-pki\extensions.cnf" -extensions server_client_ext
 
 
 # ==========================================
@@ -57,22 +57,22 @@ openssl s_client -connect your-broker-host:5671 -key C:\path\to\client.key.pem -
 # STEP 6: GENERATE A NEW CERT WITH THE SAME KEY USAGE BUT DIFFENTENT CN AND SAN
 # ==========================================
 
-# Before running this section, you MUST open "C:\temp\extensions.cnf" and alter the [alt_names] section 
+# Before running this section, you MUST open "C:\my-custom-pki\extensions.cnf" and alter the [alt_names] section 
 # to match your new destination hostname. For example:
 # [ alt_names ]
 # DNS.1 = newname.domain.no
 
 # 1. Generate Server Key
-openssl genrsa -out "C:\temp\server2.key" 2048
+openssl genrsa -out "C:\my-custom-pki\server2.key" 2048
 
 # 2. Generate a new Certificate Signing Request (CSR) 
-openssl req -new -key "C:\temp\server2.key" -out "C:\temp\server2.csr" -subj "/CN=newname.domain.no"
+openssl req -new -key "C:\my-custom-pki\server2.key" -out "C:\my-custom-pki\server2.csr" -subj "/CN=newname.domain.no"
 
 # 2. Sign the new CSR using the original Root CA with a 10-year lifetime (3652 days) and the updated extensions configuration
-openssl x509 -req -in "C:\temp\server2.csr" -CA "C:\temp\rootCA.crt" -CAkey "C:\temp\rootCA.key" -CAcreateserial -out "C:\temp\server2.crt" -days 3652 -sha256 -extfile "C:\temp\extensions.cnf" -extensions server_client_ext
+openssl x509 -req -in "C:\my-custom-pki\server2.csr" -CA "C:\my-custom-pki\rootCA.crt" -CAkey "C:\my-custom-pki\rootCA.key" -CAcreateserial -out "C:\my-custom-pki\server2.crt" -days 3652 -sha256 -extfile "C:\my-custom-pki\extensions.cnf" -extensions server_client_ext
 
 # 3. Verify the newly generated certificate properties match your updated SAN profile
-openssl x509 -in "C:\temp\server2.crt" -noout -text | findstr /C:"CN=" /C:"DNS:"
+openssl x509 -in "C:\my-custom-pki\server2.crt" -noout -text | findstr /C:"CN=" /C:"DNS:"
 
 # ==========================================
 # STEP 7: CRITICAL SECURITY - SECURING THE ROOT CA KEY
@@ -85,5 +85,5 @@ openssl x509 -in "C:\temp\server2.crt" -noout -text | findstr /C:"CN=" /C:"DNS:"
 # 3. Store the key in a secure, centralized location, such as:
 #    - A secure offline administrative vault (e.g., an encrypted offline USB drive stored in a physical safe).
 #    - An enterprise-grade credential manager or hardware security module (HSM).
-# 4. If you leave the key in "C:\temp" temporarily for administrative tasks, apply strict Windows NTFS ACLs 
+# 4. If you leave the key in "C:\my-custom-pki" temporarily for administrative tasks, apply strict Windows NTFS ACLs 
 #    so only local Administrators can read or access the file.
