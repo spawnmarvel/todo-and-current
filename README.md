@@ -404,7 +404,7 @@ Study plan:
 
 ---
 
-### 2. MS Learn MySQL, DBaaS and MongoDb ⭐
+### 2. MS Learn MySQL and Az MySql ⭐
 
 - 📚 Do all MS learn for MySQL
 - 📚 https://learn.microsoft.com/en-us/training/browse/?terms=mysql&source=learn
@@ -420,7 +420,7 @@ Study plan:
 - 📚 [Raspberry Pi 4 docs](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/)
 ---
 
-### 11 Do more Python small projects
+### 11 Do more Python small projects ⭐
 
 - 📚 MQTT, Iot, monitoring, zabbix agents etc.
 - 📚 See folder Python
