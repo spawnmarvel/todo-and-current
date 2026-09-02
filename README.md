@@ -372,7 +372,7 @@ Install Zabbix agent 2 Linux
 
 ---
 
-## Current Priorities: TOP 2 but 1 at the time 20h
+## Current Priorities: TOP 2 but 1 at the time
 
 * :apple: Do sys admin drill 5 min [Open new tab go to sys admin](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/README.md#sys-admin-drill)
 * :apple: Use octopus deploy for work and home
@@ -413,14 +413,14 @@ Study plan:
 ---
 
 
-#### 10. Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun ⭐
+### 10. Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun ⭐
 
 - 📚 Learn IOT and play with sensors
 - 📚 Use MQTT, Python and Mosquitto broker
 - 📚 [Raspberry Pi 4 docs](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/)
 ---
 
-#### 11. Do more Python small projects ⭐
+### 11. Do more Python small projects btw, MQTT is the way ⭐
 
 - 📚 MQTT, Iot, monitoring, zabbix agents etc.
 - 📚 See folder Python
