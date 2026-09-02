@@ -418,6 +418,8 @@ Study plan:
 - 📚 Learn IOT and play with sensors
 - 📚 Use MQTT, Python and Mosquitto broker
 - 📚 [Raspberry Pi 4 docs](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/)
+
+![mqtt](https://github.com/spawnmarvel/todo-and-current/blob/main/images/mqtt.png)
 ---
 
 ### Do more Python small projects btw, MQTT is the way ⭐
