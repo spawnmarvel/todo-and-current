@@ -1,0 +1,6 @@
+{
+    "zabbix_url": "https://server/zabbix",
+    "zabbix_vm_name": "vmzabbix02",
+    "zabbix_user": "api_script_user",
+    "zabbix_pass": "password"
+}

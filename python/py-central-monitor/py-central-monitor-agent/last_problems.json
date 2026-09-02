@@ -1,0 +1,23 @@
+{
+    "25415": {
+        "display": "25415; vmzabbix03; vmsnmp03; Linux; Unavailable by ICMP ping; 0; 13m; Unacknowledged; High"
+    },
+    "25424": {
+        "display": "25424; vmzabbix03; vmsnmp03; Linux; No SNMP data collection; Current state: not available (0); 14m; Unacknowledged; Warning"
+    },
+    "25353": {
+        "display": "25353; vmzabbix03; Zabbix server; MySQL; Buffer pool utilization is too low; 46.49658203125 %; 1d 4h 52m; Unacknowledged; Warning"
+    },
+    "25378": {
+        "display": "25378; vmzabbix03; vmchaos03; Linux; vmchaos03 has been restarted; 0 uptime; 1d 4h 56m; Unacknowledged; Warning"
+    },
+    "25419": {
+        "display": "25419; vmzabbix03; vmsnmp03; Linux; Host has been restarted; 0 uptime; 1d 4h 57m; Unacknowledged; Warning"
+    },
+    "25411": {
+        "display": "25411; vmzabbix03; vmchaos03; Linux; Interface eth0: Ethernet has changed to lower speed than it was before; Current reported speed: *UNKNOWN*; 4d 17h 37m; Unacknowledged; Info"
+    },
+    "25239": {
+        "display": "25239; vmzabbix03; Zabbix server; Linux; Interface eth0: Ethernet has changed to lower speed than it was before; Current reported speed: 50 Gbps; 33d 23h 28m; Unacknowledged; Info"
+    }
+}
