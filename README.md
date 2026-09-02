@@ -379,7 +379,7 @@ Install Zabbix agent 2 Linux
 * :apple: Do some MySQL for fun, json, key -value store, tuning.
 * :apple: Deploy Ubuntu in Azure, not windows, if needed, deploy for a short time.
 
-
+![mqtt](https://github.com/spawnmarvel/todo-and-current/blob/main/images/mqtt.png)
 
 ### 1. Zabbix default ⭐
 
@@ -419,7 +419,6 @@ Study plan:
 - 📚 Use MQTT, Python and Mosquitto broker
 - 📚 [Raspberry Pi 4 docs](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/)
 
-![mqtt](https://github.com/spawnmarvel/todo-and-current/blob/main/images/mqtt.png)
 ---
 
 ### Do more Python small projects btw, MQTT is the way ⭐
