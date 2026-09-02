@@ -413,14 +413,14 @@ Study plan:
 ---
 
 
-### 10. Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun ⭐
+### Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun ⭐
 
 - 📚 Learn IOT and play with sensors
 - 📚 Use MQTT, Python and Mosquitto broker
 - 📚 [Raspberry Pi 4 docs](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/)
 ---
 
-### 11. Do more Python small projects btw, MQTT is the way ⭐
+### Do more Python small projects btw, MQTT is the way ⭐
 
 - 📚 MQTT, Iot, monitoring, zabbix agents etc.
 - 📚 See folder Python
