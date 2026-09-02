@@ -404,7 +404,7 @@ Study plan:
 
 ---
 
-### 2. MS Learn MySQL and Az MySql ⭐
+### 2. MySQL and Az MySql ⭐
 
 - 📚 Do all MS learn for MySQL
 - 📚 https://learn.microsoft.com/en-us/training/browse/?terms=mysql&source=learn
@@ -413,17 +413,19 @@ Study plan:
 ---
 
 
-### 10. Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun ⭐
+#### 10. Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun ⭐
 
 - 📚 Learn IOT and play with sensors
 - 📚 Use MQTT, Python and Mosquitto broker
 - 📚 [Raspberry Pi 4 docs](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/)
 ---
 
-### 11 Do more Python small projects ⭐
+#### 11. Do more Python small projects ⭐
 
 - 📚 MQTT, Iot, monitoring, zabbix agents etc.
 - 📚 See folder Python
+
+---
 
 ![shuhari](https://github.com/spawnmarvel/todo-and-current/blob/main/images/shuhari2.png)
 
