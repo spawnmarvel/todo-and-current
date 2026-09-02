@@ -265,11 +265,11 @@ ORDER BY severity_level DESC;
 
 Row
 
-![sql bench](https://github.com/spawnmarvel/py-central-monitor/blob/main/images/sql_bench.png)
+![sql bench](https://github.com/spawnmarvel/todo-and-current/blob/main/python/py-central-monitor/images/sql_bench.png)
 
 zabbix
 
-![zabbix row](https://github.com/spawnmarvel/py-central-monitor/blob/main/images/zabbix_1.png)
+![zabbix row](https://github.com/spawnmarvel/todo-and-current/blob/main/python/py-central-monitor/images/zabbix_1.png)
 
 
 ## Flask App Central Monitor View
@@ -278,7 +278,7 @@ zabbix
 pip install flask
 ```
 
-![app](https://github.com/spawnmarvel/py-central-monitor/blob/main/images/app.png)
+![app](https://github.com/spawnmarvel/todo-and-current/blob/main/python/py-central-monitor/images/app.png)
 
 
 
