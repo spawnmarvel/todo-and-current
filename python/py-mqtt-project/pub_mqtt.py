@@ -9,7 +9,7 @@ import paho.mqtt.client as mqtt
 
 
 class SensorPublisher:
-    def __init__(self, host: str = "192.168.10.212", port: int = 1883):
+    def __init__(self, host: str = "127.0.0.1", port: int = 1883):
         self.host = host
         self.port = port
         self.client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
@@ -51,7 +51,7 @@ def main():
     telemetry_topic = "factory/level1/door1/sensor1/telemetry"
 
     # Initialize OOP Publisher instance
-    publisher = SensorPublisher(host="192.168.10.212", port=1883)
+    publisher = SensorPublisher(host="127.0.0.1", port=1883)
 
     try:
         publisher.connect()

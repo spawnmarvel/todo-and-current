@@ -8,7 +8,7 @@ import paho.mqtt.client as mqtt
 
 
 class SensorConsumer:
-    def __init__(self, host: str = "192.168.10.212", port: int = 1883, topic_pattern: str = "factory/#"):
+    def __init__(self, host: str = "127.0.0.1", port: int = 1883, topic_pattern: str = "factory/#"):
         self.host = host
         self.port = port
         self.topic_pattern = topic_pattern

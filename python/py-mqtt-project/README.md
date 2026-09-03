@@ -43,6 +43,7 @@ Then you get a service
 * Mosquitto Broker, Eclipse Mosquitto MQTT v5/v3.1.1 broker
 
 
+![localhost](https://github.com/spawnmarvel/todo-and-current/blob/main/python/py-mqtt-project/images/localhost.png)
 
 ## Python
 
