@@ -157,7 +157,7 @@ telemetry_topic = "factory/level1/door1/sensor1/telemetry"
 
 Telemetry
 
-![uns telemetry]()https://github.com/spawnmarvel/todo-and-current/blob/main/python/py-mqtt-project/images/uns_tele.png
+![uns telemetry](https://github.com/spawnmarvel/todo-and-current/blob/main/python/py-mqtt-project/images/uns_tele.png)
 
 Status
 
