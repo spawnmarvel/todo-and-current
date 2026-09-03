@@ -1035,7 +1035,7 @@ Now we monitor!
 
 4. Verification in MQTT Explorer
 
-GOTO READMEPython.md
+GOTO python\py-mqtt-project\README.md
 
 
 
