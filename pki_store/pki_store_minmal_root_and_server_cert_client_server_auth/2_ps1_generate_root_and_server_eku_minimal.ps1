@@ -21,6 +21,10 @@ openssl genrsa -out "C:\my-custom-pki\rootCA.key" 4096
 # Create Root Certificate with a 15-year lifetime (5479 days)
 openssl req -x509 -new -nodes -key "C:\my-custom-pki\rootCA.key" -sha256 -days 5479 -out "C:\my-custom-pki\rootCA.crt" -subj "/CN=InternalRootCA" -config "C:\my-custom-pki\extensions.cnf" -extensions root_ca_ext
 
+# Version 1.0
+# Command to generate root CA with full subject organization and address attributes
+# openssl req -x509 -new -nodes -key "C:\my-custom-pki\rootCA.key" -sha256 -days 5479 -out "C:\my-custom-pki\rootCA.crt" -subj "/C=NO/ST=Vestland/L=Bergen/street=Main Street 1/O=MyCompany AS/OU=IT Operations/CN=InternalRootCA" -config "C:\my-custom-pki\extensions.cnf" -extensions root_ca_ext
+
 # ==========================================
 # STEP 3: GENERATE SERVER KEY AND CSR
 # ==========================================
