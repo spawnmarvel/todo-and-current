@@ -64,9 +64,6 @@ Published message to 'factory/level1/door1/sensor1': {"sensor": "sensor1", "open
 View in MQTT Explorer
 
 
-![pub 1](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/iamgespy/pub1.png)
-
-
 ### Consume
 
 To do consume, we must first start the consumer in one session.
@@ -160,11 +157,11 @@ telemetry_topic = "factory/level1/door1/sensor1/telemetry"
 
 Telemetry
 
-![uns telemetry](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/iamgespy/uns_telemetry.png)
+![uns telemetry]()https://github.com/spawnmarvel/todo-and-current/blob/main/python/py-mqtt-project/images/uns_tele.png
 
 Status
 
-![uns status](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/iamgespy/uns_status.png)
+![uns status](https://github.com/spawnmarvel/todo-and-current/blob/main/python/py-mqtt-project/images/uns_status.png)
 
 
 
