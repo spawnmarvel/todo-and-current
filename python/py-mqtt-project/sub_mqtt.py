@@ -12,10 +12,10 @@ class SensorConsumer:
         self.host = host
         self.port = port
         self.topic_pattern = topic_pattern
-        
+
         # Instantiate client using Paho MQTT v2 API standard
         self.client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
-        
+
         # Attach instance methods as callbacks
         self.client.on_connect = self._on_connect
         self.client.on_message = self._on_message
@@ -23,7 +23,8 @@ class SensorConsumer:
     def _on_connect(self, client, userdata, flags, reason_code, properties=None):
         """Callback executed when client connects to broker."""
         if reason_code == 0:
-            print(f"Connected to Mosquitto. Subscribing to '{self.topic_pattern}'...")
+            print(
+                f"Connected to Mosquitto. Subscribing to '{self.topic_pattern}'...")
             self.client.subscribe(self.topic_pattern)
         else:
             print(f"Failed to connect, return code: {reason_code}")
