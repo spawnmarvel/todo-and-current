@@ -14,6 +14,7 @@
 - [Python and MQTT](#python-and-mqtt)
   - [Table of Contents](#table-of-contents)
   - [Eclipse Mosquitto](#eclipse-mosquitto)
+  - [Comparing MQTT Brokers](#comparing-mqtt-brokers)
   - [Python](#python)
     - [Publish](#publish)
     - [Consume](#consume)
@@ -22,6 +23,7 @@
       - [When NOT to Use retain=True](#when-not-to-use-retaintrue)
       - [Key Takeaway](#key-takeaway)
   - [Clean up mapping and path](#clean-up-mapping-and-path)
+  - [SSL Mosquitto](#ssl-mosquitto)
 
 
 ## Eclipse Mosquitto
@@ -44,6 +46,12 @@ Then you get a service
 
 
 ![localhost](https://github.com/spawnmarvel/todo-and-current/blob/main/python/py-mqtt-project/images/localhost.png)
+
+## Comparing MQTT Brokers
+
+Comparing MQTT Brokers for the Industrial IoT
+
+https://www.umh.app/insight/comparing-mqtt-brokers-for-the-industrial-iot
 
 ## Python
 
@@ -164,4 +172,6 @@ Status
 ![uns status](https://github.com/spawnmarvel/todo-and-current/blob/main/python/py-mqtt-project/images/uns_status.png)
 
 
+## SSL Mosquitto
 
+Lets enable ssl before we proceed.
