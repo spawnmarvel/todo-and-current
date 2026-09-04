@@ -23,6 +23,7 @@
 15. [Troubleshooting](#troubleshooting)
 16. [Linux Concepts](#linux-concepts)
 17. [Sys Admin Drill](#sys-admin-drill)
+18. [The Linux House](#the-linux-house)
 
 ---
 
@@ -1614,3 +1615,5 @@ grep -i "failed" log/rabbit\@BER-0803.log | tail -n 10
 grep -i "failed" log/rabbit\@BER-0803.log | tail -n 10 | tee failed_report_rabbit.txt
 cat failed_report_rabbit.txt
 ```
+
+## The Linux House
