@@ -164,6 +164,9 @@ Think of MQTT topics as storage slots:
 
 ● retain=True: Treat the message like a status board (the current value remains displayed on the wall until replaced by a new one).
 
+![retain](https://github.com/spawnmarvel/todo-and-current/blob/main/python/py-mqtt-project/images/retain.png)
+
+
 ## Clean up mapping and path
 
 So if we are to build something we need to think about a structure, lets clean up the publisher a bit and use retain for state and telemetry and use uns.
