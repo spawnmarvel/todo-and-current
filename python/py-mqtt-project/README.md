@@ -180,3 +180,13 @@ Status
 ## SSL Mosquitto
 
 Lets enable ssl before we proceed.
+
+C:\Program Files\Mosquitto
+
+mosquitto.conf
+
+
+## Quality of Service (QoS 0, 1, and 2) tbd
+
+## Last Will and Testament (LWT)
+
