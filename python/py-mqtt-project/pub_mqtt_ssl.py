@@ -63,6 +63,9 @@ def main():
     status_topic = "factory/level1/door1/sensor1/status"
     telemetry_topic = "factory/level1/door1/sensor1/telemetry"
 
+    status_topic2 = "factory/level1/door1/sensor2/status"
+    telemetry_topic2 = "factory/level1/door1/sensor2/telemetry"
+
     # Initialize OOP Publisher instance with SSL and Authentication
     publisher = SensorPublisher(
         host="BER-0803",
@@ -84,6 +87,16 @@ def main():
         publisher.publish_telemetry(
             topic=telemetry_topic, sensor_id="sensor1", temperature=22.1, retain=False
         )
+        # 1. Retained status message (saved on Mosquitto for instant pickup)
+        publisher.publish_status(
+            topic=status_topic2, sensor_id="sensor2", is_open=False, retain=True
+        )
+
+        # 2. Non-retained telemetry measurement (streaming value)
+        publisher.publish_telemetry(
+            topic=telemetry_topic2, sensor_id="sensor2", temperature=10.1, retain=False
+        )
+
     finally:
         publisher.disconnect()
 
