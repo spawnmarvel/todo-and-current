@@ -295,6 +295,21 @@ Restart service and login.
 ![ssl](https://github.com/spawnmarvel/todo-and-current/blob/main/python/py-mqtt-project/images/ssl.png)
 
 
+Now run the updated code with ssl:
+
+```cmd
+python pub_mqtt_ssl.py
+```
+
+log
+
+```log
+Published status to 'factory/level1/door1/sensor1/status' (retain=True): {"sensor": "sensor1", "open": false}
+Published telemetry to 'factory/level1/door1/sensor1/telemetry' (retain=False): {"sensor": "sensor1", "temperature": 22.1}
+
+```
+
+
 ## Quality of Service (QoS 0, 1, and 2) tbd
 
 ## Last Will and Testament (LWT)

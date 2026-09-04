@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-# Version: 1.2.0
-# Description: OOP-based MQTT publisher supporting state and telemetry metrics.
+# Version: 1.3.0
+# Description: OOP-based MQTT publisher supporting TLS/SSL encryption, authentication, state, and telemetry metrics.
 # pip install paho-mqtt
 
 import json
@@ -9,13 +9,26 @@ import paho.mqtt.client as mqtt
 
 
 class SensorPublisher:
-    def __init__(self, host: str = "127.0.0.1", port: int = 8883):
+    def __init__(
+        self,
+        host: str = "localhost",
+        port: int = 8883,
+        username: str = None,
+        password: str = None,
+        ca_cert: str = None,
+    ):
         self.host = host
         self.port = port
         self.client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
 
+        if username and password:
+            self.client.username_pw_set(username, password)
+
+        if ca_cert:
+            self.client.tls_set(ca_certs=ca_cert)
+
     def connect(self):
-        """Establishes connection to the MQTT broker and starts background loop."""
+        """Establishes connection to the MQTT broker over TLS and starts background loop."""
         self.client.connect(self.host, self.port)
         self.client.loop_start()
 
@@ -50,8 +63,14 @@ def main():
     status_topic = "factory/level1/door1/sensor1/status"
     telemetry_topic = "factory/level1/door1/sensor1/telemetry"
 
-    # Initialize OOP Publisher instance
-    publisher = SensorPublisher(host="127.0.0.1", port=1883)
+    # Initialize OOP Publisher instance with SSL and Authentication
+    publisher = SensorPublisher(
+        host="BER-0803",
+        port=8883,
+        username="factory_admin",
+        password="aspen100",
+        ca_cert=r"C:\mqttssl\ca.crt",
+    )
 
     try:
         publisher.connect()
