@@ -191,7 +191,7 @@ C:\Program Files\Mosquitto
 
 mosquitto.conf
 
-Create Password File and Enable Authentication
+1. Create Password File and Enable Authentication
 
 Open Command Prompt as Administrator and navigate to your Mosquitto installation directory:
 
@@ -201,9 +201,98 @@ Run mosquitto_passwd.exe to create a new password file named pwfile and add a us
 cd "C:\Program Files\Mosquitto"
 
 mosquitto_passwd.exe -c pwfile factory_admin
+Password:
+
+Reenter password:
+
+Adding password for user factory_admin
+
+```
+It is the tech from aspen that is 100 years old.
+
+2. Generate TLS Certificates (OpenSSL)
+
+Create a dedicated folder for certificates inside Mosquitto's folder:
+
+```cmd
+mkdir "C:\Program Files\Mosquitto\certs"
 
 ```
 
+Generate certs
+
+```cmd
+c:\Program Files\OpenSSL-Win64\bin>openssl version
+OpenSSL 1.1.1m  14 Dec 2021
+# 1. Generate CA private key and certificate
+openssl req -new -x509 -days 3650 -extensions v3_ca -keyout C:\mqttssl\ca.key -out C:\mqttssl\ca.crt -subj "/CN=MosquittoCA" -nodes
+
+# 2. Generate Server private key
+openssl genrsa -out C:\mqttssl\server.key 2048
+
+# 3. Generate Certificate Signing Request (CSR)
+# NOTE: Replace 'localhost' with your broker's actual IP/hostname if connecting from remote machines
+
+openssl req -new -key C:\mqttssl\server.key -out C:\mqttssl\server.csr -subj "/CN=BER-0803"
+
+# 4. Sign the Server certificate with your CA
+openssl x509 -req -in C:\mqttssl\server.csr -CA C:\mqttssl\ca.crt -CAkey C:\mqttssl\ca.key -CAcreateserial -out C:\mqttssl\server.crt -days 3650
+```
+
+3. Configure Mosquitto (mosquitto.conf)
+
+Take a backup of mosquitto.conf
+
+And move the files to correct location, else it the service will not start.
+
+Open C:\Program Files\Mosquitto\mosquitto.conf in a text editor as Administrator and add or update the following settings:
+
+```ini
+# =================================================================
+# General configuration
+# =================================================================
+per_listener_settings false
+
+# =================================================================
+# Listeners
+# =================================================================
+
+# Encrypted TLS Listener
+listener 8883
+allow_anonymous false
+password_file C:\mqttssl\pwfile
+
+cafile C:\mqttssl\ca.crt
+certfile C:\mqttssl\server.crt
+keyfile C:\mqttssl\server.key
+tls_version tlsv1.2
+```
+
+
+Check config
+
+```cmd
+cd "C:\Program Files\Mosquitto"
+
+mosquitto.exe -c mosquitto.conf -v
+1788511224: The 'per_listener_settings' option is now deprecated and will be removed in version 3.0. Please see the documentation for how to achieve the same effect.
+1788511224: mosquitto version 2.1.2 starting
+1788511224: Config loaded from mosquitto.conf.
+1788511224: Bridge support available.
+1788511224: Persistence support available.
+1788511224: TLS support available.
+1788511224: TLS-PSK support available.
+1788511224: Websockets support available.
+1788511224: Plugin builtin-security has registered to receive 'basic-auth' events.
+1788511224: Opening ipv6 listen socket on port 8883.
+1788511224: Opening ipv4 listen socket on port 8883.
+1788511224: mosquitto version 2.1.2 running
+
+```
+Restart service and login.
+
+
+![ssl](https://github.com/spawnmarvel/todo-and-current/blob/main/python/py-mqtt-project/images/ssl.png)
 
 
 ## Quality of Service (QoS 0, 1, and 2) tbd
