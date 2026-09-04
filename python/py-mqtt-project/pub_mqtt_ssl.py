@@ -6,6 +6,7 @@
 import json
 import time
 import paho.mqtt.client as mqtt
+import random
 
 
 class SensorPublisher:
@@ -58,6 +59,10 @@ class SensorPublisher:
         self.client.loop_stop()
         self.client.disconnect()
 
+    def generate_random_temperature(self, min_temp: float = 10.0, max_temp: float = 30.0) -> float:
+        """Generates a random temperature value within the specified range."""
+        return round(random.uniform(min_temp, max_temp), 2)
+
 
 def main():
     status_topic = "factory/level1/door1/sensor1/status"
@@ -85,7 +90,7 @@ def main():
 
         # 2. Non-retained telemetry measurement (streaming value)
         publisher.publish_telemetry(
-            topic=telemetry_topic, sensor_id="sensor1", temperature=22.1, retain=False
+            topic=telemetry_topic, sensor_id="sensor1", temperature=publisher.generate_random_temperature(), retain=False
         )
         # 1. Retained status message (saved on Mosquitto for instant pickup)
         publisher.publish_status(
@@ -94,7 +99,7 @@ def main():
 
         # 2. Non-retained telemetry measurement (streaming value)
         publisher.publish_telemetry(
-            topic=telemetry_topic2, sensor_id="sensor2", temperature=10.1, retain=False
+            topic=telemetry_topic2, sensor_id="sensor2", temperature=publisher.generate_random_temperature(), retain=False
         )
 
     finally:
