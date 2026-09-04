@@ -185,6 +185,20 @@ C:\Program Files\Mosquitto
 
 mosquitto.conf
 
+Create Password File and Enable Authentication
+
+Open Command Prompt as Administrator and navigate to your Mosquitto installation directory:
+
+Run mosquitto_passwd.exe to create a new password file named pwfile and add a user (e.g., factory_admin)
+```cmd
+
+cd "C:\Program Files\Mosquitto"
+
+mosquitto_passwd.exe -c pwfile factory_admin
+
+```
+
+
 
 ## Quality of Service (QoS 0, 1, and 2) tbd
 
