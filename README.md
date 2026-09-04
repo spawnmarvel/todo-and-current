@@ -430,7 +430,7 @@ Study plan:
 
 shuhari
 
-<img src="https://github.com/spawnmarvel/todo-and-current/blob/main/images/shuhari2.png" width="48"
+![shuhari](https://github.com/spawnmarvel/todo-and-current/blob/main/images/shuhari2.png)
 
 ## Backlog
 
