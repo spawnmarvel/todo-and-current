@@ -38,13 +38,16 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
     - [Azure VM Operations](#azure-vm-operations)
     - [AD DS Configuration (vmhybrid01)](#ad-ds-configuration-vmhybrid01)
   - [Fast Linux VM Deployment IAC](#fast-linux-vm-deployment-iac)
-  - [Current Priorities: TOP 2 but 1 at the time 20h](#current-priorities-top-2-but-1-at-the-time-20h)
+  - [Current Priorities: TOP 2 but 1 at the time](#current-priorities-top-2-but-1-at-the-time)
     - [1. Zabbix default ⭐](#1-zabbix-default-)
-    - [Grafana, Loki, and Alloy Agents ⭐](#grafana-loki-and-alloy-agents-)
-    - [Misc: MS learn, AZ-104 extended](#misc-ms-learn-az-104-extended)
-    - [AP22, silent zen, Cogent OPC UA, C-R and tools](#ap22-silent-zen-cogent-opc-ua-c-r-and-tools)
+    - [2. MySQL and Az MySql ⭐](#2-mysql-and-az-mysql-)
+    - [Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun ⭐](#raspberry-pi-iot-sensor-mqtt-grafana-linux-and-fun-)
+    - [Do more Python small projects btw, Mosquitto is in Python folder ⭐](#do-more-python-small-projects-btw-mosquitto-is-in-python-folder-)
   - [Backlog](#backlog)
+    - [AP22, Silent Zen Master ⭐ (work use it)](#ap22-silent-zen-master--work-use-it)
+    - [Misc: MS learn, AZ-104 extended, Octopus deploy for windows.](#misc-ms-learn-az-104-extended-octopus-deploy-for-windows)
     - [Octopus Deploy for Linux (CI/CD) ⭐ (work use it)](#octopus-deploy-for-linux-cicd--work-use-it)
+    - [Grafana, Loki, and Alloy Agents ⭐](#grafana-loki-and-alloy-agents-)
   - [Knowledge Maintenance Checklist](#knowledge-maintenance-checklist)
     - [1. Linux Continous](#1-linux-continous)
     - [2. MySQL Continous](#2-mysql-continous)
@@ -374,11 +377,9 @@ Install Zabbix agent 2 Linux
 
 ## Current Priorities: TOP 2 but 1 at the time
 
-* :apple: Do sys admin drill 5 min [Open new tab go to sys admin](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/README.md#sys-admin-drill)
-* :apple: Use octopus deploy for work and home
-* :apple: Do some MySQL for fun, json, key -value store, tuning.
-* :apple: Deploy Ubuntu in Azure, not windows, if needed, deploy for a short time.
-* ![mqtt](https://github.com/spawnmarvel/todo-and-current/blob/main/images/mqtt.png)
+* :apple: Do sys admin 5 min [drill](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/README.md#sys-admin-drill)
+
+* :apple: The linux [house](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/images__and_pdf/linux_house.jpg)
 
 ### 1. Zabbix default ⭐
 
