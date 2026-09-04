@@ -1617,3 +1617,5 @@ cat failed_report_rabbit.txt
 ```
 
 ## The Linux House
+
+![linux house](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/images__and_pdf/linux_house.jpg)
