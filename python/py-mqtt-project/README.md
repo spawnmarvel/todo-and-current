@@ -14,7 +14,7 @@
 - [Python and MQTT](#python-and-mqtt)
   - [Table of Contents](#table-of-contents)
   - [Eclipse Mosquitto](#eclipse-mosquitto)
-  - [Comparing MQTT Brokers](#comparing-mqtt-brokers)
+  - [Comparing MQTT Brokers and OPC UA vs MQTT](#comparing-mqtt-brokers-and-opc-ua-vs-mqtt)
   - [Python](#python)
     - [Publish](#publish)
     - [Consume](#consume)
@@ -47,11 +47,16 @@ Then you get a service
 
 ![localhost](https://github.com/spawnmarvel/todo-and-current/blob/main/python/py-mqtt-project/images/localhost.png)
 
-## Comparing MQTT Brokers
+## Comparing MQTT Brokers and OPC UA vs MQTT
 
 Comparing MQTT Brokers for the Industrial IoT
 
-https://www.umh.app/insight/comparing-mqtt-brokers-for-the-industrial-iot
+* https://www.umh.app/insight/comparing-mqtt-brokers-for-the-industrial-iot
+
+OPC UA vs MQTT: Which Protocol Should You Use for IIoT Data Integration?
+
+* https://vnodeautomation.com/opc-ua-vs-mqtt/
+
 
 ## Python
 

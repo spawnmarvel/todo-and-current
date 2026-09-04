@@ -420,7 +420,7 @@ Study plan:
 
 ---
 
-### Do more Python small projects btw, MQTT is the way ⭐
+### Do more Python small projects btw, Mosquitto is in Python folder ⭐
 
 - 📚 MQTT, Iot, monitoring, zabbix agents etc.
 - 📚 See folder Python
