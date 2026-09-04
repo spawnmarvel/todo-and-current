@@ -212,10 +212,10 @@ It is the tech from aspen that is 100 years old.
 
 2. Generate TLS Certificates (OpenSSL)
 
-Create a dedicated folder for certificates inside Mosquitto's folder:
+Create a dedicated folder for certificates and passwd:
 
 ```cmd
-mkdir "C:\Program Files\Mosquitto\certs"
+mkdir "C:\mqttssl"
 
 ```
 
@@ -243,7 +243,7 @@ openssl x509 -req -in C:\mqttssl\server.csr -CA C:\mqttssl\ca.crt -CAkey C:\mqtt
 
 Take a backup of mosquitto.conf
 
-And move the files to correct location, else it the service will not start.
+And move the files to correct location C:\mqttssl, else it the service will not start, we can not store them inside mosquitto folder.
 
 Open C:\Program Files\Mosquitto\mosquitto.conf in a text editor as Administrator and add or update the following settings:
 
