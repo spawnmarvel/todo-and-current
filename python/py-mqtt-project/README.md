@@ -312,6 +312,9 @@ Published telemetry to 'factory/level1/door1/sensor1/telemetry' (retain=False): 
 
 ```
 
+Retain is added to the statuses, but not telemetry.
+
+![retain](https://github.com/spawnmarvel/todo-and-current/blob/main/python/py-mqtt-project/images/retain.png)
 
 ## Quality of Service (QoS 0, 1, and 2) tbd
 
