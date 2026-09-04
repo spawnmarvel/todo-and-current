@@ -55,6 +55,12 @@ Comparing MQTT Brokers for the Industrial IoT
 
 OPC UA vs MQTT: Which Protocol Should You Use for IIoT Data Integration?
 
+The Best Answer Is Often: Use Both
+
+This hybrid approach — sometimes called the OPC UA to MQTT bridge pattern — is increasingly common in Industry 4.0 architectures.
+
+For example, a manufacturing plant running ABB AC 800M controllers might use OPC UA to collect structured process data, then forward that data via MQTT to an Azure IoT Hub for cloud-based analytics and predictive maintenance models.
+
 * https://vnodeautomation.com/opc-ua-vs-mqtt/
 
 
