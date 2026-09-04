@@ -122,6 +122,17 @@ No, Zigbee is not a proprietary protocol.
 
 It is an open global standard managed by the Connectivity Standards Alliance (CSA, formerly the Zigbee Alliance). Because it is built on the open IEEE 802.15.4 physical layer, any hardware manufacturer can build Zigbee-compatible devices without paying licensing fees to a single private owner.
 
+### IEEE 802.15.4 
+
+Key Characteristics
+
+* Low Power: Designed for battery-operated devices that need to last months or years.
+* Low Data Rate: Typically handles data rates from 250 kbps down to 20 kbps.
+* Short Range: Usually covers distances up to 10-100 meters depending on the environment.
+* Frequency Bands: Operates in license-free bands, most commonly 2.4 GHz globally, as well as sub-GHz bands like 868 MHz (Europe) and 915 MHz (North America)
+
+EEE 802.15.4 acts as the underlying radio foundation (the physical and MAC layers) for several higher-level smart-home and industrial networking protocols.
+
 Key Characteristics of Zigbee
 
 ● Open Specifications: The core networking and messaging standards are public and maintained by hundreds of member companies within the CSA.
