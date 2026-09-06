@@ -1433,17 +1433,42 @@ drwxrwxr-x 2 root root 4096 Jul 10 08:16 op
 # On Debian and almost all other Linux distributions, users is a built-in, default system group
 # Because you ran the command using sudo, the folder is owned by root:root (User: root, Group: root).
 # Changes the group to 'users' so normal team members can write to it without using sudo.
-sudo chown :users /usr/local/share/op
+# Grant group write access and group ownership to all existing files inside the folder
+sudo chown -R :users /usr/local/share/op
+sudo chmod -R g+w /usr/local/share/op
+
+# Set SGID bit on the directory so any NEW file created automatically belongs to 'users'
+sudo chmod g+s /usr/local/share/op
 
 # check security on folder after change
 ls -ld op
 drwxrwxr-x 2 root users 4096 Jul 10 08:16 op
 
+# check groups
+groups
+# are you a member, else
+sudo usermod -aG users "$USER"
+# You do not need to restart the server or close your SSH session to activate the new group. Use newgrp to start a fresh subshell with updated group permissions immediately:
+newgrp users
+
+# Test creating a new file
+touch /usr/local/share/op/test.txt
+
+# Test editing an existing file
+nano /usr/local/share/op/file.txt
+
+
 # List files (adds a / to folders so you can tell them apart).
 ls -F
 
-# See the "hidden" secrets and file sizes.
+# See the "hidden" secrets and file sizes show
 ls -lah
+# S sort by size show
+ls -lahS
+# List files in long format sorted by size with sizes explicitly in Megabytes.
+ls -laS --block-size=M
+# sort by date
+ls -laht
 
 # 2. The "Health Check" (Is the server okay?)
 
