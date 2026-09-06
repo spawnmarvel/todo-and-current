@@ -1419,6 +1419,9 @@ cd /usr/local/share/
 # Creating the folder op inside /usr/local/share is an excellent choice. It perfectly adheres to the Linux Filesystem Hierarchy Standard (FHS) for custom, shared system data.
 sudo mkdir op
 
+# remove it
+sudo rm -r op
+
 # It dictates who can read (r), write (w), or execute (x) a file across three user classes
 sudo chmod 775 /usr/local/share/op
 # 7 (Owner)      7 (Group)     5 (Everyone Else)
