@@ -38,6 +38,9 @@ robocopy c:\Users\lima\Downloads c:\Users\lima\Desktop\temporary_docs "*.docx"
 
 REM remove a file (if you got more then you needed) if you are in folder
 del PLA-0003661835.docx
+
+REM rename a file
+ren .\5621004-A-FE-0001.docx .\_temp_5621004-A-FE-0001.docx
 ```
 
 
