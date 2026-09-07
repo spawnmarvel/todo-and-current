@@ -33,7 +33,7 @@ Robocopy "c:\Program Files (x86)\folder\folder2" "c:\Program Files (x86)\folder\
 Some other examples
 
 ```cmd
-REM copy all .d
+REM copy all .docx
 robocopy c:\Users\lima\Downloads c:\Users\lima\Desktop\temporary_docs "*.docx"
 
 REM remove a file (if you got more then you needed) if you are in folder
