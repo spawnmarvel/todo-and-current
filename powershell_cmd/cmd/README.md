@@ -5,7 +5,7 @@
 
 
 
-robocopy
+## robocopy
 
 ```cmd
 
@@ -30,20 +30,20 @@ Robocopy "c:\Program Files (x86)\folder\folder2" "c:\Program Files (x86)\folder\
 * /secfix, Fixes file security on all files, even skipped ones.
 * /timefix, Fixes file times on all files, even skipped ones.
 
+Some other examples
+
+```cmd
+robocopy c:\Users\lima\Downloads c:\Users\lima\Desktop\temporary_docs "*.docx"
+```
+
 
 https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/robocopy
 
-Reg service / sc create
+### Reg service / sc create
 
-Change var service_name and file for:
-
-* ReqWinService.bat, run as admin from foldere where config is. 
-
-Change only var service_name for:
-
-* UnReqWinService.bat, run as admin from foldere where config is.
 
 ```cmd
-set service_name=
-set file=
+sc create "MyService" binPath= "C:\path\to\your\executable.exe"
+
+sc delete "MyService"
 ```
