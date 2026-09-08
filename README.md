@@ -431,7 +431,7 @@ Study plan:
 
 shuhari
 
-![shuhari](https://github.com/spawnmarvel/todo-and-current/blob/main/images/shuhari2.png)
+![shuhari](https://github.com/spawnmarvel/todo-and-current/blob/main/images/shuhari3.png)
 
 ## Backlog
 
