@@ -413,6 +413,12 @@ Study plan:
 
 ---
 
+### AP22 master drill ⭐ (work use it)
+
+- 🔄 Windows updates manually, Edit NSG from deny to allow until updates are downloaded on server. 
+
+[ap22 repos](https://github.com/spawnmarvel/ap22)
+
 
 ### Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun ⭐
 
@@ -434,12 +440,6 @@ shuhari
 ![shuhari](https://github.com/spawnmarvel/todo-and-current/blob/main/images/shuhari3.png)
 
 ## Backlog
-
-### AP22 master drill ⭐ (work use it)
-
-- 🔄 Windows updates manually, Edit NSG from deny to allow until updates are downloaded on server. 
-
-![ap22 repos](https://github.com/spawnmarvel/ap22)
 
 ### Misc: MS learn, AZ-104 extended, Octopus deploy for windows.
 
