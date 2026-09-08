@@ -445,6 +445,8 @@ shuhari
 - 📚 Install OPC UA prosys-opc-ua-simulation-server-windows-x64-5.6.0-6.exe
 - 🔄 Windows updates manually, Edit NSG from deny to allow until updates are downloaded on server. 
 
+![ap22 repos](https://github.com/spawnmarvel/ap22)
+
 **Completed:**
 - ✅ vmap22db, deny internet outbund
 
