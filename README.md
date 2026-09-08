@@ -413,7 +413,7 @@ Study plan:
 
 ---
 
-### Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun ⭐
+### Misc Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun ⭐
 
 - 📚 Learn IOT and play with sensors
 - 📚 Use MQTT, Python and Mosquitto broker
@@ -421,7 +421,7 @@ Study plan:
 
 ---
 
-### Do more Python small projects btw, Mosquitto is in Python folder ⭐
+### Misc Python small projects btw, Mosquitto is in Python folder ⭐
 
 - 📚 MQTT, Iot, monitoring, zabbix agents etc.
 - 📚 See folder Python
