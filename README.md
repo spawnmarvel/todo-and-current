@@ -46,7 +46,7 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
     - [Misc Python small projects btw, Mosquitto is in Python folder](#misc-python-small-projects-btw-mosquitto-is-in-python-folder)
   - [Backlog](#backlog)
     - [AP22 master drill ⭐ (work use it)](#ap22-master-drill--work-use-it)
-    - [Misc: MS learn, AZ-104 extended, Octopus deploy for windows.](#misc-ms-learn-az-104-extended-octopus-deploy-for-windows)
+    - [Misc: MS learn, AZ-104 extended :musical\_note:](#misc-ms-learn-az-104-extended-musical_note)
     - [Octopus Deploy for Linux (CI/CD) ⭐ (work use it)](#octopus-deploy-for-linux-cicd--work-use-it)
     - [Grafana, Loki, and Alloy Agents ⭐](#grafana-loki-and-alloy-agents-)
   - [Knowledge Maintenance Checklist](#knowledge-maintenance-checklist)
@@ -447,17 +447,15 @@ shuhari
 
 [ap22 repos](https://github.com/spawnmarvel/ap22)
 
-### Misc: MS learn, AZ-104 extended, Octopus deploy for windows.
+### Misc: MS learn, AZ-104 extended :musical_note:
 
 - 📚 MS Virtual machine stuff
 - 📚 MS AZ-104 extended
 - 📚 Azure DO NOT build things in the portal, use cli and ps1
 - 📚 Azure event hub
 - 📚 Do some octopus deploy for windows like RabbitMQ, etc
+- [az-104 course](https://learn.microsoft.com/en-us/training/courses/az-104t00)
 
-**Completed:**
-- ✅ MS Learn Active Directory Domain Services
-- ✅ [Microsoft Applied Skills: Administrer Active Directory Domain Service](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-ad-ds-windows-server-hybrid-core-infrastructure/README_applied_skills.md)
 
 ### Octopus Deploy for Linux (CI/CD) ⭐ (work use it)
 
