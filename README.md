@@ -405,7 +405,6 @@ Study plan:
 ### 2. Learn the ways of Linux-fu, for free :nerd_face: :massage: :zzz:
 
 - 📚 3 questions and 3 answers [Linux-fu](https://github.com/spawnmarvel/todo-and-current/blob/main/bash_linux_fu/readme.md)
-- - Repeat and advanced
 
 * :apple: Do sys admin 5 min, look at practical examples, troubleshoot etc [drill](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/README.md#sys-admin-drill)
 
