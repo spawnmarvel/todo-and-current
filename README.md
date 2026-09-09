@@ -406,7 +406,7 @@ Study plan:
 
 - 📚 [Linux-fu](https://github.com/spawnmarvel/todo-and-current/blob/main/bash_linux_fu/readme.md)
 
-* :apple: Do sys admin 5 min [drill](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/README.md#sys-admin-drill)
+* :apple: Do sys admin 5 min, look at practical examples, troubleshoot etc [drill](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/README.md#sys-admin-drill)
 
 * :apple: The linux [house](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/images__and_pdf/linux_house.jpg)
   
