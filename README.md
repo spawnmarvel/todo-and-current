@@ -39,11 +39,11 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
     - [AD DS Configuration (vmhybrid01)](#ad-ds-configuration-vmhybrid01)
   - [Fast Linux VM Deployment IAC](#fast-linux-vm-deployment-iac)
   - [Current Priorities: TOP 2 but 1 at the time](#current-priorities-top-2-but-1-at-the-time)
-    - [1. Zabbix default ⭐](#1-zabbix-default-)
-    - [2. Learn the ways of Linux-fu, for free ⭐](#2-learn-the-ways-of-linux-fu-for-free-)
-    - [3. MySQL and Az MySql ⭐](#3-mysql-and-az-mysql-)
-    - [Misc Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun ⭐](#misc-raspberry-pi-iot-sensor-mqtt-grafana-linux-and-fun-)
-    - [Misc Python small projects btw, Mosquitto is in Python folder ⭐](#misc-python-small-projects-btw-mosquitto-is-in-python-folder-)
+    - [1. Zabbix default :star:](#1-zabbix-default-star)
+    - [2. Learn the ways of Linux-fu, for free :nerd\_face:](#2-learn-the-ways-of-linux-fu-for-free-nerd_face)
+    - [3. MySQL and Az MySql :nerd\_face:](#3-mysql-and-az-mysql-nerd_face)
+    - [Misc Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun](#misc-raspberry-pi-iot-sensor-mqtt-grafana-linux-and-fun)
+    - [Misc Python small projects btw, Mosquitto is in Python folder](#misc-python-small-projects-btw-mosquitto-is-in-python-folder)
   - [Backlog](#backlog)
     - [AP22 master drill ⭐ (work use it)](#ap22-master-drill--work-use-it)
     - [Misc: MS learn, AZ-104 extended, Octopus deploy for windows.](#misc-ms-learn-az-104-extended-octopus-deploy-for-windows)
@@ -378,7 +378,7 @@ Install Zabbix agent 2 Linux
 
 ## Current Priorities: TOP 2 but 1 at the time
 
-### 1. Zabbix default ⭐
+### 1. Zabbix default :star:
 
 **In Progress:**
 - 📚 Linux by Zabbix agent active and Zabbix Agent 2 built-in native functions
@@ -402,7 +402,7 @@ Study plan:
 
 ---
 
-### 2. Learn the ways of Linux-fu, for free ⭐
+### 2. Learn the ways of Linux-fu, for free :nerd_face:
 
 - 📚 3 questions and 3 answers [Linux-fu](https://github.com/spawnmarvel/todo-and-current/blob/main/bash_linux_fu/readme.md)
 
@@ -412,7 +412,7 @@ Study plan:
   
 --- 
 
-### 3. MySQL and Az MySql ⭐
+### 3. MySQL and Az MySql :nerd_face:
 
 - 📚 Do all MS learn for MySQL
 - 📚 https://learn.microsoft.com/en-us/training/browse/?terms=mysql&source=learn
@@ -420,7 +420,7 @@ Study plan:
 
 ---
 
-### Misc Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun ⭐
+### Misc Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun
 
 - 📚 Learn IOT and play with sensors
 - 📚 Use MQTT, Python and Mosquitto broker
@@ -428,7 +428,7 @@ Study plan:
 
 ---
 
-### Misc Python small projects btw, Mosquitto is in Python folder ⭐
+### Misc Python small projects btw, Mosquitto is in Python folder
 
 - 📚 MQTT, Iot, monitoring, zabbix agents etc.
 - 📚 See folder Python
