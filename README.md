@@ -442,7 +442,7 @@ Study plan:
 - 📚 Azure DO NOT build things in the portal, use cli and ps1
 - 📚 Azure event hub
 - 📚 Do some octopus deploy for windows like RabbitMQ, etc
-- [az-104 course](https://learn.microsoft.com/en-us/training/courses/az-104t00)
+- [az-104 course always keep up](https://learn.microsoft.com/en-us/training/courses/az-104t00)
 
 ---
 
