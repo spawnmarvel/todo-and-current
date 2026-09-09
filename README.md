@@ -40,11 +40,12 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
   - [Fast Linux VM Deployment IAC](#fast-linux-vm-deployment-iac)
   - [Current Priorities: TOP 2 but 1 at the time](#current-priorities-top-2-but-1-at-the-time)
     - [1. Zabbix default ⭐](#1-zabbix-default-)
-    - [2. MySQL and Az MySql ⭐](#2-mysql-and-az-mysql-)
-    - [Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun ⭐](#raspberry-pi-iot-sensor-mqtt-grafana-linux-and-fun-)
-    - [Do more Python small projects btw, Mosquitto is in Python folder ⭐](#do-more-python-small-projects-btw-mosquitto-is-in-python-folder-)
+    - [2. Learn the ways of Linux-fu, for free ⭐](#2-learn-the-ways-of-linux-fu-for-free-)
+    - [3. MySQL and Az MySql ⭐](#3-mysql-and-az-mysql-)
+    - [Misc Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun ⭐](#misc-raspberry-pi-iot-sensor-mqtt-grafana-linux-and-fun-)
+    - [Misc Python small projects btw, Mosquitto is in Python folder ⭐](#misc-python-small-projects-btw-mosquitto-is-in-python-folder-)
   - [Backlog](#backlog)
-    - [AP22, Silent Zen Master ⭐ (work use it)](#ap22-silent-zen-master--work-use-it)
+    - [AP22 master drill ⭐ (work use it)](#ap22-master-drill--work-use-it)
     - [Misc: MS learn, AZ-104 extended, Octopus deploy for windows.](#misc-ms-learn-az-104-extended-octopus-deploy-for-windows)
     - [Octopus Deploy for Linux (CI/CD) ⭐ (work use it)](#octopus-deploy-for-linux-cicd--work-use-it)
     - [Grafana, Loki, and Alloy Agents ⭐](#grafana-loki-and-alloy-agents-)
@@ -377,10 +378,6 @@ Install Zabbix agent 2 Linux
 
 ## Current Priorities: TOP 2 but 1 at the time
 
-* :apple: Do sys admin 5 min [drill](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/README.md#sys-admin-drill)
-
-* :apple: The linux [house](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/images__and_pdf/linux_house.jpg)
-
 ### 1. Zabbix default ⭐
 
 **In Progress:**
@@ -405,7 +402,17 @@ Study plan:
 
 ---
 
-### 2. MySQL and Az MySql ⭐
+### 2. Learn the ways of Linux-fu, for free ⭐
+
+- 📚 [Linux-fu](https://github.com/spawnmarvel/todo-and-current/blob/main/bash_linux_fu/readme.md)
+
+* :apple: Do sys admin 5 min [drill](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/README.md#sys-admin-drill)
+
+* :apple: The linux [house](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/images__and_pdf/linux_house.jpg)
+  
+--- 
+
+### 3. MySQL and Az MySql ⭐
 
 - 📚 Do all MS learn for MySQL
 - 📚 https://learn.microsoft.com/en-us/training/browse/?terms=mysql&source=learn
