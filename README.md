@@ -44,9 +44,9 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
     - [3. MySQL and Az MySql :nerd\_face:](#3-mysql-and-az-mysql-nerd_face)
     - [Misc Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun](#misc-raspberry-pi-iot-sensor-mqtt-grafana-linux-and-fun)
     - [Misc Python small projects btw, Mosquitto is in Python folder](#misc-python-small-projects-btw-mosquitto-is-in-python-folder)
+    - [Misc: MS learn, AZ-104 extended :musical\_note:](#misc-ms-learn-az-104-extended-musical_note)
   - [Backlog](#backlog)
     - [AP22 master drill ⭐ (work use it)](#ap22-master-drill--work-use-it)
-    - [Misc: MS learn, AZ-104 extended :musical\_note:](#misc-ms-learn-az-104-extended-musical_note)
     - [Octopus Deploy for Linux (CI/CD) ⭐ (work use it)](#octopus-deploy-for-linux-cicd--work-use-it)
     - [Grafana, Loki, and Alloy Agents ⭐](#grafana-loki-and-alloy-agents-)
   - [Knowledge Maintenance Checklist](#knowledge-maintenance-checklist)
@@ -435,6 +435,17 @@ Study plan:
 
 ---
 
+### Misc: MS learn, AZ-104 extended :musical_note:
+
+- 📚 MS Virtual machine stuff
+- 📚 MS AZ-104 extended
+- 📚 Azure DO NOT build things in the portal, use cli and ps1
+- 📚 Azure event hub
+- 📚 Do some octopus deploy for windows like RabbitMQ, etc
+- [az-104 course](https://learn.microsoft.com/en-us/training/courses/az-104t00)
+
+---
+
 shuhari
 
 ![shuhari](https://github.com/spawnmarvel/todo-and-current/blob/main/images/shuhari3.png)
@@ -446,15 +457,6 @@ shuhari
 - 🔄 Windows updates manually, Edit NSG from deny to allow until updates are downloaded on server. 
 
 [ap22 repos](https://github.com/spawnmarvel/ap22)
-
-### Misc: MS learn, AZ-104 extended :musical_note:
-
-- 📚 MS Virtual machine stuff
-- 📚 MS AZ-104 extended
-- 📚 Azure DO NOT build things in the portal, use cli and ps1
-- 📚 Azure event hub
-- 📚 Do some octopus deploy for windows like RabbitMQ, etc
-- [az-104 course](https://learn.microsoft.com/en-us/training/courses/az-104t00)
 
 
 ### Octopus Deploy for Linux (CI/CD) ⭐ (work use it)
