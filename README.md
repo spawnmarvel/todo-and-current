@@ -40,7 +40,7 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
   - [Fast Linux VM Deployment IAC](#fast-linux-vm-deployment-iac)
   - [Current Priorities: TOP 2 but 1 at the time](#current-priorities-top-2-but-1-at-the-time)
     - [1. Zabbix default :star:](#1-zabbix-default-star)
-    - [2. Learn the ways of Linux-fu, for free :nerd\_face: :massage:](#2-learn-the-ways-of-linux-fu-for-free-nerd_face-massage)
+    - [2. Learn the ways of Linux-fu, for free :nerd\_face: :massage: :zzz:](#2-learn-the-ways-of-linux-fu-for-free-nerd_face-massage-zzz)
     - [3. MySQL and Az MySql :nerd\_face: :massage:](#3-mysql-and-az-mysql-nerd_face-massage)
     - [Misc Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun :potted\_plant:](#misc-raspberry-pi-iot-sensor-mqtt-grafana-linux-and-fun-potted_plant)
     - [Misc Python small projects btw, Mosquitto is in Python folder :massage:](#misc-python-small-projects-btw-mosquitto-is-in-python-folder-massage)
@@ -402,7 +402,7 @@ Study plan:
 
 ---
 
-### 2. Learn the ways of Linux-fu, for free :nerd_face: :massage:
+### 2. Learn the ways of Linux-fu, for free :nerd_face: :massage: :zzz:
 
 - 📚 3 questions and 3 answers [Linux-fu](https://github.com/spawnmarvel/todo-and-current/blob/main/bash_linux_fu/readme.md)
 
