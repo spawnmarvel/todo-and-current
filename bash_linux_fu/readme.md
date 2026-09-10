@@ -6,10 +6,12 @@ Inspiration from https://linuxvoyage.github.io/
 
 ---
 
+![fu](https://github.com/spawnmarvel/todo-and-current/blob/main/bash_linux_fu/images/fu.png)
+
 ## Table of Contents
 - [Linux Journey Exercises \& Command Reference](#linux-journey-exercises--command-reference)
   - [Table of Contents](#table-of-contents)
-  - [Track 1: Grasshopper](#track-1-grasshopper)
+  - [Track 1: baby yoda ](#track-1-baby-yoda)
     - [Getting Started](#getting-started)
     - [Command Line](#command-line)
     - [Text-Fu](#text-fu)
@@ -18,7 +20,7 @@ Inspiration from https://linuxvoyage.github.io/
     - [Permissions](#permissions)
     - [Processes](#processes)
     - [Packages](#packages)
-  - [Track 2: Journeyman](#track-2-journeyman)
+  - [Track 2: Walking yoda](#track-2-walking-yoda)
     - [Devices](#devices)
     - [The Filesystem](#the-filesystem)
     - [Boot the System](#boot-the-system)
@@ -26,7 +28,7 @@ Inspiration from https://linuxvoyage.github.io/
     - [Init](#init)
     - [Process Utilization](#process-utilization)
     - [Logging](#logging)
-  - [Track 3: Networking Nomad](#track-3-networking-nomad)
+  - [Track 3: Networking yoda](#track-3-networking-yoda)
     - [Network Sharing](#network-sharing)
     - [Network Basics](#network-basics)
     - [Subnetting](#subnetting)
@@ -37,7 +39,7 @@ Inspiration from https://linuxvoyage.github.io/
 
 ---
 
-## Track 1: Grasshopper
+## Track 1: Baby yoda
 
 ### Getting Started
 * **Concepts:** Linux distributions, shell interface, system info discovery.
@@ -168,7 +170,7 @@ Answer
 
 ---
 
-## Track 2: Journeyman
+## Track 2: Walking yoda
 
 ### Devices
 * **Concepts:** Block devices, character devices, kernel pseudo-filesystems (`/dev`, `/sys`, `/proc`).
@@ -228,7 +230,7 @@ Answer
 
 ---
 
-## Track 3: Networking Nomad
+## Track 3: Networking yoda
 
 ### Network Sharing
 * **Concepts:** Secure file transfer, remote directory synchronization, network file systems.
