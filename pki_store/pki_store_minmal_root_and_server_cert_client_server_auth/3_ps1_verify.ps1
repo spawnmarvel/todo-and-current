@@ -10,6 +10,7 @@ openssl x509 -in C:\my-custom-pki\server.crt -noout -subject -dates -purpose
 
 
 # Server Asset Verification One-Liner
+# cheeck the .crt and .key files match by comparing the modulus of each file. If they match, the key pair is valid.
 openssl x509 -noout -modulus -in C:\my-custom-pki\server.crt | openssl sha256 && openssl rsa -noout -modulus -in C:\my-custom-pki\server.key | openssl sha256
 
 # (stdin)= 6d6ab7e5d5d2ff8c6b0bd5ca28baea5eadb294584f0beeeb9b53a2c45d085a50
