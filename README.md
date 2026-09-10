@@ -455,6 +455,7 @@ shuhari
 ### AP22 master drill ⭐ (work use it)
 
 - 🔄 Windows updates manually, Edit NSG from deny to allow until updates are downloaded on server. 
+- 🔄 NSG outbund deny internet any, any, any
 
 [ap22 repos](https://github.com/spawnmarvel/ap22)
 
