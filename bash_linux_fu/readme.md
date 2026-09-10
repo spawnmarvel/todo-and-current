@@ -71,7 +71,8 @@ Inspiration from https://linuxvoyage.github.io/
   3. Move `main.c.bak` up to `/tmp/lab/project/` and rename it to `backup.c`.
 
 
-Answer
+<details>
+<summary>Click to expand answer</summary>
 
 ```bash
 # 1
@@ -80,6 +81,7 @@ Answer
 
 # 3
 ```
+</details>
 
 ### Text-Fu
 * **Concepts:** Standard output streams, file content inspection, piping, and filtering.
@@ -90,7 +92,8 @@ Answer
   3. Count the total number of lines in `/etc/passwd` using `wc -l`.
 
 
-Answer
+<details>
+<summary>Click to expand answer</summary>
 
 ```bash
 # 1
@@ -99,6 +102,7 @@ Answer
 
 # 3
 ```
+</details>
 
 ### Advanced Text-Fu
 * **Concepts:** Command line text editing, stream manipulation, pattern searching, and execution.
@@ -109,7 +113,8 @@ Answer
   3. Extract only the first column (usernames) from `/etc/passwd` using `awk -F: '{print $1}'`.
 
 
-Answer
+<details>
+<summary>Click to expand answer</summary>
 
 ```bash
 # 1
@@ -118,6 +123,7 @@ Answer
 
 # 3
 ```
+</details>
 
 ### User Management
 * **Concepts:** User creation, modifying accounts, group assignments, and switching contexts.
@@ -127,7 +133,8 @@ Answer
   2. Add `labuser` to the `sudo` (or `wheel`) group.
   3. Verify the UID, GID, and secondary groups assigned to `labuser` using the `id` command.
 
-Answer
+<details>
+<summary>Click to expand answer</summary>
 
 ```bash
 # 1
@@ -135,6 +142,8 @@ Answer
 # 2
 
 # 3
+```
+</details>
 ```
 
 ### Permissions
@@ -145,7 +154,8 @@ Answer
   2. Set the permissions of `/tmp/script.sh` to read/write for owner, read-only for group, and no permissions for others (`640`) using numeric notation.
   3. Change the ownership of `/tmp/script.sh` to `labuser`.
 
-Answer
+<details>
+<summary>Click to expand answer</summary>
 
 ```bash
 # 1
@@ -154,6 +164,7 @@ Answer
 
 # 3
 ```
+</details>
 
 ### Processes
 * **Concepts:** Process lifecycles, signal handling, background execution, and job control.
@@ -163,7 +174,8 @@ Answer
   2. Start a background process (`sleep 300 &`), identify its Process ID (PID), and terminate it using `kill`.
   3. Find the PID of a specific running process using `pgrep`.
 
-Answer
+<details>
+<summary>Click to expand answer</summary>
 
 ```bash
 # 1
@@ -172,6 +184,7 @@ Answer
 
 # 3
 ```
+</details>
 
 ### Packages
 * **Concepts:** Package managers across Debian/Ubuntu (`apt`) and RHEL/Fedora (`dnf`).
@@ -181,7 +194,8 @@ Answer
   2. Install a lightweight utility like `curl` or `htop`.
   3. Query the installed package database to verify the installation status of `curl`.
 
-Answer
+<details>
+<summary>Click to expand answer</summary>
 
 ```bash
 # 1
@@ -190,6 +204,7 @@ Answer
 
 # 3
 ```
+</details>
 
 ---
 
@@ -203,7 +218,8 @@ Answer
   2. Inspect the UUIDs and filesystem types of all local block devices using `blkid`.
   3. Display details about connected PCI or USB devices using `lspci` or `lsusb`.
 
-Answer
+<details>
+<summary>Click to expand answer</summary>
 
 ```bash
 # 1
@@ -212,6 +228,7 @@ Answer
 
 # 3
 ```
+</details>
 
 
 ### The Filesystem
@@ -223,7 +240,8 @@ Answer
   3. Create a symbolic link pointing from `/tmp/softlink` to `/etc/passwd`.
 
 
-Answer
+<details>
+<summary>Click to expand answer</summary>
 
 ```bash
 # 1
@@ -232,6 +250,7 @@ Answer
 
 # 3
 ```
+</details>
 
 ### Boot the System
 * **Concepts:** Firmware (BIOS/UEFI), bootloaders (GRUB), initrd/initramfs, and kernel initialization.
@@ -241,7 +260,8 @@ Answer
   2. View log messages generated during the current system boot cycle using `journalctl -b`.
   3. Inspect the contents of `/boot` to identify the active kernel image (`vmlinuz`) and initramfs files.
 
-Answer
+<details>
+<summary>Click to expand answer</summary>
 
 ```bash
 # 1
@@ -250,6 +270,7 @@ Answer
 
 # 3
 ```
+</details>
 
 ### Kernel
 * **Concepts:** Loadable kernel modules (LKMs), kernel parameters, runtime tuning (`/proc/sys`).
@@ -259,7 +280,8 @@ Answer
   2. Display detailed information about a specific kernel module (e.g., `e1000e` or `ext4`) using `modinfo`.
   3. Display the active setting for IPv4 packet forwarding using `sysctl net.ipv4.ip_forward`.
 
-Answer
+<details>
+<summary>Click to expand answer</summary>
 
 ```bash
 # 1
@@ -268,6 +290,7 @@ Answer
 
 # 3
 ```
+</details>
 
 ### Init
 * **Concepts:** Service management, targets/runlevels, systemd unit files.
@@ -277,7 +300,8 @@ Answer
   2. Restart a target service and confirm its main PID has changed.
   3. List all currently active systemd service units.
 
-Answer
+<details>
+<summary>Click to expand answer</summary>
 
 ```bash
 # 1
@@ -286,6 +310,7 @@ Answer
 
 # 3
 ```
+</details>
 
 ### Process Utilization
 * **Concepts:** System performance metrics, CPU/memory pressure, I/O bottlenecks.
@@ -295,7 +320,8 @@ Answer
   2. Check total and available system RAM and swap memory using `free -h`.
   3. Display system uptime and average CPU load over 1, 5, and 15 minutes using `uptime`.
 
-Answer
+<details>
+<summary>Click to expand answer</summary>
 
 ```bash
 # 1
@@ -304,6 +330,7 @@ Answer
 
 # 3
 ```
+</details>
 
 ### Logging
 * **Concepts:** System log files, systemd journal queries, log rotation configurations.
@@ -313,7 +340,8 @@ Answer
   2. Use `journalctl` to display logs filtered strictly by high-severity priority levels (`err` and higher).
   3. Query system logs for a specific systemd unit over the last hour.
 
-Answer
+<details>
+<summary>Click to expand answer</summary>
 
 ```bash
 # 1
@@ -322,6 +350,7 @@ Answer
 
 # 3
 ```
+</details>
 
 ---
 
@@ -335,7 +364,8 @@ Answer
   2. Synchronize a local directory to a target backup directory using `rsync -avzP`.
   3. Verify RPC/NFS shares on a target IP address using `showmount -e` (or inspect `/etc/exports`).
 
-Answer
+<details>
+<summary>Click to expand answer</summary>
 
 ```bash
 # 1
@@ -344,6 +374,7 @@ Answer
 
 # 3
 ```
+</details>
 
 ### Network Basics
 * **Concepts:** IP address inspection, network interfaces, MAC addresses, link state.
@@ -353,7 +384,8 @@ Answer
   2. Send 4 ICMP echo requests to `8.8.8.8` to test basic network connectivity using `ping`.
   3. Display the local ARP table mapping IP addresses to physical MAC addresses using `ip neighbor` or `arp -n`.
 
-Answer
+<details>
+<summary>Click to expand answer</summary>
 
 ```bash
 # 1
@@ -362,6 +394,7 @@ Answer
 
 # 3
 ```
+</details>
 
 ### Subnetting
 * **Concepts:** Classless Inter-Domain Routing (CIDR), network masks, broadcast domains.
@@ -371,7 +404,8 @@ Answer
   2. Determine the network prefix length and netmask for an interface using `ip addr show`.
   3. Calculate the maximum host capacity of a `/28` subnet.
 
-Answer
+<details>
+<summary>Click to expand answer</summary>
 
 ```bash
 # 1
@@ -379,6 +413,8 @@ Answer
 # 2
 
 # 3
+```
+</details>
 ```
 
 ### Routing
@@ -389,7 +425,8 @@ Answer
   2. Trace the network hop path to `1.1.1.1` using `traceroute` or `tracepath`.
   3. Add a temporary static route targeting a dummy network (e.g., `10.10.0.0/16`) via your local gateway, then remove it.
 
-Answer
+<details>
+<summary>Click to expand answer</summary>
 
 ```bash
 # 1
@@ -398,6 +435,7 @@ Answer
 
 # 3
 ```
+</details>
 
 ### Network Config
 * **Concepts:** Persistent network configuration, hostname resolution, interface control.
@@ -407,7 +445,8 @@ Answer
   2. Inspect `/etc/resolv.conf` to identify configured upstream DNS nameservers.
   3. Add a custom hostname-to-IP mapping entry inside `/etc/hosts` and verify resolution via `ping`.
 
-Answer
+<details>
+<summary>Click to expand answer</summary>
 
 ```bash
 # 1
@@ -416,6 +455,7 @@ Answer
 
 # 3
 ```
+</details>
 
 ### Troubleshooting
 * **Concepts:** Active sockets, open ports, connectivity testing, packet inspection.
@@ -425,7 +465,8 @@ Answer
   2. Test TCP port connectivity to a remote web server on port 80 using `nc -zv` or `telnet`.
   3. Capture 10 ICMP packets on your primary network interface using `tcpdump`.
 
-Answer
+<details>
+<summary>Click to expand answer</summary>
 
 ```bash
 # 1
@@ -434,6 +475,7 @@ Answer
 
 # 3
 ```
+</details>
 
 ### DNS
 * **Concepts:** Name resolution queries, record types (A, AAAA, MX, CNAME, TXT), propagation checks.
@@ -443,7 +485,8 @@ Answer
   2. Query the authoritative Mail Transfer Agent (`MX`) records for a target domain using `dig MX`.
   3. Perform a reverse DNS lookup on an IP address (e.g., `8.8.8.8`) using `dig -x`.
 
-Answer
+<details>
+<summary>Click to expand answer</summary>
 
 ```bash
 # 1
@@ -452,6 +495,7 @@ Answer
 
 # 3
 ```
+</details>
 
 ---
 
