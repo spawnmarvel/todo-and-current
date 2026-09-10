@@ -50,7 +50,8 @@ Inspiration from https://linuxvoyage.github.io/
   2. Print the operating system release details by reading `/etc/os-release`.
   3. Check your system hostname and active user identity using `hostnamectl` and `whoami`. 
 
-Answer
+<details>
+<summary>Click to expand answer</summary>
 
 ```bash
 # 1
@@ -59,6 +60,7 @@ Answer
 
 # 3
 ```
+</details>
 
 ### Command Line
 * **Concepts:** File system navigation, directory creation, file moving, and inspection.
