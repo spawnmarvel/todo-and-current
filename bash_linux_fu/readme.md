@@ -36,6 +36,7 @@ Inspiration from https://linuxvoyage.github.io/
     - [Network Config](#network-config)
     - [Troubleshooting](#troubleshooting)
     - [DNS](#dns)
+  - [Track 4: Jedi yoda](#track-4-jedi-yoda)
 
 ---
 
@@ -287,3 +288,7 @@ Answer
   1. Perform a DNS lookup for `example.com` to retrieve its `A` record using `dig`.
   2. Query the authoritative Mail Transfer Agent (`MX`) records for a target domain using `dig MX`.
   3. Perform a reverse DNS lookup on an IP address (e.g., `8.8.8.8`) using `dig -x`.
+
+---
+
+## Track 4: Jedi yoda
