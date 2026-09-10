@@ -161,6 +161,16 @@ Answer
   2. Start a background process (`sleep 300 &`), identify its Process ID (PID), and terminate it using `kill`.
   3. Find the PID of a specific running process using `pgrep`.
 
+Answer
+
+```bash
+# 1
+
+# 2
+
+# 3
+```
+
 ### Packages
 * **Concepts:** Package managers across Debian/Ubuntu (`apt`) and RHEL/Fedora (`dnf`).
 * **Key Commands:** `apt update`, `apt install`, `apt remove`, `dpkg`, `dnf`, `rpm`
@@ -168,6 +178,16 @@ Answer
   1. Update local package manager indices (`apt update` or `dnf check-update`).
   2. Install a lightweight utility like `curl` or `htop`.
   3. Query the installed package database to verify the installation status of `curl`.
+
+Answer
+
+```bash
+# 1
+
+# 2
+
+# 3
+```
 
 ---
 
@@ -181,6 +201,17 @@ Answer
   2. Inspect the UUIDs and filesystem types of all local block devices using `blkid`.
   3. Display details about connected PCI or USB devices using `lspci` or `lsusb`.
 
+Answer
+
+```bash
+# 1
+
+# 2
+
+# 3
+```
+
+
 ### The Filesystem
 * **Concepts:** Mount points, virtual filesystems, inodes, and disk space usage.
 * **Key Commands:** `df -h`, `du -sh`, `mount`, `umount`, `ls -i`, `ln -s`, `stat`
@@ -188,6 +219,17 @@ Answer
   1. Check human-readable disk space usage across all mounted filesystems using `df -h`.
   2. Identify the top 5 largest directories under `/var` using `du -sh` and sorting.
   3. Create a symbolic link pointing from `/tmp/softlink` to `/etc/passwd`.
+
+
+Answer
+
+```bash
+# 1
+
+# 2
+
+# 3
+```
 
 ### Boot the System
 * **Concepts:** Firmware (BIOS/UEFI), bootloaders (GRUB), initrd/initramfs, and kernel initialization.
@@ -197,6 +239,16 @@ Answer
   2. View log messages generated during the current system boot cycle using `journalctl -b`.
   3. Inspect the contents of `/boot` to identify the active kernel image (`vmlinuz`) and initramfs files.
 
+Answer
+
+```bash
+# 1
+
+# 2
+
+# 3
+```
+
 ### Kernel
 * **Concepts:** Loadable kernel modules (LKMs), kernel parameters, runtime tuning (`/proc/sys`).
 * **Key Commands:** `lsmod`, `modinfo`, `modprobe`, `rmmod`, `sysctl`
@@ -204,6 +256,16 @@ Answer
   1. List all currently loaded kernel modules using `lsmod`.
   2. Display detailed information about a specific kernel module (e.g., `e1000e` or `ext4`) using `modinfo`.
   3. Display the active setting for IPv4 packet forwarding using `sysctl net.ipv4.ip_forward`.
+
+Answer
+
+```bash
+# 1
+
+# 2
+
+# 3
+```
 
 ### Init
 * **Concepts:** Service management, targets/runlevels, systemd unit files.
@@ -213,6 +275,16 @@ Answer
   2. Restart a target service and confirm its main PID has changed.
   3. List all currently active systemd service units.
 
+Answer
+
+```bash
+# 1
+
+# 2
+
+# 3
+```
+
 ### Process Utilization
 * **Concepts:** System performance metrics, CPU/memory pressure, I/O bottlenecks.
 * **Key Commands:** `top`, `htop`, `uptime`, `free -h`, `vmstat`, `iostat`, `sar`
@@ -221,6 +293,16 @@ Answer
   2. Check total and available system RAM and swap memory using `free -h`.
   3. Display system uptime and average CPU load over 1, 5, and 15 minutes using `uptime`.
 
+Answer
+
+```bash
+# 1
+
+# 2
+
+# 3
+```
+
 ### Logging
 * **Concepts:** System log files, systemd journal queries, log rotation configurations.
 * **Key Commands:** `journalctl -u`, `journalctl -p`, `tail -f`, `logrotate`
@@ -228,6 +310,16 @@ Answer
   1. Stream real-time log entries for the last 20 lines of `/var/log/syslog` or `/var/log/messages` using `tail -f`.
   2. Use `journalctl` to display logs filtered strictly by high-severity priority levels (`err` and higher).
   3. Query system logs for a specific systemd unit over the last hour.
+
+Answer
+
+```bash
+# 1
+
+# 2
+
+# 3
+```
 
 ---
 
@@ -241,6 +333,16 @@ Answer
   2. Synchronize a local directory to a target backup directory using `rsync -avzP`.
   3. Verify RPC/NFS shares on a target IP address using `showmount -e` (or inspect `/etc/exports`).
 
+Answer
+
+```bash
+# 1
+
+# 2
+
+# 3
+```
+
 ### Network Basics
 * **Concepts:** IP address inspection, network interfaces, MAC addresses, link state.
 * **Key Commands:** `ip addr show`, `ip link show`, `ping`, `arp -n`, `ip neighbor`
@@ -248,6 +350,16 @@ Answer
   1. Display all active network interfaces, assigned IP addresses, and MAC addresses using `ip addr show`.
   2. Send 4 ICMP echo requests to `8.8.8.8` to test basic network connectivity using `ping`.
   3. Display the local ARP table mapping IP addresses to physical MAC addresses using `ip neighbor` or `arp -n`.
+
+Answer
+
+```bash
+# 1
+
+# 2
+
+# 3
+```
 
 ### Subnetting
 * **Concepts:** Classless Inter-Domain Routing (CIDR), network masks, broadcast domains.
@@ -257,6 +369,16 @@ Answer
   2. Determine the network prefix length and netmask for an interface using `ip addr show`.
   3. Calculate the maximum host capacity of a `/28` subnet.
 
+Answer
+
+```bash
+# 1
+
+# 2
+
+# 3
+```
+
 ### Routing
 * **Concepts:** Routing tables, default gateways, packet paths.
 * **Key Commands:** `ip route show`, `ip route add`, `ip route del`, `traceroute`, `tracepath`
@@ -264,6 +386,16 @@ Answer
   1. Display the kernel routing table and identify the default gateway IP using `ip route show`.
   2. Trace the network hop path to `1.1.1.1` using `traceroute` or `tracepath`.
   3. Add a temporary static route targeting a dummy network (e.g., `10.10.0.0/16`) via your local gateway, then remove it.
+
+Answer
+
+```bash
+# 1
+
+# 2
+
+# 3
+```
 
 ### Network Config
 * **Concepts:** Persistent network configuration, hostname resolution, interface control.
@@ -273,6 +405,16 @@ Answer
   2. Inspect `/etc/resolv.conf` to identify configured upstream DNS nameservers.
   3. Add a custom hostname-to-IP mapping entry inside `/etc/hosts` and verify resolution via `ping`.
 
+Answer
+
+```bash
+# 1
+
+# 2
+
+# 3
+```
+
 ### Troubleshooting
 * **Concepts:** Active sockets, open ports, connectivity testing, packet inspection.
 * **Key Commands:** `ss -tulpn`, `nc -zv`, `telnet`, `tcpdump`, `curl -I`
@@ -281,6 +423,16 @@ Answer
   2. Test TCP port connectivity to a remote web server on port 80 using `nc -zv` or `telnet`.
   3. Capture 10 ICMP packets on your primary network interface using `tcpdump`.
 
+Answer
+
+```bash
+# 1
+
+# 2
+
+# 3
+```
+
 ### DNS
 * **Concepts:** Name resolution queries, record types (A, AAAA, MX, CNAME, TXT), propagation checks.
 * **Key Commands:** `dig`, `dig MX`, `dig -x`, `nslookup`, `host`, `systemd-resolve`
@@ -288,6 +440,16 @@ Answer
   1. Perform a DNS lookup for `example.com` to retrieve its `A` record using `dig`.
   2. Query the authoritative Mail Transfer Agent (`MX`) records for a target domain using `dig MX`.
   3. Perform a reverse DNS lookup on an IP address (e.g., `8.8.8.8`) using `dig -x`.
+
+Answer
+
+```bash
+# 1
+
+# 2
+
+# 3
+```
 
 ---
 
