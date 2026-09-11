@@ -62,6 +62,8 @@ cat /etc/os-release
 
 # 3
 hostnamectl
+# Static hostname: vmgrafanaloki03
+#       Icon name: computer-vm
 whoami
 ```
 </details>
