@@ -55,10 +55,14 @@ Inspiration from https://linuxvoyage.github.io/
 
 ```bash
 # 1
+uname -a
 
 # 2
+cat /etc/os-release
 
 # 3
+hostnamectl
+whoami
 ```
 </details>
 
@@ -76,10 +80,13 @@ Inspiration from https://linuxvoyage.github.io/
 
 ```bash
 # 1
-
+# The -p flag creates parent directories automatically
+mkdir -p /tmp/lab/projects/src
 # 2
-
+touch /tmp/lab/projects/src/main.c
+cp /tmp/lab/projects/src/main.c /tmp/lab/projects/src/main.c.bak
 # 3
+mv /tmp/lab/projects/src/main.c.bak /tmp/lab/projects/backup.c
 ```
 </details>
 
