@@ -1495,6 +1495,7 @@ htop -d 50
 
 # system space usage
 df -h
+df -h /
 df -h | tee disk_report.txt
 
 # list block devices
