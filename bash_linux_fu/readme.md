@@ -402,6 +402,7 @@ mv /tmp/lab/projects/src/main.c.bak /tmp/lab/projects/backup.c
 # 2
 
 # 3
+
 ```
 </details>
 
@@ -424,7 +425,7 @@ mv /tmp/lab/projects/src/main.c.bak /tmp/lab/projects/backup.c
 # 3
 ```
 </details>
-```
+
 
 ### Routing
 * **Concepts:** Routing tables, default gateways, packet paths.
