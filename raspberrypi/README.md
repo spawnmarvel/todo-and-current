@@ -1062,9 +1062,12 @@ GOTO python\py-mqtt-project\README.md
 * * * single press
 * * * double press
 * * * and long press—control multiple devices or scenes effortlessly with one switch.
-* Zigbee 3.0 Compatible, Works with Zigbee 3.0 hubs like SONOFF NSPanel Pro, ZB Bridge Pro, and ZBDongle-E, and is compatible with most hubs following the Zigbee 3.0 standard.
-* Alexa Routine Trigger, Easily activate Alexa routines with a press of the wireless switch (requires SONOFF Zigbee hub).
-* Emergency Alert Button, Use SNZB-01P as an emergency button—press to instantly send alert notifications to your family’s phones in urgent situations.
+* Zigbee 3.0 Compatible
+* * Works with Zigbee 3.0 hubs like SONOFF NSPanel Pro, ZB Bridge Pro, and ZBDongle-E, and is compatible with most hubs following the Zigbee 3.0 standard.
+* Alexa Routine Trigger
+* * Easily activate Alexa routines with a press of the wireless switch (requires SONOFF Zigbee hub).
+* Emergency Alert Button
+* * Use SNZB-01P as an emergency button—press to instantly send alert notifications to your family’s phones in urgent situations.
 * Up to 5 Years Battery Life, Powered by a CR2477 battery. Battery life data is based on SONOFF’s internal testing; actual performance may vary.
 * 
 ![button](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/button1.png)
