@@ -37,6 +37,10 @@ Manual checks or basic standalone sensor displays lack historical tracking, visu
     - [Sensor data to Grafana](#sensor-data-to-grafana)
   - [Extended with Python and MQTT](#extended-with-python-and-mqtt)
   - [Summary of services and configurations](#summary-of-services-and-configurations)
+    - [mosquito](#mosquito)
+    - [mqqtt2prometheus exported](#mqqtt2prometheus-exported)
+    - [prometheus time series db](#prometheus-time-series-db)
+    - [grafana](#grafana-1)
   - [Zigbee button](#zigbee-button)
 
 
@@ -1053,6 +1057,19 @@ GOTO python\py-mqtt-project\README.md
 
 
 ## Summary of services and configurations
+
+So far we have the following.
+
+![toplogy](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/toplogy.jpg)
+
+### mosquito
+
+### mqqtt2prometheus exported
+
+### prometheus time series db
+
+### grafana
+
 
 ## Zigbee button
 
