@@ -38,7 +38,7 @@ Manual checks or basic standalone sensor displays lack historical tracking, visu
   - [Extended with Python and MQTT](#extended-with-python-and-mqtt)
   - [Summary of services and configurations](#summary-of-services-and-configurations)
     - [mosquito](#mosquito)
-    - [mqqtt2prometheus exported](#mqqtt2prometheus-exported)
+    - [mqqtt2prometheus exporter](#mqqtt2prometheus-exporter)
     - [prometheus time series db](#prometheus-time-series-db)
     - [grafana](#grafana-1)
   - [Zigbee button](#zigbee-button)
@@ -1066,6 +1066,7 @@ So far we have the following.
 
 ### mosquito
 
+mosquitto.service - Mosquitto MQTT Broker
 
 ```bash
 ssh chilliman@192.168.10.212
@@ -1082,19 +1083,72 @@ mosquitto.log  mosquitto.log.1
 ```
 
 
-/etc/mosquitto/conf.d/local.conf
+cat /etc/mosquitto/conf.d/local.conf
 
 ```ini
 listener 1883 0.0.0.0
 allow_anonymous true
 ```
 
-### mqqtt2prometheus exported
+### mqqtt2prometheus exporter
 
+mqtt2prometheus.service - MQTT to Prometheus Exporter
+
+```bash
+sudo systemctl status mqtt2prometheus.service
+
+# /etc/mqtt2prometheus.yaml
+
+``` 
+
+cat /etc/mqtt2prometheus.yaml 
+
+```yml
+mqtt:
+  server: tcp://127.0.0.1:1883
+  topic_path: "zigbee2mqtt/+"
+  device_id_regex: "zigbee2mqtt/(?P<deviceid>[a-zA-Z0-9_]+)"
+
+metrics:
+  - prom_name: "temperature"
+    mqtt_name: "temperature"
+    help: "Plant sensor temperature in Celsius"
+    type: "gauge"
+  - prom_name: "humidity"
+    mqtt_name: "humidity"
+    help: "Plant sensor relative humidity percentage"
+    type: "gauge"
+  - prom_name: "battery"
+    mqtt_name: "battery"
+    help: "Plant sensor battery level"
+    type: "gauge"
+  - prom_name: "linkquality"
+    mqtt_name: "linkquality"
+    help: "Zigbee link quality indicator"
+    type: "gauge"
+``` 
 ### prometheus time series db
+
+prometheus.service - Monitoring system and time series database
+
+```bash
+sudo systemctl status prometheus
+
+cat /etc/prometheus/prometheus.yml 
+
+``` 
 
 ### grafana
 
+grafana-server.service - Grafana instance
+
+```bash
+sudo systemctl status grafana-server.service 
+
+sudo cat /etc/grafana/grafana.ini
+sudo cat /etc/grafana/grafana.ini | less
+
+``` 
 
 ## Zigbee button
 
