@@ -19,6 +19,7 @@ Manual checks or basic standalone sensor displays lack historical tracking, visu
   - [Hardware](#hardware)
   - [Raspberry Pi 4 Network Specifications](#raspberry-pi-4-network-specifications)
   - [IoT](#iot)
+    - [IEEE 802.15.4](#ieee-802154)
   - [Documentation](#documentation)
   - [How to Install Raspberry Pi OS Step by Step](#how-to-install-raspberry-pi-os-step-by-step)
   - [Connect](#connect)
@@ -35,6 +36,8 @@ Manual checks or basic standalone sensor displays lack historical tracking, visu
     - [Force Telemetry Request via MQTT from Sonoff SNZB-02P](#force-telemetry-request-via-mqtt-from-sonoff-snzb-02p)
     - [Sensor data to Grafana](#sensor-data-to-grafana)
   - [Extended with Python and MQTT](#extended-with-python-and-mqtt)
+  - [Summary of services and configurations](#summary-of-services-and-configurations)
+  - [Zigbee button](#zigbee-button)
 
 
 
@@ -1047,6 +1050,11 @@ Now we monitor!
 4. Verification in MQTT Explorer
 
 GOTO python\py-mqtt-project\README.md
+
+
+## Summary of services and configurations
+
+## Zigbee button
 
 
 
