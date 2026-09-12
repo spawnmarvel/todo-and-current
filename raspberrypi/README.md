@@ -1069,5 +1069,13 @@ GOTO python\py-mqtt-project\README.md
 * Emergency Alert Button
 * * Use SNZB-01P as an emergency button—press to instantly send alert notifications to your family’s phones in urgent situations.
 * Up to 5 Years Battery Life, Powered by a CR2477 battery. Battery life data is based on SONOFF’s internal testing; actual performance may vary.
-* 
+
+So we have the new button ready, yea.
+
 ![button](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/button1.png)
+
+Lets connect the button
+
+```bash
+
+```
