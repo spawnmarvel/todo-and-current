@@ -1062,7 +1062,32 @@ So far we have the following.
 
 ![toplogy](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/toplogy.jpg)
 
+
+
 ### mosquito
+
+
+```bash
+ssh chilliman@192.168.10.212
+
+sudo systemctl status mosquitto.service 
+
+# /etc/mosquitto/conf.d/local.conf
+cat /etc/mosquitto/conf.d/local.conf 
+
+# /var/log/mosquitto
+cd /var/log/mosquitto/
+ls
+mosquitto.log  mosquitto.log.1
+```
+
+
+/etc/mosquitto/conf.d/local.conf
+
+```ini
+listener 1883 0.0.0.0
+allow_anonymous true
+```
 
 ### mqqtt2prometheus exported
 
