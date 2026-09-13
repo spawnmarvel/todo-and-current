@@ -112,6 +112,10 @@ head -n 3 file.txt
 sudo grep -i 'error' /var/log/syslog
 # 3
 wc -l /etc/passwd
+
+wc -l file.txt 
+# 10 file.txt
+
 ```
 </details>
 
