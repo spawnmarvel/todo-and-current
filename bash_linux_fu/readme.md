@@ -11,13 +11,12 @@ Inspiration from https://linuxvoyage.github.io/
 ## Table of Contents
 - [Linux Journey Exercises \& Command Reference](#linux-journey-exercises--command-reference)
   - [Table of Contents](#table-of-contents)
-  - [Track 1: baby yoda ](#track-1-baby-yoda)
+  - [Track 1: Baby yoda](#track-1-baby-yoda)
     - [Getting Started](#getting-started)
     - [Command Line](#command-line)
     - [Text-Fu](#text-fu)
     - [Advanced Text-Fu](#advanced-text-fu)
     - [User Management](#user-management)
-    - [Permissions](#permissions)
     - [Processes](#processes)
     - [Packages](#packages)
   - [Track 2: Walking yoda](#track-2-walking-yoda)
@@ -106,10 +105,13 @@ mv /tmp/lab/projects/src/main.c.bak /tmp/lab/projects/backup.c
 
 ```bash
 # 1
+for i in {1..10}; do echo "This is line $i"; done > file.txt
+head -n 3 file.txt
 
 # 2
-
+sudo grep -i 'error' /var/log/syslog
 # 3
+wc -l /etc/passwd
 ```
 </details>
 
