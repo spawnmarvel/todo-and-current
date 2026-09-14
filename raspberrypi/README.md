@@ -1136,7 +1136,136 @@ sudo systemctl status prometheus
 
 cat /etc/prometheus/prometheus.yml 
 
+#  view config and bck it up
+sudo cp /etc/default/prometheus /etc/default/prometheus.bck
+
+sudo nano /etc/default/prometheus
+
+# change data storage limit
 ``` 
+
+config
+
+```ini
+ARGS="--storage.tsdb.path=/var/lib/prometheus/metrics2 --storage.tsdb.retention.size=10 --storage.tsdb.retention.time=200d
+
+``` 
+
+```bash
+sudo systemctl restart prometheus
+sudo systemctl status prometheus
+
+# Verify that the process picked up the arguments:
+ps aux | grep prometheus | grep retention
+
+# Confirm runtime API configuration:
+curl -s http://localhost:9090/api/v1/status/runtimeinfo | grep storageRetention
+```
+
+Or view output of systemctl
+
+```log
+Tasks: 10 (limit: 3967)
+        CPU: 1.637s
+     CGroup: /system.slice/prometheus.service
+             └─50714 /usr/bin/prometheus --storage.tsdb.path=/var/lib/prometheus/metrics2 --storage.tsdb.retention.size=10GB --stora>
+```
+
+Yes, this is genuinely how Prometheus was designed to work by core maintainers.
+
+It catches almost everyone by surprise because most modern Linux applications put all their settings inside a single .yml or .conf file. Prometheus strictly separates its settings into two distinct layers based on whether a parameter requires a full daemon restart or can be reloaded on the fly.
+
+```txt
+PROMETHEUS CONFIGURATION
+                                       │
+            ┌──────────────────────────┴──────────────────────────┐
+            ▼                                                     ▼
+ [ Command-Line Flags ]                                 [ YAML Config File ]
+ (/etc/default/prometheus)                           (/etc/prometheus/prometheus.yml)
+            │                                                     │
+ ── Immutable Engine Parameters                        ── Dynamic Scrape & Alert Rules
+ ── Cannot be changed without process restart          ── Hot-reloadable via 'curl -X POST /-/reload'
+ ── Examples:                                          ── Examples:
+    • --storage.tsdb.path                                 • scrape_configs (targets, intervals)
+    • --storage.tsdb.retention.size                       • rule_files (alerts, recording rules)
+    • --storage.tsdb.retention.time                       • alertmanagers
+    • --web.listen-address                                • remote_write / remote_read
+```
+
+Lets count what we have in prometehus.
+
+Count total metric streams
+
+```bash
+curl -s http://localhost:9090/api/v1/query?query=prometheus_tsdb_head_series
+
+```
+Result
+
+```json
+{"status":"success","data":{"resultType":"vector","result":[{"metric":{"__name__":"prometheus_tsdb_head_series","instance":"localhost:9090","job":"prometheus"},"value":[1789416754.983,"2675"]}]}}
+``` 
+
+We have 2,675 metric streams.
+
+Time Series (Stream): The identifier/channel that defines what is being measured. It is constant over time and defined by a unique combination of a metric name and set of key-value labels.
+
+
+
+Count total values.
+
+```bash
+curl -s http://localhost:9090/api/v1/query?query=prometheus_tsdb_head_samples_appended_total
+
+``` 
+Result
+
+```json
+{"status":"success","data":{"resultType":"vector","result":[{"metric":{"__name__":"prometheus_tsdb_head_samples_appended_total","instance":"localhost:9090","job":"prometheus","type":"float"},"value":[1789416915.660,"121284"]},{"metric":{"__name__":"prometheus_tsdb_head_samples_appended_total","instance":"localhost:9090","job":"prometheus","type":"histogram"},"value":[1789416915.660,"0"]}]}}
+```
+
+These 121,284 data points represent the actual raw values collected across your 2,675 active streams.
+
+Every sample consists of a simple key-value tuple stored in memory before being flushed to disk.
+
+Raw Value (Sample): A single measurements data point (a timestamp paired with a floating-point number) recorded inside that specific stream at a exact point in time.
+
+
+Think of a time series stream like a labeled video channel, and raw values like the individual video frames:
+
+* Stream: Channel 1: temperature{sensor="greenhouse", location="shelf_top"}. The channel itself exists continuously over time.
+* Raw Value: At 22:15:00, the reading is 23.4°C. At 22:15:15, the reading is 23.6°C. Each individual temperature reading is a raw value (sample).
+
+A stream (time series) is the continuous timeline/channel for a specific metric target, and the values (samples) are the individual data points recorded along that timeline over time.
+
+Example:
+
+If mira1 has 4 CPU cores, Prometheus creates a separate time series stream for each core and mode:
+
+```txt
+node_cpu_seconds_total{cpu="0", mode="idle"}     --> Series #1
+node_cpu_seconds_total{cpu="0", mode="system"}   --> Series #2
+node_cpu_seconds_total{cpu="0", mode="user"}     --> Series #3
+node_cpu_seconds_total{cpu="1", mode="idle"}     --> Series #4
+node_cpu_seconds_total{cpu="1", mode="system"}   --> Series #5
+...and so on.
+```
+
+
+Count metrics and streams
+
+```bash
+echo -n "Total Unique Metrics: " && curl -s "http://localhost:9090/api/v1/query?query=count(count+by+(__name__)+(\{__name__=~\".%2B\"\}))" | grep -oP '"value":\[\d+\.\d+,"\K\d+' && echo -n "Total Active Streams: " && curl -s "http://localhost:9090/api/v1/query?query=prometheus_tsdb_head_series" | grep -oP '"value":\[\d+\.\d+,"\K\d+'
+```  
+
+Result
+
+```txt
+Total Unique Metrics: 529
+Total Active Streams: 2675
+``` 
+
+
 
 ### grafana
 
