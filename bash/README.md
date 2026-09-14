@@ -1061,6 +1061,8 @@ Partition, format, and mount a raw disk (e.g., /dev/sda) to store data like MySQ
 ```bash
 # Find the disk (look for one without a mount point - it's unused)
 lsblk -o NAME,HCTL,SIZE,MOUNTPOINT | grep -i "sd"
+# sda
+# sdb
 
 # Create partition with fdisk
 sudo fdisk /dev/sda
