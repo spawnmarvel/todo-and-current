@@ -36,7 +36,9 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
   - [Fast Linux VM Deployment IAC](#fast-linux-vm-deployment-iac)
   - [Current Priorities: TOP 2 but 1 at the time](#current-priorities-top-2-but-1-at-the-time)
     - [1. Zabbix default :star:](#1-zabbix-default-star)
+  - [\[!NOTE\] This is important.](#note-this-is-important)
     - [2. Learn the ways of Linux-fu, for free :nerd\_face: :massage: :zzz:](#2-learn-the-ways-of-linux-fu-for-free-nerd_face-massage-zzz)
+  - [\[!WARNING\] This is power!](#warning-this-is-power)
     - [3. MySQL and Az MySql :nerd\_face: :massage:](#3-mysql-and-az-mysql-nerd_face-massage)
     - [Misc Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun :potted\_plant:](#misc-raspberry-pi-iot-sensor-mqtt-grafana-linux-and-fun-potted_plant)
     - [Misc Python small projects btw, Mosquitto is in Python folder :massage:](#misc-python-small-projects-btw-mosquitto-is-in-python-folder-massage)
@@ -379,7 +381,7 @@ Study plan:
 - A project for maximizing all default monitoring and not write a single script.
 - Files [Zabbix monitor VM's and SNMP default](https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm/zabbix_monitor_vms_snmp_default)
 
-
+[!NOTE] This is important.
 ---
 
 ### 2. Learn the ways of Linux-fu, for free :nerd_face: :massage: :zzz:
@@ -389,7 +391,8 @@ Study plan:
 * :apple: Do sys admin 5 min, look at practical examples, troubleshoot etc [drill](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/README.md#sys-admin-drill)
 
 * :apple: The linux [house](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/images__and_pdf/linux_house.jpg)
-  
+
+[!WARNING] This is power!
 --- 
 
 ### 3. MySQL and Az MySql :nerd_face: :massage:
@@ -400,6 +403,8 @@ Study plan:
 - 📚 [MySql tutorial github](https://github.com/spawnmarvel/todo-and-current/blob/main/mysql/README_mysql_tutorial.md#10-mysql-globalization)
 - 📚 [MySql tutorial github server admin and more](https://github.com/spawnmarvel/todo-and-current/blob/main/mysql/README_mysql_tutorial.md#mysql-server-administration)
 
+[!WARNING] This is power!
+
 ---
 
 ### Misc Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun :potted_plant:
@@ -408,12 +413,16 @@ Study plan:
 - 📚 Use MQTT, Python and Mosquitto broker
 - 📚 [Raspberry Pi 4 docs](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/)
 
+[!CAUTION] This is not so important, but fun.
+
 ---
 
 ### Misc Python small projects btw, Mosquitto is in Python folder :massage:
 
 - 📚 MQTT, Iot, monitoring, zabbix agents etc.
 - 📚 See folder Python
+
+[!CAUTION] This is not so important, but fun.
 
 ---
 
@@ -425,6 +434,8 @@ Study plan:
 - 📚 Azure event hub
 - 📚 Do some octopus deploy for windows like RabbitMQ, etc
 - [az-104 course always keep up](https://learn.microsoft.com/en-us/training/courses/az-104t00)
+
+[!WARNING] This is power!
 
 ---
 
