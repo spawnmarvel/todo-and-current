@@ -77,7 +77,7 @@ whoami
 
 
 <details>
-<summary>Click to expand answer</summary>
+<summary>Click to expand answer :golf:</summary>
 
 ```bash
 # 1
@@ -101,7 +101,7 @@ mv /tmp/lab/projects/src/main.c.bak /tmp/lab/projects/backup.c
 
 
 <details>
-<summary>Click to expand answer</summary>
+<summary>Click to expand answer :golf:</summary>
 
 ```bash
 # 1
