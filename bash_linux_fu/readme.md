@@ -133,10 +133,18 @@ wc -l file.txt
 
 ```bash
 # 1
+sudo cp /etc/hosts ~/hosts2.txt
+#  i, edit files in place .
+# s, consider files as separate rather than as a single
+sed -i 's/localhost/127.0.0.1/g' hosts2.txt
 
 # 2
-
+# To filter by modified time (in days), use -mtime instead of -atime (which checks access time).
+find /var/log -type f -name "*.log" -mtime -7
 # 3
+# F:, field separator is :
+awk -F: '{print $1}' /etc/passwd
+awk -F/ '{print $1}' /etc/passwd 
 ```
 </details>
 
