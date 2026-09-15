@@ -129,7 +129,7 @@ wc -l file.txt
 
 
 <details>
-<summary>Click to expand answer</summary>
+<summary>Click to expand answer :golf:</summary>
 
 ```bash
 # 1
