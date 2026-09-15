@@ -41,7 +41,7 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
     - [Misc Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun :potted\_plant:](#misc-raspberry-pi-iot-sensor-mqtt-grafana-linux-and-fun-potted_plant)
   - [$${\\color{blue}This \\ is \\ fun}$$](#colorbluethis--is--fun)
     - [Misc Python small projects btw, Mosquitto is in Python folder :massage:](#misc-python-small-projects-btw-mosquitto-is-in-python-folder-massage)
-  - [$${\\color{blue}This \\ is \\ fun}$$](#colorbluethis--is--fun-1)
+  - [$${\\color{lightblue}This \\ is \\ fun}$$](#colorlightbluethis--is--fun)
     - [Misc: MS learn, AZ-104 extended :wave:](#misc-ms-learn-az-104-extended-wave)
   - [Backlog](#backlog)
     - [AP22 master drill ⭐ (work use it)](#ap22-master-drill--work-use-it)
@@ -423,7 +423,7 @@ $${\color{blue}This \ is \ fun}$$
 - 📚 MQTT, Iot, monitoring, zabbix agents etc.
 - 📚 See folder Python
 
-$${\color{blue}This \ is \ fun}$$
+$${\color{lightblue}This \ is \ fun}$$
 ---
 
 ### Misc: MS learn, AZ-104 extended :wave:
