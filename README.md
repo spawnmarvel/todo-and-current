@@ -403,7 +403,7 @@ Study plan:
 - 📚 [MySql tutorial github](https://github.com/spawnmarvel/todo-and-current/blob/main/mysql/README_mysql_tutorial.md#10-mysql-globalization)
 - 📚 [MySql tutorial github server admin and more](https://github.com/spawnmarvel/todo-and-current/blob/main/mysql/README_mysql_tutorial.md#mysql-server-administration)
 
-$${\color{red}This is power! red}$$
+$${\color{red}This \ is \ power! red}$$
 
 ---
 
