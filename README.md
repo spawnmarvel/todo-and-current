@@ -36,12 +36,12 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
   - [Fast Linux VM Deployment IAC](#fast-linux-vm-deployment-iac)
   - [Current Priorities: TOP 2 but 1 at the time](#current-priorities-top-2-but-1-at-the-time)
     - [1. Zabbix default :star:](#1-zabbix-default-star)
-  - [\[!NOTE\] This is important.](#note-this-is-important)
     - [2. Learn the ways of Linux-fu, for free :nerd\_face: :massage: :zzz:](#2-learn-the-ways-of-linux-fu-for-free-nerd_face-massage-zzz)
-  - [\[!WARNING\] This is power!](#warning-this-is-power)
     - [3. MySQL and Az MySql :nerd\_face: :massage:](#3-mysql-and-az-mysql-nerd_face-massage)
     - [Misc Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun :potted\_plant:](#misc-raspberry-pi-iot-sensor-mqtt-grafana-linux-and-fun-potted_plant)
+  - [$${\\color{blue}This \\ is \\ fun}$$](#colorbluethis--is--fun)
     - [Misc Python small projects btw, Mosquitto is in Python folder :massage:](#misc-python-small-projects-btw-mosquitto-is-in-python-folder-massage)
+  - [$${\\color{blue}This \\ is \\ fun}$$](#colorbluethis--is--fun-1)
     - [Misc: MS learn, AZ-104 extended :wave:](#misc-ms-learn-az-104-extended-wave)
   - [Backlog](#backlog)
     - [AP22 master drill ⭐ (work use it)](#ap22-master-drill--work-use-it)
@@ -381,7 +381,8 @@ Study plan:
 - A project for maximizing all default monitoring and not write a single script.
 - Files [Zabbix monitor VM's and SNMP default](https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm/zabbix_monitor_vms_snmp_default)
 
-[!NOTE] This is important.
+$${\color{orange}This \ is \ important}$$
+
 ---
 
 ### 2. Learn the ways of Linux-fu, for free :nerd_face: :massage: :zzz:
@@ -392,7 +393,8 @@ Study plan:
 
 * :apple: The linux [house](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/images__and_pdf/linux_house.jpg)
 
-[!WARNING] This is power!
+$${\color{green}This \ is \ power}$$
+
 --- 
 
 ### 3. MySQL and Az MySql :nerd_face: :massage:
@@ -403,7 +405,7 @@ Study plan:
 - 📚 [MySql tutorial github](https://github.com/spawnmarvel/todo-and-current/blob/main/mysql/README_mysql_tutorial.md#10-mysql-globalization)
 - 📚 [MySql tutorial github server admin and more](https://github.com/spawnmarvel/todo-and-current/blob/main/mysql/README_mysql_tutorial.md#mysql-server-administration)
 
-$${\color{red}This \ is \ power}$$
+$${\color{green}This \ is \ power}$$
 
 ---
 
@@ -413,8 +415,7 @@ $${\color{red}This \ is \ power}$$
 - 📚 Use MQTT, Python and Mosquitto broker
 - 📚 [Raspberry Pi 4 docs](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/)
 
-[!CAUTION] This is not so important, but fun.
-
+$${\color{blue}This \ is \ fun}$$
 ---
 
 ### Misc Python small projects btw, Mosquitto is in Python folder :massage:
@@ -422,8 +423,7 @@ $${\color{red}This \ is \ power}$$
 - 📚 MQTT, Iot, monitoring, zabbix agents etc.
 - 📚 See folder Python
 
-[!CAUTION] This is not so important, but fun.
-
+$${\color{blue}This \ is \ fun}$$
 ---
 
 ### Misc: MS learn, AZ-104 extended :wave:
@@ -435,7 +435,7 @@ $${\color{red}This \ is \ power}$$
 - 📚 Do some octopus deploy for windows like RabbitMQ, etc
 - [az-104 course always keep up](https://learn.microsoft.com/en-us/training/courses/az-104t00)
 
-[!WARNING] This is power!
+$${\color{orange}This \ is \ important}$$
 
 ---
 
