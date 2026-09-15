@@ -148,8 +148,11 @@ find /var/log -type f -name "*.log" -mtime -7
 # 3
 # F:, field separator is :
 awk -F: '{print $1}' /etc/passwd
+
 # example with /
 awk -F/ '{print $1}' /etc/passwd 
+# example get from file
+awk '{print $1 " " $2}' file.txt
 ```
 </details>
 
