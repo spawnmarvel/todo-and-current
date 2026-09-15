@@ -54,6 +54,24 @@ $${\color{orange}This \ is \ important}$$
 The computer you are signing into is protected by an authentication firewall. The specified account is not allowed to authenticate to the computer.
 ```
 
+Go to this pc
+
+* map network drive
+* Choose drive, eaxample we take M
+* Folder \\IP\DISKNAME$ for remote server
+
+Add
+* Reconnect at sign in
+* Connect using different credentials
+
+Now log in and you should have access
+* Domain\username
+
+Example robocopy now source is remote, destination is local
+```cmd
+robocopy M:\my_folder D:\myfolder  /e /xf *
+```
+
 ### Reg service / sc create
 
 
