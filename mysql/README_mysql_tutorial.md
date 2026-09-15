@@ -16,6 +16,10 @@ https://www.mysqltutorial.org/
   - [9. Mysql Data types](#9-mysql-data-types)
   - [10. Mysql Globalization](#10-mysql-globalization)
   - [11. Mysql import and export](#11-mysql-import-and-export)
+  - [MySQL Server Administration](#mysql-server-administration)
+  - [Security](#security)
+  - [Backup and Recovery](#backup-and-recovery)
+  - [Optimization](#optimization)
 
 
 ## 1. Load the Sample Database into MySQL Server
@@ -165,3 +169,13 @@ https://www.mysqltutorial.org/mysql-basics/mysql-character-set/
 ## 11. Mysql import and export
 
 https://www.mysqltutorial.org/mysql-basics/import-csv-file-mysql-table/
+
+## MySQL Server Administration
+
+https://dev.mysql.com/doc/refman/8.0/en/server-administration.html
+
+## Security
+
+## Backup and Recovery
+
+## Optimization
