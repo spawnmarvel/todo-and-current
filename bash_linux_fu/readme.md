@@ -50,7 +50,7 @@ Inspiration from https://linuxvoyage.github.io/
   3. Check your system hostname and active user identity using `hostnamectl` and `whoami`. 
 
 <details>
-<summary>Click to expand answer</summary>
+<summary>Click to expand answer :golf:</summary>
 
 ```bash
 # 1
