@@ -134,16 +134,21 @@ wc -l file.txt
 ```bash
 # 1
 sudo cp /etc/hosts ~/hosts2.txt
-#  i, edit files in place .
-# s, consider files as separate rather than as a single
+# i, edit files in place .
+# s, substitute (s/pattern/replacement/flags).
+# /g flag means global (replace every occurrence on each line, not just the first).
 sed -i 's/localhost/127.0.0.1/g' hosts2.txt
 
 # 2
 # To filter by modified time (in days), use -mtime instead of -atime (which checks access time).
+# -mtime -7: Modified less than 7 days ago (within the last 168 hours).
+# -mtime +7: Modified more than 7 days ago (older than 168 hours).
+# -mmin: Modification time in minutes, -amin: Access time in minutes, -cmin: Change time in minutes.
 find /var/log -type f -name "*.log" -mtime -7
 # 3
 # F:, field separator is :
 awk -F: '{print $1}' /etc/passwd
+# example with /
 awk -F/ '{print $1}' /etc/passwd 
 ```
 </details>
