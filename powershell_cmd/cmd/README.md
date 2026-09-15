@@ -57,7 +57,7 @@ The computer you are signing into is protected by an authentication firewall. Th
 Go to this pc
 
 * map network drive
-* Choose drive, eaxample we take M
+* Choose drive letter that is not mapped, example we take M
 * Folder \\IP\DISKNAME$ for remote server
 
 Add
@@ -67,7 +67,9 @@ Add
 Now log in and you should have access
 * Domain\username
 
-Example robocopy now source is remote, destination is local
+Check it in windows explorer
+
+Example robocopy now,  source is remote M mapped, destination is local D
 ```cmd
 robocopy M:\my_folder D:\myfolder  /e /xf *
 ```
