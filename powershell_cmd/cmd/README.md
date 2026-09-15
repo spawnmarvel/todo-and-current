@@ -48,8 +48,9 @@ https://learn.microsoft.com/en-us/windows-server/administration/windows-commands
 
 $${\color{orange}This \ is \ important}$$
 
+```log
 The computer you are signing into is protected by an authentication firewall. The specified account is not allowed to authenticate to the computer.
-
+```
 
 ### Reg service / sc create
 
