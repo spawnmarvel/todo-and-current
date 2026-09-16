@@ -435,6 +435,7 @@ $${\color{lightblue}This \ is \ fun}$$
 - 📚 Do some octopus deploy for windows like RabbitMQ, etc
 - [az-104 course always keep up ms learn](https://learn.microsoft.com/en-us/training/courses/az-104t00)
 - [second guide github](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-104-administrator-certified-professional/README.md)
+- [az storage account from zero to hero](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-104-storage-account/README.md)
 - [first self quick guide github](https://github.com/spawnmarvel/quickguides/tree/main/azure)
 
 $${\color{orange}This \ is \ important}$$
