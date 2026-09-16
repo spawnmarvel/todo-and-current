@@ -1,6 +1,6 @@
 # Linux Journey Exercises & Command Reference
 
-A practical, step-by-step hands-on terminal exercise guide and command reference based on the **Grasshopper**, **Journeyman**, and **Networking Nomad** learning tracks.
+A practical, step-by-step hands-on terminal exercise guide and command reference based on the **Baby yoda**, **Walking yoda**, and **Networking yoda** learning tracks.
 
 Inspiration from https://linuxvoyage.github.io/
 
