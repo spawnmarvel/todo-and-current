@@ -532,3 +532,7 @@ awk '{print $1 " " $2}' file.txt
 ---
 
 ## Track 4: Jedi yoda
+
+Make labs of this and a course.
+
+the-linux-command-line-w-shotts.pdf
