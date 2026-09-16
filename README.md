@@ -430,7 +430,7 @@ $${\color{lightblue}This \ is \ fun}$$
 
 - 📚 MS AZ-104 extended
 - 📚 Azure DO NOT build things in the portal, use cli and ps1
-- 
+
 - [az-104 course always keep up ms learn](https://learn.microsoft.com/en-us/training/courses/az-104t00)
   
 - [az storage account from zero to hero](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-104-storage-account/README.md)
