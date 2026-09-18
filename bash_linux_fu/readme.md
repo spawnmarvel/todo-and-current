@@ -36,6 +36,7 @@ Inspiration from https://linuxvoyage.github.io/
     - [Troubleshooting](#troubleshooting)
     - [DNS](#dns)
   - [Track 4: Jedi yoda](#track-4-jedi-yoda)
+  - [Track 5: The light side - The force](#track-5-the-light-side---the-force)
 
 ---
 
@@ -536,3 +537,9 @@ awk '{print $1 " " $2}' file.txt
 Make labs of this and a course.
 
 the-linux-command-line-w-shotts.pdf
+
+## Track 5: The light side - The force
+
+Login with your user and do ubuntu tutorials
+
+https://ubuntu.com/tutorials
