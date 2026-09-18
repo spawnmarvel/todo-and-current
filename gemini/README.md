@@ -31,7 +31,7 @@ Worked with industrial IT and OT since 2013.
 Work: Windows server, Aspentech infoplus.21, SQLPlus,  OPC, Cogent, Powershell, network troubleshooting, RabbitMQ, x.509, service accounts in AD, 
 zabbix, documentation for requirments, toplogy's, testing, patching, fixing cve's, powershell, octopus deploy.
 
-After work and fun with no pressure: Linux, Azure, mysql, openssl, security, zabbix, loki, bash, github.
+After work and fun with no pressure: Linux, Azure, mysql, openssl, security, zabbix, loki, bash, github, mqtt, python.
 
 
 ## 1. Learning anything in 20 HOURS
