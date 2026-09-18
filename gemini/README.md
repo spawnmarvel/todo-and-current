@@ -3,26 +3,35 @@
 ## Info & background
 
 
-Education:
+Education done:
+
+Informasjonsvitskap (bachelor)
 
 https://www4.uib.no/program/informasjonsvitskap-bachelor
 
-Certs: 
+Certs done: 
 
-https://learn.microsoft.com/en-us/credentials/certifications/azure-administrator/?practice-assessment-type=certification
+* Microsoft Certified: Azure Administrator Associate
+* Microsoft Certified: Azure Fundamentals
+* Introduction to Linux (LFS101)
+* OD20761C - Querying Data with Transact-SQL
+* Lean Yellow Belt Certification
+* ISTQB certified foundation level
+* PME101 Aspen InfoPlus.21: Real Time Information Management Foundation Aspen Technology
 
+MS Applied skills done:
 
-https://learn.microsoft.com/en-us/credentials/certifications/azure-fundamentals/?practice-assessment-type=certification
-
-
-https://training.linuxfoundation.org/training/introduction-to-linux/
+* Microsoft Applied Skills: Administer Active Directory Domain Services
+* Microsoft Applied Skills: Generate reports with AI research agents
+* Microsoft Applied Skills: Get started with Azure management tasks
+* Microsoft Applied Skills:  Secure storage for Azure Files and Azure Blob Storage
 
 Worked with industrial IT and OT since 2013.
 
 Work: Windows server, Aspentech infoplus.21, SQLPlus,  OPC, Cogent, Powershell, network troubleshooting, RabbitMQ, x.509, service accounts in AD, 
-zabbix, documentation for requirments, toplogy's, testing, patching, fixing cve's, powershell.
+zabbix, documentation for requirments, toplogy's, testing, patching, fixing cve's, powershell, octopus deploy.
 
-After work and fun with no pressure: Linux, Azure, Octopus depoloy with linux, AD DS on windows, mysql, openssl, grafana lolki, alloy, zabbix, zabbix native agent 2, azure event hub, bash, etc.
+After work and fun with no pressure: Linux, Azure, mysql, openssl, security, zabbix, loki, bash.
 
 
 ## 1. Learning anything in 20 HOURS
