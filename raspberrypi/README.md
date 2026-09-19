@@ -1469,4 +1469,27 @@ You now have direct web management of your Zigbee network on mira1 right from yo
 
 ![frontend zigbee](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/frontend_zigbee.png)
 
+Renaming the device in the Zigbee2MQTT Web GUI does the exact same thing as sending that mosquitto_pub JSON request to zigbee2mqtt/bridge/request/device/rename as we did for the sensor.
+
+Both methods perform these identical steps:
+
+* Updates the friendly_name entry inside /opt/zigbee2mqtt/data/configuration.yaml
+
+
+```bash
+mosquitto_pub -h 127.0.0.1 -p 1883 -t "zigbee2mqtt/bridge/request/device/rename" -m '{"from": "0xf044d3fffe2a4336", "to": "button_1"}'
+
+sudo grep 'friend' /opt/zigbee2mqtt/data/configuration.yaml
+    friendly_name: plant_sensor1
+    friendly_name: button_1
+
+```
+
+Explanation of "N/A" on plant_sensor1
+
+The N/A on the plant_sensor1 link quality indicator occurs because it is a battery-powered Zigbee end device that sleeps to conserve power
+
+
+
+![devices](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/devices.png)
 
