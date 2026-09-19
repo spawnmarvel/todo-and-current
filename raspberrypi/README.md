@@ -1688,4 +1688,13 @@ Test the system in Grafana:
 ![hf](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/hf.png)
 
 
+Check stats on mira1, it looks fine.
+
+![mira1](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/mira1_1.png)
+
+
+
+
+
+
 ### Zigbee2MQTT Web Frontend ssl tbd
