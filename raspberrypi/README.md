@@ -42,6 +42,8 @@ Manual checks or basic standalone sensor displays lack historical tracking, visu
     - [prometheus time series db](#prometheus-time-series-db)
     - [grafana](#grafana-1)
   - [Zigbee button](#zigbee-button)
+    - [Verify button click Data](#verify-button-click-data)
+    - [Enable Frontend Configuration on mira1](#enable-frontend-configuration-on-mira1)
 
 
 
@@ -1104,6 +1106,7 @@ sudo systemctl status mqtt2prometheus.service
 cat /etc/mqtt2prometheus.yaml 
 
 ```yml
+# Version: 1.0.0
 mqtt:
   server: tcp://127.0.0.1:1883
   topic_path: "zigbee2mqtt/+"
@@ -1302,5 +1305,160 @@ So we have the new button ready, yea.
 Lets connect the button
 
 ```bash
+# backup the old config
+sudo cp mqtt2prometheus.yaml mqtt2prometheus.yaml_bck
 
 ```
+
+Add the new button config
+
+```yml
+# Version: 1.2.0
+# Purpose: Fixed YAML configuration for mqtt2prometheus mapping Zigbee2MQTT metrics including SONOFF SNZB-01P button actions.
+
+mqtt:
+  server: tcp://127.0.0.1:1883
+  topic_path: "zigbee2mqtt/+"
+  device_id_regex: "zigbee2mqtt/(?P<deviceid>[a-zA-Z0-9_]+)"
+
+metrics:
+  - prom_name: "temperature"
+    mqtt_name: "temperature"
+    help: "Plant sensor temperature in Celsius"
+    type: "gauge"
+  - prom_name: "humidity"
+    mqtt_name: "humidity"
+    help: "Plant sensor relative humidity percentage"
+    type: "gauge"
+  - prom_name: "battery"
+    mqtt_name: "battery"
+    help: "Plant sensor battery level"
+    type: "gauge"
+  - prom_name: "linkquality"
+    mqtt_name: "linkquality"
+    help: "Zigbee link quality indicator"
+    type: "gauge"
+  # SONOFF SNZB-01P Wireless Switch Action Metric
+  - prom_name: "action"
+    mqtt_name: "action"
+    help: "Zigbee wireless button action state"
+    type: "gauge"
+    string_value_mapping:
+      map:
+        error: 0
+        single: 1
+        double: 2
+        hold: 3
+```
+
+Restart
+
+```bash
+sudo systemctl restart mqtt2prometheus
+sudo systemctl status mqtt2prometheus
+
+```
+
+Log
+
+```log
+mqtt2prometheus.service - MQTT to Prometheus Exporter
+     Loaded: loaded (/etc/systemd/system/mqtt2prometheus.service; enabled; preset: enabled)
+     Active: active (running) since Sat 2026-09-19 10:47:20 CEST; 1s ago
+```
+
+
+Next Step: Pair Your Sensor
+
+Enable Joining in Zigbee2MQTT:
+
+Before putting the button into pairing mode, permit new devices to join your Zigbee network by publishing a permit-join command via MQTT:
+
+```bash
+mosquitto_pub -h 127.0.0.1 -p 1883 -t "zigbee2mqtt/bridge/request/permit_join" -m '{"value": true}'
+```
+
+
+
+* Take the Sonoff SNZB-02P sensor.
+
+* Press and hold the reset/pairing button on the side for 5 seconds until the LED indicator begins flashing.
+
+* Keep the sensor close to the Sonoff USB dongle on mira1 for initial pairing.
+
+
+
+### Verify button click Data
+
+To observe the incoming telemetry payload, open a second terminal session on mira1 and subscribe to all Zigbee topics:
+
+
+```bash
+# all
+mosquitto_sub -h localhost -t "zigbee2mqtt/#" -v
+
+# just button
+mosquitto_sub -h 127.0.0.1 -p 1883 -v -t "zigbee2mqtt/#" | grep -E "action|SNZB-01P|device_joined"
+```
+
+So much data from above output, we need to find button.
+
+To isolate and listen only for button press actions without any extra network noise, run this command in your terminal:
+
+```bash
+mosquitto_sub -h 127.0.0.1 -p 1883 -v -t "zigbee2mqtt/+" | grep --line-buffered -E '"action"'
+```
+
+Reset the sensor into Pairing Mode:
+
+Press and hold the button for full 5–7 seconds until the LED flashes three times (or starts blinking slowly on its own).
+
+Release the button immediately.
+
+Place the sensor right next to the Sonoff MG24 USB antenna and let it sit undisturbed for 10–20 seconds while it completes the 180-second pairing window automatically.
+
+Check your journalctl log stream—you should see Zigbee2MQTT register device_joined followed by interviewing
+
+```bash
+sudo journalctl -u zigbee2mqtt -f --no-pager
+```
+
+### Enable Frontend Configuration on mira1
+
+
+To enable the built-in web interface on mira1, open your Zigbee2MQTT configuration file:
+
+```bash
+cp /opt/zigbee2mqtt/data/configuration.yaml /opt/zigbee2mqtt/data/configuration.yaml_before_web
+sudo nano /opt/zigbee2mqtt/data/configuration.yaml
+
+```
+
+```yml
+
+# Enable Zigbee2MQTT Web Frontend
+frontend:
+  enabled: true
+  port: 8080
+  host: 0.0.0.0
+```
+
+Restart zigbee2mqtt and verify port
+
+```bash
+sudo systemctl restart zigbee2mqtt.service
+
+sudo systemctl status zigbee2mqtt.service
+
+
+```
+
+Vist frontend
+
+http://192.168.10.212:8080/
+
+We will change to ssl later.
+
+You now have direct web management of your Zigbee network on mira1 right from your Chromebook browser.
+
+
