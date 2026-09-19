@@ -1575,4 +1575,19 @@ Battery Level for button 1
 Grafana Visualization: Create Stat panels or State History visualizations in Grafana to map 1 (single), 2 (double), and 3 (long) to human-readable button press labels.
 
 
+Now we have all we need.
+
+Single click
+
+![single](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/single.png)
+
+Double click
+
+![double](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/double.png)
+
+Long click or press
+
+![long](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/long.png)
+
+
 ### Zigbee2MQTT Web Frontend ssl tbd
