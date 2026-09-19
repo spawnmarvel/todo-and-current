@@ -43,7 +43,7 @@ Manual checks or basic standalone sensor displays lack historical tracking, visu
     - [grafana](#grafana-1)
   - [Zigbee button](#zigbee-button)
     - [Verify button click Data](#verify-button-click-data)
-    - [Enable Frontend Configuration on mira1](#enable-frontend-configuration-on-mira1)
+    - [Enable Zigbee2MQTT Web Frontend1 on mira1](#enable-zigbee2mqtt-web-frontend1-on-mira1)
     - [Capture button click](#capture-button-click)
     - [Prometheus and Grafana](#prometheus-and-grafana)
     - [Get 1 sec high frequency data tbd](#get-1-sec-high-frequency-data-tbd)
@@ -1428,7 +1428,7 @@ Check your journalctl log stream—you should see Zigbee2MQTT register device_jo
 sudo journalctl -u zigbee2mqtt -f --no-pager
 ```
 
-### Enable Frontend Configuration on mira1
+### Enable Zigbee2MQTT Web Frontend1 on mira1
 
 
 To enable the built-in web interface on mira1, open your Zigbee2MQTT configuration file:
