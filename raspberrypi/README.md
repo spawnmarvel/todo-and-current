@@ -46,7 +46,7 @@ Manual checks or basic standalone sensor displays lack historical tracking, visu
     - [Enable Zigbee2MQTT Web Frontend1 on mira1](#enable-zigbee2mqtt-web-frontend1-on-mira1)
     - [Capture button click](#capture-button-click)
     - [Prometheus and Grafana](#prometheus-and-grafana)
-    - [Get 1 sec high frequency data tbd](#get-1-sec-high-frequency-data-tbd)
+    - [Get 1 sec high frequency data](#get-1-sec-high-frequency-data)
     - [Zigbee2MQTT Web Frontend ssl tbd](#zigbee2mqtt-web-frontend-ssl-tbd)
 
 
@@ -1591,7 +1591,7 @@ Long click or press
 ![long](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/long.png)
 
 
-### Get 1 sec high frequency data tbd
+### Get 1 sec high frequency data
 
 By default, Prometheus scrapes targets every 15 seconds (or 5–10 seconds). To capture quick successive button clicks accurately, you need to lower the Prometheus scrape frequency for zigbee_sensors to 1 second.
 
