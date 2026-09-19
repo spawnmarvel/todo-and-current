@@ -1461,4 +1461,12 @@ We will change to ssl later.
 
 You now have direct web management of your Zigbee network on mira1 right from your Chromebook browser.
 
+* Press Permit join (All)" button.
+
+* Press and hold the reset pin/button on the SONOFF SNZB-01P for 5 seconds until the LED indicator starts flashing.
+
+* Verify new device
+
+![frontend zigbee](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/frontend_zigbee.png)
+
 
