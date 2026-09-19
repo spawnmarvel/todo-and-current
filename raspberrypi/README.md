@@ -48,6 +48,7 @@ Manual checks or basic standalone sensor displays lack historical tracking, visu
     - [Prometheus and Grafana](#prometheus-and-grafana)
     - [Get 1 sec high frequency data](#get-1-sec-high-frequency-data)
     - [Zigbee2MQTT Web Frontend ssl tbd](#zigbee2mqtt-web-frontend-ssl-tbd)
+  - [Get a robot](#get-a-robot)
 
 
 
@@ -1698,3 +1699,5 @@ Check stats on mira1, it looks fine.
 
 
 ### Zigbee2MQTT Web Frontend ssl tbd
+
+## Get a robot
