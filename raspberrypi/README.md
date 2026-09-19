@@ -44,6 +44,9 @@ Manual checks or basic standalone sensor displays lack historical tracking, visu
   - [Zigbee button](#zigbee-button)
     - [Verify button click Data](#verify-button-click-data)
     - [Enable Frontend Configuration on mira1](#enable-frontend-configuration-on-mira1)
+    - [Capture button click](#capture-button-click)
+    - [Prometheus and Grafana](#prometheus-and-grafana)
+    - [Zigbee2MQTT Web Frontend ssl tbd](#zigbee2mqtt-web-frontend-ssl-tbd)
 
 
 
@@ -1349,6 +1352,7 @@ metrics:
         single: 1
         double: 2
         hold: 3
+        long: 3
 ```
 
 Restart
@@ -1493,3 +1497,82 @@ The N/A on the plant_sensor1 link quality indicator occurs because it is a batte
 
 ![devices](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/devices.png)
 
+### Capture button click
+
+To listen for real-time button clicks (single, double, hold) published by button_1 on mira1, run this command in your terminal:
+
+
+```bash
+mosquitto_sub -h 127.0.0.1 -p 1883 -v -t "zigbee2mqtt/button_1"
+```
+
+Log
+
+```log
+zigbee2mqtt/button_1 {"action":"single","battery":100,"linkquality":132,"update":{"installed_version":8704,"latest_release_notes":null,"latest_source":null,"latest_version":8704,"state":"idle"},"voltage":3100}
+zigbee2mqtt/button_1 {"action":"double","battery":100,"linkquality":132,"update":{"installed_version":8704,"latest_release_notes":null,"latest_source":null,"latest_version":8704,"state":"idle"},"voltage":3100}
+zigbee2mqtt/button_1 {"action":"long","battery":100,"linkquality":136,"update":{"installed_version":8704,"latest_release_notes":null,"latest_source":null,"latest_version":8704,"state":"idle"},"voltage":3100}
+
+```
+
+● Single Click: zigbee2mqtt/button_1 {"action":"single","battery":100,"linkquality":255}   
+● Double Click: zigbee2mqtt/button_1 {"action":"double","battery":100,"linkquality":255}   
+● Long Press: zigbee2mqtt/button_1 {"action":"hold","battery":100,"linkquality":255}   
+
+
+Verify that mq222promettheus recieves them:
+
+```bash
+curl -s http://localhost:9641/metrics | grep action
+
+```
+
+```log
+url -s http://localhost:9641/metrics | grep action
+# HELP action Zigbee wireless button action state
+# TYPE action gauge
+action{sensor="button_1",topic="zigbee2mqtt/button_1"} 2 1789810824368
+# HELP go_memstats_gc_cpu_fraction The fraction of this program's available CPU time used by the GC since the program started.
+# TYPE go_memstats_gc_cpu_fraction gauge
+go_memstats_gc_cpu_fraction 1.2951037772100298e-05
+``` 
+
+mqtt2prometheus exporter is successfully capturing and formatting the button actions for Prometheus.
+
+
+### Prometheus and Grafana
+
+You can now query this button state directly inside Prometheus or Grafana using PromQL.
+
+Get Current State:
+
+* action{sensor="button_1"}
+
+Detect State Changes (Triggers/Alerts):
+
+* changes(action{sensor="button_1"}[5m])
+
+Filter for Single Press (Value 1):
+
+* action{sensor="button_1"} == 1
+
+Filter for Double Press (Value 2):
+
+* action{sensor="button_1"} == 2
+
+Filter for Long Press (Value 3):
+
+* action{sensor="button_1"} == 3
+
+Signal Strength for a Specific Device:
+
+* linkquality{sensor="button_1"}
+
+Battery Level for button 1
+
+*  battery{sensor="button_1"}
+
+Grafana Visualization: Create Stat panels or State History visualizations in Grafana to map 1 (single), 2 (double), and 3 (long) to human-readable button press labels.
+
+
+### Zigbee2MQTT Web Frontend ssl tbd

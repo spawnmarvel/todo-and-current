@@ -1558,6 +1558,9 @@ sudo journalctl -u grafana-server -n 50 --no-pager
 # (This looks specifically in the /etc folder for configuration files).
 find /etc/ -name "*.conf"
 
+# Search by name (case-insensitive):
+sudo find / -iname mqtt2prometheus.yaml
+
 tail -f /var/log/syslog
 tail -n 20 /var/log/syslog | tee recent_logs.txt
 
