@@ -1595,4 +1595,97 @@ Long click or press
 
 By default, Prometheus scrapes targets every 15 seconds (or 5–10 seconds). To capture quick successive button clicks accurately, you need to lower the Prometheus scrape frequency for zigbee_sensors to 1 second.
 
+```bash
+cat /etc/prometheus/prometheus.yml 
+
+sudo cp prometheus.yml prometheus.yml_bck
+
+```
+
+```yml
+# Sample config for Prometheus.
+
+global:
+  scrape_interval:     15s # Set the scrape interval to every 15 seconds. Default is every 1 minute.
+  evaluation_interval: 15s # Evaluate rules every 15 seconds. The default is every 1 minute.
+  # scrape_timeout is set to the global default (10s).
+
+  # Attach these labels to any time series or alerts when communicating with
+  # external systems (federation, remote storage, Alertmanager).
+  external_labels:
+      monitor: 'example'
+
+# Alertmanager configuration
+alerting:
+  alertmanagers:
+  - static_configs:
+    - targets: ['localhost:9093']
+
+# Load rules once and periodically evaluate them according to the global 'evaluation_interval'.
+rule_files:
+  # - "first_rules.yml"
+  # - "second_rules.yml"
+
+# A scrape configuration containing exactly one endpoint to scrape:
+# Here it's Prometheus itself.
+scrape_configs:
+  # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
+  - job_name: 'prometheus'
+
+    # Override the global default and scrape targets from this job every 5 seconds.
+    scrape_interval: 5s
+    scrape_timeout: 5s
+
+    # metrics_path defaults to '/metrics'
+    # scheme defaults to 'http'.
+
+    static_configs:
+      - targets: ['localhost:9090']
+
+  - job_name: node
+    # If prometheus-node-exporter is installed, grab stats about the local
+    # machine by default.
+    static_configs:
+      - targets: ['localhost:9100']
+  - job_name: 'zigbee_sensors'
+    static_configs:
+      - targets: ['localhost:9641']
+```
+
+Update the zigbee_sensors
+
+```yml
+- job_name: 'zigbee_sensors'
+    scrape_interval: 1s
+    scrape_timeout: 1s
+    static_configs:
+      - targets: ['localhost:9641']
+```
+
+```bash
+sudo systemctl reload prometheus
+
+# Verification: Check that Prometheus picked up the 1s interval by querying its targets API:
+
+curl -s http://localhost:9090/api/v1/targets | grep -A 6 "zigbee_sensors"
+
+```
+
+```log
+curl -s http://localhost:9090/api/v1/targets | grep -A 6 "zigbee_sensors"
+{"status":"success","data":{"activeTargets":[{"discoveredLabels":{"__address__":"localhost:9100","__metrics_path__":"/metrics","__scheme__":"http","__scrape_interval__":"15s","__scrape_timeout__":"10s","job":"node"},"labels":{"instance":"localhost:9100","job":"node"},"scrapePool":"node","scrapeUrl":"http://localhost:9100/metrics","globalUrl":"http://mira1:9100/metrics","lastError":"","lastScrape":"2026-09-19T13:27:12.935962646+02:00","lastScrapeDuration":0.170443407,"health":"up","scrapeInterval":"15s","scrapeTimeout":"10s"},{"discoveredLabels":{"__address__":"localhost:9090","__metrics_path__":"/metrics","__scheme__":"http","__scrape_interval__":"5s","__scrape_timeout__":"5s","job":"prometheus"},"labels":{"instance":"localhost:9090","job":"prometheus"},"scrapePool":"prometheus","scrapeUrl":"http://localhost:9090/metrics","globalUrl":"http://mira1:9090/metrics","lastError":"","lastScrape":"2026-09-19T13:27:20.210733088+02:00","lastScrapeDuration":0.03302694,"health":"up","scrapeInterval":"5s","scrapeTimeout":"5s"},{"discoveredLabels":{"__address__":"localhost:9641","__metrics_path__":"/metrics","__scheme__":"http","__scrape_interval__":"1s","__scrape_timeout__":"1s","job":"zigbee_sensors"},"labels":{"instance":"localhost:9641","job":"zigbee_sensors"},"scrapePool":"zigbee_sensors","scrapeUrl":"http://localhost:9641/metrics","globalUrl":"http://mira1:9641/metrics","lastError":"","lastScrape":"2026-09-19T13:27:21.546126646+02:00","lastScrapeDuration":0.003061734,"health":"up","scrapeInterval":"1s","scrapeTimeout":"1s"}],"droppedTargets":[],"droppedTargetCounts":{"node":0,"prometheus":0,"zigbee_sensors":0}}}
+``` 
+
+Prometheus is now polling mqtt2prometheus every second with minimal overhead, ensuring button clicks are recorded in near real-time.
+
+Test the system in Grafana:   
+
+1. Open your dashboard set to auto-refresh every 1s or 5s.   
+2. Press the button (single, double, or long).   
+3. Verification: The event will appear on your "Press 1, 2 and 3" time series graph and update the "Parsing" text panel almost instantly
+
+
+![hf](https://github.com/spawnmarvel/todo-and-current/blob/main/raspberrypi/images/hf.png)
+
+
 ### Zigbee2MQTT Web Frontend ssl tbd
