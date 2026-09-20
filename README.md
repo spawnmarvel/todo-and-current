@@ -447,6 +447,7 @@ $${\color{lightblue}This \ is \ fun}$$
 
 $${\color{orange}This \ is \ important}$$
 
+---
 
 #### RabbitMQ Mtls and minimal PKI :potted_plant:
 
