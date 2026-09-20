@@ -42,8 +42,8 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
     - [Misc Python small projects btw, Mosquitto is in Python folder :massage:](#misc-python-small-projects-btw-mosquitto-is-in-python-folder-massage)
     - [Misc: MS learn, AZ-104 extended :wave:](#misc-ms-learn-az-104-extended-wave)
   - [Backlog](#backlog)
-    - [AP22 master drill ⭐ (work use it)](#ap22-master-drill--work-use-it)
-    - [Octopus Deploy for Linux (CI/CD) ⭐ (work use it)](#octopus-deploy-for-linux-cicd--work-use-it)
+    - [AP22 master drill (work use it)](#ap22-master-drill-work-use-it)
+    - [Octopus Deploy for Linux (CI/CD) (work use it)](#octopus-deploy-for-linux-cicd-work-use-it)
     - [Grafana, Loki, and Alloy Agents ⭐](#grafana-loki-and-alloy-agents-)
   - [Knowledge Maintenance Checklist](#knowledge-maintenance-checklist)
     - [1. Linux Continous](#1-linux-continous)
@@ -52,7 +52,7 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
     - [4. Octopus Deploy Continous](#4-octopus-deploy-continous)
     - [5. AZ-104: Azure Administrator Continous](#5-az-104-azure-administrator-continous)
   - [Parked Projects or Completed Projects](#parked-projects-or-completed-projects)
-    - [0. Windows Server Hybrid Administrator (vmhybrid01) ⭐ (is gone)](#0-windows-server-hybrid-administrator-vmhybrid01--is-gone)
+    - [0. Windows Server Hybrid Administrator (vmhybrid01) (is gone)](#0-windows-server-hybrid-administrator-vmhybrid01-is-gone)
     - [1. Docker \& Azure](#1-docker--azure)
     - [2. Docker Stack](#2-docker-stack)
     - [3. Python Maintenance (Parked)](#3-python-maintenance-parked)
@@ -451,7 +451,7 @@ shuhari
 
 ## Backlog
 
-### AP22 master drill ⭐ (work use it)
+### AP22 master drill (work use it)
 
 - 🔄 Windows updates manually, Edit NSG from deny to allow until updates are downloaded on server. 
 - 🔄 NSG outbund deny internet any, any, any
@@ -459,7 +459,7 @@ shuhari
 [ap22 repos](https://github.com/spawnmarvel/ap22)
 
 
-### Octopus Deploy for Linux (CI/CD) ⭐ (work use it)
+### Octopus Deploy for Linux (CI/CD) (work use it)
 
 **Setup:**
 - ✅ Use IAC Linux VM for fast deploy and remove to smoke test
@@ -588,7 +588,7 @@ shuhari
 <details>
 <summary>Show / hide</summary>
 
-### 0. Windows Server Hybrid Administrator (vmhybrid01) ⭐ (is gone)
+### 0. Windows Server Hybrid Administrator (vmhybrid01) (is gone)
 
 
 **In Progress:**
