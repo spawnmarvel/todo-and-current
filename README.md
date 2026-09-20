@@ -39,8 +39,8 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
     - [2. Learn the ways of Linux-fu-yoda, for free :star:](#2-learn-the-ways-of-linux-fu-yoda-for-free-star)
     - [3. MySQL database devloper and Az MySql :star:](#3-mysql-database-devloper-and-az-mysql-star)
     - [Misc Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun :potted\_plant:](#misc-raspberry-pi-iot-sensor-mqtt-grafana-linux-and-fun-potted_plant)
-    - [Misc Python small projects btw, Mosquitto is in Python folder :potted\_plant:](#misc-python-small-projects-btw-mosquitto-is-in-python-folder-potted_plant)
-    - [Misc: MS learn, AZ-104 extended :potted\_plant:](#misc-ms-learn-az-104-extended-potted_plant)
+      - [Misc Python small projects btw, Mosquitto is in Python folder :potted\_plant:](#misc-python-small-projects-btw-mosquitto-is-in-python-folder-potted_plant)
+      - [Misc: MS learn, AZ-104 extended :potted\_plant:](#misc-ms-learn-az-104-extended-potted_plant)
   - [Backlog](#backlog)
     - [AP22 master drill (work use it)](#ap22-master-drill-work-use-it)
     - [Octopus Deploy for Linux (CI/CD) (work use it)](#octopus-deploy-for-linux-cicd-work-use-it)
@@ -420,7 +420,7 @@ $${\color{lightblue}This \ is \ fun}$$
 
 ---
 
-### Misc Python small projects btw, Mosquitto is in Python folder :potted_plant:
+#### Misc Python small projects btw, Mosquitto is in Python folder :potted_plant:
 
 - 📚 MQTT, Iot, monitoring, zabbix agents etc.
 - 📚 See folder Python
@@ -429,7 +429,7 @@ $${\color{lightblue}This \ is \ fun}$$
 
 ---
 
-### Misc: MS learn, AZ-104 extended :potted_plant:
+#### Misc: MS learn, AZ-104 extended :potted_plant:
 
 - 📚 MS AZ-104 extended
 - 📚 Azure DO NOT build things in the portal, use cli and ps1
