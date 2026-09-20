@@ -49,6 +49,11 @@ Manual checks or basic standalone sensor displays lack historical tracking, visu
     - [Get 1 sec high frequency data](#get-1-sec-high-frequency-data)
     - [Zigbee2MQTT Web Frontend ssl tbd](#zigbee2mqtt-web-frontend-ssl-tbd)
   - [Get a robot](#get-a-robot)
+  - [An interactive photo album while we wait](#an-interactive-photo-album-while-we-wait)
+    - [Step 1: Create Image Folder \& Sample Images](#step-1-create-image-folder--sample-images)
+    - [Step 2: Create the Python MQTT Photo Viewer Script](#step-2-create-the-python-mqtt-photo-viewer-script)
+      - [Step 3: Run \& Test the Setup](#step-3-run--test-the-setup)
+      - [Upload photos and systemd background service.](#upload-photos-and-systemd-background-service)
 
 
 
@@ -1701,3 +1706,110 @@ Check stats on mira1, it looks fine.
 ### Zigbee2MQTT Web Frontend ssl tbd
 
 ## Get a robot
+
+## An interactive photo album while we wait
+
+An interactive photo album is a fantastic project for mira1. Using a lightweight Python script running on mira1, we listen to incoming MQTT button events from button_1 and control a local fullscreen image viewer (or web-based viewer).
+
+Test
+
+* Cable Requirement: Use a Micro-HDMI to HDMI cable (or adapter) plugged into the primary HDMI port (HDMI 0, closest to the USB-C power inlet).
+
+```bash
+ssh 
+scp vms.png chilliman@192.168.10.212://home/chilliman/Desktop
+
+# Running the Viewer on LG 55-inch TV
+sudo apt update && sudo apt install -y feh
+
+# When a button click arrives, we send a keypress signal (n for next image, 1 or Home to restart) directly to the running feh window using xdotool. 
+# This eliminates process recreation completely, resulting in instant, flicker-free image transitions.
+sudo apt update && sudo apt install -y xdotool
+
+# display it
+# -F: Forces full screen mode (hides window borders and panels).
+# -Z: Auto-zoom / auto-fits the image to fill the screen while preserving aspect ratio.
+# --hide-pointer: Hides the mouse cursor completely so it doesn't hover over your picture.
+DISPLAY=:0 feh -F -Z --hide-pointer /home/chilliman/Desktop/vms.png
+
+# End image showing
+# Type ctrl + c
+
+# Close current image / return to desktop:
+pkill feh
+``` 
+
+Picture is diplayed on LG 55 TV with success.
+
+Now we start to build the interactive photo album.
+
+
+### Step 1: Create Image Folder & Sample Images
+
+```bash
+ssh mira
+mkdir -p /home/chilliman/photo_album
+
+
+ssh cbook
+scp move_2/* chilliman@192.168.10.212://home/chilliman/photo_album
+``` 
+
+### Step 2: Create the Python MQTT Photo Viewer Script
+
+
+This script uses paho-mqtt to listen for button events on zigbee2mqtt/button_1 and launches feh in full-screen mode on your TV screen (DISPLAY=:0).
+
+```bash
+sudo nano /usr/local/bin/tv_photo_album.py
+
+# install python mqtt
+sudo apt update && sudo apt install -y python3-paho-mqtt
+```
+
+Script
+
+run_photo_album.py
+
+#### Step 3: Run & Test the Setup
+
+
+```bash
+python3 /usr/local/bin/tv_photo_album.py
+
+# edit it
+sudo nano /usr/local/bin/tv_photo_album.py 
+
+```
+
+Verification: The script will connect to Mosquitto and display the first image from /home/chilliman/photo_album on the TV screen. 
+
+1. Press the button single for next, 
+2. double to restart from the beginning to verify.
+
+
+```log
+[Photo Album] Started feh with 4 images from /home/chilliman/photo_album
+[Photo Album] Currently displaying: boat.png (Index 1/4)
+[MQTT] Connected to broker (reason code Success). Subscribing to zigbee2mqtt/button_1...
+[MQTT] Button action received: single
+[Photo Album] Single click -> Displaying: cafe.png (Index 2/4)
+[MQTT] Button action received: single
+[Photo Album] Single click -> Displaying: relax.png (Index 3/4)
+[MQTT] Button action received: single
+[Photo Album] Single click -> Displaying: sun.png (Index 4/4)
+[MQTT] Button action received: single
+[Photo Album] Single click -> Displaying: boat.png (Index 1/4)
+[MQTT] Button action received: single
+[Photo Album] Single click -> Displaying: cafe.png (Index 2/4)
+[MQTT] Button action received: single
+[Photo Album] Single click -> Displaying: relax.png (Index 3/4)
+[MQTT] Button action received: single
+[Photo Album] Single click -> Displaying: sun.png (Index 4/4)
+[MQTT] Button action received: double
+[Photo Album] Double click -> Resetting to: boat.png (Index 1/4)
+```
+
+#### Upload photos and systemd background service.
+
+Now that your script /usr/local/bin/tv_photo_album.py correctly logs filenames and controls feh via xdotool with zero screen flicker, we will register it as a systemd background service.
