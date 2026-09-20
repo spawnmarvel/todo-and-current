@@ -55,6 +55,7 @@ Manual checks or basic standalone sensor displays lack historical tracking, visu
       - [Step 3: Run \& Test the Setup](#step-3-run--test-the-setup)
       - [USB drive with photos](#usb-drive-with-photos)
         - [systemd background service.](#systemd-background-service)
+        - [Upload new photos](#upload-new-photos)
 
 
 
@@ -1862,3 +1863,70 @@ Photo Album] Started feh with 97 images from USB (/media/chilliman/UBUNTU 24_0)
 ##### systemd background service.
 
 Now that your script /usr/local/bin/tv_photo_album.py correctly logs filenames and controls feh via xdotool with zero screen flicker, we will register it as a systemd background service.
+
+```bash
+sudo nano /etc/systemd/system/tv-photo-album.service
+``` 
+
+The service:
+
+```ini
+# Version: 1.1.0
+# Purpose: Interactive TV photo album background daemon reading from USB on mira1.
+
+[Unit]
+Description=Interactive TV Photo Album via MQTT
+After=network.target mosquitto.service zigbee2mqtt.service graphical.target media-chilliman-UBUNTU\x2024_0.mount
+
+[Service]
+Type=simple
+User=chilliman
+Environment=DISPLAY=:0
+ExecStart=/usr/bin/python3 /usr/local/bin/tv_photo_album_usb.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=graphical.target
+``` 
+
+Reload systemd to pick up the new unit file, then enable and start the service:
+
+```bash
+sudo systemctl daemon-reload
+sudo systemctl enable --now tv-photo-album.service
+
+sudo systemctl status --now tv-photo-album.service 
+● tv-photo-album.service - Interactive TV Photo Album via MQTT
+     Loaded: loaded (/etc/systemd/system/tv-photo-album.service; enabled; preset: enabled)
+     Active: active (running) since Sun 2026-09-20 22:27:09 CEST; 6s ago
+
+# check it
+sudo systemctl status tv-photo-album.service --no-pager
+
+```
+
+##### Upload new photos
+
+You can safely unplug the USB memory stick, take it to your PC or laptop, add all the new photos you want into it, plug it back into mira1, and restart the service.
+
+Before pulling the USB drive out of mira1, safely stop the running service and unmount the filesystem to prevent file corruption:
+
+```bash
+
+sudo systemctl stop tv-photo-album.service
+sudo umount "/media/chilliman/UBUNTU 24_0"
+```
+
+Plug the USB memory stick back into mira1.
+
+Wait 3–5 seconds for Ubuntu's auto-mounter to make it available at /media/chilliman/UBUNTU 24_0.
+
+Restart the photo album service:
+
+```bash
+sudo systemctl restart tv-photo-album.service
+
+# Check the journal logs to verify feh loaded your updated total photo count:
+sudo journalctl -u tv-photo-album.service -n 10 --no-pager
+```
