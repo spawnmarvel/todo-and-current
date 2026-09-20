@@ -42,6 +42,7 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
       - [Misc Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun :potted\_plant:](#misc-raspberry-pi-iot-sensor-mqtt-grafana-linux-and-fun-potted_plant)
       - [Misc Python small projects btw, Mosquitto is in Python folder :potted\_plant:](#misc-python-small-projects-btw-mosquitto-is-in-python-folder-potted_plant)
       - [Misc: MS learn, AZ-104 extended :potted\_plant:](#misc-ms-learn-az-104-extended-potted_plant)
+      - [RabbitMQ Mtls](#rabbitmq-mtls)
   - [Backlog](#backlog)
     - [AP22 master drill (work use it)](#ap22-master-drill-work-use-it)
     - [Octopus Deploy for Linux (CI/CD) (work use it)](#octopus-deploy-for-linux-cicd-work-use-it)
@@ -445,6 +446,12 @@ $${\color{lightblue}This \ is \ fun}$$
 - [Exam guide github nr 1](https://github.com/spawnmarvel/quickguides/tree/main/azure)
 
 $${\color{orange}This \ is \ important}$$
+
+
+#### RabbitMQ Mtls
+
+- ✅ [AMQP Shovel MTLS with RFC-6125](https://github.com/spawnmarvel/quickguides/blob/main/amqp/ReadmeNutshell.md)
+- ✅ [Certificate Requests and Renewals for AMQP/mTLS](https://github.com/spawnmarvel/quickguides/blob/main/amqp/RequestRenewExample/README.md)
 
 ---
 
