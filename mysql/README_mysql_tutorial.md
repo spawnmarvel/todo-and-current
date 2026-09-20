@@ -16,10 +16,13 @@ https://www.mysqltutorial.org/
   - [9. Mysql Data types](#9-mysql-data-types)
   - [10. Mysql Globalization](#10-mysql-globalization)
   - [11. Mysql import and export](#11-mysql-import-and-export)
-  - [MySQL Server Administration](#mysql-server-administration)
-  - [Security](#security)
-  - [Backup and Recovery](#backup-and-recovery)
-  - [Optimization](#optimization)
+  - [12 Advanced Querying (Filtering, Joins, Aggregations)](#12-advanced-querying-filtering-joins-aggregations)
+  - [13 CTEs and Window Functions](#13-ctes-and-window-functions)
+  - [14 Views, Stored Procedures, and Triggers](#14-views-stored-procedures-and-triggers)
+  - [15 MySQL Server Administration](#15-mysql-server-administration)
+  - [16 Security](#16-security)
+  - [17 Backup and Recovery](#17-backup-and-recovery)
+  - [18 Optimization](#18-optimization)
 
 
 ## 1. Load the Sample Database into MySQL Server
@@ -137,7 +140,8 @@ https://www.mysqltutorial.org/mysql-basics/mysql-select-from/
 ## 3. Managing databases
 
 https://www.mysqltutorial.org/mysql-basics/selecting-a-mysql-database-using-use-statement/
-+
+
+
 ## 4. Managing tables
 
 https://www.mysqltutorial.org/mysql-basics/mysql-create-table/
@@ -170,12 +174,31 @@ https://www.mysqltutorial.org/mysql-basics/mysql-character-set/
 
 https://www.mysqltutorial.org/mysql-basics/import-csv-file-mysql-table/
 
-## MySQL Server Administration
+## 12 Advanced Querying (Filtering, Joins, Aggregations)
+
+https://scientifictools.org/courses/entry/26-advanced-filtering-in-mysql-guide-and-examples/
+
+## 13 CTEs and Window Functions
+
+https://dev.mysql.com/doc/refman/9.7/en/with.html
+
+## 14 Views, Stored Procedures, and Triggers
+
+https://dev.mysql.com/doc/refman/8.4/en/stored-objects.html
+
+## 15 MySQL Server Administration
 
 https://dev.mysql.com/doc/refman/8.0/en/server-administration.html
 
-## Security
 
-## Backup and Recovery
+## 16 Security
 
-## Optimization
+https://dev.mysql.com/doc/refman/9.7/en/security.html
+
+## 17 Backup and Recovery
+
+https://dev.mysql.com/doc/refman/9.7/en/backup-and-recovery.html
+
+## 18 Optimization
+
+https://dev.mysql.com/doc/refman/9.7/en/optimization.html
