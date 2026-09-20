@@ -454,6 +454,8 @@ $${\color{orange}This \ is \ important}$$
 - ✅ [Certificate Requests and Renewals for AMQP/mTLS](https://github.com/spawnmarvel/quickguides/blob/main/amqp/RequestRenewExample/README.md)
 - ✅  [Minimal PKI](https://github.com/spawnmarvel/todo-and-current/blob/main/pki_store/pki_store_minmal_root_and_server_cert_client_server_auth/README.md)
 
+$${\color{lightblue}This \ is \ fun}$$
+
 ---
 
 shuhari
