@@ -53,7 +53,8 @@ Manual checks or basic standalone sensor displays lack historical tracking, visu
     - [Step 1: Create Image Folder \& Sample Images](#step-1-create-image-folder--sample-images)
     - [Step 2: Create the Python MQTT Photo Viewer Script](#step-2-create-the-python-mqtt-photo-viewer-script)
       - [Step 3: Run \& Test the Setup](#step-3-run--test-the-setup)
-      - [Upload photos and systemd background service.](#upload-photos-and-systemd-background-service)
+      - [USB drive with photos](#usb-drive-with-photos)
+        - [systemd background service.](#systemd-background-service)
 
 
 
@@ -1810,6 +1811,54 @@ Verification: The script will connect to Mosquitto and display the first image f
 [Photo Album] Double click -> Resetting to: boat.png (Index 1/4)
 ```
 
-#### Upload photos and systemd background service.
+#### USB drive with photos
+
+
+```bash
+lsblk
+
+# USB drive (sda1) is mounted at:
+/media/chilliman/UBUNTU 24_0
+``` 
+
+To read photos directly from the memory stick, update the PHOTO_DIR variable and add dynamic directory scanning so subfolders or space-containing mount paths work seamlessly.
+
+make run_photo_album_usb.py
+
+```bash
+
+sudo nano /usr/local/bin/tv_photo_album_usb.py
+sudo chmod +x /usr/local/bin/tv_photo_album_usb.py
+
+# ensure permission is correct
+ls -l /usr/local/bin/tv_photo_album_usb.py
+
+# run the python script
+python3 /usr/local/bin/tv_photo_album_usb.py
+
+```
+
+Log
+
+```log
+Photo Album] Started feh with 97 images from USB (/media/chilliman/UBUNTU 24_0)
+[Photo Album] Currently displaying: 19120925_746221955560596_1742740296690565120_n_17859158779184396.jpg (Index 1/97)
+[MQTT] Connected to broker (reason code Success). Subscribing to zigbee2mqtt/button_1...
+[MQTT] Button action received: single
+[Photo Album] Single click -> Displaying: 20180526_231116.jpg (Index 2/97)
+[MQTT] Button action received: single
+[Photo Album] Single click -> Displaying: 20191006_155703.jpg (Index 3/97)
+[MQTT] Button action received: single
+[Photo Album] Single click -> Displaying: 20191006_155706.jpg (Index 4/97)
+[MQTT] Button action received: single
+[Photo Album] Single click -> Displaying: 20191006_155708.jpg (Index 5/97)
+[MQTT] Button action received: single
+[Photo Album] Single click -> Displaying: 20191006_155709.jpg (Index 6/97)
+[MQTT] Button action received: single
+[Photo Album] Single click -> Displaying: 20191006_155713.jpg (Index 7/97)
+```
+
+
+##### systemd background service.
 
 Now that your script /usr/local/bin/tv_photo_album.py correctly logs filenames and controls feh via xdotool with zero screen flicker, we will register it as a systemd background service.
