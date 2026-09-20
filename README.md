@@ -37,7 +37,7 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
   - [Current Priorities: TOP 2 but 1 at the time](#current-priorities-top-2-but-1-at-the-time)
     - [1. Zabbix default :star:](#1-zabbix-default-star)
     - [2. Learn the ways of Linux-fu-yoda, for free :star:](#2-learn-the-ways-of-linux-fu-yoda-for-free-star)
-    - [3. MySQL database devloper and Az MySql :star:](#3-mysql-database-devloper-and-az-mysql-star)
+    - [3. MySQL database developer and Az MySql :star:](#3-mysql-database-developer-and-az-mysql-star)
     - [Misc](#misc)
       - [Misc Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun :potted\_plant:](#misc-raspberry-pi-iot-sensor-mqtt-grafana-linux-and-fun-potted_plant)
       - [Misc Python small projects btw, Mosquitto is in Python folder :potted\_plant:](#misc-python-small-projects-btw-mosquitto-is-in-python-folder-potted_plant)
@@ -400,7 +400,7 @@ $${\color{green}This \ is \ power}$$
 
 --- 
 
-### 3. MySQL database devloper and Az MySql :star:
+### 3. MySQL database developer and Az MySql :star:
 
 - 📚 Do all MS learn for MySQL
 - 📚 https://learn.microsoft.com/en-us/training/browse/?terms=mysql&source=learn
