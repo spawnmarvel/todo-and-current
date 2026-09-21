@@ -38,8 +38,8 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
     - [1. Zabbix default :star:](#1-zabbix-default-star)
     - [2. Learn the ways of Linux-fu-yoda, for free :star:](#2-learn-the-ways-of-linux-fu-yoda-for-free-star)
     - [3. MySQL database developer and Az MySql :star:](#3-mysql-database-developer-and-az-mysql-star)
+    - [Python small projects btw, Mosquitto is in Python folder :potted\_plant:](#python-small-projects-btw-mosquitto-is-in-python-folder-potted_plant)
     - [Misc](#misc)
-      - [Misc Python small projects btw, Mosquitto is in Python folder :potted\_plant:](#misc-python-small-projects-btw-mosquitto-is-in-python-folder-potted_plant)
       - [Misc Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun :bug:](#misc-raspberry-pi-iot-sensor-mqtt-grafana-linux-and-fun-bug)
       - [Misc: MS learn, AZ-104 extended :bug:](#misc-ms-learn-az-104-extended-bug)
       - [RabbitMQ Mtls and minimal PKI :monkey:](#rabbitmq-mtls-and-minimal-pki-monkey)
@@ -412,16 +412,18 @@ $${\color{green}This \ is \ power}$$
 
 ---
 
-### Misc
-
-#### Misc Python small projects btw, Mosquitto is in Python folder :potted_plant:
+### Python small projects btw, Mosquitto is in Python folder :potted_plant:
 
 - 📚 MQTT, Iot, monitoring, zabbix agents etc.
 - 📚 See folder Python
+- 📚 Try to use built in standard lib
 
 $${\color{lightblue}This \ is \ fun}$$
 
 ---
+
+### Misc
+
 
 #### Misc Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun :bug:
 
