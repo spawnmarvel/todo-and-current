@@ -39,10 +39,10 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
     - [2. Learn the ways of Linux-fu-yoda, for free :star:](#2-learn-the-ways-of-linux-fu-yoda-for-free-star)
     - [3. MySQL database developer and Az MySql :star:](#3-mysql-database-developer-and-az-mysql-star)
     - [Misc](#misc)
-      - [Misc Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun :potted\_plant:](#misc-raspberry-pi-iot-sensor-mqtt-grafana-linux-and-fun-potted_plant)
       - [Misc Python small projects btw, Mosquitto is in Python folder :potted\_plant:](#misc-python-small-projects-btw-mosquitto-is-in-python-folder-potted_plant)
-      - [Misc: MS learn, AZ-104 extended :potted\_plant:](#misc-ms-learn-az-104-extended-potted_plant)
-      - [RabbitMQ Mtls and minimal PKI :potted\_plant:](#rabbitmq-mtls-and-minimal-pki-potted_plant)
+      - [Misc Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun :bug:](#misc-raspberry-pi-iot-sensor-mqtt-grafana-linux-and-fun-bug)
+      - [Misc: MS learn, AZ-104 extended :bug:](#misc-ms-learn-az-104-extended-bug)
+      - [RabbitMQ Mtls and minimal PKI :monkey:](#rabbitmq-mtls-and-minimal-pki-monkey)
   - [Backlog](#backlog)
     - [AP22 master drill (work use it)](#ap22-master-drill-work-use-it)
     - [Octopus Deploy for Linux (CI/CD) (work use it)](#octopus-deploy-for-linux-cicd-work-use-it)
@@ -414,16 +414,6 @@ $${\color{green}This \ is \ power}$$
 
 ### Misc
 
-#### Misc Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun :potted_plant:
-
-- 📚 Learn IOT and play with sensors
-- 📚 Use MQTT, Python and Mosquitto broker
-- 📚 [Raspberry Pi 4 docs](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/)
-
-$${\color{lightblue}This \ is \ fun}$$
-
----
-
 #### Misc Python small projects btw, Mosquitto is in Python folder :potted_plant:
 
 - 📚 MQTT, Iot, monitoring, zabbix agents etc.
@@ -433,7 +423,17 @@ $${\color{lightblue}This \ is \ fun}$$
 
 ---
 
-#### Misc: MS learn, AZ-104 extended :potted_plant:
+#### Misc Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun :bug:
+
+- 📚 Learn IOT and play with sensors
+- 📚 Use MQTT, Python and Mosquitto broker
+- 📚 [Raspberry Pi 4 docs](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/)
+
+$${\color{lightblue}This \ is \ fun}$$
+
+---
+
+#### Misc: MS learn, AZ-104 extended :bug:
 
 - 📚 MS AZ-104 extended
 - 📚 Azure DO NOT build things in the portal, use cli and ps1
@@ -449,7 +449,7 @@ $${\color{orange}This \ is \ important}$$
 
 ---
 
-#### RabbitMQ Mtls and minimal PKI :potted_plant:
+#### RabbitMQ Mtls and minimal PKI :monkey:
 
 - ✅ [AMQP Shovel MTLS with RFC-6125](https://github.com/spawnmarvel/quickguides/blob/main/amqp/ReadmeNutshell.md)
 - ✅ [Certificate Requests and Renewals for AMQP/mTLS](https://github.com/spawnmarvel/quickguides/blob/main/amqp/RequestRenewExample/README.md)
