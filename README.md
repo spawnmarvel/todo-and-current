@@ -38,7 +38,7 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
     - [1. Zabbix default :star:](#1-zabbix-default-star)
     - [2. Learn the ways of Linux-fu-yoda, for free :star:](#2-learn-the-ways-of-linux-fu-yoda-for-free-star)
     - [3. MySQL database developer and Az MySql :star:](#3-mysql-database-developer-and-az-mysql-star)
-    - [Python small projects btw, Mosquitto is in Python folder :potted\_plant:](#python-small-projects-btw-mosquitto-is-in-python-folder-potted_plant)
+    - [4. Python small projects btw, Mosquitto is in Python folder :potted\_plant:](#4-python-small-projects-btw-mosquitto-is-in-python-folder-potted_plant)
     - [Misc](#misc)
       - [Misc Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun :bug:](#misc-raspberry-pi-iot-sensor-mqtt-grafana-linux-and-fun-bug)
       - [Misc: MS learn, AZ-104 extended :bug:](#misc-ms-learn-az-104-extended-bug)
@@ -412,7 +412,7 @@ $${\color{green}This \ is \ power}$$
 
 ---
 
-### Python small projects btw, Mosquitto is in Python folder :potted_plant:
+### 4. Python small projects btw, Mosquitto is in Python folder :potted_plant:
 
 - 📚 MQTT, Iot, monitoring, zabbix agents etc.
 - 📚 See folder Python
