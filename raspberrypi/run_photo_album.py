@@ -19,6 +19,7 @@ feh_process = None
 images_list = []
 current_index = 0
 
+
 def get_images():
     extensions = ("*.jpg", "*.jpeg", "*.png", "*.JPG", "*.PNG")
     images = []
@@ -26,6 +27,7 @@ def get_images():
         images.extend(glob.glob(os.path.join(PHOTO_DIR, ext)))
     images.sort()
     return images
+
 
 def start_feh_slideshow():
     global feh_process, images_list, current_index
@@ -45,13 +47,16 @@ def start_feh_slideshow():
         "--hide-pointer",  # Hide mouse pointer
         "--slideshow-delay", "99999"  # Pause automatic progression
     ] + images_list
-    
+
     env = os.environ.copy()
     env["DISPLAY"] = ":0"
-    
+
     feh_process = subprocess.Popen(cmd, env=env)
-    print(f"[Photo Album] Started feh with {len(images_list)} images from {PHOTO_DIR}")
-    print(f"[Photo Album] Currently displaying: {first_image} (Index {current_index + 1}/{len(images_list)})")
+    print(
+        f"[Photo Album] Started feh with {len(images_list)} images from {PHOTO_DIR}")
+    print(
+        f"[Photo Album] Currently displaying: {first_image} (Index {current_index + 1}/{len(images_list)})")
+
 
 def handle_action(action):
     global current_index, images_list
@@ -64,18 +69,25 @@ def handle_action(action):
     if action == "single":
         current_index = (current_index + 1) % len(images_list)
         image_name = os.path.basename(images_list[current_index])
-        print(f"[Photo Album] Single click -> Displaying: {image_name} (Index {current_index + 1}/{len(images_list)})")
-        subprocess.run(["xdotool", "search", "--onlyvisible", "--class", "feh", "key", "n"], env=env)
+        print(
+            f"[Photo Album] Single click -> Displaying: {image_name} (Index {current_index + 1}/{len(images_list)})")
+        subprocess.run(["xdotool", "search", "--onlyvisible",
+                       "--class", "feh", "key", "n"], env=env)
 
     elif action == "double":
         current_index = 0
         image_name = os.path.basename(images_list[current_index])
-        print(f"[Photo Album] Double click -> Resetting to: {image_name} (Index 1/{len(images_list)})")
-        subprocess.run(["xdotool", "search", "--onlyvisible", "--class", "feh", "key", "Home"], env=env)
+        print(
+            f"[Photo Album] Double click -> Resetting to: {image_name} (Index 1/{len(images_list)})")
+        subprocess.run(["xdotool", "search", "--onlyvisible",
+                       "--class", "feh", "key", "Home"], env=env)
+
 
 def on_connect(client, userdata, flags, reason_code, properties):
-    print(f"[MQTT] Connected to broker (reason code {reason_code}). Subscribing to {TOPIC}...")
+    print(
+        f"[MQTT] Connected to broker (reason code {reason_code}). Subscribing to {TOPIC}...")
     client.subscribe(TOPIC)
+
 
 def on_message(client, userdata, msg):
     try:
@@ -86,6 +98,7 @@ def on_message(client, userdata, msg):
             handle_action(action)
     except Exception as e:
         print(f"[MQTT] Error parsing message: {e}")
+
 
 if __name__ == "__main__":
     start_feh_slideshow()
