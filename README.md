@@ -34,7 +34,7 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
     - [Azure VM Operations](#azure-vm-operations)
     - [AD DS Configuration (vmhybrid01)](#ad-ds-configuration-vmhybrid01)
   - [Fast Linux VM Deployment IAC](#fast-linux-vm-deployment-iac)
-  - [Current Priorities: TOP 2 but 1 at the time](#current-priorities-top-2-but-1-at-the-time)
+  - [Current Priorities: TOP 4 but 1 at the time](#current-priorities-top-4-but-1-at-the-time)
     - [1. Zabbix default :star:](#1-zabbix-default-star)
     - [2. Learn the ways of Linux-fu-yoda, for free :star: :potted\_plant:](#2-learn-the-ways-of-linux-fu-yoda-for-free-star-potted_plant)
     - [3. MySQL database developer and Az MySql :star:](#3-mysql-database-developer-and-az-mysql-star)
@@ -356,7 +356,7 @@ Install Zabbix agent 2 Linux
 
 ---
 
-## Current Priorities: TOP 2 but 1 at the time
+## Current Priorities: TOP 4 but 1 at the time
 
 ### 1. Zabbix default :star:
 
