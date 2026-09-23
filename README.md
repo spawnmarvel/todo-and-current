@@ -36,7 +36,7 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
   - [Fast Linux VM Deployment IAC](#fast-linux-vm-deployment-iac)
   - [Current Priorities: TOP 2 but 1 at the time](#current-priorities-top-2-but-1-at-the-time)
     - [1. Zabbix default :star:](#1-zabbix-default-star)
-    - [2. Learn the ways of Linux-fu-yoda, for free :star:](#2-learn-the-ways-of-linux-fu-yoda-for-free-star)
+    - [2. Learn the ways of Linux-fu-yoda, for free :star: :potted\_plant:](#2-learn-the-ways-of-linux-fu-yoda-for-free-star-potted_plant)
     - [3. MySQL database developer and Az MySql :star:](#3-mysql-database-developer-and-az-mysql-star)
     - [4. Python small projects / games az static web apps :potted\_plant:](#4-python-small-projects--games-az-static-web-apps-potted_plant)
     - [Misc](#misc)
@@ -385,7 +385,7 @@ $${\color{orange}This \ is \ important}$$
 
 ---
 
-### 2. Learn the ways of Linux-fu-yoda, for free :star:
+### 2. Learn the ways of Linux-fu-yoda, for free :star: :potted_plant:
 
 - 📚 3 questions and 3 answers [Linux-fu](https://github.com/spawnmarvel/todo-and-current/blob/main/bash_linux_fu/readme.md)
 
