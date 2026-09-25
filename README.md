@@ -38,7 +38,7 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
     - [1. Zabbix default :star:](#1-zabbix-default-star)
     - [2. Learn the ways of Linux-fu-yoda, for free :star: :potted\_plant:](#2-learn-the-ways-of-linux-fu-yoda-for-free-star-potted_plant)
     - [3. MySQL database developer and Az MySql :star:](#3-mysql-database-developer-and-az-mysql-star)
-    - [4. Python small projects / games az static web apps :potted\_plant:](#4-python-small-projects--games-az-static-web-apps-potted_plant)
+    - [4. Python small projects two-in-onw :potted\_plant:](#4-python-small-projects-two-in-onw-potted_plant)
     - [Misc](#misc)
       - [Misc Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun :bug:](#misc-raspberry-pi-iot-sensor-mqtt-grafana-linux-and-fun-bug)
       - [Misc: MS learn, AZ-104 extended :bug:](#misc-ms-learn-az-104-extended-bug)
@@ -412,11 +412,15 @@ $${\color{green}This \ is \ power}$$
 
 ---
 
-### 4. Python small projects / games az static web apps :potted_plant:
+### 4. Python small projects two-in-onw :potted_plant:
 
-- 📚 Azure Static Web Apps (Recommended & Free) folder \python_game
-- 📚 MQTT, Iot, monitoring, zabbix agents etc. folder \python
 - 📚 Try to use built in standard lib
+- 📚 Python and sqlite is 2-in-1 
+- 📚 Azure Static Web Apps (Recommended & Free) folder \python_game
+- 📚 MQTT
+- 📚 Monitoring
+- 📚 Zabbix lib and make templates maps Zabbix API
+
 
 $${\color{lightblue}This \ is \ fun}$$
 
