@@ -33,6 +33,10 @@ zabbix, documentation for requirments, toplogy's, testing, patching, fixing cve'
 
 After work and fun with no pressure: Linux, Azure, mysql, openssl, security, zabbix, loki, bash, github, mqtt, python.
 
+Not sure what to focus on next, need to focus on some skils, like linux and security in general and x.509.
+
+What courses from microsoft or other should i focus on?
+
 
 ## 1. Learning anything in 20 HOURS
 
