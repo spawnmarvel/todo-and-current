@@ -6,11 +6,11 @@
 - [Python quick guide](#python-quick-guide)
   - [Table of content](#table-of-content)
   - [The Python Standard Library](#the-python-standard-library)
-  - [Version, pip and eol](#version-pip-and-eol)
+  - [Install, pip, verify and eol](#install-pip-verify-and-eol)
   - [Virtual env](#virtual-env)
   - [PEP 8 – Style Guide for Python Code](#pep-8--style-guide-for-python-code)
   - [Logging](#logging)
-  - [Minimal boilerplate](#minimal-boilerplate)
+  - [Minimal boilerplate 3.14.7](#minimal-boilerplate-3147)
   - [Self-contained executable](#self-contained-executable)
 
 
@@ -21,26 +21,64 @@
 
 https://docs.python.org/3/library/index.html
 
-## Version, pip and eol
+## Install, pip, verify and eol
 
 
 Python for windows
 
 * https://www.python.org/downloads/windows/
 
+
 Status of Python versions and EOL
 
 * https://devguide.python.org/versions/
 
+
+Lets install python-3.14.7-amd64.exe
+
+* Check "Add python.exe to PATH":
+
+Always check this box at the bottom before proceeding. It allows you to run python, pip, and Virtualenvs directly from PowerShell, Command Prompt, or terminal windows without manually adding environment variables later.
+
+* Check "Use admin privileges when installing py.exe"
+
+Checking this ensures the Python launcher (py.exe) is registered system-wide, making it easier to invoke specific Python versions across the system.
+
+* Customize installation (yes)
+
+If you prefer to install to a system-wide path like C:\Python314 instead of the user AppData folder
+
+* Make folder C:\Python314 and use that.
+
+Hit install.
+
+
+
+Now lets check it.
+
 ```bash
 
+# check it
 python --version
-# Python 3.13.2
+Python 3.14.7
 
+# check pip
+pip
+Usage:
+  pip <command> [options]
+
+
+# pip install a packet
+pip install pika
+Collecting pika
+  Downloading pika-1.4.4-py3-none-any.whl.metadata (13 kB)
+Downloading pika-1.4.4-py3-none-any.whl (165 kB)
+Installing collected packages: pika
+Successfully installed pika-1.4.4
+
+# view what we installed
 pip freeze
-# et_xmlfile==2.0.0
-# numpy==2.3.5
-# openpyxl==3.1.5
+pika==1.4.4
 
 pip freeze >> requirements.txt
 
@@ -51,7 +89,6 @@ Offline pip is also possible:
 * Then move it to remote vm
 
 ## Virtual env
-
 
 1. Create your project folder: mkdir my-new-project
 2. Enter the folder: cd my-new-project
@@ -133,7 +170,7 @@ deactivate
 
 ## Logging
 
-## Minimal boilerplate
+## Minimal boilerplate 3.14.7
 
 1. Architecture & Component Blueprint
 Config Layer: Reads and parses JSON settings into a strongly typed data structure with fallback defaults if the file is missing or invalid.
