@@ -250,14 +250,14 @@ Python boilerplate runs identically across Linux (including Docker containers ru
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │ run_main.py (v1.3)                                                          │
 │  │                                                                          │
-│  ├─► (2) Instantiate CustomAppLogger() ───────────────────────────────────┐ │
+│  ├─► (2) Instantiate AppLogger() ------───────────────────────────────────┐ │
 │  │                                                                        │ │
 │  ├─► (6) Register SIGTERM handler (Linux/Docker & Windows compatibility) │ │
 │  │                                                                        │ │
 │  ├─► (7) Log: "Main module started <timestamp>"                           │ │
 │  ├─► (8) Log: "Main PID: <PID>"                                          │ │
 │  │                                                                        │ │
-│  ├─► (9) Instantiate CustomApplication() ───────────────────────────────┐ │ │
+│  ├─► (9) Instantiate Controller() -------───────────────────────────────┐ │ │
 │  │                                                                      │ │ │
 │  ├─► (13) Call worker.run() ───────────────────────────────────────────┐ │ │ │
 │  │                                                                    │ │ │ │
@@ -270,7 +270,7 @@ Python boilerplate runs identically across Linux (including Docker containers ru
        │                                                                  │ │
        ▼                                                                  │ │
 ┌───────────────────────────────────────────────────────────────────────┐ │ │
-│ custom_app_logger.py (v1.8 - Singleton)                               │ │ │
+│  app_logger.py (v1.8 - Singleton)                                     │ │ │
 │  │                                                                    │ │ │
 │  ├─► (3) Read & pre-validate args via _verify_ini_file()              │ │ │
 │  │       └──► Reads [logging_config.ini] (Cross-platform OS path)     │ │ │
@@ -284,9 +284,9 @@ Python boilerplate runs identically across Linux (including Docker containers ru
        │                                                                    │
        ▼                                                                    │
 ┌─────────────────────────────────────────────────────────────────────────┐ │
-│ custom_application.py (v1.3)                                            │ │
+│  controller.py (v1.3)                                                   │ │
 │  │                                                                      │ │
-│  ├─► (10) Get logger instance via CustomAppLogger().get()              │ │
+│  ├─► (10) Get logger instance via AppLogger().get()                     │ │
 │  │                                                                      │ │
 │  ├─► (11) Execute _load_config()                                        │ │
 │  │       └──► Reads & parses [config.json] via Path.cwd()               │ │
