@@ -264,6 +264,6 @@ Python boilerplate runs identically across Linux (including Docker containers ru
 
 To create a self-contained executable from a Python script, the most popular and easiest tool to use is PyInstaller. It bundles your Python script, the Python interpreter, and all required dependencies into a single file that can run on computers without Python installed.
 
-GOTO GOTO .\boilerplate_selfcontained
+GOTO .\boilerplate_selfcontained
 
 * https://pyinstaller.org/en/stable/operating-mode.html
