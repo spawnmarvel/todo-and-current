@@ -181,6 +181,8 @@ Config Layer: Reads and parses JSON settings into a strongly typed data structur
 
 * Entry Point (main): Orchestrates component setup, executes the application, and exits cleanly with appropriate system exit codes.
 
+GOTO .\boilerplate
+
 ## Self-contained executable
 
 To create a self-contained executable from a Python script, the most popular and easiest tool to use is PyInstaller. It bundles your Python script, the Python interpreter, and all required dependencies into a single file that can run on computers without Python installed.
