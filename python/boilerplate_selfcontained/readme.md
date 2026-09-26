@@ -1,7 +1,7 @@
-# Example self contained
+# Example self contained windows
 
 ## Table of content
-- [Example self contained](#example-self-contained)
+- [Example self contained windows](#example-self-contained-windows)
   - [Table of content](#table-of-content)
   - [PyInstaller Package Overview \& Directory Structure](#pyinstaller-package-overview--directory-structure)
   - [Spec File Configuration](#spec-file-configuration)
