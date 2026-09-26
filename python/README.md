@@ -10,7 +10,7 @@
   - [Virtual env](#virtual-env)
   - [PEP 8 – Style Guide for Python Code](#pep-8--style-guide-for-python-code)
   - [Positional arguments or string concatenation](#positional-arguments-or-string-concatenation)
-  - [Minimal boilerplate 3.14.7](#minimal-boilerplate-3147)
+  - [Minimal boilerplate io 3.14.7](#minimal-boilerplate-io-3147)
   - [Why pycache Needs Cleaning](#why-pycache-needs-cleaning)
   - [Cross-Platform Runtime Support](#cross-platform-runtime-support)
   - [Optimize python for speed](#optimize-python-for-speed)
@@ -187,7 +187,7 @@ self.logger.info("Successfully loaded configuration from " + str(config_file))
 * The logging module checks the current log level first. If DEBUG is disabled, it drops the call immediately without executing str(complex_object) or allocating new string memory.
 
 
-## Minimal boilerplate 3.14.7
+## Minimal boilerplate io 3.14.7
 
 1. Architecture & Component Blueprint
 Config Layer: Reads and parses JSON settings into a strongly typed data structure with fallback defaults if the file is missing or invalid.
@@ -198,7 +198,7 @@ Config Layer: Reads and parses JSON settings into a strongly typed data structur
 
 * ***Entry Point (main)***: Orchestrates component setup, executes the application, and exits cleanly with appropriate system exit codes.
 
-GOTO .\boilerplate
+GOTO .\boilerplate_io
 
 ## Why pycache Needs Cleaning
 
@@ -236,9 +236,11 @@ find . -type f -name "*.pyc" -delete
 
 ## Cross-Platform Runtime Support
 
-Python boilerplate runs identically across Linux (including Docker containers running Linux/Debian/Alpine base images) and Windows (bare-metal, PowerShell, CMD, or Windows Containers).
+Python boilerplate_io runs identically across Linux (including Docker containers running Linux/Debian/Alpine base images) and Windows (bare-metal, PowerShell, CMD, or Windows Containers).
 
-* Controller
+boilerplate_io classes:
+
+* Controller, AppLogger, run_main
 * AMQP consume or produce messages
 * API get data
 * Database insert or fetch data
@@ -343,6 +345,6 @@ Line-by-Line Profiling: Use line_profiler to inspect CPU time spent on individua
 
 To create a self-contained executable from a Python script, the most popular and easiest tool to use is PyInstaller. It bundles your Python script, the Python interpreter, and all required dependencies into a single file that can run on computers without Python installed.
 
-GOTO .\boilerplate_selfcontained
+GOTO .\boilerplate_io_selfcontained
 
 * https://pyinstaller.org/en/stable/operating-mode.html
