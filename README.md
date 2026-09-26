@@ -415,7 +415,7 @@ $${\color{green}This \ is \ power}$$
 ### 4. Python projects often two-in-one :star:
 
 - 📚 Try to use built in standard lib
-- 📚 Make a then boilerplate with a self contained .exe / or linux
+- 📚 Make a the boilerplate with a self contained .exe / or linux
 - 📚 Python and sqlite is 2-in-1 
 - 📚 Azure Static Web Apps (Recommended & Free) folder \python_game
 - 📚 MQTT
