@@ -4,7 +4,7 @@
 - [Example self contained windows](#example-self-contained-windows)
   - [Table of content](#table-of-content)
   - [Architecture \& Windows Service Strategy](#architecture--windows-service-strategy)
-  - [Custom Application Service Wrapper (run\_main.py)](#custom-application-service-wrapper-run_mainpy)
+  - [Controller Service Wrapper (run\_main.py)](#controller-service-wrapper-run_mainpy)
 
 ## Architecture & Windows Service Strategy
 
@@ -20,5 +20,5 @@ To achieve this:
 
 * SCM Registration (sc.exe): Compile using PyInstaller in --onedir mode, then register run_main.exe using sc.exe create.
 
-## Custom Application Service Wrapper (run_main.py)
+## Controller Service Wrapper (run_main.py)
 

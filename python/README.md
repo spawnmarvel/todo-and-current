@@ -238,6 +238,12 @@ find . -type f -name "*.pyc" -delete
 
 Python boilerplate runs identically across Linux (including Docker containers running Linux/Debian/Alpine base images) and Windows (bare-metal, PowerShell, CMD, or Windows Containers).
 
+* Controller
+* AMQP consume or produce messages
+* API get data
+* Database insert or fetch data
+* Read file, parse content
+* Zabbix trapper send data
 
 ```txt
 ┌─────────────────────────────────────────────────────────────────────────────┐

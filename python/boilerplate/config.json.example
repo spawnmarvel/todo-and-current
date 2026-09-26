@@ -31,10 +31,9 @@
         "ssl_enabled": false
     },
     "zabbix": {
-        "$zabbix_comments": "The Zabbix configuration section provides settings for connecting to the Zabbix server. Either use the API or send traps to the Zabbix server. Connect to the Zabbix server using the provided host, port, username, and password. The zabbix_api_url is used for API interactions, and ssl_enabled indicates whether SSL is enabled for secure communication.",
+        "$zabbix_comments": "The Zabbix configuration section provides settings for connecting to the Zabbix server. Send traps to the Zabbix server. Connect to the Zabbix server.",
         "host": "localhost",
         "zabbix_server": "zabbix.example.com",
-        "zabbix_api_url": "http://zabbix.example.com/api_jsonrpc.php",
         "port": 10051,
         "username": "user",
         "password": "password",
