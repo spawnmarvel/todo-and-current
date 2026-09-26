@@ -392,9 +392,11 @@ $${\color{orange}This \ is \ important}$$
 - 📚 Then the linux command line W.S
 - 📚 Last Ubuntu forum tutorials
 
-* :apple: Do sys admin 5 min, look at practical examples, troubleshoot etc [drill](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/README.md#sys-admin-drill)
+**Completed:**
 
-* :apple: The linux [house](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/images__and_pdf/linux_house.jpg)
+- ✅ Do sys admin 5 min, look at practical examples, troubleshoot etc [drill](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/README.md#sys-admin-drill)
+- 
+- ✅ The linux [house](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/images__and_pdf/linux_house.jpg)
 
 $${\color{green}This \ is \ power}$$
 
@@ -414,7 +416,8 @@ $${\color{green}This \ is \ power}$$
 
 ### 4. Python projects often two-in-one :star:
 
-- 📚 Try to use built in standard lib
+**In Progress:**
+
 - 📚 Make a the boilerplate with a self contained .exe / or linux
 - 📚 Python and sqlite is 2-in-1 
 - 📚 Azure Static Web Apps (Recommended & Free) folder \python_game
@@ -422,8 +425,10 @@ $${\color{green}This \ is \ power}$$
 - 📚 Monitoring
 - 📚 Zabbix lib and make templates maps Zabbix API
 
+**Completed:**
 - ✅ [All Python code](https://github.com/spawnmarvel/todo-and-current/tree/main/python)
 - ✅ [Cross-Platform Runtime Support boilerplate with logging](https://github.com/spawnmarvel/todo-and-current/tree/main/python/boilerplate)
+- ✅ Try to use built in standard lib
 
 
 $${\color{lightblue}This \ is \ fun}$$
@@ -461,9 +466,10 @@ $${\color{orange}This \ is \ important}$$
 
 #### RabbitMQ Mtls and minimal PKI :monkey:
 
+**Completed:**
 - ✅ [AMQP Shovel MTLS with RFC-6125](https://github.com/spawnmarvel/quickguides/blob/main/amqp/ReadmeNutshell.md)
 - ✅ [Certificate Requests and Renewals for AMQP/mTLS](https://github.com/spawnmarvel/quickguides/blob/main/amqp/RequestRenewExample/README.md)
-- ✅  [Minimal PKI](https://github.com/spawnmarvel/todo-and-current/blob/main/pki_store/pki_store_minmal_root_and_server_cert_client_server_auth/README.md)
+- ✅ [Minimal PKI](https://github.com/spawnmarvel/todo-and-current/blob/main/pki_store/pki_store_minmal_root_and_server_cert_client_server_auth/README.md)
 
 $${\color{lightblue}This \ is \ fun}$$
 
