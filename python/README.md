@@ -10,7 +10,6 @@
   - [Virtual env](#virtual-env)
   - [PEP 8 – Style Guide for Python Code](#pep-8--style-guide-for-python-code)
   - [Positional arguments or string concatenation](#positional-arguments-or-string-concatenation)
-  - [Logging](#logging)
   - [Minimal boilerplate 3.14.7](#minimal-boilerplate-3147)
   - [Self-contained executable](#self-contained-executable)
 
@@ -185,23 +184,16 @@ self.logger.info("Successfully loaded configuration from " + str(config_file))
 * The logging module checks the current log level first. If DEBUG is disabled, it drops the call immediately without executing str(complex_object) or allocating new string memory.
 
 
-
-
-
-## Logging
-
-GOTO .\boilerplate
-
 ## Minimal boilerplate 3.14.7
 
 1. Architecture & Component Blueprint
 Config Layer: Reads and parses JSON settings into a strongly typed data structure with fallback defaults if the file is missing or invalid.
 
-* Logging Layer: Configures structured stream and file handlers using standard logging without external dependencies.
+* ***Logging Layer***: Configures structured stream and file handlers using standard logging without external dependencies.
 
-* Application Engine: Receives the logger and config instances via dependency injection, encapsulating the main execution pipeline and error handling.
+* ***Application Engine***: Receives the logger and config instances via dependency injection, encapsulating the main execution pipeline and error handling.
 
-* Entry Point (main): Orchestrates component setup, executes the application, and exits cleanly with appropriate system exit codes.
+* ***Entry Point (main)***: Orchestrates component setup, executes the application, and exits cleanly with appropriate system exit codes.
 
 GOTO .\boilerplate
 
