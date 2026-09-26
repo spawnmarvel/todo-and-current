@@ -36,9 +36,9 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
   - [Fast Linux VM Deployment IAC](#fast-linux-vm-deployment-iac)
   - [Current Priorities: TOP 4 but 1 at the time](#current-priorities-top-4-but-1-at-the-time)
     - [1. Zabbix default :star:](#1-zabbix-default-star)
-    - [2. Learn the ways of Linux-fu-yoda, for free :star: :potted\_plant:](#2-learn-the-ways-of-linux-fu-yoda-for-free-star-potted_plant)
+    - [2. Learn the ways of Linux-fu-yoda, for free :star:](#2-learn-the-ways-of-linux-fu-yoda-for-free-star)
     - [3. MySQL database developer and Az MySql :star:](#3-mysql-database-developer-and-az-mysql-star)
-    - [4. Python small projects two-in-onw :potted\_plant:](#4-python-small-projects-two-in-onw-potted_plant)
+    - [4. Python projects often two-in-onw :star:](#4-python-projects-often-two-in-onw-star)
     - [Misc](#misc)
       - [Misc Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun :bug:](#misc-raspberry-pi-iot-sensor-mqtt-grafana-linux-and-fun-bug)
       - [Misc: MS learn, AZ-104 extended :bug:](#misc-ms-learn-az-104-extended-bug)
@@ -385,7 +385,7 @@ $${\color{orange}This \ is \ important}$$
 
 ---
 
-### 2. Learn the ways of Linux-fu-yoda, for free :star: :potted_plant:
+### 2. Learn the ways of Linux-fu-yoda, for free :star:
 
 - 📚 3 questions and 3 answers [Linux-fu](https://github.com/spawnmarvel/todo-and-current/blob/main/bash_linux_fu/readme.md)
 
@@ -412,7 +412,7 @@ $${\color{green}This \ is \ power}$$
 
 ---
 
-### 4. Python small projects two-in-onw :potted_plant:
+### 4. Python projects often two-in-onw :star:
 
 - 📚 Try to use built in standard lib
 - ✅ Make a boilerplate with logging

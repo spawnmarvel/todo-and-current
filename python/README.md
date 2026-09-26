@@ -8,6 +8,7 @@
   - [The Python Standard Library](#the-python-standard-library)
   - [Version, pip and eol](#version-pip-and-eol)
   - [Virtual env](#virtual-env)
+  - [PEP 8 – Style Guide for Python Code](#pep-8--style-guide-for-python-code)
   - [Logging](#logging)
   - [Minimal boilerplate](#minimal-boilerplate)
   - [Self-contained executable](#self-contained-executable)
@@ -115,9 +116,22 @@ Deactivate env/ stop
 deactivate
 ```
 
+## PEP 8 – Style Guide for Python Code
+
+* https://peps.python.org/pep-0008/
+
 ## Logging
 
 ## Minimal boilerplate
+
+1. Architecture & Component Blueprint
+Config Layer: Reads and parses JSON settings into a strongly typed data structure with fallback defaults if the file is missing or invalid.
+
+* Logging Layer: Configures structured stream and file handlers using standard logging without external dependencies.
+
+* Application Engine: Receives the logger and config instances via dependency injection, encapsulating the main execution pipeline and error handling.
+
+* Entry Point (main): Orchestrates component setup, executes the application, and exits cleanly with appropriate system exit codes.
 
 ## Self-contained executable
 
