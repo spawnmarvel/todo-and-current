@@ -118,6 +118,17 @@ deactivate
 
 ## PEP 8 – Style Guide for Python Code
 
+| Category  | Naming Convention  | Examples                          |
+| --------- | ------------------ | --------------------------------- |
+| Vars      | `snake_case`       | `user_id`, `total_cost`           |
+| Functions | `snake_case`       | `calculate_total()`, `get_data()` |
+| Methods   | `snake_case`       | `user.get_profile()`              |
+| Classes   | `PascalCase`       | `UserProfile`, `ShoppingCart`     |
+| Constants | `UPPER_SNAKE_CASE` | `MAX_LIMIT`, `PI`                 |
+| Modules   | `snake_case`       | `file_parser.py`, `utils.py`      |
+| Packages  | `flatcase`         | `requests`, `urlparse`            |
+
+
 * https://peps.python.org/pep-0008/
 
 ## Logging

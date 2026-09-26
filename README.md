@@ -38,7 +38,7 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
     - [1. Zabbix default :star:](#1-zabbix-default-star)
     - [2. Learn the ways of Linux-fu-yoda, for free :star:](#2-learn-the-ways-of-linux-fu-yoda-for-free-star)
     - [3. MySQL database developer and Az MySql :star:](#3-mysql-database-developer-and-az-mysql-star)
-    - [4. Python projects often two-in-onw :star:](#4-python-projects-often-two-in-onw-star)
+    - [4. Python projects often two-in-one :star:](#4-python-projects-often-two-in-one-star)
     - [Misc](#misc)
       - [Misc Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun :bug:](#misc-raspberry-pi-iot-sensor-mqtt-grafana-linux-and-fun-bug)
       - [Misc: MS learn, AZ-104 extended :bug:](#misc-ms-learn-az-104-extended-bug)
@@ -412,7 +412,7 @@ $${\color{green}This \ is \ power}$$
 
 ---
 
-### 4. Python projects often two-in-onw :star:
+### 4. Python projects often two-in-one :star:
 
 - 📚 Try to use built in standard lib
 - ✅ Make a boilerplate with logging
@@ -422,6 +422,8 @@ $${\color{green}This \ is \ power}$$
 - 📚 MQTT
 - 📚 Monitoring
 - 📚 Zabbix lib and make templates maps Zabbix API
+
+- ✅ [All Python code](https://github.com/spawnmarvel/todo-and-current/tree/main/python)
 
 
 $${\color{lightblue}This \ is \ fun}$$
