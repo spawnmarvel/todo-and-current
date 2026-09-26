@@ -13,6 +13,7 @@
   - [Minimal boilerplate 3.14.7](#minimal-boilerplate-3147)
   - [Why pycache Needs Cleaning](#why-pycache-needs-cleaning)
   - [Cross-Platform Runtime Support](#cross-platform-runtime-support)
+  - [Optimize python for speed](#optimize-python-for-speed)
   - [Self-contained executable](#self-contained-executable)
 
 
@@ -233,7 +234,6 @@ find . -type f -name "*.pyc" -delete
 ```
 
 
-
 ## Cross-Platform Runtime Support
 
 Python boilerplate runs identically across Linux (including Docker containers running Linux/Debian/Alpine base images) and Windows (bare-metal, PowerShell, CMD, or Windows Containers).
@@ -296,6 +296,43 @@ Python boilerplate runs identically across Linux (including Docker containers ru
 │  └─► (14) Execute run() workload loop (5 iterations) ◄──────────────────┘ │
 └─────────────────────────────────────────────────────────────────────────┘
 ```
+
+## Optimize python for speed
+
+1. Algorithm & Data Structure Selection
+* Use Sets and Dictionaries for $O(1)$ Lookups: Checking membership (item in container) in a list takes linear time $O(n)$, whereas set and dict lookups execute in constant time $O(1)$.
+* Use collections.deque for FIFO Queues: Appending or popping from the left side of a standard Python list takes $O(n)$ time because all elements must shift in memory. collections.deque provides $O(1)$ operations at both ends.
+* Avoid Unnecessary Allocations with Generators: Use generator expressions (x for x in data) instead of list comprehension [x for x in data] when iterating over large datasets to minimize memory footprint and avoid triggering frequent Garbage Collection (GC) pauses.
+* 
+2. Built-in Functions & Standard Library Optimization
+* Prefer C-Builtins Over Python Loops: Standard library functions like map(), filter(), sum(), min(), max(), and itertools are implemented in native C. They execute iterations substantially faster than equivalent explicit for loops in Python.
+* Local Scope Variable Cache: Accessing local variables inside functions is faster than accessing global variables because locals are stored in a fixed-size array in CPython frame objects (LOAD_FAST instruction vs LOAD_GLOBAL).
+* Fast String Concatenation: Avoid repeatedly concatenating strings in loops using + (which creates a new string object each time). Accumulate string segments in a list and combine them with ''.join(string_list).
+* 
+3. Vectorization & External Libraries
+* Vectorize Math Operations with NumPy
+* Compile Critical Loops with Cython or Numba:
+* Use Numba (@jit(nopython=True)) for Just-In-Time (JIT) compilation of heavy math/array functions directly to machine code at runtime.
+* Use Cython or C extensions for compute-bound algorithms that cannot easily be vectorized.
+* ***Offload CPU-Bound Work via multiprocessing: Python's Global Interpreter Lock (GIL) limits a single Python process to one CPU core. Use concurrent.futures.ProcessPoolExecutor or multiprocessing to run CPU-heavy tasks in parallel across all available processor cores.***
+* 
+4. Memory Management & Bytecode Compilation
+*Prevent Bytecode Overhead in Production: Set the environment variable PYTHONDONTWRITEBYTECODE=1 during ephemeral runs, or use python -O (optimize) to strip assert statements and debug code from compiled .pyc files.
+* Use __slots__ in Data Classes: When instantiating millions of small class instances, define __slots__ = ('attr1', 'attr2') to prevent the creation of __dict__ attribute lookup dictionaries for every instance, significantly reducing RAM usage and speeding up attribute access.
+* Disable Garbage Collection During Critical Cycles: Temporarily disable automatic GC using gc.disable() inside time-critical loops to prevent unannounced collector pauses, then manually invoke gc.collect() after completion.
+* 
+5. Profiling Before Optimizing
+* Never optimize without benchmarking to locate the exact bottleneck.
+
+Deterministic Profiling: Use the standard library cProfile module to measure function execution frequency and cumulative execution time:
+
+```ps1
+python -m cProfile -s cumulative run_main.py
+```
+Line-by-Line Profiling: Use line_profiler to inspect CPU time spent on individual lines within specific functions.
+
+
+
 ## Self-contained executable
 
 To create a self-contained executable from a Python script, the most popular and easiest tool to use is PyInstaller. It bundles your Python script, the Python interpreter, and all required dependencies into a single file that can run on computers without Python installed.
