@@ -1,0 +1,46 @@
+{
+    "app": {
+        "$app_comments": "The app information section provides metadata about the application.",
+        "app_name": "BoilerplateApp",
+        "environment": "production",
+        "version": "1.0.0"
+    },
+    "amqp": {
+        "$amqp_comments": "The AMQP configuration section provides settings for connecting to the AMQP broker.",
+        "host": "localhost",
+        "port": 5672,
+        "username": "user",
+        "password": "password",
+        "queue_name": "boilerplate_queue",
+        "exchange_name": "boilerplate_exchange",
+        "routing_key": "boilerplate_routing_key",
+        "topic_name": "boilerplate_topic",
+        "ca_cert": "path/to/ca_cert.pem",
+        "cert": "path/to/cert.pem",
+        "key": "path/to/key.pem",
+        "ssl_enabled": false
+    },
+    "database": {
+        "$database_comments": "The database configuration section provides settings for connecting to the database.",
+        "host": "localhost",
+        "port": 3306,
+        "username": "user",
+        "password": "password",
+        "database_name": "boilerplate_db"
+    },
+    "zabbix": {
+        "$zabbix_comments": "The Zabbix configuration section provides settings for connecting to the Zabbix server.",
+        "host": "localhost",
+        "zabbix_server": "zabbix.example.com",
+        "zabbix_api_url": "http://zabbix.example.com/api_jsonrpc.php",
+        "port": 10051,
+        "username": "user",
+        "password": "password"
+    },
+    "file": {
+        "$file_comments": ".",
+        "file_path": "path/to/file.txt",
+        "file:separator": ";",
+        "file:encoding": "utf-8"
+    }
+}
