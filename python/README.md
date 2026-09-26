@@ -293,7 +293,7 @@ Python boilerplate runs identically across Linux (including Docker containers ru
 │  │                                                                      │ │
 │  ├─► (12) Set valid_config = True / False                               │ │
 │  │                                                                      │ │
-│  └─► (14) Execute run() workload loop (5 iterations) ◄──────────────────┘ │
+│  └─► (14) Execute run() workload loop                ◄──────────────────┘ │
 └─────────────────────────────────────────────────────────────────────────┘
 ```
 
