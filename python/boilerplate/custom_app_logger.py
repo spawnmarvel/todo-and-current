@@ -42,7 +42,7 @@ class CustomAppLogger:
             # Log successful initialization of logging configuration (emitted exactly once)
             self.logger.info("*******************")
             self.logger.info(
-                "Successfully loaded configuration from %s", log_file_path)
+                "Successfully loaded logging configuration from %s", log_file_path)
 
         except Exception as ex:
             # Fallback configuration if logging_config.ini fails validation, parsing, or is missing
