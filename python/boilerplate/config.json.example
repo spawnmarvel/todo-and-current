@@ -31,7 +31,7 @@
         "ssl_enabled": false
     },
     "zabbix": {
-        "$zabbix_comments": "The Zabbix configuration section provides settings for connecting to the Zabbix server.",
+        "$zabbix_comments": "The Zabbix configuration section provides settings for connecting to the Zabbix server. Either use the API or send traps to the Zabbix server. Connect to the Zabbix server using the provided host, port, username, and password. The zabbix_api_url is used for API interactions, and ssl_enabled indicates whether SSL is enabled for secure communication.",
         "host": "localhost",
         "zabbix_server": "zabbix.example.com",
         "zabbix_api_url": "http://zabbix.example.com/api_jsonrpc.php",
@@ -41,9 +41,9 @@
         "ssl_enabled": false
     },
     "file": {
-        "$file_comments": ".",
+        "$file_comments": "The file configuration section provides settings for file handling. Read the file_path, file_separator, and file_encoding values to configure how the application reads and processes files.",
         "file_path": "path/to/file.txt",
-        "file:separator": ";",
-        "file:encoding": "utf-8"
+        "file_separator": ";",
+        "file_encoding": "utf-8"
     }
 }

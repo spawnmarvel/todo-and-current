@@ -1,0 +1,4 @@
+
+
+class AmqpWorker:
+    pass

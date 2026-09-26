@@ -1,0 +1,3 @@
+
+class ZabbixApiWorker:
+    pass
