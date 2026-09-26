@@ -8,19 +8,19 @@ from os import path
 from logging.config import fileConfig
 
 
-class CustomAppLogger:
+class AppLogger:
     """Configures application logging from an INI file with strict syntax verification, singleton pattern, and stdout fallback."""
 
     _instance = None  # Singleton instance handle
 
     def __new__(cls):
         if cls._instance is None:
-            cls._instance = super(CustomAppLogger, cls).__new__(cls)
+            cls._instance = super(AppLogger, cls).__new__(cls)
             cls._instance._initialized = False
         return cls._instance
 
     def __init__(self):
-        # Guard against duplicate initialization if CustomAppLogger() is called multiple times
+        # Guard against duplicate initialization if AppLogger() is called multiple times
         if self._initialized:
             return
 

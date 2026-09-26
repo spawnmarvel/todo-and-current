@@ -8,8 +8,8 @@ import sys
 import time
 
 # Internal module imports (no instantiation at top-level import time)
-import custom_app_logger as custom_application_logger
-import custom_application as custom_application
+import app_logger as application_logger
+import controller as controller
 
 MAIN_PID = None
 logger = None
@@ -26,7 +26,7 @@ def handler_stop_signals(signum, frame):
 
 if __name__ == "__main__":
     # Instantiate logger wrapper after starting main execution
-    logger_wrapper = custom_application_logger.CustomAppLogger()
+    logger_wrapper = application_logger.AppLogger()
     logger = logger_wrapper.get()
 
     # Register SIGTERM handler
@@ -41,7 +41,7 @@ if __name__ == "__main__":
         MAIN_PID = os.getpid()
         logger.info("Main PID: %s", str(MAIN_PID))
 
-        worker = custom_application.CustomApplication()
+        worker = controller.Controller()
         worker.run()
 
         # Check worker application configuration validity

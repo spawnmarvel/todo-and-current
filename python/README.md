@@ -11,6 +11,7 @@
   - [PEP 8 – Style Guide for Python Code](#pep-8--style-guide-for-python-code)
   - [Positional arguments or string concatenation](#positional-arguments-or-string-concatenation)
   - [Minimal boilerplate 3.14.7](#minimal-boilerplate-3147)
+  - [Why pycache Needs Cleaning](#why-pycache-needs-cleaning)
   - [Cross-Platform Runtime Support](#cross-platform-runtime-support)
   - [Self-contained executable](#self-contained-executable)
 
@@ -197,6 +198,41 @@ Config Layer: Reads and parses JSON settings into a strongly typed data structur
 * ***Entry Point (main)***: Orchestrates component setup, executes the application, and exits cleanly with appropriate system exit codes.
 
 GOTO .\boilerplate
+
+## Why pycache Needs Cleaning
+
+Python compiles source files (.py) into bytecode (.pyc) stored inside hidden __pycache__ folders to speed up module import times.
+
+* In long-running Windows Server services, Docker builds, or PyInstaller deployments, outdated .pyc files cause:
+
+* Stale Code Execution: Executing old cached logic despite editing source .py files.
+
+* PyInstaller Build Artifact Errors: Bundling outdated bytecode into dist/ binaries.
+
+* Version Control Pollution: Unwanted .pyc tracking if .gitignore is missing
+
+
+1. PowerShell (Windows / Windows Server)
+
+```ps1
+# Remove all __pycache__ directories recursively
+Get-ChildItem -Path . -Recurse -Directory -Filter "__pycache__" | Remove-Item -Recurse -Force
+
+# Remove all standalone .pyc files
+Get-ChildItem -Path . -Recurse -Filter "*.pyc" | Remove-Item -Force
+```
+
+2. Bash (Linux / macOS / Docker Containers)
+
+```bash
+# Find and remove all __pycache__ directories recursively
+find . -type d -name "__pycache__" -exec rm -rf {} +
+
+# Find and remove all standalone .pyc files
+find . -type f -name "*.pyc" -delete
+```
+
+
 
 ## Cross-Platform Runtime Support
 

@@ -6,13 +6,13 @@ import json
 import time
 from pathlib import Path
 # internal modules
-import custom_app_logger as custom_app_logger
+import app_logger as app_logger
 
 # Retrieve the shared logger instance during module initialization
-logger = custom_app_logger.CustomAppLogger().get()
+logger = app_logger.AppLogger().get()
 
 
-class CustomApplication:
+class Controller:
     """Manages application lifecycle, configuration loading, and primary workload execution."""
 
     def __init__(self):
