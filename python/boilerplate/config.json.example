@@ -26,7 +26,9 @@
         "port": 3306,
         "username": "user",
         "password": "password",
-        "database_name": "boilerplate_db"
+        "database_name": "boilerplate_db",
+        "ca_cert": "path/to/ca_cert.pem",
+        "ssl_enabled": false
     },
     "zabbix": {
         "$zabbix_comments": "The Zabbix configuration section provides settings for connecting to the Zabbix server.",
@@ -35,7 +37,8 @@
         "zabbix_api_url": "http://zabbix.example.com/api_jsonrpc.php",
         "port": 10051,
         "username": "user",
-        "password": "password"
+        "password": "password",
+        "ssl_enabled": false
     },
     "file": {
         "$file_comments": ".",
