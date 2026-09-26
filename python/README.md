@@ -1,5 +1,18 @@
 # Python quick guide
 
+
+## Table of content
+
+- [Python quick guide](#python-quick-guide)
+  - [Table of content](#table-of-content)
+  - [The Python Standard Library](#the-python-standard-library)
+  - [Version, pip and eol](#version-pip-and-eol)
+  - [Virtual env](#virtual-env)
+  - [Logging](#logging)
+  - [Minimal boilerplate](#minimal-boilerplate)
+  - [Self-contained executable](#self-contained-executable)
+
+
 ## The Python Standard Library
 
 * Try to use this most of the time
@@ -7,7 +20,16 @@
 
 https://docs.python.org/3/library/index.html
 
-## Version, pip and pip install
+## Version, pip and eol
+
+
+Python for windows
+
+* https://www.python.org/downloads/windows/
+
+Status of Python versions and EOL
+
+* https://devguide.python.org/versions/
 
 ```bash
 
@@ -93,3 +115,13 @@ Deactivate env/ stop
 deactivate
 ```
 
+## Logging
+
+## Minimal boilerplate
+
+## Self-contained executable
+
+To create a self-contained executable from a Python script, the most popular and easiest tool to use is PyInstaller. It bundles your Python script, the Python interpreter, and all required dependencies into a single file that can run on computers without Python installed.
+
+
+* https://pyinstaller.org/en/stable/operating-mode.html
