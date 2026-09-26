@@ -415,8 +415,7 @@ $${\color{green}This \ is \ power}$$
 ### 4. Python projects often two-in-one :star:
 
 - 📚 Try to use built in standard lib
-- ✅ Make a boilerplate with logging
-- 📚 Make a boilerplate with a self contained .exe / or linux
+- 📚 Make a then boilerplate with a self contained .exe / or linux
 - 📚 Python and sqlite is 2-in-1 
 - 📚 Azure Static Web Apps (Recommended & Free) folder \python_game
 - 📚 MQTT
@@ -424,6 +423,7 @@ $${\color{green}This \ is \ power}$$
 - 📚 Zabbix lib and make templates maps Zabbix API
 
 - ✅ [All Python code](https://github.com/spawnmarvel/todo-and-current/tree/main/python)
+- ✅ [Cross-Platform Runtime Support boilerplate with logging](https://github.com/spawnmarvel/todo-and-current/tree/main/python/boilerplate)
 
 
 $${\color{lightblue}This \ is \ fun}$$

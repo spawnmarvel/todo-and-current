@@ -11,6 +11,7 @@
   - [PEP 8 – Style Guide for Python Code](#pep-8--style-guide-for-python-code)
   - [Positional arguments or string concatenation](#positional-arguments-or-string-concatenation)
   - [Minimal boilerplate 3.14.7](#minimal-boilerplate-3147)
+  - [Cross-Platform Runtime Support](#cross-platform-runtime-support)
   - [Self-contained executable](#self-contained-executable)
 
 
@@ -197,6 +198,68 @@ Config Layer: Reads and parses JSON settings into a strongly typed data structur
 
 GOTO .\boilerplate
 
+## Cross-Platform Runtime Support
+
+Python boilerplate runs identically across Linux (including Docker containers running Linux/Debian/Alpine base images) and Windows (bare-metal, PowerShell, CMD, or Windows Containers).
+
+
+```txt
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                       HOST EXECUTION ENVIRONMENT                            │
+│  [ Linux (Ubuntu/Debian) ]  │  [ Windows (10/11/Server) ]  │  [ Docker Container ] │
+└──────────────────────────────────────┬──────────────────────────────────────┘
+                                       │
+                                       │ (1) Execute Python process
+                                       ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ run_main.py (v1.3)                                                          │
+│  │                                                                          │
+│  ├─► (2) Instantiate CustomAppLogger() ───────────────────────────────────┐ │
+│  │                                                                        │ │
+│  ├─► (6) Register SIGTERM handler (Linux/Docker & Windows compatibility) │ │
+│  │                                                                        │ │
+│  ├─► (7) Log: "Main module started <timestamp>"                           │ │
+│  ├─► (8) Log: "Main PID: <PID>"                                          │ │
+│  │                                                                        │ │
+│  ├─► (9) Instantiate CustomApplication() ───────────────────────────────┐ │ │
+│  │                                                                      │ │ │
+│  ├─► (13) Call worker.run() ───────────────────────────────────────────┐ │ │ │
+│  │                                                                    │ │ │ │
+│  ├─► (15) Evaluate worker.valid_config & logger_wrapper.is_valid_config() │ │ │
+│  │                                                                    │ │ │ │
+│  └─► (16) Exit cleanly (sys.exit(0))                                  │ │ │ │
+└───────────────────────────────────────────────────────────────────────┼─┼─┼─┘
+                                                                        │ │ │
+       ┌────────────────────────────────────────────────────────────────┘ │ │
+       │                                                                  │ │
+       ▼                                                                  │ │
+┌───────────────────────────────────────────────────────────────────────┐ │ │
+│ custom_app_logger.py (v1.8 - Singleton)                               │ │ │
+│  │                                                                    │ │ │
+│  ├─► (3) Read & pre-validate args via _verify_ini_file()              │ │ │
+│  │       └──► Reads [logging_config.ini] (Cross-platform OS path)     │ │ │
+│  │                                                                    │ │ │
+│  ├─► (4) Initialize fileConfig() or basicConfig() fallback            │ │ │
+│  │                                                                    │ │ │
+│  └─► (5) Return shared logger instance via .get() ────────────────────┼─┼─┘
+└───────────────────────────────────────────────────────────────────────┘ │ │
+                                                                          │ │
+       ┌──────────────────────────────────────────────────────────────────┘ │
+       │                                                                    │
+       ▼                                                                    │
+┌─────────────────────────────────────────────────────────────────────────┐ │
+│ custom_application.py (v1.3)                                            │ │
+│  │                                                                      │ │
+│  ├─► (10) Get logger instance via CustomAppLogger().get()              │ │
+│  │                                                                      │ │
+│  ├─► (11) Execute _load_config()                                        │ │
+│  │       └──► Reads & parses [config.json] via Path.cwd()               │ │
+│  │                                                                      │ │
+│  ├─► (12) Set valid_config = True / False                               │ │
+│  │                                                                      │ │
+│  └─► (14) Execute run() workload loop (5 iterations) ◄──────────────────┘ │
+└─────────────────────────────────────────────────────────────────────────┘
+```
 ## Self-contained executable
 
 To create a self-contained executable from a Python script, the most popular and easiest tool to use is PyInstaller. It bundles your Python script, the Python interpreter, and all required dependencies into a single file that can run on computers without Python installed.
