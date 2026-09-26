@@ -45,5 +45,14 @@
         "file_path": "path/to/file.txt",
         "file_separator": ";",
         "file_encoding": "utf-8"
+    },
+    "api": {
+        "$api_comments": "The API configuration section provides settings for connecting to external APIs. Configure the api_base_url, api_key, and timeout values to manage API interactions.",
+        "api_base_url": "https://api.example.com",
+        "api_secret": "your_api_key_here",
+        "api_username": "api_user",
+        "api_password": "api_password",
+        "ca_cert": "path/to/ca_cert.pem",
+        "timeout": 30
     }
 }

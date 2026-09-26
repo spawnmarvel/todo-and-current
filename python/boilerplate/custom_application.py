@@ -115,6 +115,13 @@ class CustomApplication:
         self.logger.info("File Configuration: %s", conf)
         return conf
 
+    def api_config(self):
+        """Returns the API configuration dictionary."""
+        self.logger.info("Retrieving API configuration...")
+        conf = self.get_config("api", {})
+        self.logger.info("API Configuration: %s", conf)
+        return conf
+
     def run(self):
         """Executes the core application workload and iteration loops."""
         # Warn operator if execution is proceeding with missing or invalid configuration
