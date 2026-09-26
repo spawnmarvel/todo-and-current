@@ -9,6 +9,7 @@
   - [Install, pip, verify and eol](#install-pip-verify-and-eol)
   - [Virtual env](#virtual-env)
   - [PEP 8 – Style Guide for Python Code](#pep-8--style-guide-for-python-code)
+  - [Positional arguments or string concatenation](#positional-arguments-or-string-concatenation)
   - [Logging](#logging)
   - [Minimal boilerplate 3.14.7](#minimal-boilerplate-3147)
   - [Self-contained executable](#self-contained-executable)
@@ -168,7 +169,28 @@ deactivate
 
 * https://peps.python.org/pep-0008/
 
+## Positional arguments or string concatenation
+
+
+```py
+# Option A: Logging format string with positional argument (Recommended)
+self.logger.info("Successfully loaded configuration from %s", config_file)
+
+# Option B: String concatenation
+self.logger.info("Successfully loaded configuration from " + str(config_file))
+```
+
+* Python executes str(complex_object) and creates a new string in memory before calling self.logger.debug(). If your log level is set to INFO or WARNING, the debug message is immediately discarded, meaning the memory allocation and string conversion work was wasted.
+
+* The logging module checks the current log level first. If DEBUG is disabled, it drops the call immediately without executing str(complex_object) or allocating new string memory.
+
+
+
+
+
 ## Logging
+
+GOTO .\boilerplate
 
 ## Minimal boilerplate 3.14.7
 
