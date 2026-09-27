@@ -385,8 +385,8 @@ $${\color{green}This \ is \ power}$$
 - 📚 Python and sqlite is 2-in-1, start with this, one thing at the time
 
 **Completed:**
-- ✅ [All Python code](https://github.com/spawnmarvel/todo-and-current/tree/main/python)
-- ✅ [Cross-Platform Runtime Support boilerplate with logging](https://github.com/spawnmarvel/todo-and-current/tree/main/python/boilerplate)
+- ✅ [Python collections](https://github.com/spawnmarvel/todo-and-current/tree/main/python)
+- ✅ [Cross-Platform Runtime Support boilerplate with logging](https://github.com/spawnmarvel/todo-and-current/blob/main/python/README.md#minimal-boilerplate-example-omni-collector-io-python)
 - ✅ Try to use built in standard lib
 
 
