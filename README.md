@@ -44,7 +44,7 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
   - [3. On point](#3-on-point)
       - [1. RabbitMQ Mtls and minimal PKI :monkey:](#1-rabbitmq-mtls-and-minimal-pki-monkey)
   - [4. Misc](#4-misc)
-    - [1. MySQL database developer and Az MySql :star:](#1-mysql-database-developer-and-az-mysql-star)
+    - [1. MySQL database developer and Az MySql :bug:](#1-mysql-database-developer-and-az-mysql-bug)
     - [2. Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun :bug:](#2-raspberry-pi-iot-sensor-mqtt-grafana-linux-and-fun-bug)
   - [Backlog](#backlog)
     - [AP22 master drill (work use it)](#ap22-master-drill-work-use-it)
@@ -462,7 +462,7 @@ $${\color{lightblue}This \ is \ fun}$$
 
 ## 4. Misc
 
-### 1. MySQL database developer and Az MySql :star:
+### 1. MySQL database developer and Az MySql :bug:
 
 - 📚 Do all MS learn for MySQL
 - 📚 https://learn.microsoft.com/en-us/training/browse/?terms=mysql&source=learn
