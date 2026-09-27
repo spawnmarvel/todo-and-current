@@ -12,7 +12,7 @@
   - [Positional arguments or string concatenation](#positional-arguments-or-string-concatenation)
   - [Why pycache Needs Cleaning](#why-pycache-needs-cleaning)
   - [Optimize python for speed](#optimize-python-for-speed)
-  - [Minimal boilerplate example omni-collector-io python 3.14.7](#minimal-boilerplate-example-omni-collector-io-python-3147)
+  - [Minimal boilerplate example omni-collector-io python](#minimal-boilerplate-example-omni-collector-io-python)
   - [Cross-Platform Runtime Support omni-collector-io](#cross-platform-runtime-support-omni-collector-io)
   - [Self-contained executable omni-collector-io](#self-contained-executable-omni-collector-io)
 
@@ -255,7 +255,7 @@ python -m cProfile -s cumulative run_main.py
 Line-by-Line Profiling: Use line_profiler to inspect CPU time spent on individual lines within specific functions.
 
 
-## Minimal boilerplate example omni-collector-io python 3.14.7
+## Minimal boilerplate example omni-collector-io python
 
 Lest create the omni-collector-io as an example of boilerplate.
 
