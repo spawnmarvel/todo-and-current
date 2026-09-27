@@ -40,7 +40,7 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
     - [2. Python projects often two-in-one. It is zen! :star:](#2-python-projects-often-two-in-one-it-is-zen-star)
   - [2. Workish](#2-workish)
     - [1. Zabbix default :star:](#1-zabbix-default-star)
-    - [AZ-104 Azure Administrator :bug:](#az-104-azure-administrator-bug)
+    - [2.AZ-104 Azure Administrator :bug:](#2az-104-azure-administrator-bug)
   - [3. On point](#3-on-point)
       - [1. RabbitMQ Mtls and minimal PKI :monkey:](#1-rabbitmq-mtls-and-minimal-pki-monkey)
   - [4. Misc](#4-misc)
@@ -430,7 +430,7 @@ $${\color{orange}This \ is \ important}$$
 
 ---
 
-### AZ-104 Azure Administrator :bug:
+### 2.AZ-104 Azure Administrator :bug:
 
 - 📚 MS AZ-104 extended
 - 📚 Azure DO NOT build things in the portal, use cli and ps1
