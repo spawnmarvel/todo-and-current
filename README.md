@@ -45,7 +45,7 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
       - [1. RabbitMQ Mtls and minimal PKI :monkey:](#1-rabbitmq-mtls-and-minimal-pki-monkey)
   - [4. Misc](#4-misc)
     - [1. MySQL database developer and Az MySql :star:](#1-mysql-database-developer-and-az-mysql-star)
-      - [2. Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun :bug:](#2-raspberry-pi-iot-sensor-mqtt-grafana-linux-and-fun-bug)
+    - [2. Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun :bug:](#2-raspberry-pi-iot-sensor-mqtt-grafana-linux-and-fun-bug)
   - [Backlog](#backlog)
     - [AP22 master drill (work use it)](#ap22-master-drill-work-use-it)
     - [Octopus Deploy for Linux (CI/CD) (work use it)](#octopus-deploy-for-linux-cicd-work-use-it)
@@ -474,7 +474,7 @@ $${\color{green}This \ is \ power}$$
 
 ---
 
-#### 2. Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun :bug:
+### 2. Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun :bug:
 
 - 📚 Learn IOT and play with sensors
 - 📚 Use MQTT, Python and Mosquitto broker
