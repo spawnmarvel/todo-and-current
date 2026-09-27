@@ -9,15 +9,24 @@ Python comes with built-in support for SQLite via the sqlite3 module. You do not
 
 ## Docs
 
+https://docs.python.org/3/library/sqlite3.html
+
+## Tutorial
+
+We will now created an SQLite database using the sqlite3 module, inserted data and retrieved values from it in multiple ways.
+
+```py
+import sqlite3
+con = sqlite3.connect("tutorial.db")
+```
+
+
+https://docs.python.org/3/library/sqlite3.html#tutorial
+
+
 ## Simple CRUD app
 
-## Create
 
-## Insert
-
-## Update
-
-## Delete
 
 ## DbBrowser for SQLite
 
