@@ -10,7 +10,7 @@
   - [Virtual env](#virtual-env)
   - [PEP 8 – Style Guide for Python Code](#pep-8--style-guide-for-python-code)
   - [Positional arguments or string concatenation](#positional-arguments-or-string-concatenation)
-  - [Minimal boilerplate juggler\_io python 3.14.7](#minimal-boilerplate-juggler_io-python-3147)
+  - [Minimal boilerplate example omni-collector-io python 3.14.7](#minimal-boilerplate-example-omni-collector-io-python-3147)
   - [Why pycache Needs Cleaning](#why-pycache-needs-cleaning)
   - [Cross-Platform Runtime Support](#cross-platform-runtime-support)
   - [Optimize python for speed](#optimize-python-for-speed)
@@ -187,11 +187,12 @@ self.logger.info("Successfully loaded configuration from " + str(config_file))
 * The logging module checks the current log level first. If DEBUG is disabled, it drops the call immediately without executing str(complex_object) or allocating new string memory.
 
 
-## Minimal boilerplate juggler_io python 3.14.7
+## Minimal boilerplate example omni-collector-io python 3.14.7
 
-Lest create the juggler_io as an example of boilerplate.
+Lest create the omni-collector-io as an example of boilerplate.
 
 1. Architecture & Component Blueprint
+2. 
 Config Layer: Reads and parses JSON settings into a strongly typed data structure with fallback defaults if the file is missing or invalid.
 
 * ***Logging Layer***: Configures structured stream and file handlers using standard logging without external dependencies.
@@ -200,7 +201,7 @@ Config Layer: Reads and parses JSON settings into a strongly typed data structur
 
 * ***Entry Point (main)***: Orchestrates component setup, executes the application, and exits cleanly with appropriate system exit codes.
 
-boilerplate juggler_io classes:
+boilerplate omni-collector-io classes:
 
 * Controller, AppLogger, run_main
 
@@ -213,7 +214,7 @@ Worker classes:
 * Zabbix trapper send data
 
 
-GOTO .\boilerplate juggler_io
+GOTO .\boilerplate omni-collector-io
 
 ## Why pycache Needs Cleaning
 
@@ -251,65 +252,24 @@ find . -type f -name "*.pyc" -delete
 
 ## Cross-Platform Runtime Support
 
-Python boilerplate juggler_io runs identically across Linux (including Docker containers running Linux/Debian/Alpine base images) and Windows (bare-metal, PowerShell, CMD, or Windows Containers).
+Python boilerplate omni-collector-io runs identically across Linux (including Docker containers running Linux/Debian/Alpine base images) and Windows (bare-metal, PowerShell, CMD, or Windows Containers).
 
 
 ```txt
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                       HOST EXECUTION ENVIRONMENT                            │
-│  [ Linux (Ubuntu/Debian) ]  │  [ Windows (10/11/Server) ]  │  [ Docker Container ] │
-└──────────────────────────────────────┬──────────────────────────────────────┘
-                                       │
-                                       │ (1) Execute Python process
-                                       ▼
-┌─────────────────────────────────────────────────────────────────────────────┐
-│ run_main.py (v1.3)                                                          │
-│  │                                                                          │
-│  ├─► (2) Instantiate AppLogger() ------───────────────────────────────────┐ │
-│  │                                                                        │ │
-│  ├─► (6) Register SIGTERM handler (Linux/Docker & Windows compatibility) │ │
-│  │                                                                        │ │
-│  ├─► (7) Log: "Main module started <timestamp>"                           │ │
-│  ├─► (8) Log: "Main PID: <PID>"                                          │ │
-│  │                                                                        │ │
-│  ├─► (9) Instantiate Controller() -------───────────────────────────────┐ │ │
-│  │                                                                      │ │ │
-│  ├─► (13) Call worker.run() ───────────────────────────────────────────┐ │ │ │
-│  │                                                                    │ │ │ │
-│  ├─► (15) Evaluate worker.valid_config & logger_wrapper.is_valid_config() │ │ │
-│  │                                                                    │ │ │ │
-│  └─► (16) Exit cleanly (sys.exit(0))                                  │ │ │ │
-└───────────────────────────────────────────────────────────────────────┼─┼─┼─┘
-                                                                        │ │ │
-       ┌────────────────────────────────────────────────────────────────┘ │ │
-       │                                                                  │ │
-       ▼                                                                  │ │
-┌───────────────────────────────────────────────────────────────────────┐ │ │
-│  app_logger.py (v1.8 - Singleton)                                     │ │ │
-│  │                                                                    │ │ │
-│  ├─► (3) Read & pre-validate args via _verify_ini_file()              │ │ │
-│  │       └──► Reads [logging_config.ini] (Cross-platform OS path)     │ │ │
-│  │                                                                    │ │ │
-│  ├─► (4) Initialize fileConfig() or basicConfig() fallback            │ │ │
-│  │                                                                    │ │ │
-│  └─► (5) Return shared logger instance via .get() ────────────────────┼─┼─┘
-└───────────────────────────────────────────────────────────────────────┘ │ │
-                                                                          │ │
-       ┌──────────────────────────────────────────────────────────────────┘ │
-       │                                                                    │
-       ▼                                                                    │
-┌─────────────────────────────────────────────────────────────────────────┐ │
-│  controller.py (v1.3)                                                   │ │
-│  │                                                                      │ │
-│  ├─► (10) Get logger instance via AppLogger().get()                     │ │
-│  │                                                                      │ │
-│  ├─► (11) Execute _load_config()                                        │ │
-│  │       └──► Reads & parses [config.json] via Path.cwd()               │ │
-│  │                                                                      │ │
-│  ├─► (12) Set valid_config = True / False                               │ │
-│  │                                                                      │ │
-│  └─► (14) Execute run() workload loop                ◄──────────────────┘ │
-└─────────────────────────────────────────────────────────────────────────┘
+┌────────────────────────┐
+               │    run_main.py         │ (Entry point & SIGTERM handler)
+               └───────────┬────────────┘
+                           │
+                           ▼
+               ┌────────────────────────┐
+               │  controller.Controller │ (Orchestrator & config loader)
+               └─────┬────────────┬─────┘
+                     │            │
+                     ▼            ▼
+ ┌──────────────────────┐   ┌──────────────────────────┐
+ │  app_logger.py       │   │  AmqpWorker              │
+ │  (AppLogger)         │   │  (AMQP operations)       │
+ └──────────────────────┘   └──────────────────────────┘
 ```
 
 ## Optimize python for speed
@@ -352,6 +312,6 @@ Line-by-Line Profiling: Use line_profiler to inspect CPU time spent on individua
 
 To create a self-contained executable from a Python script, the most popular and easiest tool to use is PyInstaller. It bundles your Python script, the Python interpreter, and all required dependencies into a single file that can run on computers without Python installed.
 
-GOTO .\boilerplate juggler_io_selfcontained
+GOTO .\boilerplate omni-collector-io_selfcontained
 
 * https://pyinstaller.org/en/stable/operating-mode.html
