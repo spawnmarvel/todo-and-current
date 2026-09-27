@@ -20,6 +20,10 @@ import sqlite3
 con = sqlite3.connect("tutorial.db")
 ```
 
+You have now created the file tutorial.db
+
+View run_db_tutorial.py for comments on the tutorial
+
 
 https://docs.python.org/3/library/sqlite3.html#tutorial
 
