@@ -34,15 +34,18 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
     - [Azure VM Operations](#azure-vm-operations)
     - [AD DS Configuration (vmhybrid01)](#ad-ds-configuration-vmhybrid01)
   - [Fast Linux VM Deployment IAC](#fast-linux-vm-deployment-iac)
-  - [Current Priorities: TOP 4 but 1 at the time](#current-priorities-top-4-but-1-at-the-time)
+  - [Current Priorities:](#current-priorities)
+  - [Zen](#zen)
+    - [1. Learn the ways of Linux-fu-yoda, for free :star:](#1-learn-the-ways-of-linux-fu-yoda-for-free-star)
+    - [2. Python projects often two-in-one. It is zen! :star:](#2-python-projects-often-two-in-one-it-is-zen-star)
+  - [Workish 3](#workish-3)
     - [1. Zabbix default :star:](#1-zabbix-default-star)
-    - [2. Learn the ways of Linux-fu-yoda, for free :star:](#2-learn-the-ways-of-linux-fu-yoda-for-free-star)
-    - [3. MySQL database developer and Az MySql :star:](#3-mysql-database-developer-and-az-mysql-star)
-    - [4. Python projects often two-in-one. It is zen! :star:](#4-python-projects-often-two-in-one-it-is-zen-star)
-    - [Misc](#misc)
-      - [Misc Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun :bug:](#misc-raspberry-pi-iot-sensor-mqtt-grafana-linux-and-fun-bug)
-      - [Misc: MS learn, AZ-104 extended :bug:](#misc-ms-learn-az-104-extended-bug)
-      - [RabbitMQ Mtls and minimal PKI :monkey:](#rabbitmq-mtls-and-minimal-pki-monkey)
+    - [AZ-104 Azure Administrator :bug:](#az-104-azure-administrator-bug)
+  - [On point](#on-point)
+      - [1. RabbitMQ Mtls and minimal PKI :monkey:](#1-rabbitmq-mtls-and-minimal-pki-monkey)
+  - [Misc](#misc)
+    - [1. MySQL database developer and Az MySql :star:](#1-mysql-database-developer-and-az-mysql-star)
+      - [2. Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun :bug:](#2-raspberry-pi-iot-sensor-mqtt-grafana-linux-and-fun-bug)
   - [Backlog](#backlog)
     - [AP22 master drill (work use it)](#ap22-master-drill-work-use-it)
     - [Octopus Deploy for Linux (CI/CD) (work use it)](#octopus-deploy-for-linux-cicd-work-use-it)
@@ -356,7 +359,49 @@ Install Zabbix agent 2 Linux
 
 ---
 
-## Current Priorities: TOP 4 but 1 at the time
+## Current Priorities: 
+
+## Zen
+
+### 1. Learn the ways of Linux-fu-yoda, for free :star:
+
+- 📚 3 questions and 3 answers [Linux-fu](https://github.com/spawnmarvel/todo-and-current/blob/main/bash_linux_fu/readme.md)
+
+- 📚 Then the linux command line W.S
+- 📚 Last Ubuntu forum tutorials
+
+**Completed:**
+
+- ✅ Do sys admin 5 min, look at practical examples, troubleshoot etc [drill](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/README.md#sys-admin-drill)
+- 
+- ✅ The linux [house](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/images__and_pdf/linux_house.jpg)
+
+$${\color{green}This \ is \ power}$$
+
+--- 
+
+### 2. Python projects often two-in-one. It is zen! :star:
+
+**In Progress:**
+- :monkey: Have fun!
+- 📚 Make a the boilerplate with a self contained .exe / or linux
+- 📚 Python and sqlite is 2-in-1 
+- 📚 Azure Static Web Apps (Recommended & Free) folder \python_game
+- 📚 MQTT
+- 📚 Monitoring
+- 📚 Zabbix lib and make templates maps Zabbix API
+
+**Completed:**
+- ✅ [All Python code](https://github.com/spawnmarvel/todo-and-current/tree/main/python)
+- ✅ [Cross-Platform Runtime Support boilerplate with logging](https://github.com/spawnmarvel/todo-and-current/tree/main/python/boilerplate)
+- ✅ Try to use built in standard lib
+
+
+$${\color{lightblue}This \ is \ fun}$$
+
+---
+
+## Workish 3
 
 ### 1. Zabbix default :star:
 
@@ -385,70 +430,7 @@ $${\color{orange}This \ is \ important}$$
 
 ---
 
-### 2. Learn the ways of Linux-fu-yoda, for free :star:
-
-- 📚 3 questions and 3 answers [Linux-fu](https://github.com/spawnmarvel/todo-and-current/blob/main/bash_linux_fu/readme.md)
-
-- 📚 Then the linux command line W.S
-- 📚 Last Ubuntu forum tutorials
-
-**Completed:**
-
-- ✅ Do sys admin 5 min, look at practical examples, troubleshoot etc [drill](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/README.md#sys-admin-drill)
-- 
-- ✅ The linux [house](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/images__and_pdf/linux_house.jpg)
-
-$${\color{green}This \ is \ power}$$
-
---- 
-
-### 3. MySQL database developer and Az MySql :star:
-
-- 📚 Do all MS learn for MySQL
-- 📚 https://learn.microsoft.com/en-us/training/browse/?terms=mysql&source=learn
-  
-- 📚 [MySql database developer tutorial github](https://github.com/spawnmarvel/todo-and-current/blob/main/mysql/README_mysql_tutorial.md#10-mysql-globalization)
-
-
-$${\color{green}This \ is \ power}$$
-
----
-
-### 4. Python projects often two-in-one. It is zen! :star:
-
-**In Progress:**
-- :monkey: Have fun!
-- 📚 Make a the boilerplate with a self contained .exe / or linux
-- 📚 Python and sqlite is 2-in-1 
-- 📚 Azure Static Web Apps (Recommended & Free) folder \python_game
-- 📚 MQTT
-- 📚 Monitoring
-- 📚 Zabbix lib and make templates maps Zabbix API
-
-**Completed:**
-- ✅ [All Python code](https://github.com/spawnmarvel/todo-and-current/tree/main/python)
-- ✅ [Cross-Platform Runtime Support boilerplate with logging](https://github.com/spawnmarvel/todo-and-current/tree/main/python/boilerplate)
-- ✅ Try to use built in standard lib
-
-
-$${\color{lightblue}This \ is \ fun}$$
-
----
-
-### Misc
-
-
-#### Misc Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun :bug:
-
-- 📚 Learn IOT and play with sensors
-- 📚 Use MQTT, Python and Mosquitto broker
-- 📚 [Raspberry Pi 4 docs](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/)
-
-$${\color{lightblue}This \ is \ fun}$$
-
----
-
-#### Misc: MS learn, AZ-104 extended :bug:
+### AZ-104 Azure Administrator :bug:
 
 - 📚 MS AZ-104 extended
 - 📚 Azure DO NOT build things in the portal, use cli and ps1
@@ -464,7 +446,9 @@ $${\color{orange}This \ is \ important}$$
 
 ---
 
-#### RabbitMQ Mtls and minimal PKI :monkey:
+## On point
+
+#### 1. RabbitMQ Mtls and minimal PKI :monkey:
 
 **Completed:**
 - ✅ [AMQP Shovel MTLS with RFC-6125](https://github.com/spawnmarvel/quickguides/blob/main/amqp/ReadmeNutshell.md)
@@ -474,6 +458,32 @@ $${\color{orange}This \ is \ important}$$
 $${\color{lightblue}This \ is \ fun}$$
 
 ---
+
+
+## Misc
+
+### 1. MySQL database developer and Az MySql :star:
+
+- 📚 Do all MS learn for MySQL
+- 📚 https://learn.microsoft.com/en-us/training/browse/?terms=mysql&source=learn
+  
+- 📚 [MySql database developer tutorial github](https://github.com/spawnmarvel/todo-and-current/blob/main/mysql/README_mysql_tutorial.md#10-mysql-globalization)
+
+
+$${\color{green}This \ is \ power}$$
+
+---
+
+#### 2. Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun :bug:
+
+- 📚 Learn IOT and play with sensors
+- 📚 Use MQTT, Python and Mosquitto broker
+- 📚 [Raspberry Pi 4 docs](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/)
+
+$${\color{lightblue}This \ is \ fun}$$
+
+---
+
 
 shuhari
 
