@@ -38,7 +38,7 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
     - [1. Zabbix default :star:](#1-zabbix-default-star)
     - [2. Learn the ways of Linux-fu-yoda, for free :star:](#2-learn-the-ways-of-linux-fu-yoda-for-free-star)
     - [3. MySQL database developer and Az MySql :star:](#3-mysql-database-developer-and-az-mysql-star)
-    - [4. Python projects often two-in-one :star:](#4-python-projects-often-two-in-one-star)
+    - [4. Python projects often two-in-one. It is zen! :star:](#4-python-projects-often-two-in-one-it-is-zen-star)
     - [Misc](#misc)
       - [Misc Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun :bug:](#misc-raspberry-pi-iot-sensor-mqtt-grafana-linux-and-fun-bug)
       - [Misc: MS learn, AZ-104 extended :bug:](#misc-ms-learn-az-104-extended-bug)
@@ -414,10 +414,10 @@ $${\color{green}This \ is \ power}$$
 
 ---
 
-### 4. Python projects often two-in-one :star:
+### 4. Python projects often two-in-one. It is zen! :star:
 
 **In Progress:**
-
+- :monkey: Have fun!
 - 📚 Make a the boilerplate with a self contained .exe / or linux
 - 📚 Python and sqlite is 2-in-1 
 - 📚 Azure Static Web Apps (Recommended & Free) folder \python_game
