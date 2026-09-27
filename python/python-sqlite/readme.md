@@ -4,8 +4,8 @@ Python comes with built-in support for SQLite via the sqlite3 module. You do not
 
 # Table of content
 
-- [](#docs)
-- 
+- [Docs](#docs)
+- [Tutorial](#tutorial)
 
 ## Docs
 
