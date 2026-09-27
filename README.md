@@ -369,10 +369,9 @@ Install Zabbix agent 2 Linux
 - :monkey: Have fun!
 - 📚 3 questions and 3 answers [Linux-fu](https://github.com/spawnmarvel/todo-and-current/blob/main/bash_linux_fu/readme.md)
 
-**Completed:**
+**Completed: but do once a week**
 
 - ✅ Do sys admin 5 min, look at practical examples, troubleshoot etc [drill](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/README.md#sys-admin-drill)
-- 
 - ✅ The linux [house](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/images__and_pdf/linux_house.jpg)
 
 $${\color{green}This \ is \ power}$$
