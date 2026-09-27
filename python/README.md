@@ -11,10 +11,10 @@
   - [PEP 8 – Style Guide for Python Code](#pep-8--style-guide-for-python-code)
   - [Positional arguments or string concatenation](#positional-arguments-or-string-concatenation)
   - [Why pycache Needs Cleaning](#why-pycache-needs-cleaning)
-  - [Minimal boilerplate example omni-collector-io python 3.14.7](#minimal-boilerplate-example-omni-collector-io-python-3147)
-  - [Cross-Platform Runtime Support](#cross-platform-runtime-support)
   - [Optimize python for speed](#optimize-python-for-speed)
-  - [Self-contained executable](#self-contained-executable)
+  - [Minimal boilerplate example omni-collector-io python 3.14.7](#minimal-boilerplate-example-omni-collector-io-python-3147)
+  - [Cross-Platform Runtime Support omni-collector-io](#cross-platform-runtime-support-omni-collector-io)
+  - [Self-contained executable omni-collector-io](#self-contained-executable-omni-collector-io)
 
 
 ## The Python Standard Library
@@ -220,57 +220,6 @@ find . -type d -name "__pycache__" -exec rm -rf {} +
 find . -type f -name "*.pyc" -delete
 ```
 
-## Minimal boilerplate example omni-collector-io python 3.14.7
-
-Lest create the omni-collector-io as an example of boilerplate.
-
-1. Architecture & Component Blueprint
-2. 
-Config Layer: Reads and parses JSON settings into a strongly typed data structure with fallback defaults if the file is missing or invalid.
-
-* ***Logging Layer***: Configures structured stream and file handlers using standard logging without external dependencies.
-
-* ***Application Engine***: Receives the logger and config instances via dependency injection, encapsulating the main execution pipeline and error handling.
-
-* ***Entry Point (main)***: Orchestrates component setup, executes the application, and exits cleanly with appropriate system exit codes.
-
-boilerplate omni-collector-io classes:
-
-* Controller, AppLogger, run_main
-
-Worker classes:
-
-* AMQP consume or produce messages
-* API get data
-* Database insert or fetch data
-* Read file, parse content, write file
-* Zabbix trapper send data
-
-
-GOTO .\boilerplate omni-collector-io
-
-## Cross-Platform Runtime Support
-
-Python boilerplate omni-collector-io runs identically across Linux (including Docker containers running Linux/Debian/Alpine base images) and Windows (bare-metal, PowerShell, CMD, or Windows Containers).
-
-
-```txt
-┌────────────────────────┐
-               │    run_main.py         │ (Entry point & SIGTERM handler)
-               └───────────┬────────────┘
-                           │
-                           ▼
-               ┌────────────────────────┐
-               │  controller.Controller │ (Orchestrator & config loader)
-               └─────┬────────────┬─────┘
-                     │            │
-                     ▼            ▼
- ┌──────────────────────┐   ┌──────────────────────────┐
- │  app_logger.py       │   │  AmqpWorker              │
- │  (AppLogger)         │   │  (AMQP operations)       │
- └──────────────────────┘   └──────────────────────────┘
-```
-
 ## Optimize python for speed
 
 1. Algorithm & Data Structure Selection
@@ -306,8 +255,60 @@ python -m cProfile -s cumulative run_main.py
 Line-by-Line Profiling: Use line_profiler to inspect CPU time spent on individual lines within specific functions.
 
 
+## Minimal boilerplate example omni-collector-io python 3.14.7
 
-## Self-contained executable
+Lest create the omni-collector-io as an example of boilerplate.
+
+1. Architecture & Component Blueprint
+2. 
+Config Layer: Reads and parses JSON settings into a strongly typed data structure with fallback defaults if the file is missing or invalid.
+
+* ***Logging Layer***: Configures structured stream and file handlers using standard logging without external dependencies.
+
+* ***Application Engine***: Receives the logger and config instances via dependency injection, encapsulating the main execution pipeline and error handling.
+
+* ***Entry Point (main)***: Orchestrates component setup, executes the application, and exits cleanly with appropriate system exit codes.
+
+boilerplate omni-collector-io classes:
+
+* Controller, AppLogger, run_main
+
+Worker classes:
+
+* AMQP consume or produce messages
+* API get data
+* Database insert or fetch data
+* Read file, parse content, write file
+* Zabbix trapper send data
+
+
+GOTO .\boilerplate omni-collector-io
+
+## Cross-Platform Runtime Support omni-collector-io
+
+Python boilerplate omni-collector-io runs identically across Linux (including Docker containers running Linux/Debian/Alpine base images) and Windows (bare-metal, PowerShell, CMD, or Windows Containers).
+
+
+```txt
+┌────────────────────────┐
+               │    run_main.py         │ (Entry point & SIGTERM handler)
+               └───────────┬────────────┘
+                           │
+                           ▼
+               ┌────────────────────────┐
+               │  controller.Controller │ (Orchestrator & config loader)
+               └─────┬────────────┬─────┘
+                     │            │
+                     ▼            ▼
+ ┌──────────────────────┐   ┌──────────────────────────┐
+ │  app_logger.py       │   │  AmqpWorker              │
+ │  (AppLogger)         │   │  (AMQP operations)       │
+ └──────────────────────┘   └──────────────────────────┘
+```
+
+
+
+## Self-contained executable omni-collector-io
 
 To create a self-contained executable from a Python script, the most popular and easiest tool to use is PyInstaller. It bundles your Python script, the Python interpreter, and all required dependencies into a single file that can run on computers without Python installed.
 
