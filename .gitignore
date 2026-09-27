@@ -210,3 +210,8 @@ __marimo__/
 venv/
 .env
 config.json
+
+
+# sqlite
+*.sqlite
+*.db
