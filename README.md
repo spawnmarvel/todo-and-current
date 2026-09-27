@@ -365,10 +365,9 @@ Install Zabbix agent 2 Linux
 
 ### 1. Learn the ways of Linux-fu-yoda, for free :bug:
 
+**In Progress:**
+- :monkey: Have fun!
 - 📚 3 questions and 3 answers [Linux-fu](https://github.com/spawnmarvel/todo-and-current/blob/main/bash_linux_fu/readme.md)
-
-- 📚 Then the linux command line W.S
-- 📚 Last Ubuntu forum tutorials
 
 **Completed:**
 
@@ -384,12 +383,7 @@ $${\color{green}This \ is \ power}$$
 
 **In Progress:**
 - :monkey: Have fun!
-- 📚 Make a the boilerplate with a self contained .exe / or linux
-- 📚 Python and sqlite is 2-in-1 
-- 📚 Azure Static Web Apps (Recommended & Free) folder \python_game
-- 📚 MQTT
-- 📚 Monitoring
-- 📚 Zabbix lib and make templates maps Zabbix API
+- 📚 Python and sqlite is 2-in-1, start with this, one thing at the time
 
 **Completed:**
 - ✅ [All Python code](https://github.com/spawnmarvel/todo-and-current/tree/main/python)
