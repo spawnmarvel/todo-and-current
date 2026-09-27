@@ -36,8 +36,8 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
   - [Fast Linux VM Deployment IAC](#fast-linux-vm-deployment-iac)
   - [Current Priorities:](#current-priorities)
   - [1. Zen](#1-zen)
-    - [1. Learn the ways of Linux-fu-yoda, for free :star:](#1-learn-the-ways-of-linux-fu-yoda-for-free-star)
-    - [2. Python projects often two-in-one. It is zen! :star:](#2-python-projects-often-two-in-one-it-is-zen-star)
+    - [1. Learn the ways of Linux-fu-yoda, for free :bug:](#1-learn-the-ways-of-linux-fu-yoda-for-free-bug)
+    - [2. Python projects often two-in-one. It is zen! :bug:](#2-python-projects-often-two-in-one-it-is-zen-bug)
   - [2. Workish](#2-workish)
     - [1. Zabbix default :star:](#1-zabbix-default-star)
     - [2. AZ-104 Azure Administrator :bug:](#2-az-104-azure-administrator-bug)
@@ -363,7 +363,7 @@ Install Zabbix agent 2 Linux
 
 ## 1. Zen
 
-### 1. Learn the ways of Linux-fu-yoda, for free :star:
+### 1. Learn the ways of Linux-fu-yoda, for free :bug:
 
 - 📚 3 questions and 3 answers [Linux-fu](https://github.com/spawnmarvel/todo-and-current/blob/main/bash_linux_fu/readme.md)
 
@@ -380,7 +380,7 @@ $${\color{green}This \ is \ power}$$
 
 --- 
 
-### 2. Python projects often two-in-one. It is zen! :star:
+### 2. Python projects often two-in-one. It is zen! :bug:
 
 **In Progress:**
 - :monkey: Have fun!
