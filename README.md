@@ -35,15 +35,15 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
     - [AD DS Configuration (vmhybrid01)](#ad-ds-configuration-vmhybrid01)
   - [Fast Linux VM Deployment IAC](#fast-linux-vm-deployment-iac)
   - [Current Priorities:](#current-priorities)
-  - [Zen](#zen)
+  - [1. Zen](#1-zen)
     - [1. Learn the ways of Linux-fu-yoda, for free :star:](#1-learn-the-ways-of-linux-fu-yoda-for-free-star)
     - [2. Python projects often two-in-one. It is zen! :star:](#2-python-projects-often-two-in-one-it-is-zen-star)
-  - [Workish 3](#workish-3)
+  - [2. Workish](#2-workish)
     - [1. Zabbix default :star:](#1-zabbix-default-star)
     - [AZ-104 Azure Administrator :bug:](#az-104-azure-administrator-bug)
-  - [On point](#on-point)
+  - [3. On point](#3-on-point)
       - [1. RabbitMQ Mtls and minimal PKI :monkey:](#1-rabbitmq-mtls-and-minimal-pki-monkey)
-  - [Misc](#misc)
+  - [4. Misc](#4-misc)
     - [1. MySQL database developer and Az MySql :star:](#1-mysql-database-developer-and-az-mysql-star)
       - [2. Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun :bug:](#2-raspberry-pi-iot-sensor-mqtt-grafana-linux-and-fun-bug)
   - [Backlog](#backlog)
@@ -361,7 +361,7 @@ Install Zabbix agent 2 Linux
 
 ## Current Priorities: 
 
-## Zen
+## 1. Zen
 
 ### 1. Learn the ways of Linux-fu-yoda, for free :star:
 
@@ -401,7 +401,7 @@ $${\color{lightblue}This \ is \ fun}$$
 
 ---
 
-## Workish 3
+## 2. Workish
 
 ### 1. Zabbix default :star:
 
@@ -446,7 +446,7 @@ $${\color{orange}This \ is \ important}$$
 
 ---
 
-## On point
+## 3. On point
 
 #### 1. RabbitMQ Mtls and minimal PKI :monkey:
 
@@ -460,7 +460,7 @@ $${\color{lightblue}This \ is \ fun}$$
 ---
 
 
-## Misc
+## 4. Misc
 
 ### 1. MySQL database developer and Az MySql :star:
 
