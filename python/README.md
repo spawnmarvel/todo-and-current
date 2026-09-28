@@ -376,3 +376,19 @@ To achieve this:
 
 GOTO .\ py-zabbix-trapper, we will use this as an example
 
+```cmd
+dir
+
+    Directory: C:\giti2026\todo-and-current\python\py-zabbix-trapper
+    
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---          27.09.2026    22:12           4326 app_logger.py
+-a---          28.09.2026    20:26           2400 config.json
+-a---          27.09.2026    22:12           5409 controller.py
+-a---          27.09.2026    22:12            640 logging_config.ini
+-a---          28.09.2026    20:23            998 readme.md
+-a---          27.09.2026    22:12           2450 run_main.py
+-a---          27.09.2026    22:12            443 worker_zabbix_trapper.py
+```
+
