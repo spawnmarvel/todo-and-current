@@ -21,5 +21,12 @@ zabbix_sender.exe -z 192.168.1.113 -i data_values.txt
 
 https://www.zabbix.com/documentation/4.0/en/manpages/zabbix_sender
 
+# Read a txt file from external
+
+External can be:
+
+* Powershell
+* cmd
+* Sql save file
 
 ## Pyinstaller
