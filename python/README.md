@@ -440,6 +440,6 @@ Now we just have 3 config sections, all we need for coding.
 ### py-zabbix-trapper logic
 
 1. Read a file with the file worker on format given in config.json
-2. Let the controller pass it to the zabbix worker
+2. Let the controller pass it in worker.run() to zabbix worker
 3. Let the zabbix worker send it
 4. Verify in zabbix
