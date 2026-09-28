@@ -29,4 +29,8 @@ External can be:
 * cmd
 * Sql save file
 
+Output file on iteration one, delete the file on iteration 2 and save a new file with new data
+
+We then read the file present.
+
 ## Pyinstaller
