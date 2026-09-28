@@ -383,6 +383,7 @@ $${\color{green}This \ is \ power}$$
 **In Progress:**
 - :monkey: Have fun!
 - 📚 Python and sqlite is 2-in-1, start with this, one thing at the time
+- 📚 py-zabbiz-trapper use libs from zabbix and make executable, read a txt file
 
 **Completed:**
 - ✅ [Python collections](https://github.com/spawnmarvel/todo-and-current/tree/main/python)

@@ -1,4 +1,4 @@
-# 
+#  Python zabbix trapper
 
 ## Add zabbix bin to this code
 
