@@ -460,6 +460,22 @@ You now have conf and bin.
 
 Copy bin to this project.
 
+Check bin
+
+```cmd
+ dir
+
+    Directory: C:\giti2026\todo-and-current\python\py-zabbix-trapper\bin
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----          28.09.2026    21:08                dev
+-a---          28.09.2026    21:07         936448 zabbix_agentd.exe
+-a---          28.09.2026    21:07         363520 zabbix_get.exe
+-a---          28.09.2026    21:07         455168 zabbix_sender.exe
+
+```
+
 
 
 
