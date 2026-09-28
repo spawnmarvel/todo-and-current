@@ -372,7 +372,7 @@ To achieve this:
 
 ### Init py-zabbix-trapper from boilerplate
 
-We will py-zabbix-trapper as an example, copy the following files from the boilerplate:
+We will use py-zabbix-trapper as an example, copy the following files from the boilerplate:
 
 ```cmd
 dir
