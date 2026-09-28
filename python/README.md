@@ -13,7 +13,7 @@
   - [Why pycache Needs Cleaning](#why-pycache-needs-cleaning)
   - [Optimize python for speed](#optimize-python-for-speed)
   - [Minimal boilerplate](#minimal-boilerplate)
-  - [Cross-Platform Runtime Support poilerplate](#cross-platform-runtime-support-poilerplate)
+  - [Cross-Platform Runtime Support boilerplate](#cross-platform-runtime-support-boilerplate)
   - [Run boilerplate example](#run-boilerplate-example)
   - [Self-contained executable py-zabbix-trapper example](#self-contained-executable-py-zabbix-trapper-example)
 
@@ -289,7 +289,7 @@ Worker classes:
 
 GOTO .\boilerplate
 
-## Cross-Platform Runtime Support poilerplate
+## Cross-Platform Runtime Support boilerplate
 
 Python boilerplate runs identically across Linux (including Docker containers running Linux/Debian/Alpine base images) and Windows (bare-metal, PowerShell, CMD, or Windows Containers).
 
@@ -314,8 +314,10 @@ Python boilerplate runs identically across Linux (including Docker containers ru
 ## Run boilerplate example
 
 
-```ps1
+Run it
 
+```ps1
+python .\run_main.py
 ```
 
 The log result show the working result and all config sections are loaded.
