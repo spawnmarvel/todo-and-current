@@ -28,6 +28,7 @@ External can be:
 * Powershell
 * cmd
 * Sql save file
+* Other
 
 Output file on iteration one, delete the file on iteration 2 and save a new file with new data
 

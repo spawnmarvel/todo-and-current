@@ -14,6 +14,7 @@
   - [Optimize python for speed](#optimize-python-for-speed)
   - [Minimal boilerplate](#minimal-boilerplate)
   - [Cross-Platform Runtime Support poilerplate](#cross-platform-runtime-support-poilerplate)
+  - [Run boilerplate example](#run-boilerplate-example)
   - [Self-contained executable py-zabbix-trapper example](#self-contained-executable-py-zabbix-trapper-example)
 
 
@@ -310,7 +311,41 @@ Python boilerplate runs identically across Linux (including Docker containers ru
  └──────────────────────┘   └──────────────────────────┘
 ```
 
+## Run boilerplate example
 
+
+```ps1
+
+```
+
+The log result show the working result and all config sections are loaded.
+
+When we code we just alter the config.json and copy the class we need or make it.
+
+```log
+2026-09-28 20:27:13,526 - 34008 - 39912 - app_logger.py - 43 -             __init__() root - INFO - *******************
+2026-09-28 20:27:13,526 - 34008 - 39912 - app_logger.py - 44 -             __init__() root - INFO - Successfully loaded logging configuration from C:\giti2026\todo-and-current\python\boilerplate\logging_config.ini
+2026-09-28 20:27:13,526 - 34008 - 39912 - run_main.py - 36 -             <module>() root - INFO - *******************
+2026-09-28 20:27:13,526 - 34008 - 39912 - run_main.py - 37 -             <module>() root - INFO - Main module started 2026-09-28 20:27:13.526921
+2026-09-28 20:27:13,527 - 34008 - 39912 - run_main.py - 38 -             <module>() root - INFO - *******************
+2026-09-28 20:27:13,527 - 34008 - 39912 - run_main.py - 42 -             <module>() root - INFO - Main PID: 39912
+2026-09-28 20:27:13,527 - 34008 - 39912 - controller.py - 43 -         _load_config() root - INFO - Successfully loaded application configuration from C:\giti2026\todo-and-current\python\boilerplate\config.json
+2026-09-28 20:27:13,527 - 34008 - 39912 - controller.py - 133 -                  run() root - INFO - Application is running with multiple available configurations to choose from: ['app', 'amqp', 'database', 'zabbix', 'file', 'api']
+2026-09-28 20:27:13,527 - 34008 - 39912 - controller.py - 99 -      database_config() root - INFO - Retrieving database configuration...
+2026-09-28 20:27:13,527 - 34008 - 39912 - controller.py - 101 -      database_config() root - INFO - Database Configuration: {'$database_comments': 'The database configuration section provides settings for connecting to the database.', 'host': 'localhost', 'port': 3306, 'username': 'user', 'password': 'password', 'database_name': 'boilerplate_db', 'ca_cert': 'path/to/ca_cert.pem', 'ssl_enabled': False}
+2026-09-28 20:27:13,528 - 34008 - 39912 - controller.py - 140 -                  run() root - INFO - Application loop step 1/...
+2026-09-28 20:27:13,528 - 34008 - 39912 - controller.py - 140 -                  run() root - INFO - Application loop step 2/...
+2026-09-28 20:27:13,528 - 34008 - 39912 - controller.py - 140 -                  run() root - INFO - Application loop step 3/...
+2026-09-28 20:27:13,528 - 34008 - 39912 - controller.py - 140 -                  run() root - INFO - Application loop step 4/...
+2026-09-28 20:27:13,528 - 34008 - 39912 - controller.py - 140 -                  run() root - INFO - Application loop step 5/...
+2026-09-28 20:27:13,528 - 34008 - 39912 - controller.py - 140 -                  run() root - INFO - Application loop step 6/...
+2026-09-28 20:27:13,528 - 34008 - 39912 - controller.py - 140 -                  run() root - INFO - Application loop step 7/...
+2026-09-28 20:27:13,528 - 34008 - 39912 - controller.py - 140 -                  run() root - INFO - Application loop step 8/...
+2026-09-28 20:27:13,528 - 34008 - 39912 - controller.py - 140 -                  run() root - INFO - Application loop step 9/...
+2026-09-28 20:27:13,529 - 34008 - 39912 - controller.py - 140 -                  run() root - INFO - Application loop step 10/...
+2026-09-28 20:27:13,529 - 34008 - 39912 - run_main.py - 64 -             <module>() root - INFO - Application finished successfully
+
+```
 
 ## Self-contained executable py-zabbix-trapper example
 
@@ -330,4 +365,12 @@ To achieve this:
 
 * SCM Registration (sc.exe): Compile using PyInstaller in --onedir mode, then register run_main.exe using sc.exe create.
 
-GOTO py-zabbix-trapper, we will use this as an example
+
+1. Copy the following files from the boilerplate
+2. controller.py
+3. app_logger.py
+4. run_main.py
+5. worker_zabbix_trapper.py
+
+GOTO .\ py-zabbix-trapper, we will use this as an example
+
