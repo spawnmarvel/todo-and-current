@@ -443,3 +443,24 @@ Now we just have 3 config sections, all we need for coding.
 2. Let the controller pass it in worker.run() to zabbix worker
 3. Let the zabbix worker send it
 4. Verify in zabbix
+
+How to Get zabbix_sender.exe
+
+
+https://www.zabbix.com/download_agents?version=6.0+LTS&release=6.0.48&os=Windows&os_version=11%2C+10&hardware=amd64&encryption=No+encryption&packaging=Archive&show_legacy=0
+
+Download
+
+* Zabbix agent v6.0.48, not agent 2 (?)
+* https://cdn.zabbix.com/zabbix/binaries/stable/6.0/6.0.48/zabbix_agent-6.0.48-windows-amd64.zip
+
+Then you get zabbix_agent-6.0.48-windows-amd64.zip, unzip it
+
+You now have conf and bin.
+
+Copy bin to this project.
+
+
+
+
+
