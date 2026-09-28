@@ -395,6 +395,8 @@ $${\color{lightblue}This \ is \ fun}$$
 
 ---
 
+![rabbit](https://github.com/spawnmarvel/todo-and-current/blob/main/images/rabbit.png)
+
 ## 2. Workish
 
 ### 1. Zabbix default :star:
