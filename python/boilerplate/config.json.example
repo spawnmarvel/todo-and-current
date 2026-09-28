@@ -43,7 +43,8 @@
         "$file_comments": "The file configuration section provides settings for file handling. Read the file_path, file_separator, and file_encoding values to configure how the application reads and processes files.",
         "file_path": "path/to/file.txt",
         "file_separator": ";",
-        "file_encoding": "utf-8"
+        "file_encoding": "utf-8",
+        "file_comments_zabbix": "python will run: zabbix_sender.exe -z zabbix_server -s hostname -k my_item -o 43, so the file must have the following format: hostname;my_item;43"
     },
     "api": {
         "$api_comments": "The API configuration section provides settings for connecting to external APIs. Configure the api_base_url, api_key, and timeout values to manage API interactions.",

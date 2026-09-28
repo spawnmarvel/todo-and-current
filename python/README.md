@@ -387,3 +387,19 @@ Mode                 LastWriteTime         Length Name
 ```
 
 GOTO .\ py-zabbix-trapper
+
+1. Remove all sections not needed in the config.json
+
+For this we need the app, zabbix and file section
+
+2. Run the application
+
+```cmd
+python run_main.py
+```
+
+Log
+
+```log
+
+```
