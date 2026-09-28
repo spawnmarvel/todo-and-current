@@ -136,7 +136,8 @@ class Controller:
 
         # load and validate configuration sections for AMQP, database, Zabbix, and file settings, example with database_config
         # example usage of configuration retrieval methods
-        # self.database_config()
+        self.file_config()
+        self.zabbix_config()
         for i in range(10):
             self.logger.info("Application loop step %d/...", i + 1)
             # time.sleep(4)

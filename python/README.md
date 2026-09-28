@@ -16,6 +16,8 @@
   - [Cross-Platform Runtime Support boilerplate](#cross-platform-runtime-support-boilerplate)
   - [Run boilerplate example](#run-boilerplate-example)
   - [Self-contained executable py-zabbix-trapper example](#self-contained-executable-py-zabbix-trapper-example)
+    - [Init py-zabbix-trapper from boilerplate](#init-py-zabbix-trapper-from-boilerplate)
+    - [py-zabbix-trapper logic](#py-zabbix-trapper-logic)
 
 
 ## The Python Standard Library
@@ -367,6 +369,7 @@ To achieve this:
 
 * SCM Registration (sc.exe): Compile using PyInstaller in --onedir mode, then register run_main.exe using sc.exe create.
 
+### Init py-zabbix-trapper from boilerplate
 
 We will py-zabbix-trapper as an example, copy the following files from the boilerplate:
 
@@ -377,13 +380,17 @@ dir
 
 Mode                 LastWriteTime         Length Name
 ----                 -------------         ------ ----
+d----          28.09.2026    20:54                __pycache__
 -a---          27.09.2026    22:12           4326 app_logger.py
--a---          28.09.2026    20:26           2400 config.json
--a---          27.09.2026    22:12           5409 controller.py
+-a---          28.09.2026    20:47           1162 config.json
+-a---          28.09.2026    20:52           5495 controller.py
+-a---          28.09.2026    20:54          16631 log_app.txt
 -a---          27.09.2026    22:12            640 logging_config.ini
 -a---          28.09.2026    20:23            998 readme.md
 -a---          27.09.2026    22:12           2450 run_main.py
--a---          27.09.2026    22:12            443 worker_zabbix_trapper.py
+-a---          28.09.2026    20:49             32 send2zabbix.txt
+-a---          28.09.2026    20:54           1002 worker_file.py
+-a---          28.09.2026    20:53           1203 worker_zabbix_trapper.py
 ```
 
 GOTO .\ py-zabbix-trapper
@@ -401,5 +408,38 @@ python run_main.py
 Log
 
 ```log
+2026-09-28 20:55:43,757 - 23208 - 13552 - app_logger.py - 43 -             __init__() root - INFO - *******************
+2026-09-28 20:55:43,757 - 23208 - 13552 - app_logger.py - 44 -             __init__() root - INFO - Successfully loaded logging configuration from C:\giti2026\todo-and-current\python\py-zabbix-trapper\logging_config.ini
+2026-09-28 20:55:43,758 - 23208 - 13552 - run_main.py - 36 -             <module>() root - INFO - *******************
+2026-09-28 20:55:43,758 - 23208 - 13552 - run_main.py - 37 -             <module>() root - INFO - Main module started 2026-09-28 20:55:43.758159
+2026-09-28 20:55:43,758 - 23208 - 13552 - run_main.py - 38 -             <module>() root - INFO - *******************
+2026-09-28 20:55:43,758 - 23208 - 13552 - run_main.py - 42 -             <module>() root - INFO - Main PID: 13552
+2026-09-28 20:55:43,758 - 23208 - 13552 - controller.py - 43 -         _load_config() root - INFO - Successfully loaded application configuration from C:\giti2026\todo-and-current\python\py-zabbix-trapper\config.json
+2026-09-28 20:55:43,759 - 23208 - 13552 - controller.py - 133 -                  run() root - INFO - Application is running with multiple available configurations to choose from: ['app', 'zabbix', 'file']
+2026-09-28 20:55:43,759 - 23208 - 13552 - controller.py - 113 -          file_config() root - INFO - Retrieving file configuration...
+2026-09-28 20:55:43,759 - 23208 - 13552 - controller.py - 115 -          file_config() root - INFO - File Configuration: {'$file_comments': 'The file configuration section provides settings for file handling. Read the file_path, file_separator, and file_encoding values to configure how the application reads and processes files.', 'file_path': 'path/to/file.txt', 'file_separator': ';', 'file_encoding': 'utf-8', 'file_comments_zabbix': 'python will run: zabbix_sender.exe -z zabbix_server -s hostname -k my_item -o 43, so the file must have the following format: hostname;my_item;43'}
+2026-09-28 20:55:43,759 - 23208 - 13552 - controller.py - 106 -        zabbix_config() root - INFO - Retrieving Zabbix configuration...
+2026-09-28 20:55:43,759 - 23208 - 13552 - controller.py - 108 -        zabbix_config() root - INFO - Zabbix Configuration: {'$zabbix_comments': 'The Zabbix configuration section provides settings for connecting to the Zabbix server. Send traps to the Zabbix server. Connect to the Zabbix server.', 'host': 'localhost', 'zabbix_server': 'zabbix.example.com', 'port': 10051, 'username': 'user', 'password': 'password', 'ssl_enabled': False}
+2026-09-28 20:55:43,759 - 23208 - 13552 - controller.py - 142 -                  run() root - INFO - Application loop step 1/...
+2026-09-28 20:55:43,759 - 23208 - 13552 - controller.py - 142 -                  run() root - INFO - Application loop step 2/...
+2026-09-28 20:55:43,759 - 23208 - 13552 - controller.py - 142 -                  run() root - INFO - Application loop step 3/...
+2026-09-28 20:55:43,759 - 23208 - 13552 - controller.py - 142 -                  run() root - INFO - Application loop step 4/...
+2026-09-28 20:55:43,759 - 23208 - 13552 - controller.py - 142 -                  run() root - INFO - Application loop step 5/...
+2026-09-28 20:55:43,759 - 23208 - 13552 - controller.py - 142 -                  run() root - INFO - Application loop step 6/...
+2026-09-28 20:55:43,760 - 23208 - 13552 - controller.py - 142 -                  run() root - INFO - Application loop step 7/...
+2026-09-28 20:55:43,760 - 23208 - 13552 - controller.py - 142 -                  run() root - INFO - Application loop step 8/...
+2026-09-28 20:55:43,760 - 23208 - 13552 - controller.py - 142 -                  run() root - INFO - Application loop step 9/...
+2026-09-28 20:55:43,760 - 23208 - 13552 - controller.py - 142 -                  run() root - INFO - Application loop step 10/...
+2026-09-28 20:55:43,760 - 23208 - 13552 - run_main.py - 64 -             <module>() root - INFO - Application finished successfully
+
 
 ```
+
+Now we just have 3 config sections, all we need for coding.
+
+### py-zabbix-trapper logic
+
+1. Read a file with the file worker on format given in config.json
+2. Let the controller pass it to the zabbix worker
+3. Let the zabbix worker send it
+4. Verify in zabbix
