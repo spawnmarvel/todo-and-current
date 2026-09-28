@@ -368,19 +368,13 @@ To achieve this:
 * SCM Registration (sc.exe): Compile using PyInstaller in --onedir mode, then register run_main.exe using sc.exe create.
 
 
-1. Copy the following files from the boilerplate
-2. controller.py
-3. app_logger.py
-4. run_main.py
-5. worker_zabbix_trapper.py
-
-GOTO .\ py-zabbix-trapper, we will use this as an example
+We will py-zabbix-trapper as an example, copy the following files from the boilerplate:
 
 ```cmd
 dir
 
     Directory: C:\giti2026\todo-and-current\python\py-zabbix-trapper
-    
+
 Mode                 LastWriteTime         Length Name
 ----                 -------------         ------ ----
 -a---          27.09.2026    22:12           4326 app_logger.py
@@ -392,3 +386,4 @@ Mode                 LastWriteTime         Length Name
 -a---          27.09.2026    22:12            443 worker_zabbix_trapper.py
 ```
 
+GOTO .\ py-zabbix-trapper
