@@ -12,9 +12,9 @@
   - [Positional arguments or string concatenation](#positional-arguments-or-string-concatenation)
   - [Why pycache Needs Cleaning](#why-pycache-needs-cleaning)
   - [Optimize python for speed](#optimize-python-for-speed)
-  - [Minimal boilerplate example omni-collector-io python](#minimal-boilerplate-example-omni-collector-io-python)
-  - [Cross-Platform Runtime Support omni-collector-io](#cross-platform-runtime-support-omni-collector-io)
-  - [Self-contained executable omni-collector-io](#self-contained-executable-omni-collector-io)
+  - [Minimal boilerplate](#minimal-boilerplate)
+  - [Cross-Platform Runtime Support poilerplate](#cross-platform-runtime-support-poilerplate)
+  - [Self-contained executable py-zabbix-trapper example](#self-contained-executable-py-zabbix-trapper-example)
 
 
 ## The Python Standard Library
@@ -255,12 +255,13 @@ python -m cProfile -s cumulative run_main.py
 Line-by-Line Profiling: Use line_profiler to inspect CPU time spent on individual lines within specific functions.
 
 
-## Minimal boilerplate example omni-collector-io python
+## Minimal boilerplate 
 
-Lest create the omni-collector-io as an example of boilerplate.
+Let's create a boilerplate for all future python code.
+
 
 1. Architecture & Component Blueprint
-2. 
+   
 Config Layer: Reads and parses JSON settings into a strongly typed data structure with fallback defaults if the file is missing or invalid.
 
 * ***Logging Layer***: Configures structured stream and file handlers using standard logging without external dependencies.
@@ -269,7 +270,9 @@ Config Layer: Reads and parses JSON settings into a strongly typed data structur
 
 * ***Entry Point (main)***: Orchestrates component setup, executes the application, and exits cleanly with appropriate system exit codes.
 
-boilerplate omni-collector-io classes:
+2. Classes and modules
+   
+boilerplate classes:
 
 * Controller, AppLogger, run_main
 
@@ -280,13 +283,14 @@ Worker classes:
 * Database insert or fetch data
 * Read file, parse content, write file
 * Zabbix trapper send data
+* Add more classes as needed
 
 
-GOTO .\boilerplate omni-collector-io
+GOTO .\boilerplate
 
-## Cross-Platform Runtime Support omni-collector-io
+## Cross-Platform Runtime Support poilerplate
 
-Python boilerplate omni-collector-io runs identically across Linux (including Docker containers running Linux/Debian/Alpine base images) and Windows (bare-metal, PowerShell, CMD, or Windows Containers).
+Python boilerplate runs identically across Linux (including Docker containers running Linux/Debian/Alpine base images) and Windows (bare-metal, PowerShell, CMD, or Windows Containers).
 
 
 ```txt
@@ -308,10 +312,22 @@ Python boilerplate omni-collector-io runs identically across Linux (including Do
 
 
 
-## Self-contained executable omni-collector-io
+## Self-contained executable py-zabbix-trapper example
 
 To create a self-contained executable from a Python script, the most popular and easiest tool to use is PyInstaller. It bundles your Python script, the Python interpreter, and all required dependencies into a single file that can run on computers without Python installed.
 
-GOTO .\boilerplate omni-collector-io_selfcontained
-
 * https://pyinstaller.org/en/stable/operating-mode.html
+
+To create a self-contained executable package for Windows Server without requiring Python installed on the target machine
+
+Windows Services manage background process lifecycles via the Service Control Manager (SCM). Standard Python CLI loops must handle SCM signaling protocols (start, stop, pause) to run cleanly without throwing Service Control Error 1053.
+
+To achieve this:
+
+* servicemanager Integration: Use win32serviceutil.ServiceFramework (from pywin32) so the Windows SCM can start, stop, and report status without crashing.
+
+* Dependencies (pip install): Install pywin32 and pyinstaller before compiling.
+
+* SCM Registration (sc.exe): Compile using PyInstaller in --onedir mode, then register run_main.exe using sc.exe create.
+
+GOTO py-zabbix-trapper, we will use this as an example
