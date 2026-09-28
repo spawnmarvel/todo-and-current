@@ -18,6 +18,7 @@
   - [Self-contained executable py-zabbix-trapper example](#self-contained-executable-py-zabbix-trapper-example)
     - [Init py-zabbix-trapper from boilerplate](#init-py-zabbix-trapper-from-boilerplate)
     - [py-zabbix-trapper logic](#py-zabbix-trapper-logic)
+    - [Make py-zabbix-trapper.exe](#make-py-zabbix-trapperexe)
 
 
 ## The Python Standard Library
@@ -475,6 +476,34 @@ d----          28.09.2026    21:08                dev
 -a---          28.09.2026    21:07         455168 zabbix_sender.exe
 
 ```
+
+Now lets make some code for reading the file and for sending to Zabbix.
+
+
+1. Read a txt file from external
+
+External can be:
+
+* Powershell
+* cmd
+* Sql save file
+* Other
+
+Output file on iteration one, delete the file on iteration 2 and save a new file with new data
+
+2. Send to zabbix
+
+Result of logs
+
+```log
+
+```
+
+
+### Make py-zabbix-trapper.exe
+
+To create a self-contained executable from a Python script, the most popular and easiest tool to use is PyInstaller. It bundles your Python script, the Python interpreter, and all required dependencies into a single file that can run on computers without Python installed.
+
 
 
 
