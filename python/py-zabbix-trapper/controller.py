@@ -151,8 +151,8 @@ class Controller:
 
             # sleep for 10 sec
             self.logger.info(
-                "Sleep for 10 seconds while we wait for new updates in the the text file: %s", file_path)
-            time.sleep(10)
+                "Sleep for 30 seconds while we wait for new updates in the the text file: %s", file_path)
+            time.sleep(30)
 
         #
         # self.logger.info("Send traps to Zabbix server")

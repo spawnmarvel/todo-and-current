@@ -34,6 +34,47 @@ class ZabbixTrapperWorker:
             "Zabbix sender binary located successfully at %s", self.binary_path)
         return True
 
+    def get_version(self) -> str:
+        """Executes zabbix_sender.exe -V and returns version information."""
+        if not self.binary_path.exists():
+            self.logger.error(
+                "zabbix_sender.exe binary not found at %s", self.binary_path)
+            return ""
+
+        cmd = [str(self.binary_path), "-V"]
+
+        try:
+            # Combine stdout and stderr to capture version banner from both streams
+            result = subprocess.run(
+                cmd,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT,
+                text=True,
+                timeout=5,
+                check=False
+            )
+
+            raw_output = result.stdout.strip() if result.stdout else ""
+
+            if raw_output:
+                # Get the first non-empty line of output
+                lines = [line.strip()
+                         for line in raw_output.splitlines() if line.strip()]
+                version_line = lines[0] if lines else "Unknown"
+                self.logger.debug("Zabbix Sender Raw Output: %s",
+                                  raw_output.replace("\n", " | "))
+                self.logger.info("Zabbix Sender Version: %s", version_line)
+                return version_line
+            else:
+                self.logger.warning(
+                    "zabbix_sender.exe -V executed but returned empty output.")
+                return ""
+
+        except Exception as ex:
+            self.logger.error(
+                "Error executing zabbix_sender.exe -V: %s", str(ex))
+            return ""
+
     def send_trap(self, zabbix_server, port, host, key, value):
         """Send a trap to the Zabbix server."""
         # Implement the logic to send a trap to the Zabbix server
@@ -43,6 +84,7 @@ class ZabbixTrapperWorker:
         # navigate to bin and start use zabbix_sender.exe args
         if (self.connect()):
             self.logger.info("Zabbix binary init.")
+            self.get_version()
 
             # Construct zabbix_sender.exe command arguments
             # bin\zabbix_sender.exe -z <server> -p <port> -s <host> -k <key> -o <value>
@@ -67,6 +109,7 @@ class ZabbixTrapperWorker:
                 )
 
                 if result.returncode == 0:
+                    # Extract first line (e.g., "zabbix_sender (Zabbix) 7.0.0")
                     self.logger.info(
                         "Zabbix sender success output: %s", result.stdout.strip())
                     return True
