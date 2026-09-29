@@ -12,7 +12,7 @@ class ZabbixTrapperWorker:
         self.config = config
         self.logger = logger
         logger.info(
-            "ZabbixTrapperWorker initialized with configuration: %s", self.config)
+            "ZabbixTrapperWorker initialized.")
 
     def read_file(self, file_path, separator, encoding):
         """Read data from a file and return it as a list of tuples."""

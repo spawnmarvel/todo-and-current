@@ -31,6 +31,7 @@ class AppLogger:
         )
 
         try:
+
             # Pre-validate INI syntax and eval args expressions prior to calling fileConfig
             self._verify_ini_file(log_file_path)
 
@@ -41,6 +42,9 @@ class AppLogger:
 
             # Log successful initialization of logging configuration (emitted exactly once)
             self.logger.info("*******************")
+            self.logger.info("*******************")
+            self.logger.info("Logging initialization started. %s",
+                             str(logging.getLogger().name))
             self.logger.info(
                 "Successfully loaded logging configuration from %s", log_file_path)
 

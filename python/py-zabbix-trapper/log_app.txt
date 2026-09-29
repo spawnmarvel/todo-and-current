@@ -160,3 +160,530 @@
 2026-09-29 16:10:19,856 - 31016 - 20044 - controller.py - 147 -                  run() root - INFO - Send traps to Zabbix server
 2026-09-29 16:10:19,856 - 31016 - 20044 - controller.py - 148 -                  run() root - INFO - Worker logic executed successfully.
 2026-09-29 16:10:19,856 - 31016 - 20044 - run_main.py - 64 -             <module>() root - INFO - Main Application finished successfully
+2026-09-29 18:22:25,642 - 38144 - 42884 - app_logger.py - 43 -             __init__() root - INFO - *******************
+2026-09-29 18:22:25,642 - 38144 - 42884 - app_logger.py - 44 -             __init__() root - INFO - Successfully loaded logging configuration from C:\giti2026\todo-and-current\python\py-zabbix-trapper\logging_config.ini
+2026-09-29 18:22:25,642 - 38144 - 42884 - run_main.py - 36 -             <module>() root - INFO - *******************
+2026-09-29 18:22:25,643 - 38144 - 42884 - run_main.py - 37 -             <module>() root - INFO - *******************
+2026-09-29 18:22:25,643 - 38144 - 42884 - run_main.py - 38 -             <module>() root - INFO - *******************
+2026-09-29 18:22:25,643 - 38144 - 42884 - run_main.py - 39 -             <module>() root - INFO - Main module started 2026-09-29 18:22:25.643312
+2026-09-29 18:22:25,643 - 38144 - 42884 - run_main.py - 40 -             <module>() root - INFO - *******************
+2026-09-29 18:22:25,643 - 38144 - 42884 - run_main.py - 44 -             <module>() root - INFO - Main PID: 42884
+2026-09-29 18:22:25,643 - 38144 - 42884 - controller.py - 44 -         _load_config() root - INFO - Successfully loaded application configuration from C:\giti2026\todo-and-current\python\py-zabbix-trapper\config.json
+2026-09-29 18:22:25,644 - 38144 - 42884 - controller.py - 134 -                  run() root - INFO - Application is running with multiple available configurations to choose from: ['app', 'zabbix', 'file']
+2026-09-29 18:22:25,644 - 38144 - 42884 - controller.py - 114 -          file_config() root - INFO - Retrieving file configuration...
+2026-09-29 18:22:25,644 - 38144 - 42884 - controller.py - 116 -          file_config() root - INFO - File Configuration: {'$file_comments': 'The file configuration section provides settings for file handling. Read the file_path, file_separator, and file_encoding values to configure how the application reads and processes files.', 'file_path': 'path/to/file.txt', 'file_separator': ';', 'file_encoding': 'utf-8', 'file_comments_zabbix': 'python will run: zabbix_sender.exe -z zabbix_server -s hostname -k my_item -o 43, so the file must have the following format: hostname;my_item;43'}
+2026-09-29 18:22:25,644 - 38144 - 42884 - controller.py - 107 -        zabbix_config() root - INFO - Retrieving Zabbix configuration...
+2026-09-29 18:22:25,644 - 38144 - 42884 - controller.py - 109 -        zabbix_config() root - INFO - Zabbix Configuration: {'$zabbix_comments': 'The Zabbix configuration section provides settings for connecting to the Zabbix server. Send traps to the Zabbix server. Connect to the Zabbix server.', 'host': 'localhost', 'zabbix_server': 'zabbix.example.com', 'port': 10051, 'username': 'user', 'password': 'password', 'ssl_enabled': False}
+2026-09-29 18:22:25,644 - 38144 - 42884 - controller.py - 107 -        zabbix_config() root - INFO - Retrieving Zabbix configuration...
+2026-09-29 18:22:25,644 - 38144 - 42884 - controller.py - 109 -        zabbix_config() root - INFO - Zabbix Configuration: {'$zabbix_comments': 'The Zabbix configuration section provides settings for connecting to the Zabbix server. Send traps to the Zabbix server. Connect to the Zabbix server.', 'host': 'localhost', 'zabbix_server': 'zabbix.example.com', 'port': 10051, 'username': 'user', 'password': 'password', 'ssl_enabled': False}
+2026-09-29 18:22:25,644 - 38144 - 42884 - worker_zabbix_trapper.py - 14 -             __init__() root - INFO - ZabbixTrapperWorker initialized with configuration: {'$zabbix_comments': 'The Zabbix configuration section provides settings for connecting to the Zabbix server. Send traps to the Zabbix server. Connect to the Zabbix server.', 'host': 'localhost', 'zabbix_server': 'zabbix.example.com', 'port': 10051, 'username': 'user', 'password': 'password', 'ssl_enabled': False}
+2026-09-29 18:22:25,644 - 38144 - 42884 - controller.py - 146 -                  run() root - INFO - Read a file
+2026-09-29 18:22:25,644 - 38144 - 42884 - controller.py - 147 -                  run() root - INFO - Send traps to Zabbix server
+2026-09-29 18:22:25,644 - 38144 - 42884 - controller.py - 148 -                  run() root - INFO - Worker logic executed successfully.
+2026-09-29 18:22:25,645 - 38144 - 42884 - run_main.py - 66 -             <module>() root - INFO - Main Application finished successfully
+2026-09-29 18:25:23,724 - 4448 - 27404 - app_logger.py - 44 -             __init__() root - INFO - *******************
+2026-09-29 18:25:23,725 - 4448 - 27404 - app_logger.py - 45 -             __init__() root - INFO - Successfully loaded logging configuration from C:\giti2026\todo-and-current\python\py-zabbix-trapper\logging_config.ini
+2026-09-29 18:25:23,725 - 4448 - 27404 - run_main.py - 36 -             <module>() root - INFO - *******************
+2026-09-29 18:25:23,725 - 4448 - 27404 - run_main.py - 37 -             <module>() root - INFO - *******************
+2026-09-29 18:25:23,725 - 4448 - 27404 - run_main.py - 38 -             <module>() root - INFO - *******************
+2026-09-29 18:25:23,725 - 4448 - 27404 - run_main.py - 39 -             <module>() root - INFO - Main module initialization started. 2026-09-29 18:25:23.725822
+2026-09-29 18:25:23,725 - 4448 - 27404 - run_main.py - 41 -             <module>() root - INFO - *******************
+2026-09-29 18:25:23,726 - 4448 - 27404 - run_main.py - 45 -             <module>() root - INFO - Main PID: 27404
+2026-09-29 18:25:23,726 - 4448 - 27404 - controller.py - 44 -         _load_config() root - INFO - Successfully loaded application configuration from C:\giti2026\todo-and-current\python\py-zabbix-trapper\config.json
+2026-09-29 18:25:23,726 - 4448 - 27404 - controller.py - 134 -                  run() root - INFO - Application is running with multiple available configurations to choose from: ['app', 'zabbix', 'file']
+2026-09-29 18:25:23,726 - 4448 - 27404 - controller.py - 114 -          file_config() root - INFO - Retrieving file configuration...
+2026-09-29 18:25:23,726 - 4448 - 27404 - controller.py - 116 -          file_config() root - INFO - File Configuration: {'$file_comments': 'The file configuration section provides settings for file handling. Read the file_path, file_separator, and file_encoding values to configure how the application reads and processes files.', 'file_path': 'path/to/file.txt', 'file_separator': ';', 'file_encoding': 'utf-8', 'file_comments_zabbix': 'python will run: zabbix_sender.exe -z zabbix_server -s hostname -k my_item -o 43, so the file must have the following format: hostname;my_item;43'}
+2026-09-29 18:25:23,726 - 4448 - 27404 - controller.py - 107 -        zabbix_config() root - INFO - Retrieving Zabbix configuration...
+2026-09-29 18:25:23,726 - 4448 - 27404 - controller.py - 109 -        zabbix_config() root - INFO - Zabbix Configuration: {'$zabbix_comments': 'The Zabbix configuration section provides settings for connecting to the Zabbix server. Send traps to the Zabbix server. Connect to the Zabbix server.', 'host': 'localhost', 'zabbix_server': 'zabbix.example.com', 'port': 10051, 'username': 'user', 'password': 'password', 'ssl_enabled': False}
+2026-09-29 18:25:23,727 - 4448 - 27404 - controller.py - 107 -        zabbix_config() root - INFO - Retrieving Zabbix configuration...
+2026-09-29 18:25:23,727 - 4448 - 27404 - controller.py - 109 -        zabbix_config() root - INFO - Zabbix Configuration: {'$zabbix_comments': 'The Zabbix configuration section provides settings for connecting to the Zabbix server. Send traps to the Zabbix server. Connect to the Zabbix server.', 'host': 'localhost', 'zabbix_server': 'zabbix.example.com', 'port': 10051, 'username': 'user', 'password': 'password', 'ssl_enabled': False}
+2026-09-29 18:25:23,727 - 4448 - 27404 - worker_zabbix_trapper.py - 14 -             __init__() root - INFO - ZabbixTrapperWorker initialized with configuration: {'$zabbix_comments': 'The Zabbix configuration section provides settings for connecting to the Zabbix server. Send traps to the Zabbix server. Connect to the Zabbix server.', 'host': 'localhost', 'zabbix_server': 'zabbix.example.com', 'port': 10051, 'username': 'user', 'password': 'password', 'ssl_enabled': False}
+2026-09-29 18:25:23,727 - 4448 - 27404 - controller.py - 146 -                  run() root - INFO - Read a file
+2026-09-29 18:25:23,727 - 4448 - 27404 - controller.py - 147 -                  run() root - INFO - Send traps to Zabbix server
+2026-09-29 18:25:23,727 - 4448 - 27404 - controller.py - 148 -                  run() root - INFO - Worker logic executed successfully.
+2026-09-29 18:25:23,727 - 4448 - 27404 - run_main.py - 67 -             <module>() root - INFO - Main Application finished successfully
+2026-09-29 18:26:34,875 - 25996 - 35672 - app_logger.py - 44 -             __init__() root - INFO - *******************
+2026-09-29 18:26:34,875 - 25996 - 35672 - app_logger.py - 45 -             __init__() root - INFO - Logging initialization started. root
+2026-09-29 18:26:34,876 - 25996 - 35672 - app_logger.py - 47 -             __init__() root - INFO - Successfully loaded logging configuration from C:\giti2026\todo-and-current\python\py-zabbix-trapper\logging_config.ini
+2026-09-29 18:26:34,876 - 25996 - 35672 - run_main.py - 36 -             <module>() root - INFO - *******************
+2026-09-29 18:26:34,876 - 25996 - 35672 - run_main.py - 37 -             <module>() root - INFO - *******************
+2026-09-29 18:26:34,876 - 25996 - 35672 - run_main.py - 38 -             <module>() root - INFO - *******************
+2026-09-29 18:26:34,876 - 25996 - 35672 - run_main.py - 39 -             <module>() root - INFO - Main module initialization started. 2026-09-29 18:26:34.876707
+2026-09-29 18:26:34,876 - 25996 - 35672 - run_main.py - 41 -             <module>() root - INFO - *******************
+2026-09-29 18:26:34,877 - 25996 - 35672 - run_main.py - 45 -             <module>() root - INFO - Main PID: 35672
+2026-09-29 18:26:34,877 - 25996 - 35672 - controller.py - 44 -         _load_config() root - INFO - Successfully loaded application configuration from C:\giti2026\todo-and-current\python\py-zabbix-trapper\config.json
+2026-09-29 18:26:34,877 - 25996 - 35672 - controller.py - 134 -                  run() root - INFO - Application is running with multiple available configurations to choose from: ['app', 'zabbix', 'file']
+2026-09-29 18:26:34,877 - 25996 - 35672 - controller.py - 114 -          file_config() root - INFO - Retrieving file configuration...
+2026-09-29 18:26:34,877 - 25996 - 35672 - controller.py - 116 -          file_config() root - INFO - File Configuration: {'$file_comments': 'The file configuration section provides settings for file handling. Read the file_path, file_separator, and file_encoding values to configure how the application reads and processes files.', 'file_path': 'path/to/file.txt', 'file_separator': ';', 'file_encoding': 'utf-8', 'file_comments_zabbix': 'python will run: zabbix_sender.exe -z zabbix_server -s hostname -k my_item -o 43, so the file must have the following format: hostname;my_item;43'}
+2026-09-29 18:26:34,877 - 25996 - 35672 - controller.py - 107 -        zabbix_config() root - INFO - Retrieving Zabbix configuration...
+2026-09-29 18:26:34,877 - 25996 - 35672 - controller.py - 109 -        zabbix_config() root - INFO - Zabbix Configuration: {'$zabbix_comments': 'The Zabbix configuration section provides settings for connecting to the Zabbix server. Send traps to the Zabbix server. Connect to the Zabbix server.', 'host': 'localhost', 'zabbix_server': 'zabbix.example.com', 'port': 10051, 'username': 'user', 'password': 'password', 'ssl_enabled': False}
+2026-09-29 18:26:34,878 - 25996 - 35672 - controller.py - 107 -        zabbix_config() root - INFO - Retrieving Zabbix configuration...
+2026-09-29 18:26:34,878 - 25996 - 35672 - controller.py - 109 -        zabbix_config() root - INFO - Zabbix Configuration: {'$zabbix_comments': 'The Zabbix configuration section provides settings for connecting to the Zabbix server. Send traps to the Zabbix server. Connect to the Zabbix server.', 'host': 'localhost', 'zabbix_server': 'zabbix.example.com', 'port': 10051, 'username': 'user', 'password': 'password', 'ssl_enabled': False}
+2026-09-29 18:26:34,878 - 25996 - 35672 - worker_zabbix_trapper.py - 14 -             __init__() root - INFO - ZabbixTrapperWorker initialized with configuration: {'$zabbix_comments': 'The Zabbix configuration section provides settings for connecting to the Zabbix server. Send traps to the Zabbix server. Connect to the Zabbix server.', 'host': 'localhost', 'zabbix_server': 'zabbix.example.com', 'port': 10051, 'username': 'user', 'password': 'password', 'ssl_enabled': False}
+2026-09-29 18:26:34,878 - 25996 - 35672 - controller.py - 146 -                  run() root - INFO - Read a file
+2026-09-29 18:26:34,878 - 25996 - 35672 - controller.py - 147 -                  run() root - INFO - Send traps to Zabbix server
+2026-09-29 18:26:34,878 - 25996 - 35672 - controller.py - 148 -                  run() root - INFO - Worker logic executed successfully.
+2026-09-29 18:26:34,878 - 25996 - 35672 - run_main.py - 67 -             <module>() root - INFO - Main Application finished successfully
+2026-09-29 18:27:13,650 - 25284 - 22240 - app_logger.py - 44 -             __init__() root - INFO - *******************
+2026-09-29 18:27:13,650 - 25284 - 22240 - app_logger.py - 45 -             __init__() root - INFO - *******************
+2026-09-29 18:27:13,650 - 25284 - 22240 - app_logger.py - 46 -             __init__() root - INFO - Logging initialization started. root
+2026-09-29 18:27:13,651 - 25284 - 22240 - app_logger.py - 48 -             __init__() root - INFO - Successfully loaded logging configuration from C:\giti2026\todo-and-current\python\py-zabbix-trapper\logging_config.ini
+2026-09-29 18:27:13,651 - 25284 - 22240 - run_main.py - 36 -             <module>() root - INFO - *******************
+2026-09-29 18:27:13,651 - 25284 - 22240 - run_main.py - 37 -             <module>() root - INFO - *******************
+2026-09-29 18:27:13,651 - 25284 - 22240 - run_main.py - 38 -             <module>() root - INFO - *******************
+2026-09-29 18:27:13,651 - 25284 - 22240 - run_main.py - 39 -             <module>() root - INFO - Main module initialization started. 2026-09-29 18:27:13.651531
+2026-09-29 18:27:13,651 - 25284 - 22240 - run_main.py - 41 -             <module>() root - INFO - *******************
+2026-09-29 18:27:13,651 - 25284 - 22240 - run_main.py - 45 -             <module>() root - INFO - Main PID: 22240
+2026-09-29 18:27:13,652 - 25284 - 22240 - controller.py - 44 -         _load_config() root - INFO - Successfully loaded application configuration from C:\giti2026\todo-and-current\python\py-zabbix-trapper\config.json
+2026-09-29 18:27:13,652 - 25284 - 22240 - controller.py - 134 -                  run() root - INFO - Application is running with multiple available configurations to choose from: ['app', 'zabbix', 'file']
+2026-09-29 18:27:13,652 - 25284 - 22240 - controller.py - 114 -          file_config() root - INFO - Retrieving file configuration...
+2026-09-29 18:27:13,652 - 25284 - 22240 - controller.py - 116 -          file_config() root - INFO - File Configuration: {'$file_comments': 'The file configuration section provides settings for file handling. Read the file_path, file_separator, and file_encoding values to configure how the application reads and processes files.', 'file_path': 'path/to/file.txt', 'file_separator': ';', 'file_encoding': 'utf-8', 'file_comments_zabbix': 'python will run: zabbix_sender.exe -z zabbix_server -s hostname -k my_item -o 43, so the file must have the following format: hostname;my_item;43'}
+2026-09-29 18:27:13,652 - 25284 - 22240 - controller.py - 107 -        zabbix_config() root - INFO - Retrieving Zabbix configuration...
+2026-09-29 18:27:13,652 - 25284 - 22240 - controller.py - 109 -        zabbix_config() root - INFO - Zabbix Configuration: {'$zabbix_comments': 'The Zabbix configuration section provides settings for connecting to the Zabbix server. Send traps to the Zabbix server. Connect to the Zabbix server.', 'host': 'localhost', 'zabbix_server': 'zabbix.example.com', 'port': 10051, 'username': 'user', 'password': 'password', 'ssl_enabled': False}
+2026-09-29 18:27:13,653 - 25284 - 22240 - controller.py - 107 -        zabbix_config() root - INFO - Retrieving Zabbix configuration...
+2026-09-29 18:27:13,653 - 25284 - 22240 - controller.py - 109 -        zabbix_config() root - INFO - Zabbix Configuration: {'$zabbix_comments': 'The Zabbix configuration section provides settings for connecting to the Zabbix server. Send traps to the Zabbix server. Connect to the Zabbix server.', 'host': 'localhost', 'zabbix_server': 'zabbix.example.com', 'port': 10051, 'username': 'user', 'password': 'password', 'ssl_enabled': False}
+2026-09-29 18:27:13,653 - 25284 - 22240 - worker_zabbix_trapper.py - 14 -             __init__() root - INFO - ZabbixTrapperWorker initialized with configuration: {'$zabbix_comments': 'The Zabbix configuration section provides settings for connecting to the Zabbix server. Send traps to the Zabbix server. Connect to the Zabbix server.', 'host': 'localhost', 'zabbix_server': 'zabbix.example.com', 'port': 10051, 'username': 'user', 'password': 'password', 'ssl_enabled': False}
+2026-09-29 18:27:13,653 - 25284 - 22240 - controller.py - 146 -                  run() root - INFO - Read a file
+2026-09-29 18:27:13,653 - 25284 - 22240 - controller.py - 147 -                  run() root - INFO - Send traps to Zabbix server
+2026-09-29 18:27:13,653 - 25284 - 22240 - controller.py - 148 -                  run() root - INFO - Worker logic executed successfully.
+2026-09-29 18:27:13,653 - 25284 - 22240 - run_main.py - 67 -             <module>() root - INFO - Main Application finished successfully
+2026-09-29 18:27:35,647 - 3736 - 4184 - app_logger.py - 44 -             __init__() root - INFO - *******************
+2026-09-29 18:27:35,648 - 3736 - 4184 - app_logger.py - 45 -             __init__() root - INFO - *******************
+2026-09-29 18:27:35,648 - 3736 - 4184 - app_logger.py - 46 -             __init__() root - INFO - Logging initialization started. root
+2026-09-29 18:27:35,648 - 3736 - 4184 - app_logger.py - 48 -             __init__() root - INFO - Successfully loaded logging configuration from C:\giti2026\todo-and-current\python\py-zabbix-trapper\logging_config.ini
+2026-09-29 18:27:35,648 - 3736 - 4184 - run_main.py - 36 -             <module>() root - INFO - *******************
+2026-09-29 18:27:35,648 - 3736 - 4184 - run_main.py - 37 -             <module>() root - INFO - *******************
+2026-09-29 18:27:35,648 - 3736 - 4184 - run_main.py - 38 -             <module>() root - INFO - Main module initialization started. 2026-09-29 18:27:35.648850
+2026-09-29 18:27:35,648 - 3736 - 4184 - run_main.py - 40 -             <module>() root - INFO - *******************
+2026-09-29 18:27:35,649 - 3736 - 4184 - run_main.py - 41 -             <module>() root - INFO - *******************
+2026-09-29 18:27:35,649 - 3736 - 4184 - run_main.py - 45 -             <module>() root - INFO - Main PID: 4184
+2026-09-29 18:27:35,649 - 3736 - 4184 - controller.py - 44 -         _load_config() root - INFO - Successfully loaded application configuration from C:\giti2026\todo-and-current\python\py-zabbix-trapper\config.json
+2026-09-29 18:27:35,649 - 3736 - 4184 - controller.py - 134 -                  run() root - INFO - Application is running with multiple available configurations to choose from: ['app', 'zabbix', 'file']
+2026-09-29 18:27:35,649 - 3736 - 4184 - controller.py - 114 -          file_config() root - INFO - Retrieving file configuration...
+2026-09-29 18:27:35,649 - 3736 - 4184 - controller.py - 116 -          file_config() root - INFO - File Configuration: {'$file_comments': 'The file configuration section provides settings for file handling. Read the file_path, file_separator, and file_encoding values to configure how the application reads and processes files.', 'file_path': 'path/to/file.txt', 'file_separator': ';', 'file_encoding': 'utf-8', 'file_comments_zabbix': 'python will run: zabbix_sender.exe -z zabbix_server -s hostname -k my_item -o 43, so the file must have the following format: hostname;my_item;43'}
+2026-09-29 18:27:35,649 - 3736 - 4184 - controller.py - 107 -        zabbix_config() root - INFO - Retrieving Zabbix configuration...
+2026-09-29 18:27:35,649 - 3736 - 4184 - controller.py - 109 -        zabbix_config() root - INFO - Zabbix Configuration: {'$zabbix_comments': 'The Zabbix configuration section provides settings for connecting to the Zabbix server. Send traps to the Zabbix server. Connect to the Zabbix server.', 'host': 'localhost', 'zabbix_server': 'zabbix.example.com', 'port': 10051, 'username': 'user', 'password': 'password', 'ssl_enabled': False}
+2026-09-29 18:27:35,650 - 3736 - 4184 - controller.py - 107 -        zabbix_config() root - INFO - Retrieving Zabbix configuration...
+2026-09-29 18:27:35,650 - 3736 - 4184 - controller.py - 109 -        zabbix_config() root - INFO - Zabbix Configuration: {'$zabbix_comments': 'The Zabbix configuration section provides settings for connecting to the Zabbix server. Send traps to the Zabbix server. Connect to the Zabbix server.', 'host': 'localhost', 'zabbix_server': 'zabbix.example.com', 'port': 10051, 'username': 'user', 'password': 'password', 'ssl_enabled': False}
+2026-09-29 18:27:35,650 - 3736 - 4184 - worker_zabbix_trapper.py - 14 -             __init__() root - INFO - ZabbixTrapperWorker initialized with configuration: {'$zabbix_comments': 'The Zabbix configuration section provides settings for connecting to the Zabbix server. Send traps to the Zabbix server. Connect to the Zabbix server.', 'host': 'localhost', 'zabbix_server': 'zabbix.example.com', 'port': 10051, 'username': 'user', 'password': 'password', 'ssl_enabled': False}
+2026-09-29 18:27:35,650 - 3736 - 4184 - controller.py - 146 -                  run() root - INFO - Read a file
+2026-09-29 18:27:35,650 - 3736 - 4184 - controller.py - 147 -                  run() root - INFO - Send traps to Zabbix server
+2026-09-29 18:27:35,650 - 3736 - 4184 - controller.py - 148 -                  run() root - INFO - Worker logic executed successfully.
+2026-09-29 18:27:35,650 - 3736 - 4184 - run_main.py - 67 -             <module>() root - INFO - Main Application finished successfully
+2026-09-29 18:29:30,304 - 8080 - 38460 - app_logger.py - 44 -             __init__() root - INFO - *******************
+2026-09-29 18:29:30,305 - 8080 - 38460 - app_logger.py - 45 -             __init__() root - INFO - *******************
+2026-09-29 18:29:30,305 - 8080 - 38460 - app_logger.py - 46 -             __init__() root - INFO - Logging initialization started. root
+2026-09-29 18:29:30,305 - 8080 - 38460 - app_logger.py - 48 -             __init__() root - INFO - Successfully loaded logging configuration from C:\giti2026\todo-and-current\python\py-zabbix-trapper\logging_config.ini
+2026-09-29 18:29:30,305 - 8080 - 38460 - run_main.py - 36 -             <module>() root - INFO - *******************
+2026-09-29 18:29:30,305 - 8080 - 38460 - run_main.py - 37 -             <module>() root - INFO - *******************
+2026-09-29 18:29:30,305 - 8080 - 38460 - run_main.py - 38 -             <module>() root - INFO - Main module initialization started. 2026-09-29 18:29:30.305675
+2026-09-29 18:29:30,305 - 8080 - 38460 - run_main.py - 40 -             <module>() root - INFO - *******************
+2026-09-29 18:29:30,305 - 8080 - 38460 - run_main.py - 41 -             <module>() root - INFO - *******************
+2026-09-29 18:29:30,306 - 8080 - 38460 - run_main.py - 45 -             <module>() root - INFO - Main PID: 38460
+2026-09-29 18:29:30,306 - 8080 - 38460 - controller.py - 44 -         _load_config() root - INFO - Successfully loaded application configuration from C:\giti2026\todo-and-current\python\py-zabbix-trapper\config.json
+2026-09-29 18:29:30,306 - 8080 - 38460 - controller.py - 134 -                  run() root - INFO - Application is running with multiple available configurations to choose from: ['app', 'zabbix', 'file']
+2026-09-29 18:29:30,306 - 8080 - 38460 - controller.py - 114 -          file_config() root - INFO - Retrieving file configuration...
+2026-09-29 18:29:30,306 - 8080 - 38460 - controller.py - 116 -          file_config() root - INFO - File Configuration: {'$file_comments': 'The file configuration section provides settings for file handling. Read the file_path, file_separator, and file_encoding values to configure how the application reads and processes files.', 'file_path': 'path/to/file.txt', 'file_separator': ';', 'file_encoding': 'utf-8', 'file_comments_zabbix': 'python will run: zabbix_sender.exe -z zabbix_server -s hostname -k my_item -o 43, so the file must have the following format: hostname;my_item;43'}
+2026-09-29 18:29:30,306 - 8080 - 38460 - controller.py - 107 -        zabbix_config() root - INFO - Retrieving Zabbix configuration...
+2026-09-29 18:29:30,306 - 8080 - 38460 - controller.py - 109 -        zabbix_config() root - INFO - Zabbix Configuration: {'$zabbix_comments': 'The Zabbix configuration section provides settings for connecting to the Zabbix server. Send traps to the Zabbix server. Connect to the Zabbix server.', 'host': 'localhost', 'zabbix_server': 'zabbix.example.com', 'port': 10051, 'username': 'user', 'password': 'password', 'ssl_enabled': False}
+2026-09-29 18:29:30,306 - 8080 - 38460 - controller.py - 107 -        zabbix_config() root - INFO - Retrieving Zabbix configuration...
+2026-09-29 18:29:30,306 - 8080 - 38460 - controller.py - 109 -        zabbix_config() root - INFO - Zabbix Configuration: {'$zabbix_comments': 'The Zabbix configuration section provides settings for connecting to the Zabbix server. Send traps to the Zabbix server. Connect to the Zabbix server.', 'host': 'localhost', 'zabbix_server': 'zabbix.example.com', 'port': 10051, 'username': 'user', 'password': 'password', 'ssl_enabled': False}
+2026-09-29 18:29:30,307 - 8080 - 38460 - worker_zabbix_trapper.py - 14 -             __init__() root - INFO - ZabbixTrapperWorker initialized with configuration: {'$zabbix_comments': 'The Zabbix configuration section provides settings for connecting to the Zabbix server. Send traps to the Zabbix server. Connect to the Zabbix server.', 'host': 'localhost', 'zabbix_server': 'zabbix.example.com', 'port': 10051, 'username': 'user', 'password': 'password', 'ssl_enabled': False}
+2026-09-29 18:29:30,307 - 8080 - 38460 - controller.py - 146 -                  run() root - INFO - Read a file
+2026-09-29 18:29:30,307 - 8080 - 38460 - controller.py - 147 -                  run() root - INFO - Send traps to Zabbix server
+2026-09-29 18:29:30,307 - 8080 - 38460 - controller.py - 148 -                  run() root - INFO - Worker logic executed successfully.
+2026-09-29 18:29:30,307 - 8080 - 38460 - run_main.py - 67 -             <module>() root - INFO - Main Application finished successfully
+2026-09-29 18:30:23,539 - 33700 - 14136 - app_logger.py - 44 -             __init__() root - INFO - *******************
+2026-09-29 18:30:23,539 - 33700 - 14136 - app_logger.py - 45 -             __init__() root - INFO - *******************
+2026-09-29 18:30:23,539 - 33700 - 14136 - app_logger.py - 46 -             __init__() root - INFO - Logging initialization started. root
+2026-09-29 18:30:23,540 - 33700 - 14136 - app_logger.py - 48 -             __init__() root - INFO - Successfully loaded logging configuration from C:\giti2026\todo-and-current\python\py-zabbix-trapper\logging_config.ini
+2026-09-29 18:30:23,540 - 33700 - 14136 - run_main.py - 36 -             <module>() root - INFO - *******************
+2026-09-29 18:30:23,540 - 33700 - 14136 - run_main.py - 37 -             <module>() root - INFO - *******************
+2026-09-29 18:30:23,540 - 33700 - 14136 - run_main.py - 38 -             <module>() root - INFO - Main module initialization started. 2026-09-29 18:30:23.540649
+2026-09-29 18:30:23,540 - 33700 - 14136 - run_main.py - 40 -             <module>() root - INFO - *******************
+2026-09-29 18:30:23,540 - 33700 - 14136 - run_main.py - 41 -             <module>() root - INFO - *******************
+2026-09-29 18:30:23,540 - 33700 - 14136 - run_main.py - 45 -             <module>() root - INFO - Main PID: 14136
+2026-09-29 18:30:23,541 - 33700 - 14136 - controller.py - 44 -         _load_config() root - INFO - Successfully loaded application configuration from C:\giti2026\todo-and-current\python\py-zabbix-trapper\config.json
+2026-09-29 18:30:23,541 - 33700 - 14136 - controller.py - 113 -                  run() root - INFO - Application is running with multiple available configurations to choose from: ['app', 'zabbix', 'file']
+2026-09-29 18:30:23,541 - 33700 - 14136 - controller.py - 100 -          file_config() root - INFO - Retrieving file configuration...
+2026-09-29 18:30:23,541 - 33700 - 14136 - controller.py - 102 -          file_config() root - INFO - File Configuration: {'$file_comments': 'The file configuration section provides settings for file handling. Read the file_path, file_separator, and file_encoding values to configure how the application reads and processes files.', 'file_path': 'path/to/file.txt', 'file_separator': ';', 'file_encoding': 'utf-8', 'file_comments_zabbix': 'python will run: zabbix_sender.exe -z zabbix_server -s hostname -k my_item -o 43, so the file must have the following format: hostname;my_item;43'}
+2026-09-29 18:30:23,541 - 33700 - 14136 - controller.py - 93 -        zabbix_config() root - INFO - Retrieving Zabbix configuration...
+2026-09-29 18:30:23,541 - 33700 - 14136 - controller.py - 95 -        zabbix_config() root - INFO - Zabbix Configuration: {'$zabbix_comments': 'The Zabbix configuration section provides settings for connecting to the Zabbix server. Send traps to the Zabbix server. Connect to the Zabbix server.', 'host': 'localhost', 'zabbix_server': 'zabbix.example.com', 'port': 10051, 'username': 'user', 'password': 'password', 'ssl_enabled': False}
+2026-09-29 18:30:23,541 - 33700 - 14136 - controller.py - 93 -        zabbix_config() root - INFO - Retrieving Zabbix configuration...
+2026-09-29 18:30:23,541 - 33700 - 14136 - controller.py - 95 -        zabbix_config() root - INFO - Zabbix Configuration: {'$zabbix_comments': 'The Zabbix configuration section provides settings for connecting to the Zabbix server. Send traps to the Zabbix server. Connect to the Zabbix server.', 'host': 'localhost', 'zabbix_server': 'zabbix.example.com', 'port': 10051, 'username': 'user', 'password': 'password', 'ssl_enabled': False}
+2026-09-29 18:30:23,541 - 33700 - 14136 - worker_zabbix_trapper.py - 14 -             __init__() root - INFO - ZabbixTrapperWorker initialized with configuration: {'$zabbix_comments': 'The Zabbix configuration section provides settings for connecting to the Zabbix server. Send traps to the Zabbix server. Connect to the Zabbix server.', 'host': 'localhost', 'zabbix_server': 'zabbix.example.com', 'port': 10051, 'username': 'user', 'password': 'password', 'ssl_enabled': False}
+2026-09-29 18:30:23,542 - 33700 - 14136 - controller.py - 125 -                  run() root - INFO - Read a file
+2026-09-29 18:30:23,542 - 33700 - 14136 - controller.py - 126 -                  run() root - INFO - Send traps to Zabbix server
+2026-09-29 18:30:23,542 - 33700 - 14136 - controller.py - 127 -                  run() root - INFO - Worker logic executed successfully.
+2026-09-29 18:30:23,542 - 33700 - 14136 - run_main.py - 67 -             <module>() root - INFO - Main Application finished successfully
+2026-09-29 18:30:51,182 - 33728 - 31980 - app_logger.py - 44 -             __init__() root - INFO - *******************
+2026-09-29 18:30:51,182 - 33728 - 31980 - app_logger.py - 45 -             __init__() root - INFO - *******************
+2026-09-29 18:30:51,182 - 33728 - 31980 - app_logger.py - 46 -             __init__() root - INFO - Logging initialization started. root
+2026-09-29 18:30:51,182 - 33728 - 31980 - app_logger.py - 48 -             __init__() root - INFO - Successfully loaded logging configuration from C:\giti2026\todo-and-current\python\py-zabbix-trapper\logging_config.ini
+2026-09-29 18:30:51,182 - 33728 - 31980 - run_main.py - 36 -             <module>() root - INFO - *******************
+2026-09-29 18:30:51,182 - 33728 - 31980 - run_main.py - 37 -             <module>() root - INFO - *******************
+2026-09-29 18:30:51,182 - 33728 - 31980 - run_main.py - 38 -             <module>() root - INFO - Main module initialization started. 2026-09-29 18:30:51.182831
+2026-09-29 18:30:51,182 - 33728 - 31980 - run_main.py - 40 -             <module>() root - INFO - *******************
+2026-09-29 18:30:51,183 - 33728 - 31980 - run_main.py - 41 -             <module>() root - INFO - *******************
+2026-09-29 18:30:51,183 - 33728 - 31980 - run_main.py - 45 -             <module>() root - INFO - Main PID: 31980
+2026-09-29 18:30:51,183 - 33728 - 31980 - controller.py - 44 -         _load_config() root - INFO - Successfully loaded application configuration from C:\giti2026\todo-and-current\python\py-zabbix-trapper\config.json
+2026-09-29 18:30:51,183 - 33728 - 31980 - controller.py - 113 -                  run() root - INFO - Application is running with multiple available configurations to choose from: ['app', 'zabbix', 'file']
+2026-09-29 18:30:51,183 - 33728 - 31980 - controller.py - 100 -          file_config() root - INFO - Retrieving file configuration...
+2026-09-29 18:30:51,183 - 33728 - 31980 - controller.py - 102 -          file_config() root - INFO - File Configuration: {'$file_comments': 'The file configuration section provides settings for file handling. Read the file_path, file_separator, and file_encoding values to configure how the application reads and processes files.', 'file_path': 'send2zabbix.txt', 'file_separator': ';', 'file_encoding': 'utf-8', 'file_comments_zabbix': 'python will run: zabbix_sender.exe -z zabbix_server -s hostname -k my_item -o 43, so the file must have the following format: hostname;my_item;43'}
+2026-09-29 18:30:51,183 - 33728 - 31980 - controller.py - 93 -        zabbix_config() root - INFO - Retrieving Zabbix configuration...
+2026-09-29 18:30:51,184 - 33728 - 31980 - controller.py - 95 -        zabbix_config() root - INFO - Zabbix Configuration: {'$zabbix_comments': 'The Zabbix configuration section provides settings for connecting to the Zabbix server. Send traps to the Zabbix server. Connect to the Zabbix server.', 'host': 'localhost', 'zabbix_server': 'zabbix.example.com', 'port': 10051, 'username': 'user', 'password': 'password', 'ssl_enabled': False}
+2026-09-29 18:30:51,184 - 33728 - 31980 - controller.py - 93 -        zabbix_config() root - INFO - Retrieving Zabbix configuration...
+2026-09-29 18:30:51,184 - 33728 - 31980 - controller.py - 95 -        zabbix_config() root - INFO - Zabbix Configuration: {'$zabbix_comments': 'The Zabbix configuration section provides settings for connecting to the Zabbix server. Send traps to the Zabbix server. Connect to the Zabbix server.', 'host': 'localhost', 'zabbix_server': 'zabbix.example.com', 'port': 10051, 'username': 'user', 'password': 'password', 'ssl_enabled': False}
+2026-09-29 18:30:51,184 - 33728 - 31980 - worker_zabbix_trapper.py - 14 -             __init__() root - INFO - ZabbixTrapperWorker initialized with configuration: {'$zabbix_comments': 'The Zabbix configuration section provides settings for connecting to the Zabbix server. Send traps to the Zabbix server. Connect to the Zabbix server.', 'host': 'localhost', 'zabbix_server': 'zabbix.example.com', 'port': 10051, 'username': 'user', 'password': 'password', 'ssl_enabled': False}
+2026-09-29 18:30:51,184 - 33728 - 31980 - controller.py - 125 -                  run() root - INFO - Read a file
+2026-09-29 18:30:51,184 - 33728 - 31980 - controller.py - 126 -                  run() root - INFO - Send traps to Zabbix server
+2026-09-29 18:30:51,184 - 33728 - 31980 - controller.py - 127 -                  run() root - INFO - Worker logic executed successfully.
+2026-09-29 18:30:51,184 - 33728 - 31980 - run_main.py - 67 -             <module>() root - INFO - Main Application finished successfully
+2026-09-29 18:33:38,256 - 11872 - 21484 - app_logger.py - 44 -             __init__() root - INFO - *******************
+2026-09-29 18:33:38,257 - 11872 - 21484 - app_logger.py - 45 -             __init__() root - INFO - *******************
+2026-09-29 18:33:38,257 - 11872 - 21484 - app_logger.py - 46 -             __init__() root - INFO - Logging initialization started. root
+2026-09-29 18:33:38,257 - 11872 - 21484 - app_logger.py - 48 -             __init__() root - INFO - Successfully loaded logging configuration from C:\giti2026\todo-and-current\python\py-zabbix-trapper\logging_config.ini
+2026-09-29 18:33:38,257 - 11872 - 21484 - run_main.py - 36 -             <module>() root - INFO - *******************
+2026-09-29 18:33:38,258 - 11872 - 21484 - run_main.py - 37 -             <module>() root - INFO - *******************
+2026-09-29 18:33:38,258 - 11872 - 21484 - run_main.py - 38 -             <module>() root - INFO - Main module initialization started. 2026-09-29 18:33:38.258156
+2026-09-29 18:33:38,258 - 11872 - 21484 - run_main.py - 40 -             <module>() root - INFO - *******************
+2026-09-29 18:33:38,258 - 11872 - 21484 - run_main.py - 41 -             <module>() root - INFO - *******************
+2026-09-29 18:33:38,258 - 11872 - 21484 - run_main.py - 45 -             <module>() root - INFO - Main PID: 21484
+2026-09-29 18:33:38,258 - 11872 - 21484 - controller.py - 44 -         _load_config() root - INFO - Successfully loaded application configuration from C:\giti2026\todo-and-current\python\py-zabbix-trapper\config.json
+2026-09-29 18:33:38,258 - 11872 - 21484 - controller.py - 113 -                  run() root - INFO - Application is running with multiple available configurations to choose from: ['app', 'zabbix', 'file']
+2026-09-29 18:33:38,259 - 11872 - 21484 - controller.py - 100 -          file_config() root - INFO - Retrieving file configuration...
+2026-09-29 18:33:38,259 - 11872 - 21484 - controller.py - 102 -          file_config() root - INFO - File Configuration: {'$file_comments': 'The file configuration section provides settings for file handling. Read the file_path, file_separator, and file_encoding values to configure how the application reads and processes files.', 'file_path': 'send2zabbix.txt', 'file_separator': ';', 'file_encoding': 'utf-8', 'file_comments_zabbix': 'python will run: zabbix_sender.exe -z zabbix_server -s hostname -k my_item -o 43, so the file must have the following format: hostname;my_item;43'}
+2026-09-29 18:33:38,259 - 11872 - 21484 - controller.py - 93 -        zabbix_config() root - INFO - Retrieving Zabbix configuration...
+2026-09-29 18:33:38,259 - 11872 - 21484 - controller.py - 95 -        zabbix_config() root - INFO - Zabbix Configuration: {'$zabbix_comments': 'The Zabbix configuration section provides settings for connecting to the Zabbix server. Send traps to the Zabbix server. Connect to the Zabbix server.', 'host': 'localhost', 'zabbix_server': 'zabbix.example.com', 'port': 10051, 'username': 'user', 'password': 'password', 'ssl_enabled': False}
+2026-09-29 18:33:38,259 - 11872 - 21484 - controller.py - 93 -        zabbix_config() root - INFO - Retrieving Zabbix configuration...
+2026-09-29 18:33:38,259 - 11872 - 21484 - controller.py - 95 -        zabbix_config() root - INFO - Zabbix Configuration: {'$zabbix_comments': 'The Zabbix configuration section provides settings for connecting to the Zabbix server. Send traps to the Zabbix server. Connect to the Zabbix server.', 'host': 'localhost', 'zabbix_server': 'zabbix.example.com', 'port': 10051, 'username': 'user', 'password': 'password', 'ssl_enabled': False}
+2026-09-29 18:33:38,259 - 11872 - 21484 - worker_zabbix_trapper.py - 14 -             __init__() root - INFO - ZabbixTrapperWorker initialized with configuration: {'$zabbix_comments': 'The Zabbix configuration section provides settings for connecting to the Zabbix server. Send traps to the Zabbix server. Connect to the Zabbix server.', 'host': 'localhost', 'zabbix_server': 'zabbix.example.com', 'port': 10051, 'username': 'user', 'password': 'password', 'ssl_enabled': False}
+2026-09-29 18:33:38,259 - 11872 - 21484 - controller.py - 125 -                  run() root - INFO - Read a file
+2026-09-29 18:33:38,259 - 11872 - 21484 - controller.py - 100 -          file_config() root - INFO - Retrieving file configuration...
+2026-09-29 18:33:38,259 - 11872 - 21484 - controller.py - 102 -          file_config() root - INFO - File Configuration: {'$file_comments': 'The file configuration section provides settings for file handling. Read the file_path, file_separator, and file_encoding values to configure how the application reads and processes files.', 'file_path': 'send2zabbix.txt', 'file_separator': ';', 'file_encoding': 'utf-8', 'file_comments_zabbix': 'python will run: zabbix_sender.exe -z zabbix_server -s hostname -k my_item -o 43, so the file must have the following format: hostname;my_item;43'}
+2026-09-29 18:33:38,260 - 11872 - 21484 - controller.py - 127 -                  run() root - INFO - File configuration: {'$file_comments': 'The file configuration section provides settings for file handling. Read the file_path, file_separator, and file_encoding values to configure how the application reads and processes files.', 'file_path': 'send2zabbix.txt', 'file_separator': ';', 'file_encoding': 'utf-8', 'file_comments_zabbix': 'python will run: zabbix_sender.exe -z zabbix_server -s hostname -k my_item -o 43, so the file must have the following format: hostname;my_item;43'}
+2026-09-29 18:33:38,260 - 11872 - 21484 - run_main.py - 67 -             <module>() root - INFO - Main Application finished successfully
+2026-09-29 18:34:20,909 - 37960 - 15328 - app_logger.py - 44 -             __init__() root - INFO - *******************
+2026-09-29 18:34:20,909 - 37960 - 15328 - app_logger.py - 45 -             __init__() root - INFO - *******************
+2026-09-29 18:34:20,910 - 37960 - 15328 - app_logger.py - 46 -             __init__() root - INFO - Logging initialization started. root
+2026-09-29 18:34:20,910 - 37960 - 15328 - app_logger.py - 48 -             __init__() root - INFO - Successfully loaded logging configuration from C:\giti2026\todo-and-current\python\py-zabbix-trapper\logging_config.ini
+2026-09-29 18:34:20,910 - 37960 - 15328 - run_main.py - 36 -             <module>() root - INFO - *******************
+2026-09-29 18:34:20,911 - 37960 - 15328 - run_main.py - 37 -             <module>() root - INFO - *******************
+2026-09-29 18:34:20,911 - 37960 - 15328 - run_main.py - 38 -             <module>() root - INFO - Main module initialization started. 2026-09-29 18:34:20.911222
+2026-09-29 18:34:20,911 - 37960 - 15328 - run_main.py - 40 -             <module>() root - INFO - *******************
+2026-09-29 18:34:20,911 - 37960 - 15328 - run_main.py - 41 -             <module>() root - INFO - *******************
+2026-09-29 18:34:20,911 - 37960 - 15328 - run_main.py - 45 -             <module>() root - INFO - Main PID: 15328
+2026-09-29 18:34:20,912 - 37960 - 15328 - controller.py - 44 -         _load_config() root - INFO - Successfully loaded application configuration from C:\giti2026\todo-and-current\python\py-zabbix-trapper\config.json
+2026-09-29 18:34:20,912 - 37960 - 15328 - controller.py - 113 -                  run() root - INFO - Application is running with multiple available configurations to choose from: ['app', 'zabbix', 'file']
+2026-09-29 18:34:20,912 - 37960 - 15328 - controller.py - 100 -          file_config() root - INFO - Retrieving file configuration...
+2026-09-29 18:34:20,912 - 37960 - 15328 - controller.py - 102 -          file_config() root - INFO - File Configuration: {'$file_comments': 'The file configuration section provides settings for file handling. Read the file_path, file_separator, and file_encoding values to configure how the application reads and processes files.', 'file_path': 'send2zabbix.txt', 'file_separator': ';', 'file_encoding': 'utf-8', 'file_comments_zabbix': 'python will run: zabbix_sender.exe -z zabbix_server -s hostname -k my_item -o 43, so the file must have the following format: hostname;my_item;43'}
+2026-09-29 18:34:20,913 - 37960 - 15328 - controller.py - 93 -        zabbix_config() root - INFO - Retrieving Zabbix configuration...
+2026-09-29 18:34:20,913 - 37960 - 15328 - controller.py - 95 -        zabbix_config() root - INFO - Zabbix Configuration: {'$zabbix_comments': 'The Zabbix configuration section provides settings for connecting to the Zabbix server. Send traps to the Zabbix server. Connect to the Zabbix server.', 'host': 'localhost', 'zabbix_server': 'zabbix.example.com', 'port': 10051, 'username': 'user', 'password': 'password', 'ssl_enabled': False}
+2026-09-29 18:34:20,913 - 37960 - 15328 - controller.py - 93 -        zabbix_config() root - INFO - Retrieving Zabbix configuration...
+2026-09-29 18:34:20,913 - 37960 - 15328 - controller.py - 95 -        zabbix_config() root - INFO - Zabbix Configuration: {'$zabbix_comments': 'The Zabbix configuration section provides settings for connecting to the Zabbix server. Send traps to the Zabbix server. Connect to the Zabbix server.', 'host': 'localhost', 'zabbix_server': 'zabbix.example.com', 'port': 10051, 'username': 'user', 'password': 'password', 'ssl_enabled': False}
+2026-09-29 18:34:20,913 - 37960 - 15328 - worker_zabbix_trapper.py - 14 -             __init__() root - INFO - ZabbixTrapperWorker initialized with configuration: {'$zabbix_comments': 'The Zabbix configuration section provides settings for connecting to the Zabbix server. Send traps to the Zabbix server. Connect to the Zabbix server.', 'host': 'localhost', 'zabbix_server': 'zabbix.example.com', 'port': 10051, 'username': 'user', 'password': 'password', 'ssl_enabled': False}
+2026-09-29 18:34:20,913 - 37960 - 15328 - controller.py - 125 -                  run() root - INFO - Read a file
+2026-09-29 18:34:20,913 - 37960 - 15328 - controller.py - 100 -          file_config() root - INFO - Retrieving file configuration...
+2026-09-29 18:34:20,913 - 37960 - 15328 - controller.py - 102 -          file_config() root - INFO - File Configuration: {'$file_comments': 'The file configuration section provides settings for file handling. Read the file_path, file_separator, and file_encoding values to configure how the application reads and processes files.', 'file_path': 'send2zabbix.txt', 'file_separator': ';', 'file_encoding': 'utf-8', 'file_comments_zabbix': 'python will run: zabbix_sender.exe -z zabbix_server -s hostname -k my_item -o 43, so the file must have the following format: hostname;my_item;43'}
+2026-09-29 18:34:20,914 - 37960 - 15328 - controller.py - 127 -                  run() root - INFO - File configuration type: <class 'dict'>
+2026-09-29 18:34:20,914 - 37960 - 15328 - controller.py - 128 -                  run() root - INFO - File configuration: {'$file_comments': 'The file configuration section provides settings for file handling. Read the file_path, file_separator, and file_encoding values to configure how the application reads and processes files.', 'file_path': 'send2zabbix.txt', 'file_separator': ';', 'file_encoding': 'utf-8', 'file_comments_zabbix': 'python will run: zabbix_sender.exe -z zabbix_server -s hostname -k my_item -o 43, so the file must have the following format: hostname;my_item;43'}
+2026-09-29 18:34:20,914 - 37960 - 15328 - run_main.py - 67 -             <module>() root - INFO - Main Application finished successfully
+2026-09-29 18:35:24,255 - 35448 - 31772 - app_logger.py - 44 -             __init__() root - INFO - *******************
+2026-09-29 18:35:24,255 - 35448 - 31772 - app_logger.py - 45 -             __init__() root - INFO - *******************
+2026-09-29 18:35:24,255 - 35448 - 31772 - app_logger.py - 46 -             __init__() root - INFO - Logging initialization started. root
+2026-09-29 18:35:24,255 - 35448 - 31772 - app_logger.py - 48 -             __init__() root - INFO - Successfully loaded logging configuration from C:\giti2026\todo-and-current\python\py-zabbix-trapper\logging_config.ini
+2026-09-29 18:35:24,255 - 35448 - 31772 - run_main.py - 36 -             <module>() root - INFO - *******************
+2026-09-29 18:35:24,255 - 35448 - 31772 - run_main.py - 37 -             <module>() root - INFO - *******************
+2026-09-29 18:35:24,255 - 35448 - 31772 - run_main.py - 38 -             <module>() root - INFO - Main module initialization started. 2026-09-29 18:35:24.255914
+2026-09-29 18:35:24,256 - 35448 - 31772 - run_main.py - 40 -             <module>() root - INFO - *******************
+2026-09-29 18:35:24,256 - 35448 - 31772 - run_main.py - 41 -             <module>() root - INFO - *******************
+2026-09-29 18:35:24,256 - 35448 - 31772 - run_main.py - 45 -             <module>() root - INFO - Main PID: 31772
+2026-09-29 18:35:24,256 - 35448 - 31772 - controller.py - 44 -         _load_config() root - INFO - Successfully loaded application configuration from C:\giti2026\todo-and-current\python\py-zabbix-trapper\config.json
+2026-09-29 18:35:24,256 - 35448 - 31772 - controller.py - 113 -                  run() root - INFO - Application is running with multiple available configurations to choose from: ['app', 'zabbix', 'file']
+2026-09-29 18:35:24,256 - 35448 - 31772 - controller.py - 100 -          file_config() root - INFO - Retrieving file configuration...
+2026-09-29 18:35:24,256 - 35448 - 31772 - controller.py - 102 -          file_config() root - INFO - File Configuration: {'$file_comments': 'The file configuration section provides settings for file handling. Read the file_path, file_separator, and file_encoding values to configure how the application reads and processes files.', 'file_path': 'send2zabbix.txt', 'file_separator': ';', 'file_encoding': 'utf-8', 'file_comments_zabbix': 'python will run: zabbix_sender.exe -z zabbix_server -s hostname -k my_item -o 43, so the file must have the following format: hostname;my_item;43'}
+2026-09-29 18:35:24,257 - 35448 - 31772 - controller.py - 93 -        zabbix_config() root - INFO - Retrieving Zabbix configuration...
+2026-09-29 18:35:24,257 - 35448 - 31772 - controller.py - 95 -        zabbix_config() root - INFO - Zabbix Configuration: {'$zabbix_comments': 'The Zabbix configuration section provides settings for connecting to the Zabbix server. Send traps to the Zabbix server. Connect to the Zabbix server.', 'host': 'localhost', 'zabbix_server': 'zabbix.example.com', 'port': 10051, 'username': 'user', 'password': 'password', 'ssl_enabled': False}
+2026-09-29 18:35:24,257 - 35448 - 31772 - controller.py - 93 -        zabbix_config() root - INFO - Retrieving Zabbix configuration...
+2026-09-29 18:35:24,257 - 35448 - 31772 - controller.py - 95 -        zabbix_config() root - INFO - Zabbix Configuration: {'$zabbix_comments': 'The Zabbix configuration section provides settings for connecting to the Zabbix server. Send traps to the Zabbix server. Connect to the Zabbix server.', 'host': 'localhost', 'zabbix_server': 'zabbix.example.com', 'port': 10051, 'username': 'user', 'password': 'password', 'ssl_enabled': False}
+2026-09-29 18:35:24,257 - 35448 - 31772 - worker_zabbix_trapper.py - 14 -             __init__() root - INFO - ZabbixTrapperWorker initialized with configuration: {'$zabbix_comments': 'The Zabbix configuration section provides settings for connecting to the Zabbix server. Send traps to the Zabbix server. Connect to the Zabbix server.', 'host': 'localhost', 'zabbix_server': 'zabbix.example.com', 'port': 10051, 'username': 'user', 'password': 'password', 'ssl_enabled': False}
+2026-09-29 18:35:24,257 - 35448 - 31772 - controller.py - 125 -                  run() root - INFO - Read a file
+2026-09-29 18:35:24,257 - 35448 - 31772 - controller.py - 100 -          file_config() root - INFO - Retrieving file configuration...
+2026-09-29 18:35:24,257 - 35448 - 31772 - controller.py - 102 -          file_config() root - INFO - File Configuration: {'$file_comments': 'The file configuration section provides settings for file handling. Read the file_path, file_separator, and file_encoding values to configure how the application reads and processes files.', 'file_path': 'send2zabbix.txt', 'file_separator': ';', 'file_encoding': 'utf-8', 'file_comments_zabbix': 'python will run: zabbix_sender.exe -z zabbix_server -s hostname -k my_item -o 43, so the file must have the following format: hostname;my_item;43'}
+2026-09-29 18:35:24,257 - 35448 - 31772 - controller.py - 127 -                  run() root - INFO - File configuration type: <class 'dict'>
+2026-09-29 18:35:24,257 - 35448 - 31772 - controller.py - 128 -                  run() root - INFO - File configuration: {'$file_comments': 'The file configuration section provides settings for file handling. Read the file_path, file_separator, and file_encoding values to configure how the application reads and processes files.', 'file_path': 'send2zabbix.txt', 'file_separator': ';', 'file_encoding': 'utf-8', 'file_comments_zabbix': 'python will run: zabbix_sender.exe -z zabbix_server -s hostname -k my_item -o 43, so the file must have the following format: hostname;my_item;43'}
+2026-09-29 18:35:24,257 - 35448 - 31772 - controller.py - 130 -                  run() root - INFO - File path: send2zabbix.txt
+2026-09-29 18:35:24,258 - 35448 - 31772 - run_main.py - 67 -             <module>() root - INFO - Main Application finished successfully
+2026-09-29 18:35:37,712 - 39980 - 18872 - app_logger.py - 44 -             __init__() root - INFO - *******************
+2026-09-29 18:35:37,712 - 39980 - 18872 - app_logger.py - 45 -             __init__() root - INFO - *******************
+2026-09-29 18:35:37,712 - 39980 - 18872 - app_logger.py - 46 -             __init__() root - INFO - Logging initialization started. root
+2026-09-29 18:35:37,712 - 39980 - 18872 - app_logger.py - 48 -             __init__() root - INFO - Successfully loaded logging configuration from C:\giti2026\todo-and-current\python\py-zabbix-trapper\logging_config.ini
+2026-09-29 18:35:37,712 - 39980 - 18872 - run_main.py - 36 -             <module>() root - INFO - *******************
+2026-09-29 18:35:37,713 - 39980 - 18872 - run_main.py - 37 -             <module>() root - INFO - *******************
+2026-09-29 18:35:37,713 - 39980 - 18872 - run_main.py - 38 -             <module>() root - INFO - Main module initialization started. 2026-09-29 18:35:37.713186
+2026-09-29 18:35:37,713 - 39980 - 18872 - run_main.py - 40 -             <module>() root - INFO - *******************
+2026-09-29 18:35:37,713 - 39980 - 18872 - run_main.py - 41 -             <module>() root - INFO - *******************
+2026-09-29 18:35:37,713 - 39980 - 18872 - run_main.py - 45 -             <module>() root - INFO - Main PID: 18872
+2026-09-29 18:35:37,713 - 39980 - 18872 - controller.py - 44 -         _load_config() root - INFO - Successfully loaded application configuration from C:\giti2026\todo-and-current\python\py-zabbix-trapper\config.json
+2026-09-29 18:35:37,714 - 39980 - 18872 - controller.py - 113 -                  run() root - INFO - Application is running with multiple available configurations to choose from: ['app', 'zabbix', 'file']
+2026-09-29 18:35:37,714 - 39980 - 18872 - controller.py - 93 -        zabbix_config() root - INFO - Retrieving Zabbix configuration...
+2026-09-29 18:35:37,714 - 39980 - 18872 - controller.py - 95 -        zabbix_config() root - INFO - Zabbix Configuration: {'$zabbix_comments': 'The Zabbix configuration section provides settings for connecting to the Zabbix server. Send traps to the Zabbix server. Connect to the Zabbix server.', 'host': 'localhost', 'zabbix_server': 'zabbix.example.com', 'port': 10051, 'username': 'user', 'password': 'password', 'ssl_enabled': False}
+2026-09-29 18:35:37,714 - 39980 - 18872 - worker_zabbix_trapper.py - 14 -             __init__() root - INFO - ZabbixTrapperWorker initialized with configuration: {'$zabbix_comments': 'The Zabbix configuration section provides settings for connecting to the Zabbix server. Send traps to the Zabbix server. Connect to the Zabbix server.', 'host': 'localhost', 'zabbix_server': 'zabbix.example.com', 'port': 10051, 'username': 'user', 'password': 'password', 'ssl_enabled': False}
+2026-09-29 18:35:37,714 - 39980 - 18872 - controller.py - 121 -                  run() root - INFO - Read a file
+2026-09-29 18:35:37,714 - 39980 - 18872 - controller.py - 100 -          file_config() root - INFO - Retrieving file configuration...
+2026-09-29 18:35:37,714 - 39980 - 18872 - controller.py - 102 -          file_config() root - INFO - File Configuration: {'$file_comments': 'The file configuration section provides settings for file handling. Read the file_path, file_separator, and file_encoding values to configure how the application reads and processes files.', 'file_path': 'send2zabbix.txt', 'file_separator': ';', 'file_encoding': 'utf-8', 'file_comments_zabbix': 'python will run: zabbix_sender.exe -z zabbix_server -s hostname -k my_item -o 43, so the file must have the following format: hostname;my_item;43'}
+2026-09-29 18:35:37,714 - 39980 - 18872 - controller.py - 123 -                  run() root - INFO - File configuration type: <class 'dict'>
+2026-09-29 18:35:37,714 - 39980 - 18872 - controller.py - 124 -                  run() root - INFO - File configuration: {'$file_comments': 'The file configuration section provides settings for file handling. Read the file_path, file_separator, and file_encoding values to configure how the application reads and processes files.', 'file_path': 'send2zabbix.txt', 'file_separator': ';', 'file_encoding': 'utf-8', 'file_comments_zabbix': 'python will run: zabbix_sender.exe -z zabbix_server -s hostname -k my_item -o 43, so the file must have the following format: hostname;my_item;43'}
+2026-09-29 18:35:37,714 - 39980 - 18872 - controller.py - 126 -                  run() root - INFO - File path: send2zabbix.txt
+2026-09-29 18:35:37,714 - 39980 - 18872 - run_main.py - 67 -             <module>() root - INFO - Main Application finished successfully
+2026-09-29 18:46:06,378 - 37752 - 28892 - app_logger.py - 44 -             __init__() root - INFO - *******************
+2026-09-29 18:46:06,378 - 37752 - 28892 - app_logger.py - 45 -             __init__() root - INFO - *******************
+2026-09-29 18:46:06,379 - 37752 - 28892 - app_logger.py - 46 -             __init__() root - INFO - Logging initialization started. root
+2026-09-29 18:46:06,379 - 37752 - 28892 - app_logger.py - 48 -             __init__() root - INFO - Successfully loaded logging configuration from C:\giti2026\todo-and-current\python\py-zabbix-trapper\logging_config.ini
+2026-09-29 18:46:06,379 - 37752 - 28892 - run_main.py - 36 -             <module>() root - INFO - *******************
+2026-09-29 18:46:06,379 - 37752 - 28892 - run_main.py - 37 -             <module>() root - INFO - *******************
+2026-09-29 18:46:06,379 - 37752 - 28892 - run_main.py - 38 -             <module>() root - INFO - Main module initialization started. 2026-09-29 18:46:06.379595
+2026-09-29 18:46:06,379 - 37752 - 28892 - run_main.py - 40 -             <module>() root - INFO - *******************
+2026-09-29 18:46:06,379 - 37752 - 28892 - run_main.py - 41 -             <module>() root - INFO - *******************
+2026-09-29 18:46:06,379 - 37752 - 28892 - run_main.py - 45 -             <module>() root - INFO - Main PID: 28892
+2026-09-29 18:46:06,380 - 37752 - 28892 - controller.py - 44 -         _load_config() root - INFO - Successfully loaded application configuration from C:\giti2026\todo-and-current\python\py-zabbix-trapper\config.json
+2026-09-29 18:46:06,380 - 37752 - 28892 - controller.py - 113 -                  run() root - INFO - Application is running with multiple available configurations to choose from: ['app', 'zabbix', 'file']
+2026-09-29 18:46:06,380 - 37752 - 28892 - controller.py - 93 -        zabbix_config() root - INFO - Retrieving Zabbix configuration...
+2026-09-29 18:46:06,380 - 37752 - 28892 - controller.py - 95 -        zabbix_config() root - INFO - Zabbix Configuration initialized
+2026-09-29 18:46:06,380 - 37752 - 28892 - worker_zabbix_trapper.py - 14 -             __init__() root - INFO - ZabbixTrapperWorker initialized with configuration: {'$zabbix_comments': 'The Zabbix configuration section provides settings for connecting to the Zabbix server. Send traps to the Zabbix server. Connect to the Zabbix server.', 'host': 'localhost', 'zabbix_server': 'zabbix.example.com', 'port': 10051, 'username': 'user', 'password': 'password', 'ssl_enabled': False}
+2026-09-29 18:46:06,380 - 37752 - 28892 - controller.py - 121 -                  run() root - INFO - Read a file
+2026-09-29 18:46:06,380 - 37752 - 28892 - controller.py - 100 -          file_config() root - INFO - Retrieving file configuration...
+2026-09-29 18:46:06,380 - 37752 - 28892 - controller.py - 102 -          file_config() root - INFO - File Configuration initialized
+2026-09-29 18:46:06,380 - 37752 - 28892 - controller.py - 123 -                  run() root - INFO - File configuration type: <class 'dict'>
+2026-09-29 18:46:06,381 - 37752 - 28892 - controller.py - 124 -                  run() root - INFO - File configuration: {'$file_comments': 'The file configuration section provides settings for file handling. Read the file_path, file_separator, and file_encoding values to configure how the application reads and processes files.', 'file_path': 'send2zabbix.txt', 'file_separator': ';', 'file_encoding': 'utf-8', 'file_comments_zabbix': 'python will run: zabbix_sender.exe -z zabbix_server -s hostname -k my_item -o 43, so the file must have the following format: hostname;my_item;43'}
+2026-09-29 18:46:06,381 - 37752 - 28892 - controller.py - 126 -                  run() root - INFO - File path: send2zabbix.txt
+2026-09-29 18:46:06,381 - 37752 - 28892 - run_main.py - 67 -             <module>() root - INFO - Main Application finished successfully
+2026-09-29 18:46:57,169 - 34280 - 18348 - app_logger.py - 44 -             __init__() root - INFO - *******************
+2026-09-29 18:46:57,169 - 34280 - 18348 - app_logger.py - 45 -             __init__() root - INFO - *******************
+2026-09-29 18:46:57,169 - 34280 - 18348 - app_logger.py - 46 -             __init__() root - INFO - Logging initialization started. root
+2026-09-29 18:46:57,170 - 34280 - 18348 - app_logger.py - 48 -             __init__() root - INFO - Successfully loaded logging configuration from C:\giti2026\todo-and-current\python\py-zabbix-trapper\logging_config.ini
+2026-09-29 18:46:57,170 - 34280 - 18348 - run_main.py - 36 -             <module>() root - INFO - *******************
+2026-09-29 18:46:57,170 - 34280 - 18348 - run_main.py - 37 -             <module>() root - INFO - *******************
+2026-09-29 18:46:57,170 - 34280 - 18348 - run_main.py - 38 -             <module>() root - INFO - Main module initialization started. 2026-09-29 18:46:57.170502
+2026-09-29 18:46:57,170 - 34280 - 18348 - run_main.py - 40 -             <module>() root - INFO - *******************
+2026-09-29 18:46:57,170 - 34280 - 18348 - run_main.py - 41 -             <module>() root - INFO - *******************
+2026-09-29 18:46:57,170 - 34280 - 18348 - run_main.py - 45 -             <module>() root - INFO - Main PID: 18348
+2026-09-29 18:46:57,171 - 34280 - 18348 - controller.py - 44 -         _load_config() root - INFO - Successfully loaded application configuration from C:\giti2026\todo-and-current\python\py-zabbix-trapper\config.json
+2026-09-29 18:46:57,171 - 34280 - 18348 - controller.py - 113 -                  run() root - INFO - Application is running with multiple available configurations to choose from: ['app', 'zabbix', 'file']
+2026-09-29 18:46:57,171 - 34280 - 18348 - controller.py - 93 -        zabbix_config() root - INFO - Retrieving Zabbix configuration...
+2026-09-29 18:46:57,171 - 34280 - 18348 - controller.py - 95 -        zabbix_config() root - INFO - Zabbix Configuration initialized.
+2026-09-29 18:46:57,171 - 34280 - 18348 - worker_zabbix_trapper.py - 14 -             __init__() root - INFO - ZabbixTrapperWorker initialized.
+2026-09-29 18:46:57,171 - 34280 - 18348 - controller.py - 121 -                  run() root - INFO - Read a file
+2026-09-29 18:46:57,171 - 34280 - 18348 - controller.py - 100 -          file_config() root - INFO - Retrieving file configuration...
+2026-09-29 18:46:57,171 - 34280 - 18348 - controller.py - 102 -          file_config() root - INFO - File Configuration initialized.
+2026-09-29 18:46:57,172 - 34280 - 18348 - controller.py - 123 -                  run() root - INFO - File configuration type: <class 'dict'>
+2026-09-29 18:46:57,172 - 34280 - 18348 - controller.py - 124 -                  run() root - INFO - File configuration: {'$file_comments': 'The file configuration section provides settings for file handling. Read the file_path, file_separator, and file_encoding values to configure how the application reads and processes files.', 'file_path': 'send2zabbix.txt', 'file_separator': ';', 'file_encoding': 'utf-8', 'file_comments_zabbix': 'python will run: zabbix_sender.exe -z zabbix_server -s hostname -k my_item -o 43, so the file must have the following format: hostname;my_item;43'}
+2026-09-29 18:46:57,172 - 34280 - 18348 - controller.py - 126 -                  run() root - INFO - File path: send2zabbix.txt
+2026-09-29 18:46:57,172 - 34280 - 18348 - run_main.py - 67 -             <module>() root - INFO - Main Application finished successfully
+2026-09-29 18:48:16,118 - 37128 - 40360 - app_logger.py - 44 -             __init__() root - INFO - *******************
+2026-09-29 18:48:16,118 - 37128 - 40360 - app_logger.py - 45 -             __init__() root - INFO - *******************
+2026-09-29 18:48:16,118 - 37128 - 40360 - app_logger.py - 46 -             __init__() root - INFO - Logging initialization started. root
+2026-09-29 18:48:16,118 - 37128 - 40360 - app_logger.py - 48 -             __init__() root - INFO - Successfully loaded logging configuration from C:\giti2026\todo-and-current\python\py-zabbix-trapper\logging_config.ini
+2026-09-29 18:48:16,119 - 37128 - 40360 - run_main.py - 36 -             <module>() root - INFO - *******************
+2026-09-29 18:48:16,119 - 37128 - 40360 - run_main.py - 37 -             <module>() root - INFO - *******************
+2026-09-29 18:48:16,119 - 37128 - 40360 - run_main.py - 38 -             <module>() root - INFO - Main module initialization started. 2026-09-29 18:48:16.119217
+2026-09-29 18:48:16,119 - 37128 - 40360 - run_main.py - 40 -             <module>() root - INFO - *******************
+2026-09-29 18:48:16,119 - 37128 - 40360 - run_main.py - 41 -             <module>() root - INFO - *******************
+2026-09-29 18:48:16,119 - 37128 - 40360 - run_main.py - 45 -             <module>() root - INFO - Main PID: 40360
+2026-09-29 18:48:16,119 - 37128 - 40360 - controller.py - 44 -         _load_config() root - INFO - Successfully loaded application configuration from C:\giti2026\todo-and-current\python\py-zabbix-trapper\config.json
+2026-09-29 18:48:16,119 - 37128 - 40360 - controller.py - 113 -                  run() root - INFO - Application is running with multiple available configurations to choose from: ['app', 'zabbix', 'file']
+2026-09-29 18:48:16,120 - 37128 - 40360 - controller.py - 93 -        zabbix_config() root - INFO - Retrieving Zabbix configuration...
+2026-09-29 18:48:16,120 - 37128 - 40360 - controller.py - 95 -        zabbix_config() root - INFO - Zabbix Configuration initialized.
+2026-09-29 18:48:16,120 - 37128 - 40360 - worker_zabbix_trapper.py - 14 -             __init__() root - INFO - ZabbixTrapperWorker initialized.
+2026-09-29 18:48:16,120 - 37128 - 40360 - controller.py - 121 -                  run() root - INFO - Read a file
+2026-09-29 18:48:16,120 - 37128 - 40360 - controller.py - 100 -          file_config() root - INFO - Retrieving file configuration...
+2026-09-29 18:48:16,120 - 37128 - 40360 - controller.py - 102 -          file_config() root - INFO - File Configuration initialized.
+2026-09-29 18:48:16,120 - 37128 - 40360 - controller.py - 123 -                  run() root - INFO - File configuration type: <class 'dict'>
+2026-09-29 18:48:16,120 - 37128 - 40360 - run_main.py - 67 -             <module>() root - INFO - Main Application finished successfully
+2026-09-29 18:49:18,038 - 16088 - 17868 - app_logger.py - 44 -             __init__() root - INFO - *******************
+2026-09-29 18:49:18,038 - 16088 - 17868 - app_logger.py - 45 -             __init__() root - INFO - *******************
+2026-09-29 18:49:18,039 - 16088 - 17868 - app_logger.py - 46 -             __init__() root - INFO - Logging initialization started. root
+2026-09-29 18:49:18,039 - 16088 - 17868 - app_logger.py - 48 -             __init__() root - INFO - Successfully loaded logging configuration from C:\giti2026\todo-and-current\python\py-zabbix-trapper\logging_config.ini
+2026-09-29 18:49:18,039 - 16088 - 17868 - run_main.py - 36 -             <module>() root - INFO - *******************
+2026-09-29 18:49:18,039 - 16088 - 17868 - run_main.py - 37 -             <module>() root - INFO - *******************
+2026-09-29 18:49:18,039 - 16088 - 17868 - run_main.py - 38 -             <module>() root - INFO - Main module initialization started. 2026-09-29 18:49:18.039649
+2026-09-29 18:49:18,039 - 16088 - 17868 - run_main.py - 40 -             <module>() root - INFO - *******************
+2026-09-29 18:49:18,039 - 16088 - 17868 - run_main.py - 41 -             <module>() root - INFO - *******************
+2026-09-29 18:49:18,039 - 16088 - 17868 - run_main.py - 45 -             <module>() root - INFO - Main PID: 17868
+2026-09-29 18:49:18,040 - 16088 - 17868 - controller.py - 44 -         _load_config() root - INFO - Successfully loaded application configuration from C:\giti2026\todo-and-current\python\py-zabbix-trapper\config.json
+2026-09-29 18:49:18,040 - 16088 - 17868 - controller.py - 113 -                  run() root - INFO - Application is running with multiple available configurations to choose from: ['app', 'zabbix', 'file']
+2026-09-29 18:49:18,040 - 16088 - 17868 - controller.py - 93 -        zabbix_config() root - INFO - Retrieving Zabbix configuration...
+2026-09-29 18:49:18,040 - 16088 - 17868 - controller.py - 95 -        zabbix_config() root - INFO - Zabbix Configuration initialized.
+2026-09-29 18:49:18,040 - 16088 - 17868 - worker_zabbix_trapper.py - 14 -             __init__() root - INFO - ZabbixTrapperWorker initialized.
+2026-09-29 18:49:18,040 - 16088 - 17868 - controller.py - 121 -                  run() root - INFO - Read a file
+2026-09-29 18:49:18,040 - 16088 - 17868 - controller.py - 100 -          file_config() root - INFO - Retrieving file configuration...
+2026-09-29 18:49:18,040 - 16088 - 17868 - controller.py - 102 -          file_config() root - INFO - File Configuration initialized.
+2026-09-29 18:49:18,040 - 16088 - 17868 - controller.py - 128 -                  run() root - INFO - File path: send2zabbix.txt
+2026-09-29 18:49:18,040 - 16088 - 17868 - controller.py - 129 -                  run() root - INFO - File separator: ;
+2026-09-29 18:49:18,040 - 16088 - 17868 - controller.py - 130 -                  run() root - INFO - File encoding: utf-8
+2026-09-29 18:49:18,041 - 16088 - 17868 - run_main.py - 67 -             <module>() root - INFO - Main Application finished successfully
+2026-09-29 18:52:09,396 - 38276 - 28128 - app_logger.py - 44 -             __init__() root - INFO - *******************
+2026-09-29 18:52:09,396 - 38276 - 28128 - app_logger.py - 45 -             __init__() root - INFO - *******************
+2026-09-29 18:52:09,397 - 38276 - 28128 - app_logger.py - 46 -             __init__() root - INFO - Logging initialization started. root
+2026-09-29 18:52:09,397 - 38276 - 28128 - app_logger.py - 48 -             __init__() root - INFO - Successfully loaded logging configuration from C:\giti2026\todo-and-current\python\py-zabbix-trapper\logging_config.ini
+2026-09-29 18:52:09,398 - 38276 - 28128 - run_main.py - 36 -             <module>() root - INFO - *******************
+2026-09-29 18:52:09,399 - 38276 - 28128 - run_main.py - 37 -             <module>() root - INFO - *******************
+2026-09-29 18:52:09,399 - 38276 - 28128 - run_main.py - 38 -             <module>() root - INFO - Main module initialization started. 2026-09-29 18:52:09.399192
+2026-09-29 18:52:09,399 - 38276 - 28128 - run_main.py - 40 -             <module>() root - INFO - *******************
+2026-09-29 18:52:09,399 - 38276 - 28128 - run_main.py - 41 -             <module>() root - INFO - *******************
+2026-09-29 18:52:09,399 - 38276 - 28128 - run_main.py - 45 -             <module>() root - INFO - Main PID: 28128
+2026-09-29 18:52:09,399 - 38276 - 28128 - controller.py - 45 -         _load_config() root - INFO - Successfully loaded application configuration from C:\giti2026\todo-and-current\python\py-zabbix-trapper\config.json
+2026-09-29 18:52:09,399 - 38276 - 28128 - controller.py - 114 -                  run() root - INFO - Application is running with multiple available configurations to choose from: ['app', 'zabbix', 'file']
+2026-09-29 18:52:09,400 - 38276 - 28128 - controller.py - 118 -                  run() root - INFO - Read a file
+2026-09-29 18:52:09,400 - 38276 - 28128 - controller.py - 101 -          file_config() root - INFO - Retrieving file configuration...
+2026-09-29 18:52:09,400 - 38276 - 28128 - controller.py - 103 -          file_config() root - INFO - File Configuration initialized.
+2026-09-29 18:52:09,400 - 38276 - 28128 - controller.py - 125 -                  run() root - INFO - File path: send2zabbix.txt
+2026-09-29 18:52:09,400 - 38276 - 28128 - controller.py - 126 -                  run() root - INFO - File separator: ;
+2026-09-29 18:52:09,400 - 38276 - 28128 - controller.py - 127 -                  run() root - INFO - File encoding: utf-8
+2026-09-29 18:53:21,155 - 480 - 40764 - app_logger.py - 44 -             __init__() root - INFO - *******************
+2026-09-29 18:53:21,156 - 480 - 40764 - app_logger.py - 45 -             __init__() root - INFO - *******************
+2026-09-29 18:53:21,156 - 480 - 40764 - app_logger.py - 46 -             __init__() root - INFO - Logging initialization started. root
+2026-09-29 18:53:21,156 - 480 - 40764 - app_logger.py - 48 -             __init__() root - INFO - Successfully loaded logging configuration from C:\giti2026\todo-and-current\python\py-zabbix-trapper\logging_config.ini
+2026-09-29 18:53:21,158 - 480 - 40764 - run_main.py - 36 -             <module>() root - INFO - *******************
+2026-09-29 18:53:21,158 - 480 - 40764 - run_main.py - 37 -             <module>() root - INFO - *******************
+2026-09-29 18:53:21,158 - 480 - 40764 - run_main.py - 38 -             <module>() root - INFO - Main module initialization started. 2026-09-29 18:53:21.158714
+2026-09-29 18:53:21,158 - 480 - 40764 - run_main.py - 40 -             <module>() root - INFO - *******************
+2026-09-29 18:53:21,158 - 480 - 40764 - run_main.py - 41 -             <module>() root - INFO - *******************
+2026-09-29 18:53:21,159 - 480 - 40764 - run_main.py - 45 -             <module>() root - INFO - Main PID: 40764
+2026-09-29 18:53:21,159 - 480 - 40764 - controller.py - 45 -         _load_config() root - INFO - Successfully loaded application configuration from C:\giti2026\todo-and-current\python\py-zabbix-trapper\config.json
+2026-09-29 18:53:21,159 - 480 - 40764 - controller.py - 114 -                  run() root - INFO - Application is running with multiple available configurations to choose from: ['app', 'zabbix', 'file']
+2026-09-29 18:53:21,159 - 480 - 40764 - controller.py - 118 -                  run() root - INFO - Read a file
+2026-09-29 18:53:21,159 - 480 - 40764 - controller.py - 101 -          file_config() root - INFO - Retrieving file configuration...
+2026-09-29 18:53:21,159 - 480 - 40764 - controller.py - 103 -          file_config() root - INFO - File Configuration initialized.
+2026-09-29 18:53:21,159 - 480 - 40764 - controller.py - 125 -                  run() root - INFO - File path: send2zabbix.txt
+2026-09-29 18:53:21,159 - 480 - 40764 - controller.py - 126 -                  run() root - INFO - File separator: ;
+2026-09-29 18:53:21,160 - 480 - 40764 - controller.py - 127 -                  run() root - INFO - File encoding: utf-8
+2026-09-29 18:53:21,160 - 480 - 40764 - worker_file.py - 14 -             __init__() root - INFO - FileWorker initialized with configuration: {'$file_comments': 'The file configuration section provides settings for file handling. Read the file_path, file_separator, and file_encoding values to configure how the application reads and processes files.', 'file_path': 'send2zabbix.txt', 'file_separator': ';', 'file_encoding': 'utf-8', 'file_comments_zabbix': 'python will run: zabbix_sender.exe -z zabbix_server -s hostname -k my_item -o 43, so the file must have the following format: hostname;my_item;43'}
+2026-09-29 18:53:21,160 - 480 - 40764 - run_main.py - 67 -             <module>() root - INFO - Main Application finished successfully
+2026-09-29 18:53:47,676 - 14064 - 35152 - app_logger.py - 44 -             __init__() root - INFO - *******************
+2026-09-29 18:53:47,676 - 14064 - 35152 - app_logger.py - 45 -             __init__() root - INFO - *******************
+2026-09-29 18:53:47,676 - 14064 - 35152 - app_logger.py - 46 -             __init__() root - INFO - Logging initialization started. root
+2026-09-29 18:53:47,676 - 14064 - 35152 - app_logger.py - 48 -             __init__() root - INFO - Successfully loaded logging configuration from C:\giti2026\todo-and-current\python\py-zabbix-trapper\logging_config.ini
+2026-09-29 18:53:47,677 - 14064 - 35152 - run_main.py - 36 -             <module>() root - INFO - *******************
+2026-09-29 18:53:47,677 - 14064 - 35152 - run_main.py - 37 -             <module>() root - INFO - *******************
+2026-09-29 18:53:47,677 - 14064 - 35152 - run_main.py - 38 -             <module>() root - INFO - Main module initialization started. 2026-09-29 18:53:47.677495
+2026-09-29 18:53:47,677 - 14064 - 35152 - run_main.py - 40 -             <module>() root - INFO - *******************
+2026-09-29 18:53:47,677 - 14064 - 35152 - run_main.py - 41 -             <module>() root - INFO - *******************
+2026-09-29 18:53:47,677 - 14064 - 35152 - run_main.py - 45 -             <module>() root - INFO - Main PID: 35152
+2026-09-29 18:53:47,678 - 14064 - 35152 - controller.py - 45 -         _load_config() root - INFO - Successfully loaded application configuration from C:\giti2026\todo-and-current\python\py-zabbix-trapper\config.json
+2026-09-29 18:53:47,678 - 14064 - 35152 - controller.py - 114 -                  run() root - INFO - Application is running with multiple available configurations to choose from: ['app', 'zabbix', 'file']
+2026-09-29 18:53:47,678 - 14064 - 35152 - controller.py - 118 -                  run() root - INFO - Read a file
+2026-09-29 18:53:47,678 - 14064 - 35152 - controller.py - 101 -          file_config() root - INFO - Retrieving file configuration...
+2026-09-29 18:53:47,678 - 14064 - 35152 - controller.py - 103 -          file_config() root - INFO - File Configuration initialized.
+2026-09-29 18:53:47,678 - 14064 - 35152 - controller.py - 125 -                  run() root - INFO - File path: send2zabbix.txt
+2026-09-29 18:53:47,678 - 14064 - 35152 - controller.py - 126 -                  run() root - INFO - File separator: ;
+2026-09-29 18:53:47,678 - 14064 - 35152 - controller.py - 127 -                  run() root - INFO - File encoding: utf-8
+2026-09-29 18:53:47,678 - 14064 - 35152 - worker_file.py - 14 -             __init__() root - INFO - FileWorker initialized with configuration: {'$file_comments': 'The file configuration section provides settings for file handling. Read the file_path, file_separator, and file_encoding values to configure how the application reads and processes files.', 'file_path': 'send2zabbix.txt', 'file_separator': ';', 'file_encoding': 'utf-8', 'file_comments_zabbix': 'python will run: zabbix_sender.exe -z zabbix_server -s hostname -k my_item -o 43, so the file must have the following format: hostname;my_item;43'}
+2026-09-29 18:53:47,684 - 14064 - 35152 - run_main.py - 67 -             <module>() root - INFO - Main Application finished successfully
+2026-09-29 18:54:53,370 - 43276 - 43708 - app_logger.py - 44 -             __init__() root - INFO - *******************
+2026-09-29 18:54:53,370 - 43276 - 43708 - app_logger.py - 45 -             __init__() root - INFO - *******************
+2026-09-29 18:54:53,370 - 43276 - 43708 - app_logger.py - 46 -             __init__() root - INFO - Logging initialization started. root
+2026-09-29 18:54:53,371 - 43276 - 43708 - app_logger.py - 48 -             __init__() root - INFO - Successfully loaded logging configuration from C:\giti2026\todo-and-current\python\py-zabbix-trapper\logging_config.ini
+2026-09-29 18:54:53,373 - 43276 - 43708 - run_main.py - 36 -             <module>() root - INFO - *******************
+2026-09-29 18:54:53,373 - 43276 - 43708 - run_main.py - 37 -             <module>() root - INFO - *******************
+2026-09-29 18:54:53,373 - 43276 - 43708 - run_main.py - 38 -             <module>() root - INFO - Main module initialization started. 2026-09-29 18:54:53.373511
+2026-09-29 18:54:53,373 - 43276 - 43708 - run_main.py - 40 -             <module>() root - INFO - *******************
+2026-09-29 18:54:53,373 - 43276 - 43708 - run_main.py - 41 -             <module>() root - INFO - *******************
+2026-09-29 18:54:53,373 - 43276 - 43708 - run_main.py - 45 -             <module>() root - INFO - Main PID: 43708
+2026-09-29 18:54:53,374 - 43276 - 43708 - controller.py - 45 -         _load_config() root - INFO - Successfully loaded application configuration from C:\giti2026\todo-and-current\python\py-zabbix-trapper\config.json
+2026-09-29 18:54:53,374 - 43276 - 43708 - controller.py - 114 -                  run() root - INFO - Application is running with multiple available configurations to choose from: ['app', 'zabbix', 'file']
+2026-09-29 18:54:53,374 - 43276 - 43708 - controller.py - 118 -                  run() root - INFO - Read a file
+2026-09-29 18:54:53,374 - 43276 - 43708 - controller.py - 101 -          file_config() root - INFO - Retrieving file configuration...
+2026-09-29 18:54:53,374 - 43276 - 43708 - controller.py - 103 -          file_config() root - INFO - File Configuration initialized.
+2026-09-29 18:54:53,374 - 43276 - 43708 - controller.py - 125 -                  run() root - INFO - File path: send2zabbix.txt
+2026-09-29 18:54:53,374 - 43276 - 43708 - controller.py - 126 -                  run() root - INFO - File separator: ;
+2026-09-29 18:54:53,374 - 43276 - 43708 - controller.py - 127 -                  run() root - INFO - File encoding: utf-8
+2026-09-29 18:54:53,374 - 43276 - 43708 - worker_file.py - 14 -             __init__() root - INFO - FileWorker initialized with configuration: {'$file_comments': 'The file configuration section provides settings for file handling. Read the file_path, file_separator, and file_encoding values to configure how the application reads and processes files.', 'file_path': 'send2zabbix.txt', 'file_separator': ';', 'file_encoding': 'utf-8', 'file_comments_zabbix': 'python will run: zabbix_sender.exe -z zabbix_server -s hostname -k my_item -o 43, so the file must have the following format: hostname;my_item;43'}
+2026-09-29 18:54:53,375 - 43276 - 43708 - worker_file.py - 25 -            read_file() root - INFO - [('host1', 'item1', '123'), ('host1', 'item2', '456')]
+2026-09-29 18:54:53,375 - 43276 - 43708 - run_main.py - 67 -             <module>() root - INFO - Main Application finished successfully
+2026-09-29 18:55:55,672 - 34976 - 4764 - app_logger.py - 44 -             __init__() root - INFO - *******************
+2026-09-29 18:55:55,672 - 34976 - 4764 - app_logger.py - 45 -             __init__() root - INFO - *******************
+2026-09-29 18:55:55,672 - 34976 - 4764 - app_logger.py - 46 -             __init__() root - INFO - Logging initialization started. root
+2026-09-29 18:55:55,672 - 34976 - 4764 - app_logger.py - 48 -             __init__() root - INFO - Successfully loaded logging configuration from C:\giti2026\todo-and-current\python\py-zabbix-trapper\logging_config.ini
+2026-09-29 18:55:55,674 - 34976 - 4764 - run_main.py - 36 -             <module>() root - INFO - *******************
+2026-09-29 18:55:55,675 - 34976 - 4764 - run_main.py - 37 -             <module>() root - INFO - *******************
+2026-09-29 18:55:55,675 - 34976 - 4764 - run_main.py - 38 -             <module>() root - INFO - Main module initialization started. 2026-09-29 18:55:55.675149
+2026-09-29 18:55:55,675 - 34976 - 4764 - run_main.py - 40 -             <module>() root - INFO - *******************
+2026-09-29 18:55:55,675 - 34976 - 4764 - run_main.py - 41 -             <module>() root - INFO - *******************
+2026-09-29 18:55:55,675 - 34976 - 4764 - run_main.py - 45 -             <module>() root - INFO - Main PID: 4764
+2026-09-29 18:55:55,675 - 34976 - 4764 - controller.py - 45 -         _load_config() root - INFO - Successfully loaded application configuration from C:\giti2026\todo-and-current\python\py-zabbix-trapper\config.json
+2026-09-29 18:55:55,676 - 34976 - 4764 - controller.py - 114 -                  run() root - INFO - Application is running with multiple available configurations to choose from: ['app', 'zabbix', 'file']
+2026-09-29 18:55:55,676 - 34976 - 4764 - controller.py - 118 -                  run() root - INFO - Read a file
+2026-09-29 18:55:55,676 - 34976 - 4764 - controller.py - 101 -          file_config() root - INFO - Retrieving file configuration...
+2026-09-29 18:55:55,676 - 34976 - 4764 - controller.py - 103 -          file_config() root - INFO - File Configuration initialized.
+2026-09-29 18:55:55,676 - 34976 - 4764 - controller.py - 125 -                  run() root - INFO - File path: send2zabbix.txt
+2026-09-29 18:55:55,676 - 34976 - 4764 - controller.py - 126 -                  run() root - INFO - File separator: ;
+2026-09-29 18:55:55,676 - 34976 - 4764 - controller.py - 127 -                  run() root - INFO - File encoding: utf-8
+2026-09-29 18:55:55,676 - 34976 - 4764 - worker_file.py - 14 -             __init__() root - INFO - FileWorker initialized.
+2026-09-29 18:55:55,676 - 34976 - 4764 - worker_file.py - 25 -            read_file() root - INFO - [('host1', 'item1', '123'), ('host1', 'item2', '456')]
+2026-09-29 18:55:55,676 - 34976 - 4764 - run_main.py - 67 -             <module>() root - INFO - Main Application finished successfully
+2026-09-29 18:56:19,357 - 16652 - 28684 - app_logger.py - 44 -             __init__() root - INFO - *******************
+2026-09-29 18:56:19,357 - 16652 - 28684 - app_logger.py - 45 -             __init__() root - INFO - *******************
+2026-09-29 18:56:19,357 - 16652 - 28684 - app_logger.py - 46 -             __init__() root - INFO - Logging initialization started. root
+2026-09-29 18:56:19,357 - 16652 - 28684 - app_logger.py - 48 -             __init__() root - INFO - Successfully loaded logging configuration from C:\giti2026\todo-and-current\python\py-zabbix-trapper\logging_config.ini
+2026-09-29 18:56:19,359 - 16652 - 28684 - run_main.py - 36 -             <module>() root - INFO - *******************
+2026-09-29 18:56:19,359 - 16652 - 28684 - run_main.py - 37 -             <module>() root - INFO - *******************
+2026-09-29 18:56:19,360 - 16652 - 28684 - run_main.py - 38 -             <module>() root - INFO - Main module initialization started. 2026-09-29 18:56:19.360080
+2026-09-29 18:56:19,360 - 16652 - 28684 - run_main.py - 40 -             <module>() root - INFO - *******************
+2026-09-29 18:56:19,360 - 16652 - 28684 - run_main.py - 41 -             <module>() root - INFO - *******************
+2026-09-29 18:56:19,360 - 16652 - 28684 - run_main.py - 45 -             <module>() root - INFO - Main PID: 28684
+2026-09-29 18:56:19,360 - 16652 - 28684 - controller.py - 45 -         _load_config() root - INFO - Successfully loaded application configuration from C:\giti2026\todo-and-current\python\py-zabbix-trapper\config.json
+2026-09-29 18:56:19,361 - 16652 - 28684 - controller.py - 114 -                  run() root - INFO - Application is running with multiple available configurations to choose from: ['app', 'zabbix', 'file']
+2026-09-29 18:56:19,361 - 16652 - 28684 - controller.py - 118 -                  run() root - INFO - Read a file
+2026-09-29 18:56:19,361 - 16652 - 28684 - controller.py - 101 -          file_config() root - INFO - Retrieving file configuration...
+2026-09-29 18:56:19,361 - 16652 - 28684 - controller.py - 103 -          file_config() root - INFO - File Configuration initialized.
+2026-09-29 18:56:19,361 - 16652 - 28684 - controller.py - 125 -                  run() root - INFO - File path: send2zabbix.txt
+2026-09-29 18:56:19,361 - 16652 - 28684 - controller.py - 126 -                  run() root - INFO - File separator: ;
+2026-09-29 18:56:19,361 - 16652 - 28684 - controller.py - 127 -                  run() root - INFO - File encoding: utf-8
+2026-09-29 18:56:19,361 - 16652 - 28684 - worker_file.py - 14 -             __init__() root - INFO - FileWorker initialized.
+2026-09-29 18:56:19,361 - 16652 - 28684 - worker_file.py - 25 -            read_file() root - INFO - File data read: [('host1', 'item1', '123'), ('host1', 'item2', '456')]
+2026-09-29 18:56:19,362 - 16652 - 28684 - run_main.py - 67 -             <module>() root - INFO - Main Application finished successfully
+2026-09-29 18:56:43,094 - 22460 - 18596 - app_logger.py - 44 -             __init__() root - INFO - *******************
+2026-09-29 18:56:43,095 - 22460 - 18596 - app_logger.py - 45 -             __init__() root - INFO - *******************
+2026-09-29 18:56:43,095 - 22460 - 18596 - app_logger.py - 46 -             __init__() root - INFO - Logging initialization started. root
+2026-09-29 18:56:43,095 - 22460 - 18596 - app_logger.py - 48 -             __init__() root - INFO - Successfully loaded logging configuration from C:\giti2026\todo-and-current\python\py-zabbix-trapper\logging_config.ini
+2026-09-29 18:56:43,097 - 22460 - 18596 - run_main.py - 36 -             <module>() root - INFO - *******************
+2026-09-29 18:56:43,097 - 22460 - 18596 - run_main.py - 37 -             <module>() root - INFO - *******************
+2026-09-29 18:56:43,097 - 22460 - 18596 - run_main.py - 38 -             <module>() root - INFO - Main module initialization started. 2026-09-29 18:56:43.097828
+2026-09-29 18:56:43,097 - 22460 - 18596 - run_main.py - 40 -             <module>() root - INFO - *******************
+2026-09-29 18:56:43,098 - 22460 - 18596 - run_main.py - 41 -             <module>() root - INFO - *******************
+2026-09-29 18:56:43,098 - 22460 - 18596 - run_main.py - 45 -             <module>() root - INFO - Main PID: 18596
+2026-09-29 18:56:43,098 - 22460 - 18596 - controller.py - 45 -         _load_config() root - INFO - Successfully loaded application configuration from C:\giti2026\todo-and-current\python\py-zabbix-trapper\config.json
+2026-09-29 18:56:43,098 - 22460 - 18596 - controller.py - 114 -                  run() root - INFO - Application is running with multiple available configurations to choose from: ['app', 'zabbix', 'file']
+2026-09-29 18:56:43,098 - 22460 - 18596 - controller.py - 118 -                  run() root - INFO - Read a file
+2026-09-29 18:56:43,098 - 22460 - 18596 - controller.py - 101 -          file_config() root - INFO - Retrieving file configuration...
+2026-09-29 18:56:43,098 - 22460 - 18596 - controller.py - 103 -          file_config() root - INFO - File Configuration initialized.
+2026-09-29 18:56:43,098 - 22460 - 18596 - controller.py - 125 -                  run() root - INFO - File path: send2zabbix.txt
+2026-09-29 18:56:43,098 - 22460 - 18596 - controller.py - 126 -                  run() root - INFO - File separator: ;
+2026-09-29 18:56:43,099 - 22460 - 18596 - controller.py - 127 -                  run() root - INFO - File encoding: utf-8
+2026-09-29 18:56:43,099 - 22460 - 18596 - worker_file.py - 14 -             __init__() root - INFO - FileWorker initialized.
+2026-09-29 18:56:43,099 - 22460 - 18596 - worker_file.py - 26 -            read_file() root - INFO - File data read: ('host1', 'item1', '123')
+2026-09-29 18:56:43,099 - 22460 - 18596 - worker_file.py - 26 -            read_file() root - INFO - File data read: ('host1', 'item2', '456')
+2026-09-29 18:56:43,099 - 22460 - 18596 - run_main.py - 67 -             <module>() root - INFO - Main Application finished successfully
+2026-09-29 18:57:01,019 - 9112 - 19064 - app_logger.py - 44 -             __init__() root - INFO - *******************
+2026-09-29 18:57:01,019 - 9112 - 19064 - app_logger.py - 45 -             __init__() root - INFO - *******************
+2026-09-29 18:57:01,019 - 9112 - 19064 - app_logger.py - 46 -             __init__() root - INFO - Logging initialization started. root
+2026-09-29 18:57:01,019 - 9112 - 19064 - app_logger.py - 48 -             __init__() root - INFO - Successfully loaded logging configuration from C:\giti2026\todo-and-current\python\py-zabbix-trapper\logging_config.ini
+2026-09-29 18:57:01,021 - 9112 - 19064 - run_main.py - 36 -             <module>() root - INFO - *******************
+2026-09-29 18:57:01,022 - 9112 - 19064 - run_main.py - 37 -             <module>() root - INFO - *******************
+2026-09-29 18:57:01,022 - 9112 - 19064 - run_main.py - 38 -             <module>() root - INFO - Main module initialization started. 2026-09-29 18:57:01.022233
+2026-09-29 18:57:01,022 - 9112 - 19064 - run_main.py - 40 -             <module>() root - INFO - *******************
+2026-09-29 18:57:01,022 - 9112 - 19064 - run_main.py - 41 -             <module>() root - INFO - *******************
+2026-09-29 18:57:01,022 - 9112 - 19064 - run_main.py - 45 -             <module>() root - INFO - Main PID: 19064
+2026-09-29 18:57:01,022 - 9112 - 19064 - controller.py - 45 -         _load_config() root - INFO - Successfully loaded application configuration from C:\giti2026\todo-and-current\python\py-zabbix-trapper\config.json
+2026-09-29 18:57:01,023 - 9112 - 19064 - controller.py - 114 -                  run() root - INFO - Application is running with multiple available configurations to choose from: ['app', 'zabbix', 'file']
+2026-09-29 18:57:01,023 - 9112 - 19064 - controller.py - 118 -                  run() root - INFO - Read a file
+2026-09-29 18:57:01,023 - 9112 - 19064 - controller.py - 101 -          file_config() root - INFO - Retrieving file configuration...
+2026-09-29 18:57:01,023 - 9112 - 19064 - controller.py - 103 -          file_config() root - INFO - File Configuration initialized.
+2026-09-29 18:57:01,023 - 9112 - 19064 - controller.py - 125 -                  run() root - INFO - File path: send2zabbix.txt
+2026-09-29 18:57:01,023 - 9112 - 19064 - controller.py - 126 -                  run() root - INFO - File separator: ;
+2026-09-29 18:57:01,023 - 9112 - 19064 - controller.py - 127 -                  run() root - INFO - File encoding: utf-8
+2026-09-29 18:57:01,023 - 9112 - 19064 - worker_file.py - 14 -             __init__() root - INFO - FileWorker initialized.
+2026-09-29 18:57:01,023 - 9112 - 19064 - worker_file.py - 27 -            read_file() root - INFO - File data read: ('host1', 'item1', '123')
+2026-09-29 18:57:01,023 - 9112 - 19064 - worker_file.py - 27 -            read_file() root - INFO - File data read: ('host1', 'item2', '456')
+2026-09-29 18:57:01,023 - 9112 - 19064 - run_main.py - 67 -             <module>() root - INFO - Main Application finished successfully

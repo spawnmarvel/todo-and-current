@@ -34,7 +34,10 @@ if __name__ == "__main__":
 
     # Log startup banner and timestamp FIRST
     logger.info("*******************")
-    logger.info("Main module started %s", str(d.datetime.now()))
+    logger.info("*******************")
+    logger.info("Main module initialization started. %s",
+                str(d.datetime.now()))
+    logger.info("*******************")
     logger.info("*******************")
 
     try:

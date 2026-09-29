@@ -12,7 +12,7 @@ class FileWorker:
         self.config = config
         self.logger = logger
         logger.info(
-            "FileWorker initialized with configuration: %s", self.config)
+            "FileWorker initialized.")
 
     def read_file(self, file_path, separator, encoding):
         """Read data from a file and return it as a list of tuples."""
@@ -22,6 +22,9 @@ class FileWorker:
                 parts = line.strip().split(separator)
                 if len(parts) == 3:
                     data.append((parts[0], parts[1], parts[2]))
+        # iterate through the data and log each entry for debugging purposes
+        for f in data:
+            self.logger.info("File data read: %s", str(f))
         return data
 
     def write_file(self, file_path, data):

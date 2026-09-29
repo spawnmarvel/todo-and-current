@@ -8,6 +8,7 @@ from pathlib import Path
 # internal modules
 import app_logger as app_logger
 import worker_zabbix_trapper as worker_zabbix_trapper
+import worker_file as worker_file
 
 # Retrieve the shared logger instance during module initialization
 logger = app_logger.AppLogger().get()
@@ -88,39 +89,18 @@ class Controller:
 
         return default
 
-    def amqp_config(self):
-        """Returns the AMQP configuration dictionary."""
-        self.logger.info("Retrieving AMQP configuration...")
-        conf = self.get_config("amqp", {})
-        self.logger.info("AMQP Configuration: %s", conf)
-        return conf
-
-    def database_config(self):
-        """Returns the database configuration dictionary."""
-        self.logger.info("Retrieving database configuration...")
-        conf = self.get_config("database", {})
-        self.logger.info("Database Configuration: %s", conf)
-        return conf
-
     def zabbix_config(self):
         """Returns the Zabbix configuration dictionary."""
         self.logger.info("Retrieving Zabbix configuration...")
         conf = self.get_config("zabbix", {})
-        self.logger.info("Zabbix Configuration: %s", conf)
+        self.logger.info("Zabbix Configuration initialized.")
         return conf
 
     def file_config(self):
         """Returns the file configuration dictionary."""
         self.logger.info("Retrieving file configuration...")
         conf = self.get_config("file", {})
-        self.logger.info("File Configuration: %s", conf)
-        return conf
-
-    def api_config(self):
-        """Returns the API configuration dictionary."""
-        self.logger.info("Retrieving API configuration...")
-        conf = self.get_config("api", {})
-        self.logger.info("API Configuration: %s", conf)
+        self.logger.info("File Configuration initialized.")
         return conf
 
     def run(self):
@@ -134,15 +114,26 @@ class Controller:
         self.logger.info(
             "Application is running with multiple available configurations to choose from: %s", self.get_config_keys()
         )
-
-        # load and validate configuration sections for AMQP, database, Zabbix, and file settings, example with database_config
-        # example usage of configuration retrieval methods
-        self.file_config()
-        self.zabbix_config()
-        worker_zabbix_t = worker_zabbix_trapper.ZabbixTrapperWorker(
-            self.zabbix_config())
-
         # do logic to read file and send traps to Zabbix server
         self.logger.info("Read a file")
-        self.logger.info("Send traps to Zabbix server")
-        self.logger.info("Worker logic executed successfully.")
+        # we now have a dictionary with the file configuration
+        file_json = self.file_config()
+
+        file_path = file_json["file_path"]
+        file_separator = file_json["file_separator"]
+        file_encoding = file_json["file_encoding"]
+        logger.info("File path: %s", file_path)
+        logger.info("File separator: %s", file_separator)
+        logger.info("File encoding: %s", file_encoding)
+
+        #
+        worker_file_template = worker_file.FileWorker(file_json)
+        worker_file_template.read_file(
+            file_path, file_separator, file_encoding)
+
+        #
+        # self.logger.info("Send traps to Zabbix server")
+
+        # worker_zabbix_template = worker_zabbix_trapper.ZabbixTrapperWorker(
+        #            self.zabbix_config())
+        # self.logger.info("Worker logic executed successfully.")
