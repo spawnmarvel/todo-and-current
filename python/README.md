@@ -480,16 +480,18 @@ d----          28.09.2026    21:08                dev
 Now lets make some code for reading the file and for sending to Zabbix.
 
 
-1. Read a txt file from external source that updates the file
+1. Read a txt file from a location that something (external) else updates:
 
 External can be:
 
 * Powershell
 * cmd
 * Sql save file
+* Task scheduler
+* SQLPlus (save to file)
 * Other
 
-1. Send to zabbix, read the file with data and send
+1. Send to zabbix, read the file with data and send.
 
 Result of logs
 
