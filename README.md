@@ -38,7 +38,7 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
   - [1. Zen](#1-zen)
     - [1. Learn the ways of Linux-fu-yoda, for free :bug:](#1-learn-the-ways-of-linux-fu-yoda-for-free-bug)
     - [2. Python projects often two-in-one. It is zen! :bug:](#2-python-projects-often-two-in-one-it-is-zen-bug)
-    - [3. Do MS learn dont take notes](#3-do-ms-learn-dont-take-notes)
+    - [3. Az-104 Azure Adminisrator tutorials (no notes, just do them)](#3-az-104-azure-adminisrator-tutorials-no-notes-just-do-them)
   - [2. Workish](#2-workish)
     - [1. Zabbix default :star:](#1-zabbix-default-star)
     - [2. AZ-104 Azure Administrator :bug:](#2-az-104-azure-administrator-bug)
@@ -395,7 +395,7 @@ $${\color{lightblue}This \ is \ fun}$$
 
 ---
 
-### 3. Do MS learn dont take notes
+### 3. Az-104 Azure Adminisrator tutorials (no notes, just do them)
 
 - [AZ-104 administrator](https://learn.microsoft.com/en-us/training/browse/?terms=AZ-104&source=learn)
 - [Azure storage account](https://learn.microsoft.com/en-us/training/browse/?source=learn&products=azure&terms=storage%20account)
