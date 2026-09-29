@@ -384,7 +384,7 @@ $${\color{green}This \ is \ power}$$
 **In Progress:**
 - :monkey: Have fun!
 - 📚 Python and sqlite is 2-in-1, start with this, one thing at the time
-- 📚 py-zabbiz-trapper use bin\zabbix sender.exe from zabbix, read a txt file and send to zabbix and make executable.
+- 📚 Make py-zabbix-trapper.exe TODO
 
 **Completed:**
 - ✅ [Python collections](https://github.com/spawnmarvel/todo-and-current/tree/main/python)

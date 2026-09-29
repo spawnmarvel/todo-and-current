@@ -18,7 +18,7 @@
   - [Self-contained executable py-zabbix-trapper example](#self-contained-executable-py-zabbix-trapper-example)
     - [Init py-zabbix-trapper from boilerplate](#init-py-zabbix-trapper-from-boilerplate)
     - [py-zabbix-trapper logic](#py-zabbix-trapper-logic)
-    - [Make py-zabbix-trapper.exe](#make-py-zabbix-trapperexe)
+    - [Make py-zabbix-trapper.exe TODO](#make-py-zabbix-trapperexe-todo)
 
 
 ## The Python Standard Library
@@ -553,7 +553,7 @@ Data in zabbix.
 
 ![data success in zabbix](https://github.com/spawnmarvel/todo-and-current/blob/main/python/py-zabbix-trapper/images/py_trapper.png)
 
-### Make py-zabbix-trapper.exe
+### Make py-zabbix-trapper.exe TODO
 
 To create a self-contained executable from a Python script, the most popular and easiest tool to use is PyInstaller. It bundles your Python script, the Python interpreter, and all required dependencies into a single file that can run on computers without Python installed.
 
