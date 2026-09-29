@@ -7,6 +7,7 @@ import time
 from pathlib import Path
 # internal modules
 import app_logger as app_logger
+import worker_zabbix_trapper as worker_zabbix_trapper
 
 # Retrieve the shared logger instance during module initialization
 logger = app_logger.AppLogger().get()
@@ -138,6 +139,10 @@ class Controller:
         # example usage of configuration retrieval methods
         self.file_config()
         self.zabbix_config()
-        for i in range(10):
-            self.logger.info("Application loop step %d/...", i + 1)
-            # time.sleep(4)
+        worker_zabbix_t = worker_zabbix_trapper.ZabbixTrapperWorker(
+            self.zabbix_config())
+
+        # do logic to read file and send traps to Zabbix server
+        self.logger.info("Read a file")
+        self.logger.info("Send traps to Zabbix server")
+        self.logger.info("Worker logic executed successfully.")

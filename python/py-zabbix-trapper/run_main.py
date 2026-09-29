@@ -61,7 +61,7 @@ if __name__ == "__main__":
             logger.info("Stopped, bye, bye")
             sys.exit(0)
 
-        logger.info("Application finished successfully")
+        logger.info("Main Application finished successfully")
 
     except (KeyboardInterrupt, SystemExit):
         time.sleep(1)
