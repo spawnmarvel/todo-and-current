@@ -105,6 +105,7 @@ class Controller:
 
     def run(self):
         """Executes the core application workload and iteration loops."""
+        do_run = True
         # Warn operator if execution is proceeding with missing or invalid configuration
         if not self.valid_config:
             self.logger.warning(
@@ -116,24 +117,44 @@ class Controller:
         )
         # do logic to read file and send traps to Zabbix server
         self.logger.info("Read a file")
+
         # we now have a dictionary with the file configuration
         file_json = self.file_config()
-
         file_path = file_json["file_path"]
         file_separator = file_json["file_separator"]
         file_encoding = file_json["file_encoding"]
-        logger.info("File path: %s", file_path)
-        logger.info("File separator: %s", file_separator)
-        logger.info("File encoding: %s", file_encoding)
+        self.logger.info("File path: %s", file_path)
+        self.logger.info("File separator: %s", file_separator)
+        self.logger.info("File encoding: %s", file_encoding)
 
-        #
-        worker_file_template = worker_file.FileWorker(file_json)
-        worker_file_template.read_file(
-            file_path, file_separator, file_encoding)
+        # zabbix we need
+        zabbix_json = self.zabbix_config()
+        zabbix_server = zabbix_json["zabbix_server"]
+        zabbix_port = zabbix_json["port"]
+        self.logger.info("Zabbix server: %s", zabbix_server)
+        self.logger.info("Zabbix port: %s", zabbix_port)
+
+        # we need to make it run in a loop
+        while do_run:
+            worker_file_template = worker_file.FileWorker(file_json)
+            data = worker_file_template.read_file(
+                file_path, file_separator, file_encoding)
+
+            logger.info("Data try send to zabbix: %s", data)
+            worker_zabbix_template = worker_zabbix_trapper.ZabbixTrapperWorker(
+                self.zabbix_config())
+
+            # iterate over each item and send them
+            for d in data:
+                worker_zabbix_template.send_trap(
+                    zabbix_server, zabbix_port, d[0], d[1], d[2])
+
+            # sleep for 10 sec
+            self.logger.info(
+                "Sleep for 10 seconds while we wait for new updates in the the text file: %s", file_path)
+            time.sleep(10)
 
         #
         # self.logger.info("Send traps to Zabbix server")
 
-        # worker_zabbix_template = worker_zabbix_trapper.ZabbixTrapperWorker(
-        #            self.zabbix_config())
         # self.logger.info("Worker logic executed successfully.")
