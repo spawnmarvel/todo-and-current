@@ -546,7 +546,7 @@ sent: 1; skipped: 0; total: 1
 
 Data in zabbix.
 
-
+![data success in zabbix](https://github.com/spawnmarvel/todo-and-current/blob/main/python/py-zabbix-trapper/images/py_trapper.png)
 
 ### Make py-zabbix-trapper.exe
 
