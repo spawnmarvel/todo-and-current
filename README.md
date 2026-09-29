@@ -404,7 +404,9 @@ $${\color{lightblue}This \ is \ fun}$$
 - [Azure backup](https://learn.microsoft.com/en-us/training/browse/?source=learn&products=azure&terms=backup)
 - [Azure disaster recovery](https://learn.microsoft.com/en-us/training/browse/?source=learn&products=azure&terms=disaster%20recovery)
 - [Azure monitor](https://learn.microsoft.com/en-us/training/browse/?source=learn&products=azure&terms=monitor)
-- 
+- [Azure identities](https://learn.microsoft.com/en-us/training/browse/?source=learn&products=azure&terms=identities)
+- [Azure governance](https://learn.microsoft.com/en-us/training/browse/?source=learn&products=azure&terms=governance)
+- [Azure well-architected framwork](https://learn.microsoft.com/en-us/training/browse/?source=learn&products=azure&terms=well-architected)
 ---
 
 $${\color{lightblue}This \ is \ fun}$$
