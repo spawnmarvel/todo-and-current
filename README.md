@@ -403,6 +403,7 @@ $${\color{lightblue}This \ is \ fun}$$
 - [Azure network](https://learn.microsoft.com/en-us/training/browse/?source=learn&products=azure&terms=network)
 - [Azure backup](https://learn.microsoft.com/en-us/training/browse/?source=learn&products=azure&terms=backup)
 - [Azure disaster recovery](https://learn.microsoft.com/en-us/training/browse/?source=learn&products=azure&terms=disaster%20recovery)
+- [Azure monitor](https://learn.microsoft.com/en-us/training/browse/?source=learn&products=azure&terms=monitor)
 ---
 
 $${\color{lightblue}This \ is \ fun}$$
