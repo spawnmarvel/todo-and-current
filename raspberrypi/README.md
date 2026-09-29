@@ -56,6 +56,7 @@ Manual checks or basic standalone sensor displays lack historical tracking, visu
       - [USB drive with photos](#usb-drive-with-photos)
         - [systemd background service.](#systemd-background-service)
         - [Upload new photos](#upload-new-photos)
+        - [Stopped and diabled](#stopped-and-diabled)
 
 
 
@@ -1930,3 +1931,14 @@ sudo systemctl restart tv-photo-album.service
 # Check the journal logs to verify feh loaded your updated total photo count:
 sudo journalctl -u tv-photo-album.service -n 10 --no-pager
 ```
+##### Stopped and diabled 
+
+```bash
+sudo systemctl stop tv-photo-album.service 
+sudo systemctl disable tv-photo-album.service
+Removed '/etc/systemd/system/graphical.target.wants/tv-photo-album.service'.
+
+sudo umount "/media/chilliman/UBUNTU 24_0"
+``` 
+
+
