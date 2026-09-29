@@ -445,7 +445,7 @@ Now we just have 3 config sections, all we need for coding.
 3. Let the zabbix worker send it
 4. Verify in zabbix
 
-How to Get zabbix_sender.exe
+How to Get zabbix_sender.exe (it is already in this project, but you can update the version)
 
 
 https://www.zabbix.com/download_agents?version=6.0+LTS&release=6.0.48&os=Windows&os_version=11%2C+10&hardware=amd64&encryption=No+encryption&packaging=Archive&show_legacy=0
