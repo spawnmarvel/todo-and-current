@@ -136,18 +136,28 @@ class Controller:
 
         # we need to make it run in a loop
         while do_run:
+            # instance file object
             worker_file_template = worker_file.FileWorker(file_json)
             data = worker_file_template.read_file(
                 file_path, file_separator, file_encoding)
 
-            logger.info("Data try send to zabbix: %s", data)
+            # instance zabbix object
             worker_zabbix_template = worker_zabbix_trapper.ZabbixTrapperWorker(
-                self.zabbix_config())
+                                self.zabbix_config())
 
-            # iterate over each item and send them
-            for d in data:
-                worker_zabbix_template.send_trap(
-                    zabbix_server, zabbix_port, d[0], d[1], d[2])
+            if data is None:
+                pass
+            else:
+                logger.info("Data try send to zabbix: %s", data)
+                
+
+            if worker_file_template.get_monitoring_file_exists():
+                # iterate over each item and send them
+                for d in data:
+                    worker_zabbix_template.send_trap(
+                        zabbix_server, zabbix_port, d[0], d[1], d[2])
+            else:
+                self.logger.error("The file with monitoring data does not exists, nothing to send.")
 
             # sleep for 10 sec
             self.logger.info(

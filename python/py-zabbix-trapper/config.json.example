@@ -1,0 +1,24 @@
+{
+    "app": {
+        "$app_comments": "The app information section provides metadata about the application.",
+        "app_name": "BoilerplateApp",
+        "environment": "production",
+        "version": "1.0.0"
+    },
+    "zabbix": {
+        "$zabbix_comments": "The Zabbix configuration section provides settings for connecting to the Zabbix server. Send traps to the Zabbix server. Connect to the Zabbix server.",
+        "host": "localhost",
+        "zabbix_server": "zabbix.example.com",
+        "port": 10051,
+        "username": "user",
+        "password": "password",
+        "ssl_enabled": false
+    },
+    "file": {
+        "$file_comments": "The file configuration section provides settings for file handling. Read the file_path, file_separator, and file_encoding values to configure how the application reads and processes files.",
+        "file_path": "path/to/file.txt",
+        "file_separator": ";",
+        "file_encoding": "utf-8",
+        "file_comments_zabbix": "python will run: zabbix_sender.exe -z zabbix_server -s hostname -k my_item -o 43, so the file must have the following format: hostname;my_item;43"
+    }
+}

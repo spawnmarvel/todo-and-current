@@ -1,2 +1,1 @@
-limadmz;postion;80
-limadmz;safety;100
+host1 mykey 12
