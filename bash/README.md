@@ -903,9 +903,11 @@ cat /etc/passwd
 
 ---
 
-### Sudo Delay Fix (Hostname Resolution)
+### /etc/hosts (Hostname Resolution)
 
-Fix slow sudo command caused by hostname not being in /etc/hosts.
+In Ubuntu and other Linux distributions, the hosts file is located at /etc/hosts. It is a plain text file that maps IP addresses to hostnames locally, allowing you to override standard DNS lookups for testing, staging, or blocking websites.
+
+* To override DNS on Ubuntu, you need to edit the system's local hosts file located at /etc/hosts. By default, Ubuntu checks this file for a matching hostname before sending a query out to public DNS servers.
 
 ```bash
 # Check your hostname
@@ -915,6 +917,7 @@ hostname
 # Edit hosts file to map hostname to localhost
 sudo nano /etc/hosts
 
+# Fix slow sudo command caused by hostname not being in /etc/hosts.
 # Change from:
 127.0.0.1 localhost
 
@@ -925,6 +928,28 @@ sudo nano /etc/hosts
 # Why this works: sudo tries to look up the hostname via DNS.
 # Without the mapping, it times out waiting for external DNS.
 # Adding it to /etc/hosts makes resolution instant.
+```
+ping, ssh, etc
+
+```bash
+# Or simple fix ping, ssh and other commands to use hostname and not ip.
+# works
+ssh chilliman@192.168.10.212
+
+# does not work
+ssh chilliman@mira1
+sudo nano /etc/hosts
+``` 
+hosts file
+
+```txt
+cat /etc/hosts
+127.0.1.1       penguin
+127.0.0.1       localhost
+192.168.10.212  mira1
+::1             localhost ip6-localhost ip6-loopback
+ff02::1         ip6-allnodes
+ff02::2         ip6-allrouters
 ```
 
 ---
