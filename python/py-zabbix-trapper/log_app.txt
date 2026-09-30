@@ -18,7 +18,7 @@
 2026-09-29 19:53:42,206 - 2108 - 28120 - controller.py - 128 -                  run() root - INFO - File encoding: utf-8
 2026-09-29 19:53:42,206 - 2108 - 28120 - controller.py - 94 -        zabbix_config() root - INFO - Retrieving Zabbix configuration...
 2026-09-29 19:53:42,206 - 2108 - 28120 - controller.py - 96 -        zabbix_config() root - INFO - Zabbix Configuration initialized.
-2026-09-29 19:53:42,206 - 2108 - 28120 - controller.py - 134 -                  run() root - INFO - Zabbix server: 51.12.88.251
+2026-09-29 19:53:42,206 - 2108 - 28120 - controller.py - 134 -                  run() root - INFO - Zabbix server: 10.10.10.10
 2026-09-29 19:53:42,206 - 2108 - 28120 - controller.py - 135 -                  run() root - INFO - Zabbix port: 10051
 2026-09-29 19:53:42,206 - 2108 - 28120 - worker_file.py - 14 -             __init__() root - INFO - FileWorker initialized.
 2026-09-29 19:53:42,207 - 2108 - 28120 - worker_file.py - 27 -            read_file() root - INFO - File data read: ('limadmz', 'postion', '80')
@@ -31,15 +31,15 @@
 2026-09-29 19:53:42,207 - 2108 - 28120 - worker_zabbix_trapper.py - 33 -              connect() root - INFO - Zabbix sender binary located successfully at C:\giti2026\todo-and-current\python\py-zabbix-trapper\bin\zabbix_sender.exe
 2026-09-29 19:53:42,208 - 2108 - 28120 - worker_zabbix_trapper.py - 86 -            send_trap() root - INFO - Zabbix binary init.
 2026-09-29 19:53:42,218 - 2108 - 28120 - worker_zabbix_trapper.py - 66 -          get_version() root - INFO - Zabbix Sender Version: zabbix_sender (Zabbix) 6.0.48
-2026-09-29 19:53:42,218 - 2108 - 28120 - worker_zabbix_trapper.py - 100 -            send_trap() root - INFO - Executing command: C:\giti2026\todo-and-current\python\py-zabbix-trapper\bin\zabbix_sender.exe -z 51.12.88.251 -p 10051 -s limadmz -k postion -o 80
-2026-09-29 19:53:42,268 - 2108 - 28120 - worker_zabbix_trapper.py - 113 -            send_trap() root - INFO - Zabbix sender success output: Response from "51.12.88.251:10051": "processed: 1; failed: 0; total: 1; seconds spent: 0.000018"
+2026-09-29 19:53:42,218 - 2108 - 28120 - worker_zabbix_trapper.py - 100 -            send_trap() root - INFO - Executing command: C:\giti2026\todo-and-current\python\py-zabbix-trapper\bin\zabbix_sender.exe -z 10.10.10.10 -p 10051 -s limadmz -k postion -o 80
+2026-09-29 19:53:42,268 - 2108 - 28120 - worker_zabbix_trapper.py - 113 -            send_trap() root - INFO - Zabbix sender success output: Response from "10.10.10.10:10051": "processed: 1; failed: 0; total: 1; seconds spent: 0.000018"
 sent: 1; skipped: 0; total: 1
 2026-09-29 19:53:42,269 - 2108 - 28120 - worker_zabbix_trapper.py - 81 -            send_trap() root - INFO - Try send trapper data recieved:  limadmz safety 100
 2026-09-29 19:53:42,269 - 2108 - 28120 - worker_zabbix_trapper.py - 33 -              connect() root - INFO - Zabbix sender binary located successfully at C:\giti2026\todo-and-current\python\py-zabbix-trapper\bin\zabbix_sender.exe
 2026-09-29 19:53:42,269 - 2108 - 28120 - worker_zabbix_trapper.py - 86 -            send_trap() root - INFO - Zabbix binary init.
 2026-09-29 19:53:42,277 - 2108 - 28120 - worker_zabbix_trapper.py - 66 -          get_version() root - INFO - Zabbix Sender Version: zabbix_sender (Zabbix) 6.0.48
-2026-09-29 19:53:42,277 - 2108 - 28120 - worker_zabbix_trapper.py - 100 -            send_trap() root - INFO - Executing command: C:\giti2026\todo-and-current\python\py-zabbix-trapper\bin\zabbix_sender.exe -z 51.12.88.251 -p 10051 -s limadmz -k safety -o 100
-2026-09-29 19:53:42,328 - 2108 - 28120 - worker_zabbix_trapper.py - 113 -            send_trap() root - INFO - Zabbix sender success output: Response from "51.12.88.251:10051": "processed: 1; failed: 0; total: 1; seconds spent: 0.000024"
+2026-09-29 19:53:42,277 - 2108 - 28120 - worker_zabbix_trapper.py - 100 -            send_trap() root - INFO - Executing command: C:\giti2026\todo-and-current\python\py-zabbix-trapper\bin\zabbix_sender.exe -z 10.10.10.10 -p 10051 -s limadmz -k safety -o 100
+2026-09-29 19:53:42,328 - 2108 - 28120 - worker_zabbix_trapper.py - 113 -            send_trap() root - INFO - Zabbix sender success output: Response from "10.10.10.10:10051": "processed: 1; failed: 0; total: 1; seconds spent: 0.000024"
 sent: 1; skipped: 0; total: 1
 2026-09-29 19:53:42,328 - 2108 - 28120 - controller.py - 153 -                  run() root - INFO - Sleep for 30 seconds while we wait for new updates in the the text file: send2zabbix.txt
 2026-09-29 19:53:46,128 - 2108 - 28120 - run_main.py - 72 -             <module>() root - INFO - Stopping application due to SIGTERM or KeyboardInterrupt
