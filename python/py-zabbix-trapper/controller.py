@@ -21,7 +21,10 @@ class Controller:
         # Attach logger and initialize configuration state flags
         self.logger = logger
         self.valid_config = False
+        self.config_file_path = None
         self.config = self._load_config()
+        self.file_worker = None
+        self.zabbix_worker = None
 
     def _load_config(self) -> dict:
         """Reads and parses 'config.json' from the current working directory.
@@ -32,6 +35,8 @@ class Controller:
         """
         # Resolve config file path relative to the current working directory
         config_file = Path.cwd() / "config.json"
+        # get the path
+        self.config_file_path = Path.cwd() / "config.json"
 
         # Check if config.json exists before attempting to read
         if not config_file.exists():
@@ -103,9 +108,21 @@ class Controller:
         self.logger.info("File Configuration initialized.")
         return conf
 
+    def init_file_and_zabbix_workers(self):
+        # Move worker initialization out of the loop into the placeholder
+        # Move instantiation of worker classes into init_file_and_zabbix_workers()
+        # self.file_worker =
+        # self.zabbix_worker =
+        pass
+
+    def _setup_runtime_parameters(self):
+        # Current Issue: Extracting dictionary fields like file_path, file_separator, zabbix_server, and zabbix_port clutters the entry flow of run()
+        pass
+
     def run(self):
         """Executes the core application workload and iteration loops."""
         do_run = True
+        self.logger.info("Do work is: %s", do_run)
         # Warn operator if execution is proceeding with missing or invalid configuration
         if not self.valid_config:
             self.logger.warning(
@@ -131,7 +148,8 @@ class Controller:
         zabbix_json = self.zabbix_config()
         zabbix_server = zabbix_json["zabbix_server"]
         zabbix_port = zabbix_json["port"]
-        self.logger.info("Zabbix server: %s", zabbix_server)
+        self.logger.info(
+            "Zabbix server: view configuration in %s", self.config_file_path)
         self.logger.info("Zabbix port: %s", zabbix_port)
 
         # we need to make it run in a loop
@@ -143,13 +161,12 @@ class Controller:
 
             # instance zabbix object
             worker_zabbix_template = worker_zabbix_trapper.ZabbixTrapperWorker(
-                                self.zabbix_config())
+                self.zabbix_config())
 
             if data is None:
                 pass
             else:
                 logger.info("Data try send to zabbix: %s", data)
-                
 
             if worker_file_template.get_monitoring_file_exists():
                 # iterate over each item and send them
@@ -157,7 +174,8 @@ class Controller:
                     worker_zabbix_template.send_trap(
                         zabbix_server, zabbix_port, d[0], d[1], d[2])
             else:
-                self.logger.error("The file with monitoring data does not exists, nothing to send.")
+                self.logger.error(
+                    "The file with monitoring data does not exists, nothing to send.")
 
             # sleep for 10 sec
             self.logger.info(
