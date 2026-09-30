@@ -20,8 +20,6 @@
     - [py-zabbix-trapper logic](#py-zabbix-trapper-logic)
     - [Make py-zabbix-trapper.exe TODO](#make-py-zabbix-trapperexe-todo)
       - [1. Step-by-step PyInstaller Compilation Process](#1-step-by-step-pyinstaller-compilation-process)
-        - [Install PyInstaller](#install-pyinstaller)
-        - [Analyze Application \& Dependencies](#analyze-application--dependencies)
 
 
 ## The Python Standard Library
@@ -577,18 +575,4 @@ To create a self-contained executable from a Python script, the most popular and
 
 * Verify Standalone Deployment: Run the generated executable on a clean target machine without Python installed to confirm path resolution and service execution.
 
-##### Install PyInstaller
-
-```bash
-python -m pip install --upgrade pip
-Requirement already satisfied: pip in C:\Python314\Lib\site-packages (26.2.1)
-python -m pip install pyinstaller pywin32
-
-# verify it
-pyinstaller --version
-6.22.3
-```
-
-##### Analyze Application & Dependencies
-
-
+GOTO .\py-zabbix-trapper/readme.md
