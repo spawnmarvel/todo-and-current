@@ -1,1 +1,1 @@
-host1 mykey 12
+host1; mykey; 12

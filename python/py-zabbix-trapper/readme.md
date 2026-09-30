@@ -5,7 +5,7 @@
 - [Python zabbix trapper](#python-zabbix-trapper)
   - [Table of content](#table-of-content)
   - [Native Binary Shipping](#native-binary-shipping)
-  - [Input file examples](#input-file-examples)
+  - [Input file examples for windows](#input-file-examples-for-windows)
     - [Make py-zabbix-trapper.exe TODO](#make-py-zabbix-trapperexe-todo)
       - [1. Step-by-step PyInstaller Compilation Process](#1-step-by-step-pyinstaller-compilation-process)
         - [Install PyInstaller](#install-pyinstaller)
@@ -18,7 +18,7 @@ Shipping the official zabbix_sender.exe binary alongside your code is a standard
 
 Instead of relying on Python-based Zabbix API/trapper client libraries from pip (which require additional dependencies and maintaining socket protocols in Python), your application uses Python's standard subprocess module to invoke zabbix_sender.exe directly.
 
-## Input file examples
+## Input file examples for windows
 
 Now lets make some code for reading the file and for sending to Zabbix.
 
@@ -29,10 +29,10 @@ External can be:
 
 * Powershell
 * cmd
-* bash
+* bash (just as example)
 
 ```bash
-echo host1 mykey 12 > send2zabbix.txt
+echo "host1; mykey; 12;" > send2zabbix.txt
 ```
 
 * Sql save file
