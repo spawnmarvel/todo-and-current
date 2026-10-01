@@ -5,7 +5,7 @@
 - [](#)
   - [Table of content](#table-of-content)
   - [Kernel Virtual Machine](#kernel-virtual-machine)
-  - [KVM hypervisor: a beginners’ guide](#kvm-hypervisor-a-beginners-guide)
+  - [KVM hypervisor a beginners’ guide](#kvm-hypervisor-a-beginners-guide)
 
 ## Kernel Virtual Machine
 
@@ -13,6 +13,6 @@ Linux KVM (Kernel-based Virtual Machine) is a built-in open-source feature that 
 
 https://linux-kvm.org/page/Main_Page
 
-## KVM hypervisor: a beginners’ guide
+## KVM hypervisor a beginners’ guide
 
 https://ubuntu.com/blog/kvm-hyphervisor
