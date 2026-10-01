@@ -206,3 +206,44 @@
 2026-09-30 22:11:50,284 - 34812 - 23228 - run_main.py - 72 -             <module>() root - INFO - Stopping application due to SIGTERM or KeyboardInterrupt
 2026-09-30 22:11:50,284 - 34812 - 23228 - run_main.py - 74 -             <module>() root - INFO - Clean up done
 2026-09-30 22:11:50,284 - 34812 - 23228 - run_main.py - 75 -             <module>() root - INFO - Stopped, bye, bye
+2026-10-01 13:30:27,043 - 6592 - 35320 - app_logger.py - 44 -             __init__() root - INFO - *******************
+2026-10-01 13:30:27,043 - 6592 - 35320 - app_logger.py - 45 -             __init__() root - INFO - *******************
+2026-10-01 13:30:27,043 - 6592 - 35320 - app_logger.py - 46 -             __init__() root - INFO - Logging initialization started. root
+2026-10-01 13:30:27,043 - 6592 - 35320 - app_logger.py - 48 -             __init__() root - INFO - Successfully loaded logging configuration from C:\giti2026\todo-and-current\python\py-zabbix-trapper\logging_config.ini
+2026-10-01 13:30:27,044 - 6592 - 35320 - run_main.py - 36 -             <module>() root - INFO - *******************
+2026-10-01 13:30:27,045 - 6592 - 35320 - run_main.py - 37 -             <module>() root - INFO - *******************
+2026-10-01 13:30:27,045 - 6592 - 35320 - run_main.py - 38 -             <module>() root - INFO - Main module initialization started. 2026-10-01 13:30:27.045096
+2026-10-01 13:30:27,045 - 6592 - 35320 - run_main.py - 40 -             <module>() root - INFO - *******************
+2026-10-01 13:30:27,045 - 6592 - 35320 - run_main.py - 41 -             <module>() root - INFO - *******************
+2026-10-01 13:30:27,045 - 6592 - 35320 - run_main.py - 45 -             <module>() root - INFO - Main PID: 35320
+2026-10-01 13:30:27,052 - 6592 - 35320 - controller.py - 50 -         _load_config() root - INFO - Successfully loaded application configuration from C:\giti2026\todo-and-current\python\py-zabbix-trapper\config.json
+2026-10-01 13:30:27,052 - 6592 - 35320 - controller.py - 116 - init_file_and_zabbix_workers() root - INFO - fix me, so i am called just once
+2026-10-01 13:30:27,052 - 6592 - 35320 - controller.py - 120 - _setup_runtime_parameters() root - INFO - fix me, so i am called just once
+2026-10-01 13:30:27,052 - 6592 - 35320 - controller.py - 127 -                  run() root - INFO - Do work is: True
+2026-10-01 13:30:27,053 - 6592 - 35320 - controller.py - 134 -                  run() root - INFO - Application is running with multiple available configurations to choose from: ['app', 'zabbix', 'file']
+2026-10-01 13:30:27,053 - 6592 - 35320 - controller.py - 138 -                  run() root - INFO - Read a file
+2026-10-01 13:30:27,053 - 6592 - 35320 - controller.py - 106 -          file_config() root - INFO - Retrieving file configuration...
+2026-10-01 13:30:27,053 - 6592 - 35320 - controller.py - 108 -          file_config() root - INFO - File Configuration initialized.
+2026-10-01 13:30:27,053 - 6592 - 35320 - controller.py - 145 -                  run() root - INFO - File path: send2zabbix.txt
+2026-10-01 13:30:27,053 - 6592 - 35320 - controller.py - 146 -                  run() root - INFO - File separator: ;
+2026-10-01 13:30:27,053 - 6592 - 35320 - controller.py - 147 -                  run() root - INFO - File encoding: utf-8
+2026-10-01 13:30:27,053 - 6592 - 35320 - controller.py - 99 -        zabbix_config() root - INFO - Retrieving Zabbix configuration...
+2026-10-01 13:30:27,053 - 6592 - 35320 - controller.py - 101 -        zabbix_config() root - INFO - Zabbix Configuration initialized.
+2026-10-01 13:30:27,053 - 6592 - 35320 - controller.py - 153 -                  run() root - INFO - Zabbix server: view configuration in C:\giti2026\todo-and-current\python\py-zabbix-trapper\config.json
+2026-10-01 13:30:27,054 - 6592 - 35320 - controller.py - 155 -                  run() root - INFO - Zabbix port: 10051
+2026-10-01 13:30:27,054 - 6592 - 35320 - worker_file.py - 14 -             __init__() root - INFO - FileWorker initialized.
+2026-10-01 13:30:27,058 - 6592 - 35320 - worker_file.py - 30 -            read_file() root - INFO - File data read: ('host1', ' mykey', ' 12')
+2026-10-01 13:30:27,059 - 6592 - 35320 - controller.py - 99 -        zabbix_config() root - INFO - Retrieving Zabbix configuration...
+2026-10-01 13:30:27,059 - 6592 - 35320 - controller.py - 101 -        zabbix_config() root - INFO - Zabbix Configuration initialized.
+2026-10-01 13:30:27,059 - 6592 - 35320 - worker_zabbix_trapper.py - 20 -             __init__() root - INFO - ZabbixTrapperWorker initialized.
+2026-10-01 13:30:27,059 - 6592 - 35320 - controller.py - 171 -                  run() root - INFO - Data try send to zabbix: [('host1', ' mykey', ' 12')]
+2026-10-01 13:30:27,059 - 6592 - 35320 - worker_zabbix_trapper.py - 81 -            send_trap() root - INFO - Try send trapper data recieved:  host1  mykey  12
+2026-10-01 13:30:27,059 - 6592 - 35320 - worker_zabbix_trapper.py - 33 -              connect() root - INFO - Zabbix sender binary located successfully at C:\giti2026\todo-and-current\python\py-zabbix-trapper\bin\zabbix_sender.exe
+2026-10-01 13:30:27,059 - 6592 - 35320 - worker_zabbix_trapper.py - 86 -            send_trap() root - INFO - Zabbix binary init.
+2026-10-01 13:30:27,073 - 6592 - 35320 - worker_zabbix_trapper.py - 66 -          get_version() root - INFO - Zabbix Sender Version: zabbix_sender (Zabbix) 6.0.48
+2026-10-01 13:30:27,074 - 6592 - 35320 - worker_zabbix_trapper.py - 100 -            send_trap() root - INFO - Executing command: C:\giti2026\todo-and-current\python\py-zabbix-trapper\bin\zabbix_sender.exe -z 51.12.88.251 -p 10051 -s host1 -k  mykey -o  12
+2026-10-01 13:30:30,093 - 6592 - 35320 - worker_zabbix_trapper.py - 117 -            send_trap() root - WARNING - Zabbix sender returned non-zero exit code 1. stdout: Sending failed. Use option -vv for more detailed output. | stderr: 
+2026-10-01 13:30:30,093 - 6592 - 35320 - controller.py - 183 -                  run() root - INFO - Sleep for 30 seconds while we wait for new updates in the the text file: send2zabbix.txt
+2026-10-01 13:30:44,884 - 6592 - 35320 - run_main.py - 72 -             <module>() root - INFO - Stopping application due to SIGTERM or KeyboardInterrupt
+2026-10-01 13:30:44,884 - 6592 - 35320 - run_main.py - 74 -             <module>() root - INFO - Clean up done
+2026-10-01 13:30:44,885 - 6592 - 35320 - run_main.py - 75 -             <module>() root - INFO - Stopped, bye, bye
