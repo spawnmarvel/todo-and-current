@@ -36,7 +36,7 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
   - [Fast Linux VM Deployment IAC](#fast-linux-vm-deployment-iac)
   - [Current Priorities:](#current-priorities)
   - [1. Zen](#1-zen)
-    - [1. Learn the ways of Linux-fu-yoda, for free :bug:](#1-learn-the-ways-of-linux-fu-yoda-for-free-bug)
+    - [1. Learn the ways of Linux-fu-yoda and KVM :bug:](#1-learn-the-ways-of-linux-fu-yoda-and-kvm-bug)
     - [2. Python projects often two-in-one. It is zen! :bug:](#2-python-projects-often-two-in-one-it-is-zen-bug)
     - [3. Az-104 Azure Adminisrator tutorials (no notes, just do them)](#3-az-104-azure-adminisrator-tutorials-no-notes-just-do-them)
   - [2. Workish](#2-workish)
@@ -364,7 +364,7 @@ Install Zabbix agent 2 Linux
 
 ## 1. Zen
 
-### 1. Learn the ways of Linux-fu-yoda, for free :bug:
+### 1. Learn the ways of Linux-fu-yoda and KVM :bug:
 
 **In Progress:**
 - :monkey: Have fun!
