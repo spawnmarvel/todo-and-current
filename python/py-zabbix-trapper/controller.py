@@ -113,14 +113,16 @@ class Controller:
         # Move instantiation of worker classes into init_file_and_zabbix_workers()
         # self.file_worker =
         # self.zabbix_worker =
-        pass
+        self.logger.info("fix me, so i am called just once")
 
     def _setup_runtime_parameters(self):
         # Current Issue: Extracting dictionary fields like file_path, file_separator, zabbix_server, and zabbix_port clutters the entry flow of run()
-        pass
+        self.logger.info("fix me, so i am called just once")
 
     def run(self):
         """Executes the core application workload and iteration loops."""
+        self.init_file_and_zabbix_workers()
+        self._setup_runtime_parameters()
         do_run = True
         self.logger.info("Do work is: %s", do_run)
         # Warn operator if execution is proceeding with missing or invalid configuration
