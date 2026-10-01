@@ -13,6 +13,8 @@ Linux KVM (Kernel-based Virtual Machine) is a built-in open-source feature that 
 
 https://linux-kvm.org/page/Main_Page
 
+![tolplogy](https://github.com/spawnmarvel/todo-and-current/blob/main/bash_linux_kvm_hypervisor/images/topology.jpg)
+
 ## KVM hypervisor a beginners’ guide
 
 https://ubuntu.com/blog/kvm-hyphervisor
