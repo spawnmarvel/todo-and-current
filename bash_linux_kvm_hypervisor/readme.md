@@ -28,7 +28,14 @@ Start by grabbing a fresh physical or virtual machine (yes, you can do nested vi
 * 50 GB of storage 
 * and the latest Ubuntu Server LTS installed
 
-https://ubuntu.com/blog/kvm-hyphervisor
+Read and compare with gemini chat KVM AZ-800 & AZ-801 https://ubuntu.com/blog/kvm-hyphervisor
+
+We just need to satisfy AZ-800 & AZ-801.
+
+* DC01 (Domain Controller / DNS / DHCP): Windows Server 2022 Core or Desktop Experience (2 GB RAM).
+* SVR01 (Member Server / File Services / Azure Arc / Storage Bus Cache): Windows Server 2022 (3 GB RAM).
+* HV01 (Hyper-V Host for AZ-801 Labs): Windows Server 2022 with Hyper-V role enabled via nested virtualization (4–6 GB RAM).
+* Host OS (Ubuntu): Leaves ~5–7 GB RAM for Ubuntu and management tools (Azure CLI, PowerShell Core, Windows Admin Center via browser).
 
 ## Lab Setup Strategy for AZ-800 & AZ-801
 
