@@ -369,6 +369,7 @@ Install Zabbix agent 2 Linux
 **In Progress:**
 - :monkey: Have fun!
 - 📚 3 questions and 3 answers [Linux-fu](https://github.com/spawnmarvel/todo-and-current/blob/main/bash_linux_fu/readme.md)
+- 📚 KVM hypervisor: a beginners’ guide
 
 **Completed: but do once a week**
 
