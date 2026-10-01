@@ -39,3 +39,12 @@ We just need to satisfy AZ-800 & AZ-801.
 
 ## Lab Setup Strategy for AZ-800 & AZ-801
 
+* Old laptop with 2 ram slots each 8gb ddr3 ram.
+* Image ubuntu-26.04.1-desktop-amd64
+* Rufus
+* Scandisk USB stick
+
+
+1. Insert a USB Flash Drive: Connect a USB drive (at least 8 GB) to your laptop. Note that flashing will erase all existing data on the flash drive.
+2. Open Rufus (if on Windows), select the downloaded ubuntu-26.04.1-desktop-amd64.iso, choose GPT / UEFI (non CSM), and click START
+3. Boot Laptop from USB: Restart your laptop, press your device’s boot menu key (typically F12, F11, or Del), select the USB drive, and begin installing Ubuntu.
