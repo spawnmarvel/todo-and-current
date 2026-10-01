@@ -6,6 +6,7 @@
   - [Table of content](#table-of-content)
   - [Kernel Virtual Machine](#kernel-virtual-machine)
   - [KVM hypervisor a beginners’ guide](#kvm-hypervisor-a-beginners-guide)
+  - [Lab Setup Strategy for AZ-800 \& AZ-801](#lab-setup-strategy-for-az-800--az-801)
 
 ## Kernel Virtual Machine
 
@@ -20,4 +21,14 @@ KVM hypervisor enables full virtualisation capabilities. It provides each VM wit
 
 ## KVM hypervisor a beginners’ guide
 
+Start by grabbing a fresh physical or virtual machine (yes, you can do nested virtualisation) with 
+
+* 4+ core amd64 CPU
+* 16 GB of RAM
+* 50 GB of storage 
+* and the latest Ubuntu Server LTS installed
+
 https://ubuntu.com/blog/kvm-hyphervisor
+
+## Lab Setup Strategy for AZ-800 & AZ-801
+
