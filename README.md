@@ -36,7 +36,7 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
   - [Fast Linux VM Deployment IAC](#fast-linux-vm-deployment-iac)
   - [Current Priorities:](#current-priorities)
   - [1. Zen](#1-zen)
-    - [Markup :arrow\_heading\_up: :link: :bookmark:](#markup-arrow_heading_up-link-bookmark)
+    - [Markup :arrow\_heading\_up: :link: :bookmark: :heavy\_plus\_sign:](#markup-arrow_heading_up-link-bookmark-heavy_plus_sign)
     - [Moved from Azure to KVM 05.10.2026](#moved-from-azure-to-kvm-05102026)
     - [1. KVM and learn the ways of Linux-fu-yoda :arrow\_heading\_up:](#1-kvm-and-learn-the-ways-of-linux-fu-yoda-arrow_heading_up)
     - [2. Python projects often two-in-one. It is zen! :arrow\_heading\_up:](#2-python-projects-often-two-in-one-it-is-zen-arrow_heading_up)
@@ -368,11 +368,12 @@ Install Zabbix agent 2 Linux
 ## 1. Zen
 
 
-### Markup :arrow_heading_up: :link: :bookmark:
+### Markup :arrow_heading_up: :link: :bookmark: :heavy_plus_sign:
 
 * :arrow_heading_up: = Do more of this.
-* :link: = We are somewhat satisfied, we can use, configure and have played with it, we can use docs for the rest.
+* :link: = We are bearly keeping the link alive, we can update if needed.
 * :bookmark: = We are done, just check knowledge from time to time and docs.
+* :heavy_plus_sign: If you have time play with.
 
 ### Moved from Azure to KVM 05.10.2026
 
