@@ -28,16 +28,6 @@
 
 Use this checklist in order to isolate the root cause in under 2 minutes:
 
-1. Prerequisites: Global & Interface DNS Setup
-
-2. DNS Lookup: Check if the domain resolves to an IP address. (If this fails = DNS / Port 53 is blocked)
-
-3. Default Route (Gateway): Check if the operating system has a default gateway configured. (If this fails = Missing route on the VM)
-
-4. Port Access (Firewall): Check if TCP ports 80 and 443 are allowed through to the IP. (If this fails = IP-based blocking in the firewall)
-
-5. Enforce IPv4: Check if apt is trying to route over an unsupported IPv6 network. (If this fails = Force IPv4 in APT)
-
 
 ## 0. Prerequisites: Global & Interface DNS Setup
 
