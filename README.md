@@ -42,9 +42,9 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
     - [3. Az-104 Azure Adminisrator tutorials (no notes, just do them) :bookmark:](#3-az-104-azure-adminisrator-tutorials-no-notes-just-do-them-bookmark)
   - [2. Workish](#2-workish)
     - [1. Zabbix default :link:](#1-zabbix-default-link)
-    - [2. AZ-104 Azure Administrator :bookmark:](#2-az-104-azure-administrator-bookmark)
   - [3. On point](#3-on-point)
       - [1. RabbitMQ Mtls and minimal PKI :bookmark:](#1-rabbitmq-mtls-and-minimal-pki-bookmark)
+    - [2. AZ-104 Azure Administrator :bookmark:](#2-az-104-azure-administrator-bookmark)
   - [4. Misc](#4-misc)
     - [1. MySQL database developer and Az MySql :heavy\_plus\_sign:](#1-mysql-database-developer-and-az-mysql-heavy_plus_sign)
     - [2. Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun :heavy\_minus\_sign:](#2-raspberry-pi-iot-sensor-mqtt-grafana-linux-and-fun-heavy_minus_sign)
@@ -472,6 +472,19 @@ $${\color{orange}This \ is \ important}$$
 
 ---
 
+## 3. On point
+
+#### 1. RabbitMQ Mtls and minimal PKI :bookmark:
+
+**Completed:**
+- ✅ [AMQP Shovel MTLS with RFC-6125](https://github.com/spawnmarvel/quickguides/blob/main/amqp/ReadmeNutshell.md)
+- ✅ [Certificate Requests and Renewals for AMQP/mTLS](https://github.com/spawnmarvel/quickguides/blob/main/amqp/RequestRenewExample/README.md)
+- ✅ [Minimal PKI](https://github.com/spawnmarvel/todo-and-current/blob/main/pki_store/pki_store_minmal_root_and_server_cert_client_server_auth/README.md)
+
+$${\color{lightblue}This \ is \ fun}$$
+
+---
+
 ### 2. AZ-104 Azure Administrator :bookmark:
 
 - 📚 MS AZ-104 extended
@@ -485,19 +498,6 @@ $${\color{orange}This \ is \ important}$$
 - [Exam guide github nr 1](https://github.com/spawnmarvel/quickguides/tree/main/azure)
 
 $${\color{orange}This \ is \ important}$$
-
----
-
-## 3. On point
-
-#### 1. RabbitMQ Mtls and minimal PKI :bookmark:
-
-**Completed:**
-- ✅ [AMQP Shovel MTLS with RFC-6125](https://github.com/spawnmarvel/quickguides/blob/main/amqp/ReadmeNutshell.md)
-- ✅ [Certificate Requests and Renewals for AMQP/mTLS](https://github.com/spawnmarvel/quickguides/blob/main/amqp/RequestRenewExample/README.md)
-- ✅ [Minimal PKI](https://github.com/spawnmarvel/todo-and-current/blob/main/pki_store/pki_store_minmal_root_and_server_cert_client_server_auth/README.md)
-
-$${\color{lightblue}This \ is \ fun}$$
 
 ---
 
