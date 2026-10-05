@@ -175,6 +175,8 @@ sudo apt update
 ```
 Since resolvectl query is already successfully returning IP addresses for archive.ubuntu.com, systemd-resolved is actively translating domain names for your system in this current session. As soon as the firewall team opens outbound TCP access on ports 80 and 443, sudo apt update will work immediately without any Netplan modifications.
 
+Netplan Hardening: Once the firewall team confirms the ports are open and sudo apt update succeeds, applying the Netplan update ensures that your Ubuntu nodes will retain their DNS configuration through future maintenance reboots.
+
 # More troubleshooting if 1 does not work
 
 ## 2. Check Default Gateway (Routing)
