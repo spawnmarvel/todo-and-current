@@ -366,6 +366,9 @@ Install Zabbix agent 2 Linux
 
 ## 1. Zen
 
+
+:bookmark: = we are done, :arrow_heading_up: = do more of this, :link: = we are somewhat satisfied, we can use, configure and have played with it.
+
 ### Moved from Azure to KVM 05.10.2026
 
 Resources left in Azure:
