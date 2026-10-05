@@ -39,7 +39,7 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
     - [Moved from Azure to KVM 05.10.2026](#moved-from-azure-to-kvm-05102026)
     - [1. KVM and learn the ways of Linux-fu-yoda :arrow\_heading\_up:](#1-kvm-and-learn-the-ways-of-linux-fu-yoda-arrow_heading_up)
     - [2. Python projects often two-in-one. It is zen! :arrow\_heading\_up:](#2-python-projects-often-two-in-one-it-is-zen-arrow_heading_up)
-    - [3. Az-104 Azure Adminisrator tutorials (no notes, just do them) :bookmark:](#3-az-104-azure-adminisrator-tutorials-no-notes-just-do-them-bookmark)
+    - [3. Az-104 Azure Adminisrator tutorials (no notes, just do them from time to time) :bookmark:](#3-az-104-azure-adminisrator-tutorials-no-notes-just-do-them-from-time-to-time-bookmark)
   - [2. Workish](#2-workish)
     - [1. Zabbix default :link:](#1-zabbix-default-link)
   - [3. On point](#3-on-point)
@@ -425,7 +425,7 @@ $${\color{lightblue}This \ is \ fun}$$
 
 ---
 
-### 3. Az-104 Azure Adminisrator tutorials (no notes, just do them) :bookmark:
+### 3. Az-104 Azure Adminisrator tutorials (no notes, just do them from time to time) :bookmark:
 
 - [AZ-104 administrator](https://learn.microsoft.com/en-us/training/browse/?terms=AZ-104&source=learn)
 - [Azure storage account](https://learn.microsoft.com/en-us/training/browse/?source=learn&products=azure&terms=storage%20account)
