@@ -141,6 +141,11 @@ When you test directly against an IP address (91.189.91.81):
 
 ## Why Editing Netplan Is Still Highly Recommended after test FW
 
+About Netplan
+
+* https://ubuntu.com/server/docs/explanation/networking/about-netplan/
+
+
 While you are 100% correct that the immediate failure is caused by the firewall (since DNS resolution works, but Layer 4 TCP traffic fails), you still need to edit Netplan for your DNS setup to be reliable long-term.
 
 
