@@ -369,6 +369,9 @@ Install Zabbix agent 2 Linux
 
 Resources left in Azure:
 
+<details>
+  <summary>Click to expand or see options</summary>
+
 VM:
 * vmzabbix03 public ip
 * vmzabbixproxy03resolute2604
@@ -386,7 +389,7 @@ SQL server:
 * Virtualnetworks
 * Storage accounts
 
-  
+</details>
 
 
 ### 1. KVM and learn the ways of Linux-fu-yoda :arrow_heading_up:
