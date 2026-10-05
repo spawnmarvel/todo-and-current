@@ -45,9 +45,9 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
   - [3. On point](#3-on-point)
       - [1. RabbitMQ Mtls and minimal PKI :bookmark:](#1-rabbitmq-mtls-and-minimal-pki-bookmark)
     - [2. AZ-104 Azure Administrator :bookmark:](#2-az-104-azure-administrator-bookmark)
+    - [2. Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun :bookmark:](#2-raspberry-pi-iot-sensor-mqtt-grafana-linux-and-fun-bookmark)
   - [4. Misc](#4-misc)
     - [1. MySQL database developer and Az MySql :heavy\_plus\_sign:](#1-mysql-database-developer-and-az-mysql-heavy_plus_sign)
-    - [2. Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun :heavy\_minus\_sign:](#2-raspberry-pi-iot-sensor-mqtt-grafana-linux-and-fun-heavy_minus_sign)
 - [All below here is parked 05.10.2026](#all-below-here-is-parked-05102026)
   - [Backlog](#backlog)
     - [AP22 master drill (work use it)](#ap22-master-drill-work-use-it)
@@ -501,6 +501,15 @@ $${\color{orange}This \ is \ important}$$
 
 ---
 
+### 2. Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun :bookmark:
+
+- 📚 Learn IOT and play with sensors
+- 📚 Use MQTT, Python and Mosquitto broker
+- 📚 [Raspberry Pi 4 docs](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/)
+
+$${\color{lightblue}This \ is \ fun}$$
+
+---
 
 ## 4. Misc
 
@@ -513,16 +522,6 @@ $${\color{orange}This \ is \ important}$$
 
 
 $${\color{green}This \ is \ power}$$
-
----
-
-### 2. Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun :heavy_minus_sign:
-
-- 📚 Learn IOT and play with sensors
-- 📚 Use MQTT, Python and Mosquitto broker
-- 📚 [Raspberry Pi 4 docs](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/)
-
-$${\color{lightblue}This \ is \ fun}$$
 
 ---
 
