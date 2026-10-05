@@ -8,7 +8,7 @@
   - [Firewall example](#firewall-example)
   - [0. Prerequisites: Global \& Interface DNS Setup](#0-prerequisites-global--interface-dns-setup)
   - [1. Verify DNS Lookup (Port 53) and test routing and firwall rules](#1-verify-dns-lookup-port-53-and-test-routing-and-firwall-rules)
-  - [Why Editing Netplan Is Still Highly Recommended](#why-editing-netplan-is-still-highly-recommended)
+  - [Why Editing Netplan Is Still Highly Recommended after test FW](#why-editing-netplan-is-still-highly-recommended-after-test-fw)
 - [More troubleshooting if 1 does not work](#more-troubleshooting-if-1-does-not-work)
   - [2. Check Default Gateway (Routing)](#2-check-default-gateway-routing)
   - [3. Test Firewall Connectivity (Port 80/443)](#3-test-firewall-connectivity-port-80443)
@@ -57,6 +57,10 @@ DNS=10.10.10.10
 sudo systemctl restart systemd-resolved
 ```
 
+Wait a bit with netplan.
+
+Netplan Hardening: Once the firewall team confirms the ports are open and sudo apt update succeeds, applying the Netplan update ensures that your Ubuntu nodes will retain their DNS configuration through future maintenance reboots.
+
 Override Interface DNS (If using DHCP): If your network card (ens33) receives an outdated DNS server via DHCP, override it in your Netplan configuration file
 
  (e.g., /etc/netplan/50-cloud-init.yaml):
@@ -97,7 +101,6 @@ resolvectl status
 Verification: Ensure Current DNS Server shows 10.10.10.10 under both the Global section and your active link (ens33).
 
 
-
 ## 1. Verify DNS Lookup (Port 53) and test routing and firwall rules
 
 ```bash
@@ -118,6 +121,8 @@ archive.ubuntu.com: 2620:2d:4002:1::102        -- link: ens33
                     185.125.190.81             -- link: ens33
                     91.189.92.23               -- link: ens33
 ```
+
+IP Address Updates: Canonical's CDN IP addresses (91.189.91.81, 185.125.190.81, etc.) change dynamically across regions, so resolvectl query archive.ubuntu.com will always give you the exact IP needed for testing nc or curl
 
 Yes, testing a direct connection to one of the resolved IP addresses is an excellent way to verify network routing and firewall rules.
 
@@ -144,7 +149,7 @@ When you test directly against an IP address (91.189.91.81):
 
 
 
-## Why Editing Netplan Is Still Highly Recommended
+## Why Editing Netplan Is Still Highly Recommended after test FW
 
 While you are 100% correct that the immediate failure is caused by the firewall (since DNS resolution works, but Layer 4 TCP traffic fails), you still need to edit Netplan for your DNS setup to be reliable long-term.
 
@@ -164,7 +169,7 @@ Since resolvectl query is already successfully returning IP addresses using your
 You do not need to touch Netplan right now to test 
 
 ```bash
-sudo apt update.
+sudo apt update
 ```
 Since resolvectl query is already successfully returning IP addresses for archive.ubuntu.com, systemd-resolved is actively translating domain names for your system in this current session. As soon as the firewall team opens outbound TCP access on ports 80 and 443, sudo apt update will work immediately without any Netplan modifications.
 
