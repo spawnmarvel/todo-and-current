@@ -5,7 +5,7 @@
 
 - [Quick Checklist for Repository Connectivity](#quick-checklist-for-repository-connectivity)
   - [Table of contents](#table-of-contents)
-  - [Firewall example](#firewall-example)
+  - [Scenario, offline vms that needs direct access to some repsitories.](#scenario-offline-vms-that-needs-direct-access-to-some-repsitories)
   - [0. Prerequisites: Global \& Interface DNS Setup](#0-prerequisites-global--interface-dns-setup)
   - [1. Verify DNS Lookup (Port 53) and test routing and firwall rules](#1-verify-dns-lookup-port-53-and-test-routing-and-firwall-rules)
   - [Why Editing Netplan Is Still Highly Recommended after test FW](#why-editing-netplan-is-still-highly-recommended-after-test-fw)
@@ -15,9 +15,7 @@
   - [4. Force IPv4 in APT (In Case of IPv6 Conflicts) optional](#4-force-ipv4-in-apt-in-case-of-ipv6-conflicts-optional)
   - [Appendix: Why Netplan Hardening is Recommended](#appendix-why-netplan-hardening-is-recommended)
 
-## Firewall example
-
-Scenario, offline vms that needs direct access to some repsitories.
+## Scenario, offline vms that needs direct access to some repsitories.
 
 * Firewall rules for HTTP/HTTPS outbound access on TCP ports 80 and 443
 
@@ -30,15 +28,15 @@ Scenario, offline vms that needs direct access to some repsitories.
 
 Use this checklist in order to isolate the root cause in under 2 minutes:
 
-0. Prerequisites: Global & Interface DNS Setup
+1. Prerequisites: Global & Interface DNS Setup
 
-1. DNS Lookup: Check if the domain resolves to an IP address. (If this fails = DNS / Port 53 is blocked)
+2. DNS Lookup: Check if the domain resolves to an IP address. (If this fails = DNS / Port 53 is blocked)
 
-2. Default Route (Gateway): Check if the operating system has a default gateway configured. (If this fails = Missing route on the VM)
+3. Default Route (Gateway): Check if the operating system has a default gateway configured. (If this fails = Missing route on the VM)
 
-3. Port Access (Firewall): Check if TCP ports 80 and 443 are allowed through to the IP. (If this fails = IP-based blocking in the firewall)
+4. Port Access (Firewall): Check if TCP ports 80 and 443 are allowed through to the IP. (If this fails = IP-based blocking in the firewall)
 
-4. Enforce IPv4: Check if apt is trying to route over an unsupported IPv6 network. (If this fails = Force IPv4 in APT)
+5. Enforce IPv4: Check if apt is trying to route over an unsupported IPv6 network. (If this fails = Force IPv4 in APT)
 
 
 ## 0. Prerequisites: Global & Interface DNS Setup
