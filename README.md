@@ -70,7 +70,7 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
     - [1. AZ-104: Certified Professional Must Know](#1-az-104-certified-professional-must-know)
     - [2. Linux Resources](#2-linux-resources)
     - [3 Linux Quick Guides (Azure, zabbix troubleshoot, mind maps, mirror server, ubuntu docs)](#3-linux-quick-guides-azure-zabbix-troubleshoot-mind-maps-mirror-server-ubuntu-docs)
-    - [4. Zabbix Stack :traffic\_light:](#4-zabbix-stack-traffic_light)
+    - [4. Zabbix Stack](#4-zabbix-stack)
       - [4.1 Resources](#41-resources)
       - [4.2 Setup \& Configuration](#42-setup--configuration)
       - [4.3 Upgrades](#43-upgrades)
@@ -83,9 +83,9 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
     - [4. Telegraf](#4-telegraf)
     - [5. Docker RabbitMQ](#5-docker-rabbitmq)
     - [Main Project Repositories](#main-project-repositories)
-      - [1 azure-automation-bicep-and-labs :muscle:](#1-azure-automation-bicep-and-labs-muscle)
-      - [2 AZ-104 Certified Professional Must Know :sunglasses:](#2-az-104-certified-professional-must-know-sunglasses)
-      - [3 Quickguides :fire\_engine:](#3-quickguides-fire_engine)
+      - [1 azure-automation-bicep-and-labs](#1-azure-automation-bicep-and-labs)
+      - [2 AZ-104 Certified Professional Must Know](#2-az-104-certified-professional-must-know)
+      - [3 Quickguides](#3-quickguides)
     - [Release Notes \& Updates](#release-notes--updates)
   - [Additional Resources](#additional-resources)
 
@@ -783,7 +783,7 @@ Fill the gaps in networking, monitoring, web apps:
 
 ---
 
-### 4. Zabbix Stack :traffic_light:
+### 4. Zabbix Stack
 
 #### 4.1 Resources
 - **Academy:** https://academy.zabbix.com/courses
@@ -860,13 +860,13 @@ Output: file, AMQP, Zabbix
 <details>
 <summary>Show / hide</summary>
 
-#### 1 azure-automation-bicep-and-labs :muscle:
+#### 1 azure-automation-bicep-and-labs
 📖 [Repository](https://github.com/spawnmarvel/azure-automation-bicep-and-labs)
 
-#### 2 AZ-104 Certified Professional Must Know :sunglasses:
+#### 2 AZ-104 Certified Professional Must Know
 📖 [AZ-104 Repository](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/tree/main/az-104-certified-professional)
 
-#### 3 Quickguides :fire_engine:
+#### 3 Quickguides
 - Apache Tomcat & Solr
 - AMQP (Requests, Certificate Decoder, Erlang 26)
 - Azure Administrator AZ-104
