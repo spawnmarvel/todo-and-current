@@ -375,7 +375,7 @@ Install Zabbix agent 2 Linux
 Resources left in Azure:
 
 <details>
-  <summary>Click to expand or see options</summary>
+  <summary>Click to see what is left in Azure</summary>
 
 VM:
 * vmzabbix03 public ip
