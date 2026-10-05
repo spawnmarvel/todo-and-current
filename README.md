@@ -39,12 +39,12 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
     - [Moved from Azure to KVM 05.10.2026](#moved-from-azure-to-kvm-05102026)
     - [1. KVM and learn the ways of Linux-fu-yoda :bug:](#1-kvm-and-learn-the-ways-of-linux-fu-yoda-bug)
     - [2. Python projects often two-in-one. It is zen! :bug:](#2-python-projects-often-two-in-one-it-is-zen-bug)
-    - [3. Az-104 Azure Adminisrator tutorials (no notes, just do them) :chart\_with\_upwards\_trend:](#3-az-104-azure-adminisrator-tutorials-no-notes-just-do-them-chart_with_upwards_trend)
+    - [3. Az-104 Azure Adminisrator tutorials (no notes, just do them) :bookmark:](#3-az-104-azure-adminisrator-tutorials-no-notes-just-do-them-bookmark)
   - [2. Workish](#2-workish)
     - [1. Zabbix default :star:](#1-zabbix-default-star)
-    - [2. AZ-104 Azure Administrator :bug:](#2-az-104-azure-administrator-bug)
+    - [2. AZ-104 Azure Administrator :bookmark:](#2-az-104-azure-administrator-bookmark)
   - [3. On point](#3-on-point)
-      - [1. RabbitMQ Mtls and minimal PKI :chart\_with\_upwards\_trend:](#1-rabbitmq-mtls-and-minimal-pki-chart_with_upwards_trend)
+      - [1. RabbitMQ Mtls and minimal PKI :bookmark:](#1-rabbitmq-mtls-and-minimal-pki-bookmark)
   - [4. Misc](#4-misc)
     - [1. MySQL database developer and Az MySql :bug:](#1-mysql-database-developer-and-az-mysql-bug)
     - [2. Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun :bug:](#2-raspberry-pi-iot-sensor-mqtt-grafana-linux-and-fun-bug)
@@ -421,7 +421,7 @@ $${\color{lightblue}This \ is \ fun}$$
 
 ---
 
-### 3. Az-104 Azure Adminisrator tutorials (no notes, just do them) :chart_with_upwards_trend:
+### 3. Az-104 Azure Adminisrator tutorials (no notes, just do them) :bookmark:
 
 - [AZ-104 administrator](https://learn.microsoft.com/en-us/training/browse/?terms=AZ-104&source=learn)
 - [Azure storage account](https://learn.microsoft.com/en-us/training/browse/?source=learn&products=azure&terms=storage%20account)
@@ -468,7 +468,7 @@ $${\color{orange}This \ is \ important}$$
 
 ---
 
-### 2. AZ-104 Azure Administrator :bug:
+### 2. AZ-104 Azure Administrator :bookmark:
 
 - 📚 MS AZ-104 extended
 - 📚 Azure DO NOT build things in the portal, use cli and ps1
@@ -486,7 +486,7 @@ $${\color{orange}This \ is \ important}$$
 
 ## 3. On point
 
-#### 1. RabbitMQ Mtls and minimal PKI :chart_with_upwards_trend:
+#### 1. RabbitMQ Mtls and minimal PKI :bookmark:
 
 **Completed:**
 - ✅ [AMQP Shovel MTLS with RFC-6125](https://github.com/spawnmarvel/quickguides/blob/main/amqp/ReadmeNutshell.md)
