@@ -17,6 +17,8 @@
 
 ## Firewall example
 
+Scenario, offline vms that needs direct access to some repsitories.
+
 * Firewall rules for HTTP/HTTPS outbound access on TCP ports 80 and 443
 
 * archive.ubuntu.com / security.ubuntu.com (Ubuntu OS updates)
