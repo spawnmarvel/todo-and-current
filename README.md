@@ -373,7 +373,7 @@ Install Zabbix agent 2 Linux
 * :arrow_heading_up: = Do more of this.
 * :link: = We are bearly keeping the link alive, we can update if needed.
 * :bookmark: = We are done, just check knowledge from time to time, docs and do some tutorials.
-* :heavy_plus_sign: If you have time play with and do some tutorials.
+* :heavy_plus_sign: = After everything else, if you have time play with and do some tutorials.
 
 ### Moved from Azure to KVM 05.10.2026
 
