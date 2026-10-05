@@ -41,17 +41,17 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
     - [2. Python projects often two-in-one. It is zen! :arrow\_heading\_up:](#2-python-projects-often-two-in-one-it-is-zen-arrow_heading_up)
     - [3. Az-104 Azure Adminisrator tutorials (no notes, just do them) :bookmark:](#3-az-104-azure-adminisrator-tutorials-no-notes-just-do-them-bookmark)
   - [2. Workish](#2-workish)
-    - [1. Zabbix default :star:](#1-zabbix-default-star)
+    - [1. Zabbix default :link:](#1-zabbix-default-link)
     - [2. AZ-104 Azure Administrator :bookmark:](#2-az-104-azure-administrator-bookmark)
   - [3. On point](#3-on-point)
       - [1. RabbitMQ Mtls and minimal PKI :bookmark:](#1-rabbitmq-mtls-and-minimal-pki-bookmark)
   - [4. Misc](#4-misc)
-    - [1. MySQL database developer and Az MySql :bug:](#1-mysql-database-developer-and-az-mysql-bug)
-    - [2. Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun :bug:](#2-raspberry-pi-iot-sensor-mqtt-grafana-linux-and-fun-bug)
+    - [1. MySQL database developer and Az MySql :heavy\_plus\_sign:](#1-mysql-database-developer-and-az-mysql-heavy_plus_sign)
+    - [2. Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun :heavy\_minus\_sign:](#2-raspberry-pi-iot-sensor-mqtt-grafana-linux-and-fun-heavy_minus_sign)
   - [Backlog](#backlog)
     - [AP22 master drill (work use it)](#ap22-master-drill-work-use-it)
-    - [Octopus Deploy for Linux (CI/CD) (work use it)](#octopus-deploy-for-linux-cicd-work-use-it)
-    - [Grafana, Loki, and Alloy Agents ⭐](#grafana-loki-and-alloy-agents-)
+    - [Octopus Deploy for Linux (CI/CD) (work use it) :link:](#octopus-deploy-for-linux-cicd-work-use-it-link)
+    - [Grafana, Loki, and Alloy Agents :link:](#grafana-loki-and-alloy-agents-link)
   - [Knowledge Maintenance Checklist](#knowledge-maintenance-checklist)
     - [1. Linux Continous](#1-linux-continous)
     - [2. MySQL Continous](#2-mysql-continous)
@@ -441,7 +441,7 @@ $${\color{lightblue}This \ is \ fun}$$
 
 ## 2. Workish
 
-### 1. Zabbix default :star:
+### 1. Zabbix default :link:
 
 **In Progress:**
 - 📚 Linux by Zabbix agent active and Zabbix Agent 2 built-in native functions
@@ -500,7 +500,7 @@ $${\color{lightblue}This \ is \ fun}$$
 
 ## 4. Misc
 
-### 1. MySQL database developer and Az MySql :bug:
+### 1. MySQL database developer and Az MySql :heavy_plus_sign:
 
 - 📚 Do all MS learn for MySQL
 - 📚 https://learn.microsoft.com/en-us/training/browse/?terms=mysql&source=learn
@@ -512,7 +512,7 @@ $${\color{green}This \ is \ power}$$
 
 ---
 
-### 2. Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun :bug:
+### 2. Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun :heavy_minus_sign:
 
 - 📚 Learn IOT and play with sensors
 - 📚 Use MQTT, Python and Mosquitto broker
@@ -537,7 +537,7 @@ shuhari
 [ap22 repos](https://github.com/spawnmarvel/ap22)
 
 
-### Octopus Deploy for Linux (CI/CD) (work use it)
+### Octopus Deploy for Linux (CI/CD) (work use it) :link:
 
 **Setup:**
 - ✅ Use IAC Linux VM for fast deploy and remove to smoke test
@@ -555,7 +555,7 @@ shuhari
 **Progress:** ![deploy123](https://github.com/spawnmarvel/todo-and-current/blob/main/images/deploy123.png)
 
 
-### Grafana, Loki, and Alloy Agents ⭐
+### Grafana, Loki, and Alloy Agents :link:
 
 **Goal:** Set up log monitoring stack loki
 
