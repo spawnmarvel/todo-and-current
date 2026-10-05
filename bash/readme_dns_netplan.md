@@ -6,7 +6,7 @@
 - [Quick Checklist for Repository Connectivity](#quick-checklist-for-repository-connectivity)
   - [Table of contents](#table-of-contents)
   - [Scenario, offline vms that needs direct access to some repsitories.](#scenario-offline-vms-that-needs-direct-access-to-some-repsitories)
-  - [0. Prerequisites: Global \& Interface DNS Setup](#0-prerequisites-global--interface-dns-setup)
+  - [Prerequisites: Global \& Interface DNS Setup check](#prerequisites-global--interface-dns-setup-check)
   - [1. Verify DNS Lookup (Port 53) and test routing and firwall rules](#1-verify-dns-lookup-port-53-and-test-routing-and-firwall-rules)
   - [Why Editing Netplan Is Still Highly Recommended after test FW](#why-editing-netplan-is-still-highly-recommended-after-test-fw)
 - [More troubleshooting if 1 does not work](#more-troubleshooting-if-1-does-not-work)
@@ -29,7 +29,7 @@
 Use this checklist in order to isolate the root cause in under 2 minutes:
 
 
-## 0. Prerequisites: Global & Interface DNS Setup
+## Prerequisites: Global & Interface DNS Setup check
 
 
 Yes, updating your DNS configuration is the essential Prerequisite Step before running any connectivity tests. Without a working DNS server, your system cannot resolve domain names to IP addresses.
