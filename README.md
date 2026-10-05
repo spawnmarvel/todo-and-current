@@ -37,8 +37,8 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
   - [Current Priorities:](#current-priorities)
   - [1. Zen](#1-zen)
     - [Moved from Azure to KVM 05.10.2026](#moved-from-azure-to-kvm-05102026)
-    - [1. KVM and learn the ways of Linux-fu-yoda :bug:](#1-kvm-and-learn-the-ways-of-linux-fu-yoda-bug)
-    - [2. Python projects often two-in-one. It is zen! :bug:](#2-python-projects-often-two-in-one-it-is-zen-bug)
+    - [1. KVM and learn the ways of Linux-fu-yoda :arrow\_heading\_up:](#1-kvm-and-learn-the-ways-of-linux-fu-yoda-arrow_heading_up)
+    - [2. Python projects often two-in-one. It is zen! :arrow\_heading\_up:](#2-python-projects-often-two-in-one-it-is-zen-arrow_heading_up)
     - [3. Az-104 Azure Adminisrator tutorials (no notes, just do them) :bookmark:](#3-az-104-azure-adminisrator-tutorials-no-notes-just-do-them-bookmark)
   - [2. Workish](#2-workish)
     - [1. Zabbix default :star:](#1-zabbix-default-star)
@@ -389,7 +389,7 @@ SQL server:
   
 
 
-### 1. KVM and learn the ways of Linux-fu-yoda :bug:
+### 1. KVM and learn the ways of Linux-fu-yoda :arrow_heading_up:
 
 **In Progress:**
 - :monkey: Have fun!
@@ -405,7 +405,7 @@ $${\color{green}This \ is \ power}$$
 
 --- 
 
-### 2. Python projects often two-in-one. It is zen! :bug:
+### 2. Python projects often two-in-one. It is zen! :arrow_heading_up:
 
 **In Progress:**
 - :monkey: Have fun!
