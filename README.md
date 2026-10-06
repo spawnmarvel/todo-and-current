@@ -48,7 +48,7 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
     - [2. AZ-104 Azure Administrator :bookmark:](#2-az-104-azure-administrator-bookmark)
     - [2. Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun :bookmark:](#2-raspberry-pi-iot-sensor-mqtt-grafana-linux-and-fun-bookmark)
   - [4. Misc](#4-misc)
-    - [1. MySQL database developer and Az MySql :heavy\_plus\_sign:](#1-mysql-database-developer-and-az-mysql-heavy_plus_sign)
+    - [1. MySQL database developer :heavy\_plus\_sign:](#1-mysql-database-developer-heavy_plus_sign)
 - [All below here is parked 05.10.2026](#all-below-here-is-parked-05102026)
   - [Backlog](#backlog)
     - [AP22 master drill (work use it)](#ap22-master-drill-work-use-it)
@@ -522,12 +522,12 @@ $${\color{lightblue}This \ is \ fun}$$
 
 ## 4. Misc
 
-### 1. MySQL database developer and Az MySql :heavy_plus_sign:
+### 1. MySQL database developer :heavy_plus_sign:
 
+- 📚 [MySql database developer tutorial github](https://github.com/spawnmarvel/todo-and-current/blob/main/mysql/README_mysql_tutorial.md#10-mysql-globalization)
 - 📚 Do all MS learn for MySQL
 - 📚 https://learn.microsoft.com/en-us/training/browse/?terms=mysql&source=learn
-  
-- 📚 [MySql database developer tutorial github](https://github.com/spawnmarvel/todo-and-current/blob/main/mysql/README_mysql_tutorial.md#10-mysql-globalization)
+
 
 
 $${\color{green}This \ is \ power}$$
