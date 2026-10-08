@@ -1237,7 +1237,8 @@ sudo chown mysql:mysql /datadrive/mysql
 sudo chmod 750 /datadrive/mysql
 
 # Backup old directory (optional but recommended)
-sudo mv /var/lib/mysql /var/lib/mysql_old
+# sudo mv /var/lib/mysql /var/lib/mysql_old
+sudo cp /var/lib/mysql /var/lib/mysql_old
 
 # Copy data to new location using rsync (preserves permissions/ownership)
 sudo rsync -av /var/lib/mysql/ /datadrive/mysql/
