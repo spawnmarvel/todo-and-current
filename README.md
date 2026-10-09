@@ -436,16 +436,16 @@ $${\color{lightblue}This \ is \ fun}$$
 
 ### 3. Az-104 Azure Adminisrator tutorials (no notes, just do them from time to time) :bookmark:
 
-- [AZ-104 administrator](https://learn.microsoft.com/en-us/training/browse/?terms=AZ-104&source=learn)
-- [Azure storage account](https://learn.microsoft.com/en-us/training/browse/?source=learn&products=azure&terms=storage%20account)
-- [Azure virtual machines](https://learn.microsoft.com/en-us/training/browse/?source=learn&products=azure&terms=virtual%20machines)
-- [Azure network](https://learn.microsoft.com/en-us/training/browse/?source=learn&products=azure&terms=network)
-- [Azure backup](https://learn.microsoft.com/en-us/training/browse/?source=learn&products=azure&terms=backup)
-- [Azure disaster recovery](https://learn.microsoft.com/en-us/training/browse/?source=learn&products=azure&terms=disaster%20recovery)
-- [Azure monitor](https://learn.microsoft.com/en-us/training/browse/?source=learn&products=azure&terms=monitor)
-- [Azure identities](https://learn.microsoft.com/en-us/training/browse/?source=learn&products=azure&terms=identities)
-- [Azure governance](https://learn.microsoft.com/en-us/training/browse/?source=learn&products=azure&terms=governance)
-- [Azure well-architected framwork](https://learn.microsoft.com/en-us/training/browse/?source=learn&products=azure&terms=well-architected)
+- 🔗 [AZ-104 administrator](https://learn.microsoft.com/en-us/training/browse/?terms=AZ-104&source=learn)
+- 🔗 [Azure storage account](https://learn.microsoft.com/en-us/training/browse/?source=learn&products=azure&terms=storage%20account)
+- 🔗 [Azure virtual machines](https://learn.microsoft.com/en-us/training/browse/?source=learn&products=azure&terms=virtual%20machines)
+- 🔗 [Azure network](https://learn.microsoft.com/en-us/training/browse/?source=learn&products=azure&terms=network)
+- 🔗 [Azure backup](https://learn.microsoft.com/en-us/training/browse/?source=learn&products=azure&terms=backup)
+- 🔗 [Azure disaster recovery](https://learn.microsoft.com/en-us/training/browse/?source=learn&products=azure&terms=disaster%20recovery)
+- 🔗 [Azure monitor](https://learn.microsoft.com/en-us/training/browse/?source=learn&products=azure&terms=monitor)
+- 🔗 [Azure identities](https://learn.microsoft.com/en-us/training/browse/?source=learn&products=azure&terms=identities)
+- 🔗 [Azure governance](https://learn.microsoft.com/en-us/training/browse/?source=learn&products=azure&terms=governance)
+- 🔗 [Azure well-architected framwork](https://learn.microsoft.com/en-us/training/browse/?source=learn&products=azure&terms=well-architected)
 ---
 
 $${\color{lightblue}This \ is \ fun}$$
@@ -470,9 +470,10 @@ $${\color{lightblue}This \ is \ fun}$$
 - ✅ Linux by SNMP
 - ✅ [zabbix proxy](https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/README_stack_proxy_architecture.md)
 - ✅ [Zabbix stack](https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/README_stack.md)
-- ✅ [Zabbix agent Supported item keys, i.e vfs ](https://www.zabbix.com/documentation/current/en/manual/config/items/itemtypes/zabbix_agent)
+- 🔗 [Zabbix agent Supported item keys, i.e vfs ](https://www.zabbix.com/documentation/current/en/manual/config/items/itemtypes/zabbix_agent)
 - ✅ [debmirror](https://github.com/spawnmarvel/linux-and-azure/tree/main/azure-extra-linux-vm-mirror)
 - ✅ [zabbix templates (agent, mysql, rabbit)](https://github.com/spawnmarvel/linux-and-azure/blob/main/azure-extra-linux-vm/zabbix_monitoring_vms/templates/README_templates.md)
+- 🔗 [High availability](https://www.zabbix.com/documentation/7.0/en/manual/concepts/server/ha)
 
 Study plan:
 
@@ -501,9 +502,9 @@ $${\color{lightblue}This \ is \ fun}$$
 - 📚 MS AZ-104 extended
 - 📚 Azure DO NOT build things in the portal, use cli and ps1
 
-- [az-104 course always keep up ms learn](https://learn.microsoft.com/en-us/training/courses/az-104t00)
+- 🔗 [az-104 course always keep up ms learn](https://learn.microsoft.com/en-us/training/courses/az-104t00)
   
-- [az storage account from zero to hero](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-104-storage-account/README.md)
+- 🔗 [az storage account from zero to hero](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-104-storage-account/README.md)
 
 - [Good new detailed guide github nr 2](https://github.com/spawnmarvel/azure-automation-bicep-and-labs/blob/main/az-104-administrator-certified-professional/README.md)
 - [Exam guide github nr 1](https://github.com/spawnmarvel/quickguides/tree/main/azure)
