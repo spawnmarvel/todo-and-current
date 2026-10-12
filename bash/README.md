@@ -55,7 +55,7 @@
   - [Additional Resources](#additional-resources)
   - [Bash Piping](#bash-piping)
   - [Practical Examples](#practical-examples)
-  - [1. Zabbix MySql tuning single instance 2 vCPUs and 8GB of RAM](#1-zabbix-mysql-tuning-single-instance-2-vcpus-and-8gb-of-ram)
+    - [1. Zabbix MySql tuning single instance 2 vCPUs and 8GB of RAM](#1-zabbix-mysql-tuning-single-instance-2-vcpus-and-8gb-of-ram)
   - [UFW Firewall](#ufw-firewall)
   - [SCP: Windows to Linux (.deb install) offline](#scp-windows-to-linux-deb-install-offline)
   - [SCP: Linux (inet) to Linux zabbix agent2 (.deb install) offline](#scp-linux-inet-to-linux-zabbix-agent2-deb-install-offline)
@@ -769,7 +769,7 @@ sudo tail -f /var/log/zabbix/zabbix_server.log | tee tmp_zabbix_server.log
 
 ## Practical Examples
 
-## 1. Zabbix MySql tuning single instance 2 vCPUs and 8GB of RAM
+### 1. Zabbix MySql tuning single instance 2 vCPUs and 8GB of RAM
 
 For a small environment monitoring 10 hosts, a VM with 2 vCPUs and 8GB of RAM is more than enough—in fact, it's quite comfortable.
 
