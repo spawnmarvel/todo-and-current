@@ -57,7 +57,8 @@
   - [Practical Examples](#practical-examples)
   - [Zabbix MySql tuning single instance 2 vCPUs and 8GB of RAM](#zabbix-mysql-tuning-single-instance-2-vcpus-and-8gb-of-ram)
   - [UFW Firewall](#ufw-firewall)
-  - [SCP: Windows to Linux (.deb install)](#scp-windows-to-linux-deb-install)
+  - [SCP: Windows to Linux (.deb install) offline](#scp-windows-to-linux-deb-install-offline)
+  - [SCP: Linux (inet) to Linux zabbix agent2 (.deb install) offline](#scp-linux-inet-to-linux-zabbix-agent2-deb-install-offline)
   - [Update \& Upgrade / Apt Install \& Remove](#update--upgrade--apt-install--remove)
   - [Hello World Bash Script with Chmod](#hello-world-bash-script-with-chmod)
   - [/etc/hosts (Hostname Resolution)](#etchosts-hostname-resolution)
@@ -838,7 +839,7 @@ sudo ufw reset
 
 ---
 
-## SCP: Windows to Linux (.deb install)
+## SCP: Windows to Linux (.deb install) offline
 
 Copy a .deb package from Windows to Linux and install it. Useful for offline VMs.
 
@@ -884,6 +885,36 @@ sudo dpkg -r octopus-tentacle       # Offline way (when apt has issues)
 ```
 
 ---
+
+## SCP: Linux (inet) to Linux zabbix agent2 (.deb install) offline
+
+```bash
+
+# on a vm with inet, download the agent you need
+wget https://repo.zabbix.com/zabbix/7.0/ubuntu/pool/main/z/zabbix/zabbix-agent2_7.0.0-1+ubuntu24.04_amd64.deb
+
+# copy the agent
+scp zabbix-agent2_7.0.0-1+ubuntu24.04_amd64.deb username@10.68.68.50:/tmp/
+
+# ssh
+ssh username@10.68.68.50
+
+# copy it
+cp /tmp/zabbix-agent2_7.0.0-1+ubuntu24.04_amd64.deb /home/goodtech/zabbix-agent2_7.0.0-1+ubuntu24.04_amd64.deb
+
+# install it
+sudo dpkg -i zabbix-agent2_7.0.0-1+ubuntu24.04_amd64.deb
+
+# edit conf
+sudo nano /etc/zabbix/zabbix_agent2.conf
+
+# Server=10.68.193.34
+# ServerActive=10.68.193.34
+# Hostname=your-host
+
+
+sudo systemctl enable --now zabbix-agent2
+```
 
 ## Update & Upgrade / Apt Install & Remove
 
