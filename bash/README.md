@@ -1,4 +1,4 @@
-# Bash Quick Guide
+# Bash Quick Guide and examples
 
 > A comprehensive reference for Linux/Bash fundamentals, commands, and scripting.
 
@@ -739,7 +739,7 @@ Edit /etc/zabbix/zabbix_server.conf: CacheSize=128M
 
 ```
 
-### UFW Firewall
+## UFW Firewall
 
 ```bash
 # Check status
@@ -787,7 +787,7 @@ sudo ufw reset
 
 ---
 
-### SCP: Windows to Linux (.deb install)
+## SCP: Windows to Linux (.deb install)
 
 Copy a .deb package from Windows to Linux and install it. Useful for offline VMs.
 
@@ -834,7 +834,7 @@ sudo dpkg -r octopus-tentacle       # Offline way (when apt has issues)
 
 ---
 
-### Update & Upgrade / Apt Install & Remove
+## Update & Upgrade / Apt Install & Remove
 
 Basic apt commands for package management on Ubuntu.
 
@@ -877,7 +877,7 @@ dpkg
 
 ---
 
-### Hello World Bash Script with Chmod
+## Hello World Bash Script with Chmod
 
 Create and run your first bash script with proper permissions.
 
@@ -908,7 +908,7 @@ cat /etc/passwd
 
 ---
 
-### /etc/hosts (Hostname Resolution)
+## /etc/hosts (Hostname Resolution)
 
 In Ubuntu and other Linux distributions, the hosts file is located at /etc/hosts. It is a plain text file that maps IP addresses to hostnames locally, allowing you to override standard DNS lookups for testing, staging, or blocking websites.
 
@@ -959,7 +959,7 @@ ff02::2         ip6-allrouters
 
 ---
 
-### SSH Key Generation
+## SSH Key Generation
 
 Set up passwordless SSH login with key-based authentication.
 
@@ -992,7 +992,7 @@ nano ~/.ssh/authorized_keys
 
 ---
 
-### OpenSSL: Generate Self-Signed Certificate
+## OpenSSL: Generate Self-Signed Certificate
 
 Generate a self-signed SSL/TLS certificate for HTTPS (useful for testing or internal services).
 
@@ -1018,7 +1018,7 @@ openssl x509 -noout -text -in server.crt
 
 ---
 
-### Apache SSL Setup (Ubuntu 24.04)
+## Apache SSL Setup (Ubuntu 24.04)
 
 Configure Apache with SSL/HTTPS using a self-signed certificate.
 
@@ -1056,7 +1056,7 @@ sudo systemctl restart apache2
 
 ---
 
-### Debmirror (Local Package Repository)
+## Debmirror (Local Package Repository)
 
 Debmirror creates a local mirror of Ubuntu repositories. Useful for offline/air-gapped environments where VMs can't access the internet.
 
@@ -1084,7 +1084,7 @@ sudo systemctl status apache2
 
 ---
 
-### Mount Data Drive (fdisk) Ubuntu 24.04
+## Mount Data Drive (fdisk) Ubuntu 24.04
 
 Partition, format, and mount a raw disk (e.g., /dev/sda) to store data like MySQL databases.
 
@@ -1145,7 +1145,7 @@ dh -h /datadrive
 
 ---
 
-### Install MySQL 8.4 Offline (SCP + dpkg)
+## Install MySQL 8.4 Offline (SCP + dpkg)
 
 Install MySQL on an offline VM by copying packages via SCP. Useful when the VM has no internet access.
 
@@ -1221,7 +1221,7 @@ sudo service mysql status
 
 
 
-### Move MySQL Data Directory
+## Move MySQL Data Directory
 
 Move MySQL's default data directory (/var/lib/mysql) to a mounted data drive.
 
