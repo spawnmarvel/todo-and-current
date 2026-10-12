@@ -4,6 +4,7 @@
 
 ---
 
+<!-- TOC -->
 ## Table of Contents
 
 - [Linux Philosophy](#linux-philosophy)
@@ -12,21 +13,22 @@
 - [Bash Strict Mode](#bash-strict-mode)
 - [Quick Reference Cards](#quick-reference-cards)
 - [Basic Commands](#basic-commands)
-- [file--directory-operations](#file--directory-operations)
-- [text-processing](#text-processing)
+- [Text Processing](#text-processing)
 - [System Monitoring](#system-monitoring)
-- [process-management](#process-management)
-- [disk--memory](#disk--memory)
 - [Networking](#networking)
 - [File Compression](#file-compression)
 - [File Permissions](#file-permissions)
 - [Bash Scripting](#bash-scripting)
+- [Additional Resources](#additional-resources)
 - [Bash Piping](#bash-piping)
 - [Practical Examples](#practical-examples)
+- [Zabbix MySql tuning single instance 2 vCPUs and 8GB of RAM](#zabbix-mysql-tuning-single-instance-2-vcpus-and-8gb-of-ram)
 - [Troubleshooting](#troubleshooting)
 - [Linux Concepts](#linux-concepts)
+- [Linux Filesystem Abstractions](#linux-filesystem-abstractions)
 - [Sys Admin Drill](#sys-admin-drill)
 - [The Linux House](#the-linux-house)
+<!-- /TOC -->
 
 ---
 
@@ -1407,7 +1409,7 @@ Loadable Kernel Modules (LKMs) are pieces of code that can be loaded into or unl
 | `bridge`                      | Allows the kernel to act like a network switch (vital for VMs or Docker) |
 
 ---
-## Linux Philosophy
+## Linux Filesystem Abstractions
 
 In Linux, the **"everything is a file"** philosophy means that nearly all system resources—hardware devices, processes, directories, and network sockets—are represented as data streams within the file system.
 
