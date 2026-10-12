@@ -109,7 +109,7 @@ set -euo pipefail
 
 ## Basic Commands
 
-### File & Directory Operations
+### 1. File & Directory Operations
 
 | Command        | Description                           |
 | -------------- | ------------------------------------- |
