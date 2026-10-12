@@ -6,24 +6,27 @@
 
 ## Table of Contents
 
-1. [Linux Philosophy](#linux-philosophy)
-2. [Man Pages](#man-pages)
-3. [Python & PowerShell vs Bash](#python--powershell-vs-bash)
-4. [Bash Strict Mode](#bash-strict-mode)
-5. [Quick Reference Cards](#quick-reference-cards)
-6. [Basic Commands](#basic-commands)
-7. [Text Processing](#text-processing)
-8. [System Monitoring](#system-monitoring)
-9. [Networking](#networking)
-10. [File Compression](#file-compression)
-11. [File Permissions](#file-permissions)
-12. [Bash Scripting](#bash-scripting)
-13. [Bash Piping](#bash-piping)
-14. [Practical Examples](#practical-examples)
-15. [Troubleshooting](#troubleshooting)
-16. [Linux Concepts](#linux-concepts)
-17. [Sys Admin Drill](#sys-admin-drill)
-18. [The Linux House](#the-linux-house)
+- [Linux Philosophy](#linux-philosophy)
+- [Man Pages](#man-pages)
+- [Python & PowerShell vs Bash](#python--powershell-vs-bash)
+- [Bash Strict Mode](#bash-strict-mode)
+- [Quick Reference Cards](#quick-reference-cards)
+- [Basic Commands](#basic-commands)
+- [file--directory-operations](#file--directory-operations)
+- [text-processing](#text-processing)
+- [System Monitoring](#system-monitoring)
+- [process-management](#process-management)
+- [disk--memory](#disk--memory)
+- [Networking](#networking)
+- [File Compression](#file-compression)
+- [File Permissions](#file-permissions)
+- [Bash Scripting](#bash-scripting)
+- [Bash Piping](#bash-piping)
+- [Practical Examples](#practical-examples)
+- [Troubleshooting](#troubleshooting)
+- [Linux Concepts](#linux-concepts)
+- [Sys Admin Drill](#sys-admin-drill)
+- [The Linux House](#the-linux-house)
 
 ---
 
@@ -109,7 +112,7 @@ set -euo pipefail
 
 ## Basic Commands
 
-### 1. File & Directory Operations
+### File & Directory Operations
 
 | Command        | Description                           |
 | -------------- | ------------------------------------- |
