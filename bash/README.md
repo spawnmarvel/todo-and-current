@@ -56,19 +56,19 @@
   - [Bash Piping](#bash-piping)
   - [Practical Examples](#practical-examples)
     - [1. Zabbix MySql tuning single instance 2 vCPUs and 8GB of RAM](#1-zabbix-mysql-tuning-single-instance-2-vcpus-and-8gb-of-ram)
-  - [UFW Firewall](#ufw-firewall)
-  - [SCP: Windows to Linux (.deb install) offline](#scp-windows-to-linux-deb-install-offline)
-  - [SCP: Linux (inet) to Linux zabbix agent2 (.deb install) offline](#scp-linux-inet-to-linux-zabbix-agent2-deb-install-offline)
-  - [Update \& Upgrade / Apt Install \& Remove](#update--upgrade--apt-install--remove)
-  - [Hello World Bash Script with Chmod](#hello-world-bash-script-with-chmod)
-  - [/etc/hosts (Hostname Resolution)](#etchosts-hostname-resolution)
-  - [SSH Key Generation](#ssh-key-generation)
-  - [OpenSSL: Generate Self-Signed Certificate](#openssl-generate-self-signed-certificate)
-  - [Apache SSL Setup (Ubuntu 24.04)](#apache-ssl-setup-ubuntu-2404)
-  - [Debmirror (Local Package Repository)](#debmirror-local-package-repository)
-  - [Mount Data Drive (fdisk) Ubuntu 24.04](#mount-data-drive-fdisk-ubuntu-2404)
-  - [Install MySQL 8.4 Offline (SCP + dpkg)](#install-mysql-84-offline-scp--dpkg)
-  - [Move MySQL Data Directory](#move-mysql-data-directory)
+    - [2. UFW Firewall](#2-ufw-firewall)
+    - [3. SCP: Windows to Linux (.deb install) offline](#3-scp-windows-to-linux-deb-install-offline)
+    - [4. SCP: Linux (inet) to Linux zabbix agent2 (.deb install) offline](#4-scp-linux-inet-to-linux-zabbix-agent2-deb-install-offline)
+    - [5. Update \& Upgrade / Apt Install \& Remove](#5-update--upgrade--apt-install--remove)
+    - [6. Hello World Bash Script with Chmod](#6-hello-world-bash-script-with-chmod)
+    - [7. /etc/hosts (Hostname Resolution)](#7-etchosts-hostname-resolution)
+    - [8. SSH Key Generation](#8-ssh-key-generation)
+    - [9. OpenSSL: Generate Self-Signed Certificate](#9-openssl-generate-self-signed-certificate)
+    - [10. Apache SSL Setup (Ubuntu 24.04)](#10-apache-ssl-setup-ubuntu-2404)
+    - [11. Debmirror (Local Package Repository)](#11-debmirror-local-package-repository)
+    - [12. Mount Data Drive (fdisk) Ubuntu 24.04](#12-mount-data-drive-fdisk-ubuntu-2404)
+    - [13. Install MySQL 8.4 Offline (SCP + dpkg) (it is default with 26.04)](#13-install-mysql-84-offline-scp--dpkg-it-is-default-with-2604)
+    - [14. Move MySQL Data Directory](#14-move-mysql-data-directory)
   - [Troubleshooting](#troubleshooting)
     - [Disk, Big Files, and Journalctl](#disk-big-files-and-journalctl)
     - [Production Server Down](#production-server-down)
@@ -791,7 +791,7 @@ Edit /etc/zabbix/zabbix_server.conf: CacheSize=128M
 
 ```
 
-## UFW Firewall
+### 2. UFW Firewall
 
 ```bash
 # Check status
@@ -839,7 +839,7 @@ sudo ufw reset
 
 ---
 
-## SCP: Windows to Linux (.deb install) offline
+### 3. SCP: Windows to Linux (.deb install) offline
 
 Copy a .deb package from Windows to Linux and install it. Useful for offline VMs.
 
@@ -886,7 +886,7 @@ sudo dpkg -r octopus-tentacle       # Offline way (when apt has issues)
 
 ---
 
-## SCP: Linux (inet) to Linux zabbix agent2 (.deb install) offline
+### 4. SCP: Linux (inet) to Linux zabbix agent2 (.deb install) offline
 
 ```bash
 
@@ -916,7 +916,7 @@ sudo nano /etc/zabbix/zabbix_agent2.conf
 sudo systemctl enable --now zabbix-agent2
 ```
 
-## Update & Upgrade / Apt Install & Remove
+### 5. Update & Upgrade / Apt Install & Remove
 
 Basic apt commands for package management on Ubuntu.
 
@@ -959,7 +959,7 @@ dpkg
 
 ---
 
-## Hello World Bash Script with Chmod
+### 6. Hello World Bash Script with Chmod
 
 Create and run your first bash script with proper permissions.
 
@@ -990,7 +990,7 @@ cat /etc/passwd
 
 ---
 
-## /etc/hosts (Hostname Resolution)
+### 7. /etc/hosts (Hostname Resolution)
 
 In Ubuntu and other Linux distributions, the hosts file is located at /etc/hosts. It is a plain text file that maps IP addresses to hostnames locally, allowing you to override standard DNS lookups for testing, staging, or blocking websites.
 
@@ -1041,7 +1041,7 @@ ff02::2         ip6-allrouters
 
 ---
 
-## SSH Key Generation
+### 8. SSH Key Generation
 
 Set up passwordless SSH login with key-based authentication.
 
@@ -1074,7 +1074,7 @@ nano ~/.ssh/authorized_keys
 
 ---
 
-## OpenSSL: Generate Self-Signed Certificate
+### 9. OpenSSL: Generate Self-Signed Certificate
 
 Generate a self-signed SSL/TLS certificate for HTTPS (useful for testing or internal services).
 
@@ -1100,7 +1100,7 @@ openssl x509 -noout -text -in server.crt
 
 ---
 
-## Apache SSL Setup (Ubuntu 24.04)
+### 10. Apache SSL Setup (Ubuntu 24.04)
 
 Configure Apache with SSL/HTTPS using a self-signed certificate.
 
@@ -1138,7 +1138,7 @@ sudo systemctl restart apache2
 
 ---
 
-## Debmirror (Local Package Repository)
+### 11. Debmirror (Local Package Repository)
 
 Debmirror creates a local mirror of Ubuntu repositories. Useful for offline/air-gapped environments where VMs can't access the internet.
 
@@ -1166,7 +1166,7 @@ sudo systemctl status apache2
 
 ---
 
-## Mount Data Drive (fdisk) Ubuntu 24.04
+### 12. Mount Data Drive (fdisk) Ubuntu 24.04
 
 Partition, format, and mount a raw disk (e.g., /dev/sda) to store data like MySQL databases.
 
@@ -1227,7 +1227,7 @@ dh -h /datadrive
 
 ---
 
-## Install MySQL 8.4 Offline (SCP + dpkg)
+### 13. Install MySQL 8.4 Offline (SCP + dpkg) (it is default with 26.04)
 
 Install MySQL on an offline VM by copying packages via SCP. Useful when the VM has no internet access.
 
@@ -1303,7 +1303,7 @@ sudo service mysql status
 
 
 
-## Move MySQL Data Directory
+### 14. Move MySQL Data Directory
 
 Move MySQL's default data directory (/var/lib/mysql) to a mounted data drive.
 
