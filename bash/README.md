@@ -9,7 +9,7 @@
 
 - [Bash Quick Guide and examples](#bash-quick-guide-and-examples)
   - [Table of Contents](#table-of-contents)
-  - [Lern bash always google](#lern-bash-always-google)
+  - [Learn bash always google](#learn-bash-always-google)
   - [Linux Philosophy](#linux-philosophy)
   - [Man Pages](#man-pages)
   - [Python \& PowerShell vs Bash](#python--powershell-vs-bash)
@@ -86,9 +86,9 @@
 ---
 
 
-## Lern bash always google
+## Learn bash always google
 
-![learn bash](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/images__and_pdf/learn_bash.jpg)
+![learn bash2](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/images__and_pdf/learn_bash2.jpg)
 
 ## Linux Philosophy
 
