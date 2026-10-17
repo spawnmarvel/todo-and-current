@@ -42,7 +42,7 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
       - [KVM and Ubuntu :arrow\_heading\_up: :rocket:](#kvm-and-ubuntu-arrow_heading_up-rocket)
       - [Python and SQLite :arrow\_heading\_up: :rocket:](#python-and-sqlite-arrow_heading_up-rocket)
       - [MySQL database developer :arrow\_heading\_up: :rocket:](#mysql-database-developer-arrow_heading_up-rocket)
-      - [Strategic Outcome: KVM, Python, SQLite \& MySQL on Ubuntu :rocket](#strategic-outcome-kvm-python-sqlite--mysql-on-ubuntu-rocket)
+      - [Strategic Outcome: KVM, Python, SQLite \& MySQL on Ubuntu :rocket:](#strategic-outcome-kvm-python-sqlite--mysql-on-ubuntu-rocket)
   - [2. Workish](#2-workish)
     - [Zabbix default :link:](#zabbix-default-link)
   - [On point](#on-point)
@@ -461,7 +461,7 @@ SQL server:
 
 </details>
 
-#### Strategic Outcome: KVM, Python, SQLite & MySQL on Ubuntu :rocket
+#### Strategic Outcome: KVM, Python, SQLite & MySQL on Ubuntu :rocket:
 
 1. Advanced Systems Virtualization & Virtualization Architecture
 
