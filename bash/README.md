@@ -97,7 +97,7 @@ One shell is not enough when looking at paths, tail logs, edit files etc.
 
 Press the new tab and make a new ssh session or press new tab at ubuntu desktop.
 
-![multiple sessions](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/images__and_pdf/multiple_sessions.jpg)
+![multiple sessions](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/images__and_pdf/multiple_sessions.png)
 
 ## Linux Philosophy
 
