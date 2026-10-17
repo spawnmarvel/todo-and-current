@@ -40,8 +40,8 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
     - [Moved from Azure to KVM 05.10.2026](#moved-from-azure-to-kvm-05102026)
     - [1. KVM and Ubuntu, Python with SQLite and MySQL Database Developer. This is the path :arrow\_heading\_up:](#1-kvm-and-ubuntu-python-with-sqlite-and-mysql-database-developer-this-is-the-path-arrow_heading_up)
       - [KVM and Ubuntu :arrow\_heading\_up:](#kvm-and-ubuntu-arrow_heading_up)
-      - [Python and SQLite](#python-and-sqlite)
-      - [MySQL database developer](#mysql-database-developer)
+      - [Python and SQLite :arrow\_heading\_up:](#python-and-sqlite-arrow_heading_up)
+      - [MySQL database developer :arrow\_heading\_up:](#mysql-database-developer-arrow_heading_up)
   - [2. Workish](#2-workish)
     - [Zabbix default :link:](#zabbix-default-link)
   - [On point](#on-point)
@@ -428,12 +428,13 @@ SQL server:
 </details>
 
 
-#### Python and SQLite
+#### Python and SQLite :arrow_heading_up:
 
 **In Progress:**
 - :monkey: Have fun!
 - 📚 Python and sqlite is 2-in-1, start with this, one thing at the time
 - 📚 Make a exe file of it after for test
+- [Python and built in sqlite](https://github.com/spawnmarvel/todo-and-current/tree/main/python/python-sqlite)
 - Here you will learn all Python and maintain CRUD operations,  it is enough!
 
 <details>
@@ -446,7 +447,7 @@ SQL server:
 
 </details>
 
-#### MySQL database developer
+#### MySQL database developer :arrow_heading_up:
 
 - 📚 [MySql database developer tutorial github](https://github.com/spawnmarvel/todo-and-current/blob/main/mysql/README_mysql_tutorial.md#10-mysql-globalization)
 - Here you will learn all Python and maintain CRUD operations,  it is enough!
