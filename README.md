@@ -42,10 +42,10 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
     - [2. Python projects often two-in-one. It is zen! :arrow\_heading\_up:](#2-python-projects-often-two-in-one-it-is-zen-arrow_heading_up)
     - [3. MySQL database developer :heavy\_plus\_sign:](#3-mysql-database-developer-heavy_plus_sign)
   - [2. Workish](#2-workish)
-    - [1. Zabbix default :link:](#1-zabbix-default-link)
-  - [3. On point](#3-on-point)
-      - [1. RabbitMQ Mtls and minimal PKI :bookmark:](#1-rabbitmq-mtls-and-minimal-pki-bookmark)
-    - [2. AZ-104 Azure Administrator :bookmark:](#2-az-104-azure-administrator-bookmark)
+    - [Zabbix default :link:](#zabbix-default-link)
+  - [On point](#on-point)
+      - [RabbitMQ Mtls and minimal PKI :bookmark:](#rabbitmq-mtls-and-minimal-pki-bookmark)
+    - [AZ-104 Azure Administrator :bookmark:](#az-104-azure-administrator-bookmark)
   - [4. Misc](#4-misc)
     - [1. Az-104 Azure Adminisrator tutorials (no notes, just do them from time to time) :bookmark:](#1-az-104-azure-adminisrator-tutorials-no-notes-just-do-them-from-time-to-time-bookmark)
     - [2. Raspberry PI, IOT sensor, MQTT, Grafana, Linux and fun :bookmark:](#2-raspberry-pi-iot-sensor-mqtt-grafana-linux-and-fun-bookmark)
@@ -446,7 +446,7 @@ $${\color{lightblue}This \ is \ fun}$$
 
 ## 2. Workish
 
-### 1. Zabbix default :link:
+### Zabbix default :link:
 
 **In Progress:**
 - 📚 Linux by Zabbix agent active and Zabbix Agent 2 built-in native functions
@@ -476,9 +476,9 @@ $${\color{orange}This \ is \ important}$$
 
 ---
 
-## 3. On point
+## On point
 
-#### 1. RabbitMQ Mtls and minimal PKI :bookmark:
+#### RabbitMQ Mtls and minimal PKI :bookmark:
 
 **Completed:**
 - ✅ [AMQP Shovel MTLS with RFC-6125](https://github.com/spawnmarvel/quickguides/blob/main/amqp/ReadmeNutshell.md)
@@ -489,7 +489,7 @@ $${\color{lightblue}This \ is \ fun}$$
 
 ---
 
-### 2. AZ-104 Azure Administrator :bookmark:
+### AZ-104 Azure Administrator :bookmark:
 
 - 📚 MS AZ-104 extended
 - 📚 Azure DO NOT build things in the portal, use cli and ps1
