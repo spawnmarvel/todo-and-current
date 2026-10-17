@@ -38,7 +38,7 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
   - [Markup :arrow\_heading\_up: and :rocket: ,  :link: :bookmark: :heavy\_plus\_sign:](#markup-arrow_heading_up-and-rocket---link-bookmark-heavy_plus_sign)
   - [Current Priorities:](#current-priorities)
   - [1. Zen, number 1 is the path, one is enough.](#1-zen-number-1-is-the-path-one-is-enough)
-    - [1. KVM and Ubuntu, Python with SQLite and MySQL Database Developer. This is the path :arrow\_heading\_up:](#1-kvm-and-ubuntu-python-with-sqlite-and-mysql-database-developer-this-is-the-path-arrow_heading_up)
+    - [1. KVM and Ubuntu, Python with SQLite and MySQL Database Developer. Is the path :arrow\_heading\_up:](#1-kvm-and-ubuntu-python-with-sqlite-and-mysql-database-developer-is-the-path-arrow_heading_up)
       - [KVM and Ubuntu :arrow\_heading\_up: :rocket:](#kvm-and-ubuntu-arrow_heading_up-rocket)
       - [Python and SQLite :arrow\_heading\_up: :rocket:](#python-and-sqlite-arrow_heading_up-rocket)
       - [MySQL database developer :arrow\_heading\_up: :rocket:](#mysql-database-developer-arrow_heading_up-rocket)
@@ -402,7 +402,7 @@ SQL server:
 
 ## 1. Zen, number 1 is the path, one is enough.
 
-### 1. KVM and Ubuntu, Python with SQLite and MySQL Database Developer. This is the path :arrow_heading_up:
+### 1. KVM and Ubuntu, Python with SQLite and MySQL Database Developer. Is the path :arrow_heading_up:
 
 #### KVM and Ubuntu :arrow_heading_up: :rocket:
 
