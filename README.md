@@ -38,9 +38,10 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
   - [1. Zen](#1-zen)
     - [Markup :arrow\_heading\_up: :link: :bookmark: :heavy\_plus\_sign:](#markup-arrow_heading_up-link-bookmark-heavy_plus_sign)
     - [Moved from Azure to KVM 05.10.2026](#moved-from-azure-to-kvm-05102026)
-    - [1. KVM and learn the ways of Linux-fu-yoda :arrow\_heading\_up:](#1-kvm-and-learn-the-ways-of-linux-fu-yoda-arrow_heading_up)
-    - [2. Python projects often two-in-one. It is zen! :arrow\_heading\_up:](#2-python-projects-often-two-in-one-it-is-zen-arrow_heading_up)
-    - [3. MySQL database developer :heavy\_plus\_sign:](#3-mysql-database-developer-heavy_plus_sign)
+    - [1. KVM and Ubuntu, Python with SQLite and MySQL Database Developer. This is the path :arrow\_heading\_up:](#1-kvm-and-ubuntu-python-with-sqlite-and-mysql-database-developer-this-is-the-path-arrow_heading_up)
+      - [KVM and Ubuntu](#kvm-and-ubuntu)
+      - [Python and SQLite](#python-and-sqlite)
+      - [MySQL database developer](#mysql-database-developer)
   - [2. Workish](#2-workish)
     - [Zabbix default :link:](#zabbix-default-link)
   - [On point](#on-point)
@@ -402,46 +403,59 @@ SQL server:
 </details>
 
 
-### 1. KVM and learn the ways of Linux-fu-yoda :arrow_heading_up:
+### 1. KVM and Ubuntu, Python with SQLite and MySQL Database Developer. This is the path :arrow_heading_up:
+
+#### KVM and Ubuntu
 
 **In Progress:**
 - :monkey: Have fun!
 - 📚 KVM hypervisor: a beginners’ guide [kvm-lab](https://github.com/spawnmarvel/kvm-lab)
-- 📚 3 questions and 3 answers [Linux-fu](https://github.com/spawnmarvel/todo-and-current/blob/main/bash_linux_fu/readme.md)
 
-**Completed: but do once a week**
+
+<details>
+  <summary>Click to see what is left in this section</summary>
+
+- :link: You do not need to focus on the 3 qustions, you will learn all in KVM with Ubuntu
+- :link: 3 questions and 3 answers [Linux-fu](https://github.com/spawnmarvel/todo-and-current/blob/main/bash_linux_fu/readme.md)
+
+**Completed: but do once a week** :link: You dont need to do the drill, you will learn all with KVM and Ubuntu
 
 - ✅ Do sys admin 5 min, look at practical examples, troubleshoot etc [drill](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/README.md#sys-admin-drill)
 - ✅ The linux [house](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/images__and_pdf/linux_house.jpg)
 
-$${\color{green}This \ is \ power}$$
 
---- 
+</details>
 
-### 2. Python projects often two-in-one. It is zen! :arrow_heading_up:
+
+#### Python and SQLite
 
 **In Progress:**
 - :monkey: Have fun!
 - 📚 Python and sqlite is 2-in-1, start with this, one thing at the time
 - 📚 Make a exe file of it after for test
 
+<details>
+  <summary>Click to see what is left in this section</summary>
+
 **Completed:**
 - ✅ [Python collections](https://github.com/spawnmarvel/todo-and-current/tree/main/python)
 - ✅ [Cross-Platform Runtime Support boilerplate with logging](https://github.com/spawnmarvel/todo-and-current/blob/main/python/README.md#minimal-boilerplate-example-omni-collector-io-python)
 - ✅ Try to use built in standard lib
 
-$${\color{lightblue}This \ is \ fun}$$
+</details>
 
----
-
-### 3. MySQL database developer :heavy_plus_sign:
+#### MySQL database developer
 
 - 📚 [MySql database developer tutorial github](https://github.com/spawnmarvel/todo-and-current/blob/main/mysql/README_mysql_tutorial.md#10-mysql-globalization)
 - 📚 Do all MS learn for MySQL
 - 📚 https://learn.microsoft.com/en-us/training/browse/?terms=mysql&source=learn
-- 
 
 
+
+$${\color{green}This \ is \ power}$$
+
+--- 
+ 
 ![rabbit](https://github.com/spawnmarvel/todo-and-current/blob/main/images/rabbit.png)
 
 ## 2. Workish
