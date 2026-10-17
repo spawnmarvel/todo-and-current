@@ -34,10 +34,10 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
     - [Azure VM Operations](#azure-vm-operations)
     - [AD DS Configuration (vmhybrid01)](#ad-ds-configuration-vmhybrid01)
   - [Fast Linux VM Deployment IAC](#fast-linux-vm-deployment-iac)
+  - [Moved from Azure to KVM 05.10.2026](#moved-from-azure-to-kvm-05102026)
   - [Current Priorities:](#current-priorities)
   - [1. Zen, number 1 is the path, one is enough.](#1-zen-number-1-is-the-path-one-is-enough)
     - [Markup :arrow\_heading\_up: and :rocket: ,  :link: :bookmark: :heavy\_plus\_sign:](#markup-arrow_heading_up-and-rocket---link-bookmark-heavy_plus_sign)
-    - [Moved from Azure to KVM 05.10.2026](#moved-from-azure-to-kvm-05102026)
     - [1. KVM and Ubuntu, Python with SQLite and MySQL Database Developer. This is the path :arrow\_heading\_up:](#1-kvm-and-ubuntu-python-with-sqlite-and-mysql-database-developer-this-is-the-path-arrow_heading_up)
       - [KVM and Ubuntu :arrow\_heading\_up: :rocket:](#kvm-and-ubuntu-arrow_heading_up-rocket)
       - [Python and SQLite :arrow\_heading\_up: :rocket:](#python-and-sqlite-arrow_heading_up-rocket)
@@ -365,19 +365,7 @@ Install Zabbix agent 2 Linux
 
 ---
 
-## Current Priorities: 
-
-## 1. Zen, number 1 is the path, one is enough.
-
-
-### Markup :arrow_heading_up: and :rocket: ,  :link: :bookmark: :heavy_plus_sign:
-
-* :arrow_heading_up: and :rocket: = Do more of this.
-* :link: = We are bearly keeping the link alive, we can update if needed.
-* :bookmark: = We are done, just check knowledge from time to time, docs and do some tutorials.
-* :heavy_plus_sign: = After everything else, if you have time play with and do some tutorials.
-
-### Moved from Azure to KVM 05.10.2026
+## Moved from Azure to KVM 05.10.2026
 
 Resources left in Azure:
 
@@ -402,6 +390,19 @@ SQL server:
 * Storage accounts
 
 </details>
+
+## Current Priorities: 
+
+## 1. Zen, number 1 is the path, one is enough.
+
+
+### Markup :arrow_heading_up: and :rocket: ,  :link: :bookmark: :heavy_plus_sign:
+
+* :arrow_heading_up: and :rocket: = Do more of this.
+* :link: = We are bearly keeping the link alive, we can update if needed.
+* :bookmark: = We are done, just check knowledge from time to time, docs and do some tutorials.
+* :heavy_plus_sign: = After everything else, if you have time play with and do some tutorials.
+
 
 
 ### 1. KVM and Ubuntu, Python with SQLite and MySQL Database Developer. This is the path :arrow_heading_up:
