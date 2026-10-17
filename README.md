@@ -477,6 +477,7 @@ SQL server:
 * MySQL: Mastering enterprise relational database server configuration, user access security, query optimization, high availability concepts, and engine tuning (InnoDB).
 
 
+![logo](https://github.com/spawnmarvel/todo-and-current/blob/main/images/logo.png)
 
 $${\color{green}This \ is \ power}$$
 
