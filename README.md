@@ -461,6 +461,9 @@ SQL server:
 
 #### Strategic Outcome: KVM, Python, SQLite & MySQL on Ubuntu :rocket:
 
+<details>
+  <summary>Click to see what is left in this section</summary>
+
 1. Advanced Systems Virtualization & Virtualization Architecture
 
 * Knowledge Gained: Deep understanding of Linux Kernel-based Virtual Machine (KVM), qemu-kvm, libvirt, and command-line lifecycle management using virsh.
@@ -474,6 +477,7 @@ SQL server:
 * SQLite: Mastering serverless, file-based SQL, dynamic schema handling, local transaction locking, and zero-configuration storage.
 * MySQL: Mastering enterprise relational database server configuration, user access security, query optimization, high availability concepts, and engine tuning (InnoDB).
 
+</details>
 
 ![logo](https://github.com/spawnmarvel/todo-and-current/blob/main/images/logo.png)
 
