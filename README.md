@@ -36,13 +36,13 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
   - [Fast Linux VM Deployment IAC](#fast-linux-vm-deployment-iac)
   - [Current Priorities:](#current-priorities)
   - [1. Zen](#1-zen)
-    - [Markup :arrow\_heading\_up: :link: :bookmark: :heavy\_plus\_sign:](#markup-arrow_heading_up-link-bookmark-heavy_plus_sign)
+    - [Markup :arrow\_heading\_up: and :rocket: ,  :link: :bookmark: :heavy\_plus\_sign:](#markup-arrow_heading_up-and-rocket---link-bookmark-heavy_plus_sign)
     - [Moved from Azure to KVM 05.10.2026](#moved-from-azure-to-kvm-05102026)
     - [1. KVM and Ubuntu, Python with SQLite and MySQL Database Developer. This is the path :arrow\_heading\_up:](#1-kvm-and-ubuntu-python-with-sqlite-and-mysql-database-developer-this-is-the-path-arrow_heading_up)
-      - [KVM and Ubuntu :arrow\_heading\_up: 🚀 :rocket:](#kvm-and-ubuntu-arrow_heading_up--rocket)
-      - [Python and SQLite :arrow\_heading\_up: 🚀 :rocket:](#python-and-sqlite-arrow_heading_up--rocket)
-      - [MySQL database developer :arrow\_heading\_up: 🚀 :rocket:](#mysql-database-developer-arrow_heading_up--rocket)
-      - [Strategic Outcome: KVM, Python, SQLite \& MySQL on Ubuntu 🚀 :rocket: 🚀 :rocket: 🚀 :rocket:](#strategic-outcome-kvm-python-sqlite--mysql-on-ubuntu--rocket--rocket--rocket)
+      - [KVM and Ubuntu :arrow\_heading\_up: :rocket:](#kvm-and-ubuntu-arrow_heading_up-rocket)
+      - [Python and SQLite :arrow\_heading\_up: :rocket:](#python-and-sqlite-arrow_heading_up-rocket)
+      - [MySQL database developer :arrow\_heading\_up: :rocket:](#mysql-database-developer-arrow_heading_up-rocket)
+      - [Strategic Outcome: KVM, Python, SQLite \& MySQL on Ubuntu :rocket](#strategic-outcome-kvm-python-sqlite--mysql-on-ubuntu-rocket)
   - [2. Workish](#2-workish)
     - [Zabbix default :link:](#zabbix-default-link)
   - [On point](#on-point)
@@ -370,9 +370,9 @@ Install Zabbix agent 2 Linux
 ## 1. Zen
 
 
-### Markup :arrow_heading_up: :link: :bookmark: :heavy_plus_sign:
+### Markup :arrow_heading_up: and :rocket: ,  :link: :bookmark: :heavy_plus_sign:
 
-* :arrow_heading_up: and 🚀 :rocket: = Do more of this.
+* :arrow_heading_up: and :rocket: = Do more of this.
 * :link: = We are bearly keeping the link alive, we can update if needed.
 * :bookmark: = We are done, just check knowledge from time to time, docs and do some tutorials.
 * :heavy_plus_sign: = After everything else, if you have time play with and do some tutorials.
@@ -406,7 +406,7 @@ SQL server:
 
 ### 1. KVM and Ubuntu, Python with SQLite and MySQL Database Developer. This is the path :arrow_heading_up:
 
-#### KVM and Ubuntu :arrow_heading_up: 🚀 :rocket:
+#### KVM and Ubuntu :arrow_heading_up: :rocket:
 
 **In Progress:**
 - :monkey: Have fun!
@@ -429,7 +429,7 @@ SQL server:
 </details>
 
 
-#### Python and SQLite :arrow_heading_up: 🚀 :rocket:
+#### Python and SQLite :arrow_heading_up: :rocket:
 
 **In Progress:**
 - :monkey: Have fun!
@@ -448,7 +448,7 @@ SQL server:
 
 </details>
 
-#### MySQL database developer :arrow_heading_up: 🚀 :rocket:
+#### MySQL database developer :arrow_heading_up: :rocket:
 
 - 📚 [MySql database developer tutorial github](https://github.com/spawnmarvel/todo-and-current/blob/main/mysql/README_mysql_tutorial.md#10-mysql-globalization)
 - Here you will learn all Python and maintain CRUD operations,  it is enough!
@@ -461,7 +461,7 @@ SQL server:
 
 </details>
 
-#### Strategic Outcome: KVM, Python, SQLite & MySQL on Ubuntu 🚀 :rocket: 🚀 :rocket: 🚀 :rocket:
+#### Strategic Outcome: KVM, Python, SQLite & MySQL on Ubuntu :rocket
 
 1. Advanced Systems Virtualization & Virtualization Architecture
 
