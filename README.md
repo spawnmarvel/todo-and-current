@@ -39,7 +39,7 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
     - [Markup :arrow\_heading\_up: :link: :bookmark: :heavy\_plus\_sign:](#markup-arrow_heading_up-link-bookmark-heavy_plus_sign)
     - [Moved from Azure to KVM 05.10.2026](#moved-from-azure-to-kvm-05102026)
     - [1. KVM and Ubuntu, Python with SQLite and MySQL Database Developer. This is the path :arrow\_heading\_up:](#1-kvm-and-ubuntu-python-with-sqlite-and-mysql-database-developer-this-is-the-path-arrow_heading_up)
-      - [KVM and Ubuntu](#kvm-and-ubuntu)
+      - [KVM and Ubuntu :arrow\_heading\_up:](#kvm-and-ubuntu-arrow_heading_up)
       - [Python and SQLite](#python-and-sqlite)
       - [MySQL database developer](#mysql-database-developer)
   - [2. Workish](#2-workish)
@@ -405,11 +405,12 @@ SQL server:
 
 ### 1. KVM and Ubuntu, Python with SQLite and MySQL Database Developer. This is the path :arrow_heading_up:
 
-#### KVM and Ubuntu
+#### KVM and Ubuntu :arrow_heading_up:
 
 **In Progress:**
 - :monkey: Have fun!
 - 📚 KVM hypervisor: a beginners’ guide [kvm-lab](https://github.com/spawnmarvel/kvm-lab)
+- Here you will learn all Linux things and hypervisor-1 (pools, network, vms, UFW, etc), it is enough!
 
 
 <details>
@@ -433,6 +434,7 @@ SQL server:
 - :monkey: Have fun!
 - 📚 Python and sqlite is 2-in-1, start with this, one thing at the time
 - 📚 Make a exe file of it after for test
+- Here you will learn all Python and maintain CRUD operations,  it is enough!
 
 <details>
   <summary>Click to see what is left in this section</summary>
@@ -447,10 +449,15 @@ SQL server:
 #### MySQL database developer
 
 - 📚 [MySql database developer tutorial github](https://github.com/spawnmarvel/todo-and-current/blob/main/mysql/README_mysql_tutorial.md#10-mysql-globalization)
+- Here you will learn all Python and maintain CRUD operations,  it is enough!
+
+<details>
+  <summary>Click to see what is left in this section</summary>
+  
 - 📚 Do all MS learn for MySQL
 - 📚 https://learn.microsoft.com/en-us/training/browse/?terms=mysql&source=learn
 
-
+</details>
 
 $${\color{green}This \ is \ power}$$
 
