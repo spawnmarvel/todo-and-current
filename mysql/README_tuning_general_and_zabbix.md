@@ -1,10 +1,10 @@
 # MySQL General tunning
 
 
-# Table of Contents: MySQL General Tuning
+# Table of Contents
 
 - [MySQL General tunning](#mysql-general-tunning)
-- [Table of Contents: MySQL General Tuning](#table-of-contents-mysql-general-tuning)
+- [Table of Contents](#table-of-contents)
   - [Zabbix-Specific Workload Characteristics](#zabbix-specific-workload-characteristics)
   - [General guidelines and useful queries scenario 2 vCPUS, 8GB Ram and 60GB data disk for Zabbix](#general-guidelines-and-useful-queries-scenario-2-vcpus-8gb-ram-and-60gb-data-disk-for-zabbix)
     - [1. MySQL Configuration (/etc/mysql/mysql.conf.d/mysqld.cnf)](#1-mysql-configuration-etcmysqlmysqlconfdmysqldcnf)
