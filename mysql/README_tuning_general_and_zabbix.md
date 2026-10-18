@@ -6,7 +6,7 @@
 - [MySQL General tunning](#mysql-general-tunning)
 - [Table of Contents](#table-of-contents)
   - [Zabbix-Specific Workload Characteristics](#zabbix-specific-workload-characteristics)
-  - [General guidelines and useful queries scenario 2 vCPUS, 8GB Ram and 60GB data disk for Zabbix](#general-guidelines-and-useful-queries-scenario-2-vcpus-8gb-ram-and-60gb-data-disk-for-zabbix)
+  - [General guidelines and useful queries scenario 1](#general-guidelines-and-useful-queries-scenario-1)
     - [1. MySQL Configuration (/etc/mysql/mysql.conf.d/mysqld.cnf)](#1-mysql-configuration-etcmysqlmysqlconfdmysqldcnf)
     - [2. InnoDB Flushing \& Redo Log Optimization](#2-innodb-flushing--redo-log-optimization)
     - [3. Systemd \& Resource Limits (override.conf)](#3-systemd--resource-limits-overrideconf)
@@ -25,9 +25,10 @@ Zabbix generates a heavily write-intensive workload characterized by high-volume
 
 Since the database host is dedicated to MySQL and serving a remote Zabbix server, the configuration is adjusted to maximize disk flush efficiency and lower overhead per remote connection
 
-## General guidelines and useful queries scenario 2 vCPUS, 8GB Ram and 60GB data disk for Zabbix
+## General guidelines and useful queries scenario 1
 
 Hardware & OS Profile Assessment
+
 * OS: Ubuntu 26.04 LTS (Kernel 6.x series)
 * CPU / vCPU: 2 vCPUs
 * RAM: 8 GB total (~7 GB allocatable to MySQL and OS caches)
