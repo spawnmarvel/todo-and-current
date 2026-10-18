@@ -5,6 +5,7 @@
 
 - [MySQL General tunning](#mysql-general-tunning)
 - [Table of Contents](#table-of-contents)
+  - [Key MySQL Configuration Parameters](#key-mysql-configuration-parameters)
   - [Zabbix-Specific Workload Characteristics](#zabbix-specific-workload-characteristics)
   - [General guidelines and useful queries scenario 1](#general-guidelines-and-useful-queries-scenario-1)
     - [1. MySQL Configuration (/etc/mysql/mysql.conf.d/mysqld.cnf)](#1-mysql-configuration-etcmysqlmysqlconfdmysqldcnf)
@@ -12,11 +13,28 @@
     - [3. Systemd \& Resource Limits (override.conf)](#3-systemd--resource-limits-overrideconf)
     - [4. Storage \& Filesystem Tuning](#4-storage--filesystem-tuning)
     - [5. Verification \& Zabbix Health Checks](#5-verification--zabbix-health-checks)
-  - [Healthy and unhealty zabbix general with 20GB database](#healthy-and-unhealty-zabbix-general-with-20gb-database)
-  - [Implementation: my.cnf Checklist](#implementation-mycnf-checklist)
-  - [MySQL General tunning extra zabbix](#mysql-general-tunning-extra-zabbix)
+  - [Healthy and unhealty zabbix sceanrio with 20GB database](#healthy-and-unhealty-zabbix-sceanrio-with-20gb-database)
 
 ---
+
+
+## Key MySQL Configuration Parameters
+
+🔵 innodb_buffer_pool_size: Allocate 60% to 80% of total system RAM on dedicated servers to cache database data and indexes directly in memory.
+
+🔵 innodb_buffer_pool_instances: Divide the buffer pool into multiple instances (typically 4 to 8) to reduce lock contention on multi-core systems.
+
+🔵 innodb_flush_log_at_trx_commit: Set to 1 for full ACID compliance, or 2 to write to OS cache on commit and flush once per second for a massive write performance boost.
+
+🔵 innodb_flush_method: Use O_DIRECT on Linux to bypass kernel page caching and prevent double-buffering of database pages in memory.
+
+🔵 innodb_redo_log_capacity: Increase capacity (e.g., 1GB to 2GB+) to buffer write-heavy operations and smooth out disk write spikes.
+
+🔵 max_connections: Right-size connection limits based on actual application concurrency to prevent high thread memory overhead and CPU thrashing.
+
+🔵 thread_cache_size: Cache idle server threads to eliminate the CPU overhead of creating and destroying connections repeatedly.
+
+🔵 tmp_table_size & max_heap_table_size: Increase these equally (e.g., 64M to 256M) to prevent complex intermediate query operations from spilling to slow disk storage.
 
 
 ## Zabbix-Specific Workload Characteristics
@@ -180,7 +198,7 @@ SHOW STATUS LIKE 'Innodb_buffer_pool_pages_dirty';
 SHOW STATUS LIKE 'Innodb_os_log_pending_writes';
 ```
 
-## Healthy and unhealty zabbix general with 20GB database
+## Healthy and unhealty zabbix sceanrio with 20GB database
 
 The "Health Report" Recap
 Ingestion Rate: 50 NVPS is roughly 4.3 million values per day. For a modern CPU and SSD, this is a very light load.
@@ -208,47 +226,4 @@ Without this, your Linux OS and MySQL both try to cache the same data (Double Bu
 1. Throughput: Sizing the Redo Logs
 Larger log files allow MySQL to "smooth out" the writing process.
 * innodb_log_file_size = 512M or 1G.
-
-## Implementation: my.cnf Checklist
-
-Summary Checklist (my.cnf)
-Add or edit these lines under the [mysqld] section of your configuration file (usually /etc/mysql/my.cnf or /etc/my.cnf):
-
-```ini
-[mysqld]
-# Memory Allocation
-innodb_buffer_pool_size = 4G     # Adjust based on available RAM
-innodb_buffer_pool_instances = 4 # Helps with memory concurrency
-
-# Write Optimization
-innodb_flush_log_at_trx_commit = 2
-innodb_flush_method = O_DIRECT
-innodb_log_file_size = 512M
-
-# Connection Handling
-max_connections = 200            # Plenty for 50 NVPS
-```
-
-1. Edit your config file: sudo nano /etc/mysql/my.cnf
-2. Save and exit.
-3. Restart MySQL: sudo systemctl restart mysql (Note: This will briefly disconnect Zabbix).
-
-Since your database is 20GB, you can't fit the whole thing in memory, but at 50 NVPS, a 4GB buffer pool is more than enough to cache the "hot" data (recent history and configuration) so that your Zabbix dashboard stays fast.
-
-
-## MySQL General tunning extra zabbix
-
-Mysql zabbix tuning. Optimizing MySQL for Zabbix is a high-impact task because Zabbix is notoriously write-heavy. It constantly streams "history" data (metrics) and "trends" (summaries) into the database, which can lead to disk I/O bottlenecks.
-
-If there is issues with housekeeping:
-
-Implement Database Partitioning
-
-Zabbix tables like history and trends grow indefinitely. The default "Housekeeper" process deletes old data using DELETE statements, which is slow and fragments the database.
-
-* The Fix: Use MySQL Partitioning. Instead of deleting row-by-row, Zabbix simply "drops" an entire partition (e.g., one day's worth of data).
-
-* Benefit: This eliminates Housekeeper overhead and keeps your disk I/O flat.
-
-
 
