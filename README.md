@@ -449,6 +449,7 @@ SQL server:
 #### MySQL database developer :arrow_heading_up: :rocket:
 
 - 📚 [MySql database developer tutorial github](https://github.com/spawnmarvel/todo-and-current/blob/main/mysql/README_mysql_tutorial.md#10-mysql-globalization)
+- 📚 [MySQL General tunning](https://github.com/spawnmarvel/todo-and-current/blob/main/mysql/README_tuning_general_and_zabbix.md)
 - Here you will learn all Python and maintain CRUD operations,  it is enough!
 
 <details>
