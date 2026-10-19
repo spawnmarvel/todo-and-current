@@ -3,6 +3,13 @@ Import-Module WebAdministration
 # look at support 000102143
 # If you want an even more concise report, here's one that shows the current values alongside the recommended values:
 
+$DateTime = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+$HostName = $env:COMPUTERNAME
+
+Write-Host ""
+Write-Host "$DateTime $HostName"
+Write-Host ""
+
 $appPools = @(
     "xxxxxxxAppPool",
     "xxxxxxxAppPoolx64"
