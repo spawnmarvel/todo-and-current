@@ -10,6 +10,7 @@
   - [General guidelines and useful queries scenario 1](#general-guidelines-and-useful-queries-scenario-1)
     - [1. MySQL Configuration (/etc/mysql/mysql.conf.d/mysqld.cnf)](#1-mysql-configuration-etcmysqlmysqlconfdmysqldcnf)
     - [2. InnoDB Flushing \& Redo Log Optimization](#2-innodb-flushing--redo-log-optimization)
+    - [2.1 Test and restart](#21-test-and-restart)
     - [3. Systemd \& Resource Limits (override.conf)](#3-systemd--resource-limits-overrideconf)
     - [4. Storage \& Filesystem Tuning](#4-storage--filesystem-tuning)
     - [5. Verification \& Zabbix Health Checks](#5-verification--zabbix-health-checks)
@@ -130,6 +131,22 @@ innodb_flush_log_at_trx_commit = 2
 This reduces disk write I/O operations significantly and frees up CPU cycles for the 2 vCPUs.
 
 innodb_flush_log_at_trx_commit = 2: This is the "magic" setting. Instead of flushing to disk on every single transaction (1), it flushes once per second. In the event of an OS crash, you might lose 1 second of data, but the performance gain is massive.
+
+
+### 2.1 Test and restart
+
+```bash
+# Test configuration syntax before restarting
+mysqld --validate-config
+
+# Restart the service
+sudo systemctl restart mysql
+# or on RHEL/CentOS
+sudo systemctl restart mysqld
+
+# Verify active status
+sudo systemctl status mysql
+```
 
 ### 3. Systemd & Resource Limits (override.conf)
 
