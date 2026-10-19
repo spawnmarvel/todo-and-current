@@ -131,6 +131,14 @@ log_queries_not_using_indexes = 0
 
 #### innodb_buffer_pool_size = 5G instant fix
 
+That graph shows the exact impact of expanding the buffer pool size.
+
+Utilization Dropped to ~2%: The existing cached pages now occupy a tiny fraction of the total available pool.
+
+As Zabbix continues inserting history and trends data, MySQL will gradually fill this pool with cached table pages and indexes. Since 70% of your RAM is dedicated to InnoDB, reads for dashboard graphics and trend analysis will be served directly from memory rather than disk.
+
+![instat fix pool](https://github.com/spawnmarvel/todo-and-current/blob/main/mysql/images/instant_fix_pool.png)
+
 
 ### 2. InnoDB Flushing & Redo Log Optimization
 
