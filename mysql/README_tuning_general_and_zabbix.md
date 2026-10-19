@@ -80,7 +80,7 @@ Duplicate Settings (Last One Wins)
 # ----------------------------------------------------------------------
 # Allocate ~70% of 8 GB RAM to InnoDB Buffer Pool (5.5 GB)
 # Keeps history/trends data cached for faster dashboard reads
-innodb_buffer_pool_size = 5.5G
+innodb_buffer_pool_size = 5G
 
 # Divide buffer pool into 4 instances (~1.37 GB each) to reduce lock contention
 innodb_buffer_pool_instances = 4
