@@ -9,6 +9,7 @@
   - [Zabbix-Specific Workload Characteristics](#zabbix-specific-workload-characteristics)
   - [General guidelines and useful queries scenario 1](#general-guidelines-and-useful-queries-scenario-1)
     - [1. MySQL Configuration (/etc/mysql/mysql.conf.d/mysqld.cnf)](#1-mysql-configuration-etcmysqlmysqlconfdmysqldcnf)
+      - [innodb\_buffer\_pool\_size = 5G instant fix](#innodb_buffer_pool_size--5g-instant-fix)
     - [2. InnoDB Flushing \& Redo Log Optimization](#2-innodb-flushing--redo-log-optimization)
     - [2.1 Test and restart](#21-test-and-restart)
     - [3. Systemd \& Resource Limits (override.conf)](#3-systemd--resource-limits-overrideconf)
@@ -127,6 +128,9 @@ slow_query_log_file = /var/log/mysql/mysql-slow.log
 long_query_time = 2
 log_queries_not_using_indexes = 0
 ```
+
+#### innodb_buffer_pool_size = 5G instant fix
+
 
 ### 2. InnoDB Flushing & Redo Log Optimization
 
