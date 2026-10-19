@@ -62,6 +62,17 @@ To keep Zabbix snappy, you need to move away from default settings and tune for 
 
 The innodb_buffer_pool_size is the most critical setting. This is where MySQL caches data and indexes. For a dedicated Zabbix database server, you should allocate 50% to 75% of your total system RAM to this pool.
 
+
+To keep your configuration easy to maintain and debug:
+
+* Append custom changes at the bottom of the [mysqld] block so they are easy to locate and take precedence over default settings above them.
+
+* Group related parameters together using comments (e.g., # Networking, # InnoDB Memory Allocation).
+
+Duplicate Settings (Last One Wins)
+
+* If the same parameter is defined twice within the same section, the last occurrence in the file overrides all previous ones.
+
 ```ini
 [mysqld]
 # ----------------------------------------------------------------------
