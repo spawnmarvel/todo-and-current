@@ -138,6 +138,8 @@ innodb_flush_log_at_trx_commit = 2: This is the "magic" setting. Instead of flus
 ```bash
 # Test configuration syntax before restarting
 mysqld --validate-config
+# When there are no syntax errors, unrecognized directives, or invalid variable values, 
+# mysqld --validate-config completes silently and produces no output at all.
 
 # Restart the service
 sudo systemctl restart mysql
