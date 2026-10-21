@@ -454,6 +454,7 @@ SQL server:
 #### AP22 Rg-swc-ap22
 
 * Remove all WM in Azure, but one: Windows Server with AP22
+* The zip is uploaded
 * Use that for AP22 things 15.0.1
 * Cogent
 * OPC DA, OPC UA
