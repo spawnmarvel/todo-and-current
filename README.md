@@ -464,6 +464,7 @@ SQL server:
 #### AP22
 
 * Remove all WM in Azure, but one: Windows Server with AP22
+* Use that for AP22 things 15.0.1
 
 
 #### Strategic Outcome: KVM, Python, SQLite & MySQL on Ubuntu :rocket:
