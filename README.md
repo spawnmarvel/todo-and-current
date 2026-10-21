@@ -42,7 +42,7 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
       - [KVM and Ubuntu :arrow\_heading\_up: :rocket:](#kvm-and-ubuntu-arrow_heading_up-rocket)
       - [Python and SQLite :arrow\_heading\_up: :rocket:](#python-and-sqlite-arrow_heading_up-rocket)
       - [MySQL database developer :arrow\_heading\_up: :rocket:](#mysql-database-developer-arrow_heading_up-rocket)
-      - [AP22](#ap22)
+      - [AP22, Rg-swc-ap22](#ap22-rg-swc-ap22)
       - [Strategic Outcome: KVM, Python, SQLite \& MySQL on Ubuntu :rocket:](#strategic-outcome-kvm-python-sqlite--mysql-on-ubuntu-rocket)
   - [2. Workish](#2-workish)
     - [Zabbix default :link:](#zabbix-default-link)
@@ -373,22 +373,12 @@ Resources left in Azure:
 <details>
   <summary>Click to see what is left in Azure</summary>
 
-VM:
-* vmzabbix03 public ip
-* vmzabbixproxy03resolute2604
-* vmsnmp03
-  
-Automation Account
-Runbook:
-* Update-VMs-Weekly-If-Tag-Patching-Weekly
-Schedules:
-* Update Linux Monday 09
-
+* Rg-ukazsql-0001
 SQL server:
 * myfreesqldbserver01
 
-* Virtualnetworks
-* Storage accounts
+* Rg-swc-ap22
+* Create a Windows Server for AP22
 
 </details>
 
@@ -461,10 +451,13 @@ SQL server:
 
 </details>
 
-#### AP22
+#### AP22, Rg-swc-ap22
 
 * Remove all WM in Azure, but one: Windows Server with AP22
 * Use that for AP22 things 15.0.1
+* Cogent
+* OPC DA, OPC UA
+* Azure Event Hub
 
 
 #### Strategic Outcome: KVM, Python, SQLite & MySQL on Ubuntu :rocket:
