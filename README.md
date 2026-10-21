@@ -42,7 +42,7 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
       - [KVM and Ubuntu :arrow\_heading\_up: :rocket:](#kvm-and-ubuntu-arrow_heading_up-rocket)
       - [Python and SQLite :arrow\_heading\_up: :rocket:](#python-and-sqlite-arrow_heading_up-rocket)
       - [MySQL database developer :arrow\_heading\_up: :rocket:](#mysql-database-developer-arrow_heading_up-rocket)
-      - [AP22, Rg-swc-ap22](#ap22-rg-swc-ap22)
+      - [AP22 Rg-swc-ap22](#ap22-rg-swc-ap22)
       - [Strategic Outcome: KVM, Python, SQLite \& MySQL on Ubuntu :rocket:](#strategic-outcome-kvm-python-sqlite--mysql-on-ubuntu-rocket)
   - [2. Workish](#2-workish)
     - [Zabbix default :link:](#zabbix-default-link)
@@ -451,7 +451,7 @@ SQL server:
 
 </details>
 
-#### AP22, Rg-swc-ap22
+#### AP22 Rg-swc-ap22
 
 * Remove all WM in Azure, but one: Windows Server with AP22
 * Use that for AP22 things 15.0.1
