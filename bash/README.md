@@ -1120,34 +1120,48 @@ openssl x509 -noout -text -in server.crt
 Configure Apache with SSL/HTTPS using a self-signed certificate.
 
 ```bash
-# Create self-signed certificate (valid for 10 years)
+# v1.0.5
+# Fully verified setup script for Apache SSL certificate generation and HTTPS redirection with proper execution order.
+
+# 1. Create self-signed certificate (valid for 10 years)
 # - days 3650        : 10-year validity
 # - newkey rsa:2048  : 2048-bit RSA key (smaller than 4096 for faster performance)
 # - nodes            : No password on key (Apache can read it on startup)
-# - keyout/in        : Save to Apache's SSL directories
+# - keyout/out       : Save to Apache's SSL directories
 sudo openssl req -x509 -nodes -days 3650 -newkey rsa:2048 \
   -keyout /etc/ssl/private/zabbix-selfsigned.key \
-  -out /etc/ssl/certs/zabbix-selfsigned.crt
+  -out /etc/ssl/certs/zabbix-selfsigned.crt \
+  -subj "/C=NO/ST=Hordaland/L=BER/O=Socrates.inc/OU=IT/CN=vm01.socrates.inc"
 
-# Enable Apache SSL module and default SSL virtual host
+# 2. Set secure file permissions
+sudo chmod 600 /etc/ssl/private/zabbix-selfsigned.key
+sudo chmod 644 /etc/ssl/certs/zabbix-selfsigned.crt
+
+# 3. Enable Apache SSL module, rewrite module, and default SSL virtual host
 sudo a2enmod ssl
+sudo a2enmod rewrite
 sudo a2ensite default-ssl
 
-# Edit SSL config to point to our certificate
-sudo nano /etc/apache2/sites-enabled/default-ssl.conf
-# Update these lines:
-SSLCertificateFile    /etc/ssl/certs/zabbix-selfsigned.crt
-SSLCertificateKeyFile /etc/ssl/private/zabbix-selfsigned.key
+# Editing sites-enabled vs sites-available:
+# It is standard practice in Apache on Linux to edit the file under 
+# /etc/apache2/sites-available/default-ssl.conf rather than directly editing inside sites-enabled/. 
+# Editing sites-available/ ensures the base source configuration remains intact when enabling/disabling site symlinks via a2ensite
 
-# Force all HTTP traffic to redirect to HTTPS
+# 4. Edit SSL config to point to our certificate
+sudo nano /etc/apache2/sites-available/default-ssl.conf
+# Update these lines inside default-ssl.conf:
+# SSLCertificateFile    /etc/ssl/certs/zabbix-selfsigned.crt
+# SSLCertificateKeyFile /etc/ssl/private/zabbix-selfsigned.key
+
+# 5. Force all HTTP traffic to redirect to HTTPS
 sudo nano /etc/apache2/sites-available/000-default.conf
 # Add inside <VirtualHost *:80> block:
-RewriteEngine On
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# RewriteEngine On
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# Enable rewrite module (required for redirect) and restart Apache
-sudo a2enmod rewrite
+# 6. Test configuration syntax and restart Apache service
+sudo apachectl configtest
 sudo systemctl restart apache2
 ```
 
