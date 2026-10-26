@@ -397,7 +397,6 @@ SQL server:
 https://www.fastcompany.com/90966615/what-happened-when-i-tried-doing-one-thing-at-a-time-for-a-week
 
 
-
 ## 1. Zen, number 1 is the path, one is enough.
 
 ### 1. KVM and Ubuntu, Python with SQLite and MySQL Database Developer. Is the path :arrow_heading_up:
