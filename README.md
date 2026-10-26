@@ -37,6 +37,7 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
   - [Moved from Azure to KVM 05.10.2026](#moved-from-azure-to-kvm-05102026)
   - [Markup :arrow\_heading\_up: and :rocket: ,  :link: :bookmark: :heavy\_plus\_sign:](#markup-arrow_heading_up-and-rocket---link-bookmark-heavy_plus_sign)
   - [Current Priorities:](#current-priorities)
+  - [Have you ever heard of do 1 thing at the time?](#have-you-ever-heard-of-do-1-thing-at-the-time)
   - [1. Zen, number 1 is the path, one is enough.](#1-zen-number-1-is-the-path-one-is-enough)
     - [1. KVM and Ubuntu, Python with SQLite and MySQL Database Developer. Is the path :arrow\_heading\_up:](#1-kvm-and-ubuntu-python-with-sqlite-and-mysql-database-developer-is-the-path-arrow_heading_up)
       - [KVM and Ubuntu :arrow\_heading\_up: :rocket:](#kvm-and-ubuntu-arrow_heading_up-rocket)
@@ -390,6 +391,12 @@ SQL server:
 * :heavy_plus_sign: = After everything else, if you have time play with and do some tutorials.
   
 ## Current Priorities: 
+
+## Have you ever heard of do 1 thing at the time?
+
+https://www.fastcompany.com/90966615/what-happened-when-i-tried-doing-one-thing-at-a-time-for-a-week
+
+
 
 ## 1. Zen, number 1 is the path, one is enough.
 
