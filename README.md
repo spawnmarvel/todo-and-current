@@ -35,16 +35,15 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
     - [AD DS Configuration (vmhybrid01)](#ad-ds-configuration-vmhybrid01)
   - [Fast Linux VM Deployment IAC](#fast-linux-vm-deployment-iac)
   - [Moved from Azure to KVM 05.10.2026](#moved-from-azure-to-kvm-05102026)
-  - [Markup :arrow\_heading\_up: and :rocket: ,  :link: :bookmark: :heavy\_plus\_sign:](#markup-arrow_heading_up-and-rocket---link-bookmark-heavy_plus_sign)
+  - [Markup :arrow\_heading\_up: and :rocket: , arrow\_heading\_down:,   :link: :bookmark: :heavy\_plus\_sign:](#markup-arrow_heading_up-and-rocket--arrow_heading_down---link-bookmark-heavy_plus_sign)
   - [Current Priorities:](#current-priorities)
   - [Have you ever heard of do 1 thing at the time?](#have-you-ever-heard-of-do-1-thing-at-the-time)
   - [1. Zen, number 1 is the path, one is enough.](#1-zen-number-1-is-the-path-one-is-enough)
     - [1. KVM, Ubuntu, Ansible. Is the path :arrow\_heading\_up:](#1-kvm-ubuntu-ansible-is-the-path-arrow_heading_up)
       - [KVM, Ubuntu, Ansible :arrow\_heading\_up: :rocket:](#kvm-ubuntu-ansible-arrow_heading_up-rocket)
-      - [Python and SQLite :arrow\_heading\_down: :rocket:](#python-and-sqlite-arrow_heading_down-rocket)
-      - [MySQL database developer :arrow\_heading\_up: :rocket:](#mysql-database-developer-arrow_heading_up-rocket)
+      - [Python and SQLite :arrow\_heading\_down:](#python-and-sqlite-arrow_heading_down)
+      - [MySQL database developer arrow\_heading\_down:](#mysql-database-developer-arrow_heading_down)
       - [AP22 Rg-swc-ap22](#ap22-rg-swc-ap22)
-      - [Strategic Outcome: KVM, Python, SQLite \& MySQL on Ubuntu :rocket:](#strategic-outcome-kvm-python-sqlite--mysql-on-ubuntu-rocket)
   - [2. Workish](#2-workish)
     - [Zabbix default :link:](#zabbix-default-link)
   - [On point](#on-point)
@@ -383,7 +382,7 @@ SQL server:
 
 </details>
 
-## Markup :arrow_heading_up: and :rocket: ,  :link: :bookmark: :heavy_plus_sign:
+## Markup :arrow_heading_up: and :rocket: , arrow_heading_down:,   :link: :bookmark: :heavy_plus_sign: 
 
 * :arrow_heading_up: and :rocket: = Do more of this.
 * :link: = We are bearly keeping the link alive, we can update if needed.
@@ -425,7 +424,7 @@ https://www.fastcompany.com/90966615/what-happened-when-i-tried-doing-one-thing-
 </details>
 
 
-#### Python and SQLite :arrow_heading_down: :rocket:
+#### Python and SQLite :arrow_heading_down:
 
 **In Progress:**
 - :monkey: Have fun!
@@ -444,7 +443,7 @@ https://www.fastcompany.com/90966615/what-happened-when-i-tried-doing-one-thing-
 
 </details>
 
-#### MySQL database developer :arrow_heading_up: :rocket:
+#### MySQL database developer arrow_heading_down:
 
 - 📚 [MySql database developer tutorial github](https://github.com/spawnmarvel/todo-and-current/blob/main/mysql/README_mysql_tutorial.md#10-mysql-globalization)
 - 📚 [MySQL General tunning](https://github.com/spawnmarvel/todo-and-current/blob/main/mysql/README_tuning_general_and_zabbix.md)
@@ -468,33 +467,9 @@ https://www.fastcompany.com/90966615/what-happened-when-i-tried-doing-one-thing-
 * Azure Event Hub
 
 
-#### Strategic Outcome: KVM, Python, SQLite & MySQL on Ubuntu :rocket:
-
-<details>
-  <summary>Click to see what is left in this section</summary>
-
-1. Advanced Systems Virtualization & Virtualization Architecture
-
-* Knowledge Gained: Deep understanding of Linux Kernel-based Virtual Machine (KVM), qemu-kvm, libvirt, and command-line lifecycle management using virsh.
-  
-2. End-to-End Application Development & Automation
-
-* Knowledge Gained: Writing clean, modular Python applications targeting native Linux environments, using Python to interface directly with local databases, system processes, and APIs.
-  
-3. Complete Database Spectrum Mastery (Embedded to Server)
-
-* SQLite: Mastering serverless, file-based SQL, dynamic schema handling, local transaction locking, and zero-configuration storage.
-* MySQL: Mastering enterprise relational database server configuration, user access security, query optimization, high availability concepts, and engine tuning (InnoDB).
-
-</details>
-
-![logo](https://github.com/spawnmarvel/todo-and-current/blob/main/images/logo.png)
-
 $${\color{green}This \ is \ power}$$
 
 --- 
- 
-![rabbit](https://github.com/spawnmarvel/todo-and-current/blob/main/images/rabbit.png)
 
 ## 2. Workish
 
