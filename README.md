@@ -423,6 +423,15 @@ https://www.fastcompany.com/90966615/what-happened-when-i-tried-doing-one-thing-
 
 </details>
 
+---
+
+---
+
+---
+
+---
+
+$${\color{green}This \ is \ power}$$
 
 #### Python and SQLite :arrow_heading_down:
 
