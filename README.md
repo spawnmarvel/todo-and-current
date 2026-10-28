@@ -406,7 +406,7 @@ https://www.fastcompany.com/90966615/what-happened-when-i-tried-doing-one-thing-
 - :monkey: Have fun!
 - 📚 KVM hypervisor: a beginners’ guide [kvm-lab](https://github.com/spawnmarvel/kvm-lab)
 - 📚 KVM hypervisor running Ansible [Ansible-lab](https://github.com/spawnmarvel/kvm-lab/tree/main/lab_2_install_software_with_ansible)
-- Here you will learn all Linux things and hypervisor-1 (pools, network, vms, UFW, etc), it is enough!
+- Here you will learn all Linux things and hypervisor-1 (pools, network, vms, UFW, apt, etc)
 
 
 <details>
