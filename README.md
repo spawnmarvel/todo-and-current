@@ -42,7 +42,7 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
     - [1. KVM, Ubuntu, Ansible. Is the path :arrow\_heading\_up:](#1-kvm-ubuntu-ansible-is-the-path-arrow_heading_up)
       - [KVM, Ubuntu, Ansible :arrow\_heading\_up: :rocket:](#kvm-ubuntu-ansible-arrow_heading_up-rocket)
       - [Python and SQLite :arrow\_heading\_down:](#python-and-sqlite-arrow_heading_down)
-      - [MySQL database developer arrow\_heading\_down:](#mysql-database-developer-arrow_heading_down)
+      - [MySQL database developer :arrow\_heading\_down:](#mysql-database-developer-arrow_heading_down)
       - [AP22 Rg-swc-ap22](#ap22-rg-swc-ap22)
   - [2. Workish](#2-workish)
     - [Zabbix default :link:](#zabbix-default-link)
@@ -443,7 +443,7 @@ https://www.fastcompany.com/90966615/what-happened-when-i-tried-doing-one-thing-
 
 </details>
 
-#### MySQL database developer arrow_heading_down:
+#### MySQL database developer :arrow_heading_down:
 
 - 📚 [MySql database developer tutorial github](https://github.com/spawnmarvel/todo-and-current/blob/main/mysql/README_mysql_tutorial.md#10-mysql-globalization)
 - 📚 [MySQL General tunning](https://github.com/spawnmarvel/todo-and-current/blob/main/mysql/README_tuning_general_and_zabbix.md)
