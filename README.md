@@ -39,9 +39,9 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
   - [Current Priorities:](#current-priorities)
   - [Have you ever heard of do 1 thing at the time?](#have-you-ever-heard-of-do-1-thing-at-the-time)
   - [1. Zen, number 1 is the path, one is enough.](#1-zen-number-1-is-the-path-one-is-enough)
-    - [1. KVM and Ubuntu, Python with SQLite and MySQL Database Developer. Is the path :arrow\_heading\_up:](#1-kvm-and-ubuntu-python-with-sqlite-and-mysql-database-developer-is-the-path-arrow_heading_up)
-      - [KVM and Ubuntu :arrow\_heading\_up: :rocket:](#kvm-and-ubuntu-arrow_heading_up-rocket)
-      - [Python and SQLite :arrow\_heading\_up: :rocket:](#python-and-sqlite-arrow_heading_up-rocket)
+    - [1. KVM, Ubuntu, Ansible. Is the path :arrow\_heading\_up:](#1-kvm-ubuntu-ansible-is-the-path-arrow_heading_up)
+      - [KVM, Ubuntu, Ansible :arrow\_heading\_up: :rocket:](#kvm-ubuntu-ansible-arrow_heading_up-rocket)
+      - [Python and SQLite :arrow\_heading\_down: :rocket:](#python-and-sqlite-arrow_heading_down-rocket)
       - [MySQL database developer :arrow\_heading\_up: :rocket:](#mysql-database-developer-arrow_heading_up-rocket)
       - [AP22 Rg-swc-ap22](#ap22-rg-swc-ap22)
       - [Strategic Outcome: KVM, Python, SQLite \& MySQL on Ubuntu :rocket:](#strategic-outcome-kvm-python-sqlite--mysql-on-ubuntu-rocket)
@@ -399,13 +399,14 @@ https://www.fastcompany.com/90966615/what-happened-when-i-tried-doing-one-thing-
 
 ## 1. Zen, number 1 is the path, one is enough.
 
-### 1. KVM and Ubuntu, Python with SQLite and MySQL Database Developer. Is the path :arrow_heading_up:
+### 1. KVM, Ubuntu, Ansible. Is the path :arrow_heading_up:
 
-#### KVM and Ubuntu :arrow_heading_up: :rocket:
+#### KVM, Ubuntu, Ansible :arrow_heading_up: :rocket:
 
 **In Progress:**
 - :monkey: Have fun!
 - 📚 KVM hypervisor: a beginners’ guide [kvm-lab](https://github.com/spawnmarvel/kvm-lab)
+- 📚 KVM hypervisor running Ansible [Ansible-lab](https://github.com/spawnmarvel/kvm-lab/tree/main/lab_2_install_software_with_ansible)
 - Here you will learn all Linux things and hypervisor-1 (pools, network, vms, UFW, etc), it is enough!
 
 
@@ -424,7 +425,7 @@ https://www.fastcompany.com/90966615/what-happened-when-i-tried-doing-one-thing-
 </details>
 
 
-#### Python and SQLite :arrow_heading_up: :rocket:
+#### Python and SQLite :arrow_heading_down: :rocket:
 
 **In Progress:**
 - :monkey: Have fun!
