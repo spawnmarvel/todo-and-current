@@ -9,6 +9,7 @@
   - [Summary of TCP Transaction Steps](#summary-of-tcp-transaction-steps)
   - [Network advanced tutorial and checklist](#network-advanced-tutorial-and-checklist)
   - [Capture packets and analyze general](#capture-packets-and-analyze-general)
+  - [Debug iis](#debug-iis)
 
 ## Tools
 
@@ -310,4 +311,33 @@ DisplayFilters
 * https://wiki.wireshark.org/DisplayFilters
 
 
+## Debug iis
 
+1. 
+chrome://net-export
+
+
+2. Start logging.
+3. Reproduce the issue, visit app
+4. Stop logging and save the .json file.
+The NetLog contains the authentication negotiation, including whether SPNEGO selected Kerberos or NTLM.
+
+
+The easiest is to use Google's NetLog Viewer:
+
+1. Open:
+   https://netlog-viewer.appspot.com/
+2. Click "Load log".
+3. Select your JSON file.
+
+Once loaded, search for terms such as:
+
+- AUTH- NEGOTIATE- KERBEROS- NTLM- SPNEGO- HTTP_AUTH
+In particular, you're looking for events that indicate whether Chromium chose Kerberos or NTLM.
+
+For your issue, the easiest approach is:
+
+1. Open the "Events" tab.
+2. Use the search/filter box.
+3. Search for each of these terms, one at a time:
+   - AUTH   - NEGOTIATE   - KERBEROS   - NTLM   - SPNEGO   - HTTP_AUTH
