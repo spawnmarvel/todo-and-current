@@ -36,6 +36,7 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
   - [Fast Linux VM Deployment IAC](#fast-linux-vm-deployment-iac)
   - [Moved from Azure to KVM 05.10.2026](#moved-from-azure-to-kvm-05102026)
   - [Markup :arrow\_heading\_up: and :rocket: , arrow\_heading\_down:,   :link: :bookmark: :heavy\_plus\_sign:](#markup-arrow_heading_up-and-rocket--arrow_heading_down---link-bookmark-heavy_plus_sign)
+  - [highlight a "Note" and "Warning" using blockquote](#highlight-a-note-and-warning-using-blockquote)
   - [Current Priorities:](#current-priorities)
   - [Have you ever heard of do 1 thing at the time?](#have-you-ever-heard-of-do-1-thing-at-the-time)
   - [1. Zen, number 1 is the path, one is enough.](#1-zen-number-1-is-the-path-one-is-enough)
@@ -388,6 +389,23 @@ SQL server:
 * :link: = We are bearly keeping the link alive, we can update if needed.
 * :bookmark: = We are done, just check knowledge from time to time, docs and do some tutorials.
 * :heavy_plus_sign: = After everything else, if you have time play with and do some tutorials.
+
+## highlight a "Note" and "Warning" using blockquote
+
+> [!NOTE]  
+> Highlights information that users should take into account, even when skimming.
+
+> [!TIP]
+> Optional information to help a user be more successful.
+
+> [!IMPORTANT]  
+> Crucial information necessary for users to succeed.
+
+> [!WARNING]  
+> Critical content demanding immediate user attention due to potential risks.
+
+> [!CAUTION]
+> Negative potential consequences of an action.
   
 ## Current Priorities: 
 
