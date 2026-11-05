@@ -11,6 +11,7 @@
   - [Table of Contents](#table-of-contents)
   - [Learn bash always google](#learn-bash-always-google)
   - [Muliple ssh sessions or new tab at ubuntu](#muliple-ssh-sessions-or-new-tab-at-ubuntu)
+  - [The ubuntu \& linux os mental map (windows users)](#the-ubuntu--linux-os-mental-map-windows-users)
   - [Linux Philosophy](#linux-philosophy)
   - [Man Pages](#man-pages)
   - [Python \& PowerShell vs Bash](#python--powershell-vs-bash)
@@ -98,6 +99,11 @@ One shell is not enough when looking at paths, tail logs, edit files etc.
 Press the new tab and make a new ssh session or press new tab at ubuntu desktop.
 
 ![multiple sessions](https://github.com/spawnmarvel/todo-and-current/blob/main/bash/images__and_pdf/multiple_sessions.png)
+
+
+## The ubuntu & linux os mental map (windows users)
+
+https://github.com/spawnmarvel/todo-and-current/blob/main/images/ubuntu_windows_map.jpg
 
 ## Linux Philosophy
 
