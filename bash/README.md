@@ -103,7 +103,7 @@ Press the new tab and make a new ssh session or press new tab at ubuntu desktop.
 
 ## The ubuntu & linux os mental map (windows users)
 
-https://github.com/spawnmarvel/todo-and-current/blob/main/images/ubuntu_windows_map.jpg
+![ubuntu & linux os mental map (windows users)](https://github.com/spawnmarvel/todo-and-current/blob/main/images/ubuntu_windows_map.jpg)
 
 ## Linux Philosophy
 
