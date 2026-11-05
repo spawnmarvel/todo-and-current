@@ -450,6 +450,8 @@ $${\color{green}This \ is \ power}$$
 > [!TIP]
 > Stay mostly above this section
 
+---
+
 #### Python and SQLite :arrow_heading_down:
 
 **In Progress:**
