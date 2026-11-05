@@ -428,6 +428,7 @@ https://www.fastcompany.com/90966615/what-happened-when-i-tried-doing-one-thing-
 
 
 <details>
+
   <summary>Click to see what is left in this section</summary>
 
 - :link: You do not need to focus on the 3 qustions, you will learn all in KVM with Ubuntu
