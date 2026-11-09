@@ -538,6 +538,7 @@ $${\color{orange}This \ is \ important}$$
 **Completed:**
 - ✅ [AMQP Shovel MTLS with RFC-6125](https://github.com/spawnmarvel/quickguides/blob/main/amqp/ReadmeNutshell.md)
 - ✅ [Certificate Requests and Renewals for AMQP/mTLS](https://github.com/spawnmarvel/quickguides/blob/main/amqp/RequestRenewExample/README.md)
+- ✅ [Transferring the .pfx File via RDP Clipboard (Hex/Base64 Trick ps1) and converts all formats](https://github.com/spawnmarvel/quickguides/blob/main/amqp/RequestRenewExample/README.md#transferring-the-pfx-file-via-rdp-clipboard-hexbase64-trick-ps1)
 - ✅ [Minimal PKI](https://github.com/spawnmarvel/todo-and-current/blob/main/pki_store/pki_store_minmal_root_and_server_cert_client_server_auth/README.md)
 
 $${\color{lightblue}This \ is \ fun}$$
