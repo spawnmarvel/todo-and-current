@@ -1561,6 +1561,10 @@ w
 # list all folder after /
 ls -ld /*/
 
+# to get the date and time of a file in Linux, use the stat, ls
+ls -l filename.txt
+stat filename.txt
+
 # list all files in
 ls /var/log/zabbix/
 
