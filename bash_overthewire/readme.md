@@ -48,16 +48,64 @@ ssh -p 2220 bandit0@bandit.labs.overthewire.org
 
 cat readme
 
-# The password you are looking for is
-ssh -p 2220 bandit1@bandit.labs.overthewire.org
+# The password for the next level is stored in a file called readme located in the home directory.
 
-#  new pass
+grep '6y*' readme 
+The password you are looking for is: 6y2kwnwK6grgvwvpvLaa2T1cpFEKOhNR
 
-bandit1@bandit:~$ ls
--
+exit
+
 ```
 
 ## Bandit Level 1 → Level 2
 
 The password for the next level is stored in a file called - located in the home directory
 
+```bash
+
+ssh -p 2220 bandit1@bandit.labs.overthewire.org
+
+bandit1@bandit:~$ ls
+total 24K
+-rw-r-----   1 bandit2 bandit1   33 Oct 25 13:37 -
+
+# Just file - ?
+-
+
+# How can you tell a command to treat an argument strictly as a path inside the current directory?
+cat ./-
+PK8fYLZg2hnHSz83plBL1iEPKdD3QToB
+``` 
+
+
+## Bandit Level 2 → Level 3
+
+The password for the next level is stored in a file called --spaces in this filename-- located in the home directory
+
+```bash
+
+ssh -p 2220 bandit2@bandit.labs.overthewire.org
+
+
+bandit2@bandit:~$ ls
+--spaces in this filename--
+
+cat "./--spaces in this filename--"
+7ZZ2LFrykP2zEyvBl4m3clcL7tGYJPME
+
+
+```
+
+## Bandit Level 3 → Level 4
+
+The password for the next level is stored in a hidden file in the inhere directory.
+
+
+```bash
+
+ssh -p 2220 bandit3@bandit.labs.overthewire.org
+
+bandit3@bandit:~$ ls
+inhere
+
+``
