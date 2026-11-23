@@ -12,6 +12,8 @@ Each level requires logging into an SSH server using credentials found in the pr
   - [Bandit Level 0](#bandit-level-0)
   - [Bandit Level 0 → Level 1](#bandit-level-0--level-1)
   - [Bandit Level 1 → Level 2](#bandit-level-1--level-2)
+  - [Bandit Level 2 → Level 3](#bandit-level-2--level-3)
+  - [Bandit Level 3 → Level 4](#bandit-level-3--level-4)
 
 
 
