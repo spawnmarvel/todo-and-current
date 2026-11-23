@@ -40,8 +40,8 @@ A comprehensive knowledge base combining technical wiki, todo list, and learning
   - [Current Priorities:](#current-priorities)
   - [Have you ever heard of do 1 thing at the time?](#have-you-ever-heard-of-do-1-thing-at-the-time)
   - [1. Zen, number 1 is the path, one is enough.](#1-zen-number-1-is-the-path-one-is-enough)
-    - [1. KVM, Ubuntu, Ansible. Is the path :arrow\_heading\_up:](#1-kvm-ubuntu-ansible-is-the-path-arrow_heading_up)
-    - [KVM, Ubuntu, Ansible :arrow\_heading\_up: :rocket:](#kvm-ubuntu-ansible-arrow_heading_up-rocket)
+    - [1. Ansible on Azure and Overthewire bash hacking :arrow\_heading\_up:](#1-ansible-on-azure-and-overthewire-bash-hacking-arrow_heading_up)
+    - [Ansible on Azure and Overthewire bash hacking  :arrow\_heading\_up: :rocket:](#ansible-on-azure-and-overthewire-bash-hacking--arrow_heading_up-rocket)
       - [Python and SQLite :arrow\_heading\_down:](#python-and-sqlite-arrow_heading_down)
       - [MySQL database developer :arrow\_heading\_down:](#mysql-database-developer-arrow_heading_down)
       - [AP22 Rg-swc-ap22](#ap22-rg-swc-ap22)
@@ -416,16 +416,15 @@ https://www.fastcompany.com/90966615/what-happened-when-i-tried-doing-one-thing-
 
 ## 1. Zen, number 1 is the path, one is enough.
 
-### 1. KVM, Ubuntu, Ansible. Is the path :arrow_heading_up:
+### 1. Ansible on Azure and Overthewire bash hacking :arrow_heading_up:
 
-### KVM, Ubuntu, Ansible :arrow_heading_up: :rocket:
+### Ansible on Azure and Overthewire bash hacking  :arrow_heading_up: :rocket:
 
 **In Progress:**
 - :monkey: Have fun!
-- 📚 KVM hypervisor: a beginners’ guide [kvm-lab](https://github.com/spawnmarvel/kvm-lab)
-- 📚 KVM hypervisor running Ansible [Ansible-lab](https://github.com/spawnmarvel/kvm-lab/tree/main/lab_3_install_with_ansible)
-- Here you will learn all Linux things and hypervisor-1 (pools, network, vms, UFW, apt, etc)
-
+- 📚 Ansible stack in Azure Proof of Concept (PoC) for a IT/OT support department [POC](hthttps://github.com/spawnmarvel/ansible-io-ot-lab/blob/main/readme.md)
+- 📚 Overthewire bash hacking [Overthewire](https://github.com/spawnmarvel/todo-and-current/tree/main/bash_overthewire)
+- This is Azure, Ansible, Ubuntu, Windows
 
 <details>
 
