@@ -14,6 +14,7 @@ Each level requires logging into an SSH server using credentials found in the pr
   - [Bandit Level 1 → Level 2](#bandit-level-1--level-2)
   - [Bandit Level 2 → Level 3](#bandit-level-2--level-3)
   - [Bandit Level 3 → Level 4](#bandit-level-3--level-4)
+- [Other games at overthewire](#other-games-at-overthewire)
 
 
 
@@ -110,4 +111,8 @@ ssh -p 2220 bandit3@bandit.labs.overthewire.org
 bandit3@bandit:~$ ls
 inhere
 
-``
+``` 
+
+# Other games at overthewire
+
+When you are done with bandit, there are other games at the same page.
