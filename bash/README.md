@@ -72,6 +72,13 @@
     - [12. Mount Data Drive (fdisk) Ubuntu 24.04](#12-mount-data-drive-fdisk-ubuntu-2404)
     - [13. Install MySQL 8.4 Offline (SCP + dpkg) (it is default with 26.04)](#13-install-mysql-84-offline-scp--dpkg-it-is-default-with-2604)
     - [14. Move MySQL Data Directory](#14-move-mysql-data-directory)
+    - [15. Apt-cacher.ng](#15-apt-cacherng)
+      - [1. Master zabbix01](#1-master-zabbix01)
+      - [2. Subnode zabbix02](#2-subnode-zabbix02)
+        - [2.1 Try wget zabbix proxy deb](#21-try-wget-zabbix-proxy-deb)
+      - [3. View Success and Failures on zabbix01](#3-view-success-and-failures-on-zabbix01)
+      - [4. Open the Web Report Page](#4-open-the-web-report-page)
+      - [5. Where Cached Files Are Stored and disk usage](#5-where-cached-files-are-stored-and-disk-usage)
   - [Troubleshooting](#troubleshooting)
     - [Disk, Big Files, and Journalctl](#disk-big-files-and-journalctl)
     - [Production Server Down](#production-server-down)
@@ -1390,6 +1397,137 @@ mysql -u root -p -e "SELECT @@datadir"
 
 ---
 
+### 15. Apt-cacher.ng
+
+Apt-Cacher NG is a caching proxy for software packages which are downloaded by Unix/Linux system distribution mechanisms from mirror servers accessible via HTTP.
+
+* Apt-Cacher NG is a lightweight caching proxy server for Ubuntu and other Debian-based systems that stores downloaded .deb packages locally so multiple machines on your network do not have to download them repeatedly
+
+Example
+
+#### 1. Master zabbix01
+
+```bash
+# v1.1 - Install and start apt-cacher-ng on zabbix01
+sudo apt update && sudo apt install -y apt-cacher-ng
+sudo systemctl enable --now apt-cacher-ng
+
+
+# v1.1 - Configure Zabbix HTTPS backend mapping and restrict pass-through hosts
+echo "https://repo.zabbix.com/" | sudo tee /etc/apt-cacher-ng/backends_zabbix
+
+grep -q "^Remap-zabbix:" /etc/apt-cacher-ng/acng.conf || echo "Remap-zabbix: file:backends_zabbix /zabbix ; file:backends_zabbix" | sudo tee -a /etc/apt-cacher-ng/acng.conf
+grep -q "^PassThroughPattern:" /etc/apt-cacher-ng/acng.conf || echo "PassThroughPattern: ^(repo\.zabbix\.com|archive\.ubuntu\.com|security\.ubuntu\.com):443$" | sudo tee -a /etc/apt-cacher-ng/acng.conf
+
+# Allow port 3142 from zabbix02
+
+sudo systemctl restart apt-cacher-ng
+sudo systemctl status apt-cacher-ng
+
+```
+#### 2. Subnode zabbix02
+
+Replace <ZABBIX01_IP> with zabbix01's IP address.
+
+```bash
+# v1.1 - Configure APT proxy to zabbix01 on port 3142
+echo 'Acquire::http::Proxy "http://<ZABBIX01_IP>:3142";' | sudo tee /etc/apt/apt.conf.d/01proxy
+
+
+# v1.1 - Update and upgrade packages via zabbix01
+sudo apt update && sudo apt upgrade -y
+```
+
+##### 2.1 Try wget zabbix proxy deb
+
+If you are using wget on zabbix02 to download the Zabbix release .deb package, keep in mind that wget does not automatically use Acquire::http::Proxy from apt.conf.d unless you configure wget or environment variables—and wget over HTTPS ([https://repo.zabbix.com/](https://repo.zabbix.com/)...) won't go through apt-cacher-ng unless you download over http:// or pass a proxy/direct rule. Since zabbix01 and zabbix02 share the same OS, you can either fetch the .deb via http:// through the proxy or download it on zabbix01 and copy it over if zabbix02 cannot reach repo.zabbix.com directly.
+
+```bash
+# v1.2 - Point APT on zabbix02 to zabbix01 proxy and run update/upgrade using this file /etc/apt/apt.conf.d/01proxy from above step
+sudo apt update && sudo apt upgrade -y
+
+```
+
+If zabbix02 can reach repo.zabbix.com over HTTP through the proxy (using the Remap-zabbix rule on zabbix01), use http:// and pass the proxy to wget
+
+```bash
+# v1.2 - Download Zabbix release package via wget through apt-cacher-ng
+http_proxy="http://<ZABBIX01_IP>:3142" wget http://repo.zabbix.com/zabbix/7.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_latest_7.0+ubuntu26.04_all.deb
+sudo dpkg -i zabbix-release_*.deb
+sudo apt update
+```
+
+Alternative if wget Fails on zabbix02 (Copy from zabbix01)
+Because zabbix02 can reach zabbix01 and both run the same OS, if wget on zabbix02 is blocked or fails on TLS/URLs, download the .deb on zabbix01 and copy it over:
+
+```bash
+# v1.2 - On zabbix01: download zabbix-release .deb and copy to zabbix02
+wget https://repo.zabbix.com/zabbix/7.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_latest_7.0+ubuntu26.04_all.deb
+scp zabbix-release_*.deb <USER>@<ZABBIX02_IP>:~/
+
+# v1.2 - On zabbix02: install copied .deb and refresh apt metadata through proxy
+sudo dpkg -i ~/zabbix-release_*.deb
+sudo apt update
+
+```
+
+#### 3. View Success and Failures on zabbix01
+
+```bash
+# v1.0 - View recent apt-cacher-ng access and cache hit/miss log
+sudo tail -n 50 /var/log/apt-cacher-ng/apt-cacher.log
+
+# v1.0 - View apt-cacher-ng errors and rejected requests
+sudo tail -n 50 /var/log/apt-cacher-ng/apt-cacher.err
+
+# v1.0 - Follow live logs and check service status
+sudo journalctl -u apt-cacher-ng -n 50 --no-pager
+sudo systemctl status apt-cacher-ng --no-pager
+```
+
+#### 4. Open the Web Report Page
+
+
+```console
+http://<ZABBIX01_IP>:3142/acng-report.html
+```
+
+On that page you can view cache hit/miss statistics, inspect stored repository files, and trigger cache expiration/cleanup without using the CLI.
+
+It doesn't use a separate web server like Apache or Nginx—the apt-cacher-ng daemon itself has a built-in HTTP server compiled directly into it (written in C++).
+
+When you visit http://<ZABBIX01_IP>:3142/acng-report.html, the apt-cacher-ng process listening on port 3142 handles the HTTP request directly and dynamically generates the report/status page.
+
+Clean Cache & Reset apt-cacher-ng on zabbix01
+
+```bash
+# v1.0 - Trigger cache expiration and cleanup via apt-cacher-ng web endpoint
+curl -fsS "http://localhost:3142/acng-report.html?doExpire=Start+Scan+and%2For+Expiration#bottom" > /dev/null
+sudo tail -n 30 /var/log/apt-cacher-ng/apt-cacher.log
+
+
+```
+
+#### 5. Where Cached Files Are Stored and disk usage
+
+By default, apt-cacher-ng stores all cached files in /var/cache/apt-cacher-ng, and its disk usage depends entirely on how many repositories, architectures, and package versions your clients request—typically ranging from a few hundred MB for a single small node like zabbix02 up to several gigabytes if caching multiple Ubuntu releases or large package sets over time.
+
+Where Cached Files Are Stored
+
+* Default cache directory: /var/cache/apt-cacher-ng
+
+* Configuration file controlling it: /etc/apt-cacher-ng/acng.conf (CacheDir: /var/cache/apt-cacher-ng)
+
+* Inside /var/cache/apt-cacher-ng: You will see subdirectories per repository/mirror along with index/metadata and .deb package files.
+
+
+
+
+
+https://manpages.ubuntu.com/manpages/resolute/man8/apt-cacher-ng.8.html
+
+---
+
 ## Troubleshooting
 
 ### Disk, Big Files, and Journalctl
@@ -1583,6 +1721,9 @@ sudo chmod 775 /usr/local/share/op
 # check security on folder
 ls -ld op
 drwxrwxr-x 2 root root 4096 Jul 10 08:16 op
+
+# 
+stat -c "%a" path/to/file
 
 # On Debian and almost all other Linux distributions, users is a built-in, default system group
 # Because you ran the command using sudo, the folder is owned by root:root (User: root, Group: root).
