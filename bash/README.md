@@ -818,6 +818,9 @@ Edit /etc/mysql/mysql.conf.d/mysqld.cnf: innodb_buffer_pool_size = 4G
 Edit /etc/zabbix/zabbix_server.conf: CacheSize=128M
 
 ```
+Read more https://github.com/spawnmarvel/todo-and-current/blob/main/mysql/README_tuning_general_and_zabbix.md
+
+Or go to mysql folder
 
 ### 2. UFW Firewall
 
