@@ -58,6 +58,7 @@
   - [Additional Resources](#additional-resources)
   - [Bash Piping](#bash-piping)
   - [Practical Examples](#practical-examples)
+    - [archive.ubuntu.com](#archiveubuntucom)
     - [1. Zabbix MySql tuning single instance 2 vCPUs and 8GB of RAM](#1-zabbix-mysql-tuning-single-instance-2-vcpus-and-8gb-of-ram)
     - [2. UFW Firewall](#2-ufw-firewall)
     - [3. SCP: Windows to Linux (.deb install) offline](#3-scp-windows-to-linux-deb-install-offline)
@@ -796,6 +797,29 @@ sudo tail -f /var/log/zabbix/zabbix_server.log | tee tmp_zabbix_server.log
 - https://www.geeksforgeeks.org/linux-unix/piping-in-unix-or-linux/
 
 ## Practical Examples
+
+### archive.ubuntu.com
+
+Example apt-cacher-ng
+
+* https://archive.ubuntu.com/ubuntu/ubuntu/ubuntu/pool/universe/a/apt-cacher-ng/
+
+There are tens of thousands of packages (far more than hundreds) available from archive.ubuntu.com and security.ubuntu.com, depending on which Ubuntu repository components (main, universe, multiverse, restricted) are enabled on the machine.
+
+* main/	2005-11-16 12:06	-
+* multiverse/	2023-06-15 17:34	-
+* restricted/	2022-02-21 12:39	-
+* universe/	2025-05-01 18:04
+
+```bash
+# v1.0 - Count available packages and inspect enabled repository components
+apt-cache stats | grep "Total package names"
+grep -rnE "^(deb|Types|Components):" /etc/apt/sources.list /etc/apt/sources.list.d/ 2>/dev/null
+```
+
+
+
+
 
 ### 1. Zabbix MySql tuning single instance 2 vCPUs and 8GB of RAM
 
