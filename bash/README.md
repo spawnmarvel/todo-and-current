@@ -806,10 +806,13 @@ Example apt-cacher-ng
 
 There are tens of thousands of packages (far more than hundreds) available from archive.ubuntu.com and security.ubuntu.com, depending on which Ubuntu repository components (main, universe, multiverse, restricted) are enabled on the machine.
 
-* main/	2005-11-16 12:06	-
-* multiverse/	2023-06-15 17:34	-
-* restricted/	2022-02-21 12:39	-
-* universe/	2025-05-01 18:04
+
+Whitelisting archive.ubuntu.com gives you access to the repository structure where main/, multiverse/, restricted/, and universe/ live (along with security.ubuntu.com for security updates).
+
+* main/	2005-11-16 12:06	- Canonical-supported free and open-source software.
+* multiverse/	2023-06-15 17:34	- Community-maintained free and open-source software (most additional CLI tools, servers, and utilities).
+* restricted/	2022-02-21 12:39	- Proprietary drivers and firmware supported by Canonical.
+* universe/	2025-05-01 18:04 - Software restricted by copyright or legal issues.
 
 ```bash
 # v1.0 - Count available packages and inspect enabled repository components
