@@ -1650,6 +1650,8 @@ sudo chown -R zabbix:zabbix /var/lib/zabbix
 sudo chmod 750 /var/lib/zabbix
 
 # Zabbix proxy creates and initializes the SQLite3 database automatically when it starts if the database file does not exist yet.
+# It actually does.....
+
 
 # Enable and start zabbix-proxy
 sudo systemctl enable zabbix-proxy
