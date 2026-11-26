@@ -1474,6 +1474,8 @@ echo 'Acquire::http::Proxy "http://<ZABBIX01_IP>:3142";' | sudo tee /etc/apt/apt
 sudo apt update && sudo apt upgrade -y
 ```
 
+
+
 ##### 2.1 Try wget zabbix proxy deb
 
 If you are using wget on zabbix02 to download the Zabbix release .deb package, keep in mind that wget does not automatically use Acquire::http::Proxy from apt.conf.d unless you configure wget or environment variables—and wget over HTTPS ([https://repo.zabbix.com/](https://repo.zabbix.com/)...) won't go through apt-cacher-ng unless you download over http:// or pass a proxy/direct rule. Since zabbix01 and zabbix02 share the same OS, you can either fetch the .deb via http:// through the proxy or download it on zabbix01 and copy it over if zabbix02 cannot reach repo.zabbix.com directly.
@@ -1489,6 +1491,8 @@ If zabbix02 can reach repo.zabbix.com over HTTP through the proxy (using the Rem
 ```bash
 # v1.2 - Download Zabbix release package via wget through apt-cacher-ng
 http_proxy="http://<ZABBIX01_IP>:3142" wget http://repo.zabbix.com/zabbix/7.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_latest_7.0+ubuntu26.04_all.deb
+
+# was it success or not?, if so ->
 sudo dpkg -i zabbix-release_*.deb
 sudo apt update
 ```
@@ -1521,6 +1525,13 @@ sudo journalctl -u apt-cacher-ng -n 50 --no-pager
 sudo systemctl status apt-cacher-ng --no-pager
 ```
 
+
+sudo tail -n 10 /var/log/apt-cacher-ng/apt-cacher.log on zabbix01 shows O on the first download and I on the reinstall.
+
+* [I] means zabbix02 was served from zabbix01's local cache
+* [O] means zabbix01 fetched it from the allowlisted upstream repository and cached it.
+
+
 #### 4. Open the Web Report Page
 
 
@@ -1534,6 +1545,15 @@ It doesn't use a separate web server like Apache or Nginx—the apt-cacher-ng da
 
 When you visit http://<ZABBIX01_IP>:3142/acng-report.html, the apt-cacher-ng process listening on port 3142 handles the HTTP request directly and dynamically generates the report/status page.
 
+
+Disk usage
+
+
+```bash
+# v1.0 - Check disk usage of apt-cacher-ng cache on zabbix01
+sudo du -sh /var/cache/apt-cacher-ng
+
+```
 Clean Cache & Reset apt-cacher-ng on zabbix01
 
 ```bash
