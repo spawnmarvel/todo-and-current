@@ -73,7 +73,7 @@
     - [12. Mount Data Drive (fdisk) Ubuntu 24.04](#12-mount-data-drive-fdisk-ubuntu-2404)
     - [13. Install MySQL 8.4 Offline (SCP + dpkg) (it is default with 26.04)](#13-install-mysql-84-offline-scp--dpkg-it-is-default-with-2604)
     - [14. Move MySQL Data Directory](#14-move-mysql-data-directory)
-    - [15.  A Apt-cacher.ng](#15--a-apt-cacherng)
+    - [15. A Apt-cacher.ng](#15-a-apt-cacherng)
       - [1. Master zabbix01](#1-master-zabbix01)
       - [2. Subnode zabbix02](#2-subnode-zabbix02)
         - [2.1 Try wget zabbix proxy deb](#21-try-wget-zabbix-proxy-deb)
@@ -1429,7 +1429,7 @@ mysql -u root -p -e "SELECT @@datadir"
 
 ---
 
-### 15.  A Apt-cacher.ng
+### 15. A Apt-cacher.ng
 
 Apt-Cacher NG is a caching proxy for software packages which are downloaded by Unix/Linux system distribution mechanisms from mirror servers accessible via HTTP.
 
