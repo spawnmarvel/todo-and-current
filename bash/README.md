@@ -1440,6 +1440,12 @@ Example
 ```bash
 # v1.1 - Install and start apt-cacher-ng on zabbix01
 sudo apt update && sudo apt install -y apt-cacher-ng
+
+systemctl is-active apt-cacher-ng
+
+# vist http://ip-address:3412
+# "Apt-Cacher NG Usage Information" page confirms the daemon is already running and serving requests on port 3142
+
 sudo systemctl enable --now apt-cacher-ng
 
 
