@@ -73,13 +73,15 @@
     - [12. Mount Data Drive (fdisk) Ubuntu 24.04](#12-mount-data-drive-fdisk-ubuntu-2404)
     - [13. Install MySQL 8.4 Offline (SCP + dpkg) (it is default with 26.04)](#13-install-mysql-84-offline-scp--dpkg-it-is-default-with-2604)
     - [14. Move MySQL Data Directory](#14-move-mysql-data-directory)
-    - [15. Apt-cacher.ng](#15-apt-cacherng)
+    - [15.  A Apt-cacher.ng](#15--a-apt-cacherng)
       - [1. Master zabbix01](#1-master-zabbix01)
       - [2. Subnode zabbix02](#2-subnode-zabbix02)
         - [2.1 Try wget zabbix proxy deb](#21-try-wget-zabbix-proxy-deb)
       - [3. View Success and Failures on zabbix01](#3-view-success-and-failures-on-zabbix01)
       - [4. Open the Web Report Page](#4-open-the-web-report-page)
       - [5. Where Cached Files Are Stored and disk usage](#5-where-cached-files-are-stored-and-disk-usage)
+    - [15. B Install zabbix proxy offline](#15-b-install-zabbix-proxy-offline)
+    - [15. C Install zabbix-agent2 on zabbix proxy offline](#15-c-install-zabbix-agent2-on-zabbix-proxy-offline)
   - [Troubleshooting](#troubleshooting)
     - [Disk, Big Files, and Journalctl](#disk-big-files-and-journalctl)
     - [Production Server Down](#production-server-down)
@@ -1427,7 +1429,7 @@ mysql -u root -p -e "SELECT @@datadir"
 
 ---
 
-### 15. Apt-cacher.ng
+### 15.  A Apt-cacher.ng
 
 Apt-Cacher NG is a caching proxy for software packages which are downloaded by Unix/Linux system distribution mechanisms from mirror servers accessible via HTTP.
 
@@ -1490,7 +1492,7 @@ If zabbix02 can reach repo.zabbix.com over HTTP through the proxy (using the Rem
 
 ```bash
 # v1.2 - Download Zabbix release package via wget through apt-cacher-ng
-http_proxy="http://<ZABBIX01_IP>:3142" wget http://repo.zabbix.com/zabbix/7.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_latest_7.0+ubuntu26.04_all.deb
+http_proxy="http://<ZABBIX01_IP>:3142" wget https://repo.zabbix.com/zabbix/7.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_latest_7.0+ubuntu26.04_all.deb
 
 # was it success or not?, if so ->
 sudo dpkg -i zabbix-release_*.deb
@@ -1501,13 +1503,30 @@ Alternative if wget Fails on zabbix02 (Copy from zabbix01)
 Because zabbix02 can reach zabbix01 and both run the same OS, if wget on zabbix02 is blocked or fails on TLS/URLs, download the .deb on zabbix01 and copy it over:
 
 ```bash
-# v1.2 - On zabbix01: download zabbix-release .deb and copy to zabbix02
+# v1.0 - Download Zabbix 7.0 release package for Ubuntu 26.04 on zabbix01
+mkdir -p ~/zabbix_offline_proxy && cd ~/zabbix_offline_proxy
 wget https://repo.zabbix.com/zabbix/7.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_latest_7.0+ubuntu26.04_all.deb
-scp zabbix-release_*.deb <USER>@<ZABBIX02_IP>:~/
 
-# v1.2 - On zabbix02: install copied .deb and refresh apt metadata through proxy
-sudo dpkg -i ~/zabbix-release_*.deb
-sudo apt update
+ls -lh 
+# and confirm the file is present with non-zero size.
+
+# v1.0 - Copy Zabbix 7.0 release .deb to zabbix02
+scp ~/zabbix_offline_proxy/zabbix-release_latest_7.0+ubuntu26.04_all.deb <USER>@<ZABBIX02_IP>:/tmp/
+```
+
+Because apt-cacher-ng is already configured on zabbix01 with repo.zabbix.com allowlisted and zabbix02 points to http://<ZABBIX01_IP>:3142, copy the release .deb to zabbix02 and let apt pull zabbix-proxy-sqlite3 and its dependencies through the proxy:
+
+```bash
+# v1.2 - On zabbix02: view copied .deb
+cd /tmp
+cp zabbix-release_latest_7.0+ubuntu26.04_all.deb /home/user-name/zabbix-release_latest_7.0+ubuntu26.04_all.deb
+
+cd ~
+ls
+zabbix-release_latest_7.0+ubuntu26.04_all.deb
+
+# Now go to 
+### 15. Install zabbix proxy offline
 
 ```
 
@@ -1577,10 +1596,93 @@ Where Cached Files Are Stored
 * Inside /var/cache/apt-cacher-ng: You will see subdirectories per repository/mirror along with index/metadata and .deb package files.
 
 
-
-
-
 https://manpages.ubuntu.com/manpages/resolute/man8/apt-cacher-ng.8.html
+
+
+### 15. B Install zabbix proxy offline
+
+Continue from apt-cacher-ng where we got the file.
+
+
+```bash
+# v1.2 - On zabbix02: install copied .deb and refresh apt metadata through proxy
+cd /tmp
+cp zabbix-release_latest_7.0+ubuntu26.04_all.deb /home/user-name/zabbix-release_latest_7.0+ubuntu26.04_all.deb
+
+cd ~
+ls
+zabbix-release_latest_7.0+ubuntu26.04_all.deb
+
+# next steps is install
+
+# v1.2 - Install Zabbix 7.0 release package on zabbix02 and install SQLite3 proxy via proxy
+sudo dpkg -i zabbix-release_latest_7.0+ubuntu26.04_all.deb
+sudo rm -f /etc/apt/sources.list.d/zabbix-tools.list
+sudo apt update
+
+sudo apt install zabbix-proxy-sqlite3
+
+rm -f ~/zabbix-release_latest_7.0+ubuntu26.04_all.deb /tmp/zabbix-release_latest_7.0+ubuntu26.04_all.deb
+
+
+
+```
+
+Now configure sqlite3 and zabbix
+
+```bash
+# Update configuration parameters in zabbix_proxy.conf (Active Proxy Mode)
+sudo sed -i 's|^# ProxyMode=.*|ProxyMode=0|' /etc/zabbix/zabbix_proxy.conf
+sudo sed -i 's|^ProxyMode=.*|ProxyMode=0|' /etc/zabbix/zabbix_proxy.conf
+sudo sed -i 's|^Server=.*|Server=10.68.68.50|' /etc/zabbix/zabbix_proxy.conf
+sudo sed -i 's|^Hostname=.*|Hostname=zabbix02|' /etc/zabbix/zabbix_proxy.conf
+sudo sed -i 's|^DBName=.*|DBName=/var/lib/zabbix/zabbix_proxy.db|' /etc/zabbix/zabbix_proxy.conf
+
+# Fix permissions on config files to allow zabbix user access
+sudo chown -R zabbix:zabbix /etc/zabbix/
+sudo chmod 750 /etc/zabbix/
+sudo chmod 640 /etc/zabbix/zabbix_proxy.conf
+
+
+# Create database directory and populate schema
+sudo mkdir -p /var/lib/zabbix
+sudo chown -R zabbix:zabbix /var/lib/zabbix
+sudo chmod 750 /var/lib/zabbix
+
+# Zabbix proxy creates and initializes the SQLite3 database automatically when it starts if the database file does not exist yet.
+
+# Enable and start zabbix-proxy
+sudo systemctl enable zabbix-proxy
+sudo systemctl restart zabbix-proxy
+sudo systemctl status zabbix-proxy
+
+# Verify service logs
+sudo tail -n 20 /var/log/zabbix/zabbix_proxy.log
+
+# Enable the proxy with hostname in Administration->Create proxy
+
+```
+
+### 15. C Install zabbix-agent2 on zabbix proxy offline
+
+Since the Zabbix 7.0 repository is already configured on zabbix02 and apt-cacher-ng is active on zabbix01, you can install zabbix-agent2 directly through the proxy on zabbix02
+
+```bash
+# v1.0 - Install Zabbix Agent 2 via apt-cacher-ng proxy and start service on zabbix02
+sudo apt update && sudo apt install -y zabbix-agent2
+sudo cp /etc/zabbix/zabbix_agent2.conf /etc/zabbix/zabbix_agent2.conf.bak
+
+
+# v1.1 - Configure Zabbix Agent 2 for active checks only over port 10051 and start service
+sudo sed -i 's|^ServerActive=.*|ServerActive=10.68.68.50|' /etc/zabbix/zabbix_agent2.conf
+sudo sed -i 's|^Hostname=.*|Hostname=zabbix02|' /etc/zabbix/zabbix_agent2.conf
+
+sudo systemctl enable --now zabbix-agent2
+sudo systemctl status zabbix-agent2 --no-pager
+sudo tail -n 20 /var/log/zabbix/zabbix_agent2.log
+
+# Enable the agent with hostname in data collections as a normal host.
+```
 
 ---
 
